@@ -4,6 +4,7 @@ import { execSync } from 'child_process';
 import { deleteAsync } from 'del';
 import esbuild from 'esbuild';
 import { replace } from 'esbuild-plugin-replace';
+import * as fs from 'fs';
 import { mkdir, readFile } from 'fs/promises';
 import getPort, { portNumbers } from 'get-port';
 import { globby } from 'globby';
@@ -14,6 +15,7 @@ import open from 'open';
 import ora from 'ora';
 import copy from 'recursive-copy';
 import { SimulateWebAwesomeApp } from '../docs/_utils/simulate-webawesome-app.js';
+import { componentPrefixPlugin } from './component-prefix-plugin.js';
 import { generateDocs } from './docs.js';
 import { generateLlmsTxtFile } from './llms.js';
 import { formatError, getCdnDir, getDistDir, getDocsDir, getRootDir, getSiteDir } from './utils.js';
@@ -83,6 +85,7 @@ export async function build(options = {}) {
 
       await generateBundle();
       await generateDocs({ spinner });
+      await replacePrefixInDocs();
 
       // Generate llms.txt (needs CEM, runs before docs)
       spinner.start('Generating llms.txt');
@@ -95,6 +98,32 @@ export async function build(options = {}) {
       spinner.fail();
       console.log(chalk.red(`\n${err}`));
     }
+  }
+
+  async function replacePrefixInDocs() {
+    const prefix = process.env.COMPONENT_PREFIX;
+    if (!prefix || prefix === 'wa') return;
+
+    spinner.start(`Replacing component prefix in docs`);
+
+    // 处理编译后的输出文件（不修改源码）
+    const outputFiles = await globby(join(getSiteDir(), '**/*.{html,js,css,md,json}'));
+
+    for (const filePath of outputFiles) {
+      let content = await fs.promises.readFile(filePath, 'utf-8');
+      let changed = false;
+
+      content = content.replace(/wa-([\w-]+)/g, (match, p1) => {
+        changed = true;
+        return `${prefix}-${p1}`;
+      });
+
+      if (changed) {
+        await fs.promises.writeFile(filePath, content, 'utf-8');
+      }
+    }
+
+    spinner.succeed();
   }
 
   /** Empties the dist directory. */
@@ -164,6 +193,26 @@ export async function build(options = {}) {
 
     await copy(join(getRootDir(), 'src/styles'), join(getCdnDir(), 'styles'), { overwrite: true });
 
+    // 样式文件前缀替换
+    const prefix = process.env.COMPONENT_PREFIX;
+    if (prefix && prefix !== 'wa') {
+      const styleFiles = await globby(posix.join(getCdnDir(), 'styles', '**/*.css'));
+      for (const filePath of styleFiles) {
+        let contents = await readFile(filePath, 'utf-8');
+        let changed = false;
+        if (filePath.includes('visually-hidden')) {
+          console.log(filePath);
+        }
+        contents = contents.replace(/wa-([\w-]+)/g, (match, p1) => {
+          changed = true;
+          return `${prefix}-${p1}`;
+        });
+        if (changed) {
+          await fs.promises.writeFile(filePath, contents, 'utf-8');
+        }
+      }
+    }
+
     spinner.succeed();
 
     return Promise.resolve();
@@ -195,6 +244,24 @@ export async function build(options = {}) {
       }
 
       return Promise.reject(error.stdout);
+    }
+
+    // 类型文件前缀替换
+    const prefix = process.env.COMPONENT_PREFIX;
+    if (prefix && prefix !== 'wa') {
+      const dtsFiles = await globby(posix.join(getCdnDir(), '**/*.d.ts'));
+      for (const filePath of dtsFiles) {
+        let contents = await readFile(filePath, 'utf-8');
+        let changed = false;
+
+        contents = contents.replace(/wa-([\w-]+)/g, (match, p1) => {
+          changed = true;
+          return `${prefix}-${p1}`;
+        });
+        if (changed) {
+          await fs.promises.writeFile(filePath, contents, 'utf-8');
+        }
+      }
     }
 
     spinner.succeed();
@@ -246,7 +313,7 @@ export async function build(options = {}) {
       banner: {
         js: `/*! Copyright ${currentYear} Fonticons, Inc. - https://webawesome.com/license */`,
       },
-      plugins: [replace({ __WEBAWESOME_VERSION__: version })],
+      plugins: [componentPrefixPlugin(process.env.COMPONENT_PREFIX), replace({ __WEBAWESOME_VERSION__: version })],
     };
 
     const unbundledConfig = {
@@ -460,6 +527,7 @@ export async function build(options = {}) {
 
             // This needs to be outside of "isComponent" check because SSR needs to run on CSS files too.
             await generateDocs({ spinner });
+            await replacePrefixInDocs();
 
             if (typeof options.afterWatchEvent === 'function') {
               await options.afterWatchEvent(evt, filename);
@@ -510,6 +578,7 @@ export async function build(options = {}) {
             await options.beforeWatchEvent(evt, filename);
           }
           await generateDocs({ spinner });
+          await replacePrefixInDocs();
 
           if (typeof options.afterWatchEvent === 'function') {
             await options.afterWatchEvent(evt, filename);

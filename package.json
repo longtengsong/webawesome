@@ -14,6 +14,8 @@
     "check-updates": "npx npm-check-updates --interactive --format group",
     "start": "cd packages/webawesome && npm run start",
     "build": "cd packages/webawesome && npm run build",
+    "start:lts": "cd packages/webawesome && COMPONENT_PREFIX=lts npm run start:lts",
+    "build:lts": "cd packages/webawesome && COMPONENT_PREFIX=lts npm run build:lts",
     "start:pro": "cd packages/webawesome-pro && npm run start",
     "build:pro": "cd packages/webawesome-pro && npm run build"
   },
