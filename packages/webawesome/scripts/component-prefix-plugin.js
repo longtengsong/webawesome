@@ -69,6 +69,19 @@ export function componentPrefixPlugin(prefix = defaultPrefix) {
           loader: 'ts', // 告诉 esbuild 将内容当作 ts 处理
         };
       });
+      build.onLoad({ filter: /\/events\/.*\.ts$/ }, async args => {
+        // 1. 读取文件的原始内容
+        let contents = await fs.promises.readFile(args.path, 'utf8');
+
+        // 2. 将 wa-xxx 替换为 lts-xxx
+        contents = contents.replace(/wa-([\w-]+)/g, `${prefix}-$1`);
+
+        // 3. 返回修改后的内容，并指定加载器类型
+        return {
+          contents: contents,
+          loader: 'ts', // 告诉 esbuild 将内容当作 ts 处理
+        };
+      });
     },
   };
 }
