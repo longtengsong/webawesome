@@ -1,5 +1,5 @@
+import { registerTranslation } from '@shoelace-style/localize';
 import type { Translation } from '../utilities/localize.js';
-import { registerTranslation } from '../utilities/localize.js';
 
 const translation: Translation = {
   $code: 'zh-cn',
@@ -15,8 +15,8 @@ const translation: Translation = {
   copy: '复制',
   currentValue: '当前值',
   decrement: '减少',
-  dropFileHere: 'Drop file here or click to browse',
-  dropFilesHere: 'Drop files here or click to browse',
+  dropFileHere: '将文件拖放到此处或点击浏览',
+  dropFilesHere: '将文件拖放到此处或点击浏览',
   error: '错误',
   enterFullscreen: '进入全屏',
   exitFullscreen: '退出全屏',
