@@ -1,5 +1,5 @@
 ---
-title: Split Panel
+title: 分割面板
 layout: component
 category: Layout
 synonyms:
@@ -7,10 +7,16 @@ synonyms:
   - pane splitter
   - split view
   - splitter
+  - 可调整大小的面板
+  - 面板分割器
+  - 分割视图
 use-cases:
   - code editor layout
   - side by side
   - resizable columns
+  - 代码编辑器布局
+  - 并排显示
+  - 可调整列宽
 ---
 
 ```html {.example}
@@ -19,22 +25,22 @@ use-cases:
     slot="start"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-## Examples
+## 示例
 
-### Initial Position
+### 初始位置
 
-To set the initial position, use the `position` attribute. If no position is provided, it will default to 50% of the available space.
+要设置初始位置，使用 `position` 属性。如果没有提供位置，默认将使用可用空间的 50%。
 
 ```html {.example}
 <wa-split-panel position="75">
@@ -49,7 +55,7 @@ To set the initial position, use the `position` attribute. If no position is pro
       overflow: hidden;
     "
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
@@ -62,14 +68,14 @@ To set the initial position, use the `position` attribute. If no position is pro
       overflow: hidden;
     "
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-### Initial Position in Pixels
+### 像素初始位置
 
-To set the initial position in pixels instead of a percentage, use the `position-in-pixels` attribute.
+要以像素而不是百分比设置初始位置，使用 `position-in-pixels` 属性。
 
 ```html {.example}
 <wa-split-panel position-in-pixels="150">
@@ -77,20 +83,20 @@ To set the initial position in pixels instead of a percentage, use the `position
     slot="start"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-### Orientation
+### 方向
 
-Set the `orientation` attribute to `vertical` and provide a height to render the split panel in a vertical orientation where the start and end panels are stacked.
+设置 `orientation` 属性为 `vertical` 并提供高度，以垂直方向渲染分割面板，其中开始和结束面板堆叠排列。
 
 ```html {.example}
 <wa-split-panel orientation="vertical" style="height: 400px;">
@@ -98,20 +104,20 @@ Set the `orientation` attribute to `vertical` and provide a height to render the
     slot="start"
     style="height: 100%; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
     style="height: 100%; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-### Snapping
+### 吸附
 
-To snap panels at specific positions while dragging, add the `snap` attribute with one or more space-separated values. Values must be in pixels or percentages. For example, to snap the panel at `100px` and `50%`, use `snap="100px 50%"`. You can also customize how close the divider must be before snapping with the `snap-threshold` attribute.
+要在拖动时将面板吸附到特定位置，添加带有一个或多个空格分隔值的 `snap` 属性。值必须以像素或百分比表示。例如，要在 `100px` 和 `50%` 处吸附面板，使用 `snap="100px 50%"`。还可以使用 `snap-threshold` 属性自定义在吸附之前分割器必须接近的距离。
 
 ```html {.example}
 <div class="split-panel-snapping">
@@ -120,13 +126,13 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
       slot="start"
       style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
-      Start
+      开始
     </div>
     <div
       slot="end"
       style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
-      End
+      结束
     </div>
   </wa-split-panel>
 
@@ -160,9 +166,9 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 </style>
 ```
 
-### Disabled
+### 禁用
 
-Add the `disabled` attribute to prevent the divider from being repositioned.
+添加 `disabled` 属性以防止分割器被重新定位。
 
 ```html {.example}
 <wa-split-panel disabled>
@@ -170,22 +176,22 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
     slot="start"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-### Setting the Primary Panel
+### 设置主面板
 
-By default, both panels will grow or shrink proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the secondary panel will grow or shrink to fit the remaining space. You can set the primary panel to `start` or `end` using the `primary` attribute.
+默认情况下，当宿主元素调整大小时，两个面板将按比例增长或缩小。如果指定了主面板，它将保持其大小，而次要面板将增长或缩小以适应剩余空间。可以使用 `primary` 属性将主面板设置为 `start` 或 `end`。
 
-Try resizing the example below with each option and notice how the panels respond.
+尝试在每个选项下调整示例的大小，观察面板的响应方式。
 
 ```html {.example}
 <div class="split-panel-primary">
@@ -194,20 +200,20 @@ Try resizing the example below with each option and notice how the panels respon
       slot="start"
       style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
-      Start
+      开始
     </div>
     <div
       slot="end"
       style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
-      End
+      结束
     </div>
   </wa-split-panel>
 
-  <wa-select label="Primary Panel" style="max-width: 200px; margin-top: 1rem;">
-    <wa-option value="" selected>None</wa-option>
-    <wa-option value="start">Start</wa-option>
-    <wa-option value="end">End</wa-option>
+  <wa-select label="主面板" style="max-width: 200px; margin-top: 1rem;">
+    <wa-option value="" selected>无</wa-option>
+    <wa-option value="start">开始</wa-option>
+    <wa-option value="end">结束</wa-option>
   </wa-select>
 </div>
 
@@ -220,11 +226,11 @@ Try resizing the example below with each option and notice how the panels respon
 </script>
 ```
 
-### Min & Max
+### 最小和最大
 
-To set a minimum or maximum size of the primary panel, use the `--min` and `--max` custom properties. Since the secondary panel is flexible, size constraints can only be applied to the primary panel. If no primary panel is designated, these constraints will be applied to the `start` panel.
+要设置主面板的最小或最大大小，使用 `--min` 和 `--max` 自定义属性。由于次要面板是灵活的，大小限制只能应用于主面板。如果没有指定主面板，这些限制将应用于 `start` 面板。
 
-This examples demonstrates how you can ensure both panels are at least 150px using `--min`, `--max`, and the `calc()` function.
+这个示例展示了如何使用 `--min`、`--max` 和 `calc()` 函数确保两个面板都至少有 150px。
 
 ```html {.example}
 <wa-split-panel style="--min: 150px; --max: calc(100% - 150px);">
@@ -232,20 +238,20 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
     slot="start"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
     style="height: 200px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-### Nested Split Panels
+### 嵌套分割面板
 
-Create complex layouts that can be repositioned independently by nesting split panels.
+通过嵌套分割面板创建可以独立重新定位的复杂布局。
 
 ```html {.example}
 <wa-split-panel>
@@ -253,7 +259,7 @@ Create complex layouts that can be repositioned independently by nesting split p
     slot="start"
     style="height: 400px; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden"
   >
-    Start
+    开始
   </div>
   <div slot="end">
     <wa-split-panel orientation="vertical" style="height: 400px;">
@@ -261,22 +267,22 @@ Create complex layouts that can be repositioned independently by nesting split p
         slot="start"
         style="height: 100%; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden"
       >
-        Top
+        顶部
       </div>
       <div
         slot="end"
         style="height: 100%; background: var(--wa-color-surface-lowered); display: flex; align-items: center; justify-content: center; overflow: hidden"
       >
-        Bottom
+        底部
       </div>
     </wa-split-panel>
   </div>
 </wa-split-panel>
 ```
 
-### Customizing the Divider
+### 自定义分割器
 
-You can target the `divider` part to apply CSS properties to the divider. To add a custom handle, slot an icon into the `divider` slot. When customizing the divider, make sure to think about focus styles for keyboard users.
+可以针对 `divider` 部件向分割器应用 CSS 属性。要添加自定义手柄，将图标插入到 `divider` 插槽中。自定义分割器时，请确保考虑键盘用户的焦点样式。
 
 ```html {.example}
 <wa-split-panel style="--divider-width: 20px;">
@@ -292,7 +298,7 @@ You can target the `divider` part to apply CSS properties to the divider. To add
       overflow: hidden;
     "
   >
-    Start
+    开始
   </div>
   <div
     slot="end"
@@ -305,12 +311,12 @@ You can target the `divider` part to apply CSS properties to the divider. To add
       overflow: hidden;
     "
   >
-    End
+    结束
   </div>
 </wa-split-panel>
 ```
 
-Here's a more elaborate example that changes the divider's color and width and adds a styled handle.
+这里有一个更详细的示例，它改变了分割器的颜色和宽度，并添加了一个带样式的手柄。
 
 ```html {.example}
 <div class="split-panel-divider">
@@ -327,7 +333,7 @@ Here's a more elaborate example that changes the divider's color and width and a
         overflow: hidden;
       "
     >
-      Start
+      开始
     </div>
     <div
       slot="end"
@@ -340,7 +346,7 @@ Here's a more elaborate example that changes the divider's color and width and a
         overflow: hidden;
       "
     >
-      End
+      结束
     </div>
   </wa-split-panel>
 </div>

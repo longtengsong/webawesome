@@ -1,75 +1,81 @@
 ---
-title: Switch
+title: 开关
 layout: component
 category: Forms
 synonyms:
   - toggle
   - toggle switch
   - on off
+  - 切换
+  - 切换开关
+  - 开关
 use-cases:
   - boolean toggle
   - setting toggle
   - dark mode toggle
+  - 布尔切换
+  - 设置切换
+  - 深色模式切换
 ---
 
 ```html {.example}
-<wa-switch>Switch</wa-switch>
+<wa-switch>开关</wa-switch>
 ```
 
 :::info
-This component works with standard `<form>` elements. Please refer to the section on [form controls](/docs/form-controls) to learn more about form submission and client-side validation.
+此组件与标准 `<form>` 元素配合使用。请参阅[表单控件](/docs/form-controls)部分以了解有关表单提交和客户端验证的更多信息。
 :::
 
-## Examples
+## 示例
 
-### Checked
+### 已选中
 
-Use the `checked` attribute to activate the switch.
+使用 `checked` 属性来激活开关。
 
 ```html {.example}
-<wa-switch checked>Checked</wa-switch>
+<wa-switch checked>已选中</wa-switch>
 ```
 
 :::info
-The `checked` attribute is the initial value and does not reflect changes, consistent with native checkboxes. To toggle the checked state with JavaScript, use the `checked` property instead. To target checked switches with CSS, use the `:state(checked)` selector.
+`checked` 属性是初始值，不反映变化，这与原生复选框一致。要使用 JavaScript 切换选中状态，请改为使用 `checked` 属性。要使用 CSS 定位已选中的开关，请使用 `:state(checked)` 选择器。
 :::
 
-### Disabled
+### 禁用
 
-Use the `disabled` attribute to disable the switch.
+使用 `disabled` 属性来禁用开关。
 
 ```html {.example}
-<wa-switch disabled>Disabled</wa-switch>
+<wa-switch disabled>禁用</wa-switch>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change a switch's size.
+使用 `size` 属性来改变开关的尺寸。
 
 ```html {.example}
-<wa-switch size="xs">Extra Small</wa-switch>
+<wa-switch size="xs">超小</wa-switch>
 <br />
-<wa-switch size="s">Small</wa-switch>
+<wa-switch size="s">小</wa-switch>
 <br />
-<wa-switch size="m">Medium</wa-switch>
+<wa-switch size="m">中</wa-switch>
 <br />
-<wa-switch size="l">Large</wa-switch>
+<wa-switch size="l">大</wa-switch>
 <br />
-<wa-switch size="xl">Extra Large</wa-switch>
+<wa-switch size="xl">超大</wa-switch>
 ```
 
-### Hint
+### 提示
 
-Add descriptive hint to a switch with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
+使用 `hint` 属性为开关添加描述性提示。对于包含 HTML 的提示，请改为使用 `hint` 插槽。
 
 ```html {.example}
-<wa-switch hint="What should the user know about the switch?">Label</wa-switch>
+<wa-switch hint="用户应该了解关于开关的什么信息？">标签</wa-switch>
 ```
 
-### Custom Styles
+### 自定义样式
 
-Use the available custom properties to change how the switch is styled.
+使用可用的自定义属性来改变开关的样式。
 
 ```html {.example}
-<wa-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</wa-switch>
+<wa-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">超大的</wa-switch>
 ```

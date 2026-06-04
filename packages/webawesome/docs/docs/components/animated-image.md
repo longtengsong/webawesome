@@ -1,62 +1,67 @@
 ---
-title: Animated Image
+title: 动画图片
 layout: component
 category: Media
 synonyms:
   - gif
   - webp
   - motion image
+  - 动态图片
+  - 动图
 use-cases:
   - animated gif
   - play pause image
   - hover animation
+  - GIF动画
+  - 播放暂停图片
+  - 悬停动画
 ---
 
 ```html {.example}
 <wa-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
-  alt="Animation of untied shoes walking on pavement"
+  alt="鞋带解开的鞋子在人行道上行走的动画"
 ></wa-animated-image>
 ```
 
 :::info
-This component uses `<canvas>` to draw freeze frames, so images are subject to [cross-origin restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image).
+此组件使用 `<canvas>` 来绘制冻结帧，因此图片受[跨域限制](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image)约束。
 :::
 
-## Examples
+## 示例
 
-### WEBP Images
+### WEBP 图片
 
-Both GIF and WEBP images are supported.
+GIF 和 WEBP 图片都支持。
 
 ```html {.example}
 <wa-animated-image
   src="https://shoelace.style/assets/images/tie.webp"
-  alt="Animation of a shoe being tied"
+  alt="系鞋带的动画"
 ></wa-animated-image>
 ```
 
-### Setting a Width and Height
+### 设置宽度和高度
 
-To set a custom size, apply a width and/or height to the host element.
+要设置自定义尺寸，将宽度和/或高度应用于宿主元素。
 
 ```html {.example}
 <wa-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
-  alt="Animation of untied shoes walking on pavement"
+  alt="鞋带解开的鞋子在人行道上行走的动画"
   style="width: 150px; height: 200px;"
 >
 </wa-animated-image>
 ```
 
-### Customizing the Control Box
+### 自定义控制框
 
-You can change the appearance and location of the control box by targeting the `control-box` part in your styles.
+你可以通过在样式中定位 `control-box` 部件来更改控制框的外观和位置。
 
 ```html {.example}
 <wa-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
-  alt="Animation of untied shoes walking on pavement"
+  alt="鞋带解开的鞋子在人行道上行走的动画"
   class="animated-image-custom-control-box"
 ></wa-animated-image>
 

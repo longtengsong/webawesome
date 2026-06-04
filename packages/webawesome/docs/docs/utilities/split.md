@@ -1,16 +1,21 @@
 ---
-title: Split
-description: 'Use the `wa-split` class to distribute two or more items evenly across available space, either in a row or a column.'
+title: 分割布局
+description: 使用 `wa-split` 类在可用空间中均匀分布两个或多个项目，无论是在行还是列中。
 layout: docs
 tags: layoutUtilities
 synonyms:
   - holy grail
   - sidebar layout
   - main aside
+  - 侧边栏布局
+  - 主侧边
 use-cases:
   - two column
   - content sidebar
   - layout split
+  - 两列
+  - 内容侧边栏
+  - 布局分割
 ---
 
 <style>
@@ -28,9 +33,9 @@ use-cases:
   }
 </style>
 
-A split pushes its children to opposite ends of the container, filling the space between them. It's what you want whenever you need a logo on one side and navigation on the other, a section heading paired with an action button, or a list item whose label and value sit at opposite ends of the row. Any number of children work: the first one hugs the start, the last one hugs the end, and anything in between is evenly distributed.
+分割布局将其子项目推到容器的相对两端，填充它们之间的空间。当您需要一侧有徽标而另一侧有导航、节标题与操作按钮配对或标签和值位于行的相对两端的列表项时，这就是您想要的。任意数量的子项都可以：第一个靠近开头，最后一个靠近结尾，中间的任何内容均匀分布。
 
-By default a split runs horizontally; append `:column` to stack items vertically instead. When the container gets too narrow for everything to fit on one row, the items wrap automatically.
+默认情况下，分割布局水平运行；附加 `:column` 以改为垂直堆叠项目。当容器变得太窄而无法容纳所有内容在一行时，项目会自动换行。
 
 ```html {.example}
 <div class="wa-split">
@@ -39,9 +44,9 @@ By default a split runs horizontally; append `:column` to stack items vertically
 </div>
 ```
 
-## Examples
+## 示例
 
-Splits are especially helpful for navigation, header, and footer layouts.
+分割布局对于导航、页眉和页脚布局特别有用。
 
 ```html {.example}
 <div class="wa-flank">
@@ -99,9 +104,9 @@ Splits are especially helpful for navigation, header, and footer layouts.
 </style>
 ```
 
-## Direction
+## 方向
 
-Items can be split across a row or a column by appending `:row` or `:column` to the `wa-split` class.
+通过向 `wa-split` 类附加 `:row` 或 `:column`，项目可以跨一行或一列分割。
 
 ```html {.example}
 <div class="wa-flank wa-align-items-start" style="block-size: 16rem;">
@@ -116,9 +121,9 @@ Items can be split across a row or a column by appending `:row` or `:column` to 
 </div>
 ```
 
-## Align Items
+## 对齐项目
 
-By default, items are centered on the cross axis of the `wa-split` container. You can add any of the following [`wa-align-items-*`](/docs/utilities/align-items) classes to an element with `wa-split` to specify how items are aligned:
+默认情况下，项目在 `wa-split` 容器的交叉轴上居中。您可以向带有 `wa-split` 的元素添加以下任何 [`wa-align-items-*`](/docs/utilities/align-items) 类，以指定项目的对齐方式：
 
 - `wa-align-items-start`
 - `wa-align-items-end`
@@ -126,7 +131,7 @@ By default, items are centered on the cross axis of the `wa-split` container. Yo
 - `wa-align-items-stretch`
 - `wa-align-items-baseline`
 
-These modifiers specify how items are aligned in the block direction for `wa-split:row` and in the inline direction for `wa-split:column`.
+这些修饰符指定对于 `wa-split:row` 在块方向上的项目对齐方式，以及对于 `wa-split:column` 在内联方向上的对齐方式。
 
 ```html {.example}
 <div class="wa-stack">
@@ -149,9 +154,9 @@ These modifiers specify how items are aligned in the block direction for `wa-spl
 </div>
 ```
 
-## Gap
+## 间距
 
-A split's gap determines how close items can be before they wrap. By default, the gap between split items uses `--wa-space-m` from your theme. You can add any of the following [`wa-gap-*`](/docs/utilities/gap) classes to an element with `wa-split` to specify the gap between items:
+分割布局的间距决定了项目在换行之前可以有多近。默认情况下，分割项目之间的间距使用主题中的 `--wa-space-m`。您可以向带有 `wa-split` 的元素添加以下任何 [`wa-gap-*`](/docs/utilities/gap) 类，以指定项目之间的间距：
 
 - `wa-gap-0`
 - `wa-gap-3xs`

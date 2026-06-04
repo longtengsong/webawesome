@@ -1,13 +1,18 @@
 ---
-title: Transitions
-description: Customize your theme's built-in transitions with Web Awesome's transition tokens.
+title: 过渡
+description: 使用 Web Awesome 的过渡令牌自定义主题的内置过渡效果。
 synonyms:
   - animation timing
   - easing
   - duration
+  - 动画时间
+  - 缓动
+  - 持续时间
 use-cases:
   - transition speed
   - motion tokens
+  - 过渡速度
+  - 动效令牌
 hasOutline: true
 ---
 
@@ -35,54 +40,54 @@ hasOutline: true
   }
 </style>
 
-Transition tokens make interactions feel more lively and help users understand the relationship between their action and its outcome.
+过渡令牌使交互感觉更加生动，并帮助用户理解其操作与其结果之间的关系。
 
-Mouse over or focus the preview swatches below to see each token in action.
+将鼠标悬停或聚焦在下面的预览样例上，以查看每个令牌的实际效果。
 
-## Duration
+## 持续时间
 
-Web Awesome uses different transition durations to make it easy to track a component's state while minimizing sluggish or distracting movement.
+Web Awesome 使用不同的过渡持续时间，以便于跟踪组件状态，同时最大程度地减少迟钝或分散注意力的动作。
 
-Properties that change between frequent, incidental states (like hover) typically use faster durations than properties that change between intentional states (like opening a menu or checking a box).
+频繁、偶然状态（如悬停）之间变化的属性通常比故意状态（如打开菜单或选中复选框）之间变化的属性使用更快的持续时间。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-transition-fast">
         <td class="token-name"><code>--wa-transition-fast</code></td>
-        <td>Fast duration for frequent, incidental state changes like hover and focus</td>
+        <td>用于频繁、偶然状态变化的快速持续时间，如悬停和聚焦</td>
         <td><div tabindex="0" class="swatch transition-swatch" style="transition: width var(--wa-transition-fast) var(--wa-transition-easing)"></div></td>
       </tr>
       <tr id="token-wa-transition-normal">
         <td class="token-name"><code>--wa-transition-normal</code></td>
-        <td>Standard duration for typical state changes</td>
+        <td>用于典型状态变化的标准持续时间</td>
         <td><div tabindex="0" class="swatch transition-swatch" style="transition: width var(--wa-transition-normal) var(--wa-transition-easing)"></div></td>
       </tr>
       <tr id="token-wa-transition-slow">
         <td class="token-name"><code>--wa-transition-slow</code></td>
-        <td>Slow duration for intentional, impactful state changes like opening a panel or checking a box</td>
+        <td>用于故意、有影响的状态变化的缓慢持续时间，如打开面板或选中复选框</td>
         <td><div tabindex="0" class="swatch transition-swatch" style="transition: width var(--wa-transition-slow) var(--wa-transition-easing)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Easing
+## 缓动
 
-Easing controls the standard `transition-timing-function` used for transitions throughout Web Awesome.
+缓动控制 Web Awesome 中所有过渡使用的标准 `transition-timing-function`。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-transition-easing">
         <td class="token-name"><code>--wa-transition-easing</code></td>
-        <td>Timing function (<code>transition-timing-function</code>) used for all Web Awesome transitions</td>
+        <td>用于所有 Web Awesome 过渡的计时函数 (<code>transition-timing-function</code>)</td>
         <td><div tabindex="0" class="swatch transition-swatch" style="transition: width 600ms var(--wa-transition-easing)"></div></td>
       </tr>
     </tbody>

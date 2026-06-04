@@ -1,5 +1,5 @@
 ---
-title: Callout
+title: 提示框
 layout: component
 category: Feedback
 synonyms:
@@ -8,152 +8,156 @@ synonyms:
   - notice
   - banner
   - infobox
+  - 警告框
+  - 提示
 use-cases:
   - warning message
   - info message
   - tip
   - important note
+  - 警告消息
+  - 提示消息
 ---
 
 ```html {.example}
 <wa-callout>
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  This is a standard callout. You can customize its content and even the icon.
+  这是一个标准的提示框。你可以自定义其内容甚至图标。
 </wa-callout>
 ```
 
-## Examples
+## 示例
 
-### Variants
+### 变体
 
-Set the `variant` attribute to change the callout's variant.
+设置 `variant` 属性来更改提示框的变体。
 
 ```html {.example}
 <wa-callout variant="brand">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  <strong>This is super informative</strong><br />
-  You can tell by how pretty the callout is.
+  <strong>这非常有帮助</strong><br />
+  你可以从这个漂亮的提示框中看出来。
 </wa-callout>
 
 <br />
 
 <wa-callout variant="success">
   <wa-icon slot="icon" name="circle-check"></wa-icon>
-  <strong>Your changes have been saved</strong><br />
-  You can safely exit the app now.
+  <strong>你的更改已保存</strong><br />
+  现在你可以安全地退出应用程序了。
 </wa-callout>
 
 <br />
 
 <wa-callout variant="neutral">
   <wa-icon slot="icon" name="gear"></wa-icon>
-  <strong>Your settings have been updated</strong><br />
-  Settings will take effect on next login.
+  <strong>你的设置已更新</strong><br />
+  设置将在下次登录时生效。
 </wa-callout>
 
 <br />
 
 <wa-callout variant="warning">
   <wa-icon slot="icon" name="triangle-exclamation"></wa-icon>
-  <strong>Your session has ended</strong><br />
-  Please login again to continue.
+  <strong>你的会话已结束</strong><br />
+  请重新登录以继续。
 </wa-callout>
 
 <br />
 
 <wa-callout variant="danger">
   <wa-icon slot="icon" name="circle-exclamation"></wa-icon>
-  <strong>Your account has been deleted</strong><br />
-  We're very sorry to see you go!
+  <strong>你的账户已被删除</strong><br />
+  我们很遗憾看到你离开！
 </wa-callout>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the callout's visual appearance (the default is `filled-outlined`).
+使用 `appearance` 属性来更改提示框的视觉外观（默认为 `filled-outlined`）。
 
 ```html {.example}
 <wa-callout variant="brand" appearance="accent">
   <wa-icon slot="icon" name="square-check"></wa-icon>
-  This <strong>accent</strong> callout draws attention
+  这个 <strong>强调</strong> 提示框会吸引注意力
 </wa-callout>
 
 <br />
 
 <wa-callout variant="brand" appearance="filled-outlined">
   <wa-icon slot="icon" name="fill-drip"></wa-icon>
-  This callout is both <strong>filled</strong> and <strong>outlined</strong>
+  这个提示框既是 <strong>填充</strong> 的又是 <strong>轮廓</strong> 的
 </wa-callout>
 
 <br />
 
 <wa-callout variant="brand" appearance="filled">
   <wa-icon slot="icon" name="fill"></wa-icon>
-  This callout is only <strong>filled</strong>
+  这个提示框只是 <strong>填充</strong> 的
 </wa-callout>
 
 <br />
 
 <wa-callout variant="brand" appearance="outlined">
   <wa-icon slot="icon" name="lines-leaning"></wa-icon>
-  Here's an <strong>outlined</strong> callout
+  这里有一个 <strong>轮廓</strong> 提示框
 </wa-callout>
 
 <br />
 
 <wa-callout variant="brand" appearance="plain">
   <wa-icon slot="icon" name="font"></wa-icon>
-  No bells and whistles on this <strong>plain</strong> callout
+  这个 <strong>朴素</strong> 的提示框没有多余装饰
 </wa-callout>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change a callout's size.
+使用 `size` 属性来更改提示框的尺寸。
 
 ```html {.example}
 <wa-callout size="xs">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  Extra-small callout for minimal emphasis.
+  超小提示框，用于最小化强调。
 </wa-callout>
 
 <br />
 
 <wa-callout size="s">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  Small callout for a bit of emphasis.
+  小提示框，用于轻微强调。
 </wa-callout>
 
 <br />
 
 <wa-callout size="m">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  Medium callout, the default size.
+  中等提示框，默认尺寸。
 </wa-callout>
 
 <br />
 
 <wa-callout size="l">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  Large callout for more emphasis.
+  大提示框，用于更多强调。
 </wa-callout>
 
 <br />
 
 <wa-callout size="xl">
   <wa-icon slot="icon" name="circle-info"></wa-icon>
-  Extra-large callout for maximum emphasis.
+  超大提示框，用于最大强调。
 </wa-callout>
 ```
 
-### Without Icons
+### 无图标
 
-Icons are optional. Simply omit the `icon` slot if you don't want them.
+图标是可选的。如果你不想要它们，只需省略 `icon` 插槽即可。
 
 ```html {.example}
-<wa-callout variant="brand"> Nothing fancy here, just a simple callout. </wa-callout>
+<wa-callout variant="brand"> 这里没有什么花哨的，只是一个简单的提示框。 </wa-callout>
 ```
 
-### Styling
+### 样式
 
-You can customize the callout's appearance mostly by setting regular CSS properties. `background`, `border`, `border-radius`, `color`, `padding`, `margin`, etc. work as expected.
+你主要可以通过设置常规 CSS 属性来自定义提示框的外观。`background`、`border`、`border-radius`、`color`、`padding`、`margin` 等都能按预期工作。

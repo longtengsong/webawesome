@@ -52,18 +52,18 @@ function generateComponentApiSection(component, frontMatterCache, baseUrl) {
 
   lines.push(`#### \`<${component.tagName}>\``);
   lines.push('');
-  lines.push(`**Description:** ${description || 'No description available.'}`);
+  lines.push(`**描述:** ${description || '暂无描述。'}`);
   lines.push('');
-  lines.push(`**Documentation:** ${baseUrl}/docs/components/${componentSlug}`);
+  lines.push(`**文档:** ${baseUrl}/docs/components/${componentSlug}`);
   lines.push('');
 
   // Slots
   if (component.slots?.length > 0) {
-    lines.push('**Slots:**');
+    lines.push('**插槽:**');
     lines.push('');
     for (const slot of component.slots) {
-      const slotName = slot.name || '(default)';
-      lines.push(`- \`${slotName}\`: ${removeNewlines(slot.description) || 'No description.'}`);
+      const slotName = slot.name || '(默认)';
+      lines.push(`- \`${slotName}\`: ${removeNewlines(slot.description) || '暂无描述。'}`);
     }
     lines.push('');
   }
@@ -73,18 +73,18 @@ function generateComponentApiSection(component, frontMatterCache, baseUrl) {
     component.members?.filter(m => m.kind === 'field' && m.privacy !== 'private' && m.description) || [];
 
   if (properties.length > 0) {
-    lines.push('**Properties:**');
+    lines.push('**属性:**');
     lines.push('');
     for (const prop of properties) {
       // Find corresponding attribute if any
       const attr = component.attributes?.find(a => a.fieldName === prop.name);
-      const attrNote = attr && attr.name !== prop.name ? ` (attribute: \`${attr.name}\`)` : '';
-      const typeStr = prop.type?.text ? `Type: \`${removeNewlines(prop.type.text)}\`` : '';
-      const defaultStr = prop.default ? `Default: \`${prop.default}\`` : '';
+      const attrNote = attr && attr.name !== prop.name ? ` (特性: \`${attr.name}\`)` : '';
+      const typeStr = prop.type?.text ? `类型: \`${removeNewlines(prop.type.text)}\`` : '';
+      const defaultStr = prop.default ? `默认值: \`${prop.default}\`` : '';
       const meta = [typeStr, defaultStr].filter(Boolean).join(', ');
 
       lines.push(
-        `- \`${prop.name}\`${attrNote}: ${removeNewlines(prop.description) || 'No description.'}${meta ? ` (${meta})` : ''}`,
+        `- \`${prop.name}\`${attrNote}: ${removeNewlines(prop.description) || '暂无描述。'}${meta ? ` (${meta})` : ''}`,
       );
     }
     lines.push('');
@@ -94,13 +94,13 @@ function generateComponentApiSection(component, frontMatterCache, baseUrl) {
   const methods = component.members?.filter(m => m.kind === 'method' && m.privacy !== 'private' && m.description) || [];
 
   if (methods.length > 0) {
-    lines.push('**Methods:**');
+    lines.push('**方法:**');
     lines.push('');
     for (const method of methods) {
       const params = method.parameters?.length
-        ? `(${method.parameters.map(p => `${p.name}: ${removeNewlines(p.type?.text) || 'unknown'}`).join(', ')})`
+        ? `(${method.parameters.map(p => `${p.name}: ${removeNewlines(p.type?.text) || '未知'}`).join(', ')})`
         : '()';
-      lines.push(`- \`${method.name}${params}\`: ${removeNewlines(method.description) || 'No description.'}`);
+      lines.push(`- \`${method.name}${params}\`: ${removeNewlines(method.description) || '暂无描述。'}`);
     }
     lines.push('');
   }
@@ -108,41 +108,41 @@ function generateComponentApiSection(component, frontMatterCache, baseUrl) {
   // Events
   const events = component.events?.filter(e => e.name) || [];
   if (events.length > 0) {
-    lines.push('**Events:**');
+    lines.push('**事件:**');
     lines.push('');
     for (const event of events) {
-      lines.push(`- \`${event.name}\`: ${removeNewlines(event.description) || 'No description.'}`);
+      lines.push(`- \`${event.name}\`: ${removeNewlines(event.description) || '暂无描述。'}`);
     }
     lines.push('');
   }
 
   // CSS Custom Properties
   if (component.cssProperties?.length > 0) {
-    lines.push('**CSS Custom Properties:**');
+    lines.push('**CSS 自定义属性:**');
     lines.push('');
     for (const prop of component.cssProperties) {
-      const defaultStr = prop.default ? ` (Default: \`${prop.default}\`)` : '';
-      lines.push(`- \`${prop.name}\`: ${removeNewlines(prop.description) || 'No description.'}${defaultStr}`);
+      const defaultStr = prop.default ? ` (默认值: \`${prop.default}\`)` : '';
+      lines.push(`- \`${prop.name}\`: ${removeNewlines(prop.description) || '暂无描述。'}${defaultStr}`);
     }
     lines.push('');
   }
 
   // CSS Parts
   if (component.cssParts?.length > 0) {
-    lines.push('**CSS Parts:**');
+    lines.push('**CSS 部件:**');
     lines.push('');
     for (const part of component.cssParts) {
-      lines.push(`- \`${part.name}\`: ${removeNewlines(part.description) || 'No description.'}`);
+      lines.push(`- \`${part.name}\`: ${removeNewlines(part.description) || '暂无描述。'}`);
     }
     lines.push('');
   }
 
   // CSS States
   if (component.cssStates?.length > 0) {
-    lines.push('**CSS States:**');
+    lines.push('**CSS 状态:**');
     lines.push('');
     for (const state of component.cssStates) {
-      lines.push(`- \`${state.name}\`: ${removeNewlines(state.description) || 'No description.'}`);
+      lines.push(`- \`${state.name}\`: ${removeNewlines(state.description) || '暂无描述。'}`);
     }
     lines.push('');
   }
@@ -169,15 +169,11 @@ function generateLlmsTxt({ components, packageData, frontMatterCache, baseUrl })
   // Overview section
   lines.push(
     `
-Web Awesome provides a comprehensive set of customizable, accessible web components for building modern
-web applications. All components use shadow DOM and are framework-agnostic, working with vanilla JavaScript
-or any framework including React, Vue, Angular, and Svelte.
+Web Awesome 提供一套全面的、可自定义的、可访问的 Web 组件，用于构建现代化的 Web 应用程序。所有组件都使用 Shadow DOM，并且与框架无关，可以与原生 JavaScript 或任何框架（包括 React、Vue、Angular 和 Svelte）一起使用。
 
-Form controls are form-associated custom elements that work with native form validation and the
-Constraint Validation API.
+表单控件是与表单关联的自定义元素，可与原生表单验证和约束验证 API 配合使用。
 
-Font Awesome is the default icon library, so \`<wa-icon name="...">\` values should reference Font Awesome
-icon names.
+Font Awesome 是默认图标库，因此 \`<wa-icon name="...">\` 的值应引用 Font Awesome 图标名称。
 `.trim(),
   );
   lines.push('');
@@ -185,20 +181,20 @@ icon names.
   //
   // Documentation
   //
-  lines.push('## Documentation');
+  lines.push('## 文档');
   lines.push('');
-  lines.push(`For comprehensive documentation, visit ${baseUrl}/docs/`);
+  lines.push(`如需完整文档，请访问 ${baseUrl}/docs/`);
   lines.push('');
-  lines.push(`- [Getting Started](${baseUrl}/docs/getting-started): Installation and setup guide`);
-  lines.push(`- [Components Overview](${baseUrl}/docs/components): Complete component reference`);
-  lines.push(`- [Theming](${baseUrl}/docs/theming): Customization and design tokens`);
-  lines.push(`- [Form Controls](${baseUrl}/docs/form-controls): Form integration and validation`);
+  lines.push(`- [开始使用](${baseUrl}/docs/getting-started): 安装和设置指南`);
+  lines.push(`- [组件概览](${baseUrl}/docs/components): 完整组件参考`);
+  lines.push(`- [主题](${baseUrl}/docs/theming): 自定义和设计令牌`);
+  lines.push(`- [表单控件](${baseUrl}/docs/form-controls): 表单集成和验证`);
   lines.push('');
 
   //
   // Components
   //
-  lines.push('## Components');
+  lines.push('## 组件');
   lines.push('');
 
   const sortedComponentsList = components.filter(c => c.tagName).sort((a, b) => a.tagName.localeCompare(b.tagName));
@@ -210,7 +206,7 @@ icon names.
     const title = frontMatter?.title || componentSlug;
 
     lines.push(
-      `- [${title}](${baseUrl}/docs/components/${componentSlug}): ${description || 'No description available.'}`,
+      `- [${title}](${baseUrl}/docs/components/${componentSlug}): ${description || '暂无描述。'}`,
     );
   }
   lines.push('');
@@ -218,10 +214,10 @@ icon names.
   //
   // Optional
   //
-  lines.push('## Optional');
+  lines.push('## 可选');
   lines.push('');
   lines.push(
-    `The following is a quick reference describing every component's API. For comprehensive documentation, refer to the component documentation using the URLs provided above.`,
+    `以下是描述每个组件 API 的快速参考。如需完整文档，请使用上面提供的 URL 参考组件文档。`,
   );
   lines.push('');
 

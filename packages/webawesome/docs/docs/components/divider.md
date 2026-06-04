@@ -1,5 +1,5 @@
 ---
-title: Divider
+title: 分隔线
 layout: component
 category: Layout
 synonyms:
@@ -8,37 +8,41 @@ synonyms:
   - line
   - hr
   - horizontal rule
+  - 分隔符
+  - 水平线
 use-cases:
   - section divider
   - content separator
   - visual break
+  - 区域分隔
+  - 内容分隔
 ---
 
 ```html {.example}
 <wa-divider></wa-divider>
 ```
 
-## Examples
+## 示例
 
-### Width
+### 宽度
 
-Use the `--width` custom property to change the width of the divider.
+使用 `--width` 自定义属性来更改分隔线的宽度。
 
 ```html {.example}
 <wa-divider style="--width: 4px;"></wa-divider>
 ```
 
-### Color
+### 颜色
 
-Use the `--color` custom property to change the color of the divider.
+使用 `--color` 自定义属性来更改分隔线的颜色。
 
 ```html {.example}
 <wa-divider style="--color: tomato;"></wa-divider>
 ```
 
-### Spacing
+### 间距
 
-Use the `--spacing` custom property to change the amount of space between the divider and it's neighboring elements.
+使用 `--spacing` 自定义属性来更改分隔线与其相邻元素之间的间距量。
 
 ```html {.example}
 <div style="text-align: center;">
@@ -48,9 +52,9 @@ Use the `--spacing` custom property to change the amount of space between the di
 </div>
 ```
 
-### Orientation
+### 方向
 
-The default orientation for dividers is `horizontal`. Set `orientation` attribute to `vertical` to draw a vertical divider. The divider will span the full height of its [Flexbox](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox) or [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid) container.
+分隔线的默认方向是 `horizontal`。将 `orientation` 属性设置为 `vertical` 以绘制垂直分隔线。分隔线将跨越其 [Flexbox](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox) 或 [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid) 容器的完整高度。
 
 ```html {.example}
 <div style="display: flex; align-items: center;">
@@ -63,12 +67,12 @@ The default orientation for dividers is `horizontal`. Set `orientation` attribut
 ```
 
 :::info
-If your container isn't Flexbox or CSS Grid, you may need to set an explicit height for the divider.
+如果你的容器不是 Flexbox 或 CSS Grid，你可能需要为分隔线设置明确的高度。
 :::
 
-### Dropdown Dividers
+### 下拉分隔线
 
-Use dividers in [dropdowns](/docs/components/dropdown) to visually group dropdown items.
+在[下拉菜单](/docs/components/dropdown)中使用分隔线来可视化地分组下拉项。
 
 ```html {.example}
 <wa-dropdown style="max-width: 200px;">

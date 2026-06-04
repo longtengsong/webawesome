@@ -1,102 +1,107 @@
 ---
-title: Breadcrumb
+title: 面包屑
 layout: component
 category: Navigation
 synonyms:
   - breadcrumbs
   - navigation trail
   - path
+  - 导航路径
+  - 路径
 use-cases:
   - wayfinding
   - site navigation
   - hierarchy navigation
+  - 寻路
+  - 站点导航
+  - 层级导航
 ---
 
-Breadcrumbs are usually placed before a page's main content with the current page shown last to indicate the user's position in the navigation.
+面包屑通常放置在页面的主要内容之前，最后显示当前页面，以指示用户在导航中的位置。
 
 ```html {.example}
 <wa-breadcrumb>
-  <wa-breadcrumb-item>Catalog</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Clothing</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Women's</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Shirts &amp; Tops</wa-breadcrumb-item>
+  <wa-breadcrumb-item>目录</wa-breadcrumb-item>
+  <wa-breadcrumb-item>服装</wa-breadcrumb-item>
+  <wa-breadcrumb-item>女装</wa-breadcrumb-item>
+  <wa-breadcrumb-item>衬衫和上衣</wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-## Examples
+## 示例
 
-### Breadcrumb Links
+### 面包屑链接
 
-By default, breadcrumb items are rendered as buttons so you can use them to navigate single-page applications. In this case, you'll need to add event listeners to handle clicks.
+默认情况下，面包屑项被渲染为按钮，因此你可以使用它们来导航单页应用。在这种情况下，你需要添加事件监听器来处理点击。
 
-For websites, you'll probably want to use links instead. You can make any breadcrumb item a link by applying an `href` attribute to it. Now, when the user activates it, they'll be taken to the corresponding page — no event listeners required.
+对于网站，你可能希望使用链接代替。你可以通过向任何面包屑项应用 `href` 属性来将其设为链接。现在，当用户激活它时，他们会被带到相应的页面——不需要事件监听器。
 
-The last item represents the current page. Use `href=""` so it points at itself — `<wa-breadcrumb>` will mark it with `aria-current="page"` and style it as non-interactive for you.
+最后一项代表当前页面。使用 `href=""` 使其指向自身——`<wa-breadcrumb>` 会为你使用 `aria-current="page"` 标记它并将其样式设为非交互式。
 
 ```html {.example}
 <wa-breadcrumb>
-  <wa-breadcrumb-item href="https://example.com/home">Homepage</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home">首页</wa-breadcrumb-item>
 
-  <wa-breadcrumb-item href="https://example.com/home/services">Our Services</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home/services">我们的服务</wa-breadcrumb-item>
 
-  <wa-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="https://example.com/home/services/digital">数字媒体</wa-breadcrumb-item>
 
-  <wa-breadcrumb-item href="">Web Design</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="">网页设计</wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-### Start & End Decorations
+### 开始和结束装饰
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` next to any breadcrumb item.
+使用 `start` 和 `end` 插槽在任何面包屑项旁边添加展示元素，如 `<wa-icon>`。
 
 ```html {.example}
 <wa-breadcrumb>
   <wa-breadcrumb-item>
     <wa-icon slot="start" name="house"></wa-icon>
-    Home
+    首页
   </wa-breadcrumb-item>
-  <wa-breadcrumb-item>Articles</wa-breadcrumb-item>
+  <wa-breadcrumb-item>文章</wa-breadcrumb-item>
   <wa-breadcrumb-item>
     <wa-icon slot="end" name="umbrella-beach"></wa-icon>
-    Traveling
+    旅行
   </wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-### Custom Separators
+### 自定义分隔符
 
-Use the `separator` slot to change the separator that goes between breadcrumb items. Icons work well, but you can also use text or an image.
+使用 `separator` 插槽来更改面包屑项之间的分隔符。图标效果很好，但你也可以使用文本或图片。
 
 ```html {.example}
 <wa-breadcrumb>
   <wa-icon slot="separator" name="angles-right" variant="solid"></wa-icon>
-  <wa-breadcrumb-item>First</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Second</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Third</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第一项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第二项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第三项</wa-breadcrumb-item>
 </wa-breadcrumb>
 
 <br />
 
 <wa-breadcrumb>
   <wa-icon slot="separator" name="arrow-right" variant="solid"></wa-icon>
-  <wa-breadcrumb-item>First</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Second</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Third</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第一项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第二项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第三项</wa-breadcrumb-item>
 </wa-breadcrumb>
 
 <br />
 
 <wa-breadcrumb>
   <span slot="separator">/</span>
-  <wa-breadcrumb-item>First</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Second</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Third</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第一项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第二项</wa-breadcrumb-item>
+  <wa-breadcrumb-item>第三项</wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-### Custom Colors
+### 自定义颜色
 
-Breadcrumb labels match the color set on `<wa-breadcrumb-item>`. Content in the `start`, `end`, and `separator` slots can be styled using CSS parts.
+面包屑标签与 `<wa-breadcrumb-item>` 上设置的颜色相匹配。`start`、`end` 和 `separator` 插槽中的内容可以使用 CSS 部件进行样式设置。
 
 ```html {.example}
 <style>
@@ -117,51 +122,51 @@ Breadcrumb labels match the color set on `<wa-breadcrumb-item>`. Content in the 
 <wa-breadcrumb class="redcrumbs">
   <wa-breadcrumb-item>
     <wa-icon slot="start" name="house" variant="solid"></wa-icon>
-    Home
+    首页
   </wa-breadcrumb-item>
-  <wa-breadcrumb-item>Articles</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Traveling</wa-breadcrumb-item>
+  <wa-breadcrumb-item>文章</wa-breadcrumb-item>
+  <wa-breadcrumb-item>旅行</wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-### With Dropdowns
+### 与下拉菜单一起使用
 
-Dropdown menus can be placed in the default slot to provide additional options.
+下拉菜单可以放置在默认插槽中以提供额外选项。
 
 ```html {.example}
 <wa-breadcrumb>
-  <wa-breadcrumb-item>Homepage</wa-breadcrumb-item>
+  <wa-breadcrumb-item>首页</wa-breadcrumb-item>
   <wa-breadcrumb-item>
     <wa-dropdown>
       <wa-button slot="trigger" size="s" appearance="filled" pill>
-        <wa-icon label="More options" name="ellipsis" variant="solid"></wa-icon>
+        <wa-icon label="更多选项" name="ellipsis" variant="solid"></wa-icon>
       </wa-button>
-      <wa-dropdown-item type="checkbox" checked>Web Design</wa-dropdown-item>
-      <wa-dropdown-item type="checkbox">Web Development</wa-dropdown-item>
-      <wa-dropdown-item type="checkbox">Marketing</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox" checked>网页设计</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox">网页开发</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox">营销</wa-dropdown-item>
     </wa-dropdown>
   </wa-breadcrumb-item>
-  <wa-breadcrumb-item>Our Services</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Digital Media</wa-breadcrumb-item>
+  <wa-breadcrumb-item>我们的服务</wa-breadcrumb-item>
+  <wa-breadcrumb-item>数字媒体</wa-breadcrumb-item>
 </wa-breadcrumb>
 ```
 
-Alternatively, you can place dropdown menus in a `start` or `end` slot.
+或者，你可以将下拉菜单放置在 `start` 或 `end` 插槽中。
 
 ```html {.example}
 <wa-breadcrumb>
-  <wa-breadcrumb-item>Homepage</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Our Services</wa-breadcrumb-item>
-  <wa-breadcrumb-item>Digital Media</wa-breadcrumb-item>
+  <wa-breadcrumb-item>首页</wa-breadcrumb-item>
+  <wa-breadcrumb-item>我们的服务</wa-breadcrumb-item>
+  <wa-breadcrumb-item>数字媒体</wa-breadcrumb-item>
   <wa-breadcrumb-item>
-    Web Design
+    网页设计
     <wa-dropdown slot="end">
       <wa-button slot="trigger" size="s" appearance="filled" pill>
-        <wa-icon label="More options" name="ellipsis" variant="solid"></wa-icon>
+        <wa-icon label="更多选项" name="ellipsis" variant="solid"></wa-icon>
       </wa-button>
-      <wa-dropdown-item type="checkbox" checked>Web Design</wa-dropdown-item>
-      <wa-dropdown-item type="checkbox">Web Development</wa-dropdown-item>
-      <wa-dropdown-item type="checkbox">Marketing</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox" checked>网页设计</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox">网页开发</wa-dropdown-item>
+      <wa-dropdown-item type="checkbox">营销</wa-dropdown-item>
     </wa-dropdown>
   </wa-breadcrumb-item>
 </wa-breadcrumb>

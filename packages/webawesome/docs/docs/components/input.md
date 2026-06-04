@@ -1,18 +1,18 @@
 ---
-title: Input
+title: 输入框
 layout: component
 category: Forms
 synonyms:
-  - text field
-  - text box
-  - form field
-  - text input
+  - text field, 文本字段
+  - text box, 文本框
+  - form field, 表单字段
+  - text input, 文本输入
 use-cases:
-  - form input
-  - search box
-  - email field
-  - password field
-  - url field
+  - form input, 表单输入
+  - search box, 搜索框
+  - email field, 邮箱字段
+  - password field, 密码字段
+  - url field, 网址字段
 ---
 
 ```html {.example}
@@ -20,143 +20,143 @@ use-cases:
 ```
 
 :::info
-This component works with standard `<form>` elements. Please refer to the section on [form controls](/docs/form-controls) to learn more about form submission and client-side validation.
+该组件与标准 `<form>` 元素配合使用。请参阅[表单控件](/docs/form-controls)一节，了解更多关于表单提交和客户端验证的信息。
 :::
 
-## Examples
+## 示例
 
-### Labels
+### 标签
 
-Use the `label` attribute to give the input an accessible label. For labels that contain HTML, use the `label` slot instead.
+使用 `label` 特性为输入框提供可访问的标签。对于包含 HTML 的标签，请改用 `label` 插槽。
 
 ```html {.example}
-<wa-input label="What is your name?"></wa-input>
+<wa-input label="您叫什么名字？"></wa-input>
 ```
 
-### Hint
+### 提示
 
-Add descriptive hint to an input with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
+使用 `hint` 特性为输入框添加描述性提示。对于包含 HTML 的提示，请改用 `hint` 插槽。
 
 ```html {.example}
-<wa-input label="Nickname" hint="What would you like people to call you?"></wa-input>
+<wa-input label="昵称" hint="你希望别人怎么称呼你？"></wa-input>
 ```
 
-### Placeholders
+### 占位符
 
-Use the `placeholder` attribute to add a placeholder.
+使用 `placeholder` 特性添加占位符文本。
 
 ```html {.example}
-<wa-input placeholder="Type something"></wa-input>
+<wa-input placeholder="请输入内容"></wa-input>
 ```
 
-### Clearable
+### 可清除
 
-Add the `with-clear` attribute to add a clear button when the input has content.
+添加 `with-clear` 特性，当输入框有内容时显示清除按钮。
 
 ```html {.example}
-<wa-input placeholder="Clearable" with-clear></wa-input>
+<wa-input placeholder="可清除" with-clear></wa-input>
 ```
 
-### Toggle Password
+### 密码切换
 
-Add the `password-toggle` attribute to add a toggle button that will show the password when activated.
+添加 `password-toggle` 特性，添加一个切换按钮，激活时显示密码。
 
 ```html {.example}
-<wa-input type="password" placeholder="Password Toggle" password-toggle></wa-input>
+<wa-input type="password" placeholder="密码切换" password-toggle></wa-input>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the input's visual appearance.
+使用 `appearance` 特性更改输入框的视觉外观。
 
 ```html {.example}
-<wa-input placeholder="Type something" appearance="filled"></wa-input><br />
-<wa-input placeholder="Type something" appearance="filled-outlined"></wa-input><br />
-<wa-input placeholder="Type something" appearance="outlined"></wa-input>
+<wa-input placeholder="请输入内容" appearance="filled"></wa-input><br />
+<wa-input placeholder="请输入内容" appearance="filled-outlined"></wa-input><br />
+<wa-input placeholder="请输入内容" appearance="outlined"></wa-input>
 ```
 
-### Disabled
+### 禁用
 
-Use the `disabled` attribute to disable an input.
+使用 `disabled` 特性禁用输入框。
 
 ```html {.example}
-<wa-input placeholder="Disabled" disabled></wa-input>
+<wa-input placeholder="已禁用" disabled></wa-input>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change an input's size.
+使用 `size` 特性更改输入框的大小。
 
 ```html {.example}
-<wa-input placeholder="Extra Small" size="xs"></wa-input>
+<wa-input placeholder="超小" size="xs"></wa-input>
 <br />
-<wa-input placeholder="Small" size="s"></wa-input>
+<wa-input placeholder="小" size="s"></wa-input>
 <br />
-<wa-input placeholder="Medium" size="m"></wa-input>
+<wa-input placeholder="中" size="m"></wa-input>
 <br />
-<wa-input placeholder="Large" size="l"></wa-input>
+<wa-input placeholder="大" size="l"></wa-input>
 <br />
-<wa-input placeholder="Extra Large" size="xl"></wa-input>
+<wa-input placeholder="超大" size="xl"></wa-input>
 ```
 
-### Pill
+### 药丸形
 
-Use the `pill` attribute to give inputs rounded edges.
+使用 `pill` 特性为输入框添加圆角边缘。
 
 ```html {.example}
-<wa-input placeholder="Extra Small" size="xs" pill></wa-input>
+<wa-input placeholder="超小" size="xs" pill></wa-input>
 <br />
-<wa-input placeholder="Small" size="s" pill></wa-input>
+<wa-input placeholder="小" size="s" pill></wa-input>
 <br />
-<wa-input placeholder="Medium" size="m" pill></wa-input>
+<wa-input placeholder="中" size="m" pill></wa-input>
 <br />
-<wa-input placeholder="Large" size="l" pill></wa-input>
+<wa-input placeholder="大" size="l" pill></wa-input>
 <br />
-<wa-input placeholder="Extra Large" size="xl" pill></wa-input>
+<wa-input placeholder="超大" size="xl" pill></wa-input>
 ```
 
-### Input Types
+### 输入类型
 
-The `type` attribute controls the type of input the browser renders.
+`type` 特性控制浏览器渲染的输入框类型。
 
 ```html {.example}
-<wa-input type="email" placeholder="Email"></wa-input>
+<wa-input type="email" placeholder="邮箱"></wa-input>
 <br />
-<wa-input type="number" placeholder="Number"></wa-input>
+<wa-input type="number" placeholder="数字"></wa-input>
 <br />
-<wa-input type="date" placeholder="Date"></wa-input>
+<wa-input type="date" placeholder="日期"></wa-input>
 ```
 
-### Start & End Decorations
+### 开始和结束装饰
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` within the input.
+使用 `start` 和 `end` 插槽在输入框内添加展示性元素，如 `<wa-icon>`。
 
 ```html {.example}
-<wa-input placeholder="Small" size="s">
+<wa-input placeholder="小" size="s">
   <wa-icon name="house" slot="start"></wa-icon>
   <wa-icon name="comment" slot="end"></wa-icon>
 </wa-input>
 <br />
-<wa-input placeholder="Medium" size="m">
+<wa-input placeholder="中" size="m">
   <wa-icon name="house" slot="start"></wa-icon>
   <wa-icon name="comment" slot="end"></wa-icon>
 </wa-input>
 <br />
-<wa-input placeholder="Large" size="l">
+<wa-input placeholder="大" size="l">
   <wa-icon name="house" slot="start"></wa-icon>
   <wa-icon name="comment" slot="end"></wa-icon>
 </wa-input>
 ```
 
-### Customizing Label Position
+### 自定义标签位置
 
-Use [CSS parts](#css-parts) to customize the way form controls are drawn. This example uses CSS grid to position the label to the left of the control, but the possible orientations are nearly endless. The same technique works for inputs, textareas, radio groups, and similar form controls.
+使用 [CSS 部件](#css-parts)自定义表单控件的绘制方式。此示例使用 CSS 网格将标签定位在控件左侧，但可能的方向几乎是无限的。相同的技术适用于输入框、文本域、单选按钮组和类似的表单控件。
 
 ```html {.example}
 <div class="label-on-left">
-  <wa-input label="Name" hint="Enter your name"></wa-input>
-  <wa-input label="Email" type="email" hint="Enter your email"></wa-input>
-  <wa-textarea label="Bio" hint="Tell us something about yourself"></wa-textarea>
+  <wa-input label="姓名" hint="请输入您的姓名"></wa-input>
+  <wa-input label="邮箱" type="email" hint="请输入您的邮箱"></wa-input>
+  <wa-textarea label="简介" hint="告诉我们一些关于你自己的事情"></wa-textarea>
 </div>
 
 <style>

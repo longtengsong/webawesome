@@ -1,161 +1,161 @@
 ---
-title: Shadows
-description: Elevate your components with Web Awesome's shadow tokens.
+title: 阴影
+description: 使用 Web Awesome 的阴影令牌提升您的组件。
 synonyms:
-  - box shadow
-  - elevation
-  - depth
+  - 盒阴影
+  - 高度
+  - 深度
 use-cases:
-  - drop shadow
-  - card shadow
-  - overlay shadow
+  - 投影
+  - 卡片阴影
+  - 叠加阴影
 hasOutline: true
 ---
 
-Shadow tokens indicate elevation and, often, interactivity. Web Awesome provides three size-based shadow shorthands built from modular offset, blur, and spread tokens. Together with [`--wa-color-shadow`](?active_tab=color), these tokens create realistic drop shadows.
+阴影令牌表示高度和（通常）交互性。Web Awesome 提供了三种基于大小的阴影简写，由模块化的偏移、模糊和扩散令牌构建而成。与 [`--wa-color-shadow`](?active_tab=color) 一起，这些令牌创建逼真的投影。
 
-Larger shadows have greater offset and blur values to suggest greater distance from the surface below. Any shadow can also be used as an inner shadow with the `inset` keyword, e.g. `box-shadow: inset var(--wa-shadow-s)`.
+较大的阴影具有更大的偏移和模糊值，以暗示与下方表面的更大距离。任何阴影也可以使用 `inset` 关键字作为内阴影使用，例如 `box-shadow: inset var(--wa-shadow-s)`。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-shadow-s">
         <td class="token-name"><code>--wa-shadow-s</code></td>
-        <td>Small shadow for subtle elevation (e.g., cards, inputs)</td>
+        <td>小阴影，用于微妙的高度（例如卡片、输入框）</td>
         <td><div class="swatch" style="box-shadow: var(--wa-shadow-s)"></div></td>
       </tr>
       <tr id="token-wa-shadow-m">
         <td class="token-name"><code>--wa-shadow-m</code></td>
-        <td>Medium shadow for moderate elevation (e.g., dropdowns, popovers)</td>
+        <td>中等阴影，用于中等高度（例如下拉菜单、弹出框）</td>
         <td><div class="swatch" style="box-shadow: var(--wa-shadow-m)"></div></td>
       </tr>
       <tr id="token-wa-shadow-l">
         <td class="token-name"><code>--wa-shadow-l</code></td>
-        <td>Large shadow for high elevation (e.g., dialogs, drawers)</td>
+        <td>大阴影，用于高高度（例如对话框、抽屉）</td>
         <td><div class="swatch" style="box-shadow: var(--wa-shadow-l)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Horizontal Offset (X)
+## 水平偏移 (X)
 
-Offset-x tokens control a shadow's horizontal position relative to the element. Use `--wa-shadow-offset-x-scale` to change all offset-x tokens at once.
+偏移-x 令牌控制阴影相对于元素的水平位置。使用 `--wa-shadow-offset-x-scale` 可一次性更改所有偏移-x 令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th></tr>
+      <tr><th>自定义属性</th><th>描述</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-shadow-offset-x-scale">
         <td class="token-name"><code>--wa-shadow-offset-x-scale</code></td>
-        <td>Global multiplier for horizontal shadow offset</td>
+        <td>水平阴影偏移的全局乘数</td>
       </tr>
       <tr id="token-wa-shadow-offset-x-s">
         <td class="token-name"><code>--wa-shadow-offset-x-s</code></td>
-        <td>Small horizontal shadow offset</td>
+        <td>小水平阴影偏移</td>
       </tr>
       <tr id="token-wa-shadow-offset-x-m">
         <td class="token-name"><code>--wa-shadow-offset-x-m</code></td>
-        <td>Medium horizontal shadow offset</td>
+        <td>中等水平阴影偏移</td>
       </tr>
       <tr id="token-wa-shadow-offset-x-l">
         <td class="token-name"><code>--wa-shadow-offset-x-l</code></td>
-        <td>Large horizontal shadow offset</td>
+        <td>大水平阴影偏移</td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Vertical Offset (Y)
+## 垂直偏移 (Y)
 
-Offset-y tokens control a shadow's vertical position relative to the element. Use `--wa-shadow-offset-y-scale` to change all offset-y tokens at once.
+偏移-y 令牌控制阴影相对于元素的垂直位置。使用 `--wa-shadow-offset-y-scale` 可一次性更改所有偏移-y 令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th></tr>
+      <tr><th>自定义属性</th><th>描述</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-shadow-offset-y-scale">
         <td class="token-name"><code>--wa-shadow-offset-y-scale</code></td>
-        <td>Global multiplier for vertical shadow offset</td>
+        <td>垂直阴影偏移的全局乘数</td>
       </tr>
       <tr id="token-wa-shadow-offset-y-s">
         <td class="token-name"><code>--wa-shadow-offset-y-s</code></td>
-        <td>Small vertical shadow offset</td>
+        <td>小垂直阴影偏移</td>
       </tr>
       <tr id="token-wa-shadow-offset-y-m">
         <td class="token-name"><code>--wa-shadow-offset-y-m</code></td>
-        <td>Medium vertical shadow offset</td>
+        <td>中等垂直阴影偏移</td>
       </tr>
       <tr id="token-wa-shadow-offset-y-l">
         <td class="token-name"><code>--wa-shadow-offset-y-l</code></td>
-        <td>Large vertical shadow offset</td>
+        <td>大垂直阴影偏移</td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Blur
+## 模糊
 
-Blur tokens control how soft or sharp the shadow edge is. Use `--wa-shadow-blur-scale` to change all blur tokens at once.
+模糊令牌控制阴影边缘的柔和或锐利程度。使用 `--wa-shadow-blur-scale` 可一次性更改所有模糊令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th></tr>
+      <tr><th>自定义属性</th><th>描述</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-shadow-blur-scale">
         <td class="token-name"><code>--wa-shadow-blur-scale</code></td>
-        <td>Global multiplier for shadow blur radius. Also affects <code>--wa-color-shadow</code> opacity.</td>
+        <td>阴影模糊半径的全局乘数。也会影响 <code>--wa-color-shadow</code> 的透明度。</td>
       </tr>
       <tr id="token-wa-shadow-blur-s">
         <td class="token-name"><code>--wa-shadow-blur-s</code></td>
-        <td>Small shadow blur radius</td>
+        <td>小阴影模糊半径</td>
       </tr>
       <tr id="token-wa-shadow-blur-m">
         <td class="token-name"><code>--wa-shadow-blur-m</code></td>
-        <td>Medium shadow blur radius</td>
+        <td>中等阴影模糊半径</td>
       </tr>
       <tr id="token-wa-shadow-blur-l">
         <td class="token-name"><code>--wa-shadow-blur-l</code></td>
-        <td>Large shadow blur radius</td>
+        <td>大阴影模糊半径</td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Spread
+## 扩散
 
-Spread tokens expand or contract the shadow shape. A negative spread (the default) contracts the shadow inward for a more natural look. Use `--wa-shadow-spread-scale` to change all spread tokens at once.
+扩散令牌扩展或收缩阴影形状。负扩散（默认值）向内收缩阴影，呈现更自然的外观。使用 `--wa-shadow-spread-scale` 可一次性更改所有扩散令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th></tr>
+      <tr><th>自定义属性</th><th>描述</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-shadow-spread-scale">
         <td class="token-name"><code>--wa-shadow-spread-scale</code></td>
-        <td>Global multiplier for shadow spread. Negative values contract the shadow inward.</td>
+        <td>阴影扩散的全局乘数。负值向内收缩阴影。</td>
       </tr>
       <tr id="token-wa-shadow-spread-s">
         <td class="token-name"><code>--wa-shadow-spread-s</code></td>
-        <td>Small shadow spread</td>
+        <td>小阴影扩散</td>
       </tr>
       <tr id="token-wa-shadow-spread-m">
         <td class="token-name"><code>--wa-shadow-spread-m</code></td>
-        <td>Medium shadow spread</td>
+        <td>中等阴影扩散</td>
       </tr>
       <tr id="token-wa-shadow-spread-l">
         <td class="token-name"><code>--wa-shadow-spread-l</code></td>
-        <td>Large shadow spread</td>
+        <td>大阴影扩散</td>
       </tr>
     </tbody>
   </table>

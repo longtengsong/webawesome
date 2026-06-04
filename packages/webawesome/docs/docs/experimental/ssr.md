@@ -1,40 +1,40 @@
 ---
-title: Server Side Rendering
-description: A document on how to get started with SSR in Web Awesome.
+title: 服务端渲染
+description: 关于如何开始在 Web Awesome 中使用 SSR 的文档。
 layout: page-outline
 unlisted: true
 ---
 
-Server Side Rendering ("SSR") means your webpage is rendered on the server before being sent to the user's browser. This provides a fully formed HTML page right from the start, which is great for SEO and initial load times. Once the page is rendered, JavaScript kicks in to "hydrate" the components which makes them interactive. The Web platform supports this through a feature called [Declarative Shadow DOM](https://web.dev/articles/declarative-shadow-dom).
+服务端渲染（"SSR"）意味着您的网页在发送到用户浏览器之前在服务器上渲染完成。这提供了一开始就完整的 HTML 页面，这对 SEO 和初始加载时间非常有利。页面渲染完成后，JavaScript 启动以"水合"组件，使其具有交互性。Web 平台通过一项名为[声明式 Shadow DOM](https://web.dev/articles/declarative-shadow-dom) 的特性来支持这一点。
 
 :::warning
-SSR in Web Awesome is experimental! There are some known bugs and timing issues. Part of the experimental status comes from Lit's SSR package also being experimental.
+Web Awesome 中的 SSR 是实验性的！存在一些已知的错误和时机问题。实验状态的部分原因来自 Lit 的 SSR 包也处于实验阶段。
 :::
 
-## Enable Hydration
+## 启用水合
 
-If you're using the `webawesome.loader.js` file which automatically loads, make sure to change it to `webawesome.ssr-loader.js`.
+如果您使用的是自动加载的 `webawesome.loader.js` 文件，请确保将其改为 `webawesome.ssr-loader.js`。
 
 ```diff
 - <script type="module" src="/dist/webawesome.loader.js"></script>
 + <script type="module" src="/dist/webawesome.ssr-loader.js"></script>
 ```
 
-If you're using a bundler, make sure it comes _before_ any components are imported.
+如果您使用的是打包工具，请确保它放在导入任何组件的*之前*。
 
 ```js
-// Make sure this import is first.
+// 确保此导入位于最前面。
 import '@lit-labs/ssr-client/lit-element-hydrate-support.js';
 
 import '@awesome.me/webawesome/dist/components/button/button.js';
 import '@awesome.me/webawesome/dist/components/input/input.js';
 ```
 
-## Enable Server Rendering
+## 启用服务端渲染
 
-How to implement SSR on the backend is largely dependent on what stack you're using. For docs on how to hook up your backend, refer to [this document from Lit](https://lit.dev/docs/ssr/server-usage/).
+如何在后端实现 SSR 很大程度上取决于您使用的技术栈。有关如何连接后端的文档，请参考 [Lit 的这份文档](https://lit.dev/docs/ssr/server-usage/)。
 
-For example, here's what the [11ty](https://www.11ty.dev/) integration looks like using [Lit's 11ty plugin](https://www.npmjs.com/package/@lit-labs/eleventy-plugin-lit).
+例如，以下是使用 [Lit 的 11ty 插件](https://www.npmjs.com/package/@lit-labs/eleventy-plugin-lit) 的 [11ty](https://www.11ty.dev/) 集成示例。
 
 ```js
 // eleventy.config.js
@@ -51,38 +51,38 @@ eleventyConfig.addPlugin(litPlugin, {
 ```
 
 :::info
-As SSR becomes more stable, we'll work to add more instructions for various frameworks and metaframeworks.
+随着 SSR 变得更加稳定，我们将努力为各种框架和元框架添加更多说明。
 :::
 
-## Helpful Tips
+## 实用提示
 
-### The `did-ssr` Attribute
+### `did-ssr` 属性
 
-All Web Awesome components that get rendered for SSR will receive the `did-ssr` attribute.
+所有经过 SSR 渲染的 Web Awesome 组件都会获得 `did-ssr` 属性。
 
 ```html
 <wa-button appearance="filled" did-ssr></wa-button>
 ```
 
-This can help if you need some styling prior to the element connecting.
+这有助于您在元素连接之前需要一些样式的情况。
 
-### Timing Issues
+### 时机问题
 
-Before setting any properties on your frontend, it is important to first wait for the element to be defined and then wait for its first update to complete.
+在前端设置任何属性之前，务必先等待元素定义完成，然后等待其第一次更新完成。
 
 ```js
 const rating = document.querySelector('wa-rating');
 
-// If we don't wait for the component to be defined the initial hydration, we will get a hydration error from Lit!
+// 如果我们不等待组件定义完成就开始初始水合，将会从 Lit 收到水合错误！
 await customElements.whenDefined('wa-rating');
 await rating.updateComplete;
 
 rating.getSymbol = () => '<wa-icon name="heart" variant="solid"></wa-icon>';
 ```
 
-### Usage with Turbo
+### 与 Turbo 一起使用
 
-The Hotwire library [Turbo](https://github.com/hotwired/turbo) has an issue with SSR + declarative shadow DOM. To fix this, you can add the following to every page that runs Turbo.
+Hotwire 库 [Turbo](https://github.com/hotwired/turbo) 在 SSR + 声明式 shadow DOM 方面存在问题。要解决此问题，您可以在每个运行 Turbo 的页面上添加以下内容。
 
 ```js
 function fixDeclarativeShadowDOM(e) {
@@ -103,50 +103,50 @@ function fixDeclarativeShadowDOM(e) {
   })(newElement);
 }
 
-// Fixes an issue with DSD keeping the `<template>` elements hanging around in the light DOM.
+// 修复 DSD 在轻量 DOM 中残留 `<template>` 元素的问题。
 // https://github.com/hotwired/turbo/issues/1292
 ['turbo:before-render', 'turbo:before-stream-render', 'turbo:before-frame-render'].forEach(eventName => {
   document.addEventListener(eventName, fixDeclarativeShadowDOM);
 });
 ```
 
-### The `with-*` Attributes
+### `with-*` 属性
 
-Some components use slot detection to conditionally render parts of their template. For example, `<wa-dialog>` only renders its footer when a `footer` slot is present. During SSR, slot detection doesn't work because the DOM isn't available, so these parts would be missing from the initial server-rendered markup.
+某些组件使用插槽检测来有条件地渲染模板的部分内容。例如，`<wa-dialog>` 仅在存在 `footer` 插槽时才渲染其页脚。在 SSR 期间，由于 DOM 不可用，插槽检测无法工作，因此这些部分将从初始服务端渲染的标记中缺失。
 
-To solve this, components that rely on slot detection provide `with-*` attributes. These tell the component to render the relevant section during SSR, before hydration kicks in and slot detection takes over.
+为解决此问题，依赖插槽检测的组件提供了 `with-*` 属性。这些属性告诉组件在 SSR 期间渲染相关部分，然后在水合启动和插槽检测接管之前。
 
 ```html
-<!-- Without with-footer, the footer won't appear in the server-rendered HTML -->
+<!-- 如果没有 with-footer，页脚将不会出现在服务端渲染的 HTML 中 -->
 <wa-dialog with-footer>
-  <p>Dialog content</p>
+  <p>对话框内容</p>
   <div slot="footer">
-    <wa-button>Close</wa-button>
+    <wa-button>关闭</wa-button>
   </div>
 </wa-dialog>
 ```
 
-These attributes are only needed for SSR._ After the component hydrates on the client, slot detection works normally and the attributes have no effect.
+这些属性仅 SSR 需要。_ 在组件在客户端水合后，插槽检测正常工作，这些属性不再产生效果。
 
-#### For Contributors
+#### 给贡献者的说明
 
-When adding slot detection to a component's render method using `HasSlotController`, always include an SSR fallback using the `hasUpdated` ternary pattern:
+在使用 `HasSlotController` 向组件的 render 方法添加插槽检测时，始终使用 `hasUpdated` 三元模式包含 SSR 回退：
 
 ```ts
-// Add a with-* property
+// 添加 with-* 属性
 @property({ attribute: 'with-label', type: Boolean }) withLabel = false;
 
-// In render(), fall back to the with-* property before the component has hydrated
+// 在 render() 中，在组件水合之前回退到 with-* 属性
 const hasLabelSlot = this.hasUpdated
   ? this.hasSlotController.test('label')
   : this.withLabel;
 ```
 
-## Known Issues
+## 已知问题
 
-Here are some known issues and things we're still working on.
+以下是一些已知问题和我们仍在努力解决的事项。
 
-- `@shoelace-style/localize` (our localization library) has no way to set a language currently so it always falls back to `en`.
-- `<wa-icon>` has no fallback if there's no JS besides a blank `<svg>`. There's perhaps some backend mechanisms we can use to fetch. But requires altering APIs. Should also have a way to set height / widths, but we don't want to increase pain for SSR users.
-- `<wa-qr-code>` QR Code will not error on the backend and will render a blank canvas at the appropriate size, but will not render the canvas until the client component connects.
-- `setBasePath` and `kit codes` may need reconfiguring to work with SSR.
+- `@shoelace-style/localize`（我们的本地化库）目前无法设置语言，总是回退到 `en`。
+- 如果没有 JS，`<wa-icon>` 除了空白的 `<svg>` 之外没有回退方案。也许我们可以使用一些后端机制来获取。但需要修改 API。还应该有一种设置高度/宽度的方法，但我们不想增加 SSR 用户的麻烦。
+- `<wa-qr-code>` 二维码在后端不会报错，会以适当大小渲染空白画布，但直到客户端组件连接后才会渲染画布。
+- `setBasePath` 和 `kit codes` 可能需要进行重新配置才能与 SSR 配合使用。

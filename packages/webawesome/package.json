@@ -60,8 +60,8 @@
     "start:alpha": "echo 'This command has been deprecated. Use: \"npm start\"\n'",
     "start": "node scripts/build.js --develop --no-incremental",
     "build": "node scripts/build.js",
-    "start:lts": "node scripts/build-lts.js --develop --no-incremental",
-    "build:lts": "node scripts/build-lts.js",
+    "start:lts": "npm run translation:check && node scripts/build-lts.js --develop --no-incremental",
+    "build:lts": "npm run translation:check && node scripts/build-lts.js",
     "build:serve": "npm run build && npx http-server _site -p 4000",
     "publish-alpha-cdn": "./publish-alpha-cdn.sh",
     "create": "plop --plopfile scripts/plop/plopfile.js",
@@ -76,7 +76,9 @@
     "check-updates": "npm-check-updates --cooldown 7 --interactive --format group",
     "print-version": "echo $npm_package_version",
     "tag-version": "git tag -a \"v$(npm run print-version | tail -n1)\" -m \"tag v$(npm run print-version | tail -n1)\"",
-    "postversion": "node ./scripts/update-root-version.js"
+    "postversion": "node ./scripts/update-root-version.js",
+    "translation:check": "node ./scripts/translation-check.js",
+    "translation:set-version": "node ./scripts/translation-set-version.js"
   },
   "engines": {
     "node": ">=14.17.0"

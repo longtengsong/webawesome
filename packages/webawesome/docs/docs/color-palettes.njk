@@ -1,12 +1,12 @@
 ---
-title: Color Palettes
-description: 'Color palettes give you a full spectrum of colors to add life to your project.'
+title: 调色板
+description: '调色板为您提供全谱色彩，为您的项目增添活力。'
 layout: page
 ---
 
-<p>Color palettes give you a full spectrum of colors to add life to your project.</p>
+<p>调色板为您提供全谱色彩，为您的项目增添活力。</p>
 
-<p>Each palette defines 10 color hues with a scale of 11 tints. While the tints have consistent lightness values across palettes, each palette has unique hue shifts and chroma to give it unique character so you can find just the right vibe to your project.</p>
+<p>每个调色板定义了 10 个色相，每个色相有 11 个色阶的色调比例。虽然各调色板的色调具有一致的明度值，但每个调色板具有独特的色相偏移和色彩饱和度，赋予其独特的个性，以便您为项目找到恰到好处的氛围。</p>
 
 {% for palette in themer.palettes %}
   <link rel="stylesheet" href="/dist/styles/color/palettes/{{palette.filename}}" />
@@ -16,11 +16,11 @@ layout: page
   {% raw %}
     {% if not currentUser.hasPro %}
       <p>
-        Additional palettes are available to pro users. Please <a href="/login">login to view pro palettes</a>.
+        更多调色板可供 Pro 用户使用。请<a href="/login">登录查看 Pro 调色板</a>。
       </p>
     {% endif %}
   {% endraw %}
-  <wa-radio-group id="palette-picker" label="Color Palette" value="default" orientation="horizontal">
+  <wa-radio-group id="palette-picker" label="调色板" value="default" orientation="horizontal">
     {% for palette in themer.palettes %}
       {% if not palette.isPro %}
         <wa-radio
@@ -56,7 +56,7 @@ layout: page
         value="var(--wa-color-{{ color }}-{{ tint }})"
         style="--color: var(--wa-color-{{ color }}-{{ tint }}); --tint: '{{ tint }}'"
       >
-        <button class="swatch-button" aria-label="{{ color }} {{ tint }} (click to copy)"></button>
+        <button class="swatch-button" aria-label="{{ color }} {{ tint }}（点击复制）"></button>
       </wa-copy-button>
       {% endfor %}
     </div>
@@ -64,7 +64,7 @@ layout: page
   {% endfor %}
 </div>
 
-<h2>Using This Palette</h2>
+<h2>使用此调色板</h2>
 
 <div id="import-code">
   {% for palette in themer.palettes %}
@@ -72,27 +72,27 @@ layout: page
       <wa-tab-group data-install-tabs>
         <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
         <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
         <wa-tab-panel name="cdn">
 {% if palette.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
   <wa-icon name="info-circle" variant="regular"></wa-icon>
-  This palette can only be used on workspaces with a Pro subscription.
+  该调色板仅可在拥有 Pro 订阅的工作区中使用。
 </wa-callout>
 {% endmarkdown %}
 {% else %}
 {% set paletteCdnUrl %}{% cdnUrl 'styles/color/palettes/' %}{{ palette.filename }}{% endset %}
 {% markdown %}
-To use this palette, add the palette's stylesheet from the CDN:
+要使用此调色板，请从 CDN 添加调色板样式表：
 
 ```html
 <link rel="stylesheet" href="{{ paletteCdnUrl }}">
 ```
 
-Then apply the following class to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -103,13 +103,13 @@ Then apply the following class to the `<html>` element:
 
         <wa-tab-panel name="npm">
 {% markdown %}
-After installing <code>@awesome.me/webawesome</code>, import the palette's stylesheet:
+安装 <code>@awesome.me/webawesome</code> 后，导入调色板样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/color/palettes/{{ palette.filename }}';
 ```
 
-Then apply the following class to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -119,13 +119,13 @@ Then apply the following class to the `<html>` element:
 
         <wa-tab-panel name="self-hosted">
 {% markdown %}
-If you're self-hosting Web Awesome, include the palette's stylesheet from your server:
+如果您正在自行托管 Web Awesome，请从您的服务器引入调色板样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/color/palettes/{{ palette.filename }}">
 ```
 
-Then apply the following class to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -136,24 +136,24 @@ Then apply the following class to the `<html>` element:
         <wa-tab-panel name="hosted">
 {% if palette.isPro %}
 {% markdown %}
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. Press <wa-icon name="paintbrush" variant="regular"></wa-icon> **Edit Your Theme** to open the Theme Builder.
-3. Open **Colors** and select **{{ palette.name | capitalize }}**.
-4. Save your theme to immediately update anywhere you're using your project.
+**对于 Pro 工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
+3. 打开 **颜色** 并选择 **{{ palette.name | capitalize }}**。
+4. 保存您的主题，使用您项目的任何地方都会立即更新。
 {% endmarkdown %}
 {% else %}
 {% markdown %}
-**For projects on Free workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. Find **Color Palette**. Select <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ palette.name | capitalize }}**.
-3. Save your theme to immediately update anywhere you're using your project.
+**对于免费工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 找到 **调色板**。选择 <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ palette.name | capitalize }}**。
+3. 保存您的主题，使用您项目的任何地方都会立即更新。
 
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. Press <wa-icon name="paintbrush" variant="regular"></wa-icon> **Edit Your Theme** to open the Theme Builder.
-3. Open **Colors** and select **{{ palette.name | capitalize }}**.
-4. Save your theme to immediately update anywhere you're using your project.
+**对于 Pro 工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
+3. 打开 **颜色** 并选择 **{{ palette.name | capitalize }}**。
+4. 保存您的主题，使用您项目的任何地方都会立即更新。
 {% endmarkdown %}
 {% endif %}
         </wa-tab-panel>

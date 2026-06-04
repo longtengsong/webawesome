@@ -1,5 +1,5 @@
 ---
-title: Card
+title: 卡片
 layout: component
 category: Layout
 synonyms:
@@ -7,11 +7,15 @@ synonyms:
   - panel
   - content box
   - surface
+  - 面板
+  - 内容块
 use-cases:
   - product card
   - info card
   - media card
   - feature card
+  - 产品卡片
+  - 信息卡片
 ---
 
 ```html {.example}
@@ -19,15 +23,15 @@ use-cases:
   <img
     slot="media"
     src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+    alt="一只小猫耐心地坐在陶土花盆和装饰性草丛之间。"
   />
 
-  <strong>Mittens</strong><br />
-  This kitten is as cute as he is playful. Bring him home today!<br />
-  <small class="wa-caption-s">6 weeks old</small>
+  <strong>小手套</strong><br />
+  这只小猫既可爱又调皮。今天就带它回家吧！<br />
+  <small class="wa-caption-s">6周大</small>
 
-  <wa-button slot="footer" variant="brand" pill>More Info</wa-button>
-  <wa-rating slot="footer-actions" label="Rating"></wa-rating>
+  <wa-button slot="footer" variant="brand" pill>更多信息</wa-button>
+  <wa-rating slot="footer-actions" label="评分"></wa-rating>
 </wa-card>
 
 <style>
@@ -37,15 +41,15 @@ use-cases:
 </style>
 ```
 
-## Examples
+## 示例
 
-### Basic Card
+### 基础卡片
 
-Basic cards aren't very exciting, but they can display any content you want them to.
+基础卡片不是很令人兴奋，但它们可以显示你想要的任何内容。
 
 ```html {.example}
 <wa-card class="card-basic">
-  This is just a basic card. No media, no header, and no footer. Just your content.
+  这只是一个基础卡片。没有媒体，没有页眉，也没有页脚。只有你的内容。
 </wa-card>
 
 <style>
@@ -55,17 +59,17 @@ Basic cards aren't very exciting, but they can display any content you want them
 </style>
 ```
 
-### Card with Header
+### 带页眉的卡片
 
-Headers can be used to display titles and more.
-If using SSR, you need to also use the `with-header` attribute to add a header to the card (if not, it is added automatically).
+页眉可用于显示标题等内容。
+如果使用 SSR，你还需要使用 `with-header` 属性来为卡片添加页眉（如果不使用，则会自动添加）。
 
 ```html {.example}
 <wa-card class="card-header">
-  <h3 slot="header">Header Title</h3>
-  This card has a header. You can put all sorts of things in it!
+  <h3 slot="header">页眉标题</h3>
+  这个卡片有一个页眉。你可以在里面放各种各样的东西！
   <wa-button appearance="plain" slot="header-actions">
-    <wa-icon name="gear" variant="solid" label="Settings"></wa-icon>
+    <wa-icon name="gear" variant="solid" label="设置"></wa-icon>
   </wa-button>
 </wa-card>
 
@@ -80,18 +84,18 @@ If using SSR, you need to also use the `with-header` attribute to add a header t
 </style>
 ```
 
-### Card with Footer
+### 带页脚的卡片
 
-Footers can be used to display actions, summaries, or other relevant content.
-If using SSR, you need to also use the `with-footer` attribute to add a footer to the card (if not, it is added automatically).
+页脚可用于显示操作、摘要或其他相关内容。
+如果使用 SSR，你还需要使用 `with-footer` 属性来为卡片添加页脚（如果不使用，则会自动添加）。
 
 ```html {.example}
 <wa-card class="card-footer">
-  This card has a footer. You can put all sorts of things in it!
+  这个卡片有一个页脚。你可以在里面放各种各样的东西！
 
   <wa-rating slot="footer"></wa-rating>
 
-  <wa-button slot="footer-actions" variant="brand">Preview</wa-button>
+  <wa-button slot="footer-actions" variant="brand">预览</wa-button>
 </wa-card>
 
 <style>
@@ -101,10 +105,10 @@ If using SSR, you need to also use the `with-footer` attribute to add a footer t
 </style>
 ```
 
-### Media
+### 媒体
 
-Card media is displayed atop the card and will stretch to fit.
-If using SSR, you need to also use the `with-media` attribute to add a media section to the card (if not, it is added automatically).
+卡片媒体显示在卡片顶部，并会拉伸以适应。
+如果使用 SSR，你还需要使用 `with-media` 属性来为卡片添加媒体部分（如果不使用，则会自动添加）。
 
 ```html {.example}
 <div class="wa-grid">
@@ -112,17 +116,17 @@ If using SSR, you need to also use the `with-media` attribute to add a media sec
     <div slot="media" class="wa-frame:landscape">
       <img
         src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-        alt="A kitten walks towards camera on top of pallet."
+        alt="一只小猫在托盘上向相机走来。"
       />
     </div>
-    This card has an image of a kitten walking along a pallet.
+    这个卡片有一张小猫在托盘上行走的图片。
   </wa-card>
   <wa-card class="card-media">
     <video slot="media" controls>
       <source src="https://uploads.webawesome.com/dog-with-glasses.mp4" />
-      <p>Your browser doesn't support HTML video</p>
+      <p>你的浏览器不支持 HTML 视频</p>
     </video>
-    This card has a video of a dog wearing shades.
+    这个卡片有一只戴眼镜的狗的视频。
   </wa-card>
 </div>
 
@@ -133,9 +137,9 @@ If using SSR, you need to also use the `with-media` attribute to add a media sec
 </style>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the card's visual appearance.
+使用 `appearance` 属性来更改卡片的视觉外观。
 
 ```html {.example}
 <div class="wa-grid">
@@ -143,16 +147,16 @@ Use the `appearance` attribute to change the card's visual appearance.
     <img
       slot="media"
       src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-      alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+      alt="一只小猫耐心地坐在陶土花盆和装饰性草丛之间。"
     />
-    Outlined (default)
+    轮廓（默认）
   </wa-card>
   {% for appearance in ['filled-outlined', 'plain', 'filled', 'accent'] -%}
   <wa-card appearance="{{ appearance }}">
     <img
       slot="media"
       src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-      alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+      alt="一只小猫耐心地坐在陶土花盆和装饰性草丛之间。"
     />
     {{ appearance | capitalize }}
   </wa-card>
@@ -160,12 +164,12 @@ Use the `appearance` attribute to change the card's visual appearance.
 </div>
 ```
 
-### Orientation
+### 方向
 
-Set the `orientation` attribute to `horizontal` to create a card with a horizontal, side-by-side layout. Make sure to set a width or maximum width for the media slot. Horizontal cards do not currently contain the header and footer slots.
+将 `orientation` 属性设置为 `horizontal` 以创建具有水平并排布局的卡片。确保为媒体插槽设置宽度或最大宽度。水平卡片目前不包含页眉和页脚插槽。
 
 :::info
-The `actions` slot is only available for the horizontal orientation
+`actions` 插槽仅在水平方向上可用
 :::
 
 ```html {.example}
@@ -174,11 +178,11 @@ The `actions` slot is only available for the horizontal orientation
     <img
       slot="media"
       src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-      alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+      alt="一只小猫耐心地坐在陶土花盆和装饰性草丛之间。"
     />
-    This card has a horizontal orientation with media, body, and actions arranged side-by-side.
+    这个卡片有水平方向，媒体、正文和操作并排排列。
     <wa-button slot="actions" variant="neutral" appearance="plain"
-      ><wa-icon name="ellipsis" label="actions"></wa-icon
+      ><wa-icon name="ellipsis" label="操作"></wa-icon
     ></wa-button>
   </wa-card>
 </div>

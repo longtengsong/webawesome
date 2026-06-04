@@ -1,22 +1,27 @@
 ---
-title: Frameworks
-description: Using Web Awesome with frameworks.
+title: 框架集成
+description: 在各种框架中使用 Web Awesome。
 layout: page-outline
 synonyms:
   - integrations
   - libraries
   - spa
+  - 库
+  - 集成
+  - 单页应用
 use-cases:
   - react
   - vue
   - angular
   - svelte
   - next.js
+  - 框架
+  - 集成
 ---
 
-Web Awesome is designed to work in harmony with various frameworks. We have documented some of the most common ones including setup and limitations.
+Web Awesome 设计用于与各种框架和谐配合。我们为一些最常见的框架提供了文档，包括设置指南和限制说明。
 
-Select your framework below to get started.
+请选择您使用的框架开始使用。
 
 <div class="wa-grid" style="--min-column-size: 20ch;">
   <a href="/docs/frameworks/angular" class="wa-link-plain hover-grow hover-emphasize-border">

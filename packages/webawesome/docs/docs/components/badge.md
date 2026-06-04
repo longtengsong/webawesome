@@ -1,5 +1,5 @@
 ---
-title: Badge
+title: 徽章
 layout: component
 category: Feedback
 synonyms:
@@ -8,95 +8,102 @@ synonyms:
   - count
   - indicator
   - pill
+  - 标签
+  - 计数
+  - 指示器
 use-cases:
   - notification count
   - status indicator
   - unread count
   - new indicator
+  - 通知计数
+  - 状态指示器
+  - 未读计数
+  - 新内容指示器
 ---
 
 ```html {.example}
-<wa-badge>Badge</wa-badge>
+<wa-badge>徽章</wa-badge>
 ```
 
-## Examples
+## 示例
 
-### Variants
+### 变体
 
-Set the `variant` attribute to change the badge's variant.
+设置 `variant` 属性来更改徽章的变体。
 
 ```html {.example}
-<wa-badge variant="brand">Brand</wa-badge>
-<wa-badge variant="success">Success</wa-badge>
-<wa-badge variant="neutral">Neutral</wa-badge>
-<wa-badge variant="warning">Warning</wa-badge>
-<wa-badge variant="danger">Danger</wa-badge>
+<wa-badge variant="brand">品牌</wa-badge>
+<wa-badge variant="success">成功</wa-badge>
+<wa-badge variant="neutral">中性</wa-badge>
+<wa-badge variant="warning">警告</wa-badge>
+<wa-badge variant="danger">危险</wa-badge>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the badge's visual appearance.
+使用 `appearance` 属性来更改徽章的视觉外观。
 
 ```html {.example}
 <div style="margin-block-end: 1rem;">
-  <wa-badge appearance="accent" variant="neutral">Accent</wa-badge>
-  <wa-badge appearance="filled-outlined" variant="neutral">Filled-Outlined</wa-badge>
-  <wa-badge appearance="filled" variant="neutral">Filled</wa-badge>
-  <wa-badge appearance="outlined" variant="neutral">Outlined</wa-badge>
+  <wa-badge appearance="accent" variant="neutral">强调</wa-badge>
+  <wa-badge appearance="filled-outlined" variant="neutral">填充轮廓</wa-badge>
+  <wa-badge appearance="filled" variant="neutral">填充</wa-badge>
+  <wa-badge appearance="outlined" variant="neutral">轮廓</wa-badge>
 </div>
 <div style="margin-block-end: 1rem;">
-  <wa-badge appearance="accent" variant="brand">Accent</wa-badge>
-  <wa-badge appearance="filled-outlined" variant="brand">Filled-Outlined</wa-badge>
-  <wa-badge appearance="filled" variant="brand">Filled</wa-badge>
-  <wa-badge appearance="outlined" variant="brand">Outlined</wa-badge>
+  <wa-badge appearance="accent" variant="brand">强调</wa-badge>
+  <wa-badge appearance="filled-outlined" variant="brand">填充轮廓</wa-badge>
+  <wa-badge appearance="filled" variant="brand">填充</wa-badge>
+  <wa-badge appearance="outlined" variant="brand">轮廓</wa-badge>
 </div>
 <div style="margin-block-end: 1rem;">
-  <wa-badge appearance="accent" variant="success">Accent</wa-badge>
-  <wa-badge appearance="filled-outlined" variant="success">Filled-Outlined</wa-badge>
-  <wa-badge appearance="filled" variant="success">Filled</wa-badge>
-  <wa-badge appearance="outlined" variant="success">Outlined</wa-badge>
+  <wa-badge appearance="accent" variant="success">强调</wa-badge>
+  <wa-badge appearance="filled-outlined" variant="success">填充轮廓</wa-badge>
+  <wa-badge appearance="filled" variant="success">填充</wa-badge>
+  <wa-badge appearance="outlined" variant="success">轮廓</wa-badge>
 </div>
 <div style="margin-block-end: 1rem;">
-  <wa-badge appearance="accent" variant="warning">Accent</wa-badge>
-  <wa-badge appearance="filled-outlined" variant="warning">Filled-Outlined</wa-badge>
-  <wa-badge appearance="filled" variant="warning">Filled</wa-badge>
-  <wa-badge appearance="outlined" variant="warning">Outlined</wa-badge>
+  <wa-badge appearance="accent" variant="warning">强调</wa-badge>
+  <wa-badge appearance="filled-outlined" variant="warning">填充轮廓</wa-badge>
+  <wa-badge appearance="filled" variant="warning">填充</wa-badge>
+  <wa-badge appearance="outlined" variant="warning">轮廓</wa-badge>
 </div>
 <div>
-  <wa-badge appearance="accent" variant="danger">Accent</wa-badge>
-  <wa-badge appearance="filled-outlined" variant="danger">Filled-Outlined</wa-badge>
-  <wa-badge appearance="filled" variant="danger">Filled</wa-badge>
-  <wa-badge appearance="outlined" variant="danger">Outlined</wa-badge>
+  <wa-badge appearance="accent" variant="danger">强调</wa-badge>
+  <wa-badge appearance="filled-outlined" variant="danger">填充轮廓</wa-badge>
+  <wa-badge appearance="filled" variant="danger">填充</wa-badge>
+  <wa-badge appearance="outlined" variant="danger">轮廓</wa-badge>
 </div>
 ```
 
-### Size
+### 尺寸
 
-Badges are sized relative to the current font size. You can set `font-size` on any badge (or an ancestor element) to change it.
-
-```html {.example}
-<wa-badge variant="brand" style="font-size: var(--wa-font-size-xs);">Brand</wa-badge>
-<wa-badge variant="brand" style="font-size: var(--wa-font-size-s);">Brand</wa-badge>
-<wa-badge variant="brand" style="font-size: var(--wa-font-size-m);">Brand</wa-badge>
-<wa-badge variant="brand" style="font-size: var(--wa-font-size-l);">Brand</wa-badge>
-<wa-badge variant="brand" style="font-size: var(--wa-font-size-xl);">Brand</wa-badge>
-```
-
-### Pill Badges
-
-Use the `pill` attribute to give badges rounded edges.
+徽章的尺寸相对于当前字体大小。你可以在任何徽章（或祖先元素）上设置 `font-size` 来更改它。
 
 ```html {.example}
-<wa-badge variant="brand" pill>Brand</wa-badge>
-<wa-badge variant="success" pill>Success</wa-badge>
-<wa-badge variant="neutral" pill>Neutral</wa-badge>
-<wa-badge variant="warning" pill>Warning</wa-badge>
-<wa-badge variant="danger" pill>Danger</wa-badge>
+<wa-badge variant="brand" style="font-size: var(--wa-font-size-xs);">品牌</wa-badge>
+<wa-badge variant="brand" style="font-size: var(--wa-font-size-s);">品牌</wa-badge>
+<wa-badge variant="brand" style="font-size: var(--wa-font-size-m);">品牌</wa-badge>
+<wa-badge variant="brand" style="font-size: var(--wa-font-size-l);">品牌</wa-badge>
+<wa-badge variant="brand" style="font-size: var(--wa-font-size-xl);">品牌</wa-badge>
 ```
 
-### Drawing Attention
+### 药丸形状徽章
 
-Use the `attention` attribute to draw attention to the badge with a subtle animation. Supported effects are `bounce`, `pulse` and `none`.
+使用 `pill` 属性来给徽章添加圆角边缘。
+
+```html {.example}
+<wa-badge variant="brand" pill>品牌</wa-badge>
+<wa-badge variant="success" pill>成功</wa-badge>
+<wa-badge variant="neutral" pill>中性</wa-badge>
+<wa-badge variant="warning" pill>警告</wa-badge>
+<wa-badge variant="danger" pill>危险</wa-badge>
+```
+
+### 吸引注意力
+
+使用 `attention` 属性通过微妙的动画来吸引对徽章的注意。支持的效果是 `bounce`、`pulse` 和 `none`。
 
 ```html {.example}
 <div class="badge-attention">
@@ -126,43 +133,43 @@ Use the `attention` attribute to draw attention to the badge with a subtle anima
 </style>
 ```
 
-### Start & End Decorations
+### 开始和结束装饰
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` alongside the badge's label.
+使用 `start` 和 `end` 插槽在徽章标签旁边添加展示元素，如 `<wa-icon>`。
 
 ```html {.example}
 <wa-badge>
   <wa-icon slot="start" name="seedling"></wa-icon>
-  Start
+  开始
 </wa-badge>
 <wa-badge>
   <wa-icon slot="end" name="tree"></wa-icon>
-  End
+  结束
 </wa-badge>
 <wa-badge>
   <wa-icon slot="start" name="cow"></wa-icon>
   <wa-icon slot="end" name="meteor"></wa-icon>
-  Both
+  两者都有
 </wa-badge>
 ```
 
-### With Buttons
+### 与按钮一起使用
 
-One of the most common use cases for badges is attaching them to buttons. To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
+徽章最常见的用例之一是将它们附加到按钮上。为了简化这一点，当徽章是按钮的子元素时，它们会自动定位在右上角。
 
 ```html {.example}
 <wa-button appearance="filled">
-  Requests
+  请求
   <wa-badge pill>30</wa-badge>
 </wa-button>
 
 <wa-button appearance="filled" style="margin-inline-start: 1rem;">
-  Warnings
+  警告
   <wa-badge variant="warning" pill>8</wa-badge>
 </wa-button>
 
 <wa-button appearance="filled" style="margin-inline-start: 1rem;">
-  Errors
+  错误
   <wa-badge variant="danger" pill>6</wa-badge>
 </wa-button>
 ```

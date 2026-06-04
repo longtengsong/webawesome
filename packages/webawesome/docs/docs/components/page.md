@@ -7,53 +7,61 @@ synonyms:
   - page layout
   - scaffold
   - shell
+  - 布局
+  - 页面布局
+  - 脚手架
+  - 外壳
 use-cases:
   - app layout
   - page structure
   - content layout
   - sidebar layout
+  - 应用布局
+  - 页面结构
+  - 内容布局
+  - 侧边栏布局
 ---
 
-The page component is designed to power full webpages. It is flexible enough to handle most modern designs and includes a simple mechanism for handling desktop and mobile navigation.
+页面组件旨在为完整网页提供支持。它足够灵活，可以处理大多数现代设计，并包含一种处理桌面和移动导航的简单机制。
 
-## Layout Anatomy
+## 布局结构
 
-This image depicts a page's anatomy, including the default positions of each section. The labels represent the [named slots](#slots) you can use to populate them.
+此图描绘了页面的结构，包括每个部分的默认位置。标签代表你可以用来填充它们的 [命名插槽](#slots)。
 
-Most slots are optional. Slots that have no content will not be shown, allowing you to opt-in to just the sections you actually need.
+大多数插槽都是可选的。没有内容的插槽将不会显示，让你可以选择只使用真正需要的部分。
 
 <div id="page-anatomy-demo">
   <fieldset>
     <legend>Slots</legend>
     <div class="wa-grid">
-      <wa-checkbox name="slot" value="banner" checked title="The banner that gets display above the header. The banner will not be shown if no content is provided.">
+      <wa-checkbox name="slot" value="banner" checked title="显示在标题上方的横幅。如果没有提供内容，横幅将不会显示。">
         banner
       </wa-checkbox>
-      <wa-checkbox name="slot" value="header" checked title="The header to display at the top of the page. If a banner is present, the header will appear below the banner. The header will not be shown if there is no content.">
+      <wa-checkbox name="slot" value="header" checked title="显示在页面顶部的标题。如果有横幅，标题将显示在横幅下方。如果没有内容，标题将不会显示。">
         header
       </wa-checkbox>
-      <wa-checkbox name="slot" value="subheader" checked title="A subheader to display below the &lt;code&gt;header&lt;/code&gt;. This is a good place to put things like breadcrumbs.">
+      <wa-checkbox name="slot" value="subheader" checked title="显示在 `<code>header</code>` 下方的子标题。这是放置面包屑等内容的好地方。">
         subheader
       </wa-checkbox>
-      <wa-checkbox name="slot" value="navigation-header" checked title="The header for a navigation area. On mobile this will be the header for &lt;code&gt;&amp;lt;wa-drawer&amp;gt;&lt;/code&gt;.">
+      <wa-checkbox name="slot" value="navigation-header" checked title="导航区域的标题。在移动设备上，这将是 `<code>&lt;wa-drawer&gt;</code>` 的标题。">
         navigation-header
       </wa-checkbox>
-      <wa-checkbox name="slot" value="navigation" checked title="The main content to display in the navigation area. This is displayed on the left side of the page if &lt;code&gt;menu&lt;/code&gt; is not used. This section &amp;quot;sticks&amp;quot; to the top as the page scrolls.">
+      <wa-checkbox name="slot" value="navigation" checked title="在导航区域显示的主要内容。如果不使用 `<code>menu</code>`，这会显示在页面左侧。当页面滚动时，此部分会"粘"在顶部。">
         navigation
       </wa-checkbox>
-      <wa-checkbox name="slot" value="navigation-footer" checked title="The footer for a navigation area. On mobile this will be the footer for &lt;code&gt;&amp;lt;wa-drawer&amp;gt;&lt;/code&gt;.">
+      <wa-checkbox name="slot" value="navigation-footer" checked title="导航区域的页脚。在移动设备上，这将是 `<code>&lt;wa-drawer&gt;</code>` 的页脚。">
         navigation-footer
       </wa-checkbox>
-      <wa-checkbox name="slot" value="main-header" checked title="Header to display inline above the main content.">
+      <wa-checkbox name="slot" value="main-header" checked title="显示在主要内容内联上方的标题。">
         main-header
       </wa-checkbox>
-      <wa-checkbox name="slot" value="main-footer" checked title="Footer to display inline below the main content.">
+      <wa-checkbox name="slot" value="main-footer" checked title="显示在主要内容内联下方的页脚。">
         main-footer
       </wa-checkbox>
-      <wa-checkbox name="slot" value="aside" checked title="Content to be shown on the right side of the page. Typically contains a table of contents, ads, etc. This section &amp;quot;sticks&amp;quot; to the top as the page scrolls.">
+      <wa-checkbox name="slot" value="aside" checked title="显示在页面右侧的内容。通常包含目录、广告等。当页面滚动时，此部分会"粘"在顶部。">
         aside
       </wa-checkbox>
-      <wa-checkbox name="slot" value="footer" checked title="The content to display in the footer. This is always displayed underneath the viewport so will always make the page &amp;quot;scrollable&amp;quot;.">
+      <wa-checkbox name="slot" value="footer" checked title="在页脚中显示的内容。这始终显示在视口下方，因此始终会使页面"可滚动"。">
         footer
       </wa-checkbox>
     </div>
@@ -63,19 +71,19 @@ Most slots are optional. Slots that have no content will not be shown, allowing 
   <script src="/assets/examples/page/anatomy-demo.js" type="module"></script>
 </div>
 
-<!-- ![Screenshot of Layout Anatomy showing various slots](/assets/images/layout-anatomy.svg) -->
+<!-- ![布局结构的屏幕截图，显示了各种插槽](/assets/images/layout-anatomy.svg) -->
 
-## Using `wa-page`
+## 使用 `wa-page`
 
 :::info
-If you're not familiar with how slots work in HTML, you might want to [learn more about slots](/docs/usage/#slots) before using this component.
+如果你不熟悉 HTML 中插槽的工作原理，在使用此组件之前，你可能需要 [了解更多关于插槽](/docs/usage/#slots) 的信息。
 :::
 
-A number of sections are available as part of the page component, most of which are optional. Content is populated by [slotting elements](/docs/usage/#slots) into various locations.
+页面组件提供了多个部分，其中大多数是可选的。通过 [向各种位置插入元素](/docs/usage/#slots) 来填充内容。
 
-This component _does not_ implement any [content sectioning](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectioning) or "semantic elements" internally (such as `<main>`, `<header>`, `<footer>`, etc.). Instead, we recommend that you slot in content sectioning elements wherever you feel they're appropriate.
+此组件 _不会_ 内部实现任何 [内容分段](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element#content_sectioning) 或"语义元素"（例如 `<main>`、`<header>`、`<footer>` 等）。相反，我们建议你在认为合适的地方插入内容分段元素。
 
-When using `<wa-page>`, make sure to zero out all paddings and margins on `<html>` and `<body>`, otherwise you may see unexpected gaps. We highly recommend adding the following styles when using `<wa-page>`:
+使用 `<wa-page>` 时，请确保将 `<html>` 和 `<body>` 的所有 padding 和 margin 都设为零，否则你可能会看到意外的间隙。我们强烈建议在使用 `<wa-page>` 时添加以下样式：
 
 ```css
 html,
@@ -87,58 +95,58 @@ body {
 ```
 
 :::info
-If you use [native styles](/docs/utilities/native/), this is already taken care of.
+如果你使用 [原生样式](/docs/utilities/native/)，这些已经处理好了。
 :::
 
-## Examples
+## 示例
 
 :::warning
-Open demos in a new tab to examine their behavior in different window sizes. The previews below use simulated zooming which, depending on your browser, may not be accurate.
+在新标签页中打开演示以查看它们在不同窗口大小下的行为。下面的预览使用了模拟缩放，根据你的浏览器，这可能不准确。
 :::
 
-### Documentation
+### 文档页面
 
-A sample documentation page using [all available slots](#slots). The navigation menu collapses into a drawer at a custom `mobile-breakpoint` of 920px. It can be opened using a button with `[data-toggle-nav]` that appears in the `subheader` slot. The `aside` slot is also hidden below 920px.
+使用 [所有可用插槽](#slots) 的示例文档页面。导航菜单在自定义的 `mobile-breakpoint` 为 920px 时折叠成抽屉。可以使用出现在 `subheader` 插槽中带有 `[data-toggle-nav]` 的按钮打开它。`aside` 插槽也会在 920px 以下隐藏。
 
 <p>
   <wa-button appearance="filled" href="/assets/examples/page/demo-1.html" target="_blank">
-    Open demo in a new window
+    在新窗口中打开演示
   </wa-button>
 </p>
 
-### Media
+### 媒体应用
 
-A sample media app page using `header`, `navigation-header`, `main-header`, and `main-footer` along with the default slot. The navigation menu collapses into a drawer at the default `mobile-breakpoint` and can be opened using a button with `[data-toggle-nav]` that appears in the `header` slot.
+使用 `header`、`navigation-header`、`main-header` 和 `main-footer` 以及默认插槽的示例媒体应用页面。导航菜单在默认的 `mobile-breakpoint` 时折叠成抽屉，可以使用出现在 `header` 插槽中带有 `[data-toggle-nav]` 的按钮打开。
 
 <p>
   <wa-button appearance="filled" href="/assets/examples/page/demo-2.html" target="_blank">
-    Open demo in a new window
+    在新窗口中打开演示
   </wa-button>
 </p>
 
-## Customization
+## 自定义
 
-### Sticky Sections
+### 粘性部分
 
-The following sections of a page are "sticky" by default, meaning they remain in position as the user scrolls.
+页面的以下部分默认是"粘性"的，这意味着它们会在用户滚动时保持在原位。
 
 - `banner`
 - `header`
 - `sub-header`
-- `menu` (`navigation` itself is not sticky, but its parent `menu` is)
+- `menu`（`navigation` 本身不是粘性的，但它的父级 `menu` 是）
 - `aside`
 
-This is often desirable, but you can change this behavior using the `disable-sticky` attribute. Use a space-delimited list of names to tell the page which sections should not be sticky.
+这通常是需要的，但你可以使用 `disable-sticky` 属性更改此行为。使用空格分隔的名称列表来告诉页面哪些部分不应该是粘性的。
 
 ```html
 <wa-page disable-sticky="header aside"> ... </wa-page>
 ```
 
-### Skip To Content
+### 跳转到内容
 
-The layout provides a "skip to content" link that's visually hidden until the user tabs into it. You don't have to do anything to configure this, unless you want to change the text displayed in the link. In that case, you can slot in your own text using the `skip-to-content` slot.
+布局提供了一个"跳转到内容"链接，在用户将焦点移到它之前，这个链接是视觉隐藏的。你无需做任何事情来配置它，除非你想更改链接中显示的文本。在这种情况下，你可以使用 `skip-to-content` 插槽插入自己的文本。
 
-This example localizes the "skip to content" link for German users.
+此示例为德语用户本地化了"跳转到内容"链接。
 
 ```html
 <wa-page>
@@ -148,15 +156,15 @@ This example localizes the "skip to content" link for German users.
 </wa-page>
 ```
 
-### Responsiveness
+### 响应式设计
 
-A page isn't very opinionated when it comes to responsive behaviors, but there are tools in place to help make responsiveness easy.
+页面对于响应式行为没有太多意见，但有一些工具可以帮助简化响应式设计。
 
-#### Default Slot Styles
+#### 默认插槽样式
 
-Each slot is a [flex container](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container) and specifies some flex properties so that your content is reasonably responsive by default.
+每个插槽都是一个 [flex 容器](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Container)，并指定了一些 flex 属性，以便你的内容默认具有合理的响应性。
 
-The following slots specify `justify-content: space-between` and `flex-wrap: wrap` to evenly distribute child elements horizontally and allow them to wrap when space is limited.
+以下插槽指定了 `justify-content: space-between` 和 `flex-wrap: wrap`，以水平均匀分布子元素，并在空间有限时允许它们换行。
 
 - `header`
 - `subheader`
@@ -164,28 +172,28 @@ The following slots specify `justify-content: space-between` and `flex-wrap: wra
 - `main-footer`
 - `footer`
 
-The following slots specify `flex-direction: column` to arrange child elements vertically.
+以下插槽指定了 `flex-direction: column` 以垂直排列子元素。
 
 - `navigation-header`
-- `navigation` (or `menu`)
+- `navigation`（或 `menu`）
 - `navigation-footer`
 - `aside`
 
-And the `banner` slot specifies `justify-content: center` to horizontally center its child elements.
+而 `banner` 插槽指定了 `justify-content: center` 以水平居中其自元素。
 
-You can override the default display and flex properties for each slot with your own CSS.
+你可以使用自己的 CSS 覆盖每个插槽的默认显示和 flex 属性。
 
-#### Responsive Navigation
+#### 响应式导航
 
-When you use the `navigation` slot, your slotted content automatically collapses into a drawer on smaller screens. The breakpoint at which this occurs is `768px` by default, but you can change it using the `mobile-breakpoint` attribute, which takes either a number or a [CSS length](https://developer.mozilla.org/en-US/docs/Web/CSS/length).
+使用 `navigation` 插槽时，你插入的内容会在较小屏幕上自动折叠成抽屉。发生这种情况的断点默认为 `768px`，但你可以使用 `mobile-breakpoint` 属性更改它，该属性接受数字或 [CSS 长度](https://developer.mozilla.org/zh-CN/docs/Web/CSS/length)。
 
 ```html
 <wa-page mobile-breakpoint="600"> ... </wa-page>
 ```
 
-By default, a "hamburger" button appears in the `header` slot to toggle the navigation menu on smaller screens. You can customize what this looks like by slotting your own button in the `toggle-navigation` slot or place the `data-toggle-nav` attribute on any button on your page. This _does not_ have to be a Web Awesome element.
+默认情况下，"汉堡包"按钮会出现在 `header` 插槽中，用于在较小屏幕上切换导航菜单。你可以通过在 `toggle-navigation` 插槽中插入自己的按钮来自定义它的外观，或者将 `data-toggle-nav` 属性放在页面上的任何按钮上。这 _不需要_ 是 Web Awesome 元素。
 
-The default button will not be shown when using either of these methods — if you want to use multiple navigation toggles on your page, simply add the `data-toggle-nav` attribute to multiple elements.
+当使用这些方法中的任何一种时，默认按钮将不会显示 - 如果你想在页面上使用多个导航切换，只需将 `data-toggle-nav` 属性添加到多个元素即可。
 
 ```html
 <wa-page mobile-breakpoint="600">
@@ -195,13 +203,13 @@ The default button will not be shown when using either of these methods — if y
 </wa-page>
 ```
 
-Alternatively, you can apply `nav-state="open"` and `nav-state="closed"` to the layout component to show and hide the navigation, respectively.
+或者，你可以将 `nav-state="open"` 和 `nav-state="closed"` 应用于布局组件以分别显示和隐藏导航。
 
 ```html
 <wa-page nav-state="open"> ... </wa-page>
 ```
 
-`<wa-page>` is given the attribute `view="mobile"` or `view="desktop"` when the viewport narrower or wider than the `mobile-breakpoint` value, respectively. You can leverage these attributes to change styles depending on the size of the viewport. This is especially useful to hide your `data-toggle-nav` button when the viewport is wider.
+当视口比 `mobile-breakpoint` 值更窄或更宽时，`<wa-page>` 会分别获得属性 `view="mobile"` 或 `view="desktop"`。你可以利用这些属性根据视口大小更改样式。这在视口更宽时隐藏你的 `data-toggle-nav` 按钮特别有用。
 
 ```css
 wa-page[view='desktop'] [data-toggle-nav] {
@@ -210,14 +218,14 @@ wa-page[view='desktop'] [data-toggle-nav] {
 ```
 
 :::info
-If you use [native styles](/docs/utilities/native/), this is already taken care for you, and the `data-toggle-nav` button is already hidden on wider screens.
+如果你使用 [原生样式](/docs/utilities/native/)，这些已经处理好了，`data-toggle-nav` 按钮在更宽的屏幕上已经隐藏了。
 :::
 
-#### Custom Widths
+#### 自定义宽度
 
-You specify widths for some slots on your page with [CSS custom properties](#css-custom-properties) for `--menu-width`, `--main-width`, and `--aside-width`.
+你可以使用 `--menu-width`、`--main-width` 和 `--aside-width` 的 [CSS 自定义属性](#css-custom-properties) 指定页面上一些插槽的宽度。
 
-If you specify `--menu-width` to apply a specific width to your `navigation` slot, space will still be reserved on the page even below the `mobile-breakpoint`. To collapse this space on smaller screens, add the following code to your styles.
+如果你指定 `--menu-width` 为 `navigation` 插槽应用特定宽度，即使在 `mobile-breakpoint` 以下，页面上仍会保留空间。要在较小屏幕上折叠此空间，请将以下代码添加到你的样式中。
 
 ```css
 wa-page[view='mobile'] {
@@ -225,7 +233,7 @@ wa-page[view='mobile'] {
 }
 ```
 
-You can use a similar approach for `--aside-width` to hide the `aside` slot on smaller screens. Be sure to also specify `display: none` for the slot:
+你可以对 `--aside-width` 使用类似方法在较小屏幕上隐藏 `aside` 插槽。确保还为插槽指定 `display: none`：
 
 ```css
 wa-page[view='mobile'] {
@@ -237,11 +245,11 @@ wa-page[view='mobile'] {
 }
 ```
 
-### Spacing
+### 间距
 
-A page specifies default `padding` within each slot and a `gap` between the slot's direct children. You can drop elements into any slot, and reasonable spacing is already applied for you.
+页面为每个插槽内指定默认的 `padding` 以及插槽的直接子元素之间的 `gap`。你可以将元素放在任何插槽中，并且已经为你应用了合理的间距。
 
-You can override the default spacing for each slot with your own CSS. In this example, we're setting custom `gap` and `padding` for the `footer` slot.
+你可以使用自己的 CSS 覆盖每个插槽的默认间距。在此示例中，我们为 `footer` 插槽设置了自定义的 `gap` 和 `padding`。
 
 ```css
 [slot='footer'] {
@@ -250,9 +258,9 @@ You can override the default spacing for each slot with your own CSS. In this ex
 }
 ```
 
-## Utility classes
+## 工具类
 
-[Native styles](/docs/utilities/native/) define a few useful defaults for `<wa-page>`, as well as two utility classes you can use for common responsive design tasks:
+[原生样式](/docs/utilities/native/) 为 `<wa-page>` 定义了一些有用的默认值，以及你可以用于常见响应式设计任务的两个工具类：
 
-- `.wa-mobile-only` hides an element on the desktop view
-- `.wa-desktop-only` hides an element on the mobile view
+- `.wa-mobile-only` 在桌面视图上隐藏元素
+- `.wa-desktop-only` 在移动视图上隐藏元素

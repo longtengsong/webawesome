@@ -6,27 +6,33 @@ synonyms:
   - html include
   - embed
   - html import
+  - HTML 包含
+  - 嵌入
+  - HTML 导入
 use-cases:
   - external content
   - partial
   - server-side include
+  - 外部内容
+  - 局部
+  - 服务端包含
 ---
 
-Included files are asynchronously requested using `window.fetch()`. Requests are cached, so the same file can be included multiple times, but only one request will be made.
+包含的文件使用 `window.fetch()` 异步请求。请求会被缓存，所以同一个文件可以被多次包含，但只会发起一次请求。
 
-The included content will be inserted into the `<wa-include>` element's default slot so it can be easily accessed and styled through the light DOM.
+包含的内容会被插入到 `<wa-include>` 元素的默认插槽中，因此可以通过光 DOM 轻松访问和样式化。
 
 ```html {.example}
 <wa-include src="https://shoelace.style/assets/examples/include.html"></wa-include>
 ```
 
-## Examples
+## 示例
 
-### Listening for Events
+### 监听事件
 
-When an include file loads successfully, the `wa-load` event will be emitted. You can listen for this event to add custom loading logic to your includes.
+当包含的文件成功加载时，会触发 `wa-load` 事件。你可以监听这个事件来为你的包含添加自定义加载逻辑。
 
-If the request fails, the `wa-include-error` event will be emitted. In this case, `event.detail.status` will contain the resulting HTTP status code of the request, e.g. 404 (not found).
+如果请求失败，会触发 `wa-include-error` 事件。在这种情况下，`event.detail.status` 会包含请求的 HTTP 状态码，例如 404（未找到）。
 
 ```html
 <wa-include src="https://shoelace.style/assets/examples/include.html"></wa-include>
@@ -36,13 +42,13 @@ If the request fails, the `wa-include-error` event will be emitted. In this case
 
   include.addEventListener('wa-load', event => {
     if (event.eventPhase === Event.AT_TARGET) {
-      console.log('Success');
+      console.log('成功');
     }
   });
 
   include.addEventListener('wa-include-error', event => {
     if (event.eventPhase === Event.AT_TARGET) {
-      console.log('Error', event.detail.status);
+      console.log('错误', event.detail.status);
     }
   });
 </script>

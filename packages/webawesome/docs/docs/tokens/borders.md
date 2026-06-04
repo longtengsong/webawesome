@@ -1,14 +1,14 @@
 ---
-title: Borders
-description: Border tokens define the edges and corners of Web Awesome components.
+title: 边框
+description: 边框令牌定义 Web Awesome 组件的边缘和角落。
 synonyms:
-  - border
-  - outline
-  - stroke
+  - 边框
+  - 轮廓
+  - 描边
 use-cases:
-  - border width
-  - border style
-  - border color
+  - 边框宽度
+  - 边框样式
+  - 边框颜色
 hasOutline: true
 ---
 
@@ -18,104 +18,104 @@ hasOutline: true
   }
 </style>
 
-Border tokens define the edges and corners of Web Awesome components. They use `rem` units so they scale with root font size. You can adjust individual tokens or use scale multipliers to change all widths or radii at once.
+边框令牌定义 Web Awesome 组件的边缘和角落。它们使用 `rem` 单位，以便随根字体大小缩放。您可以调整单个令牌或使用比例乘数一次性更改所有宽度或半径。
 
-## Border Style
+## 边框样式
 
-A single style token controls the line type used for all component borders throughout the library.
+单个样式令牌控制整个库中所有组件边框使用的线条类型。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-border-style">
         <td class="token-name"><code>--wa-border-style</code></td>
-        <td>Standard border line style used across all components</td>
+        <td>所有组件中使用的标准边框线条样式</td>
         <td><div class="swatch" style="border-style: var(--wa-border-style)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Border Width
+## 边框宽度
 
-Border width tokens use `rem` units and are scaled by `--wa-border-width-scale`. Values below `1` make all borders thinner; values above `1` make them thicker.
+边框宽度令牌使用 `rem` 单位，并通过 `--wa-border-width-scale` 缩放。值小于 `1` 会使所有边框变细；值大于 `1` 会使它们变粗。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-border-width-scale">
         <td class="token-name"><code>--wa-border-width-scale</code></td>
-        <td>Global multiplier for all border width calculations</td>
+        <td>所有边框宽度计算的全局乘数</td>
         <td>—</td>
       </tr>
       <tr id="token-wa-border-width-s">
         <td class="token-name"><code>--wa-border-width-s</code></td>
-        <td>Thin border, used for most component outlines</td>
+        <td>细边框，用于大多数组件轮廓</td>
         <td><div class="swatch" style="border-width: var(--wa-border-width-s)"></div></td>
       </tr>
       <tr id="token-wa-border-width-m">
         <td class="token-name"><code>--wa-border-width-m</code></td>
-        <td>Medium border, used for emphasized borders</td>
+        <td>中等边框，用于强调的边框</td>
         <td><div class="swatch" style="border-width: var(--wa-border-width-m)"></div></td>
       </tr>
       <tr id="token-wa-border-width-l">
         <td class="token-name"><code>--wa-border-width-l</code></td>
-        <td>Thick border, used for prominent outlines</td>
+        <td>粗边框，用于突出的轮廓</td>
         <td><div class="swatch" style="border-width: var(--wa-border-width-l)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-## Border Radius
+## 边框圆角
 
-Border radius tokens control the corner rounding of components. Size-based tokens use `rem` units and scale with `--wa-border-radius-scale`. Values below `1` make corners sharper; values above `1` make them rounder. Shape tokens provide fixed shapes regardless of the scale.
+边框圆角令牌控制组件的角落圆角。基于大小的令牌使用 `rem` 单位，并通过 `--wa-border-radius-scale` 缩放。值小于 `1` 使角落更锐利；值大于 `1` 使它们更圆润。形状令牌提供固定的形状，不受比例影响。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
-      <tr><th>Custom Property</th><th>Description</th><th>Preview</th></tr>
+      <tr><th>自定义属性</th><th>描述</th><th>预览</th></tr>
     </thead>
     <tbody>
       <tr id="token-wa-border-radius-scale">
         <td class="token-name"><code>--wa-border-radius-scale</code></td>
-        <td>Global multiplier for all border radius calculations</td>
+        <td>所有边框圆角计算的全局乘数</td>
         <td>—</td>
       </tr>
       <tr id="token-wa-border-radius-s">
         <td class="token-name"><code>--wa-border-radius-s</code></td>
-        <td>Small corner rounding, for compact components like badges and checkboxes</td>
+        <td>小圆角，用于徽章和复选框等紧凑型组件</td>
         <td><div class="swatch" style="border-radius: var(--wa-border-radius-s)"></div></td>
       </tr>
       <tr id="token-wa-border-radius-m">
         <td class="token-name"><code>--wa-border-radius-m</code></td>
-        <td>Medium corner rounding, the default for most inputs and buttons</td>
+        <td>中等圆角，大多数输入和按钮的默认值</td>
         <td><div class="swatch" style="border-radius: var(--wa-border-radius-m)"></div></td>
       </tr>
       <tr id="token-wa-border-radius-l">
         <td class="token-name"><code>--wa-border-radius-l</code></td>
-        <td>Large corner rounding, for cards and panels</td>
+        <td>大圆角，用于卡片和面板</td>
         <td><div class="swatch" style="border-radius: var(--wa-border-radius-l)"></div></td>
       </tr>
       <tr id="token-wa-border-radius-pill">
         <td class="token-name"><code>--wa-border-radius-pill</code></td>
-        <td>Fully rounded ends, creating a pill shape regardless of element size</td>
+        <td>全圆角端部，无论元素大小如何都形成药丸形状</td>
         <td><div class="swatch" style="border-radius: var(--wa-border-radius-pill)"></div></td>
       </tr>
       <tr id="token-wa-border-radius-circle">
         <td class="token-name"><code>--wa-border-radius-circle</code></td>
-        <td>Perfectly circular shape; element must have a 1:1 aspect ratio</td>
+        <td>完美圆形；元素必须具有 1:1 的宽高比</td>
         <td><div class="swatch" style="aspect-ratio: 1 / 1; border-radius: var(--wa-border-radius-circle)"></div></td>
       </tr>
       <tr id="token-wa-border-radius-square">
         <td class="token-name"><code>--wa-border-radius-square</code></td>
-        <td>No corner rounding; sharp, square corners</td>
+        <td>无圆角；锐利的方形角落</td>
         <td><div class="swatch" style="border-radius: var(--wa-border-radius-square)"></div></td>
       </tr>
     </tbody>

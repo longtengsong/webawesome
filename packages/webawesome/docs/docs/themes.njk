@@ -1,6 +1,6 @@
 ---
-title: Themes
-description: Style (and restyle) your website at will with any of Web Awesome's pre-built themes.
+title: 主题
+description: 使用 Web Awesome 的预制主题，随心所欲地样式化（和重新样式化）您的网站。
 layout: page
 ---
 
@@ -9,24 +9,24 @@ layout: page
 
 <h1>{{ title }}</h1>
 
-<p>Themes are collections of <a href="/docs/tokens">design tokens</a> that give a cohesive look and feel to the entire Web Awesome library. Style and restyle your website at will by loading any pre-built theme.</p>
+<p>主题是<a href="/docs/tokens">设计令牌</a>的集合，为整个 Web Awesome 库赋予统一的视觉风格。通过加载任意预制主题，随心所欲地样式化和重新样式化您的网站。</p>
 
 {% raw %}
-<p>See one you like?&nbsp;
+<p>看到喜欢的了？&nbsp;
 {%- if not session.isLoggedIn -%}
-  <a href="/login">Log in</a>&nbsp;
+  <a href="/login">登录</a>&nbsp;
 {%- else -%}
-  Head over to <a href="/teams">your teams</a>&nbsp;
+  前往<a href="/teams">您的团队</a>&nbsp;
 {%- endif -%}
-to create a project with any one of these themes.
+使用这些主题中的任意一个创建项目。
 {%- if not currentUser.hasPro -%}
-  &nbsp;(Plus, there are even more themes to love with {{ site.namePro }}. <wa-icon name="heart" style="color: var(--wa-color-red-70);"></wa-icon>)
+  &nbsp;（此外，还有更多主题等待您使用 {{ site.namePro }} 探索。<wa-icon name="heart" style="color: var(--wa-color-red-70);"></wa-icon>）
 {%- endif -%}
 </p>
 {% endraw %}
 
 <div id="theme-viewer">
-  <wa-radio-group id="theme-picker" label="Theme Selector" value="default" orientation="horizontal">
+  <wa-radio-group id="theme-picker" label="主题选择器" value="default" orientation="horizontal">
     {% for theme in themer.themes %}
       {% if not theme.isPro %}
         <wa-radio
@@ -66,12 +66,12 @@ to create a project with any one of these themes.
 <div id="theme-preview" class="wa-stack">
   <header class="wa-stack">
     <div class="wa-cluster">
-      <h2 data-theme-name="name">Theme</h2>
-      {{ freeBadge({ id: "free-badge", description: "This theme is available in the free version of Web Awesome." }) }}
-      {{ proBadge({ id: "pro-badge", description: "This theme requires access to " ~ site.namePro ~ "." }) }}
+      <h2 data-theme-name="name">主题</h2>
+      {{ freeBadge({ id: "free-badge", description: "该主题在 Web Awesome 免费版本中可用。" }) }}
+      {{ proBadge({ id: "pro-badge", description: "该主题需要访问 " ~ site.namePro ~ "。" }) }}
 
     </div>
-    <p data-theme-description>Description</p>
+    <p data-theme-description>描述</p>
   </header>
   <wa-comparison position="80">
     <wa-zoomable-frame
@@ -89,7 +89,7 @@ to create a project with any one of these themes.
   </wa-comparison>
 </div>
 
-<h2>Using This Theme</h2>
+<h2>使用此主题</h2>
 
 <div id="import-code">
   {% for theme in themer.themes %}
@@ -97,27 +97,27 @@ to create a project with any one of these themes.
       <wa-tab-group data-install-tabs>
         <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
         <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
         <wa-tab-panel name="cdn">
 {% if theme.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
   <wa-icon name="info-circle" variant="regular"></wa-icon>
-  This theme can only be used on workspaces with a Pro subscription.
+  该主题仅可在拥有 Pro 订阅的工作区中使用。
 </wa-callout>
 {% endmarkdown %}
 {% else %}
 {% set themeCdnUrl %}{% cdnUrl 'styles/themes/' %}{{ theme.filename }}{% endset %}
 {% markdown %}
-To use this theme, add the theme's stylesheet from the CDN:
+要使用此主题，请从 CDN 添加主题样式表：
 
 ```html
 <link rel="stylesheet" href="{{ themeCdnUrl }}">
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
@@ -128,13 +128,13 @@ Then apply the following classes to the `<html>` element:
 
         <wa-tab-panel name="npm">
 {% markdown %}
-After installing <code>@awesome.me/webawesome</code>, import the theme's stylesheet:
+安装 <code>@awesome.me/webawesome</code> 后，导入主题样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/themes/{{ theme.filename }}';
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
@@ -144,13 +144,13 @@ Then apply the following classes to the `<html>` element:
 
         <wa-tab-panel name="self-hosted">
 {% markdown %}
-If you're self-hosting Web Awesome, include the theme's stylesheet from your server:
+如果您正在自行托管 Web Awesome，请从您的服务器引入主题样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/themes/{{ theme.filename }}">
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
@@ -161,25 +161,25 @@ Then apply the following classes to the `<html>` element:
         <wa-tab-panel name="hosted">
 {% if theme.isPro %}
 {% markdown %}
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. Press <wa-icon name="paintbrush" variant="regular"></wa-icon> **Edit Your Theme** to open the Theme Builder.
-3. Open **Theme** and select **{{ theme.filename | stripExtension | capitalize }}**.
-4. Press **Save Theme** to immediately update anywhere you're using your project.
+**对于 Pro 工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
+3. 打开 **主题** 并选择 **{{ theme.filename | stripExtension | capitalize }}**。
+4. 点击 **保存主题**，使用您项目的任何地方都会立即更新。
 {% endmarkdown %}
 {% else %}
 {% markdown %}
-**For projects on Free workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. For your **Theme**, select <wa-icon name="paintbrush" variant="regular"></wa-icon> **{{ theme.filename | stripExtension | capitalize }}**.
-3. For your **Color Palette**, select <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ theme.palette.filename | stripExtension | capitalize }}**.
-4. Press **Save Changes** to immediately update anywhere you're using your project.
+**对于免费工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 对于您的 **主题**，选择 <wa-icon name="paintbrush" variant="regular"></wa-icon> **{{ theme.filename | stripExtension | capitalize }}**。
+3. 对于您的 **调色板**，选择 <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ theme.palette.filename | stripExtension | capitalize }}**。
+4. 点击 **保存更改**，使用您项目的任何地方都会立即更新。
 
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-icon name="gear" variant="regular"></wa-icon> **Settings**.
-2. Press <wa-icon name="paintbrush" variant="regular"></wa-icon> **Edit Your Theme** to open the Theme Builder.
-3. Open **Theme** and select **{{ theme.filename | stripExtension | capitalize }}**.
-4. Press **Save Theme** to immediately update anywhere you're using your project.
+**对于 Pro 工作区上的项目：**
+1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
+2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
+3. 打开 **主题** 并选择 **{{ theme.filename | stripExtension | capitalize }}**。
+4. 点击 **保存主题**，使用您项目的任何地方都会立即更新。
 {% endmarkdown %}
 {% endif %}
         </wa-tab-panel>

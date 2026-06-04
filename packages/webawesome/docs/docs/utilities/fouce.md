@@ -1,11 +1,13 @@
 ---
-title: Reducing FOUCE
-description: Utility to improve the loading experience by hiding non-prerendered custom elements until they are registered.
+title: 减少 FOUCE
+description: 通过隐藏未预渲染的自定义元素直到它们被注册，来改善加载体验的实用工具。
 layout: docs
 tags: styleUtilities
 synonyms:
   - flash of unstyled content
   - custom element flash
+  - 未样式化内容的闪烁
+  - 自定义元素闪烁
   - FOUC
   - CLS
 use-cases:
@@ -13,16 +15,19 @@ use-cases:
   - undefined element
   - hydration flash
   - layout shift
+  - 组件加载闪烁
+  - 未定义元素
+  - 水合闪烁
+  - 布局偏移
 ---
 
-Often, components are shown before their logic and styles have had a chance to load, also known as a [Flash of Undefined Custom Elements](https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/).
+通常，组件在其逻辑和样式有机会加载之前就会显示出来，这也称为[未定义自定义元素的闪烁](https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/)。
 
-The FOUCE style utility takes care of hiding custom elements until **both they and their contents** have been registered, up to a maximum of two seconds.
+FOUCE 样式工具负责隐藏自定义元素，直到 **它们及其内容** 都已被注册，最长等待时间为两秒。
 
-## Cloaking
+## 遮蔽
 
-In many cases, this is not enough, and you may wish to hide a broader wrapper element or even the entire page until all WA elements within it have loaded.
-To do that, you can add the `wa-cloak` class to any element on the page or even apply it to the whole page by placing the class on the `<html>` element:
+在许多情况下，这还不够，您可能希望隐藏更广泛的包装元素，甚至整个页面，直到其中的所有 WA 元素都已加载完毕。为此，您可以将 `wa-cloak` 类添加到页面上的任何元素，甚至可以通过将类放在 `<html>` 元素上来应用于整个页面：
 
 ```html
 <html class="wa-cloak">
@@ -30,13 +35,13 @@ To do that, you can add the `wa-cloak` class to any element on the page or even 
 </html>
 ```
 
-As soon as all elements are registered _or_ after two seconds have elapsed, the autoloader will show the page. The two-second timeout prevents blank screens from persisting on slow networks and pages that have errors.
+一旦所有元素都已注册 _或_ 经过两秒后，自动加载器将显示页面。两秒超时防止了在慢速网络上和有错误的页面上出现持续的白屏。
 
-## Turbo (Hotwire) Users
+## Turbo (Hotwire) 用户
 
-If you're using [Turbo](https://turbo.hotwired.dev/) to serve a multi-page application (MPA) as a single page application (SPA), you might notice FOUCE when navigating from page to page. This is because Turbo renders the new page's content before the autoloader has a chance to register new components.
+如果您正在使用 [Turbo](https://turbo.hotwired.dev/) 将多页面应用（MPA）作为单页面应用（SPA）提供，您可能会在页面间导航时注意到 FOUCE。这是因为 Turbo 在自动加载器有机会注册新组件之前就渲染了新页面的内容。
 
-The following function acts as a middleware to ensure components are registered _before_ the page shows, eliminating FOUCE for page-to-page navigation with Turbo.
+以下函数作为中间件，确保组件在页面显示 _之前_ 被注册，从而消除使用 Turbo 进行页面间导航时的 FOUCE。
 
 ```js
 import { preventTurboFouce } from '/dist/webawesome.js';

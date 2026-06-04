@@ -1,6 +1,6 @@
 ---
-title: Design Tokens
-description: CSS custom properties that control the look and feel of every Web Awesome component, giving your theme a consistent, customizable appearance.
+title: 设计令牌
+description: 控制每个 Web Awesome 组件外观的 CSS 自定义属性，为您的主题提供一致且可定制的外观。
 layout: page-outline
 wide: true
 hasBreadcrumbs: false
@@ -9,7 +9,7 @@ override:tags: []
 ---
 
 {% markdown %}
-Design tokens are the building blocks of your [theme](/docs/themes) and thread through every Web Awesome component, giving your project a cohesive look and feel. They control everything from typography and color to spacing and borders.
+设计令牌是您的[主题](/docs/themes)的构建基石，贯穿每个 Web Awesome 组件，为您的项目赋予统一的外观和感觉。它们控制从排版和颜色到间距和边框的一切。
 {% endmarkdown %}
 
 <div class="modern-card-list">
@@ -26,16 +26,16 @@ Design tokens are the building blocks of your [theme](/docs/themes) and thread t
     {% endfor %}
   </section>
   <div class="search-list-empty" hidden>
-    No results found
+    未找到结果
   </div>
 </div>
 
 <wa-divider style="--spacing: var(--wa-space-3xl);"></wa-divider>
 
 {% markdown %}
-## Using {{ title }}
+## 使用 {{ title }}
 
-Design tokens are CSS custom properties prefixed with `--wa-`. Use them in your own stylesheets by wrapping the token name in the CSS `var()` function and assigning it to a property:
+设计令牌是以 `--wa-` 为前缀的 CSS 自定义属性。在自己的样式表中使用时，将令牌名称包裹在 CSS `var()` 函数中并赋值给属性：
 
 ```css
 .branded-container {
@@ -45,7 +45,7 @@ Design tokens are CSS custom properties prefixed with `--wa-`. Use them in your 
 }
 ```
 
-You can also use design tokens with inline styles:
+您也可以将设计令牌用于内联样式：
 
 ```html
 <span style="
@@ -54,18 +54,18 @@ You can also use design tokens with inline styles:
 "></span>
 ```
 
-## Customizing {{ title }}
+## 自定义 {{ title }}
 
-Overriding a design token updates every component and style that references it, making it a breeze to style and restyle your project. To customize a token, set its value in your styles. Setting tokens on `:root` applies them globally across your entire project:
+覆盖设计令牌会更新引用它的每个组件和样式，使样式化和重新样式化您的项目变得轻而易举。要自定义令牌，请在样式中设置其值。在 `:root` 上设置令牌可将其应用到整个项目的全局范围：
 
 ```css
 :root {
   --wa-font-family-body: 'Inter', sans-serif;
-  --wa-border-width-scale: 1.5; /* scales all border widths proportionally */
+  --wa-border-width-scale: 1.5; /* 按比例缩放所有边框宽度 */
 }
 ```
 
-To customize a token that adapts to light and dark mode, scope the token to `.wa-light`, `.wa-dark`, and, optionally, `.wa-invert`:
+要自定义适应亮色和暗色模式的令牌，请将令牌限定在 `.wa-light`、`.wa-dark` 以及可选的 `.wa-invert` 范围内：
 
 ```css
 :root,
@@ -80,7 +80,7 @@ To customize a token that adapts to light and dark mode, scope the token to `.wa
 }
 ```
 
-You can also scope tokens to a subtree rather than `:root`, which allows you to theme a single section or element differently from the rest:
+您还可以将令牌限定在子树而非 `:root` 范围内，这使得您可以对单个部分或元素应用与其余部分不同的主题：
 
 ```css
 *:state(user-invalid),

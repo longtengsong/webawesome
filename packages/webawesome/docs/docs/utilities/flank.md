@@ -1,16 +1,22 @@
 ---
-title: Flank
-description: 'Use the `wa-flank` class to position two items side-by-side, with one item positioned alongside, or _flanking_, content that stretches to fill the available space.'
+title: 侧边布局
+description: 使用 `wa-flank` 类将两个元素并排排列，其中一个元素位于一侧，另一个拉伸以填充可用空间。
 layout: docs
 tags: layoutUtilities
 synonyms:
   - media object
   - side by side
   - horizontal layout
+  - 媒体对象
+  - 并排
+  - 水平布局
 use-cases:
   - icon and text
   - image and content
   - avatar with text
+  - 图标和文字
+  - 图片和内容
+  - 头像与文字
 ---
 
 <style>
@@ -28,9 +34,9 @@ use-cases:
   }
 </style>
 
-A flank pairs two items side by side, where one item (the "flank") sits at its natural size while the other stretches to fill the remaining space. It's the right fit for any "small thing next to a larger thing" pattern: an avatar next to a name and bio, an icon beside a paragraph of text, an input followed by a submit button, or a sidebar alongside page content.
+侧边布局将两个元素并排排列，其中一个元素（"侧边"）保持其自然大小，而另一个拉伸以填充剩余空间。它是任何"小东西在大东西旁边"模式的正确选择：头像旁边的姓名和简介、段落文本旁边的图标、输入框后面的提交按钮，或页面内容旁边的侧边栏。
 
-By default the first child is the flank, but you can pick either end with `wa-flank:start` or `wa-flank:end`. When the main content gets too narrow, the two items wrap onto separate lines automatically.
+默认情况下，第一个子元素是侧边，但您可以使用 `wa-flank:start` 或 `wa-flank:end` 选择任意一端。当主内容变得太窄时，两个元素会自动换行到单独的行。
 
 ```html {.example}
 <div class="wa-flank">
@@ -39,9 +45,9 @@ By default the first child is the flank, but you can pick either end with `wa-fl
 </div>
 ```
 
-## Examples
+## 示例
 
-Flanks work especially well for asides, inputs with adjacent buttons, and rich description lists.
+侧边布局特别适合侧边栏、带有相邻按钮的输入框和丰富的描述列表。
 
 ```html {.example}
 <div class="wa-flank:end wa-gap-xs">
@@ -96,9 +102,9 @@ Flanks work especially well for asides, inputs with adjacent buttons, and rich d
 </div>
 ```
 
-## Position
+## 位置
 
-By default, the first item in the `wa-flank` container will flank the other content. You can specify whether the first or last item will flank the remaining content by appending `:start` or `:end` to the `wa-flank` class.
+默认情况下，`wa-flank` 容器中的第一个元素将位于侧边。您可以通过向 `wa-flank` 类附加 `:start` 或 `:end` 来指定是第一个还是最后一个元素位于侧边。
 
 ```html {.example}
 <div class="wa-stack">
@@ -113,9 +119,9 @@ By default, the first item in the `wa-flank` container will flank the other cont
 </div>
 ```
 
-## Sizing
+## 尺寸
 
-The flank's inline size is determined by the size of its content, but you can set a target size using the `--flank-size` property. When the flank wraps, it stretches to fill the inline size of the container.
+侧边的内联大小由其内容的大小决定，但您可以使用 `--flank-size` 属性设置目标大小。当侧边换行时，它会拉伸以填充容器的内联大小。
 
 ```html {.example}
 <div class="wa-stack">
@@ -130,7 +136,7 @@ The flank's inline size is determined by the size of its content, but you can se
 </div>
 ```
 
-The main content fills the remaining inline space of the container. By default, the items wrap when the main content is less than 50% of the container. You can change the minimum size of the main content with the `--content-percentage` property.
+主内容填充容器的剩余内联空间。默认情况下，当主内容小于容器的 50% 时，元素会换行。您可以使用 `--content-percentage` 属性更改主内容的最小大小。
 
 ```html {.example}
 <div class="wa-stack">
@@ -145,9 +151,9 @@ The main content fills the remaining inline space of the container. By default, 
 </div>
 ```
 
-## Align Items
+## 对齐项目
 
-By default, items are centered in the block direction of the `wa-flank` container. You can add any of the following [`wa-align-items-*`](/docs/utilities/align-items) classes to an element with `wa-flank` to specify how items are aligned in the block direction:
+默认情况下，项目在 `wa-flank` 容器的块方向上居中。您可以向带有 `wa-flank` 的元素添加以下任何 [`wa-align-items-*`](/docs/utilities/align-items) 类，以指定项目在块方向上的对齐方式：
 
 - `wa-align-items-start`
 - `wa-align-items-end`
@@ -176,9 +182,9 @@ By default, items are centered in the block direction of the `wa-flank` containe
 </div>
 ```
 
-## Gap
+## 间距
 
-By default, the gap between flank items uses `--wa-space-m` from your theme. You can add any of the following [`wa-gap-*`](/docs/utilities/gap) classes to an element with `wa-flank` to specify the gap between items:
+默认情况下，侧边项目之间的间距使用主题中的 `--wa-space-m`。您可以向带有 `wa-flank` 的元素添加以下任何 [`wa-gap-*`](/docs/utilities/gap) 类，以指定项目之间的间距：
 
 - `wa-gap-0`
 - `wa-gap-3xs`

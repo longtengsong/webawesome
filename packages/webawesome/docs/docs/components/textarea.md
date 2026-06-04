@@ -1,140 +1,146 @@
 ---
-title: Textarea
+title: 文本域
 layout: component
 category: Forms
 synonyms:
   - text area
   - multiline input
   - text box
+  - 多行输入
+  - 文本框
 use-cases:
   - comment box
   - message input
   - description field
   - code input
+  - 评论框
+  - 消息输入
+  - 描述字段
+  - 代码输入
 ---
 
 ```html {.example}
-<wa-textarea label="Type somethin', will ya"></wa-textarea>
+<wa-textarea label="说点什么，好吗"></wa-textarea>
 ```
 
 :::info
-This component works with standard `<form>` elements. Please refer to the section on [form controls](/docs/form-controls) to learn more about form submission and client-side validation.
+此组件与标准 `<form>` 元素配合使用。请参阅[表单控件](/docs/form-controls)部分以了解有关表单提交和客户端验证的更多信息。
 :::
 
-## Examples
+## 示例
 
-### Labels
+### 标签
 
-Use the `label` attribute to give the textarea an accessible label. For labels that contain HTML, use the `label` slot instead.
-
-```html {.example}
-<wa-textarea label="Comments"></wa-textarea>
-```
-
-### Hint
-
-Add descriptive hint to a textarea with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
+使用 `label` 属性为文本域提供一个可访问的标签。对于包含 HTML 的标签，请改为使用 `label` 插槽。
 
 ```html {.example}
-<wa-textarea label="Feedback" hint="Please tell us what you think."> </wa-textarea>
+<wa-textarea label="评论"></wa-textarea>
 ```
 
-### Rows
+### 提示
 
-Use the `rows` attribute to change the number of text rows that get shown.
+使用 `hint` 属性为文本域添加描述性提示。对于包含 HTML 的提示，请改为使用 `hint` 插槽。
+
+```html {.example}
+<wa-textarea label="反馈" hint="请告诉我们您的想法。"> </wa-textarea>
+```
+
+### 行数
+
+使用 `rows` 属性来改变显示的文本行数。
 
 ```html {.example}
 <wa-textarea rows="2"></wa-textarea>
 ```
 
-### Placeholders
+### 占位符
 
-Use the `placeholder` attribute to add a placeholder.
+使用 `placeholder` 属性来添加占位符。
 
 ```html {.example}
-<wa-textarea placeholder="Type something"></wa-textarea>
+<wa-textarea placeholder="输入内容"></wa-textarea>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the textarea's visual appearance.
+使用 `appearance` 属性来改变文本域的视觉外观。
 
 ```html {.example}
-<wa-textarea placeholder="Type something" appearance="filled"></wa-textarea><br />
-<wa-textarea placeholder="Type something" appearance="filled-outlined"></wa-textarea><br />
-<wa-textarea placeholder="Type something" appearance="outlined"></wa-textarea>
+<wa-textarea placeholder="输入内容" appearance="filled"></wa-textarea><br />
+<wa-textarea placeholder="输入内容" appearance="filled-outlined"></wa-textarea><br />
+<wa-textarea placeholder="输入内容" appearance="outlined"></wa-textarea>
 ```
 
-### Disabled
+### 禁用
 
-Use the `disabled` attribute to disable a textarea.
+使用 `disabled` 属性来禁用文本域。
 
 ```html {.example}
-<wa-textarea placeholder="Textarea" disabled></wa-textarea>
+<wa-textarea placeholder="文本域" disabled></wa-textarea>
 ```
 
-### Value
+### 初始值
 
-Use the `value` attribute to set an initial value.
+使用 `value` 属性来设置初始值。
 
 ```html {.example}
-<wa-textarea value="Write something awesome!"></wa-textarea>
+<wa-textarea value="写点很棒的内容！"></wa-textarea>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change a textarea's size.
+使用 `size` 属性来改变文本域的尺寸。
 
 ```html {.example}
-<wa-textarea placeholder="Extra Small" size="xs"></wa-textarea>
+<wa-textarea placeholder="超小" size="xs"></wa-textarea>
 <br />
-<wa-textarea placeholder="Small" size="s"></wa-textarea>
+<wa-textarea placeholder="小" size="s"></wa-textarea>
 <br />
-<wa-textarea placeholder="Medium" size="m"></wa-textarea>
+<wa-textarea placeholder="中" size="m"></wa-textarea>
 <br />
-<wa-textarea placeholder="Large" size="l"></wa-textarea>
+<wa-textarea placeholder="大" size="l"></wa-textarea>
 <br />
-<wa-textarea placeholder="Extra Large" size="xl"></wa-textarea>
+<wa-textarea placeholder="超大" size="xl"></wa-textarea>
 ```
 
-### Prevent Resizing
+### 禁止调整大小
 
-By default, textareas can be resized vertically by the user. To prevent resizing, set the `resize` attribute to `none`.
+默认情况下，用户可以垂直调整文本域的大小。要禁止调整大小，请将 `resize` 属性设置为 `none`。
 
 ```html {.example}
 <wa-textarea resize="none"></wa-textarea>
 ```
 
-### Expand with Content
+### 随内容扩展
 
-Textareas will automatically resize to expand to fit their content when `resize` is set to `auto`.
+当 `resize` 设置为 `auto` 时，文本域将自动调整大小以适应其内容。
 
 ```html {.example}
 <wa-textarea resize="auto"></wa-textarea>
 ```
 
-### Resize horizontal
+### 水平调整大小
 
-Textareas can be made to resize horizontally when `resize` is set to `"horizontal"`
+当 `resize` 设置为 `"horizontal"` 时，文本域可以水平调整大小。
 
 ```html {.example}
 <wa-textarea resize="horizontal"></wa-textarea>
 ```
 
-### Resize both
+### 双向调整大小
 
-Textareas can be made to resize both vertically and horizontally when `resize` is set to `"both"`
+当 `resize` 设置为 `"both"` 时，文本域可以垂直和水平调整大小。
 
 ```html {.example}
 <wa-textarea resize="both"></wa-textarea>
 ```
 
-### Character Count
+### 字符计数
 
-Add the `with-count` attribute to show a character count below the textarea. When combined with `maxlength`, the count shows remaining characters instead. The count is exposed to assistive technologies using a live region so screen readers can announce updates as the user types.
+添加 `with-count` 属性以在文本域下方显示字符计数。当与 `maxlength` 结合使用时，计数会改为显示剩余字符数。计数通过实时区域暴露给辅助技术，以便屏幕阅读器可以在用户输入时宣布更新。
 
 ```html {.example}
-<wa-textarea label="Comments" hint="Share your thoughts with us" with-count></wa-textarea>
+<wa-textarea label="评论" hint="与我们分享您的想法" with-count></wa-textarea>
 <br />
-<wa-textarea label="Bio" hint="Tell us a little about yourself" with-count maxlength="100"></wa-textarea>
+<wa-textarea label="简介" hint="告诉我们一点关于您自己" with-count maxlength="100"></wa-textarea>
 ```

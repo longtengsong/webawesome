@@ -1,128 +1,128 @@
 ---
-title: Installation
-description: Choose the installation method that works best for you.
+title: 安装
+description: 选择最适合您的安装方式。
 layout: page-outline
 ---
 
-Welcome to Web Awesome! [Learn more](https://webawesome.com/) about this project and [how to contribute to it](https://webawesome.com/docs/resources/contributing).
+欢迎使用 Web Awesome！[了解更多](https://webawesome.com/)关于该项目以及[如何参与贡献](https://webawesome.com/docs/resources/contributing)。
 
-You can load Web Awesome via CDN or by installing it locally. If you’re using a framework, make sure to check out the pages for [React](/docs/frameworks/react), [Vue](/docs/frameworks/vue), [Angular](/docs/frameworks/angular), and [Svelte](/docs/frameworks/svelte) for additional information.
+您可以通过 CDN 加载 Web Awesome，也可以本地安装。如果您正在使用某个框架，请务必查看 [React](/docs/frameworks/react)、[Vue](/docs/frameworks/vue)、[Angular](/docs/frameworks/angular) 和 [Svelte](/docs/frameworks/svelte) 的相关页面获取更多信息。
 
 ---
 
-## CDN (Easiest)
+## CDN（最简单）
 
-The CDN is the fastest way to get started with Web Awesome. Just copy and paste the following into the `<head>` of your HTML to get started!
+CDN 是开始使用 Web Awesome 最快的方式。只需将以下内容复制粘贴到您的 HTML 的 `<head>` 中即可开始！
 
 ```html
 <link rel="stylesheet" href="{% cdnUrl 'styles/webawesome.css' %}" />
 <script type="module" src="{% cdnUrl 'webawesome.loader.js' %}"></script>
 ```
 
-Now you can [use any Web Awesome component](/docs/components)! Try putting a button on the page:
+现在您可以[使用任意 Web Awesome 组件](/docs/components)了！试试在页面上放一个按钮：
 
 ```html
-<wa-button variant="brand">Click me!</wa-button>
+<wa-button variant="brand">点击我！</wa-button>
 ```
 
-:::pro Using Web Awesome Pro?
-Get personalized installation instructions from <a href="/workspaces">your&nbsp;workspaces</a> instead.
+:::pro 在使用 Web Awesome Pro？
+请前往<a href="/workspaces">您的工作区</a>获取个性化安装说明。
 :::
 
-## Installing with npm
+## 通过 npm 安装
 
-Start by installing the Web Awesome package:
+首先安装 Web Awesome 包：
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-Then, in your JavaScript files, import the default theme and any components you want to use.
+然后，在您的 JavaScript 文件中导入默认主题以及您想要使用的任意组件。
 
 ```js
-// Web Awesome styles
+// Web Awesome 样式
 import '@awesome.me/webawesome/dist/styles/webawesome.css';
 
-// Import the components you want to use
+// 导入您想要使用的组件
 import '@awesome.me/webawesome/dist/components/button/button.js';
 import '@awesome.me/webawesome/dist/components/input/input.js';
 ```
 
-Once a component has been imported, you can use it in your HTML normally. Components are cherry picked to ensure you're getting the smallest possible bundle. You can find each component import in the "Importing" section of its documentation.
+组件导入后，您就可以像往常一样在 HTML 中使用它了。组件是按需选取的，以确保获得尽可能小的包体积。您可以在每个组件的文档的"导入"部分找到相应的组件导入路径。
 
-:::pro Using Web Awesome Pro?
-Get personalized installation instructions from <a href="/workspaces">your&nbsp;workspaces</a> instead.
+:::pro 在使用 Web Awesome Pro？
+请前往<a href="/workspaces">您的工作区</a>获取个性化安装说明。
 :::
 
-## Get the Download (Advanced)
+## 获取下载包（高级）
 
-You can download Web Awesome from npm and self-host it.
+您可以从 npm 下载 Web Awesome 并自行托管。
 
 ```bash
 npm pack @awesome.me/webawesome
 ```
 
-This will download a `.tgz` archive containing all Web Awesome files. Extract it and host the files on your own server.
+这将下载一个包含所有 Web Awesome 文件的 `.tgz` 归档文件。解压后将其托管在您自己的服务器上。
 
 ---
 
-## Additional Setup
+## 额外设置
 
-### The Difference Between `/dist` & `/dist-cdn`
+### `/dist` 和 `/dist-cdn` 的区别
 
-If you have Web Awesome installed locally via npm, you'll notice the following directories in the project's root:
+如果您通过 npm 本地安装了 Web Awesome，您会注意到项目根目录中有以下目录：
 
 ```
 dist/
 dist-cdn/
 ```
 
-The `dist-cdn` files come with everything bundled together, so you can use them directly without a build tool. The dist files keep dependencies separate, which lets your bundler optimize and share code more efficiently.
+`dist-cdn` 文件已将一切打包在一起，因此您无需构建工具即可直接使用。而 `dist` 文件则保持依赖分离，让您的打包工具能够更高效地优化和共享代码。
 
-Use `dist-cdn` if you're loading directly in the browser or from a CDN. Use `dist` if you're using a bundler like Webpack or Vite.
+如果您直接在浏览器中加载或从 CDN 加载，请使用 `dist-cdn`。如果您使用 Webpack 或 Vite 等打包工具，请使用 `dist`。
 
-### Referencing Necessary Styles
+### 引用必要的样式
 
-If you're self-hosting Web Awesome, you'll need to set up your pages to reference any necessary styles. You can do so by referencing `webawesome.css`, or you can pick and choose specific stylesheets you'd like to use.
+如果您自行托管 Web Awesome，您需要设置页面以引用必要的样式。您可以引用 `webawesome.css`，也可以挑选您想要使用的特定样式表。
 
 ```html
-<!-- Option 1: use all Web Awesome styles -->
+<!-- 选项 1：使用所有 Web Awesome 样式 -->
 <link rel="stylesheet" href="/dist/styles/webawesome.css" />
 
-<!-- Option 2: pick and choose styles -->
+<!-- 选项 2：挑选样式 -->
 
-<!-- theme (required) -->
+<!-- 主题（必需） -->
 <link rel="stylesheet" href="/dist/styles/themes/default.css" />
 
-<!-- native styles (optional) -->
+<!-- 原生样式（可选） -->
 <link rel="stylesheet" href="/dist/styles/native.css" />
 
-<!-- CSS utilities (optional) -->
+<!-- CSS 工具类（可选） -->
 <link rel="stylesheet" href="/dist/styles/utilities.css" />
 ```
 
-If you choose to use a theme other than the default theme, be sure to add the corresponding class (e.g. `.wa-theme-awesome`) to your `<html>` element so that the class is applied.
+如果您选择使用默认主题以外的主题，请务必在您的 `<html>` 元素上添加相应的类（例如 `.wa-theme-awesome`），以确保类被应用。
 
-### Setting the Base Path
+### 设置基础路径
 
-Some components rely on assets (icons, images, etc.) and Web Awesome needs to know where they're located. For convenience, Web Awesome will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `webawesome.loader.js` and will "just work" for most users.
+某些组件依赖资源文件（图标、图片等），Web Awesome 需要知道它们的位置。为方便起见，Web Awesome 会根据您加载的脚本自动检测正确的位置。这假设资源文件与 `webawesome.loader.js` 位于同一目录，对大多数用户来说"开箱即用"。
 
-==If you're using the CDN, you can skip this section.== However, if you're using npm or a downloaded version, you'll need to set the base path. You can do this one of two ways.
+==如果您使用的是 CDN，可以跳过此部分。== 但是，如果您使用的是 npm 或下载版本，则需要设置基础路径。您可以通过以下两种方式之一进行设置。
 
 ```html
-<!-- Option 1: the data-webawesome attribute -->
+<!-- 选项 1：使用 data-webawesome 属性 -->
 <script src="bundle.js" data-webawesome="/path/to/webawesome/dist"></script>
 
-<!-- Option 2: the setBasePath() method -->
+<!-- 选项 2：使用 setBasePath() 方法 -->
 <script type="module">
   import { setBasePath } from '/path/to/webawesome/dist/webawesome.js';
   setBasePath('/path/to/webawesome/dist');
 </script>
 ```
 
-### Referencing Assets
+### 引用资源文件
 
-Most of the magic behind assets is handled internally by Web Awesome, but if you need to reference the base path for any reason, the same module exports a function called `getBasePath()`. An optional string argument can be passed, allowing you to get the full path to any asset.
+资源文件的背后魔法大多由 Web Awesome 内部处理，但如果出于任何原因您需要引用基础路径，同一模块还导出了一个名为 `getBasePath()` 的函数。可以传入一个可选的字符串参数，让您获取到任意资源的完整路径。
 
 ```html
 <script type="module">
@@ -132,27 +132,27 @@ Most of the magic behind assets is handled internally by Web Awesome, but if you
 
   // ...
 
-  // Get the base path, e.g. /path/to/assets
+  // 获取基础路径，例如 /path/to/assets
   const basePath = getBasePath();
 
-  // Get the path to an asset, e.g. /path/to/assets/file.ext
+  // 获取资源的路径，例如 /path/to/assets/file.ext
   const assetPath = getBasePath('file.ext');
 </script>
 ```
 
-### Using Font Awesome Pro and Pro+
+### 使用 Font Awesome Pro 和 Pro+
 
-{{ site.siblings.fontAwesome.name }} users can provide their kit code to unlock Pro and Pro+ icon packs. You can do so by adding the `data-fa-kit-code` attribute to any element on the page, or by calling the `setKitCode()` method.
+{{ site.siblings.fontAwesome.name }} 用户可以提供他们的 Kit 代码来解锁 Pro 和 Pro+ 图标包。您可以通过在页面任何元素上添加 `data-fa-kit-code` 属性，或调用 `setKitCode()` 方法来实现。
 
 ```html
-<!-- Option 1: the data-fa-kit-code attribute -->
+<!-- 选项 1：使用 data-fa-kit-code 属性 -->
 <script src="bundle.js" data-fa-kit-code="abc123"></script>
 
-<!-- Option 2: the setKitCode() method -->
+<!-- 选项 2：使用 setKitCode() 方法 -->
 <script type="module">
   import { setKitCode } from '{% cdnUrl 'webawesome.loader.js' %}';
   setKitCode('YOUR_KIT_CODE_HERE');
 </script>
 ```
 
-Now you can use {{ site.siblings.fontAwesome.name }} icons through the [`<wa-icon>`](/docs/components/icon) component!
+现在您可以通过 [`<wa-icon>`](/docs/components/icon) 组件使用 {{ site.siblings.fontAwesome.name }} 图标了！

@@ -1,6 +1,6 @@
 ---
-title: Customizing
-description: Learn how to customize Web Awesome through themes, parts, custom properties, and custom states.
+title: 自定义
+description: 了解如何通过主题、部件、自定义属性和自定义状态来自定义 Web Awesome。
 layout: page-outline
 synonyms:
   - styling
@@ -11,6 +11,14 @@ synonyms:
   - css custom properties
   - css variables
   - design tokens
+  - 样式
+  - 自定义样式
+  - 覆盖
+  - 主题
+  - css 部件
+  - css 自定义属性
+  - css 变量
+  - 设计令牌
 use-cases:
   - theme
   - brand
@@ -18,32 +26,38 @@ use-cases:
   - custom properties
   - custom states
   - shadow dom
+  - 主题
+  - 品牌
+  - css 部件
+  - 自定义属性
+  - 自定义状态
+  - 影子 DOM
 ---
 
-You can customize the look and feel of Web Awesome at a high level with themes. For more advanced customizations, you can make use of CSS parts and custom properties to target individual components.
+您可以通过主题在高级别上自定义 Web Awesome 的外观和感觉。对于更高级的自定义，您可以使用 CSS 部件和自定义属性来定位各个组件。
 
-## Themes
+## 主题
 
-Web Awesome uses [themes](/docs/themes) to apply a cohesive look and feel across the entire library. Themes are built with a collection of predefined CSS custom properties, which we call [design tokens](/docs/tokens), and there are many premade themes you can choose from.
+Web Awesome 使用[主题](/docs/themes)在整个库中应用统一的视觉风格。主题由一组预定义的 CSS 自定义属性（我们称之为[设计令牌](/docs/tokens)）构建而成，您可以从许多预制主题中进行选择。
 
 {% raw %}
   <p>
-    To use a pre-built theme {%- if currentUser.hasPro -%}&nbsp;or build your own{%- endif -%},&nbsp;
+    要使用预制主题{%- if currentUser.hasPro -%}&nbsp;或自行构建{%- endif -%},&nbsp;
     {%- if not session.isLoggedIn -%}
-      <a href="/signup">sign up</a> or <a href="/login">log in</a> to create a project.&nbsp;
+      <a href="/signup">注册</a>或<a href="/login">登录</a>以创建一个项目。&nbsp;
     {%- else -%}
-      head over to <a href="/teams">your teams</a> and open up the project you'd like to use.&nbsp;
+      前往<a href="/teams">您的团队</a>并打开您要使用的项目。&nbsp;
     {%- endif -%}
-    In your project's <wa-icon name="gear" variant="regular"></wa-icon> <strong>Settings</strong>,&nbsp;
+    在项目的 <wa-icon name="gear" variant="regular"></wa-icon> <strong>设置</strong>中,&nbsp;
     {%- if not currentUser.hasPro -%}
-      select a <wa-icon name="paintbrush" variant="regular"></wa-icon> <strong>Theme</strong> and a <wa-icon name="swatchbook" variant="regular"></wa-icon> <strong>Color Palette</strong> to use, save your changes, and bask in the glory of your new theme.
+      选择一个 <wa-icon name="paintbrush" variant="regular"></wa-icon> <strong>主题</strong>和一个 <wa-icon name="swatchbook" variant="regular"></wa-icon> <strong>颜色调色板</strong>，保存更改，然后享受新主题带来的光彩。
     {%- else -%}
-      <wa-icon name="paintbrush" variant="regular"></wa-icon> <strong>Edit Your Theme</strong> to open the Theme Builder and select a pre-built theme or customize your colors, fonts, icons, and more.
+      点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> <strong>编辑您的主题</strong>打开主题构建器，选择预制主题或自定义颜色、字体、图标等。
     {%- endif -%}
   </p>
 {% endraw %}
 
-For even more customizations, you can off-road and override any theme just with CSS — no preprocessor required. All design tokens are prefixed with `--wa-` to avoid collisions with other libraries and your own custom properties. Simply style any design token in your own stylesheet by scoping your styles to `:root` and the class for the relevant color scheme (if needed). Here's an example that uses tinted surface colors in light mode:
+如果需要更多自定义，您也可以使用 CSS 来覆盖任何主题——无需预处理器。所有设计令牌都以 `--wa-` 为前缀，以避免与其他库和您自己的自定义属性冲突。只需在您自己的样式表中，通过将样式限定在 `:root` 和相应配色方案的类（如果需要）来设置任何设计令牌的样式。以下是一个在浅色模式下使用浅色表面颜色的示例：
 
 ```css
 :root,
@@ -55,18 +69,18 @@ For even more customizations, you can off-road and override any theme just with 
 }
 ```
 
-For a complete list of all custom properties used for theming, refer to `src/styles/themes/default.css` in the project's source code.
+有关所有用于主题的自定义属性的完整列表，请参阅项目源代码中的 `src/styles/themes/default.css`。
 
-While themes offer a high-level way to customize the library, individual components offer different hooks as a low-level way to customize them one at a time. Web Awesome components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate their styles and behaviors. As a result, you can't simply target their internals with the usual CSS selectors. Instead, components expose a set of CSS parts, custom properties, and custom states that can be targeted to customize their appearance.
+虽然主题提供了一种高级别的库自定义方式，但单个组件提供了不同的钩子，可以逐一进行低级别的自定义。Web Awesome 组件使用[影子 DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) 来封装其样式和行为。因此，您不能使用常规的 CSS 选择器直接定位其内部元素。相反，组件会暴露一组 CSS 部件、自定义属性和自定义状态，您可以定位它们来自定义其外观。
 
-## CSS Parts
+## CSS 部件
 
-CSS parts offer the most flexibility to customize individual components. The "parts" exposed by each component can be targeted with the [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), or `::part()`.
+CSS 部件为自定义各个组件提供了最大的灵活性。每个组件暴露的"部件"可以通过 [CSS 部件选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)，即 `::part()` 来定位。
 
-Parts allow you to style _any_ standard CSS property, not just those exposed through custom properties. Here's an example that modifies buttons with the `gradient-button` class.
+部件允许您样式化**任何**标准的 CSS 属性，而不仅仅是那些通过自定义属性暴露的属性。以下是一个修改带有 `gradient-button` 类的按钮的示例。
 
 ```html {.example}
-<wa-button class="gradient-button"> Gradient Button </wa-button>
+<wa-button class="gradient-button">渐变按钮</wa-button>
 
 <style>
   .gradient-button::part(base) {
@@ -94,21 +108,21 @@ Parts allow you to style _any_ standard CSS property, not just those exposed thr
 </style>
 ```
 
-CSS parts have a few important advantages:
+CSS 部件有几个重要的优势：
 
-- Customizations can be made to components with explicit selectors, such as `::part(icon)`, rather than implicit selectors, such as `.button > div > span + .icon`, that are much more fragile.
+- 可以使用显式选择器（如 `::part(icon)`）对组件进行自定义，而不是使用更脆弱的隐式选择器（如 `.button > div > span + .icon`）。
 
-- The internal structure of a component will likely change as it evolves. By exposing CSS parts through an API, the internals can be reworked without fear of breaking customizations as long as its parts remain intact.
+- 组件的内部结构会随着演化而改变。通过 API 暴露 CSS 部件，只要部件保持完整，内部结构就可以重新组织，而无需担心破坏自定义样式。
 
-- It encourages us to think more about how components are designed and how customizations should be allowed before users can take advantage of them. Once we opt a part into the component's API, it's guaranteed to be supported and can't be removed until a major version of the library is released.
+- 它鼓励我们在用户利用这些功能之前，更多地考虑组件的设计方式以及应允许的自定义方式。一旦我们将某个部件纳入组件的 API，它就得到支持保证，并且在库的主版本发布之前不会被移除。
 
-Most (but not all) components expose parts. You can find them in each component's API documentation under the "CSS Parts" section.
+大多数（但不是全部）组件都暴露了部件。您可以在每个组件的 API 文档的"CSS 部件"部分找到它们。
 
-## Custom Properties
+## 自定义属性
 
-Components expose custom properties that are scoped to the component, not global, so they do not have the same `--wa-` prefix as a theme's custom properties. These custom properties reflect common qualities of a component, such as `--background-color`, `--border-style`, `--size`, etc.
+组件会暴露限定在组件范围内（而非全局）的自定义属性，因此它们没有像主题自定义属性那样的 `--wa-` 前缀。这些自定义属性反映了组件的常见属性，例如 `--background-color`、`--border-style`、`--size` 等。
 
-You can set custom properties on a component in your stylesheet.
+您可以在样式表中为组件设置自定义属性。
 
 ```css
 wa-avatar {
@@ -116,7 +130,7 @@ wa-avatar {
 }
 ```
 
-This will also work if you need to target a subset of components with a specific class.
+如果您需要定位具有特定类别的部分组件，这也同样适用。
 
 ```css
 wa-avatar.your-class {
@@ -124,18 +138,18 @@ wa-avatar.your-class {
 }
 ```
 
-Alternatively, you can set them inline directly on the element.
+或者，您也可以直接在元素上内联设置它们。
 
 ```html
 <wa-avatar style="--size: 6rem;"></wa-avatar>
 ```
 
-The custom properties exposed by each component can be found in the component's API documentation.
+每个组件暴露的自定义属性可以在该组件的 API 文档中找到。
 
-## Custom States
+## 自定义状态
 
-Components can expose custom states that allow you to style them based on their current condition using the `:state()` selector. Custom states provide a way to target specific component states that aren't covered by standard pseudo-classes like `:hover` or `:focus`.
-Here's an example that styles a checkbox that's checked.
+组件可以暴露自定义状态，允许您使用 `:state()` 选择器根据其当前状态来设置样式。自定义状态提供了一种定位特定组件状态的方法，这些状态无法通过标准伪类（如 `:hover` 或 `:focus`）覆盖。
+以下是一个样式化已选中复选框的示例。
 
 ```css
 wa-checkbox:state(checked) {
@@ -143,20 +157,20 @@ wa-checkbox:state(checked) {
 }
 ```
 
-Custom states can be combined with CSS parts and custom properties to create sophisticated customizations. The custom states exposed by each component can be found in the component's API documentation under the "Custom States" section.
+自定义状态可以与 CSS 部件和自定义属性结合使用，以创建复杂的自定义效果。每个组件暴露的自定义状态可以在该组件的 API 文档的"自定义状态"部分找到。
 
-## Native Elements
+## 原生元素
 
-If you're using [native styles](/docs/utilities/native), any custom styles added for a component should also target the corresponding native element. In general, the same styles you declare for components will work just the same to style their native counterparts.
+如果您使用[原生样式](/docs/utilities/native)，为组件添加的任何自定义样式也应定位相应的原生元素。一般来说，您为组件声明的相同样式同样适用于样式化其原生对应元素。
 
-For example, we can give `<input type="checkbox">` the same custom styles as `<wa-checkbox>` by using standard CSS properties and CSS parts:
+例如，我们可以通过使用标准 CSS 属性和 CSS 部件，为 `<input type="checkbox">` 应用与 `<wa-checkbox>` 相同的自定义样式：
 
 ```html {.example}
-<wa-checkbox class="pinkify">Web Awesome checkbox</wa-checkbox>
+<wa-checkbox class="pinkify">Web Awesome 复选框</wa-checkbox>
 <br />
 <label>
   <input type="checkbox" class="pinkify" />
-  HTML checkbox
+  HTML 复选框
 </label>
 
 <style>

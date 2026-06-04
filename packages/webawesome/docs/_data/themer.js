@@ -1,33 +1,33 @@
 /**
- * All themes used in the themer.
+ * 主题编辑器使用的所有主题。
  */
 export const themes = [
   {
     //
-    // #region Default
+    // #region 默认
     //
-    name: 'Default',
-    description: 'Your trusty companion, like a perfectly broken-in pair of jeans.',
+    name: '默认',
+    description: '你可靠的伙伴，就像一条非常合身的牛仔裤。',
     filename: 'default.css',
     isPro: false,
     fonts: {
       body: {
-        name: 'OS Default (sans-serif)',
+        name: '系统默认（无衬线）',
         css: 'ui-sans-serif, system-ui, sans-serif',
         href: null,
       },
       heading: {
-        name: 'OS Default (sans-serif)',
+        name: '系统默认（无衬线）',
         css: 'ui-sans-serif, system-ui, sans-serif',
         href: null,
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
       longform: {
-        name: 'OS Default (serif)',
+        name: '系统默认（衬线）',
         css: 'ui-serif, serif',
         href: null,
       },
@@ -37,7 +37,7 @@ export const themes = [
       weight: 1,
     },
     palette: {
-      name: 'Default',
+      name: '默认',
       filename: 'default.css',
     },
     colorBrand: {
@@ -63,11 +63,11 @@ export const themes = [
   // #endregion
 
   //
-  // #region Awesome
+  // #region 超赞
   //
   {
-    name: 'Awesome',
-    description: 'Punchy and vibrant, the rock star of themes.',
+    name: '超赞',
+    description: '生动有力，主题界的摇滚明星。',
     filename: 'awesome.css',
     isPro: false,
     fonts: {
@@ -82,7 +82,7 @@ export const themes = [
         href: 'https://fonts.bunny.net/css2?family=Quicksand:wght@300..700&display=swap',
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
@@ -97,7 +97,7 @@ export const themes = [
       weight: 2,
     },
     palette: {
-      name: 'Bright',
+      name: '明亮',
       filename: 'bright.css',
     },
     colorBrand: {
@@ -127,27 +127,27 @@ export const themes = [
   //
   {
     name: 'Shoelace',
-    description: 'The original, familiar look you know and love from Shoelace.',
+    description: 'Shoelace 原始且熟悉的外观，你所熟知和喜爱的样子。',
     filename: 'shoelace.css',
     isPro: false,
     fonts: {
       body: {
-        name: 'OS Default (sans-serif)',
+        name: '系统默认（无衬线）',
         css: 'ui-sans-serif, system-ui, sans-serif',
         href: null,
       },
       heading: {
-        name: 'OS Default (sans-serif)',
+        name: '系统默认（无衬线）',
         css: 'ui-sans-serif, system-ui, sans-serif',
         href: null,
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
       longform: {
-        name: 'OS Default (serif)',
+        name: '系统默认（衬线）',
         css: 'ui-serif, serif',
         href: null,
       },
@@ -186,8 +186,8 @@ export const themes = [
   // #region Active
   //
   {
-    name: 'Active',
-    description: 'Energetic and tactile, always in motion.',
+    name: '活力',
+    description: '充满能量和触感，永远在运动。',
     filename: 'active.css',
     isPro: true,
     fonts: {
@@ -217,7 +217,7 @@ export const themes = [
       weight: 1,
     },
     palette: {
-      name: 'Rudimentary',
+      name: '基础',
       filename: 'rudimentary.css',
     },
     colorBrand: {
@@ -246,8 +246,8 @@ export const themes = [
   // #region Brutalist
   //
   {
-    name: 'Brutalist',
-    description: 'Sharp, square, and unapologetically bold.',
+    name: '粗犷',
+    description: '锐利、方正，毫不妥协的大胆。',
     filename: 'brutalist.css',
     isPro: true,
     fonts: {
@@ -277,7 +277,7 @@ export const themes = [
       weight: 2,
     },
     palette: {
-      name: 'Default',
+      name: '默认',
       filename: 'default.css',
     },
     colorBrand: {
@@ -306,8 +306,8 @@ export const themes = [
   // #region Glossy
   //
   {
-    name: 'Glossy',
-    description: 'Bustling with plenty of luster and shine.',
+    name: '光泽',
+    description: '充满光泽和闪亮，热闹非凡。',
     filename: 'glossy.css',
     isPro: true,
     fonts: {
@@ -337,7 +337,7 @@ export const themes = [
       weight: 1,
     },
     palette: {
-      name: 'Elegant',
+      name: '优雅',
       filename: 'elegant.css',
     },
     colorBrand: {
@@ -366,8 +366,8 @@ export const themes = [
   // #region Matter
   //
   {
-    name: 'Matter',
-    description: 'Digital design inspired by the real world.',
+    name: '物质',
+    description: '受真实世界启发的数字设计。',
     filename: 'matter.css',
     isPro: true,
     fonts: {
@@ -397,7 +397,7 @@ export const themes = [
       weight: 1,
     },
     palette: {
-      name: 'Mild',
+      name: '温和',
       filename: 'mild.css',
     },
     colorBrand: {
@@ -426,8 +426,8 @@ export const themes = [
   // #region Mellow
   //
   {
-    name: 'Mellow',
-    description: 'Soft and soothing, like a lazy Sunday morning.',
+    name: '柔美',
+    description: '柔软舒缓，就像慵懒的周日早晨。',
     filename: 'mellow.css',
     isPro: true,
     fonts: {
@@ -442,7 +442,7 @@ export const themes = [
         href: 'https://fonts.bunny.net/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap',
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
@@ -457,7 +457,7 @@ export const themes = [
       weight: 1.5,
     },
     palette: {
-      name: 'Natural',
+      name: '自然',
       filename: 'natural.css',
     },
     colorBrand: {
@@ -486,8 +486,8 @@ export const themes = [
   // #region Playful
   //
   {
-    name: 'Playful',
-    description: 'Cheerful and engaging, like a playground on screen.',
+    name: '俏皮',
+    description: '欢快有趣，就像屏幕上的游乐场。',
     filename: 'playful.css',
     isPro: true,
     fonts: {
@@ -517,7 +517,7 @@ export const themes = [
       weight: 3,
     },
     palette: {
-      name: 'Rudimentary',
+      name: '基础',
       filename: 'rudimentary.css',
     },
     colorBrand: {
@@ -546,8 +546,8 @@ export const themes = [
   // #region Premium
   //
   {
-    name: 'Premium',
-    description: 'The ultimate in sophistication and style.',
+    name: '高级',
+    description: '精致与风格的极致体现。',
     filename: 'premium.css',
     isPro: true,
     fonts: {
@@ -562,7 +562,7 @@ export const themes = [
         href: 'https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap',
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
@@ -577,7 +577,7 @@ export const themes = [
       weight: 1.5,
     },
     palette: {
-      name: 'Anodized',
+      name: '阳极氧化',
       filename: 'anodized.css',
     },
     colorBrand: {
@@ -606,8 +606,8 @@ export const themes = [
   // #region Tailspin
   //
   {
-    name: 'Tailspin',
-    description: 'Like a bird in flight, guiding you from there to here.',
+    name: '翱翔',
+    description: '像飞鸟一样，指引你从那里到这里。',
     filename: 'tailspin.css',
     isPro: true,
     fonts: {
@@ -622,12 +622,12 @@ export const themes = [
         href: 'https://fonts.bunny.net/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap',
       },
       code: {
-        name: 'OS Default (monospace)',
+        name: '系统默认（等宽）',
         css: 'ui-monospace, monospace',
         href: null,
       },
       longform: {
-        name: 'OS Default (serif)',
+        name: '系统默认（衬线）',
         css: 'ui-serif, serif',
         href: null,
       },
@@ -637,7 +637,7 @@ export const themes = [
       weight: 1,
     },
     palette: {
-      name: 'Vogue',
+      name: '时尚',
       filename: 'vogue.css',
     },
     colorBrand: {
@@ -664,7 +664,7 @@ export const themes = [
 ];
 
 /**
- * All fonts used by themes, collected from the four font categories.
+ * 主题使用的所有字体，从四个字体类别中收集。
  */
 export const fonts = themes
   .flatMap(theme => [theme.fonts.body, theme.fonts.heading, theme.fonts.code, theme.fonts.longform])
@@ -674,7 +674,7 @@ export const fonts = themes
   );
 
 /**
- * Font presets derived from themes, with unique font names in order: heading > body > code > longform
+ * 从主题派生的字体预设，按顺序包含独特的字体名称：标题 > 正文 > 代码 > 长文
  */
 export const fontPresets = themes
   .map(theme => {
@@ -702,7 +702,7 @@ export const fontPresets = themes
   .filter((preset, index, array) => array.findIndex(p => p.displayName === preset.displayName) === index);
 
 /**
- * Element presets derived from themes.
+ * 从主题派生的元素预设。
  */
 export const elementPresets = themes.map(theme => ({
   name: theme.name,
@@ -712,7 +712,7 @@ export const elementPresets = themes.map(theme => ({
 }));
 
 /**
- * All palettes used by themes in a simple array.
+ * 主题使用的所有调色板，以简单数组形式呈现。
  */
 export const palettes = themes
   .map(theme => ({
@@ -725,13 +725,13 @@ export const palettes = themes
   );
 
 /**
- * Available icons.
+ * 可用的图标。
  */
 export const icons = [
-  { name: 'Classic', libraryName: 'classic' },
-  { name: 'Sharp', libraryName: 'sharp' },
-  { name: 'Duotone', libraryName: 'duotone' },
-  { name: 'Sharp Duotone', libraryName: 'sharp-duotone' },
+  { name: '经典', libraryName: 'classic' },
+  { name: '锐利', libraryName: 'sharp' },
+  { name: '双色', libraryName: 'duotone' },
+  { name: '锐利双色', libraryName: 'sharp-duotone' },
 ];
 
 export const colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'indigo', 'purple', 'pink', 'gray'];

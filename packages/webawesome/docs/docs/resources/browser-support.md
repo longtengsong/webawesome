@@ -1,12 +1,12 @@
 ---
-title: Browser Support Policy
-description: Changes to each version of the project are documented here.
+title: 浏览器支持政策
+description: 项目的每个版本的变更都在此记录。
 layout: page-outline
 ---
 
-Web Awesome officially supports the latest two major versions of the most popular browsers, including Chrome, Safari, Edge, Firefox, and Opera.
+Web Awesome 官方支持最流行浏览器的最新两个主要版本，包括 Chrome、Safari、Edge、Firefox 和 Opera。
 
-We regularly test and ensure our website works smoothly on these browser versions. If you're using an older version, we strongly recommend upgrading to enjoy the best experience.
+我们定期测试并确保我们的网站在这些浏览器版本上运行顺畅。如果您使用的是较旧版本，我们强烈建议升级以获得最佳体验。
 
 <p>
 <img src="/assets/images/chrome.png" alt="Chrome" width="64" height="64">
@@ -16,16 +16,16 @@ We regularly test and ensure our website works smoothly on these browser version
 <img src="/assets/images/opera.png" alt="Opera" width="64" height="64">
 </p>
 
-## Screen Reader Support
+## 屏幕阅读器支持
 
-We're committed to making our website accessible to everyone. We specifically test with these screen reader and browser combinations:
+我们致力于让我们的网站对所有人都可访问。我们特别测试以下屏幕阅读器和浏览器组合：
 
-- NVDA with Chrome
-- NVDA with Firefox
-- VoiceOver with Safari
+- NVDA + Chrome
+- NVDA + Firefox
+- VoiceOver + Safari
 
-We strive to make all components accessible, but screen reader and browser combinations can sometimes behave unpredictably. We're committed to addressing accessibility issues as they arise and will do our best to ensure a good experience for all users.
+我们努力使所有组件都可访问，但屏幕阅读器和浏览器组合有时会表现不可预测。我们致力于在可访问性问题出现时及时解决，并将尽最大努力为所有用户确保良好的体验。
 
-## Legacy Browser Support
+## 旧版浏览器支持
 
-While we focus on modern browsers, we understand some users may be using older versions. For critical issues, we will provide fixes and/or workarounds for in older browsers at our discretion.
+虽然我们专注于现代浏览器，但我们理解有些用户可能正在使用旧版本。对于关键问题，我们将根据自行决定为旧版浏览器提供修复和/或变通方案。

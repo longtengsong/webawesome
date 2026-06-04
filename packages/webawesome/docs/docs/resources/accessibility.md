@@ -1,21 +1,21 @@
 ---
-title: Accessibility Commitment
-description: Web Awesome recognizes the need for all users to have undeterred access to the websites and applications that are created with it.
+title: 可访问性承诺
+description: Web Awesome 认识到所有用户都需要无障碍地访问使用它创建的网站和应用程序。
 layout: page
 ---
 
-Web Awesome recognizes the need for all users, regardless of ability and device, to have undeterred access to the websites and applications that are created with it. This is an important goal of the project.
+Web Awesome 认识到所有用户，无论其能力和设备如何，都需要无障碍地访问使用它创建的网站和应用程序。这是项目的重要目标。
 
-Oftentimes, people will ask “is Web Awesome accessible?” We’re reluctant to answer because accessibility isn’t binary — there’s no simple “yes” or “no” response to provide. What seems accessible to a sighted user might be completely inaccessible to a non-sighted user. And even if you optimize for various screen readers, you still have to account for low-level vision, color blindness, hearing impairments, mobility impairments, and more.
+通常，人们会问"Web Awesome 是否可访问？"我们不愿回答，因为可访问性不是二元的——没有简单的"是"或"否"可以提供。对于有视力的用户来说看似可访问的内容，对于无视力用户可能完全不可访问。即使您针对各种屏幕阅读器进行了优化，您仍然需要考虑低视力、色盲、听力障碍、行动障碍等等。
 
-Accessibility is something you have to continuously strive for. No individual contributor — or perhaps even an entire team — can claim their software is 100% accessible because of the sheer diversity of abilities, devices, assistive technologies, and individual use cases.
+可访问性是你需要不断努力的事情。没有哪个独立的贡献者——甚至可能整个团队——能声称他们的软件是 100% 可访问的，因为能力、设备、辅助技术和个人使用场景的多样性实在太大。
 
-Furthermore, accessibility doesn’t stop at the component level. Using accessible building blocks doesn’t magically make the rest of your webpage or application compliant. There is no library or overlay that will make your software “fully accessible” without putting in the effort. It’s also worth noting that web components are still somewhat bleeding edge, so browsers, assistive devices, and [even specifications](https://wicg.github.io/aom/spec/) are still evolving to help improve accessibility on the web platform.
+此外，可访问性不仅仅停留在组件层面。使用可访问的构建模块并不能神奇地使您的网页或应用程序的其他部分合规。没有哪个库或覆盖层能在不付出努力的情况下使您的软件"完全可访问"。同样值得注意的是，Web 组件仍然有些前沿，因此浏览器、辅助设备和[甚至规范](https://wicg.github.io/aom/spec/)仍在不断发展，以帮助改善 Web 平台上的可访问性。
 
-My commitment to Web Awesome users is this: Everything we develop will be built with accessibility in mind. We will test and improve every component to the best of our ability and knowledge. We will work around upstream issues, such as browser bugs and limitations, to the best of our ability and within reason.
+我对 Web Awesome 用户的承诺是：我们开发的每一件事都将以可访问性为考量。我们将尽最大努力和知识测试和改进每个组件。我们将在合理范围内尽最大努力解决上游问题，例如浏览器错误和限制。
 
-We’re fully aware that we may not get it right every time for every user, so we invite the community to participate in this ongoing effort by submitting [issues](https://github.com/shoelace-style/webawesome/issues), [pull requests](https://github.com/shoelace-style/webawesome/pulls), and [discussions]({{ site.github.discussions }}). Many accessibility improvements have already been made thanks to contributors submitting code, feedback, and suggestions.
+我们完全意识到，我们可能无法每次都为每个用户做到完美，因此我们邀请社区通过提交[问题](https://github.com/shoelace-style/webawesome/issues)、[拉取请求](https://github.com/shoelace-style/webawesome/pulls)和[讨论]({{ site.github.discussions }})来参与这一持续的努力。得益于贡献者提交的代码、反馈和建议，我们已经实现了许多可访问性改进。
 
-This is the path forward. Together, we will continue to make Web Awesome accessible to as many users as possible.
+这是前进的道路。我们将一起继续让 Web Awesome 对尽可能多的用户保持可访问。
 
-— The Web Awesome team
+— Web Awesome 团队

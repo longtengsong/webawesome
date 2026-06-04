@@ -1,46 +1,46 @@
 ---
-title: Community
-description: Web Awesome has a growing community of designers and developers that are building amazing things with web components.
+title: 社区
+description: Web Awesome 拥有一个由设计师和开发者组成的不断壮大的社区，他们正在用 Web 组件构建令人惊叹的东西。
 layout: page
 ---
 
-Web Awesome has a growing community of designers and developers that are building amazing things with web components. We'd love for you to become a part of it!
+Web Awesome 拥有一个由设计师和开发者组成的不断壮大的社区，他们正在用 Web 组件构建令人惊叹的东西。我们很乐意您成为其中的一员！
 
-Please be respectful of other users and remember that Web Awesome is an open source project. We'll try to help when we can, but there's no guarantee we'll be able solve your problem. Please manage your expectations and don't forget to contribute back to the conversation when you can!
+请尊重其他用户，并记住 Web Awesome 是一个开源项目。我们会尽力提供帮助，但不能保证一定能解决您的问题。请管理好您的期望，并在有能力时回馈社区！
 
-## Discussion Forum
+## 讨论论坛
 
-The [discussion forum]({{ site.github.discussions }}) is open to anyone with a GitHub account. This is the best place to:
+[讨论论坛]({{ site.github.discussions }})对有 GitHub 账号的任何人开放。这是最适合：
 
-- Ask for help
-- Share ideas and get feedback
-- Show the community what you're working on
-- Learn more about the project, its values, and its roadmap
+- 寻求帮助
+- 分享想法并获得反馈
+- 向社区展示您正在做什么
+- 了解项目的更多信息、其价值观和路线图
 
 <wa-button variant="brand" href="{{ site.github.discussions }}" target="_blank" style="margin-block-end: var(--wa-content-spacing);">
   <wa-icon name="github" family="brands" slot="start"></wa-icon>
-  Join the Discussion
+  加入讨论
 </wa-button>
 
-## Community Chat
+## 社区聊天
 
-The [community chat]({{ site.urls.discord }}) is open to the public and powered by [Discord](https://discord.com/). This is a good place to:
+[社区聊天]({{ site.urls.discord }})对公众开放，由 [Discord](https://discord.com/) 提供支持。这是一个好地方：
 
-- Ask for help
-- Share ideas and get feedback
-- Show the community what you're working on
-- Chat live with other designers, developers, and Web Awesome fans
+- 寻求帮助
+- 分享想法并获得反馈
+- 向社区展示您正在做什么
+- 与其他设计师、开发者和 Web Awesome 粉丝实时聊天
 
 <wa-button variant="brand" href="{{ site.urls.discord }}" target="_blank" style="margin-block-end: var(--wa-content-spacing);">
   <wa-icon name="discord" family="brands" slot="start"></wa-icon>
-  Join the Chat
+  加入聊天
 </wa-button>
 
-## Social Networks
+## 社交网络
 
-Follow Web Awesome on [Bluesky]({{ site.urls.bluesky }}), [X (Twitter)]({{ site.urls.x }}), [Mastodon]({{ site.urls.mastodon }}), or [Threads]({{ site.urls.threads }}) for general updates and announcements. This is a great place to say "hi" or to share something you're working on.
+在 [Bluesky]({{ site.urls.bluesky }})、[X (Twitter)]({{ site.urls.x }})、[Mastodon]({{ site.urls.mastodon }}) 或 [Threads]({{ site.urls.threads }}) 上关注 Web Awesome，获取一般更新和公告。这是打个招呼或分享您正在做的事情的好地方。
 
-**Please avoid using Social Networks for support questions.** The [discussion forum]({{ site.github.discussions }}) is a much better place to share code snippets, screenshots, and other troubleshooting info. You'll have much better luck there, as more users will have a chance to help you.
+**请避免使用社交网络寻求支持。** [讨论论坛]({{ site.github.discussions }})是分享代码片段、截图和其他故障排除信息的更好场所。在那里您会更有可能获得帮助，因为更多用户会有机会帮助您。
 
 <div class="wa-cluster wa-gap-l">
   <wa-button variant="brand" href="{{ site.urls.bluesky }}" rel="noopener noreferrer" target="_blank">

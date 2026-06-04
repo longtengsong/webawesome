@@ -1,39 +1,39 @@
 ---
-title: Using Web Awesome with AI
-description: Web Awesome publishes llms.txt and Agent Skills to help AI coding assistants understand and work with the library.
+title: 将 Web Awesome 与 AI 结合使用
+description: Web Awesome 发布 llms.txt 和 Agent Skills，帮助 AI 编程助手理解并使用该库。
 layout: page-outline
 ---
 
-Web Awesome publishes machine-readable documentation so AI coding assistants can understand its components and help you write better code. Whether you're using Claude, ChatGPT, Copilot, Cursor, or another tool, you can give it context about Web Awesome's APIs, properties, events, slots, and more.
+Web Awesome 发布机器可读的文档，以便 AI 编程助手能理解其组件并帮助您编写更好的代码。无论您使用的是 Claude、ChatGPT、Copilot、Cursor 还是其他工具，您都可以为其提供关于 Web Awesome API、属性、事件、插槽等的上下文。
 
-## AI-ready Documentation
+## AI 就绪的文档
 
-We provide two formats for giving AI tools context about Web Awesome.
+我们提供两种格式，用于为 AI 工具提供 Web Awesome 的上下文信息。
 
-- **[Agent Skills](/docs/ai/agent-skills)** — A structured directory of markdown files that AI tools can load progressively, fetching only the documentation relevant to the current task. This is the recommended option for tools that support it, such as Claude Code.
-- **[LLMs.txt](/docs/ai/llms)** — A single text file containing the full API reference for every component. Works with nearly any AI tool that accepts file uploads, URLs, or pasted context.
+- **[Agent Skills](/docs/ai/agent-skills)** — 一个结构化的 markdown 文件目录，AI 工具可以渐进式加载，仅获取与当前任务相关的文档。这是推荐选项，适用于支持该功能的工具，如 Claude Code。
+- **[LLMs.txt](/docs/ai/llms)** — 一个包含所有组件完整 API 参考的单一文本文件。几乎适用于任何接受文件上传、URL 或粘贴上下文的 AI 工具。
 
-Both formats are generated automatically with every Web Awesome build and are available in your `node_modules` directory after installing via npm.
+两种格式都会在每次 Web Awesome 构建时自动生成，并在通过 npm 安装后可在您的 `node_modules` 目录中找到。
 
-## AI Policy
+## AI 政策
 
-We're a small team maintaining Web Awesome, and like most people building things these days, we use AI tools regularly. They help us move faster, explore ideas, write boilerplate, catch edge cases, and get more done in less time.
+我们是一个维护 Web Awesome 的小团队，和如今大多数做开发的人一样，我们经常使用 AI 工具。它们帮助我们更快地推进工作、探索想法、编写样板代码、捕捉边界情况，并在更短的时间内完成更多工作。
 
-That said, we want to be clear about how we use AI, especially since this is an open-source library that a lot of people rely on.
+话虽如此，我们想明确说明我们如何使用 AI，特别是因为这是一个许多人依赖的开源库。
 
-### Human-led, AI-assisted
+### 人类主导，AI 辅助
 
-Everything in Web Awesome is built and owned by humans. AI is a capable assistant, but it never gets the final say. We always bring:
+Web Awesome 中的所有内容都由人类构建和拥有。AI 是一个能力强大的助手，但它从未拥有最终决定权。我们始终带来：
 
-- The original ideas and vision
-- The overall architecture and design decisions
-- The critical thinking about what makes sense for the library and its users
-- The careful review, testing, and polishing at the end
+- 最初的想法和愿景
+- 整体架构和设计决策
+- 关于什么对库及其用户有意义的批判性思考
+- 最终的仔细审查、测试和完善
 
-No component, documentation page, or feature ever ships as pure AI output. There's always substantial human direction, judgment, and final approval.
+没有任何组件、文档页面或功能是纯粹作为 AI 输出发布的。始终存在大量的人类指导、判断和最终批准。
 
-This approach lets us ship better work more quickly without losing the human judgment that production-ready software demands.
+这种方法让我们能够在保持生产就绪软件所需的人类判断力的情况下，更快地交付更好的工作。
 
-**Human ideas. Human architecture. Human verification.** AI just helps us build what we were going to build anyways…just faster.
+**人类的想法。人类的架构。人类的验证。** AI 只是帮助我们构建我们本来就要构建的东西……只是更快了。
 
-— The Web Awesome Team
+— Web Awesome 团队
