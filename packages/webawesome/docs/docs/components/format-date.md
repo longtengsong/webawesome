@@ -1,71 +1,77 @@
 ---
-title: Format Date
+title: 格式化日期
 layout: component
 category: Utilities
 synonyms:
   - date formatter
   - time formatter
   - datetime
+  - 日期格式化
+  - 时间格式化
+  - 日期时间
 use-cases:
   - localized date
   - date display
   - timestamp
+  - 本地化日期
+  - 日期显示
+  - 时间戳
 ---
 
-Localization is handled by the browser's [`Intl.DateTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat). No language packs are required.
+本地化由浏览器的 [`Intl.DateTimeFormat` API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) 处理。不需要语言包。
 
 ```html {.example}
-<!-- Web Awesome 2 release date 🎉 -->
+<!-- Web Awesome 2 发布日期 🎉 -->
 <wa-format-date date="2020-07-15T09:17:00-04:00"></wa-format-date>
 ```
 
-The `date` attribute determines the date/time to use when formatting. It must be a string that [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) can interpret or a [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object set via JavaScript. If omitted, the current date/time will be assumed.
+`date` 属性确定格式化时要使用的日期/时间。它必须是 [`Date.parse()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) 可以解析的字符串或通过 JavaScript 设置的 [`Date`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date) 对象。如果省略，将使用当前日期/时间。
 
 :::info
-When using strings, avoid ambiguous dates such as `03/04/2020` which can be interpreted as March 4 or April 3 depending on the user's browser and locale. Instead, always use a valid [ISO 8601 date time string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#Date_Time_String_Format) to ensure the date will be parsed properly by all clients.
+使用字符串时，请避免使用不明确的日期，例如 `03/04/2020`，因为根据用户的浏览器和语言环境，它可能被解释为3月4日或4月3日。相反，始终使用有效的 [ISO 8601 日期时间字符串](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#Date_Time_String_Format)，以确保日期将被所有客户端正确解析。
 :::
 
-## Examples
+## 示例
 
-### Date & Time Formatting
+### 日期和时间格式化
 
-Formatting options are based on those found in the [`Intl.DateTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat). When formatting options are provided, the date/time will be formatted according to those values. When no formatting options are provided, a localized, numeric date will be displayed instead.
+格式化选项基于 [`Intl.DateTimeFormat` API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) 中的选项。当提供格式化选项时，日期/时间将根据这些值进行格式化。当不提供格式化选项时，将显示本地化的数字日期。
 
 ```html {.example}
-<!-- Human-readable date -->
-<wa-format-date month="long" day="numeric" year="numeric"></wa-format-date><br />
+<!-- 人类可读日期 -->
+<wa-format-date month="long" day="numeric" year="numeric"></wa-format-date><br>
 
-<!-- Time -->
-<wa-format-date hour="numeric" minute="numeric"></wa-format-date><br />
+<!-- 时间 -->
+<wa-format-date hour="numeric" minute="numeric"></wa-format-date><br>
 
-<!-- Weekday -->
-<wa-format-date weekday="long"></wa-format-date><br />
+<!-- 星期 -->
+<wa-format-date weekday="long"></wa-format-date><br>
 
-<!-- Month -->
-<wa-format-date month="long"></wa-format-date><br />
+<!-- 月份 -->
+<wa-format-date month="long"></wa-format-date><br>
 
-<!-- Year -->
-<wa-format-date year="numeric"></wa-format-date><br />
+<!-- 年份 -->
+<wa-format-date year="numeric"></wa-format-date><br>
 
-<!-- No formatting options -->
+<!-- 无格式化选项 -->
 <wa-format-date></wa-format-date>
 ```
 
-### Hour Formatting
+### 小时格式化
 
-By default, the browser will determine whether to use 12-hour or 24-hour time. To force one or the other, set the `hour-format` attribute to `12` or `24`.
+默认情况下，浏览器将决定使用12小时制还是24小时制。要强制使用其中一种，将 `hour-format` 属性设置为 `12` 或 `24`。
 
 ```html {.example}
-<wa-format-date hour="numeric" minute="numeric" hour-format="12"></wa-format-date><br />
+<wa-format-date hour="numeric" minute="numeric" hour-format="12"></wa-format-date><br>
 <wa-format-date hour="numeric" minute="numeric" hour-format="24"></wa-format-date>
 ```
 
-### Localization
+### 本地化
 
-Use the `lang` attribute to set the date/time formatting locale.
+使用 `lang` 属性设置日期/时间格式化的语言环境。
 
 ```html {.example}
-English: <wa-format-date lang="en"></wa-format-date><br />
-French: <wa-format-date lang="fr"></wa-format-date><br />
-Russian: <wa-format-date lang="ru"></wa-format-date>
+英语: <wa-format-date lang="en"></wa-format-date><br>
+法语: <wa-format-date lang="fr"></wa-format-date><br>
+俄语: <wa-format-date lang="ru"></wa-format-date>
 ```

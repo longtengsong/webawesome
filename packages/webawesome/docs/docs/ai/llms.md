@@ -1,99 +1,99 @@
 ---
 title: LLMs
-description: Web Awesome provides an llms.txt file to help AI assistants understand and work with our components.
+description: Web Awesome 提供 llms.txt 文件来帮助 AI 助手理解并使用我们的组件。
 layout: page-outline
 ---
 
-The [llms.txt specification](https://llmstxt.org/) is a proposed standard for providing information to large language models (LLMs) in a format they can easily consume. It's like a robots.txt, but instead of telling search engines how to crawl your site, it helps AI assistants understand your project.
+[llms.txt 规范](https://llmstxt.org/) 是一个提议的标准，用于以 AI 易于消费的格式提供信息。它类似于 robots.txt，但与其告诉搜索引擎如何抓取您的网站，不如说它帮助 AI 助手理解您的项目。
 
-Web Awesome publishes an `llms.txt` file that provides AI tools with structured information about our components, including their APIs, properties, events, methods, slots, and CSS custom properties.
+Web Awesome 发布了一个 `llms.txt` 文件，为 AI 工具提供关于我们组件的结构化信息，包括 API、属性、事件、方法、插槽和 CSS 自定义属性。
 
 :::warning
-This feature is experimental! The llms.txt format and its contents may change as we refine the output based on feedback and evolving AI capabilities.
+此功能是实验性的！llms.txt 格式及其内容可能会根据反馈和 AI 能力的发展而发生变化。
 :::
 
-## Why Use It?
+## 为什么要使用它？
 
-When working with AI coding assistants like Claude, ChatGPT, Copilot, or Cursor, you can reference the llms.txt file to give the AI context about Web Awesome components. This can lead to more accurate code suggestions and fewer hallucinations when the AI generates Web Awesome code.
+在使用像 Claude、ChatGPT、Copilot 或 Cursor 这样的 AI 编程助手时，您可以引用 llms.txt 文件为 AI 提供关于 Web Awesome 组件的上下文。这可以带来更准确的代码建议，并在 AI 生成 Web Awesome 代码时减少幻觉。
 
-## Accessing the File
+## 访问文件
 
-The llms.txt file is available in every Web Awesome build at:
+llms.txt 文件在每个 Web Awesome 构建中都可以在以下位置找到：
 
 ```
 /dist/llms.txt
 /dist-cdn/llms.txt
 ```
 
-You can also find it in your `node_modules` directory if you've installed Web Awesome via npm:
+如果您通过 npm 安装了 Web Awesome，也可以在 `node_modules` 目录中找到它：
 
 ```
 node_modules/@awesome.me/webawesome/dist/llms.txt
 ```
 
-## How to Use It
+## 如何使用
 
-How you reference the file depends on which AI tool you're using.
+引用该文件的方式取决于您使用的 AI 工具。
 
-### Claude Projects
+### Claude 项目
 
-If you're using [Claude Projects](https://www.anthropic.com/news/projects), you can add the llms.txt URL to your project knowledge. Claude will use this context when helping you write Web Awesome code.
+如果您正在使用 [Claude 项目](https://www.anthropic.com/news/projects)，您可以将 llms.txt URL 添加到您的项目知识中。Claude 将在帮助您编写 Web Awesome 代码时使用此上下文。
 
 ### Cursor
 
-In [Cursor](https://cursor.sh/), you can add the file to your project's documentation sources via **Cursor Settings > Features > Docs**. You can also reference the file directly in chat using `@Docs` after adding it, or paste the content into the chat context.
+在 [Cursor](https://cursor.sh/) 中，您可以通过 **Cursor 设置 > 功能 > 文档** 将文件添加到项目的文档源。您也可以在添加后在聊天中直接使用 `@Docs` 引用该文件，或将内容粘贴到聊天上下文中。
 
 ### VS Code + Copilot
 
-GitHub Copilot in VS Code doesn't have a built-in way to reference external documentation files, but you can:
+VS Code 中的 GitHub Copilot 没有内置的方式引用外部文档文件，但您可以：
 
-1. Copy the llms.txt file into your project's root directory
-2. Open it in a VS Code tab (Copilot considers open files as context)
-3. Use `#file` in Copilot Chat to explicitly reference it (e.g., `#file:llms.txt how do I create a dialog?`)
+1. 将 llms.txt 文件复制到项目的根目录
+2. 在 VS Code 标签页中打开它（Copilot 会将打开的标签页视为上下文）
+3. 在 Copilot Chat 中使用 `#file` 显式引用它（例如 `#file:llms.txt 如何创建一个对话框？`）
 
 ### VS Code + Claude Code
 
-If you're using the [Claude Code extension](https://marketplace.visualstudio.com/items?itemName=anthropics.claude-code), you can reference the file directly by path:
+如果您正在使用 [Claude Code 扩展](https://marketplace.visualstudio.com/items?itemName=anthropics.claude-code)，您可以直接通过路径引用该文件：
 
 ```
 @node_modules/@awesome.me/webawesome/dist/llms.txt
 ```
 
-Or simply ask Claude to read it — Claude Code can access files in your project directly.
+或者直接让 Claude 读取它——Claude Code 可以直接访问您项目中的文件。
 
-### Other AI Tools
+### 其他 AI 工具
 
-Most AI coding assistants allow you to provide context through URLs, file uploads, or direct pasting. Check your tool's documentation for the best way to include external references.
+大多数 AI 编程助手允许您通过 URL、文件上传或直接粘贴来提供上下文。请查看您工具的文档，了解包含外部引用的最佳方式。
 
-## What's Included
+## 包含的内容
 
-The llms.txt file contains:
+llms.txt 文件包含：
 
-- An overview of Web Awesome and its capabilities
-- Links to documentation sections
-- A complete list of all components with descriptions
-- Detailed API reference for each component including:
-  - Slots
-  - Properties and their types
-  - Methods and their signatures
-  - Events
-  - CSS custom properties
-  - CSS parts
-  - CSS states
+- Web Awesome 及其功能的概览
+- 文档章节的链接
+- 所有组件的完整列表及其描述
+- 每个组件的详细 API 参考，包括：
+  - 插槽
+  - 属性及其类型
+  - 方法及其签名
+  - 事件
+  - CSS 自定义属性
+  - CSS 部件
+  - CSS 状态
 
-## llms.txt vs Agent Skills
+## llms.txt 与 Agent Skills 的对比
 
-Web Awesome provides both an [Agent Skill](https://agentskills.io/) and an [llms.txt file](/docs/ai/llms). Here's when to use each:
+Web Awesome 同时提供 [Agent Skills](https://agentskills.io/) 和 [llms.txt 文件](/docs/ai/llms)。以下是如何选择使用：
 
-| Feature | llms.txt | Agent Skill |
+| 特性 | llms.txt | Agent Skills |
 |---------|----------|-------------|
-| Format | Single text file | Directory with multiple markdown files |
-| Best for | Quick context, simple queries | Deep integration, complex tasks |
-| Context usage | Loads everything at once | Progressive disclosure (loads as needed) |
-| Supported by | Most AI tools | Tools supporting agentskills.io spec |
+| 格式 | 单个文本文件 | 包含多个 markdown 文件的目录 |
+| 最适合 | 快速上下文、简单查询 | 深度集成、复杂任务 |
+| 上下文使用 | 一次性加载所有内容 | 渐进式披露（按需加载） |
+| 支持工具 | 大多数 AI 工具 | 支持 agentskills.io 规范的工具 |
 
-If your AI tool supports Agent Skills, we recommend using the skill for better context efficiency. Otherwise, the llms.txt file is a great option that works with nearly any AI tool.
+如果您的 AI 工具支持 Agent Skills，我们建议使用 skill 以获得更好的上下文效率。否则，llms.txt 文件是一个很好的选择，几乎适用于任何 AI 工具。
 
-## Feedback
+## 反馈
 
-Since this is experimental, we'd love to hear how it works for you! If you find issues with the generated content or have suggestions for improvement, please [open an issue on GitHub]({{ site.github.issues }}).
+由于这是实验性的，我们很想听听您的使用体验！如果您发现生成的内容有问题或有改进建议，请 [在 GitHub 上提出 issue]({{ site.github.issues }})。

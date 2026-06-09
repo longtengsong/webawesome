@@ -76,7 +76,9 @@
     "check-updates": "npm-check-updates --cooldown 7 --interactive --format group",
     "print-version": "echo $npm_package_version",
     "tag-version": "git tag -a \"v$(npm run print-version | tail -n1)\" -m \"tag v$(npm run print-version | tail -n1)\"",
-    "postversion": "node ./scripts/update-root-version.js"
+    "postversion": "node ./scripts/update-root-version.js",
+    "translation:check": "node ./scripts/translation-check.js",
+    "translation:set-version": "node ./scripts/translation-set-version.js"
   },
   "engines": {
     "node": ">=14.17.0"

@@ -1,17 +1,17 @@
 ---
-title: Color Palettes
-description: 'Color palettes give you a full spectrum of colors to add life to your project.'
+title: 调色板
+description: '调色板为您提供全谱色彩，为您的项目增添活力。'
 layout: page
 ---
 
-<p>Color palettes give you a full spectrum of colors to use in your project.</p>
+<p>调色板为您提供全谱色彩，可在您的项目中使用。</p>
 
-<p>A color palette defines 10 hues — red, orange, yellow, green, cyan, blue, indigo, purple, pink, and gray — each with
-  a scale of 11 tints from <code>05</code> (darkest) to <code>95</code> (lightest) available as <a
-    href="/docs/tokens/color">color design tokens</a>. While the tints have similar lightness values across palettes,
-  each palette has unique hue shifts and chroma so you can find just the right vibe to your project. Combine a palette
-  with a <a href="/docs/themes">theme</a> and <a href="/docs/tokens/color#variant-colors">variant colors</a> to style
-  the whole library.</p>
+<p>一个调色板定义了 10 种色调 — 红色、橙色、黄色、绿色、青色、蓝色、靛蓝色、紫色、粉红色和灰色 — 每种色调
+  都有从 <code>05</code>（最深）到 <code>95</code>（最浅）的 11 级色阶，可作为 <a
+    href="/docs/tokens/color">颜色设计令牌</a> 使用。虽然各调色板的色阶亮度值相似，
+  但每个调色板都有独特的色调偏移和色度，让您为项目找到恰到好处的风格。将调色板
+  与<a href="/docs/themes">主题</a>和<a href="/docs/tokens/color#variant-colors">变体颜色</a>结合，
+  即可为整个库设置样式。</p>
 
 {% include "theming/color-palette-picker.njk" %}
 
@@ -22,18 +22,17 @@ layout: page
   <wa-icon slot="icon" name="hand-wave" animation="shake"
     style="--animation-delay: 2s; --animation-duration: 4s;"></wa-icon>
   <strong>
-    <a href="/purchase?from=pro-docs&context=color-palettes">Unlock every color palette with {{ site.namePro }}!</a>
+    <a href="/purchase?from=pro-docs&context=color-palettes">使用 {{ site.namePro }} 解锁所有调色板！</a>
   </strong>
 
   <wa-details appearance="plain">
-    <span slot="summary">Subscribing to {{ site.namePro }} unlocks every color palette, plus premium themes, the visual
-      Theme Builder, and <u class="appearance-underlined variant-drawn">more</u>.</span>
+    <span slot="summary">订阅 {{ site.namePro }} 可解锁所有调色板、高级主题、可视化主题构建器以及<u class="appearance-underlined variant-drawn">更多</u>功能。</span>
 
     <div class="wa-stack wa-gap-xl">
       {% include "pro-perks.njk" ignore missing %}
 
       <wa-button href="/purchase?from=pro-docs&context=color-palettes">
-        Get {{ site.namePro }}
+        获取 {{ site.namePro }}
         <wa-icon slot="end" name="arrow-right"></wa-icon>
       </wa-button>
     </div>
@@ -43,7 +42,7 @@ layout: page
 {% endif %}
 {% endraw %}
 
-<h2>Using This Palette</h2>
+<h2>使用此调色板</h2>
 
 <div id="import-code">
   {% for palette in themer.palettes %}
@@ -51,27 +50,27 @@ layout: page
     <wa-tab-group data-install-tabs>
       <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
       <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
       <wa-tab-panel name="cdn">
         {% if palette.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
   <wa-icon slot="icon" name="info-circle" variant="regular"></wa-icon>
-  This palette can only be used with a Pro subscription. {% raw %}{% if session.isLoggedIn %}{% endraw %}For instructions unique to your Pro project, open a project from <a href="/workspaces">your workspace</a>.{% raw %}{% endif %}{% endraw %}
+  此调色板仅可通过 Pro 订阅使用。{% raw %}{% if session.isLoggedIn %}{% endraw %}如需特定于您 Pro 项目的说明，请从<a href="/workspaces">您的工作区</a>中打开一个项目。{% raw %}{% endif %}{% endraw %}
 </wa-callout>
 {% endmarkdown %}
         {% else %}
         {% set paletteCdnUrl %}{% cdnUrl 'styles/color/palettes/' %}{{ palette.filename }}{% endset %}
 {% markdown %}
-To use this palette, add the palette's stylesheet from the CDN:
+要使用此调色板，请从 CDN 添加调色板样式表：
 
 ```html
 <link rel="stylesheet" href="{{ paletteCdnUrl }}">
 ```
 
-Then, apply the following class to the `<html>` element:
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -82,13 +81,13 @@ Then, apply the following class to the `<html>` element:
 
       <wa-tab-panel name="npm">
 {% markdown %}
-After installing <code>@awesome.me/webawesome</code>, import the palette's stylesheet:
+安装 <code>@awesome.me/webawesome</code> 后，导入调色板样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/color/palettes/{{ palette.filename }}';
 ```
 
-Then, apply the following class to the `<html>` element:
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -98,13 +97,13 @@ Then, apply the following class to the `<html>` element:
 
       <wa-tab-panel name="self-hosted">
 {% markdown %}
-If you're self-hosting Web Awesome, include the palette's stylesheet from your server:
+如果您正在自行托管 Web Awesome，请从您的服务器引入调色板样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/color/palettes/{{ palette.filename }}">
 ```
 
-Then, apply the following class to the `<html>` element:
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
@@ -117,34 +116,32 @@ Then, apply the following class to the `<html>` element:
           {% if palette.isPro %}
           <div class="instruction-group wa-stack wa-gap-2xs">
             <h3 class="wa-heading-m" data-no-anchor data-no-outline>
-              Pro Workspace Projects
+              Pro 工作区项目
             </h3>
             <table class="wa-hover-rows">
               <thead>
                 <tr>
-                  <th scope="col">Step</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
                   </td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag> to
-                    open
-                    the Theme Builder.</td>
+                  <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Open <wa-tag class="tag-ui" appearance="outlined">Colors</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>.</td>
+                  <td>打开 <wa-tag class="tag-ui" appearance="outlined">颜色</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>。</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Save your theme to immediately update anywhere you're using your project.</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
                 </tr>
               </tbody>
             </table>
@@ -152,32 +149,32 @@ Then, apply the following class to the `<html>` element:
           {% else %}
           <div class="instruction-group wa-stack wa-gap-2xs">
             <h3 class="wa-heading-m" data-no-anchor data-no-outline>
-              Free Workspace Projects
+              免费工作区项目
             </h3>
             <table class="wa-hover-rows">
               <thead>
                 <tr>
-                  <th scope="col">Step</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
                   </td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Find <wa-tag class="tag-ui" appearance="outlined">Color Palette</wa-tag>. Select <wa-tag
+                  <td>找到 <wa-tag class="tag-ui" appearance="outlined">颜色调色板</wa-tag>。选择 <wa-tag
                       class="tag-ui" appearance="outlined"><wa-icon name="swatchbook"
                         variant="regular"></wa-icon>
-                      {{ palette.name | capitalize }}</wa-tag>.
+                      {{ palette.name | capitalize }}</wa-tag>。
                   </td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Save your theme to immediately update anywhere you're using your project.</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
                 </tr>
               </tbody>
             </table>
@@ -185,34 +182,32 @@ Then, apply the following class to the `<html>` element:
 
           <div class="instruction-group wa-stack wa-gap-2xs">
             <h3 class="wa-heading-m" data-no-anchor data-no-outline>
-              Pro Workspace Projects
+              Pro 工作区项目
             </h3>
             <table class="wa-hover-rows">
               <thead>
                 <tr>
-                  <th scope="col">Step</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
                   </td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag> to
-                    open
-                    the Theme Builder.</td>
+                  <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Open <wa-tag class="tag-ui" appearance="outlined">Colors</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>.</td>
+                  <td>打开 <wa-tag class="tag-ui" appearance="outlined">颜色</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>。</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Save your theme to immediately update anywhere you're using your project.</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
                 </tr>
               </tbody>
             </table>
@@ -225,11 +220,9 @@ Then, apply the following class to the `<html>` element:
   {% endfor %}
 </div>
 
-<h2>Styling with Palette Colors</h2>
+<h2>使用调色板颜色设置样式</h2>
 
-<p>Once a palette is loaded, you can reach for any of its hue and tint tokens in your own CSS. Pair a hue's <a
-    href="/docs/tokens/color#core-colors">core color</a> (<code>--wa-color-{hue}</code>) with its matching on color
-  (<code>--wa-color-{hue}-on</code>) to keep text and icons readable on top of it:</p>
+<p>调色板加载后，您可以在自己的 CSS 中使用其任何色调和色阶的令牌。将某个色调的<a href="/docs/tokens/color#core-colors">核心颜色</a>（<code>--wa-color-{hue}</code>）与其匹配的对应颜色（<code>--wa-color-{hue}-on</code>）配对使用，以保持其上的文本和图标清晰可读：</p>
 
 {% markdown %}
 ```css
@@ -242,6 +235,6 @@ Then, apply the following class to the `<html>` element:
 
 {% markdown %}
 :::info
-**Building with other tints?** The [Color tokens](/docs/tokens/color) reference lists every tint and semantic variant — pair them across the scale and you'll hit WCAG contrast ratios without doing the math.
+**需要使用其他色阶吗？** [颜色令牌](/docs/tokens/color) 参考列出了每个色阶和语义变体 — 在色阶范围内配对使用，无需计算即可达到 WCAG 对比度要求。
 :::
 {% endmarkdown %}

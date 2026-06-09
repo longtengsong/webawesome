@@ -1,6 +1,6 @@
 ---
-title: Browse Components
-description: Browse the library of customizable, framework-friendly web components included in Web Awesome.
+title: 浏览组件
+description: 浏览 Web Awesome 中包含的可自定义、框架友好的 Web 组件库。
 layout: docs
 ---
 
@@ -8,11 +8,11 @@ layout: docs
 {% from "macros/component-badges.njk" import componentMetaBadges %}
 
 <div class="search-list component-list">
-  <wa-input class="search-list-input" type="search" placeholder="Search Components" pill autofocus with-clear>
+  <wa-input class="search-list-input" type="search" placeholder="搜索组件" pill autofocus with-clear>
     <wa-icon name="search" slot="start"></wa-icon>
   </wa-input>
   <p class="search-list-shortcut">
-    Press <kbd><span class="mac-only"><span class="kbd-symbol">⌘</span>K</span><span class="non-mac">Ctrl+K</span></kbd> to search from any page
+    按 <kbd><span class="mac-only"><span class="kbd-symbol">⌘</span>K</span><span class="non-mac">Ctrl+K</span></kbd> 从任何页面搜索
   </p>
 
   <section class="search-list-grid">
@@ -27,7 +27,7 @@ layout: docs
           <div class="wa-cluster wa-gap-2xs component-list-badges">
             {{ componentMetaBadges(component) }}
             {% if page.data.isProComponent %}
-              {{ proBadge({ description: "Included with " ~ site.namePro }) }}
+              {{ proBadge({ description: "包含在 " ~ site.namePro }) }}
             {% endif %}
           </div>
         </wa-card>
@@ -36,7 +36,7 @@ layout: docs
   </section>
 
   <div class="search-list-empty" hidden>
-    No results found
+    未找到结果
   </div>
 </div>
 

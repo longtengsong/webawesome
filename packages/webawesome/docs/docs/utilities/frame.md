@@ -1,16 +1,22 @@
 ---
-title: Frame
-description: 'Use the `wa-frame` class to create a responsive container with consistent proportions to enclose content.'
+title: 框架布局
+description: 使用 `wa-frame` 类创建一个具有一致比例的响应式容器来包裹内容。
 layout: docs
 tags: layoutUtilities
 synonyms:
   - aspect ratio
   - media frame
   - ratio box
+  - 宽高比
+  - 媒体框架
+  - 比例框
 use-cases:
   - video frame
   - image container
   - responsive embed
+  - 视频框架
+  - 图片容器
+  - 响应式嵌入
 ---
 
 <style>
@@ -27,9 +33,9 @@ use-cases:
   }
 </style>
 
-A frame is a box that keeps a fixed shape no matter how big or small it gets. Wrap an image, video, map, or placeholder in `wa-frame` and it stays a square by default, or a landscape, portrait, or any custom aspect ratio you specify, even as the surrounding layout resizes. That means no more letterboxing, no more collapsed boxes waiting on a slow image to load, and no more cards that end up different heights.
+框架是一个保持固定形状的盒子，无论它变得多大或多小。将图片、视频、地图或占位符包裹在 `wa-frame` 中，它默认保持为正方形，或者是您指定的横向、纵向或任何自定义宽高比，即使周围的布局调整大小。这意味着不再有黑边，不再有等待慢图片加载而折叠的盒子，也不再有最终高度不同的卡片。
 
-Pair `wa-frame` with one of the [`wa-border-radius-*`](/docs/utilities/rounding) classes to round the corners without cropping the content inside.
+将 `wa-frame` 与 [`wa-border-radius-*`](/docs/utilities/rounding) 类之一配对，以在不裁剪内部内容的情况下圆角。
 
 ```html {.example}
 <div class="wa-frame" style="max-inline-size: 20rem;">
@@ -37,9 +43,9 @@ Pair `wa-frame` with one of the [`wa-border-radius-*`](/docs/utilities/rounding)
 </div>
 ```
 
-## Examples
+## 示例
 
-Frames are well-suited for images and image placeholders.
+框架非常适合图片和图片占位符。
 
 ```html {.example}
 <div class="wa-flank" style="--flank-size: 8rem;">
@@ -131,9 +137,9 @@ Frames are well-suited for images and image placeholders.
 </div>
 ```
 
-## Aspect Ratio
+## 宽高比
 
-Frames have a square aspect ratio by default. You can append `:square` (1 / 1), `:landscape` (16 / 9), or `:portrait` (9 / 16) to the `wa-frame` class in your markup to specify an aspect ratio for the frame. Alternatively, you can define the `aspect-ratio` property to set a custom proportion.
+框架默认具有正方形的宽高比。您可以在标记中向 `wa-frame` 类附加 `:square` (1 / 1)、`:landscape` (16 / 9) 或 `:portrait` (9 / 16) 来指定框架的宽高比。或者，您可以定义 `aspect-ratio` 属性来设置自定义比例。
 
 ```html {.example}
 <div class="wa-grid">
@@ -149,9 +155,9 @@ Frames have a square aspect ratio by default. You can append `:square` (1 / 1), 
 </div>
 ```
 
-## Border Radius
+## 圆角
 
-Frames have a square border radius by default. You can add any of the following [`wa-border-radius-*`](/docs/utilities/rounding) classes to an element with `wa-frame` to specify the border radius:
+框架默认具有正方形的圆角。您可以向带有 `wa-frame` 的元素添加以下任何 [`wa-border-radius-*`](/docs/utilities/rounding) 类来指定圆角：
 
 - `wa-border-radius-s`
 - `wa-border-radius-m`
@@ -160,7 +166,7 @@ Frames have a square border radius by default. You can add any of the following 
 - `wa-border-radius-circle`
 - `wa-border-radius-square`
 
-Alternatively, you can define the `border-radius` property to set custom rounding.
+或者，您可以定义 `border-radius` 属性来设置自定义圆角。
 
 ```html {.example}
 <div class="wa-grid">

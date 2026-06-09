@@ -1,57 +1,63 @@
 ---
-title: Form Controls
-description: Using Web Awesome form controls.
+title: 表单控件
+description: 使用 Web Awesome 表单控件。
 layout: page-outline
 synonyms:
   - forms
   - form elements
   - validation
+  - 表单
+  - 表单元素
+  - 验证
 use-cases:
   - form handling
   - form data
   - constraint validation
+  - 表单处理
+  - 表单数据
+  - 约束验证
 ---
 
-Web Awesome form controls are form-associated custom elements, meaning they will submit with forms just like native `<form>` controls. They also support constraint validation, which is the platform's version of client-side form validation.
+Web Awesome 表单控件是与表单关联的自定义元素，这意味着它们会像原生 `<form>` 控件一样随表单一起提交。它们还支持约束验证，这是浏览器原生的客户端表单验证功能。
 
-## Constraint Validation
+## 约束验证
 
-Client-side validation can be enabled through the browser's [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) for Web Awesome form controls. You can activate it using attributes such as `required`, `pattern`, `minlength`, `maxlength`, etc. Web Awesome implements many of the same attributes as native form controls, but check the documentation for a list of supported properties for each component.
+Web Awesome 表单控件可以通过浏览器的[约束验证 API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 启用客户端验证。您可以使用 `required`、`pattern`、`minlength`、`maxlength` 等属性来激活它。Web Awesome 实现了与原生表单控件相同的许多属性，但请查看文档以了解每个组件支持的属性列表。
 
-If you don't want to use client-side validation, you can suppress this behavior by adding `novalidate` to the surrounding `<form>` element.
+如果您不想使用客户端验证，可以通过在周围的 `<form>` 元素上添加 `novalidate` 来抑制此行为。
 
-And if this syntax looks unfamiliar, don't worry! Most of what you're learning on this page is platform knowledge that applies to native form controls, too.
+如果这些语法看起来不熟悉，请不要担心！您在本页学到的大部分内容也适用于原生表单控件，属于平台知识。
 
 :::warning
-Client-side validation can be used to improve the UX of forms, but it is not a replacement for server-side validation. You should always validate and sanitize user input on the server!
+客户端验证可用于改善表单的用户体验，但不能替代服务器端验证。您应始终在服务器端验证和清理用户输入！
 :::
 
-### Required Fields
+### 必填字段
 
-To make a field required, use the `required` attribute. Required fields will automatically receive an asterisk after their labels. The form will not be submitted if a required field is incomplete.
+要使字段必填，请使用 `required` 属性。必填字段会在其标签后自动显示一个星号。如果必填字段未填写完整，表单将无法提交。
 
 ```html {.example}
 <form class="input-validation-required">
-  <wa-input name="name" label="Name" required></wa-input>
+  <wa-input name="name" label="姓名" required></wa-input>
   <br />
-  <wa-select label="Favorite Animal" with-clear required>
-    <wa-option value="birds">Birds</wa-option>
-    <wa-option value="cats">Cats</wa-option>
-    <wa-option value="dogs">Dogs</wa-option>
-    <wa-option value="other">Other</wa-option>
+  <wa-select label="最喜欢的动物" with-clear required>
+    <wa-option value="birds">鸟类</wa-option>
+    <wa-option value="cats">猫</wa-option>
+    <wa-option value="dogs">狗</wa-option>
+    <wa-option value="other">其他</wa-option>
   </wa-select>
   <br />
-  <wa-textarea name="comment" label="Comment" required></wa-textarea>
+  <wa-textarea name="comment" label="评论" required></wa-textarea>
   <br />
-  <wa-checkbox required>Check me before submitting</wa-checkbox>
+  <wa-checkbox required>提交前请勾选此处</wa-checkbox>
   <br /><br />
-  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">提交</wa-button>
 </form>
 
 <script type="module">
   const form = document.querySelector('.input-validation-required');
 
-  // Wait for controls to be defined before attaching form listeners
+  // 等待控件定义完成后附加表单监听器
   await Promise.all([
     customElements.whenDefined('wa-button'),
     customElements.whenDefined('wa-checkbox'),
@@ -62,92 +68,92 @@ To make a field required, use the `required` attribute. Required fields will aut
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
-      alert('All fields are valid!');
+      alert('所有字段均有效！');
     });
   });
 </script>
 ```
 
-### Input Patterns
+### 输入模式
 
-To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<wa-input>` elements.
+要限制值符合特定的[模式](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern)，请使用 `pattern` 属性。此示例仅允许字母 A-Z，因此如果输入数字或符号，表单将无法提交。这仅适用于 `<wa-input>` 元素。
 
 ```html {.example}
 <form class="input-validation-pattern">
-  <wa-input name="letters" required label="Letters" pattern="[A-Za-z]+"></wa-input>
+  <wa-input name="letters" required label="字母" pattern="[A-Za-z]+"></wa-input>
   <br />
-  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
-  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">提交</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">重置</wa-button>
 </form>
 
 <script type="module">
   const form = document.querySelector('.input-validation-pattern');
 
-  // Wait for controls to be defined before attaching form listeners
+  // 等待控件定义完成后附加表单监听器
   await Promise.all([customElements.whenDefined('wa-button'), customElements.whenDefined('wa-input')]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
-      alert('All fields are valid!');
+      alert('所有字段均有效！');
     });
   });
 </script>
 ```
 
-### Input Types
+### 输入类型
 
-Some input types will automatically trigger constraints, such as `email` and `url`.
+某些输入类型会自动触发约束，例如 `email` 和 `url`。
 
 ```html {.example}
 <form class="input-validation-type">
-  <wa-input type="email" label="Email" placeholder="you@example.com" required></wa-input>
+  <wa-input type="email" label="邮箱" placeholder="you@example.com" required></wa-input>
   <br />
-  <wa-input type="url" label="URL" placeholder="https://example.com/" required></wa-input>
+  <wa-input type="url" label="网址" placeholder="https://example.com/" required></wa-input>
   <br />
-  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
-  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">提交</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">重置</wa-button>
 </form>
 
 <script type="module">
   const form = document.querySelector('.input-validation-type');
 
-  // Wait for controls to be defined before attaching form listeners
+  // 等待控件定义完成后附加表单监听器
   await Promise.all([customElements.whenDefined('wa-button'), customElements.whenDefined('wa-input')]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
-      alert('All fields are valid!');
+      alert('所有字段均有效！');
     });
   });
 </script>
 ```
 
-### Custom Error Messages
+### 自定义错误消息
 
-To create a custom validation error, pass a non-empty string to the `setCustomValidity()` method. This will override any existing validation constraints. The form will not be submitted when a custom validity is set and the browser will show a validation error when the containing form is submitted. To make the input valid again, call `setCustomValidity()` again with an empty string.
+要创建自定义验证错误，请向 `setCustomValidity()` 方法传递一个非空字符串。这将覆盖任何现有的验证约束。当设置了自定义有效性时，表单将无法提交，浏览器会在提交包含该表单时显示验证错误。要使输入重新有效，请再次调用 `setCustomValidity('')` 并传入空字符串。
 
 ```html {.example}
 <form class="input-validation-custom">
-  <wa-input label="Type webawesome" required></wa-input>
+  <wa-input label="输入 webawesome" required></wa-input>
   <br />
-  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
-  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">提交</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">重置</wa-button>
 </form>
 
 <script type="module">
   const form = document.querySelector('.input-validation-custom');
   const input = form.querySelector('wa-input');
 
-  // Wait for controls to be defined before attaching form listeners
+  // 等待控件定义完成后附加表单监听器
   await Promise.all([customElements.whenDefined('wa-button'), customElements.whenDefined('wa-input')]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
-      alert('All fields are valid!');
+      alert('所有字段均有效！');
     });
 
     input.addEventListener('input', () => {
       if (input.value === 'webawesome') {
         input.setCustomValidity('');
       } else {
-        input.setCustomValidity("Hey, you're supposed to type 'webawesome' before submitting this!");
+        input.setCustomValidity("嘿，你应该输入 'webawesome' 后再提交！");
       }
     });
   });
@@ -155,20 +161,20 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 ```
 
 :::info
-Custom validation can be applied to any form control that supports the `setCustomValidity()` method. It is not limited to inputs and textareas.
+自定义验证可以应用于任何支持 `setCustomValidity()` 方法的表单控件，不限于输入框和文本区域。
 :::
 
-## Custom Validation Styles
+## 自定义验证样式
 
-Due to the many ways form controls are used, Web Awesome doesn't provide out of the box validation styles for form controls as part of its default theme.
+由于表单控件的使用方式多样，Web Awesome 的默认主题不提供开箱即用的表单控件验证样式。
 
-Instead, the following [custom states](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/states) will be applied to reflect a control's validity as users interact with it. You can use them to create custom styles for any of the validation states you're interested in.
+相反，以下[自定义状态](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/states)会在用户与控件交互时被应用，以反映控件的有效性。您可以使用它们为您感兴趣的任意验证状态创建自定义样式。
 
-- `:state(required)` - the form control is required
-- `:state(optional)` - the form control is optional
-- `:state(invalid)` - the form control is invalid
-- `:state(valid)` - the form control is valid
-- `:state(user-invalid)` - the form control is invalid and the user has interacted with it
-- `:state(user-valid)` - the form control is valid and the user has interacted with it
+- `:state(required)` - 表单控件为必填
+- `:state(optional)` - 表单控件为选填
+- `:state(invalid)` - 表单控件无效
+- `:state(valid)` - 表单控件有效
+- `:state(user-invalid)` - 表单控件无效且用户已与其交互
+- `:state(user-valid)` - 表单控件有效且用户已与其交互
 
-These custom states work alongside the browser's built-in pseudo classes for validation: [`:required`](https://developer.mozilla.org/en-US/docs/Web/CSS/:required), [`:optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/:optional), [`:invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid), [`:valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid), [`:user-invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid), and [`:user-valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-valid).
+这些自定义状态与浏览器内置的验证伪类一起使用：[`:required`](https://developer.mozilla.org/en-US/docs/Web/CSS/:required)、[`:optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/:optional)、[`:invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid)、[`:valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid)、[`:user-invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid) 和 [`:user-valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-valid)。

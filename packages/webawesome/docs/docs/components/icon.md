@@ -1,5 +1,5 @@
 ---
-title: Icon
+title: 图标
 layout: component
 category: Media
 synonyms:
@@ -7,27 +7,34 @@ synonyms:
   - glyph
   - pictogram
   - fa icon
+  - 符号
+  - 字形
+  - 象形图
+  - Font Awesome 图标
 use-cases:
   - icon button
   - status icon
   - navigation icon
+  - 图标按钮
+  - 状态图标
+  - 导航图标
 ---
 
-Web Awesome comes bundled with over 2,000 free icons courtesy of [Font Awesome](https://fontawesome.com/). These icons are part of the `default` icon library. Font Awesome Pro users can unlock additional icon families. Or, if you prefer, you can register your own [custom icon library](#icon-library).
+Web Awesome 附带了超过 2,000 个由 [Font Awesome](https://fontawesome.com/) 提供的免费图标。这些图标属于 `default` 图标库。Font Awesome Pro 用户可以解锁额外的图标系列。或者，如果你愿意，可以注册自己的[自定义图标库](#icon-libraries)。
 
 ```html {.example}
-<wa-icon name="star" label="Star" style="font-size: 2em;"></wa-icon>
+<wa-icon name="star" label="星星" style="font-size: 2em;"></wa-icon>
 ```
 
 :::info
-Not sure which icon to use? [Find the perfect icon over at {{ site.siblings.fontAwesome.name }}!](https://fontawesome.com/search?o=r&m=free&f=brands%2Cclassic)
+不确定使用哪个图标？[在 {{ site.siblings.fontAwesome.name }} 找到完美的图标！](https://fontawesome.com/search?o=r&m=free&f=brands%2Cclassic)
 :::
 
-## Examples
+## 示例
 
-### Sizing
+### 尺寸
 
-Icons are sized relative to the current font size. To change their size, set the `font-size` property on the icon itself or on a parent element as shown below.
+图标大小相对于当前字体大小。要更改它们的大小，请在图标本身或父元素上设置 `font-size` 属性，如下所示。
 
 ```html {.example}
 <div class="wa-cluster" style="font-size: 44px;">
@@ -40,9 +47,9 @@ Icons are sized relative to the current font size. To change their size, set the
 </div>
 ```
 
-### Colors
+### 颜色
 
-Icons inherit their color from the current text color. Thus, you can set the `color` property on the `<wa-icon>` element or an ancestor to change the color.
+图标从当前文本颜色继承其颜色。因此，你可以在 `<wa-icon>` 元素或祖先元素上设置 `color` 属性来更改颜色。
 
 ```html {.example}
 <div class="wa-cluster" style="font-size: 1.5em;">
@@ -55,21 +62,21 @@ Icons inherit their color from the current text color. Thus, you can set the `co
 </div>
 ```
 
-### Labels
+### 标签
 
-For non-decorative icons, use the `label` attribute to announce it to assistive devices.
+对于非装饰性图标，使用 `label` 属性将其告知辅助技术。
 
 ```html {.example}
-<wa-icon name="star" label="Favorite" style="font-size: 1.5em;"></wa-icon>
+<wa-icon name="star" label="收藏" style="font-size: 1.5em;"></wa-icon>
 ```
 
-### Families & Variants
+### 系列和变体
 
-The default icon library is Font Awesome Free, which comes with two icon families: `classic` and `brands`. Use the `family` attribute to set the icon family.
+默认图标库是 Font Awesome Free，它带有两个图标系列：`classic` 和 `brands`。使用 `family` 属性设置图标系列。
 
-Many Font Awesome Pro icon families have variants such as `thin`, `light`, `regular`, and `solid`. Font Awesome Pro users can [provide their kit code](/docs/#using-font-awesome-kit-codes) to unlock additional premium icon families, including `sharp`, `duotone`, `sharp-duotone`, and additional Pro+ icon packs.
+许多 Font Awesome Pro 图标系列有变体，如 `thin`、`light`、`regular` 和 `solid`。Font Awesome Pro 用户可以[提供他们的工具包代码](/docs/#using-font-awesome-kit-codes)来解锁额外的高级图标系列，包括 `sharp`、`duotone`、`sharp-duotone` 和额外的 Pro+ 图标包。
 
-For families that support multiple weights, use the `variant` attribute to set the variant.
+对于支持多种字重的系列，使用 `variant` 属性设置变体。
 
 ```html {.example}
 <div class="wa-stack wa-gap-xl">
@@ -121,12 +128,12 @@ For families that support multiple weights, use the `variant` attribute to set t
 </div>
 ```
 
-### Auto Width
+### 自动宽度
 
-By default, icons have a `1em` height and a fixed `1.25em` width. Use the `auto-width` attribute to allow the icon to use its natural variable width.
+默认情况下，图标具有 `1em` 高度和固定的 `1.25em` 宽度。使用 `auto-width` 属性允许图标使用其自然可变宽度。
 
 ```html {.example}
-Without auto-width<br />
+无自动宽度<br>
 <div style="font-size: 1.5em; color: #193154;">
   <wa-icon family="solid" name="exclamation" style="background: lightsalmon;"></wa-icon>
   <wa-icon family="solid" name="circle-check" style="background: lightsalmon;"></wa-icon>
@@ -136,9 +143,9 @@ Without auto-width<br />
   <wa-icon family="solid" name="envelope" style="background: lightsalmon;"></wa-icon>
 </div>
 
-<br />
+<br>
 
-With auto-width<br />
+有自动宽度<br>
 <div style="font-size: 1.5em; color: #193154;">
   <wa-icon auto-width family="solid" name="exclamation" style="background: lightsalmon;"></wa-icon>
   <wa-icon auto-width family="solid" name="circle-check" style="background: lightsalmon;"></wa-icon>
@@ -149,175 +156,175 @@ With auto-width<br />
 </div>
 ```
 
-### Rotating & Flipping
+### 旋转和翻转
 
-Web Awesome supports [{{ site.siblings.fontAwesome.name }}'s rotation and flip utilities](https://docs.fontawesome.com/web/style/rotate/) for adjusting icon orientation. To rotate or flip icons, use the `rotate` and `flip` attributes when you reference an icon.
+Web Awesome 支持 [{{ site.siblings.fontAwesome.name }} 的旋转和翻转实用程序](https://docs.fontawesome.com/web/style/rotate/)来调整图标方向。要旋转或翻转型号，在引用图标时使用 `rotate` 和 `flip` 属性。
 
 ```html {.example}
-<wa-icon name="snowboarding" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" rotate="90" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" rotate="180" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" rotate="270" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" flip="x" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" flip="y" label="Snowboarding" style="font-size: 2em;"></wa-icon>
-<wa-icon name="snowboarding" flip="both" label="Snowboarding" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" rotate="90" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" rotate="180" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" rotate="270" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" flip="x" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" flip="y" label="单板滑雪" style="font-size: 2em;"></wa-icon>
+<wa-icon name="snowboarding" flip="both" label="单板滑雪" style="font-size: 2em;"></wa-icon>
 ```
 
-### Animating
+### 动画
 
-Web Awesome supports [{{ site.siblings.fontAwesome.name }}'s animation utilities](https://docs.fontawesome.com/web/style/animate/) for adding visual interest to icons. To select different types of animations, use the `animation` attribute when you reference an icon.
+Web Awesome 支持 [{{ site.siblings.fontAwesome.name }} 的动画实用程序](https://docs.fontawesome.com/web/style/animate/)来为图标添加视觉吸引力。要选择不同类型的动画，在引用图标时使用 `animation` 属性。
 
 :::info
-All [icon animations respect](https://docs.fontawesome.com/web/style/animate/#accessibility) `prefers-reduced-motion` and are automatically disabled when set to `reduce`.
+所有[图标动画都遵守](https://docs.fontawesome.com/web/style/animate/#accessibility) `prefers-reduced-motion` 并在设置为 `reduce` 时自动禁用。
 :::
 
-#### Beat
+#### 跳动
 
-Use the `beat` animation to scale an icon up or down. This is useful for grabbing attention or for use with health/heart-centric icons.
+使用 `beat` 动画上下缩放图标。这对于吸引注意力或与健康/心脏相关的图标搭配使用很有用。
 
 ```html {.example}
-<wa-icon name="circle-plus" animation="beat" label="Beating Circle Plus" style="font-size: 2em;"></wa-icon>
-<wa-icon name="heart" animation="beat" label="Beating Heart" style="font-size: 2em;"></wa-icon>
+<wa-icon name="circle-plus" animation="beat" label="跳动的加号" style="font-size: 2em;"></wa-icon>
+<wa-icon name="heart" animation="beat" label="跳动的心脏" style="font-size: 2em;"></wa-icon>
 <wa-icon
   name="heart"
   animation="beat"
-  label="Beating Heart"
+  label="跳动的心脏"
   style="font-size: 2em; --animation-duration: 0.5s;"
 ></wa-icon>
 <wa-icon
   name="heart"
   animation="beat"
-  label="Beating Heart"
+  label="跳动的心脏"
   style="font-size: 2em; --animation-duration: 2s;"
 ></wa-icon>
-<wa-icon name="heart" animation="beat" label="Beating Heart" style="font-size: 2em; --beat-scale: 2;"></wa-icon>
+<wa-icon name="heart" animation="beat" label="跳动的心脏" style="font-size: 2em; --beat-scale: 2;"></wa-icon>
 ```
 
-#### Fade
+#### 淡出
 
-Use the `fade` animation to fade an icon in and out visually to grab attention in a subtle (or not so subtle) way.
+使用 `fade` 动画让图标在视觉上淡入淡出，以微妙（或不那么微妙）的方式吸引注意力。
 
 ```html {.example}
-<wa-icon name="triangle-exclamation" animation="fade" label="Fading Warning" style="font-size: 2em;"></wa-icon>
-<wa-icon name="skull-crossbones" animation="fade" label="Fading Danger" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cloud-arrow-down" animation="fade" label="Fading Download" style="font-size: 2em;"></wa-icon>
+<wa-icon name="triangle-exclamation" animation="fade" label="淡出的警告" style="font-size: 2em;"></wa-icon>
+<wa-icon name="skull-crossbones" animation="fade" label="淡出的危险" style="font-size: 2em;"></wa-icon>
+<wa-icon name="cloud-arrow-down" animation="fade" label="淡出的下载" style="font-size: 2em;"></wa-icon>
 <wa-icon
   name="i-cursor"
   animation="fade"
-  label="Fading Cursor"
+  label="淡出的光标"
   style="font-size: 2em; --animation-duration: 2s; --fade-opacity: 0.6;"
 ></wa-icon>
 ```
 
-#### Beat-Fade
+#### 跳动淡出
 
-Use the `beat-fade` animation to grab attention by visually scaling and pulsing an icon in and out.
+使用 `beat-fade` 动画通过视觉缩放和脉冲图标淡入淡出吸引注意力。
 
 ```html {.example}
-<wa-icon name="person-digging" animation="beat-fade" label="Beat-Fading Construction" style="font-size: 2em;"></wa-icon>
-<wa-icon name="circle-exclamation" animation="beat-fade" label="Beat-Fading Alert" style="font-size: 2em;"></wa-icon>
+<wa-icon name="person-digging" animation="beat-fade" label="跳动淡出的施工" style="font-size: 2em;"></wa-icon>
+<wa-icon name="circle-exclamation" animation="beat-fade" label="跳动淡出的警报" style="font-size: 2em;"></wa-icon>
 <wa-icon
   name="poo-bolt"
   animation="beat-fade"
-  label="Beat-Fading Lightning"
+  label="跳动淡出的闪电"
   style="font-size: 2em; --beat-fade-opacity: 0.1;--beat-fade-scale: 1.25"
 ></wa-icon>
 <wa-icon
   name="circle-info"
   animation="beat-fade"
-  label="Beat-Fading Info"
+  label="跳动淡出的信息"
   style="font-size: 2em; --beat-fade-opacity: 0.67;--beat-fade-scale: 1.075"
 ></wa-icon>
 ```
 
-#### Bounce
+#### 弹跳
 
-Use the `bounce` animation to grab attention by visually bouncing an icon up and down.
+使用 `bounce` 动画通过视觉上上下弹跳图标来吸引注意力。
 
 ```html {.example}
-<wa-icon name="volleyball" animation="bounce" label="Bouncing Volleyball" style="font-size: 2em;"></wa-icon>
+<wa-icon name="volleyball" animation="bounce" label="弹跳的排球" style="font-size: 2em;"></wa-icon>
 
-<!-- bounce with extra rebound and "squish" on landing -->
+<!-- 弹跳带有额外反弹和着陆时的"挤压" -->
 <wa-icon
   name="basketball"
   animation="bounce"
-  label="Bouncing Basketball"
+  label="弹跳的篮球"
   style="font-size: 2em; --bounce-land-scale-x: 1.2;--bounce-land-scale-y: .8;--bounce-rebound: 5px;"
 ></wa-icon>
 
-<!-- bounce animation with no "squish" -->
+<!-- 无"挤压"的弹跳动画 -->
 <wa-icon
   name="frog"
   animation="bounce"
-  label="Bouncing Frog"
+  label="弹跳的青蛙"
   style="font-size: 2em; --bounce-start-scale-x: 1; --bounce-start-scale-y: 1; --bounce-jump-scale-x: 1; --bounce-jump-scale-y: 1; --bounce-land-scale-x: 1; --bounce-land-scale-y: 1;"
 ></wa-icon>
 
-<!-- bounce animation with no "squish" or "rebound" -->
+<!-- 无"挤压"或"反弹"的弹跳动画 -->
 <wa-icon
   name="envelope"
   animation="bounce"
-  label="Bouncing Envelope"
+  label="弹跳的信封"
   style="font-size: 2em; --bounce-start-scale-x: 1;--bounce-start-scale-y: 1;--bounce-jump-scale-x: 1;--bounce-jump-scale-y: 1;--bounce-land-scale-x: 1;--bounce-land-scale-y: 1;--bounce-rebound: 0;"
 ></wa-icon>
 ```
 
-#### Flip
+#### 翻转
 
-Use the `flip` animation to rotate an icon in 3D space. By default, flip rotates an icon about the Y axis 180 degrees. Flipping is helpful for transitions, processing states, or for using physical objects that one flips in the real world.
+使用 `flip` 动画在 3D 空间中旋转图标。默认情况下，翻转会围绕 Y 轴旋转图标 180 度。翻转对于过渡、处理状态或使用在现实世界中翻转的物理对象很有用。
 
 ```html {.example}
-<wa-icon name="compact-disc" animation="flip" label="Flipping Compact Disc" style="font-size: 2em;"></wa-icon>
-<wa-icon name="camera-rotate" animation="flip" label="Flipping Camera Rotate" style="font-size: 2em;"></wa-icon>
-<wa-icon name="compact-disc" animation="flip" label="Flipping Disc" style="font-size: 2em;"></wa-icon>
+<wa-icon name="compact-disc" animation="flip" label="翻转的光盘" style="font-size: 2em;"></wa-icon>
+<wa-icon name="camera-rotate" animation="flip" label="翻转的相机旋转" style="font-size: 2em;"></wa-icon>
+<wa-icon name="compact-disc" animation="flip" label="翻转的光盘" style="font-size: 2em;"></wa-icon>
 <wa-icon
   name="scroll"
   animation="flip"
-  label="Flipping Scroll"
+  label="翻转的卷轴"
   style="font-size: 2em; --flip-x: 1; --flip-y: 0"
 ></wa-icon>
 <wa-icon
   name="money-check-dollar"
   animation="flip"
-  label="Flipping Money Check Dollar"
+  label="翻转的美元支票"
   style="font-size: 2em; --animation-duration: 3s;"
 ></wa-icon>
 ```
 
-#### Shake
+#### 抖动
 
-Use the `shake` animation to grab attention or note that something is not allowed by shaking an icon back and forth.
+使用 `shake` 动画通过前后抖动图标来吸引注意力或表明不允许某些内容。
 
 ```html {.example}
-<wa-icon name="bell" animation="shake" label="Shaking Bell" style="font-size: 2em;"></wa-icon>
-<wa-icon name="lock" animation="shake" label="Shaking Lock" style="font-size: 2em;"></wa-icon>
-<wa-icon name="stopwatch" animation="shake" label="Shaking Stopwatch" style="font-size: 2em;"></wa-icon>
-<wa-icon name="bomb" animation="shake" label="Shaking Bomb" style="font-size: 2em;"></wa-icon>
+<wa-icon name="bell" animation="shake" label="抖动的铃铛" style="font-size: 2em;"></wa-icon>
+<wa-icon name="lock" animation="shake" label="抖动的锁" style="font-size: 2em;"></wa-icon>
+<wa-icon name="stopwatch" animation="shake" label="抖动的秒表" style="font-size: 2em;"></wa-icon>
+<wa-icon name="bomb" animation="shake" label="抖动的炸弹" style="font-size: 2em;"></wa-icon>
 ```
 
-#### Spin
+#### 旋转
 
-Use the `spin` animation to get any icon to rotate, and use `spin-pulse` to have it rotate with eight steps. Use `spin-reverse` to rotate counter-clockwise. This works especially well with `spinner` and everything in the spinner icons category.
+使用 `spin` 动画让任何图标旋转，并使用 `spin-pulse` 让它以八步旋转。使用 `spin-reverse` 逆时针旋转。这与 `spinner` 以及 spinner 图标类别中的所有内容搭配使用效果特别好。
 
 ```html {.example}
-<wa-icon name="sync" animation="spin" label="Spinning Sync" style="font-size: 2em;"></wa-icon>
-<wa-icon name="circle-notch" animation="spin" label="Spinning Circle Notch" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cog" animation="spin" label="Spinning Cog" style="font-size: 2em;"></wa-icon>
-<wa-icon name="cog" animation="spin-reverse" label="Reverse Spinning Cog" style="font-size: 2em;"></wa-icon>
-<wa-icon name="spinner" animation="spin-pulse" label="Pulse Spinning Spinner" style="font-size: 2em;"></wa-icon>
+<wa-icon name="sync" animation="spin" label="旋转的同步" style="font-size: 2em;"></wa-icon>
+<wa-icon name="circle-notch" animation="spin" label="旋转的圆形缺口" style="font-size: 2em;"></wa-icon>
+<wa-icon name="cog" animation="spin" label="旋转的齿轮" style="font-size: 2em;"></wa-icon>
+<wa-icon name="cog" animation="spin-reverse" label="反向旋转的齿轮" style="font-size: 2em;"></wa-icon>
+<wa-icon name="spinner" animation="spin-pulse" label="脉冲旋转的加载器" style="font-size: 2em;"></wa-icon>
 <wa-icon
   name="spinner"
   animation="spin-pulse"
-  label="Pulse Spinning Spinner"
+  label="脉冲旋转的加载器"
   style="font-size: 2em; --animation-direction: reverse"
 ></wa-icon>
 ```
 
-### Duotone
+### 双色调
 
-{{ site.siblings.fontAwesome.name }}'s [Duotone icons](https://docs.fontawesome.com/web/style/duotone) change with the `color` property as well, but you can customize the primary and secondary colors independently using the `--primary-color` and `--secondary-color` custom properties. To change the opacity of either, use `--primary-opacity` and `--secondary-opacity`.
+{{ site.siblings.fontAwesome.name }} 的[双色调图标](https://docs.fontawesome.com/web/style/duotone)也会随 `color` 属性更改，但你可以使用 `--primary-color` 和 `--secondary-color` 自定义属性独立自定义主色和辅色。要更改任一颜色的不透明度，请使用 `--primary-opacity` 和 `--secondary-opacity`。
 
-Note that these custom properties will not inherit and _must be applied directly to the icon_.
+请注意，这些自定义属性不会继承，并且_必须直接应用于图标_。
 
 ```html {.example}
 <div class="wa-stack">
@@ -474,15 +481,15 @@ Note that these custom properties will not inherit and _must be applied directly
 ```
 
 :::info
-Duotone icons can be unlocked by [providing a valid {{ site.siblings.fontAwesome.name }} kit code](/docs/#using-font-awesome-kit-codes).
+双色调图标可以通过[提供有效的 {{ site.siblings.fontAwesome.name }} 工具包代码](/docs/#using-font-awesome-kit-codes)来解锁。
 :::
 
-### Swap Duotone Opacity
+### 交换双色调不透明度
 
-For duotone icons, you can swap the primary and secondary opacity values using the `swap-opacity` attribute. This is useful when you want to emphasize the secondary layer of the icon.
+对于双色调图标，你可以使用 `swap-opacity` 属性交换主色和辅色的不透明度值。当你想要强调图标的辅助层时，这很有用。
 
 ```html {.example}
-Normal duotone<br />
+普通双色调<br>
 <div class="wa-cluster" style="font-size: 1.5em;">
   <wa-icon family="duotone" name="home"></wa-icon>
   <wa-icon family="duotone" name="user"></wa-icon>
@@ -490,9 +497,9 @@ Normal duotone<br />
   <wa-icon family="duotone" name="calendar"></wa-icon>
 </div>
 
-<br />
+<br>
 
-Swapped duotone<br />
+交换双色调<br>
 <div class="wa-cluster" style="font-size: 1.5em;">
   <wa-icon family="duotone" name="home" swap-opacity></wa-icon>
   <wa-icon family="duotone" name="user" swap-opacity></wa-icon>
@@ -501,9 +508,9 @@ Swapped duotone<br />
 </div>
 ```
 
-### Font Awesome Pro+ Icons
+### Font Awesome Pro+ 图标
 
-If you're a [Font Awesome Pro+ customer](https://fontawesome.com/), you have access to even more icons! Just set the appropriate `family`, `variant`, and `name` on the icon.
+如果你是 [Font Awesome Pro+ 客户](https://fontawesome.com/)，你可以访问更多图标！只需在图标上设置适当的 `family`、`variant` 和 `name`。
 
 ```html {.example}
 <div class="wa-stack wa-gap-xl">
@@ -599,35 +606,35 @@ If you're a [Font Awesome Pro+ customer](https://fontawesome.com/), you have acc
 ```
 
 :::info
-Pro+ icons can be unlocked by [providing a valid {{ site.siblings.fontAwesome.name }} kit code](/docs/#using-font-awesome-kit-codes).
+Pro+ 图标可以通过[提供有效的 {{ site.siblings.fontAwesome.name }} 工具包代码](/docs/#using-font-awesome-kit-codes)来解锁。
 :::
 
-### Custom Icons
+### 自定义图标
 
-Custom icons can be loaded individually with the `src` attribute. Only SVGs on a local or CORS-enabled endpoint are supported. If you're using more than one custom icon, it might make sense to register a [custom icon library](#icon-libraries).
+自定义图标可以使用 `src` 属性单独加载。仅支持本地或启用 CORS 的端点上的 SVG。如果你使用多个自定义图标，注册一个[自定义图标库](#icon-libraries)可能是有意义的。
 
 ```html {.example}
 <wa-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 4rem;"></wa-icon>
 ```
 
-### Self-hosting the Default Library
+### 自托管默认库
 
-By default, icons are loaded from the {{ site.siblings.fontAwesome.name }} CDN. If you'd prefer to [download the icons](https://fontawesome.com/download) and serve them from your own server, you can use the `setIconPath()` function to point the default icon library at your self-hosted directory.
+默认情况下，图标从 {{ site.siblings.fontAwesome.name }} CDN 加载。如果你希望[下载图标](https://fontawesome.com/download)并从你自己的服务器提供它们，可以使用 `setIconPath()` 函数将默认图标库指向你的自托管目录。
 
-When you download {{ site.siblings.fontAwesome.name }}, the archive will contain an `svgs` directory with subfolders such as `solid/`, `regular/`, `brands/`, etc. Copy the `svgs` directory (or its contents) into your project and set the icon path to point to it.
+当你下载 {{ site.siblings.fontAwesome.name }} 时，压缩包将包含一个带有子目录（如 `solid/`、`regular/`、`brands/` 等）的 `svgs` 目录。将 `svgs` 目录（或其内容）复制到你的项目中并设置图标路径指向它。
 
 ```html
 <script type="module">
   import { setIconPath } from '/dist/webawesome.js';
 
-  // Point to the `svgs` directory from your Font Awesome download
+  // 指向你的 Font Awesome 下载中的 `svgs` 目录
   setIconPath('/assets/fontawesome/svgs');
 </script>
 ```
 
-After calling `setIconPath()`, icons will resolve to your self-hosted directory instead of the CDN. For example, `<wa-icon name="house">` will load from `/assets/fontawesome/svgs/solid/house.svg`.
+调用 `setIconPath()` 后，图标将解析到你的自托管目录而不是 CDN。例如，`<wa-icon name="house">` 将从 `/assets/fontawesome/svgs/solid/house.svg` 加载。
 
-For more control over how icon URLs are constructed, you can use the `getIconFolder()` helper along with `registerIconLibrary()` to build a custom resolver. The `getIconFolder()` function maps a family and variant to the correct folder name, so you don't have to replicate that logic yourself.
+为了更好地控制图标 URL 的构建方式，可以使用 `getIconFolder()` 辅助函数以及 `registerIconLibrary()` 来构建自定义解析器。`getIconFolder()` 函数将系列和变体映射到正确的文件夹名称，因此你不必自己复制该逻辑。
 
 ```html
 <script type="module">
@@ -643,14 +650,14 @@ For more control over how icon URLs are constructed, you can use the `getIconFol
 ```
 
 :::warning
-`setIconPath()` must be called before Web Awesome components are loaded, similar to `setBasePath()` and `setKitCode()`.
+`setIconPath()` 必须在 Web Awesome 组件加载之前调用，类似于 `setBasePath()` 和 `setKitCode()`。
 :::
 
-### Customizing the Default Library
+### 自定义默认库
 
-The default icon library contains over 2,000 icons courtesy of [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}). These are the icons that display when you use `<wa-icon>` without the `library` attribute. If you prefer to have these icons resolve elsewhere or to a different icon library, register an icon library using the `default` name and a custom resolver.
+默认图标库包含超过 2,000 个由 [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}) 提供的图标。这些是在使用 `<wa-icon>` 而没有 `library` 属性时显示的图标。如果你希望这些图标解析到其他地方或不同的图标库，请使用 `default` 名称和自定义解析器注册一个图标库。
 
-For example, this will change the default icon library to use [Bootstrap Icons](https://icons.getbootstrap.com/) loaded from the jsDelivr CDN.
+例如，这会将默认图标库更改为使用从 jsDelivr CDN 加载的 [Bootstrap 图标](https://icons.getbootstrap.com/)。
 
 ```html
 <script type="module">
@@ -665,16 +672,16 @@ For example, this will change the default icon library to use [Bootstrap Icons](
 </script>
 ```
 
-#### Customize the default library to use SVG sprites
+#### 自定义默认库以使用 SVG 精灵
 
-To improve performance you can use a SVG sprites to avoid multiple trips for each SVG. The browser will load the sprite sheet once and then you reference the particular SVG within the sprite sheet using hash selector.
+为了提高性能，你可以使用 SVG 精灵来避免为每个 SVG 进行多次请求。浏览器将加载一次精灵表，然后使用哈希选择器引用精灵表中的特定 SVG。
 
-As always, make sure to benchmark these changes. When using HTTP/2, it may in fact be more bandwidth-friendly to use multiple small requests instead of 1 large sprite sheet.
+一如既往，请确保对这些更改进行基准测试。使用 HTTP/2 时，使用多个小请求而不是 1 个大精灵表实际上可能更节省带宽。
 
 :::warning
-When using sprite sheets, the `wa-load` and `wa-error` events will not fire.
+使用精灵表时，`wa-load` 和 `wa-error` 事件不会触发。
 
-For security reasons, browsers may apply the same-origin policy on `<use>` elements located in the `<wa-icon>` shadow DOM and may refuse to load a cross-origin URL. There is currently no defined way to set a cross-origin policy for `<use>` elements. For this reason, sprite sheets should only be used if you're self-hosting them.
+出于安全原因，浏览器可能会对位于 `<wa-icon>` 阴影 DOM 中的 `<use>` 元素应用同源策略，并可能拒绝加载跨源 URL。目前没有为 `<use>` 元素设置跨源策略的定义方法。因此，精灵表只应在你自托管它们时使用。
 :::
 
 ```html
@@ -689,11 +696,11 @@ For security reasons, browsers may apply the same-origin policy on `<use>` eleme
 </script>
 ```
 
-### Customizing the System Library
+### 自定义系统库
 
-The system library contains only the icons used internally by Web Awesome components. Unlike the default icon library, the system library does not rely on physical assets. Instead, its icons are hard-coded as data URIs into the resolver to ensure their availability.
+系统库仅包含 Web Awesome 组件内部使用的图标。与默认图标库不同，系统库不依赖于物理资产。相反，它的图标作为数据 URI 硬编码在解析器中，以确保它们的可用性。
 
-If you want to change the icons Web Awesome uses internally, you can register an icon library using the `system` name and a custom resolver. If you choose to do this, it's your responsibility to provide all of the icons that are required by components. You can reference `src/components/library.system.ts` for a complete list of system icons used by Web Awesome.
+如果你想更改 Web Awesome 内部使用的图标，可以使用 `system` 名称和自定义解析器注册一个图标库。如果你选择这样做，你有责任提供组件所需的所有图标。你可以参考 `src/components/library.system.ts` 获取 Web Awesome 使用的系统图标的完整列表。
 
 ```html
 <script type="module">
@@ -705,17 +712,17 @@ If you want to change the icons Web Awesome uses internally, you can register an
 </script>
 ```
 
-### Third-party Icon Libraries
+### 第三方图标库
 
-You can register additional icons to use with the `<wa-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
+你可以通过图标库注册额外的图标以与 `<wa-icon>` 组件一起使用。图标文件可以存在于本地或启用 CORS 的端点（例如 CDN）。你可以注册的图标库数量没有限制，注册它们也没有相关成本，因为单个图标仅在使用时才会被请求。
 
-Web Awesome ships with two built-in icon libraries, `default` and `system`. The [default icon library](#customizing-the-default-library) is provided courtesy of [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}). The [system icon library](#customizing-the-system-library) contains only a small subset of icons that are used internally by Web Awesome components.
+Web Awesome 附带两个内置图标库，`default` 和 `system`。[默认图标库](#customizing-the-default-library)由 [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}) 提供。[系统图标库](#customizing-the-system-library)仅包含 Web Awesome 组件内部使用的一小部分图标。
 
-To register an additional icon library, use the `registerIconLibrary()` function that's exported from `dist/webawesome.js`. At a minimum, you must provide a name and a resolver function. The resolver function translates an icon name to a URL where the corresponding SVG file exists. Refer to the examples below to better understand how it works.
+要注册额外的图标库，请使用从 `dist/webawesome.js` 导出的 `registerIconLibrary()` 函数。至少，你必须提供一个名称和一个解析器函数。解析器函数将图标名称转换为相应 SVG 文件存在的 URL。请参考下面的示例以更好地理解它的工作原理。
 
-If necessary, a mutator function can be used to mutate the SVG element before rendering. This is necessary for some libraries due to the many possible ways SVGs are crafted. For example, icons should ideally inherit the current text color via `currentColor`, so you may need to apply `fill="currentColor` or `stroke="currentColor"` to the SVG element using this function.
+如果需要，可以使用 mutator 函数在渲染之前修改 SVG 元素。由于 SVG 的制作方式多种多样，这对于某些库来说是必要的。例如，图标应该理想地通过 `currentColor` 继承当前文本颜色，因此你可能需要使用此函数将 `fill="currentColor` 或 `stroke="currentColor"` 应用于 SVG 元素。
 
-Here's an example that registers an icon library located in the `/assets/icons` directory.
+下面是一个注册位于 `/assets/icons` 目录中的图标库的示例。
 
 ```html
 <script type="module">
@@ -728,22 +735,22 @@ Here's an example that registers an icon library located in the `/assets/icons` 
 </script>
 ```
 
-To display an icon, set the `library` and `name` attributes of an `<wa-icon>` element.
+要显示图标，请设置 `<wa-icon>` 元素的 `library` 和 `name` 属性。
 
 ```html
-<!-- This will show the icon located at /assets/icons/smile.svg -->
+<!-- 这将显示位于 /assets/icons/smile.svg 的图标 -->
 <wa-icon library="my-icons" name="smile"></wa-icon>
 ```
 
-If an icon is used before registration occurs, it will be empty initially but shown when registered.
+如果在注册之前使用图标，它最初将是空的，但在注册时会显示。
 
-The following examples demonstrate how to register a number of popular, open source icon libraries via CDN. Feel free to adapt the code as you see fit to use your own origin or naming conventions.
+以下示例演示如何通过 CDN 注册多个流行的开源图标库。随意根据你的需要调整代码，使用你自己的源或命名约定。
 
-#### Bootstrap Icons
+#### Bootstrap 图标
 
-This will register the [Bootstrap Icons](https://icons.getbootstrap.com/) library using the jsDelivr CDN. This library has two families: `regular` and `filled`.
+这将使用 jsDelivr CDN 注册 [Bootstrap 图标](https://icons.getbootstrap.com/)库。该库有两个系列：`regular` 和 `filled`。
 
-Icons in this library are licensed under the [MIT License](https://github.com/twbs/icons/blob/main/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/twbs/icons/blob/main/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -764,7 +771,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/tw
   <wa-icon library="bootstrap" name="inboxes"></wa-icon>
   <wa-icon library="bootstrap" name="lamp"></wa-icon>
   <wa-icon library="bootstrap" name="piggy-bank"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="bootstrap" family="filled" name="backpack"></wa-icon>
   <wa-icon library="bootstrap" family="filled" name="cup-hot"></wa-icon>
   <wa-icon library="bootstrap" family="filled" name="envelope-heart"></wa-icon>
@@ -776,9 +783,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/tw
 
 #### Boxicons
 
-This will register the [Boxicons](https://boxicons.com/) library using the jsDelivr CDN. This library has three variations: regular (`bx-*`), solid (`bxs-*`), and logos (`bxl-*`). A mutator function is required to set the SVG's `fill` to `currentColor`.
+这将使用 jsDelivr CDN 注册 [Boxicons](https://boxicons.com/) 库。该库有三种变体：regular (`bx-*`)、solid (`bxs-*`) 和 logos (`bxl-*`)。需要一个 mutator 函数来将 SVG 的 `fill` 设置为 `currentColor`。
 
-Icons in this library are licensed under the [Creative Commons 4.0 License](https://github.com/atisawd/boxicons#license).
+该库中的图标根据 [Creative Commons 4.0 许可证](https://github.com/atisawd/boxicons#license)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -802,14 +809,14 @@ Icons in this library are licensed under the [Creative Commons 4.0 License](http
   <wa-icon library="boxicons" name="bx-save"></wa-icon>
   <wa-icon library="boxicons" name="bx-server"></wa-icon>
   <wa-icon library="boxicons" name="bx-wine"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="boxicons" name="bxs-bot"></wa-icon>
   <wa-icon library="boxicons" name="bxs-cookie"></wa-icon>
   <wa-icon library="boxicons" name="bxs-joystick"></wa-icon>
   <wa-icon library="boxicons" name="bxs-save"></wa-icon>
   <wa-icon library="boxicons" name="bxs-server"></wa-icon>
   <wa-icon library="boxicons" name="bxs-wine"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="boxicons" name="bxl-apple"></wa-icon>
   <wa-icon library="boxicons" name="bxl-chrome"></wa-icon>
   <wa-icon library="boxicons" name="bxl-edge"></wa-icon>
@@ -821,9 +828,9 @@ Icons in this library are licensed under the [Creative Commons 4.0 License](http
 
 #### Lucide
 
-This will register the [Lucide](https://lucide.dev/) icon library using the jsDelivr CDN. This project is a community-maintained fork of the popular [Feather](https://feathericons.com/) icon library.
+这将使用 jsDelivr CDN 注册 [Lucide](https://lucide.dev/) 图标库。该项目是流行的 [Feather](https://feathericons.com/) 图标库的社区维护分支。
 
-Icons in this library are licensed under the [MIT License](https://github.com/lucide-icons/lucide/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/lucide-icons/lucide/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -851,9 +858,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 
 #### Heroicons
 
-This will register the [Heroicons](https://heroicons.com/) library using the jsDelivr CDN.
+这将使用 jsDelivr CDN 注册 [Heroicons](https://heroicons.com/) 库。
 
-Icons in this library are licensed under the [MIT License](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -881,9 +888,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 
 #### Iconoir
 
-This will register the [Iconoir](https://iconoir.com/) library using the jsDelivr CDN.
+这将使用 jsDelivr CDN 注册 [Iconoir](https://iconoir.com/) 库。
 
-Icons in this library are licensed under the [MIT License](https://github.com/lucaburgio/iconoir/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/lucaburgio/iconoir/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -913,9 +920,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 
 #### Ionicons
 
-This will register the [Ionicons](https://ionicons.com/) library using the jsDelivr CDN. This library has three variations: outline (default), filled (`*-filled`), and sharp (`*-sharp`). A mutator function is required to polyfill a handful of styles we're not including.
+这将使用 jsDelivr CDN 注册 [Ionicons](https://ionicons.com/) 库。该库有三种变体：outline（默认）、filled (`*-filled`) 和 sharp (`*-sharp`)。需要一个 mutator 函数来补充我们未包含的一些样式。
 
-Icons in this library are licensed under the [MIT License](https://github.com/ionic-team/ionicons/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/ionic-team/ionicons/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -939,14 +946,14 @@ Icons in this library are licensed under the [MIT License](https://github.com/io
   <wa-icon library="ionicons" name="chatbubble"></wa-icon>
   <wa-icon library="ionicons" name="settings"></wa-icon>
   <wa-icon library="ionicons" name="warning"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="ionicons" name="alarm-outline"></wa-icon>
   <wa-icon library="ionicons" name="american-football-outline"></wa-icon>
   <wa-icon library="ionicons" name="bug-outline"></wa-icon>
   <wa-icon library="ionicons" name="chatbubble-outline"></wa-icon>
   <wa-icon library="ionicons" name="settings-outline"></wa-icon>
   <wa-icon library="ionicons" name="warning-outline"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="ionicons" name="alarm-sharp"></wa-icon>
   <wa-icon library="ionicons" name="american-football-sharp"></wa-icon>
   <wa-icon library="ionicons" name="bug-sharp"></wa-icon>
@@ -958,9 +965,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/io
 
 #### Jam Icons
 
-This will register the [Jam Icons](https://jam-icons.com/) library using the jsDelivr CDN. This library has two variations: regular (default) and filled (`*-f`). A mutator function is required to set the SVG's `fill` to `currentColor`.
+这将使用 jsDelivr CDN 注册 [Jam Icons](https://jam-icons.com/) 库。该库有两种变体：regular（默认）和 filled (`*-f`)。需要一个 mutator 函数来将 SVG 的 `fill` 设置为 `currentColor`。
 
-Icons in this library are licensed under the [MIT License](https://github.com/michaelampr/jam/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/michaelampr/jam/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -979,7 +986,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/mi
   <wa-icon library="jam" name="leaf"></wa-icon>
   <wa-icon library="jam" name="picture"></wa-icon>
   <wa-icon library="jam" name="set-square"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="jam" name="calendar-f"></wa-icon>
   <wa-icon library="jam" name="camera-f"></wa-icon>
   <wa-icon library="jam" name="filter-f"></wa-icon>
@@ -991,9 +998,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/mi
 
 #### Material Icons
 
-This will register the [Material Icons](https://material.io/resources/icons/?style=baseline) library using the jsDelivr CDN. This library has three variations: outline (default), round (`*_round`), and sharp (`*_sharp`). A mutator function is required to set the SVG's `fill` to `currentColor`.
+这将使用 jsDelivr CDN 注册 [Material Icons](https://material.io/resources/icons/?style=baseline) 库。该库有三种变体：outline（默认）、round (`*_round`) 和 sharp (`*_sharp`)。需要一个 mutator 函数来将 SVG 的 `fill` 设置为 `currentColor`。
 
-Icons in this library are licensed under the [Apache 2.0 License](https://github.com/google/material-design-icons/blob/master/LICENSE).
+该库中的图标根据 [Apache 2.0 许可证](https://github.com/google/material-design-icons/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -1015,14 +1022,14 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
   <wa-icon library="material" name="volume_up"></wa-icon>
   <wa-icon library="material" name="settings"></wa-icon>
   <wa-icon library="material" name="shopping_basket"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="material" name="notifications_round"></wa-icon>
   <wa-icon library="material" name="email_round"></wa-icon>
   <wa-icon library="material" name="delete_round"></wa-icon>
   <wa-icon library="material" name="volume_up_round"></wa-icon>
   <wa-icon library="material" name="settings_round"></wa-icon>
   <wa-icon library="material" name="shopping_basket_round"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="material" name="notifications_sharp"></wa-icon>
   <wa-icon library="material" name="email_sharp"></wa-icon>
   <wa-icon library="material" name="delete_sharp"></wa-icon>
@@ -1034,9 +1041,9 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 
 #### Remix Icon
 
-This will register the [Remix Icon](https://remixicon.com/) library using the jsDelivr CDN. This library groups icons by categories, so the name must include the category and icon separated by a slash, as well as the `-line` or `-fill` suffix as needed. A mutator function is required to set the SVG's `fill` to `currentColor`.
+这将使用 jsDelivr CDN 注册 [Remix Icon](https://remixicon.com/) 库。该库按类别对图标进行分组，因此名称必须包含类别和图标，用斜杠分隔，以及所需的 `-line` 或 `-fill` 后缀。需要一个 mutator 函数来将 SVG 的 `fill` 设置为 `currentColor`。
 
-Icons in this library are licensed under the [Apache 2.0 License](https://github.com/Remix-Design/RemixIcon/blob/master/License).
+该库中的图标根据 [Apache 2.0 许可证](https://github.com/Remix-Design/RemixIcon/blob/master/License)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -1059,7 +1066,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
   <wa-icon library="remixicon" name="development/bug-line"></wa-icon>
   <wa-icon library="remixicon" name="media/image-line"></wa-icon>
   <wa-icon library="remixicon" name="system/alert-line"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="remixicon" name="business/cloud-fill"></wa-icon>
   <wa-icon library="remixicon" name="design/brush-fill"></wa-icon>
   <wa-icon library="remixicon" name="business/pie-chart-fill"></wa-icon>
@@ -1071,9 +1078,9 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 
 #### Tabler Icons
 
-This will register the [Tabler Icons](https://tabler-icons.io/) library using the jsDelivr CDN. This library features over 1,950 open source icons.
+这将使用 jsDelivr CDN 注册 [Tabler Icons](https://tabler-icons.io/) 库。该库具有超过 1,950 个开源图标。
 
-Icons in this library are licensed under the [MIT License](https://github.com/tabler/tabler-icons/blob/master/LICENSE).
+该库中的图标根据 [MIT 许可证](https://github.com/tabler/tabler-icons/blob/master/LICENSE)获得许可。
 
 ```html {.example}
 <script type="module">
@@ -1095,7 +1102,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
   <wa-icon library="tabler" name="ball-baseball"></wa-icon>
   <wa-icon library="tabler" name="cake"></wa-icon>
   <wa-icon library="tabler" name="files"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="tabler" name="keyboard"></wa-icon>
   <wa-icon library="tabler" name="moon"></wa-icon>
   <wa-icon library="tabler" name="pig"></wa-icon>
@@ -1107,9 +1114,9 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 
 #### Unicons
 
-This will register the [Unicons](https://iconscout.com/unicons) library using the jsDelivr CDN. This library has two variations: line (default) and solid (`*-s`). A mutator function is required to set the SVG's `fill` to `currentColor`.
+这将使用 jsDelivr CDN 注册 [Unicons](https://iconscout.com/unicons) 库。该库有两种变体：line（默认）和 solid (`*-s`)。需要一个 mutator 函数来将 SVG 的 `fill` 设置为 `currentColor`。
 
-Icons in this library are licensed under the [Apache 2.0 License](https://github.com/Iconscout/unicons/blob/master/LICENSE). Some of the icons that appear on the Unicons website, particularly many of the solid variations, require a license and are therefore not available in the CDN.
+该库中的图标根据 [Apache 2.0 许可证](https://github.com/Iconscout/unicons/blob/master/LICENSE)获得许可。出现在 Unicons 网站上的一些图标，特别是许多 solid 变体，需要许可证，因此在 CDN 中不可用。
 
 ```html {.example}
 <script type="module">
@@ -1118,9 +1125,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
   registerIconLibrary('unicons', {
     resolver: name => {
       const match = name.match(/^(.*?)(-s)?$/);
-      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/svg/${match[2] === '-s' ? 'solid' : 'line'}/${
-        match[1]
-      }.svg`;
+      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.2.0/svg/${match[2] === '-s' ? 'solid' : 'line'}/${match[1]}.svg`;
     },
     mutator: svg => svg.setAttribute('fill', 'currentColor'),
   });
@@ -1133,7 +1138,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
   <wa-icon library="unicons" name="polygon"></wa-icon>
   <wa-icon library="unicons" name="rocket"></wa-icon>
   <wa-icon library="unicons" name="star"></wa-icon>
-  <br />
+  <br>
   <wa-icon library="unicons" name="clock-s"></wa-icon>
   <wa-icon library="unicons" name="graph-bar-s"></wa-icon>
   <wa-icon library="unicons" name="padlock-s"></wa-icon>

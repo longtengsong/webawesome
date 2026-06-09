@@ -1,15 +1,21 @@
 ---
-title: Color
-description: Ensure consistent use of color and readable contrast with Web Awesome's color properties.
+title: 颜色
+description: 使用 Web Awesome 的颜色属性确保颜色使用的一致性和可读性的对比度。
 hasOutline: true
 synonyms:
   - palette
   - color system
   - color tokens
+  - 调色板
+  - 颜色系统
+  - 颜色令牌
 use-cases:
   - theme colors
   - brand palette
   - semantic colors
+  - 主题颜色
+  - 品牌调色板
+  - 语义颜色
 ---
 
 <style>
@@ -92,38 +98,38 @@ use-cases:
   }
 </style>
 
-Web Awesome's color system is made up of three layers: a [color palette](/docs/color-palettes) that gives you a full spectrum of hues, [variant colors](#variant-colors) that define semantic color variations (like success and danger), and [colors for themed elements](#color-for-themed-elements) that apply specific tints from your palette and variant colors to the elements that make up a theme.
+Web Awesome 的颜色系统由三层组成：[调色板](/docs/color-palettes)提供完整的色相光谱，[变体颜色](#variant-colors)定义语义颜色变化（如成功和危险），以及[主题元素颜色](#color-for-themed-elements)将调色板和变体颜色的特定色调应用于构成主题的元素。
 
-For an overview of how theming works across the library, see [Theming <wa-icon name="arrow-right" variant="regular"></wa-icon>](/docs/theming-overview).
+有关主题如何在库中工作的概述，请参阅[主题 <wa-icon name="arrow-right" variant="regular"></wa-icon>](/docs/theming-overview)。
 
-## Color Palette
+## 调色板
 
-[Color palettes](/docs/color-palettes) give you a full spectrum of colors to use in your project and are the lowest-level color tokens. Each color palette includes 10 different hues, each with 11 numeric tints that make up a color scale from light to dark — `95` is near white, `05` is near black.
+[调色板](/docs/color-palettes)为您提供项目中使用的完整颜色光谱，是最低级别的颜色令牌。每个调色板包含 10 种不同的色相，每种色相有 11 个数值色调，构成从浅到深的颜色比例——`95` 接近白色，`05` 接近黑色。
 
-These numeric tints help ensure accessible color contrast per [WCAG 2.1 success criteria](https://www.w3.org/TR/WCAG21/#contrast-minimum):
+这些数值色调有助于确保符合 [WCAG 2.1 成功标准](https://www.w3.org/TR/WCAG21/#contrast-minimum)的可访问颜色对比度：
 
-- A difference of 40 provides a minimum 3:1 contrast ratio, suitable for large text and icons (AA)
-- A difference of 50 provides a minimum 4.5:1 contrast ratio, suitable for normal text (AA) and large text (AAA)
-- A difference of 60 provides a minimum 7:1 contrast ratio, suitable for all text (AAA)
+- 差值为 40 时提供最小 3:1 的对比度，适合大文本和图标（AA）
+- 差值为 50 时提供最小 4.5:1 的对比度，适合正常文本（AA）和大文本（AAA）
+- 差值为 60 时提供最小 7:1 的对比度，适合所有文本（AAA）
 
 {% include 'theming/color-palette-viewer.njk' %}
 
-### Core Colors
+### 核心颜色
 
-In addition to numeric tints, each hue has a _core color_ — the most colorful, vibrant tint in the scale. The exact tint varies by palette. Use `--wa-color-{hue}` when you want a representative color for a hue without specifying a tint.
+除了数值色调外，每种色相都有一个_核心颜色_——该比例中最鲜艳、最生动的色调。具体色调因调色板而异。当您需要某种色相的代表颜色而不指定具体色调时，使用 `--wa-color-{hue}`。
 
-The tint for each core color is stored as an integer in `--wa-color-{hue}-key`. These tokens are used internally to determine a compatible text color when using the core color as a background and are not used directly by components.
+每个核心颜色的色调以整数形式存储在 `--wa-color-{hue}-key` 中。这些令牌在内部用于确定在核心颜色作为背景时兼容的文本颜色，不直接由组件使用。
 
-Using this key, the color system derives a paired _on color_ guaranteed to meet WCAG 2.1 AA contrast when placed on top of the corresponding core color. If the core tint is light (≥ 60), the on color is a dark shade of that hue; otherwise it is white. Use `--wa-color-{hue}-on` any time you render text or icons on a core color background.
+使用此键，颜色系统会派生出一个配对的_前景颜色_，当放置在相应的核心颜色之上时，保证满足 WCAG 2.1 AA 对比度。如果核心色调是浅色（≥ 60），前景颜色是该色相的深色变体；否则为白色。在核心颜色背景上渲染文本或图标时，请使用 `--wa-color-{hue}-on`。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Core Color</th>
-        <th>Key</th>
-        <th>On Color</th>
-        <th>Preview</th>
+        <th>核心颜色</th>
+        <th>键</th>
+        <th>前景颜色</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
@@ -143,38 +149,38 @@ Using this key, the color system derives a paired _on color_ guaranteed to meet 
   </table>
 </wa-scroller>
 
-## Variant Colors
+## 变体颜色
 
-Variant colors are aliases for specific hues in your color palette to give them an extra layer of semantic meaning. These variants are familiar, meaningful hues that reinforce a specific message or intended use:
+变体颜色是调色板中特定色相的别名，为它们增加了一层额外的语义含义。这些变体是熟悉且富有意义的色相，用于强化特定的消息或预期用途：
 
-| Variant | Use                          | Default                                                                         |
-| ------- | ---------------------------- | ------------------------------------------------------------------------------- |
-| Brand   | Product recognition          | <wa-icon name="square" style="color: var(--wa-color-blue);"></wa-icon> blue     |
-| Neutral | Generic and ordinary content | <wa-icon name="square" style="color: var(--wa-color-gray);"></wa-icon> gray     |
-| Success | Validity or confirmation     | <wa-icon name="square" style="color: var(--wa-color-green);"></wa-icon> green   |
-| Warning | Caution or uncertainty       | <wa-icon name="square" style="color: var(--wa-color-yellow);"></wa-icon> yellow |
-| Danger  | Errors or risk               | <wa-icon name="square" style="color: var(--wa-color-red);"></wa-icon> red       |
+| 变体 | 用途                    | 默认值                                                                         |
+| ---- | ----------------------- | ------------------------------------------------------------------------------ |
+| Brand   | 产品识别          | <wa-icon name="square" style="color: var(--wa-color-blue);"></wa-icon> blue     |
+| Neutral | 通用和普通内容 | <wa-icon name="square" style="color: var(--wa-color-gray);"></wa-icon> gray     |
+| Success | 有效性或确认     | <wa-icon name="square" style="color: var(--wa-color-green);"></wa-icon> green   |
+| Warning | 警告或不确定性       | <wa-icon name="square" style="color: var(--wa-color-yellow);"></wa-icon> yellow |
+| Danger  | 错误或风险               | <wa-icon name="square" style="color: var(--wa-color-red);"></wa-icon> red       |
 
-Brand and neutral are used by nearly every element, component, and pattern across the library. Success, warning, and danger are used selectively by components that could benefit from semantic reinforcement, such as buttons and callouts.
+Brand 和 Neutral 被库中几乎所有元素、组件和模式使用。Success、Warning 和 Danger 被那些可从语义强化中受益的组件（如按钮和标注）选择性地使用。
 
-Each variant color is an alias for a palette color and follows the same token format: `--wa-color-{variant}-{tint}`.
+每个变体颜色都是调色板颜色的别名，并遵循相同的令牌格式：`--wa-color-{variant}-{tint}`。
 
 {% set colorScales = ["brand", "neutral", "success", "warning", "danger"] %}
 {% include "theming/color-palette-viewer.njk" %}
 
-### Core Colors
+### 核心颜色
 
-Just like the hues in your color palette, each variant has a _core color_ — an alias for the most colorful, vibrant tint in the color scale selected for your variant. Use `--wa-color-{variant}` when you want a representative color for a variant without specifying a tint.
+与调色板中的色相一样，每个变体都有一个_核心颜色_——为您的变体选择的颜色比例中最鲜艳、最生动的色调的别名。当您需要某个变体的代表颜色而不指定具体色调时，使用 `--wa-color-{variant}`。
 
-Each core color also has a paired _on color_ (`--wa-color-{variant}-on`) guaranteed to meet WCAG 2.1 AA contrast when placed on top of it. Use on color tokens any time you render text or icons on a core color background.
+每个核心颜色还有一个配对的_前景颜色_（`--wa-color-{variant}-on`），保证在其上放置时满足 WCAG 2.1 AA 对比度。在核心颜色背景上渲染文本或图标时，请使用前景颜色令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Core Color</th>
-        <th>On Color</th>
-        <th>Preview</th>
+        <th>核心颜色</th>
+        <th>前景颜色</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
@@ -193,186 +199,186 @@ Each core color also has a paired _on color_ (`--wa-color-{variant}-on`) guarant
   </table>
 </wa-scroller>
 
-### Changing Variant Colors
+### 更改变体颜色
 
-Any hue from your color palette can be assigned to any variant without redefining the tokens in your own stylesheet. To use a different hue, simply apply the class `"wa-{variant}-{hue}` to the `<html>` element.
+调色板中的任何色调都可以分配给任何变体，而无需在您自己的样式表中重新定义令牌。要使用不同的色调，只需将类 `"wa-{variant}-{hue}"` 应用于 `<html>` 元素。
 
 ```html
 <html class="wa-brand-purple wa-success-cyan"></html>
 ```
 
-All ten palette hues — `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `indigo`, `purple`, `pink`, and `gray` — are available for every variant.
+所有十种调色板色调——`red`、`orange`、`yellow`、`green`、`cyan`、`blue`、`indigo`、`purple`、`pink` 和 `gray`——都可用于每个变体。
 
-## Color for Themed Elements
+## 主题元素颜色
 
-These tokens apply specific tints from your color palette and variant colors to the elements and components that make up a theme. They're named for the role they play rather than their appearance, and adapt to light and dark modes.
+这些令牌将调色板和变体颜色的特定色调应用于构成主题的元素和组件。它们以所扮演的角色而非外观命名，并适应浅色和深色模式。
 
-### Surfaces
+### 表面
 
-Surfaces are background layers that content rests on. They convey elevation hierarchy — `raised` is closest to the user (e.g., dialogs) and `lowered` is farthest away (e.g., wells).
+表面是内容所依赖的背景层。它们传达层级结构——`raised` 最接近用户（例如对话框），而 `lowered` 最远（例如井）。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
-        <th>Description</th>
-        <th>Preview</th>
+        <th>自定义属性</th>
+        <th>描述</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
       <tr id="token-wa-color-surface-raised">
         <td class="token-name"><code>--wa-color-surface-raised</code></td>
-        <td>Background for elevated surfaces like dialogs and dropdown menus</td>
+        <td>用于对话框和下拉菜单等提升表面的背景</td>
         <td><div class="swatch" style="background-color: var(--wa-color-surface-raised); box-shadow: var(--wa-shadow-s)"></div></td>
       </tr>
       <tr id="token-wa-color-surface-default">
         <td class="token-name"><code>--wa-color-surface-default</code></td>
-        <td>Default page or container background</td>
+        <td>默认页面或容器背景</td>
         <td><div class="swatch" style="background-color: var(--wa-color-surface-default)"></div></td>
       </tr>
       <tr id="token-wa-color-surface-lowered">
         <td class="token-name"><code>--wa-color-surface-lowered</code></td>
-        <td>Background for recessed surfaces like wells and code blocks</td>
+        <td>用于凹进表面的背景，如井和代码块</td>
         <td><div class="swatch" style="background-color: var(--wa-color-surface-lowered); box-shadow: inset var(--wa-shadow-s)"></div></td>
       </tr>
       <tr id="token-wa-color-surface-border">
         <td class="token-name"><code>--wa-color-surface-border</code></td>
-        <td>Border color used to delineate surface areas</td>
+        <td>用于划分表面区域的边框颜色</td>
         <td><div class="swatch" style="border-color: var(--wa-color-surface-border)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-### Text
+### 文本
 
-Text colors are used for readable content. We recommend a minimum 4.5:1 contrast ratio against surface colors for text colors.
+文本颜色用于可读内容。我们建议文本颜色与表面颜色的对比度至少为 4.5:1。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
-        <th>Description</th>
-        <th>Preview</th>
+        <th>自定义属性</th>
+        <th>描述</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
       <tr id="token-wa-color-text-normal">
         <td class="token-name"><code>--wa-color-text-normal</code></td>
-        <td>Primary text color for most content</td>
+        <td>大多数内容的主要文本颜色</td>
         <td><div style="color: var(--wa-color-text-normal); font-weight: var(--wa-font-weight-semibold)">AaBb</div></td>
       </tr>
       <tr id="token-wa-color-text-quiet">
         <td class="token-name"><code>--wa-color-text-quiet</code></td>
-        <td>Subdued text for hints, captions, and other secondary content</td>
+        <td>用于提示、说明文字和其他次要内容的柔和文本</td>
         <td><div style="color: var(--wa-color-text-quiet); font-weight: var(--wa-font-weight-semibold)">AaBb</div></td>
       </tr>
       <tr id="token-wa-color-text-link">
         <td class="token-name"><code>--wa-color-text-link</code></td>
-        <td>Color for hyperlinks</td>
+        <td>超链接的颜色</td>
         <td><div style="color: var(--wa-color-text-link); font-weight: var(--wa-font-weight-semibold)">AaBb</div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-### Overlays
+### 覆盖层
 
-Overlays provide a backdrop that isolates content, often with some transparency so background context shows through.
+覆盖层提供隔离内容的背景，通常带有一些透明度，以便背景上下文显示出来。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
-        <th>Description</th>
-        <th>Preview</th>
+        <th>自定义属性</th>
+        <th>描述</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
       <tr id="token-wa-color-overlay-modal">
         <td class="token-name"><code>--wa-color-overlay-modal</code></td>
-        <td>Semi-transparent backdrop behind modal dialogs</td>
+        <td>模态对话框后面的半透明背景</td>
         <td><div class="swatch" style="background-color: var(--wa-color-overlay-modal)"></div></td>
       </tr>
       <tr id="token-wa-color-overlay-inline">
         <td class="token-name"><code>--wa-color-overlay-inline</code></td>
-        <td>Subtle overlay for inline highlights or dimmed regions</td>
+        <td>用于内联高亮或变暗区域的微妙覆盖层</td>
         <td><div class="swatch" style="background-color: var(--wa-color-overlay-inline)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-### Shadow
+### 阴影
 
-A single color is used for all drop shadows. Use it alongside the [shadow tokens](?active_tab=shadows) to construct realistic shadows.
+所有阴影都使用单一颜色。与[阴影令牌](?active_tab=shadows)一起使用以构现实的阴影。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
-        <th>Description</th>
-        <th>Preview</th>
+        <th>自定义属性</th>
+        <th>描述</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
       <tr id="token-wa-color-shadow">
         <td class="token-name"><code>--wa-color-shadow</code></td>
-        <td>Color used for all component drop shadows</td>
+        <td>用于所有组件阴影的颜色</td>
         <td><div class="swatch" style="background-color: var(--wa-color-surface-raised); box-shadow: var(--wa-shadow-l)"></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-### Interactions
+### 交互
 
-These tokens power the consistent hover, active, and focus feedback you see across interactive components. The `--wa-color-focus` token sets the color of the keyboard focus ring. The `--wa-color-mix-hover` and `--wa-color-mix-active` tokens are overlays — they're mixed into a component's background via [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to subtly shift it on hover and press, so every interactive component reacts consistently without each one defining its own hover/active palette.
+这些令牌驱动您在交互组件上看到的一致悬停、激活和焦点反馈。`--wa-color-focus` 令牌设置键盘焦点环的颜色。`--wa-color-mix-hover` 和 `--wa-color-mix-active` 令牌是覆盖层——它们通过 [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) 混合到组件的背景中，在悬停和按下时微妙地改变颜色，从而使每个交互组件都能一致地响应，无需各自定义自己的悬停/激活调色板。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
-        <th>Description</th>
-        <th>Preview</th>
+        <th>自定义属性</th>
+        <th>描述</th>
+        <th>预览</th>
       </tr>
     </thead>
     <tbody>
       <tr id="token-wa-color-focus">
         <td class="token-name"><code>--wa-color-focus</code></td>
-        <td>Outline color for keyboard focus rings. Used alongside <a href="?active_tab=focus">focus tokens</a>.</td>
+        <td>键盘焦点环的轮廓颜色。与<a href="?active_tab=focus">焦点令牌</a>一起使用。</td>
         <td><div class="swatch" style="outline: var(--wa-focus-ring)"></div></td>
       </tr>
       <tr id="token-wa-color-mix-hover">
         <td class="token-name"><code>--wa-color-mix-hover</code></td>
-        <td>Color blended into a component's fill on hover</td>
+        <td>悬停时混合到组件填充中的颜色</td>
         <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-hover)"><small>mix</small></div></td>
       </tr>
       <tr id="token-wa-color-mix-active">
         <td class="token-name"><code>--wa-color-mix-active</code></td>
-        <td>Color blended into a component's fill on press</td>
+        <td>按下时混合到组件填充中的颜色</td>
         <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-active)"><small>mix</small></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
 
-### Semantic Variants
+### 语义变体
 
-Semantic variants use the `--wa-color-{variant}-{tint}` tokens from your [variant colors](#variant-colors) to power the `variant=""` attribute shared by buttons, badges, callouts, and many other components. Each variant is a complete, self-contained color system built from five groups — `brand`, `success`, `neutral`, `warning`, and `danger` — each defining fills, borders, and on colors at three attention levels.
+语义变体使用来自[变体颜色](#variant-colors)的 `--wa-color-{variant}-{tint}` 令牌来驱动按钮、徽章、标注和许多其他组件共享的 `variant=""` 属性。每个变体是一个完整的、自包含的颜色系统，由五个组构建而成——`brand`、`success`、`neutral`、`warning` 和 `danger`——每个组在三个注意力级别上定义填充、边框和前景颜色。
 
-Tokens follow the format `--wa-color-{variant}-{role}-{attention}`. The three **roles** are:
+令牌遵循格式 `--wa-color-{variant}-{role}-{attention}`。三个**作用**是：
 
-- **Fill** for backgrounds or areas larger than a few pixels
-- **Border** for borders, dividers, and strokes
-- **On** for content displayed _on top of_ a fill (pair `on-loud` with `fill-loud`)
+- **填充 (Fill)** 用于背景或大于几个像素的区域
+- **边框 (Border)** 用于边框、分隔线和描边
+- **前景 (On)** 用于显示在填充_之上_的内容（将 `on-loud` 与 `fill-loud` 配对使用）
 
-The three **attention** levels are `quiet`, `normal`, and `loud` — from least to most visually prominent.
+三个**注意力**级别是 `quiet`、`normal` 和 `loud`——从视觉上最不突出到最突出。
 
 {% set variants = ['brand', 'neutral', 'success', 'warning', 'danger'] %}
 <wa-scroller>
@@ -380,7 +386,7 @@ The three **attention** levels are `quiet`, `normal`, and `loud` — from least 
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>
-        <th>Custom Property</th>
+        <th>自定义属性</th>
         {% for variant in variants -%}
           <th><code>{{ variant }}</code></th>
         {%- endfor %}

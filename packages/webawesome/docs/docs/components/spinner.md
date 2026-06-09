@@ -1,5 +1,5 @@
 ---
-title: Spinner
+title: 加载器
 layout: component
 category: Feedback
 synonyms:
@@ -7,21 +7,27 @@ synonyms:
   - loader
   - busy indicator
   - throbber
+  - 加载
+  - 加载动画
+  - 忙碌指示器
 use-cases:
   - loading animation
   - indeterminate progress
   - ajax loader
+  - 加载动画
+  - 不确定进度
+  - AJAX加载
 ---
 
 ```html {.example}
 <wa-spinner></wa-spinner>
 ```
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Spinners are sized based on the current font size. To change their size, set the `font-size` property on the spinner itself or on a parent element as shown below.
+加载器的尺寸基于当前字体大小。要改变它们的尺寸，可以在加载器本身或父元素上设置 `font-size` 属性，如下所示。
 
 ```html {.example}
 <wa-spinner></wa-spinner>
@@ -29,17 +35,17 @@ Spinners are sized based on the current font size. To change their size, set the
 <wa-spinner style="font-size: 3rem;"></wa-spinner>
 ```
 
-### Track Width
+### 轨道宽度
 
-The width of the spinner's track can be changed by setting the `--track-width` custom property.
+可以通过设置 `--track-width` 自定义属性来改变加载器轨道的宽度。
 
 ```html {.example}
 <wa-spinner style="font-size: 50px; --track-width: 10px;"></wa-spinner>
 ```
 
-### Color
+### 颜色
 
-The spinner's colors can be changed by setting the `--indicator-color` and `--track-color` custom properties.
+可以通过设置 `--indicator-color` 和 `--track-color` 自定义属性来改变加载器的颜色。
 
 ```html {.example}
 <wa-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></wa-spinner>

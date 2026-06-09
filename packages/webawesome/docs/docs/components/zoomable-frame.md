@@ -1,77 +1,83 @@
 ---
-title: Zoomable Frame
+title: 可缩放框架
 layout: component
 category: Media
 synonyms:
   - iframe zoom
   - preview frame
   - minimap
+  - iframe缩放
+  - 预览框架
+  - 迷你地图
 use-cases:
   - component preview
   - responsive preview
   - scaled iframe
+  - 组件预览
+  - 响应式预览
+  - 缩放iframe
 ---
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5"> </wa-zoomable-frame>
 ```
 
-## Examples
+## 示例
 
-### Loading external content
+### 加载外部内容
 
-Use the `src` attribute to embed external websites or resources. The URL must be accessible, and cross-origin restrictions may apply due to the Same-Origin Policy, potentially limiting access to the iframe's content.
+使用 `src` 属性来嵌入外部网站或资源。URL 必须可访问，并且由于同源策略，跨域限制可能适用，可能会限制对 iframe 内容的访问。
 
 ```html
 <wa-zoomable-frame src="https://example.com/"> </wa-zoomable-frame>
 ```
 
-The zoomable frame fills 100% width by default with a 16:9 aspect ratio. Customize this using the `aspect-ratio` CSS property.
+可缩放框架默认填充 100% 宽度，具有 16:9 宽高比。使用 `aspect-ratio` CSS 属性自定义此设置。
 
 ```html
 <wa-zoomable-frame src="https://example.com/" style="aspect-ratio: 4/3;"> </wa-zoomable-frame>
 ```
 
-Use the `srcdoc` attribute or property to display custom HTML content directly within the iframe, perfect for rendering inline content without external resources.
+使用 `srcdoc` 属性或属性直接在 iframe 中显示自定义 HTML 内容，非常适合在没有外部资源的情况下渲染内联内容。
 
 ```html
-<wa-zoomable-frame srcdoc="<html><body><h1>Hello, World!</h1><p>This is inline content.</p></body></html>">
+<wa-zoomable-frame srcdoc="<html><body><h1>你好，世界！</h1><p>这是内联内容。</p></body></html>">
 </wa-zoomable-frame>
 ```
 
 :::info
-When both `src` and `srcdoc` are specified, `srcdoc` takes precedence.
+当同时指定 `src` 和 `srcdoc` 时，`srcdoc` 优先。
 :::
 
-### Controlling zoom behavior
+### 控制缩放行为
 
-Set the `zoom` attribute to control the frame's zoom level. Use `1` for 100%, `2` for 200%, `0.5` for 50%, and so on.
+设置 `zoom` 属性来控制框架的缩放级别。使用 `1` 表示 100%，`2` 表示 200%，`0.5` 表示 50%，依此类推。
 
-Define specific zoom increments with the `zoom-levels` attribute using space-separated percentages and decimal values like `zoom-levels="0.25 0.5 75% 100%"`.
+使用 `zoom-levels` 属性通过空格分隔的百分比和小数值定义特定的缩放增量，例如 `zoom-levels="0.25 0.5 75% 100%"`。
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" zoom-levels="50% 0.75 100%"> </wa-zoomable-frame>
 ```
 
-### Hiding zoom controls
+### 隐藏缩放控件
 
-Add the `without-controls` attribute to hide the zoom control interface from the frame.
+添加 `without-controls` 属性以从框架中隐藏缩放控件界面。
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" without-controls zoom="0.5"> </wa-zoomable-frame>
 ```
 
-### Preventing user interaction
+### 禁止用户交互
 
-Apply the `without-interaction` attribute to make the frame non-interactive. Note that this prevents keyboard navigation into the frame, which may impact accessibility for some users.
+应用 `without-interaction` 属性使框架不可交互。请注意，这会禁止键盘导航进入框架，这可能会影响某些用户的可访问性。
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" without-interaction> </wa-zoomable-frame>
 ```
 
-### Enabling theme sync
+### 启用主题同步
 
-By default, the frame does not sync theme classes into the iframe. Add the `with-theme-sync` attribute to mirror the host page's light/dark mode and [theme selector classes](/docs/theming-overview) (such as `wa-theme-*`, `wa-brand-*`, and `wa-palette-*`) into the iframe document. This is useful when the iframe renders Web Awesome styles that should match the host page's theme.
+默认情况下，框架不会将主题类同步到 iframe 中。添加 `with-theme-sync` 属性可以将宿主页面的浅色/深色模式和[主题选择器类](/docs/theming-overview)（例如 `wa-theme-*`、`wa-brand-*` 和 `wa-palette-*`）镜像到 iframe 文档中。当 iframe 渲染应与宿主页面主题匹配的 Web Awesome 样式时，这非常有用。
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" with-theme-sync> </wa-zoomable-frame>

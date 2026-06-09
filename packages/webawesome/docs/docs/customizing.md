@@ -1,6 +1,6 @@
 ---
-title: Customizing & Theming
-description: Learn how to customize Web Awesome through themes, parts, custom properties, and custom states.
+title: 自定义与主题
+description: 了解如何通过主题、部件、自定义属性和自定义状态来自定义 Web Awesome。
 layout: page-outline
 synonyms:
   - styling
@@ -11,6 +11,14 @@ synonyms:
   - css custom properties
   - css variables
   - design tokens
+  - 样式
+  - 自定义样式
+  - 覆盖
+  - 主题
+  - css 部件
+  - css 自定义属性
+  - css 变量
+  - 设计令牌
 use-cases:
   - theme
   - brand
@@ -18,23 +26,29 @@ use-cases:
   - custom properties
   - custom states
   - shadow dom
+  - 主题
+  - 品牌
+  - css 部件
+  - 自定义属性
+  - 自定义状态
+  - 影子 DOM
 ---
 
-You can customize the look and feel of Web Awesome at a high level with themes. For an overview of how the theming system works — [themes](/docs/themes), [palettes](/docs/color-palettes), [variants](/docs/tokens/color#variant-colors), and dark mode — see [Theming](/docs/theming-overview). For more advanced customizations, you can make use of CSS parts and custom properties to target individual components.
+您可以通过主题在高层级上自定义 Web Awesome 的外观和风格。有关主题系统如何工作的概述 — [主题](/docs/themes)、[调色板](/docs/color-palettes)、[变体](/docs/tokens/color#variant-colors)和深色模式 — 请参阅[主题](/docs/theming-overview)。对于更高级的自定义，您可以使用 CSS 部件和自定义属性来针对各个组件进行定制。
 
-## Themes
+## 主题
 
-Web Awesome uses [themes](/docs/themes) to apply a cohesive look and feel across the entire library. Themes are built with a collection of predefined CSS custom properties, which we call [design tokens](/docs/tokens), and there are many pre-built themes to choose from.
+Web Awesome 使用[主题](/docs/themes)在整个库中应用统一的风格。主题是通过一组预定义的 CSS 自定义属性（我们称之为[设计令牌](/docs/tokens)）构建的，并且有许多预建主题可供选择。
 
-### Use a Pre-Built Theme
+### 使用预建主题
 
 {% raw %}
 
   <p>
     {%- if not session.isLoggedIn -%}
-      <a href="/signup">Sign up</a> or <a href="/login">log in</a> to create a project, then follow the steps below.
+      <a href="/signup">注册</a>或<a href="/login">登录</a>以创建项目，然后按照以下步骤操作。
     {%- else -%}
-      Head over to <a href="/teams">your teams</a> and open up the project you'd like to theme.
+      前往<a href="/teams">您的团队</a>并打开您想要主题化的项目。
     {%- endif -%}
   </p>
 {% endraw %}
@@ -42,31 +56,31 @@ Web Awesome uses [themes](/docs/themes) to apply a cohesive look and feel across
 <div class="hosted-project-instructions">
   <div class="instruction-group wa-stack wa-gap-2xs">
     <h4 class="wa-heading-m" data-no-anchor data-no-outline>
-      Free Workspace Projects
+      免费工作区项目
     </h4>
     <table class="wa-hover-rows">
       <thead>
         <tr>
-          <th scope="col">Step</th>
-          <th scope="col">Action</th>
+          <th scope="col">步骤</th>
+          <th scope="col">操作</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.</td>
+          <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。</td>
         </tr>
         <tr>
           <td>2</td>
-          <td>Find <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon></wa-tag> the theme you'd like to use.</td>
+          <td>找到 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择您想要使用的主题 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon></wa-tag>。</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>Find <wa-tag class="tag-ui" appearance="outlined">Color Palette</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon></wa-tag> the palette you'd like to use.</td>
+          <td>找到 <wa-tag class="tag-ui" appearance="outlined">颜色调色板</wa-tag> 并选择您想要使用的调色板 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon></wa-tag>。</td>
         </tr>
         <tr>
           <td>4</td>
-          <td>Save your changes to immediately update anywhere you're using your project.</td>
+          <td>保存更改以立即更新所有使用您项目的位置。</td>
         </tr>
       </tbody>
     </table>
@@ -74,116 +88,116 @@ Web Awesome uses [themes](/docs/themes) to apply a cohesive look and feel across
 
   <div class="instruction-group wa-stack wa-gap-2xs">
     <h4 class="wa-heading-m" data-no-anchor data-no-outline>
-      Pro Workspace Projects
+      Pro 工作区项目
     </h4>
     <table class="wa-hover-rows">
       <thead>
         <tr>
-          <th scope="col">Step</th>
-          <th scope="col">Action</th>
+          <th scope="col">步骤</th>
+          <th scope="col">操作</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.</td>
+          <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。</td>
         </tr>
         <tr>
           <td>2</td>
-          <td>Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag> to open the <a href="#theme-builder">Theme Builder</a>.</td>
+          <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开<a href="#theme-builder">主题构建器</a>。</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>Select a pre-built theme or customize colors, fonts, icons, and more.</td>
+          <td>选择预建主题或自定义颜色、字体、图标等。</td>
         </tr>
         <tr>
           <td>4</td>
-          <td>Save your theme to immediately update anywhere you're using your project.</td>
+          <td>保存主题以立即更新所有使用您项目的位置。</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-### Theme Builder
+### 主题构建器
 
-The Theme Builder is a visual editor for **Pro workspace projects** that lets you customize your project's [theme](/docs/themes), [color palette](/docs/color-palettes), [variant colors](/docs/tokens/color#variant-colors), fonts, roundness, spacing, and icons — with a live preview as you go. Saves apply instantly anywhere you're using your project.
+主题构建器是一个适用于 **Pro 工作区项目** 的可视化编辑器，可让您自定义项目中的[主题](/docs/themes)、[颜色调色板](/docs/color-palettes)、[变体颜色](/docs/tokens/color#variant-colors)、字体、圆角、间距和图标 — 并实时预览。保存后即可立即应用于所有使用您项目的位置。
 
-You can launch the Theme Builder from your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag> by pressing <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag>.
+您可以从项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag> 中点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 来启动主题构建器。
 
-### Light and Dark Mode
+### 浅色和深色模式
 
-Every theme is designed to adapt to light and dark mode. Light mode styles are applied by default, but you can apply a specific color scheme to an entire page or just a section with `class="wa-light"` or `class="wa-dark"`.
+每个主题都设计为可适应浅色和深色模式。浅色模式样式默认应用，但您可以通过 `class="wa-light"` 或 `class="wa-dark"` 将特定的配色方案应用到整个页面或某个部分。
 
 ```html {.example}
 {% include 'theming/light-dark-example.njk' %}
 ```
 
-#### Inverting the Color Scheme
+#### 反转配色方案
 
-You can force a section to behave like `.wa-dark` in light mode and like `.wa-light` in dark mode by using `class="wa-invert"`.
+您可以通过使用 `class="wa-invert"` 强制某个部分在浅色模式下表现得像 `.wa-dark`，在深色模式下表现得像 `.wa-light`。
 
 ```html {.example}
-<p>This card will always use the opposite of the color scheme applied to the docs.</p>
+<p>此卡片将始终使用与文档上应用的配色方案相反的模式。</p>
 
 <wa-card class="wa-invert">
   <div slot="header" class="wa-split wa-color-text-quiet">
-    <h4 class="wa-heading-s">Invert</h4>
+    <h4 class="wa-heading-s">反转</h4>
     <wa-icon name="swap"></wa-icon>
   </div>
   <div class="wa-flank:end wa-align-items-end">
-    <wa-select label="Location" value="upside-down">
-      <wa-option value="lab">Hawkins Lab</wa-option>
-      <wa-option value="mall">Starcourt Mall</wa-option>
-      <wa-option value="upside-down">The Upside Down</wa-option>
+    <wa-select label="位置" value="upside-down">
+      <wa-option value="lab">霍金斯实验室</wa-option>
+      <wa-option value="mall">星庭购物中心</wa-option>
+      <wa-option value="upside-down">颠倒世界</wa-option>
     </wa-select>
     <wa-button id="go-button" appearance="filled" variant="brand">
-      <wa-icon label="Go" name="person-to-portal" family="duotone"></wa-icon>
+      <wa-icon label="出发" name="person-to-portal" family="duotone"></wa-icon>
     </wa-button>
-    <wa-tooltip for="go-button"> Go! </wa-tooltip>
+    <wa-tooltip for="go-button"> 出发！ </wa-tooltip>
   </div>
 </wa-card>
 ```
 
-#### Detecting Color Scheme Preference
+#### 检测配色方案偏好
 
-While both light and dark mode styles are built-in to all themes, Web Awesome doesn't automatically detect the user's color scheme preference. We recommend doing this at the application level.
+虽然浅色和深色模式样式已内置于所有主题中，但 Web Awesome 不会自动检测用户的配色方案偏好。我们建议在应用层面进行此操作。
 
-Follow these best practices for supporting both light and dark mode:
+按照以下最佳实践来支持浅色和深色模式：
 
-- Check for [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) and use its value by default
-- Allow the user to override this setting in your app
-- Remember the user's preference and restore it on subsequent visits
+- 检查 [`prefers-color-scheme`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) 并默认使用其值
+- 允许用户在您的应用中覆盖此设置
+- 记住用户的偏好并在后续访问时恢复
 
-Let's assume you have a button with `id="color-scheme-button"` that simply toggles between light and dark mode. You can use the following JS snippet to apply `class="wa-dark"` to the `<html>` element accordingly:
+假设您有一个 `id="color-scheme-button"` 的按钮，用于在浅色和深色模式之间切换。您可以使用以下 JS 代码段相应地将 `class="wa-dark"` 应用到 `<html>` 元素上：
 
 ```js
-// Function to apply color scheme
+// 应用配色方案的函数
 function applyScheme(dark) {
   document.documentElement.classList.toggle('wa-dark', dark);
 }
 
-// Function to get the user's preferred color scheme
-// Grabs from local storage if available or falls back to system preference
+// 获取用户偏好的配色方案的函数
+// 优先从本地存储获取，否则回退到系统偏好
 function getPreferredScheme() {
   const savedMode = localStorage.getItem('wa-color-scheme');
   if (savedMode !== null) return savedMode === 'dark';
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-// Apply the preferred color scheme on load
+// 加载时应用偏好的配色方案
 applyScheme(getPreferredScheme());
 
-// Listen for changes in system preference
+// 监听系统偏好变化
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-  // If nothing in local storage, update accordingly
+  // 如果本地存储中没有设置，则相应更新
   const savedMode = localStorage.getItem('wa-color-scheme');
   if (!savedMode) {
     applyScheme(event.matches);
   }
 });
 
-// Listen for clicks on the color scheme button
+// 监听配色方案按钮的点击事件
 document.getElementById('color-scheme-button').addEventListener('click', () => {
   const toDark = !document.documentElement.classList.contains('wa-dark');
   applyScheme(toDark);
@@ -191,14 +205,14 @@ document.getElementById('color-scheme-button').addEventListener('click', () => {
 });
 ```
 
-### Customizing with CSS
+### 使用 CSS 自定义
 
-For even more customizations, you can off-road and override any theme just with CSS — no preprocessor required. All tokens use the `--wa-` prefix to prevent collisions with other libraries. Write a stylesheet that overrides Web Awesome's [design tokens](/docs/tokens) and you're off to the races.
+对于更多的自定义，您可以脱离常规，仅用 CSS 覆盖任何主题 — 无需预处理器。所有令牌都使用 `--wa-` 前缀以防止与其他库冲突。编写一个覆盖 Web Awesome [设计令牌](/docs/tokens)的样式表，您就可以开始了。
 
-Here's a starter that tweaks fonts, spacing, and corner radius across both color schemes:
+以下是一个在两个配色方案中调整字体、间距和圆角半径的起始示例：
 
 ```css
-/* Custom CSS — applies to both light and dark mode */
+/* 自定义 CSS — 同时适用于浅色和深色模式 */
 :where(:root),
 .wa-light,
 .wa-dark,
@@ -210,92 +224,92 @@ Here's a starter that tweaks fonts, spacing, and corner radius across both color
 }
 ```
 
-To create your own light mode styles, scope your styles to the following selectors:
+要创建您自己的浅色模式样式，请将样式限定到以下选择器：
 
 ```css
 :where(:root),
 .wa-light,
 .wa-dark .wa-invert {
-  /* your styles here */
+  /* 您的样式写在这里 */
 }
 ```
 
-To create your own dark mode styles, scope your styles to these selectors:
+要创建您自己的深色模式样式，请将样式限定到以下选择器：
 
 ```css
 .wa-dark,
 .wa-invert {
-  /* your styles here */
+  /* 您的样式写在这里 */
 }
 ```
 
-| Selector              | What It Targets                                                                |
+| 选择器                 | 目标说明                                                                       |
 | --------------------- | ------------------------------------------------------------------------------ |
-| `:where(:root)`       | The default scope, with low specificity so other theme classes can override it |
-| `.wa-light`           | Explicit light sections                                                        |
-| `.wa-dark`            | Explicit dark sections                                                         |
-| `.wa-invert`          | Flips the current color scheme on this element                                 |
-| `.wa-dark .wa-invert` | An inverted descendant inside a dark section (becomes light)                   |
+| `:where(:root)`       | 默认范围，特异性较低，因此其他主题类可以覆盖它                                   |
+| `.wa-light`           | 显式的浅色部分                                                                  |
+| `.wa-dark`            | 显式的深色部分                                                                  |
+| `.wa-invert`          | 反转此元素上的当前配色方案                                                       |
+| `.wa-dark .wa-invert` | 深色部分内部的已反转后代（变为浅色）                                             |
 
-For a complete list of all custom properties used for theming, refer to `src/styles/themes/default.css` in the project's source code.
+有关用于主题化的所有自定义属性的完整列表，请参考项目源代码中的 `src/styles/themes/default.css`。
 
-### Using Multiple Themes
+### 使用多个主题
 
-You can use multiple themes on a single page as long as the styles for each theme are scoped to a specific class. All pre-built themes are scoped to their own classes. The Default theme is additionally scoped to `:where(:root)` so that the styles are applied automatically.
+只要每个主题的样式限定到特定的类，您就可以在单个页面上使用多个主题。所有预建主题都限定到它们自己的类。默认主题还额外限定到 `:where(:root)`，以便自动应用样式。
 
-Simply load the theme stylesheets, then add your preferred classes to each element.
+只需加载主题样式表，然后将您偏好的类添加到每个元素即可。
 
 ```html {.example}
-<!-- Load each theme's stylesheet -->
+<!-- 加载每个主题的样式表 -->
 <link rel="stylesheet" href="{% cdnUrl '/styles/themes/awesome.css' %}" />
 <link rel="stylesheet" href="{% cdnUrl '/styles/themes/shoelace.css' %}" />
 
 <wa-callout class="wa-theme-awesome wa-brand-yellow" style="margin-block-start: 0;">
   <wa-icon slot="icon" name="face-awesome"></wa-icon>
   <div class="wa-flank:end">
-    <span>This callout uses <code>wa-theme-awesome</code> and <code>wa-brand-yellow</code>.</span>
-    <wa-button variant="brand" size="s">Yellow Button</wa-button>
+    <span>此 callout 使用 <code>wa-theme-awesome</code> 和 <code>wa-brand-yellow</code>。</span>
+    <wa-button variant="brand" size="s">黄色按钮</wa-button>
   </div>
 </wa-callout>
 
 <wa-callout class="wa-theme-shoelace wa-brand-cyan">
   <wa-icon slot="icon" name="shoelace" family="brands"></wa-icon>
   <div class="wa-flank:end">
-    <span>This callout uses <code>wa-theme-shoelace</code> and <code>wa-brand-cyan</code>.</span>
-    <wa-button variant="brand" size="s">Cyan Button</wa-button>
+    <span>此 callout 使用 <code>wa-theme-shoelace</code> 和 <code>wa-brand-cyan</code>。</span>
+    <wa-button variant="brand" size="s">青色按钮</wa-button>
   </div>
 </wa-callout>
 ```
 
-You can also use multiple variant colors on the same page. **On each element where you change the variant color, also add `wa-theme-*` — even if the theme doesn't change.** Otherwise the theme keeps using its original variant colors.
+您还可以在同一个页面上使用多个变体颜色。**在您更改变体颜色的每个元素上，同时添加 `wa-theme-*` — 即使主题没有变化。**否则主题将继续使用其原始的变体颜色。
 
 ```html {.example}
-<!-- Add class="wa-theme-default" to each element whose brand color changes -->
+<!-- 在每个品牌颜色变化的元素上添加 class="wa-theme-default" -->
 <wa-callout>
   <div class="wa-stack wa-align-items-start wa-gap-xs">
-    <span>The buttons in this callout use multiple brand colors.</span>
+    <span>此 callout 中的按钮使用了多种品牌颜色。</span>
     <div class="wa-cluster">
-      <wa-button class="wa-theme-default wa-brand-cyan" variant="brand" size="s">Cyan</wa-button>
-      <wa-button class="wa-theme-default wa-brand-indigo" variant="brand" size="s">Indigo</wa-button>
-      <wa-button class="wa-theme-default wa-brand-purple" variant="brand" size="s">Purple</wa-button>
-      <wa-button class="wa-theme-default wa-brand-pink" variant="brand" size="s">Pink</wa-button>
+      <wa-button class="wa-theme-default wa-brand-cyan" variant="brand" size="s">青色</wa-button>
+      <wa-button class="wa-theme-default wa-brand-indigo" variant="brand" size="s">靛蓝色</wa-button>
+      <wa-button class="wa-theme-default wa-brand-purple" variant="brand" size="s">紫色</wa-button>
+      <wa-button class="wa-theme-default wa-brand-pink" variant="brand" size="s">粉红色</wa-button>
     </div>
   </div>
 </wa-callout>
 ```
 
-## Customizing Components
+## 自定义组件
 
-While themes offer a high-level way to customize the library, individual components offer different hooks as a low-level way to customize them one at a time. Web Awesome components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate their styles and behaviors. As a result, you can't simply target their internals with the usual CSS selectors. Instead, components expose a set of CSS parts, custom properties, and custom states that can be targeted to customize their appearance.
+虽然主题提供了自定义库的高层级方式，但各个组件提供了不同的"钩子"作为低层级方式，逐个进行自定义。Web Awesome 组件使用[影子 DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM) 来封装其样式和行为。因此，您不能简单地使用常规的 CSS 选择器来定位其内部结构。相反，组件会暴露一组 CSS 部件、自定义属性和自定义状态，可用于定位以自定义其外观。
 
-### CSS Parts
+### CSS 部件
 
-CSS parts offer the most flexibility to customize individual components. The "parts" exposed by each component can be targeted with the [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), or `::part()`.
+CSS 部件为自定义各个组件提供了最大的灵活性。每个组件暴露的"部件"可以通过 [CSS 部件选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::part)，即 `::part()` 来定位。
 
-Parts allow you to style _any_ standard CSS property, not just those exposed through custom properties. Here's an example that modifies buttons with the `gradient-button` class.
+部件允许您样式化**任何**标准的 CSS 属性，而不仅仅是那些通过自定义属性暴露的属性。以下是一个修改带有 `gradient-button` 类的按钮的示例。
 
 ```html {.example}
-<wa-button class="gradient-button"> Gradient Button </wa-button>
+<wa-button class="gradient-button">渐变按钮</wa-button>
 
 <style>
   .gradient-button::part(base) {
@@ -323,21 +337,21 @@ Parts allow you to style _any_ standard CSS property, not just those exposed thr
 </style>
 ```
 
-CSS parts have a few important advantages:
+CSS 部件有几个重要的优势：
 
-- Customizations can be made to components with explicit selectors, such as `::part(icon)`, rather than implicit selectors, such as `.button > div > span + .icon`, that are much more fragile.
+- 可以使用显式选择器（如 `::part(icon)`）对组件进行自定义，而不是使用更脆弱的隐式选择器（如 `.button > div > span + .icon`）。
 
-- The internal structure of a component will likely change as it evolves. By exposing CSS parts through an API, the internals can be reworked without fear of breaking customizations as long as its parts remain intact.
+- 组件的内部结构会随着演化而改变。通过 API 暴露 CSS 部件，只要部件保持完整，内部结构就可以重新组织，而无需担心破坏自定义样式。
 
-- It encourages us to think more about how components are designed and how customizations should be allowed before users can take advantage of them. Once we opt a part into the component's API, it's guaranteed to be supported and can't be removed until a major version of the library is released.
+- 它鼓励我们在用户利用这些功能之前，更多地考虑组件的设计方式以及应允许的自定义方式。一旦我们将某个部件纳入组件的 API，它就得到支持保证，并且在库的主版本发布之前不会被移除。
 
-Most (but not all) components expose parts. You can find them in each component's API documentation under the "CSS Parts" section.
+大多数（但不是全部）组件都暴露了部件。您可以在每个组件的 API 文档的"CSS 部件"部分找到它们。
 
-### Custom Properties
+### 自定义属性
 
-Components expose custom properties that are scoped to the component, not global, so they do not have the same `--wa-` prefix as a theme's custom properties. These custom properties reflect common qualities of a component, such as `--background-color`, `--border-style`, `--size`, etc.
+组件会暴露限定在组件范围内（而非全局）的自定义属性，因此它们没有像主题自定义属性那样的 `--wa-` 前缀。这些自定义属性反映了组件的常见属性，例如 `--background-color`、`--border-style`、`--size` 等。
 
-You can set custom properties on a component in your stylesheet.
+您可以在样式表中为组件设置自定义属性。
 
 ```css
 wa-avatar {
@@ -345,7 +359,7 @@ wa-avatar {
 }
 ```
 
-This will also work if you need to target a subset of components with a specific class.
+如果您需要定位具有特定类别的部分组件，这也同样适用。
 
 ```css
 wa-avatar.your-class {
@@ -353,18 +367,18 @@ wa-avatar.your-class {
 }
 ```
 
-Alternatively, you can set them inline directly on the element.
+或者，您也可以直接在元素上内联设置它们。
 
 ```html
 <wa-avatar style="--size: 6rem;"></wa-avatar>
 ```
 
-The custom properties exposed by each component can be found in the component's API documentation.
+每个组件暴露的自定义属性可以在该组件的 API 文档中找到。
 
-### Custom States
+### 自定义状态
 
-Components can expose custom states that allow you to style them based on their current condition using the `:state()` selector. Custom states provide a way to target specific component states that aren't covered by standard pseudo-classes like `:hover` or `:focus`.
-Here's an example that styles a checkbox that's checked.
+组件可以暴露自定义状态，允许您使用 `:state()` 选择器根据其当前状态来设置样式。自定义状态提供了一种定位特定组件状态的方法，这些状态无法通过标准伪类（如 `:hover` 或 `:focus`）覆盖。
+以下是一个样式化已选中复选框的示例。
 
 ```css
 wa-checkbox:state(checked) {
@@ -372,20 +386,20 @@ wa-checkbox:state(checked) {
 }
 ```
 
-Custom states can be combined with CSS parts and custom properties to create sophisticated customizations. The custom states exposed by each component can be found in the component's API documentation under the "Custom States" section.
+自定义状态可以与 CSS 部件和自定义属性结合使用，以创建复杂的自定义效果。每个组件暴露的自定义状态可以在该组件的 API 文档的"自定义状态"部分找到。
 
-### Native Elements
+### 原生元素
 
-If you're using [native styles](/docs/utilities/native), any custom styles added for a component should also target the corresponding native element. In general, the same styles you declare for components will work just the same to style their native counterparts.
+如果您使用[原生样式](/docs/utilities/native)，为组件添加的任何自定义样式也应定位相应的原生元素。一般来说，您为组件声明的相同样式同样适用于样式化其原生对应元素。
 
-For example, we can give `<input type="checkbox">` the same custom styles as `<wa-checkbox>` by using standard CSS properties and CSS parts:
+例如，我们可以通过使用标准 CSS 属性和 CSS 部件，为 `<input type="checkbox">` 应用与 `<wa-checkbox>` 相同的自定义样式：
 
 ```html {.example}
-<wa-checkbox class="pinkify">Web Awesome checkbox</wa-checkbox>
+<wa-checkbox class="pinkify">Web Awesome 复选框</wa-checkbox>
 <br />
 <label>
   <input type="checkbox" class="pinkify" />
-  HTML checkbox
+  HTML 复选框
 </label>
 
 <style>

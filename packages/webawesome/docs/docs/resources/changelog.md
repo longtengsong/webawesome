@@ -1,18 +1,18 @@
 ---
-title: Changelog
-description: Changes to each version of the project are documented here.
+title: 更新日志
+description: 记录项目的每个版本的变更。
 layout: page-outline
 ---
 
 {% from "macros/component-badges.njk" import statusBadge %}
 
-Web Awesome follows <a href="https://semver.org/" class="appearance-plain">Semantic Versioning</a>, and each release on this page follows the <a href="https://keepachangelog.com/" class="appearance-plain">Keep a Changelog</a> convention. Each [component](/docs/components) carries a status badge that tells you what to expect from its API.
+Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义化版本控制</a>，本页面的每个版本发布遵循 <a href="https://keepachangelog.com/" class="appearance-plain">维护更新日志</a> 约定。每个[组件](/docs/components) 都有一个状态徽章，告诉您可以对其 API 有什么预期。
 
-<h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>Stable Components {{ statusBadge('stable') }}</h2>
-These have a settled API. Breaking changes land only in major versions, and deprecated features stay through the next major release.
+<h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>稳定组件 {{ statusBadge('stable') }}</h2>
+这些组件有稳定的 API。重大变更仅在主要版本中出现，弃用的功能会保留到下一个主要版本。
 
-<h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>Experimental Components {{ statusBadge('experimental') }}</h2>
-These are still finding their shape. APIs can change between minor versions, so use them in prototypes — not production code you can't easily update.
+<h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>实验性组件 {{ statusBadge('experimental') }}</h2>
+这些组件仍在成型中。API 可能会在次要版本之间更改，因此请在原型中使用它们 — 不要在难以更新的生产代码中使用。
 
 {% include "changelog-email-signup.njk" %}
 
@@ -20,418 +20,418 @@ These are still finding their shape. APIs can change between minor versions, so 
 
 :::added
 
-- Added the `capture` attribute to `<wa-file-input>` for capturing media directly from a device's camera or microphone [discuss:2380]
-- Added the `wa-text-uppercase` text utility class for transforming text to uppercase
-- Added the `wa-text-lowercase` text utility class for transforming text to lowercase
-- Added the `wa-text-capitalize` text utility class for capitalizing the first letter of each word
-- Added the `wa-text-start` text utility class for logical (direction-aware) text alignment
-- Added the `wa-text-center` text utility class for centered text alignment
-- Added the `wa-text-end` text utility class for logical (direction-aware) text alignment
-- Added the `wa-text-justify` text utility class for justified text alignment
-- Added the `wa-prose` utility class for applying typographic rhythm to long-form content (docs, blog posts, marketing copy)
+- 为 `<wa-file-input>` 添加了 `capture` 属性，用于直接从设备的摄像头或麦克风捕获媒体 [discuss:2380]
+- 添加了 `wa-text-uppercase` 文本工具类，用于将文本转换为大写
+- 添加了 `wa-text-lowercase` 文本工具类，用于将文本转换为小写
+- 添加了 `wa-text-capitalize` 文本工具类，用于将每个单词的首字母大写
+- 添加了 `wa-text-start` 文本工具类，用于逻辑（方向感知）文本对齐
+- 添加了 `wa-text-center` 文本工具类，用于居中对齐文本
+- 添加了 `wa-text-end` 文本工具类，用于逻辑（方向感知）文本对齐
+- 添加了 `wa-text-justify` 文本工具类，用于两端对齐文本
+- 添加了 `wa-prose` 工具类，用于为长格式内容（文档、博客文章、营销文案）应用排版节奏
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-video>` where the `timeupdate` method was not emitting when seeking or scrubbing the timeline [issue:2393]
-- Fixed a bug in `<wa-breadcrumb-item>` where `href=""` rendered as a button instead of a link, making it harder to follow the [WAI-ARIA breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) for the current-page item [issue:2387]
-- Fixed a regression in `<wa-breadcrumb-item>` that caused items without an `href` to render as a link instead of a button
-- Fixed a regression in `<wa-popover>` where the body's viewport-edge margin caused the popover and arrow to be misaligned for `top/bottom-start` and `top/bottom-end` placements
-- Fixed a bug in `<wa-textarea>` where the disabled state had no visual styling, unlike other form controls [issue:2416]
-- Fixed default show/hide animations in `<wa-dropdown>`, `<wa-popup>`, `<wa-popover>`, `<wa-select>`, `<wa-details>`, `<wa-dialog>`, `<wa-drawer>`, and `<wa-tree-item>` to honor `prefers-reduced-motion: reduce`
-- Fixed a bug in `<wa-drawer>` that caused the `light-dismiss` option not work as intended [pr:2437]
-- Fixed a bug in `<wa-dropdown>` that prevented items from being visible when the selected overflowed [pr:2430]
-- Fixed a bug in `<wa-carousel>` that prevented the carousel from smoothly snapping back into position when using with the mouse [issue:1103]
+- 修复了 `<wa-video>` 中的一个 bug：在快进或拖动时间轴时，`timeupdate` 方法未触发 [issue:2393]
+- 修复了 `<wa-breadcrumb-item>` 中的一个 bug：当 `href=""` 时渲染为按钮而不是链接，使得当前页面项更难遵循 [WAI-ARIA 面包屑导航模式](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) [issue:2387]
+- 修复了 `<wa-breadcrumb-item>` 中的一个回归问题：导致没有 `href` 的项渲染为链接而不是按钮
+- 修复了 `<wa-popover>` 中的一个回归问题：body 的视口边缘边距导致弹出框和箭头在 `top/bottom-start` 和 `top/bottom-end` 位置时未对齐
+- 修复了 `<wa-textarea>` 中的一个 bug：与其他表单控件不同，禁用状态没有视觉样式 [issue:2416]
+- 修复了 `<wa-dropdown>`、`<wa-popup>`、`<wa-popover>`、`<wa-select>`、`<wa-details>`、`<wa-dialog>`、`<wa-drawer>` 和 `<wa-tree-item>` 中的默认显示/隐藏动画，使其尊重 `prefers-reduced-motion: reduce`
+- 修复了 `<wa-drawer>` 中的一个 bug：导致 `light-dismiss` 选项无法按预期工作 [pr:2437]
+- 修复了 `<wa-dropdown>` 中的一个 bug：当所选项溢出时，阻止项可见 [pr:2430]
+- 修复了 `<wa-carousel>` 中的一个 bug：使用鼠标时，阻止轮播平滑地回弹到位置 [issue:1103]
 
 :::
 
 :::changed
 
-- Synced default `--show-duration` and `--hide-duration` values in `<wa-dropdown>`, `<wa-popup>`, `<wa-popover>`, `<wa-select>`, `<wa-combobox>`, `<wa-details>`, `<wa-dialog>`, `<wa-drawer>`, `<wa-tree-item>`, and `<wa-toast-item>` with `--wa-transition-fast` and `--wa-transition-normal` tokens
-- Synced hardcoded transitions in `<wa-copy-button>`, `<wa-select>`, `<wa-combobox>`, and `<wa-toast-item>` with `--wa-transition-*` tokens
-- Improved the vertical placement of content within `<wa-textarea>` and `textarea` when the content overflows the control [pr:2424]
-- Updated Native Styles for several text elements [pr:2459]:
-  - Updated `<blockquote>` to use a quiet text color and a font-size based on `--wa-font-size-larger`
-  - Updated `<h6>` to use `--wa-font-size-xs`, further distinguishing small headings from surrounding body text
-  - Updated `<table>` to use `font-variant-numeric: tabular-nums` so numeric columns align
-  - Updated `<th>` to render a visually stronger bottom border, distinguishing the header row from body cells
-  - Added `<figcaption>` (previously unstyled): quiet text color, smaller font-size, condensed line-height, and a small top margin
-  - Added `<ul>` and `<ol>` markers using `currentColor` with reduced opacity; `<ol>` markers retain more contrast since numerals are text rather than graphical elements
-- Added Native Styles for `<menu>` (previously unstyled) to reset `list-style`, `margin`, and `padding` [discuss:2436]
-- Renamed `wa-text-wrap-nowrap`, `wa-text-wrap-balance`, and `wa-text-wrap-pretty` to `wa-text-nowrap`, `wa-text-balance`, and `wa-text-pretty` to align with the flat `wa-text-*` utility namespace. The original class names continue to work as aliases.
+- 将 `<wa-dropdown>`、`<wa-popup>`、`<wa-popover>`、`<wa-select>`、`<wa-combobox>`、`<wa-details>`、`<wa-dialog>`、`<wa-drawer>`、`<wa-tree-item>` 和 `<wa-toast-item>` 中的默认 `--show-duration` 和 `--hide-duration` 值与 `--wa-transition-fast` 和 `--wa-transition-normal` 令牌同步
+- 将 `<wa-copy-button>`、`<wa-select>`、`<wa-combobox>` 和 `<wa-toast-item>` 中的硬编码过渡与 `--wa-transition-*` 令牌同步
+- 改进了 `<wa-textarea>` 和 `textarea` 中内容溢出控件时的垂直位置 [pr:2424]
+- 更新了多个文本元素的 Native Styles [pr:2459]：
+  - 更新了 `<blockquote>` 以使用柔和文本颜色和基于 `--wa-font-size-larger` 的字体大小
+  - 更新了 `<h6>` 以使用 `--wa-font-size-xs`，进一步将小标题与周围正文文本区分开来
+  - 更新了 `<table>` 以使用 `font-variant-numeric: tabular-nums`，使数字列对齐
+  - 更新了 `<th>` 以渲染视觉上更强的底部边框，将标题行与正文单元格区分开来
+  - 添加了 `<figcaption>`（之前未设置样式）：柔和文本颜色、更小的字体大小、紧凑的行高和一个小的上边距
+  - 添加了使用 `currentColor` 且降低不透明度的 `<ul>` 和 `<ol>` 标记；`<ol>` 标记保留更多对比度，因为数字是文本而非图形元素
+- 为 `<menu>` 添加了 Native Styles（之前未设置样式），以重置 `list-style`、`margin` 和 `padding` [discuss:2436]
+- 将 `wa-text-wrap-nowrap`、`wa-text-wrap-balance` 和 `wa-text-wrap-pretty` 重命名为 `wa-text-nowrap`、`wa-text-balance` 和 `wa-text-pretty`，以与扁平的 `wa-text-*` 工具命名空间对齐。原始的类名继续作为别名工作。
 
 :::
 
 :::deprecated
 
-- Deprecated `wa-text-wrap-nowrap`, `wa-text-wrap-balance`, and `wa-text-wrap-pretty` in favor of their shorter `wa-text-*` equivalents. The original names still work but will be removed in a future major version.
+- 弃用了 `wa-text-wrap-nowrap`、`wa-text-wrap-balance` 和 `wa-text-wrap-pretty`，推荐使用其更短的 `wa-text-*` 等效项。原始名称仍然有效，但将在未来的主要版本中移除。
 
 :::
 
 ## 3.7.0
 
-<small><time datetime="2026-05-12">May 12, 2026</time></small>
+<small><time datetime="2026-05-12">2026 年 5 月 12 日</time></small>
 
 :::added
 
-- Added two new experimental components: `<wa-video>` and `<wa-video-playlist>`
-- Added `--wa-button-transform-hover` and `--wa-button-transform-active` design tokens
-- Added the `wa-text-wrap-nowrap` text utility class for preventing text from wrapping
-- Added the `wa-text-wrap-balance` text utility class for evenly distributing text across lines
-- Added the `wa-text-wrap-pretty` text utility class for avoiding orphaned words on the last line (not supported in Firefox)
+- 添加了两个新的实验性组件：`<wa-video>` 和 `<wa-video-playlist>`
+- 添加了 `--wa-button-transform-hover` 和 `--wa-button-transform-active` 设计令牌
+- 添加了 `wa-text-wrap-nowrap` 文本工具类，用于防止文本换行
+- 添加了 `wa-text-wrap-balance` 文本工具类，用于均匀分布文本
+- 添加了 `wa-text-wrap-pretty` 文本工具类，用于避免最后一行出现孤立词（Firefox 不支持）
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-textarea>` with `resize="auto"` where the height stayed collapsed when the textarea was initially hidden [issue:2347]
-- Fixed a bug in `<wa-button-group>` that caused single buttons to not have the correct border radius [issue:2367]
-- Fixed a bug in `<wa-switch>` that showed the switch direction backwards in RTL [pr:2330]
-- Fixed a bug in `<wa-popover>` where the popover would overflow the viewport on narrow screens [issue:2333]
-- Fixed a bug in `<wa-radio-group>` where the label was vertically offset by a few pixels compared to other form control labels [issue:2334]
-- Fixed a bug in `<wa-badge>` that caused the height to differ slightly when icons were present in the `start` or `end` slot [issue:2280]
-- Fixed a bug in `<wa-toast>` that prevented notifications from being read properly in certain screen readers [issue:2282]
-- Fixed a Playful theme bug where modifier classes (e.g. `wa-filled`) didn't apply to native button elements
+- 修复了 `<wa-textarea>` 中的一个 bug：当文本域初始隐藏时，使用 `resize="auto"` 的高度保持折叠状态 [issue:2347]
+- 修复了 `<wa-button-group>` 中的一个 bug：导致单个按钮没有正确的边框半径 [issue:2367]
+- 修复了 `<wa-switch>` 中的一个 bug：在 RTL 中开关方向显示为反向 [pr:2330]
+- 修复了 `<wa-popover>` 中的一个 bug：在窄屏幕上弹出框会溢出视口 [issue:2333]
+- 修复了 `<wa-radio-group>` 中的一个 bug：与其他表单控件标签相比，标签垂直偏移了几个像素 [issue:2334]
+- 修复了 `<wa-badge>` 中的一个 bug：当 `start` 或 `end` 插槽中有图标时，高度略有不同 [issue:2280]
+- 修复了 `<wa-toast>` 中的一个 bug：在某些屏幕阅读器中，通知无法正确读取 [issue:2282]
+- 修复了 Playful 主题中的一个 bug：修饰符类（如 `wa-filled`）未应用于原生按钮元素
 
 :::
 
 :::changed
 
-- Updated `--wa-color-mix-hover` and `--wa-color-mix-active` values for all themes for better hover and active feedback [pr:2360]
-- Upgraded the `<wa-copy-button>` component from _experimental_ to _stable_
-  - Added support for custom buttons
-  - Added `tooltip` attribute to control when feedback is shown in the tooltip on hover and click
+- 更新了所有主题的 `--wa-color-mix-hover` 和 `--wa-color-mix-active` 值，以获得更好的悬停和激活反馈 [pr:2360]
+- 将 `<wa-copy-button>` 组件从 _实验性_ 升级为 _稳定_
+  - 添加了对自定义按钮的支持
+  - 添加了 `tooltip` 属性，用于控制在悬停和点击时工具提示中何时显示反馈
 
 :::
 
 ## 3.6.0
 
-<small><time datetime="2026-04-30">April 30, 2026</time></small>
+<small><time datetime="2026-04-30">2026 年 4 月 30 日</time></small>
 
 :::added
 
-- Added a `:::pro` callout variant in the docs that renders with the same orange/white styling as the Pro badge
-- Added `xs` and `xl` sizes for all form controls and sized components
-  - Deprecated `small`, `medium`, and `large` in favor of `s`, `m`, and `l` (old values will continue to work in 3.x)
-- Added `beforeinput` event to `<wa-number-input>` stepper buttons so value changes can be cancelled with `event.preventDefault()`
-- Added the `--backdrop-filter` CSS custom property to `<wa-dialog>` and `<wa-drawer>` for applying filters such as `blur()` to the backdrop
+- 在文档中添加了 `:::pro` 标注变体，其渲染样式与 Pro 徽章相同，为橙色/白色样式
+- 为所有表单控件和有尺寸的组件添加了 `xs` 和 `xl` 尺寸
+  - 弃用了 `small`、`medium` 和 `large` 以支持 `s`、`m` 和 `l`（旧值在 3.x 中仍可继续工作）
+- 为 `<wa-number-input>` 步进按钮添加了 `beforeinput` 事件，以便可以使用 `event.preventDefault()` 取消值更改
+- 为 `<wa-dialog>` 和 `<wa-drawer>` 添加了 `--backdrop-filter` CSS 自定义属性，用于对背景应用模糊等滤镜
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-checkbox>` where the `value` property returned `null` instead of `'on'` when unchecked
-- Fixed a bug in `<wa-rating>` where disabling via a `<fieldset>` did not properly restore the enabled state when the fieldset was re-enabled
-- Fixed a bug in `<wa-zoomable-frame>` where zoom control buttons did not properly update their disabled state after zoom levels were parsed
-- Fixed a bug in `<wa-button>` where icon-only buttons with `with-caret` were sized as a square, causing the caret to overflow
-- Fixed a bug in `<wa-checkbox>` where the `aria-checked` attribute was not set to `mixed` when the checkbox was indeterminate
-- Fixed a bug in `<wa-file-input>` that incorrectly exposed a `file-icon` slot that never worked as described [issue:2294]
-- Fixed React imports to point directly to each component's `index.js` file [issue:2293]
-- Fixed a bug in `<wa-dropdown-item>` where disabled items in a submenu showed a pointer cursor instead of the default cursor [issue:2276]
-- Fixed a bug in `<wa-dropdown-item>` where items with an open submenu did not show a selection state
-- Fixed a bug in `<wa-input>` and `<wa-number-input>` where invalid values for `number`, `date`, `time`, and `datetime-local` types were preserved instead of being sanitized to an empty string like the native input
-- Fixed a bug where `<wa-dropdown-item>` was erroneously listed as experimental
-- Fixed `<pre>` border radius in Native Styles so it correctly uses the `--wa-panel-border-radius` token like similar elements
+- 修复了 `<wa-checkbox>` 中的一个 bug：未选中时 `value` 属性返回 `null` 而不是 `'on'`
+- 修复了 `<wa-rating>` 中的一个 bug：通过 `<fieldset>` 禁用时，重新启用 fieldset 时未能正确恢复启用状态
+- 修复了 `<wa-zoomable-frame>` 中的一个 bug：在解析缩放级别后，缩放控制按钮未能正确更新其禁用状态
+- 修复了 `<wa-button>` 中的一个 bug：带有 `with-caret` 的仅图标按钮被设为方形，导致插入符号溢出
+- 修复了 `<wa-checkbox>` 中的一个 bug：当复选框不确定时，`aria-checked` 属性未设置为 `mixed`
+- 修复了 `<wa-file-input>` 中的一个 bug：错误地暴露了一个从未按描述工作的 `file-icon` 插槽 [issue:2294]
+- 修复了 React 导入，使其直接指向每个组件的 `index.js` 文件 [issue:2293]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：子菜单中的禁用项显示指针光标而不是默认光标 [issue:2276]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：打开子菜单的项未显示选择状态
+- 修复了 `<wa-input>` 和 `<wa-number-input>` 中的一个 bug：`number`、`date`、`time` 和 `datetime-local` 类型的无效值被保留，而不是像原生输入那样清理为空字符串
+- 修复了 `<wa-dropdown-item>` 被错误列为实验性的 bug
+- 修复了 Native Styles 中的 `<pre>` 边框半径，使其像类似元素那样正确使用 `--wa-panel-border-radius` 令牌
 
 :::
 
 :::changed
 
-- Refactored component tests across core and pro packages to follow a consistent structure with improved coverage
-- Replaced the tooltip in the experimental `<wa-copy-button>` with a built-in feedback popup that works with default and custom triggers
-  - Added the `feedback-placement` attribute to replace `tooltip-placement`
-  - Added the `feedback` CSS part
-  - Removed the `tooltip-placement` attribute and the related `tooltip__*` parts
-- Upgraded the following components from _experimental_ to _stable_: `<wa-bar-chart>`, `<wa-bubble-chart>`, `<wa-chart>`, `<wa-combobox>`, `<wa-doughnut-chart>`, `<wa-file-input>`, `<wa-line-chart>`, `<wa-copy-button>`, `<wa-number-input>`, `<wa-pie-chart>`, `<wa-polar-area-chart>`, `<wa-radar-chart>`, `<wa-scatter-chart>`, `<wa-sparkline>`, `<wa-toast>`, and `<wa-toast-item>`
-- Updated `@shoelace-style/localize` to 3.2.2 to prevent Chrome translations from throwing errors [issue:2322]
-- Updated TypeScript to 5.9.3
+- 重构了核心和 Pro 包中的组件测试，以遵循一致的结构并提高覆盖率
+- 将实验性的 `<wa-copy-button>` 中的工具提示替换为内置的反馈弹出框，适用于默认和自定义触发器
+  - 添加了 `feedback-placement` 属性，以替换 `tooltip-placement`
+  - 添加了 `feedback` CSS 部件
+  - 删除了 `tooltip-placement` 属性和相关的 `tooltip__*` 部件
+- 将以下组件从 _实验性_ 升级为 _稳定_：`<wa-bar-chart>`、`<wa-bubble-chart>`、`<wa-chart>`、`<wa-combobox>`、`<wa-doughnut-chart>`、`<wa-file-input>`、`<wa-line-chart>`、`<wa-copy-button>`、`<wa-number-input>`、`<wa-pie-chart>`、`<wa-polar-area-chart>`、`<wa-radar-chart>`、`<wa-scatter-chart>`、`<wa-sparkline>`、`<wa-toast>` 和 `<wa-toast-item>`
+- 将 `@shoelace-style/localize` 更新为 3.2.2，以防止 Chrome 翻译抛出错误 [issue:2322]
+- 将 TypeScript 更新为 5.9.3
 
 :::
 
 ## 3.5.0
 
-<small><time datetime="2026-04-03">April 3, 2026</time></small>
+<small><time datetime="2026-04-03">2026 年 4 月 3 日</time></small>
 
 :::added
 
-- Moved `<wa-page>` from {{ site.namePro }} to Web Awesome core
-- Added a new free experimental component: `<wa-markdown>` (#6 of 14 per stretch goals)
-- Added the `data-wa-preload` attribute for preloading components that aren't on the page yet when using the autoloader [issue:1501]
-- Added `placement` attribute to `<wa-color-picker>` [issue:2099]
-- Added form association to `<wa-rating>`
-- Added a default slot to `<wa-copy-button>` so users can provide custom buttons [issue:1327]
-- Added `:state(success)` and `:state(error)` CSS custom states to `<wa-copy-button>` for styling feedback on custom triggers
-- Added the `disabled`, `icon-button`, `link`, and `loading` custom states to `<wa-button>` [discuss:2185]
-- Added the `disabled` custom state to `<wa-option>` so the disabled style applies when using the property [issue:1997]
-- Added the `with-count` attribute to `<wa-textarea>` to show a character count below the textarea
+- 将 `<wa-page>` 从 {{ site.namePro }} 移到 Web Awesome 核心
+- 添加了新的免费实验性组件：`<wa-markdown>`（14 个扩展目标中的第 6 个）
+- 为使用自动加载器时预加载尚未在页面上的组件添加了 `data-wa-preload` 属性 [issue:1501]
+- 为 `<wa-color-picker>` 添加了 `placement` 属性 [issue:2099]
+- 为 `<wa-rating>` 添加了表单关联
+- 为 `<wa-copy-button>` 添加了默认插槽，以便用户可以提供自定义按钮 [issue:1327]
+- 为 `<wa-copy-button>` 添加了 `:state(success)` 和 `:state(error)` CSS 自定义状态，用于在自定义触发器上的反馈样式
+- 为 `<wa-button>` 添加了 `disabled`、`icon-button`、`link` 和 `loading` 自定义状态 [discuss:2185]
+- 为 `<wa-option>` 添加了 `disabled` 自定义状态，以便在使用属性时应用禁用样式 [issue:1997]
+- 为 `<wa-textarea>` 添加了 `with-count` 属性，用于在文本域下方显示字符数
 
 :::
 
 :::fixed
 
-- Fixed a bug in the native styles utility where `<select>` text could overlap the caret icon when the selected option had a long name
-- Fixed a bug in the native styles utility where `<select multiple>` did not expand to show multiple options
-- Fixed a bug in `<wa-badge>` where `role` was incorrectly set on a `<slot>` element, which is not allowed per spec [issue:2163]
-- Fixed a bug in `<wa-toast-item>` where the progress ring's continuously updating value was announced by screen readers [issue:2126]
-- Fixed a bug in `<wa-spinner>` where the `--track-width` custom property was not being applied to the track and indicator properly [issue:1317]
-- Fixed a bug in form controls where the focus ring would flash white in dark mode in Firefox due to the browser transitioning from the system outline color [issue:2074]
-- Fixed a bug in `<wa-dropdown>` where heading colors in the menu used `!important`, preventing users from overriding them with light DOM styles [issue:2102]
-- Fixed a bug in `<wa-select>` where the `:state(blank)` custom state was incorrectly applied when the selected option had an empty string value [issue:1920]
-- Fixed a bug in `<wa-dropdown-item>` where the `click` event could still fire when the item was disabled [issue:1817]
-- Fixed a bug in `<wa-select>`, `<wa-combobox>`, and `<wa-option>` where the `change` and `input` events could dispatch with incorrect timing [pr:2243]
-- Fixed a bug in `<wa-drawer>` that threw an error when including Web Awesome in the `<head>` [discuss:2241]
-- Fixed Lit dev mode "change-in-update" warnings across multiple components [issue:1269]
-- Fixed a bug in Native Styles where text would incorrectly overflow in `<pre>` elements
-- Fixed a bug in `<wa-details>` where rapid toggling of the open state could cause the content visibility to get out of sync with the open attribute
-- Fixed a bug in `<wa-tree-item>` where rapid clicking on the expand button could cause the expand/collapse indicator to get out of sync with the children visibility
-- Fixed a bug in `<wa-select>` and `<wa-combobox>` where the selected value was not displayed when the value property was set before options were added to the DOM [pr:2253]
-- Fixed a bug in `<wa-carousel>` where slide contents were not interactive when the carousel was initially rendered inside a hidden container (e.g., an inactive tab panel). [pr:2133]
+- 修复了 Native Styles 实用程序中的一个 bug：当所选选项有长名称时，`<select>` 文本可能会与插入符号图标重叠
+- 修复了 Native Styles 实用程序中的一个 bug：`<select multiple>` 未展开以显示多个选项
+- 修复了 `<wa-badge>` 中的一个 bug：`role` 在 `<slot>` 元素上错误设置，这不符合规范 [issue:2163]
+- 修复了 `<wa-toast-item>` 中的一个 bug：进度环连续更新的值被屏幕阅读器读出 [issue:2126]
+- 修复了 `<wa-spinner>` 中的一个 bug：`--track-width` 自定义属性未正确应用于轨道和指示器 [issue:1317]
+- 修复了表单控件中的一个 bug：在 Firefox 深色模式下，由于浏览器从系统轮廓颜色过渡，焦点环会闪烁白色 [issue:2074]
+- 修复了 `<wa-dropdown>` 中的一个 bug：菜单中的标题颜色使用 `!important`，阻止用户用轻 DOM 样式覆盖它们 [issue:2102]
+- 修复了 `<wa-select>` 中的一个 bug：当所选选项有空字符串值时，`state(blank)` 自定义状态错误应用 [issue:1920]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：当项禁用时，`click` 事件仍然可能触发 [issue:1817]
+- 修复了 `<wa-select>`、`<wa-combobox>` 和 `<wa-option>` 中的一个 bug：`change` 和 `input` 事件可能以不正确的时机触发 [pr:2243]
+- 修复了 `<wa-drawer>` 中的一个 bug：在 `<head>` 中包含 Web Awesome 时会抛出错误 [discuss:2241]
+- 修复了多个组件中的 Lit 开发模式"更新中更改"警告 [issue:1269]
+- 修复了 Native Styles 中的一个 bug：文本会在 `<pre>` 元素中错误溢出
+- 修复了 `<wa-details>` 中的一个 bug：快速切换打开状态可能会导致内容可见性与打开属性不同步
+- 修复了 `<wa-tree-item>` 中的一个 bug：快速点击展开按钮可能导致展开/折叠指示器与子项可见性不同步
+- 修复了 `<wa-select>` 和 `<wa-combobox>` 中的一个 bug：当值属性在选项添加到 DOM 之前设置时，未显示所选值 [pr:2253]
+- 修复了 `<wa-carousel>` 中的一个 bug：当轮播图初始在隐藏容器（如非活动选项卡面板）中渲染时，幻灯片内容不可交互 [pr:2133]
 
 :::
 
 :::changed
 
-- Updated the Awesome and Shoelace themes [pr:2135]:
-  - Adds missing `<input type="range">` overrides to Shoelace theme to match `<wa-slider>`
-  - Adds `<wa-combobox>` overrides to both themes to match other text-based inputs
-  - Fixed a bug in the Awesome theme to remove an erroneous `transform` property from `<wa-radio>`s with `appearance="button"` [issue:1766]
-  - Fixed a bug in the Shoelace theme where `size` had no effect on `<wa-callout>`
-  - Fixed a bug in both themes where `appearance` had no effect on `<wa-card>`
-  - Updated Awesome theme `--wa-form-control-padding-block` and `--wa-form-control-padding-inline` to better match its source material ({{ site.siblings.fontAwesome.name }})
-  - Updated Shoelace theme `--wa-color-focus` and focus styles to better match its source material (Shoelace)
-- Improved the accessibility of `<wa-rating>` by moving role and ARIA attributes to the host element [issue:2205]
-- Improved performance of `<wa-textarea>` by only creating a resize observer when necessary
-- Improved SSR compatibility by adding server-side rendering guards to components that use browser-only APIs
+- 更新了 Awesome 和 Shoelace 主题 [pr:2135]：
+  - 为 Shoelace 主题添加了缺失的 `<input type="range">` 覆盖，以匹配 `<wa-slider>`
+  - 为两个主题添加了 `<wa-combobox>` 覆盖，以匹配其他基于文本的输入
+  - 修复了 Awesome 主题中的一个 bug：从 `appearance="button"` 的 `<wa-radio>` 中移除了错误的 `transform` 属性 [issue:1766]
+  - 修复了 Shoelace 主题中的一个 bug：`size` 对 `<wa-callout>` 没有影响
+  - 修复了两个主题中的一个 bug：`appearance` 对 `<wa-card>` 没有影响
+  - 更新了 Awesome 主题的 `--wa-form-control-padding-block` 和 `--wa-form-control-padding-inline`，以更好地匹配其原始素材（{{ site.siblings.fontAwesome.name }}）
+  - 更新了 Shoelace 主题的 `--wa-color-focus` 和焦点样式，以更好地匹配其原始素材（Shoelace）
+- 通过将 role 和 ARIA 属性移动到宿主元素，改进了 `<wa-rating>` 的可访问性 [issue:2205]
+- 通过仅在必要时创建 ResizeObserver，提高了 `<wa-textarea>` 的性能
+- 通过为使用浏览器专用 API 的组件添加服务器端渲染保护，改进了 SSR 兼容性
 
 :::
 
 ## 3.4.0
 
-<small><time datetime="2026-03-25">March 25, 2026</time></small>
+<small><time datetime="2026-03-25">2026 年 3 月 25 日</time></small>
 
 :::added
 
-- Added `--wa-space-5xl` design token to all themes [issue:1606]
-- Added `wa-gap-5xl` utility class [issue:1606]
-- Added `wa-gap-4xl` to the gap utility `:where()` selector
-- Added `--wa-font-size-3xs` and `--wa-font-size-5xl` design tokens [issue:1606]
-- Added `*-3xs` and `*-5xl` to `wa-font-size`, `wa-body`, `wa-heading`, `wa-caption`, and `wa-longform` utility classes [issue:1606]
-- Added support for labeled swatches in `<wa-color-picker>` by accepting an array of `{ color, label }` objects via the `swatches` property, improving screen reader accessibility
-- Added the ability to return promises from icon resolvers [discuss:2144]
+- 为所有主题添加了 `--wa-space-5xl` 设计令牌 [issue:1606]
+- 添加了 `wa-gap-5xl` 工具类 [issue:1606]
+- 将 `wa-gap-4xl` 添加到了间距工具 `:where()` 选择器
+- 添加了 `--wa-font-size-3xs` 和 `--wa-font-size-5xl` 设计令牌 [issue:1606]
+- 将 `*-3xs` 和 `*-5xl` 添加到了 `wa-font-size`、`wa-body`、`wa-heading`、`wa-caption` 和 `wa-longform` 工具类 [issue:1606]
+- 通过 `swatches` 属性接受 `{ color, label }` 对象数组，从而为 `<wa-color-picker>` 添加了带标签的样例支持，提高了屏幕阅读器可访问性
+- 添加了从图标解析器返回承诺的能力 [discuss:2144]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-dropdown-item>` where `aria-checked` was incorrectly set on items when `type` was not `checkbox` [pr:2180]
-- Fixed `<wa-badge>` font size to use `--wa-font-size-3xs` now that the token is available [pr:2162]
-- Fixed the off-centered position of indent guides in `<wa-tree>`
-- Fixed slider styling when using the `label` slot so that it matches attribute use. [issue:2124]
-- Fixed a bug in `<wa-scroller>` that caused horizontal page overflow in Chrome when containing wide content such as tables
-- Fixed a bug in `<wa-details>` and native `<details>` that caused full-width elements to overflow the details content [issue:2137]
-- Fixed a bug in `<wa-slider>` that introduced a `required` attribute which isn't valid on range elements [issue:1471]
-- Fixed horizontal layout styles in `<wa-card>` that used invalid or non-matching `::slotted()` selectors for the body and actions regions [pr:2198]
-- Fixed the `autocorrect` property type in `<wa-input>` and `<wa-combobox>` to use `boolean` instead of a string union
-- Fixed a bug in `<wa-dropdown-item>` that caused descenders to get clipped at certain line heights [issue:2207]
-- Fixed a bug in `<wa-number-input>` where pressing stepper buttons on a touch device would show the virtual keyboard and shift the page
-- Fixed a bug in `<wa-select>` which caused it to not be clearable with initial values set [pr:2141]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：当类型不是 `checkbox` 时，`aria-checked` 错误地设置在项上 [pr:2180]
+- 修复了 `<wa-badge>` 字体大小，现在令牌可用时使用 `--wa-font-size-3xs` [pr:2162]
+- 修复了 `<wa-tree>` 中缩进指南的偏离中心位置
+- 修复了使用 `label` 插槽时的滑块样式，使其与属性使用匹配 [issue:2124]
+- 修复了 `<wa-scroller>` 中的一个 bug：在 Chrome 中包含表格等宽内容时导致水平页面溢出 [issue:2074]
+- 修复了 `<wa-details>` 和原生 `<details>` 中的一个 bug：导致全宽元素在详情内容中溢出 [issue:2137]
+- 修复了 `<wa-slider>` 中的一个 bug：引入了对范围元素无效的 `required` 属性 [issue:1471]
+- 修复了 `<wa-card>` 中的水平布局样式，使用无效或不匹配的 `::slotted()` 选择器用于 body 和 actions 区域 [pr:2198]
+- 修复了 `<wa-input>` 和 `<wa-combobox>` 中的 `autocorrect` 属性类型，使用 `boolean` 而不是字符串联合
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：导致在某些行高时，下行字母被裁剪 [issue:2207]
+- 修复了 `<wa-number-input>` 中的一个 bug：在触摸设备上按下步进按钮会显示虚拟键盘并移动页面
+- 修复了 `<wa-select>` 中的一个 bug：设置了初始值时无法清除 [pr:2141]
 
 :::
 
 :::changed
 
-- Improved `<wa-tree>` and `<wa-tree-item>` so all internal dimensions (labels, checkboxes, expand buttons, etc.) scale proportionally with `font-size`, making it easy to resize the tree [discuss:2147]
-- Improved `<wa-combobox>`
-  - Added `autocapitalize`, `autocorrect`, `enterkeyhint`, `inputmode`, and `spellcheck` properties to `<wa-combobox>` to support virtual keyboard customization
-  - Added `allow-create` attribute to `<wa-combobox>` that lets users create new options on the fly. When typing text that doesn't match any existing option, a "Create [value]" option appears. Selecting it adds a real `<wa-option>` to the DOM. Fires a cancelable `wa-create` event for custom handling.
-  - Added `input` event dispatching to `<wa-combobox>` when the user types, matching the behavior of `<wa-input>` and native form controls
-  - Fixed a bug in `<wa-combobox>` where custom values were not committed on blur when `allow-custom-value` was set
-  - Fixed a bug in `<wa-combobox>` where clearing the input and blurring would restore the previous selection instead of clearing the value
-  - Removed the `autocomplete` property from `<wa-combobox>` since it conflicted with the native HTML attribute
-- Improved `<wa-select>`, `<wa-combobox>`, and `<wa-option>` performance with large numbers of options by batching slot changes, caching options, and lazily rendering check icons
-- Improved `<wa-card>`: the `body` part wraps the default slot in a container instead of on the slot, preserving normal slot display and accessibility [pr:2198]
-- Improved `<wa-tab-group>`: the `body` part wraps the default slot in a container instead of on the slot, consistent with `<wa-dialog>` and `<wa-card>`
-- Updated `<wa-zoomable-frame>` with an opt-in attribute for theme syncing [pr:2165]
-- [Docs]: Updated space, gap, stack, and cluster documentation for the new tokens and utilities [issue:1606]
-- [Docs]: Updated typography and text documentation for the new tokens and utilities [issue:1606]
+- 改进了 `<wa-tree>` 和 `<wa-tree-item>`，使所有内部尺寸（标签、复选框、展开按钮等）与 `font-size` 成比例缩放，使调整树大小变得容易 [discuss:2147]
+- 改进了 `<wa-combobox>`
+  - 为 `<wa-combobox>` 添加了 `autocapitalize`、`autocorrect`、`enterkeyhint`、`inputmode` 和 `spellcheck` 属性，以支持虚拟键盘自定义
+  - 为 `<wa-combobox>` 添加了 `allow-create` 属性，允许用户动态创建新选项。当输入不匹配任何现有选项的文本时，显示 "创建 [value]" 选项。选择它会向 DOM 添加真实的 `<wa-option>`。触发可取消的 `wa-create` 事件用于自定义处理。
+  - 在用户输入时为 `<wa-combobox>` 添加了 `input` 事件触发，与 `<wa-input>` 和原生表单控件的行为匹配
+  - 修复了 `<wa-combobox>` 中的一个 bug：设置 `allow-custom-value` 时，自定义值在失焦时未提交
+  - 修复了 `<wa-combobox>` 中的一个 bug：清除输入并失焦会恢复先前选择而不是清除值
+  - 从 `<wa-combobox>` 中移除了 `autocomplete` 属性，因为它与原生 HTML 属性冲突
+- 通过批量插槽更改、缓存选项和懒惰渲染选中图标，改进了 `<wa-select>`、`<wa-combobox>` 和 `<wa-option>` 在大量选项时的性能
+- 改进了 `<wa-card>`：`body` 部件将默认插槽包裹在容器中而不是在插槽上，保持正常的插槽显示和可访问性 [pr:2198]
+- 改进了 `<wa-tab-group>`：`body` 部件将默认插槽包裹在容器中而不是在插槽上，与 `<wa-dialog>` 和 `<wa-card>` 一致
+- 使用主题同步的可选属性更新了 `<wa-zoomable-frame>` [pr:2165]
+- [文档]：为新令牌和工具更新了间距、间隙、堆栈和集群文档 [issue:1606]
+- [文档]：为新令牌和工具更新了排版和文本文档 [issue:1606]
 
 :::
 
 ## 3.3.1
 
-<small><time datetime="2026-03-04">March 4, 2026</time></small>
+<small><time datetime="2026-03-04">2026 年 3 月 4 日</time></small>
 
 :::removed
 
-- Removed a `preinstall` script in `webawesome-pro` that was causing issues in some package managers.
+- 从 {{ site.namePro }} 包中移除了导致某些包管理器中出现问题的 `preinstall` 脚本。
 
 :::
 
 ## 3.3.0
 
-<small><time datetime="2026-03-03">March 3, 2026</time></small>
+<small><time datetime="2026-03-03">2026 年 3 月 3 日</time></small>
 
 :::added
 
-- Added `<wa-chart>` and other chart types as experimental Pro components [pr:1073]
-- Added `<wa-toast>` and `<wa-toast-item>` as experimental Pro components [pr:105]
-- Added `wa-button` class for styling `<a>` elements as buttons [pr:2040]
-- Added `--popup-border-width` parameter to `<wa-popup>`. This must be set to match the width of any border added to the popup element [pr:2070]
-- Added `start` and `end` slots to `<wa-badge>` [pr:2082]
+- 添加了 `<wa-chart>` 和其他图表类型作为实验性 Pro 组件 [pr:1073]
+- 添加了 `<wa-toast>` 和 `<wa-toast-item>` 作为实验性 Pro 组件 [pr:105]
+- 添加了 `wa-button` 类，用于将 `<a>` 元素样式化为按钮 [pr:2040]
+- 为 `<wa-popup>` 添加了 `--popup-border-width` 参数。必须设置此参数以匹配添加到弹出元素的任何边框宽度 [pr:2070]
+- 为 `<wa-badge>` 添加了 `start` 和 `end` 插槽 [pr:2082]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-switch>` and `<wa-checkbox>` not rendering properly on first load [pr:2105]
-- Fixed a bug in `<wa-drawer>` and `<wa-dialog>` where it was attempting to register global event listeners in server environments. [pr:2105]
-- Fixed a bug in `<wa-textarea>` and `<wa-input>` where the internally rendered form controls were not resetting their value properly. [pr:2105]
-- Fixed a bug in HasSlotController where it would attempt to call APIs not available on the server. [pr:2105]
-- Fixed a bug in `<wa-page>` where it was attempting to insert styles during SSR with unsupported APIs. [issue:1862]
-- Fixed a bug in `<wa-page>` where the hamburger navigation would show up if there was no slot content. [issue:1601]
-- Fixed a bug in `<wa-dropdown-item>` where a click event would fire on `disabled`. [pr:2023]
-- Fixed a bug in the custom elements manifest where events may not have a name. [pr:2026]
-- Fixed a bug in `<wa-select>` where options with `selected` set via framework property binding (e.g., Vue's `:selected`) were not respected when `with-clear` was present [pr:1985]
-- Fixed a bug in `<wa-radio-group>`, `<wa-slider>`, `<wa-checkbox>`, and `<wa-switch>` to align with how browsers differentiate attributes vs properties. [pr:2105]
-- Fixed a bug in `<wa-input>` where it stays invalid when updating value property. [pr:2105]
-- Fixed a bug `<wa-color-picker>` that prevented it from flipping horizontally when position to the right of the viewport. [pr:2024]
-- Fixed a bug by adding `color: inherit` to the `<wa-dialog>` and `<wa-drawer>` styles so they inherit the text color from the document context rather than the browser default. [pr:2064]
-- Fixed a bug that caused 0ms animations to not fire correctly in the internal `animateWithClass()` function [pr:2068]
-- Fixed a bug that caused `<wa-dropdown>` elements to scroll the document in Chrome 145
-- Fixed a bug in native styles so `border-radius` does not apply to `svg` elements by default [pr:2078]
-- Fixed a bug in `<wa-popup>` that caused arrows to point the wrong direction for `-start` and `-end` placements
-- Fixed a bug in `<wa-split-panel>` that caused a ResizeObserver error in Chromium-based browser when resizing the primary panel [issue:2018]
-- Fixed a bug that caused the `Escape` key to close more than just the active dismissible component when nested inside other dismissible elements [pr:2096]
-- Fixed a bug that forced a box-sizing opinion on host elements
+- 修复了 `<wa-switch>` 和 `<wa-checkbox>` 首次加载时未正确渲染的 bug [pr:2105]
+- 修复了 `<wa-drawer>` 和 `<wa-dialog>` 中的一个 bug：在服务器环境中尝试注册全局事件监听器 [pr:2105]
+- 修复了 `<wa-textarea>` 和 `<wa-input>` 中的一个 bug：内部渲染的表单控件未正确重置其值 [pr:2105]
+- 修复了 HasSlotController 中的一个 bug：尝试调用服务器上不可用的 API [pr:2105]
+- 修复了 `<wa-page>` 中的一个 bug：在 SSR 期间尝试使用不受支持的 API 插入样式 [issue:1862]
+- 修复了 `<wa-page>` 中的一个 bug：没有插槽内容时，汉堡导航会显示 [issue:1601]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：`disabled` 时 `click` 事件会触发 [pr:2023]
+- 修复了自定义元素清单中的一个 bug：事件可能没有名称 [pr:2026]
+- 修复了 `<wa-select>` 中的一个 bug：当存在 `with-clear` 时，通过框架属性绑定（如 Vue 的 `:selected`）设置的 `selected` 选项未被尊重 [pr:1985]
+- 修复了 `<wa-radio-group>`、`<wa-slider>`、`<wa-checkbox>` 和 `<wa-switch>` 中的一个 bug，以与浏览器区分属性与属性的方式保持一致 [pr:2105]
+- 修复了 `<wa-input>` 中的一个 bug：更新 value 属性时保持无效 [pr:2105]
+- 修复了 `<wa-color-picker>` 中的一个 bug：当位置在视口右侧时，阻止其水平翻转 [pr:2024]
+- 修复了一个 bug，通过为 `<wa-dialog>` 和 `<wa-drawer>` 样式添加 `color: inherit`，使它们从文档上下文而不是浏览器默认值继承文本颜色 [pr:2064]
+- 修复了内部 `animateWithClass()` 函数中的一个 bug：导致 0ms 动画无法正确触发 [pr:2068]
+- 修复了导致 `<wa-dropdown>` 元素在 Chrome 145 中滚动文档的 bug
+- 修复了 Native Styles 中的一个 bug：`border-radius` 默认不应用于 `svg` 元素 [pr:2078]
+- 修复了 `<wa-popup>` 中的一个 bug：`-start` 和 `-end` 位置的箭头指向错误方向
+- 修复了 `<wa-split-panel>` 中的一个 bug：在 Chromium 浏览器中调整主面板大小时导致 ResizeObserver 错误 [issue:2018]
+- 修复了一个 bug：当嵌套在其他可关闭元素中时，`Escape` 键关闭了多个活动的可关闭组件 [pr:2096]
+- 修复了对宿主元素强制 box-sizing 偏好的 bug
 
 :::
 
 :::changed
 
-- Updated `<wa-icon>` to use [{{ site.siblings.fontAwesome.name }} 7.2.0](https://fontawesome.com/changelog#v7-2-0) [pr:2059]
-- Updated `<wa-popup>` arrow styling to prevent larger sized arrow from overlapping the contents of the popup [pr:2070]
+- 更新了 `<wa-icon>`，以使用 [{{ site.siblings.fontAwesome.name }} 7.2.0](https://fontawesome.com/changelog#v7-2-0) [pr:2059]
+- 更新了 `<wa-popup>` 箭头样式，以防止较大尺寸的箭头与弹出内容重叠 [pr:2070]
 
 :::
 
 ## 3.2.1
 
-<small><time datetime="2026-02-04">February 4, 2026</time></small>
+<small><time datetime="2026-02-04">2026 年 2 月 4 日</time></small>
 
 :::fixed
 
-- Fixed a bug in the build script causing `llms.txt` and `dist/skills` to be omitted from {{ site.namePro }} packages. [pr:2022]
+- 修复了构建脚本中的一个 bug：导致 `llms.txt` 和 `dist/skills` 从 {{ site.namePro }} 包中遗漏 [pr:2022]
 
 :::
 
 ## 3.2.0
 
-<small><time datetime="2026-02-04">February 4, 2026</time></small>
+<small><time datetime="2026-02-04">2026 年 2 月 4 日</time></small>
 
 :::added
 
-- Added `<wa-file-input>` as an experimental pro component [issue:1240]
-- Added `<wa-sparkline>` as an experimental pro component
-- Added `<wa-number-input>` as an experimental component for numeric input with stepper buttons [issue:1688]
-- Added [Agent Skill](/docs/ai/agent-skills) for AI coding assistants following the [agentskills.io](https://agentskills.io/) specification
-- Added llms.txt to assist AI agents with using Web Awesome [discuss:1100]
-- Added types for Vue and Svelte generated by CEM
-- Added `pointercancel` and `touchcancel` event handling to draggable elements to prevent drags from getting stuck
-- Added `wa-justify-content-*` utility classes [pr:1930]
-- Added `wa-flex-wrap` utility classes [pr:1994]
-- Added missing `wa-gap-4xl` utility class [pr:1931]
-- Added `track` and `indicator` CSS parts to `<wa-progress-ring>` [pr:1863]
-- Added rotation, flip, and animation support to `<wa-icon>` with `rotate`, `flip`, and `animation` attributes supporting {{ site.siblings.fontAwesome.name }}'s animation utilities [pr:1824]
-- Added the ability to disable link buttons in `<wa-button>` [pr:1848]
-- [Docs]: Included framework specific documentation for Svelte, Vue, and Angular [pr:1895]
+- 添加了 `<wa-file-input>` 作为实验性 Pro 组件 [issue:1240]
+- 添加了 `<wa-sparkline>` 作为实验性 Pro 组件
+- 添加了 `<wa-number-input>` 作为实验性组件，用于带步进按钮的数值输入 [issue:1688]
+- 添加了 [代理技能](/docs/ai/agent-skills)，供遵循 [agentskills.io](https://agentskills.io/) 规范的 AI 编码助手使用
+- 添加了 llms.txt 以协助 AI 助手使用 Web Awesome [discuss:1100]
+- 添加了 CEM 生成的 Vue 和 Svelte 类型
+- 为可拖动元素添加了 `pointercancel` 和 `touchcancel` 事件处理，以防止拖动卡住
+- 添加了 `wa-justify-content-*` 工具类 [pr:1930]
+- 添加了 `wa-flex-wrap` 工具类 [pr:1994]
+- 添加了缺失的 `wa-gap-4xl` 工具类 [pr:1931]
+- 为 `<wa-progress-ring>` 添加了 `track` 和 `indicator` CSS 部件 [pr:1863]
+- 为 `<wa-icon>` 添加了旋转、翻转和动画支持，带有支持 {{ site.siblings.fontAwesome.name }} 的动画工具的 `rotate`、`flip` 和 `animation` 属性 [pr:1824]
+- 添加了禁用 `<wa-button>` 中链接按钮的能力 [pr:1848]
+- [文档]：包含了 Svelte、Vue 和 Angular 的特定框架文档 [pr:1895]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-select>` where the `selected` attribute on `<wa-option>` was ignored when `with-clear` was present [#1922]
-- Fixed a bug in `<wa-popover>` where the popover closed unexpectedly when clicked inside while it is declared in a shadow DOM [pr:1969]
-- Fixed a bug in `<wa-tag>` where the icon color was mismatched with the tag's `appearance` [pr:1814]
-- Fixed a bug in `<wa-animated-image>`, `<wa-carousel>`, `<wa-progress-ring>`, `<wa-slider>` that violated the `style-src-attr` CSP directive when enabled [pr:1937]
-- Fixed a bug in `<wa-icon>` to support Font Awesome Pro+ icon families that include qualifiers (e.g., `family="jelly-duo"` now works correctly instead of requiring `family="jelly" variant="duo-regular"`) and updated Font Awesome to 7.1.0
-- Fixed a bug in `<wa-icon>` where Bootstrap icon sizes were overwritten [pr:1968]
-- Fixed a bug in `<wa-tooltip>` where safe triangles were not respected [pr:1967]
-- Fixed a bug in `<wa-dropdown>` where submenu detection would not work in shadow DOM [pr:1956]
-- Fixed a bug in `<wa-popup>` and `<wa-dropdown-item>` that caused an error when removing a popup while it was opening [issue:1910]
-- Fixed a bug in `<wa-popup>` and `<wa-dropdown>` that caused errors when shadow DOM queries returned null [issue:1911]
-- Fixed a bug in `<wa-combobox>` that prevented the listbox from opening when options were preselected [issue:1883]
-- Fixed a bug in draggable elements that caused a TypeError on `touchend` events when `event.touches` was empty
-- Fixed a bug in `<wa-tree-item>` that caused the cursor to show a pointer when no expand icon was present [pr:1936]
-- Fixed a bug in `<wa-tree-item>` that caused the chevron to render the wrong direction in RTL [pr:1798]
-- Fixed a bug in `<wa-button>` that caused `<wa-dropdown>` elements to close immediately after opening when placed inside a `<form>` element [pr:1996]
-- Fixed a bug in `<wa-radio-group>` where `<wa-radio>` elements with an explicit size would be overridden by the radio group even when the group had no size set [pr:2005]
-- Fixed a bug in `<wa-radio-group>` that caused radio sizes to not work as documented [issue:2001]
-- Fixed a bug in `<wa-popover>` that caused event handlers to be lost when moving the host element around in the DOM [pr:1976]
-- Fixed a bug preventing the `wa-visually-hidden-label` class from hiding labels for radio groups and color pickers [pr:2012]
+- 修复了 `<wa-select>` 中的一个 bug：当存在 `with-clear` 时，`<wa-option>` 上的 `selected` 属性被忽略 [issue:1922]
+- 修复了 `<wa-popover>` 中的一个 bug：在 shadow DOM 中声明时，点击内部时会意外关闭 [pr:1969]
+- 修复了 `<wa-tag>` 中的一个 bug：图标颜色与标签的 `appearance` 不匹配 [pr:1814]
+- 修复了 `<wa-animated-image>`、`<wa-carousel>`、`<wa-progress-ring>`、`<wa-slider>` 中的一个 bug：启用时违反了 `style-src-attr` CSP 指令 [pr:1937]
+- 修复了 `<wa-icon>` 中的一个 bug：支持包含限定符的 Font Awesome Pro+ 图标族（例如 `family="jelly-duo"` 现在正常工作，而不需要 `family="jelly" variant="duo-regular"`），并将 Font Awesome 更新为 7.1.0
+- 修复了 `<wa-icon>` 中的一个 bug：Bootstrap 图标大小被覆盖 [pr:1968]
+- 修复了 `<wa-tooltip>` 中的一个 bug：安全三角形未被尊重 [pr:1967]
+- 修复了 `<wa-dropdown>` 中的一个 bug：子菜单检测在 shadow DOM 中无法工作 [pr:1956]
+- 修复了 `<wa-popup>` 和 `<wa-dropdown-item>` 中的一个 bug：在弹出打开时移除弹出时导致错误 [issue:1910]
+- 修复了 `<wa-popup>` 和 `<wa-dropdown>` 中的一个 bug：当 shadow DOM 查询返回 null 时导致错误 [issue:1911]
+- 修复了 `<wa-combobox>` 中的一个 bug：当选项被预选时阻止列表框打开 [issue:1883]
+- 修复了可拖动元素中的一个 bug：`event.touches` 为空时，`touchend` 事件上的 TypeError
+- 修复了 `<wa-tree-item>` 中的一个 bug：没有展开图标时，光标显示为指针 [pr:1936]
+- 修复了 `<wa-tree-item>` 中的一个 bug：在 RTL 中 chevron 渲染为错误方向 [pr:1798]
+- 修复了 `<wa-button>` 中的一个 bug：放在 `<form>` 元素内时，导致 `<wa-dropdown>` 元素打开后立即关闭 [pr:1996]
+- 修复了 `<wa-radio-group>` 中的一个 bug：即使组没有设置大小，具有显式大小的 `<wa-radio>` 元素会被组覆盖 [pr:2005]
+- 修复了 `<wa-radio-group>` 中的一个 bug：导致单选大小不符合文档工作 [issue:2001]
+- 修复了 `<wa-popover>` 中的一个 bug：当在 DOM 中移动宿主元素时，事件处理程序会丢失 [pr:1976]
+- 修复了一个 bug：阻止 `wa-visually-hidden-label` 类隐藏单选组和颜色选择器的标签 [pr:2012]
 
 :::
 
 :::changed
 
-- [Docs]: component APIs like slots, state, methods, etc, are now alphabetized [pr:1895]
-- [Docs]: component APIs now properly check their inheritance chain [pr:1895]
-- Improved the Persian translation [pr:1923]
-- Improved `<wa-qr-code>` to use CSS `color` for fill and `background-color` on the host for background [pr:1991]
-  - Deprecated the `fill` and `background` attributes
-  - Existing implementations now correctly adapt to light/dark mode automatically
-  - When using CSS, the QR code will now adapt to `color` and `background` color changes automatically
-- Modified `wa-align-items-*` utility classes to apply `display: flex` by default [pr:1943]
+- [文档]：组件 API（如插槽、状态、方法等）现在按字母顺序排列 [pr:1895]
+- [文档]：组件 API 现在正确检查其继承链 [pr:1895]
+- 改进了波斯语翻译 [pr:1923]
+- 改进了 `<wa-qr-code>`，在宿主上使用 CSS `color` 作为填充，`background-color` 作为背景 [pr:1991]
+  - 弃用了 `fill` 和 `background` 属性
+  - 现有实现现在正确自动适应浅色/深色模式
+  - 使用 CSS 时，二维码现在会自动适应 `color` 和 `background-color` 更改
+- 修改了 `wa-align-items-*` 工具类，默认应用 `display: flex` [pr:1943]
 
 :::
 
 ## 3.1.0
 
-<small><time datetime="2025-12-16">December 16, 2025</time></small>
+<small><time datetime="2025-12-16">2025 年 12 月 16 日</time></small>
 
 :::added
 
-- Added `<wa-combobox>` as an experimental pro component [issue:1074]
-- Added version 2.0.0 of the [official Web Awesome Figma Design Kit](/docs/resources/figma)
-- Added npm support for {{ site.namePro }}
-- Added `layers.css` to define cascade layer order and updated palettes, themes, native styles, and utilities to import the new rule for more fail-safe modularity [pr:1793]
+- 添加了 `<wa-combobox>` 作为实验性 Pro 组件 [issue:1074]
+- 添加了 [官方 Web Awesome Figma 设计套件](/docs/resources/figma) 的 2.0.0 版
+- 添加了对 {{ site.namePro }} 的 npm 支持
+- 添加了 `layers.css` 以定义级联层顺序，并更新了调色板、主题、原生样式和工具以导入新规则以获得更安全的模块化 [pr:1793]
 
 :::
 
 :::fixed
 
-- [PRO]: Fixed a few sizing bugs in `<wa-page>` and `slot="footer"` no longer will always "overflow" the container.
-- Fixed a bug in `<wa-slider>` that caused some touch devices to end up with the incorrect value [issue:1703]
-- Fixed a bug in `<wa-card>` that prevented some slots from being detected correctly [discuss:1450]
-- Fixed a z-index bug in `<wa-scroller>` styles [issue:1724]
-- Fixed a bug in `<wa-icon>` that caused some icon libraries to render with the incorrect SVG fill [issue:1733]
-- Fixed a bug in `<wa-tree-item>` that caused the spinner to not show when lazy loading [issue:1678]
-- Fixed a bug in `<wa-dropdown>` that caused the browser to hang when cancelling the `wa-hide` event [issue:1483]
-- Fixed a bug in `<wa-tab-group>` that ensures the active indicator always shows [issue:1206]
-- Fixed a bug in `<wa-dropdown-item>` that prevented the icon dependency from being imported [issue:1825]
-- Fixed a bug in `<wa-select>` that prevented clicks on the tag's remove button from removing options in multiple mode
-- Fixed a bug in `<wa-select>` that caused tags to appear in alphabetical order instead of selection order when using `multiple`
-- Fixed a bug in Web Awesome form controls that caused `<wa-input form="foo">` to set the form property to equal `"foo"` instead of returning an `HTMLFormElement` breaking platform expectations. [pr:1815]
-- Fixed a bug in `<wa-button>` causing it to not copy over attributes for form submissions. [pr:1815]
-- Fixed a bug where the build script was not building `/dist/(utilities|events).js` [pr:1816]
+- [Pro]：修复了 `<wa-page>` 中的几个大小 bug，`slot="footer"` 不再总是"溢出"容器。
+- 修复了 `<wa-slider>` 中的一个 bug：导致某些触摸设备最终具有不正确的值 [issue:1703]
+- 修复了 `<wa-card>` 中的一个 bug：防止某些插槽被正确检测到 [discuss:1450]
+- 修复了 `<wa-scroller>` 样式中的 z-index bug [issue:1724]
+- 修复了 `<wa-icon>` 中的一个 bug：导致某些图标库以不正确的 SVG 填充渲染 [issue:1733]
+- 修复了 `<wa-tree-item>` 中的一个 bug：在延迟加载时微调器不显示 [issue:1678]
+- 修复了 `<wa-dropdown>` 中的一个 bug：在取消 `wa-hide` 事件时，浏览器挂起 [issue:1483]
+- 修复了 `<wa-tab-group>` 中的一个 bug：确保活动指示器始终显示 [issue:1206]
+- 修复了 `<wa-dropdown-item>` 中的一个 bug：防止导入图标依赖 [issue:1825]
+- 修复了 `<wa-select>` 中的一个 bug：在多选模式下，阻止点击标签的删除按钮删除选项
+- 修复了 `<wa-select>` 中的一个 bug：在使用 `multiple` 时，标签按字母顺序出现而不是选择顺序
+- 修复了 Web Awesome 表单控件中的一个 bug：导致 `<wa-input form="foo">` 将表单属性设置为等于 `"foo"` 而不是返回打破平台预期的 `HTMLFormElement` [pr:1815]
+- 修复了 `<wa-button>` 中的一个 bug：阻止其没有为表单提交复制属性 [pr:1815]
+- 修复了构建脚本未构建 `/dist/(utilities|events).js` 的 bug [pr:1816]
 
 :::
 
 :::changed
 
-- Improved performance of `<wa-icon>` so initial rendering occurs faster, especially with multiple icons on the page [issue:1729]
-- Improved `<wa-slider>` to not throw an error when string values are passed to the `min`, `max`, and `step` properties [issue:1823]
-- Improved performance of all components by fixing how CSS is imported and reused [issue:1812]
-- Modified the default `transition` styles of `<wa-dropdown-item>` to use design tokens [pr:1693]
+- 改进了 `<wa-icon>` 的性能，使初始渲染更快，尤其是在页面上有多个图标时 [issue:1729]
+- 改进了 `<wa-slider>`，当将字符串值传递给 `min`、`max` 和 `step` 属性时不会抛出错误 [issue:1823]
+- 通过修复 CSS 导入和重用方式，改进了所有组件的性能 [issue:1812]
+- 修改了 `<wa-dropdown-item>` 的默认 `transition` 样式以使用设计令牌 [pr:1693]
 
 :::
 
 ## 3.0.0
 
-<small><time datetime="2025-12-02">December 2, 2025</time></small>
+<small><time datetime="2025-12-02">2025 年 12 月 2 日</time></small>
 
 :::breaking
 
-- 🚨 BREAKING: Changed `appearance="filled outlined"` to `appearance="filled-outlined"` in the following elements [issue:1127]
+- 🚨 重大更改：在以下元素中将 `appearance="filled outlined"` 更改为 `appearance="filled-outlined"` [issue:1127]
   - `<wa-button>`
   - `<wa-callout>`
   - `<wa-card>`
@@ -440,66 +440,66 @@ These are still finding their shape. APIs can change between minor versions, so 
   - `<wa-select>`
   - `<wa-tag>`
   - `<wa-textarea>`
-- 🚨 BREAKING: Fixed a bug where `base` and `input` parts were swapped in `<wa-input>` [issue:1646]
+- 🚨 重大更改：修复了 `<wa-input>` 中 `base` 和 `input` 部件交换的 bug [issue:1646]
 
 :::
 
 :::added
 
-- Added the Kazakh translation [pr:1496]
-- Added docs for code completion for VS Code and JetBrains [pr:1550]
-- Added back the missing `form-control-label` part to `<wa-textarea>` for consistency with other form controls [pr:1533]
-- Added focus delegation to `<wa-button>` to ensure tabbing works properly when using `tabindex` [issue:1622]
-- Added [text utilities](/docs/utilities/text/) for longform text, form control text, font sizes, font weights, text color, and truncation [pr:1602]
-- Added version 1.0.0 of the [official Web Awesome Figma Design Kit](/docs/resources/figma)
+- 添加了哈萨克语翻译 [pr:1496]
+- 添加了 VS Code 和 JetBrains 的代码补全文档 [pr:1550]
+- 为 `<wa-textarea>` 重新添加了缺失的 `form-control-label` 部件，以便与其他表单控件保持一致 [pr:1533]
+- 为 `<wa-button>` 添加了焦点委托，以确保使用 `tabindex` 时 tab 键正常工作 [issue:1622]
+- 添加了 [文本工具](/docs/utilities/text/)，用于长文本、表单控件文本、字体大小、字体粗细、文本颜色和截断 [pr:1602]
+- 添加了 [官方 Web Awesome Figma 设计套件](/docs/resources/figma) 的 1.0.0 版
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-button>` where slotted badges weren't properly positioned in buttons with an `href` [issue:1377]
-- Fixed focus outline styles in `<wa-details>` and native `<details>` [issue:1456]
-- Fixed focus outline styles in `<wa-scroller>`, `<wa-dialog>`, and `<wa-drawer>` [issue:1484]
-- Fixed a bug in `<wa-checkbox>` where its value would revert to `""` when checked / unchecked [pr:1547]
-- Fixed a bug that caused icon button labels to not render in frameworks [issue:1542]
-- Fixed a bug in `<wa-details>` that caused the `name` property not to reflect [pr:1538]
-- Fixed a bug in `<wa-dialog>` and `<wa-drawer>` that prevented focus from being set on the dialog/drawer when opened [issue:1302]
-- Fixed an overflow style that was causing tab group content to be unnecessarily truncated [issue:1401]
-- Fixed a bug in `<wa-icon>` that caused icon buttons to render when non-text nodes were slotted in [issue:1475]
-- Fixed a bug in `<wa-tooltip>` that prevented tooltips from showing when disconnecting and then reconnecting to the DOM [issue:1595]
-- Fixed a bug that caused the required `*` in form labels to have incorrect spacing in `<wa-checkbox>` and `<wa-switch>` [issue:1472]
-- Fixed a bug in `<wa-dialog>` and `<wa-drawer>` that caused the component to prematurely hide when certain child elements are used [pr:1636]
-- Fixed a bug in `<wa-popover>` and `<wa-tooltip>` that prevented dots and other valid ID characters from being used [issue:1648]
-- [Pro] Fixed a bug in `<wa-page>` that caused menu and aside content to reserve space for slots with `disable-sticky`
-- Fixed incorrect docs for the `wa-include-error` event which is dispatched by `<wa-include>` [issue:1663]
-- Fixed a bug in `<wa-card>` where slotted header and footer content wasn't properly aligned [pr:1435]
+- 修复了 `<wa-button>` 中的一个 bug：当有 `href` 时，带槽的徽章没有正确定位 [issue:1377]
+- 修复了 `<wa-details>` 和原生 `<details>` 中的焦点轮廓样式 [issue:1456]
+- 修复了 `<wa-scroller>`、`<wa-dialog>` 和 `<wa-drawer>` 中的焦点轮廓样式 [issue:1484]
+- 修复了 `<wa-checkbox>` 中的一个 bug：其值在选中/未选中时恢复为 `""` [pr:1547]
+- 修复了一个 bug：导致图标按钮标签在框架中未渲染 [issue:1542]
+- 修复了 `<wa-details>` 中的一个 bug：`name` 属性未反映 [pr:1538]
+- 修复了 `<wa-dialog>` 和 `<wa-drawer>` 中的一个 bug：阻止在打开时将焦点设置在对话框/抽屉上 [issue:1302]
+- 修复了一个溢出样式：导致选项卡组内容被不必要截断 [issue:1401]
+- 修复了 `<wa-icon>` 中的一个 bug：当非文本节点被放入插槽时，导致图标按钮渲染 [issue:1475]
+- 修复了 `<wa-tooltip>` 中的一个 bug：防止在断开连接然后重新连接到 DOM 时，工具提示显示 [issue:1595]
+- 修复了一个 bug：导致表单标签中必需的 `*` 在 `<wa-checkbox>` 和 `<wa-switch>` 中有不正确的间距 [issue:1472]
+- 修复了 `<wa-dialog>` 和 `<wa-drawer>` 中的一个 bug：当使用某些子元素时，导致组件提前隐藏 [pr:1636]
+- 修复了 `<wa-popover>` 和 `<wa-tooltip>` 中的一个 bug：阻止使用点和其他有效的 ID 字符 [issue:1648]
+- [Pro] 修复了 `<wa-page>` 中的一个 bug：导致菜单和侧边栏内容为带有 `disable-sticky` 的插槽预留空间
+- 修复了 `<wa-include>` 派发的 `wa-include-error` 事件的不正确文档 [issue:1663]
+- 修复了 `<wa-card>` 中的一个 bug：带槽的页眉和页脚内容没有正确对齐 [pr:1435]
 
 :::
 
 :::changed
 
-- Improved autofill styles in `<wa-input>` so they span the entire width of the visual input [issue:1439]
-- Improved [text utilities](/docs/utilities/text/) so that each size modifier always exactly matches the applied font size [pr:1602]
-- Improved Native Styles to use the `--wa-font-weight-code` design token
-- Modified `<wa-slider>` to only show the tooltip on the handle being dragged when in range mode [issue:1320]
-- Upgraded `<wa-page>` from _experimental_ to _stable_
+- 改进了 `<wa-input>` 中的自动填充样式，使其跨整个视觉输入宽度 [issue:1439]
+- 改进了 [文本工具](/docs/utilities/text/)，使每个大小修饰符始终与应用的字体大小完全匹配 [pr:1602]
+- 改进了 Native Styles 以使用 `--wa-font-weight-code` 设计令牌
+- 修改了 `<wa-slider>`，在范围模式下仅在被拖动的手柄上显示工具提示 [issue:1320]
+- 将 `<wa-page>` 从 _实验性_ 升级为 _稳定_
 
 :::
 
-## Pre-release Versions
+## 预发布版本
 
-Betas, release candidates, and snapshots from before each major release.
+每个主要版本之前的 Beta 版本候选版本和快照。
 
 <details data-no-outline>
 
-<summary>Show all pre-release versions</summary>
+<summary>显示所有预发布版本</summary>
 
 ## 3.0.0-beta.6
 
 :::fixed
 
-- Fixed a bug in `<wa-dropdown>` that closed the dropdown event when preventing `wa-select` [issue:1432]
-- Pin `@ctrl/tinycolor` to `4.1.0` due to malware in `4.1.1` and `4.1.2`. <https://socket.dev/npm/package/@ctrl/tinycolor/overview/4.1.1>
+- 修复了 `<wa-dropdown>` 中的一个 bug：在阻止 `wa-select` 时关闭下拉事件 [issue:1432]
+- 由于 `4.1.1` 和 `4.1.2` 中存在恶意软件，将 `@ctrl/tinycolor` 固定为 `4.1.0`。<https://socket.dev/npm/package/@ctrl/tinycolor/overview/4.1.1>
 
 :::
 
@@ -507,43 +507,43 @@ Betas, release candidates, and snapshots from before each major release.
 
 :::breaking
 
-- 🚨 BREAKING: Updated `<wa-icon>` to use {{ site.siblings.fontAwesome.name }} 7 [pr:1222]
-  - Added the `auto-width` attribute to automatically size icons, since FA7 is fixed-width by default now
-  - Changed the default width of icons to `1.25em` to match FA7's fixed-width proportions
-  - Improved support for duotone icons in `<wa-icon>`, including custom colors, custom opacity, and opacity swapping
-  - Removed the `fixed-width` attribute as it's now the default behavior
-- 🚨 BREAKING: Renamed the `icon-position` attribute to `icon-placement` in `<wa-details>` [discuss:1340]
-- 🚨 BREAKING: Removed the `size` attribute from `<wa-button-group>` as it only set the initial size and gets out of sync when buttons are updated (apply a `size` to each button instead)
+- 🚨 重大更改：更新了 `<wa-icon>` 以使用 {{ site.siblings.fontAwesome.name }} 7 [pr:1222]
+  - 添加了 `auto-width` 属性以自动调整图标大小，因为 FA7 现在默认为固定宽度
+  - 将图标的默认宽度更改为 `1.25em`，以匹配 FA7 的固定宽度比例
+  - 改进了 `<wa-icon>` 中双色调图标的支持，包括自定义颜色、自定义不透明度和不透明度交换
+  - 删除了 `fixed-width` 属性，因为它现在是默认行为
+- 🚨 重大更改：在 `<wa-details>` 中将 `icon-position` 属性重命名为 `icon-placement` [discuss:1340]
+- 🚨 重大更改：从 `<wa-button-group>` 中删除了 `size` 属性，因为它只设置初始大小，并且按钮更新时会不同步（改为将 `size` 应用于每个按钮）
 
 :::
 
 :::added
 
-- Added the `<wa-intersection-observer>` component
-- Added the Hindi translation [pr:1307]
-- Added `--show-duration` and `--hide-duration` to `<wa-select>` [issue:1281]
-- Added horizontal orientation support with `orientation="horizontal"` for `<wa-card>`
+- 添加了 `<wa-intersection-observer>` 组件
+- 添加了印地语翻译 [pr:1307]
+- 为 `<wa-select>` 添加了 `--show-duration` 和 `--hide-duration` [issue:1281]
+- 为 `<wa-card>` 添加了水平方向支持，使用 `orientation="horizontal"`
 
 :::
 
 :::fixed
 
-- Fixed incorrectly named exported tooltip parts in `<wa-slider>` [pr:1277]
-- Fixed a bug in `<wa-dropdown>` that caused menus to overflow the viewport instead of resizing [issue:1267]
-- Fixed a bug in `<wa-dropdown>` that prevented keyboard selection of items when nested in shadow roots [issue:1270]
-- Fixed a bug in `<wa-dropdown>` that prevented items passed in from slots from being detected [issue:1271]
-- Fixed a bug in JSX typings that prevented the types file from being exported [pr:1295]
-- Fixed a bug in JSX typings that generated the incorrect component imports [issue:1303]
-- Fixed a bug in `<wa-slider>` that prevented the thumb from receiving focus when clicking/tapping [issue:1312]
-- Fixed a bug in `<wa-scroller>` that caused the shadow to appear below relatively-positioned elements [issue:1326]
-- Fixed a bug in `<wa-details>` that caused it to expand/collapse when clicking on interactive elements in the summary [issue:1252]
-- Fixed `<wa-button>` to have `static` positioning by default and `relative` positioning only when used with `<wa-badge>` [pr:1346]
-- Fixed spacing in `<wa-input>` when both clear and password toggle icons are present [issue:1325]
-- Fixed a bug in `<wa-radio-group>` and `<wa-radio>` where changing appearances dynamically would render incorrectly [issue:1178]
-- Fixed a bug in `<wa-input>` that prevented the value from changing when assigning non-string values to `value` [issue:1323]
-- Fixed a bug in `<wa-color-picker>` that prevent the picker from staying in the viewport
-- Fixed a bug that in `<wa-icon>` that caused `library`, `family`, `variant` and `name` to not reflect [pr:#1395]
-- Fixed a bug in `<wa-format-date>` and `<wa-relative-time>` that caused spaces to appear before and after the output [#1417]
+- 修复了 `<wa-slider>` 中错误命名的导出工具提示部件 [pr:1277]
+- 修复了 `<wa-dropdown>` 中的一个 bug：导致菜单溢出视口而不是调整大小 [issue:1267]
+- 修复了 `<wa-dropdown>` 中的一个 bug：在嵌套在 shadow root 中时阻止键盘选择项 [issue:1270]
+- 修复了 `<wa-dropdown>` 中的一个 bug：阻止从插槽传入的项被检测到 [issue:1271]
+- 修复了 JSX 类型中的一个 bug：阻止类型文件被导出 [pr:1295]
+- 修复了 JSX 类型中的一个 bug：生成不正确的组件导入 [issue:1303]
+- 修复了 `<wa-slider>` 中的一个 bug：在点击/轻按时阻止拇指获得焦点 [issue:1312]
+- 修复了 `<wa-scroller>` 中的一个 bug：导致阴影出现在相对定位的元素下方 [issue:1326]
+- 修复了 `<wa-details>` 中的一个 bug：在摘要中点击交互式元素时导致展开/折叠 [issue:1252]
+- 修复了 `<wa-button>` 默认具有 `static` 定位，仅在与 `<wa-badge>` 一起使用时才具有 `relative` 定位 [pr:1346]
+- 修复了 `<wa-input>` 中的间距，当同时存在清除和密码切换图标时 [issue:1325]
+- 修复了 `<wa-radio-group>` 和 `<wa-radio>` 中的一个 bug：动态更改外观时渲染不正确 [issue:1178]
+- 修复了 `<wa-input>` 中的一个 bug：在将非字符串值分配给 `value` 时阻止值更改 [issue:1323]
+- 修复了 `<wa-color-picker>` 中的一个 bug：防止选择器保持在视口中
+- 修复了 `<wa-icon>` 中的一个 bug：`library`、`family`、`variant` 和 `name` 未反映 [pr:#1395]
+- 修复了 `<wa-format-date>` 和 `<wa-relative-time>` 中的一个 bug：在输出前后出现空格 [#1417]
 
 :::
 
@@ -551,21 +551,21 @@ Betas, release candidates, and snapshots from before each major release.
 
 :::added
 
-- Added the `icon-position` attribute to `<wa-details>` [discuss:1099]
-- Added the `animating` custom state to `<wa-details>` [pr:1214]
-- Added `--wa-tooltip-border-color`, `--wa-tooltip-border-style`, and `--wa-tooltip-border-width` tokens [issue:1224]
-- Added the `without-arrow` attribute to `<wa-popover>` and `<wa-tooltip>` to hide arrows without artifacts
-- Added JSX types for use with React and others [pr:1256]
-- Added `<input type="file">` to native styles [pr:1279]
+- 为 `<wa-details>` 添加了 `icon-position` 属性 [discuss:1099]
+- 为 `<wa-details>` 添加了 `animating` 自定义状态 [pr:1214]
+- 添加了 `--wa-tooltip-border-color`、`--wa-tooltip-border-style` 和 `--wa-tooltip-border-width` 令牌 [issue:1224]
+- 为 `<wa-popover>` 和 `<wa-tooltip>` 添加了 `without-arrow` 属性，以在没有瑕疵的情况下隐藏箭头
+- 添加了 React 和其他库的 JSX 类型 [pr:1256]
+- 将 `<input type="file">` 添加到原生样式 [pr:1279]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-details>` that caused the content to overflow the container when animating [issue:1149]
-- Fixed a bug in `<wa-dialog>` and `<wa-drawer>` that prevented the header from showing when the label was missing [issue:1209]
-- Fixed a missing dependency required for React wrappers
-- Fixed missing `:hover` and `:active` styles on native buttons without an appearance modifier class
+- 修复了 `<wa-details>` 中的一个 bug：在动画时导致内容溢出容器 [issue:1149]
+- 修复了 `<wa-dialog>` 和 `<wa-drawer>` 中的一个 bug：缺少标签时阻止标题显示 [issue:1209]
+- 修复了 React 包装器所需的缺失依赖项
+- 修复了没有外观修饰符类的原生按钮上缺少的 `:hover` 和 `:active` 样式
 
 :::
 
@@ -573,28 +573,28 @@ Betas, release candidates, and snapshots from before each major release.
 
 :::added
 
-- Added `--track-height` custom property to `<wa-progress-bar>` [pr:1154]
-- Added `--pulse-color` custom property to `<wa-badge>` [pr:1173]
+- 为 `<wa-progress-bar>` 添加了 `--track-height` 自定义属性 [pr:1154]
+- 为 `<wa-badge>` 添加了 `--pulse-color` 自定义属性 [pr:1173]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-badge>` where `appearance="pulse"` was not working as expected [pr:1173]
-- Fixed a missing TypeScript type for `<wa-badge>` for its `attention` property missing `bounce` value. [pr:1173]
-- Fixed the missing `nanoid` dependency in `package.json` [discuss:1139]
-- Fixed a bug in `<wa-slider>` that prevented the hint from showing up [discuss:1172]
-- Fixed a bug in `<wa-textarea>` where setting `resize="auto"` caused the height of the textarea to double [issue:1155]
-- Fixed a bug in `<wa-color-picker>`, `<wa-checkbox>`, `<wa-input>`, `<wa-radio-group>`, `<wa-switch>`, and `<wa-textarea>` that prevented screen readers from announcing hints [issue:1186]
-- Fixed a bug in `<wa-card>` that caused slotted media to have incorrectly rounded corners [issue:1107]
-- Fixed a bug in `<wa-button-group>` that prevented pill buttons from rendering corners properly [issue:1165]
-- Fixed a bug in `<wa-button-group>` that caused some vertical groups to appear horizontal [issue:1152]
+- 修复了 `<wa-badge>` 中的一个 bug：`appearance="pulse"` 未按预期工作 [pr:1173]
+- 修复了 `<wa-badge>` 缺失的 TypeScript 类型：其 `attention` 属性缺少 `bounce` 值 [pr:1173]
+- 修复了 `package.json` 中缺失的 `nanoid` 依赖 [discuss:1139]
+- 修复了 `<wa-slider>` 中的一个 bug：防止提示显示 [discuss:1172]
+- 修复了 `<wa-textarea>` 中的一个 bug：设置 `resize="auto"` 导致文本区域高度加倍 [issue:1155]
+- 修复了 `<wa-color-picker>`、`<wa-checkbox>`、`<wa-input>`、`<wa-radio-group>`、`<wa-switch>` 和 `<wa-textarea>` 中的一个 bug：阻止屏幕阅读器读出提示 [issue:1186]
+- 修复了 `<wa-card>` 中的一个 bug：导致带槽媒体的边角不正确 [issue:1107]
+- 修复了 `<wa-button-group>` 中的一个 bug：阻止药丸按钮正确渲染边角 [issue:1165]
+- 修复了 `<wa-button-group>` 中的一个 bug：导致某些垂直组显示为水平 [issue:1152]
 
 :::
 
 :::changed
 
-- Improved accessibility of `<wa-animated-image>` so keyboard users can focus and toggle the animation [issue:1177]
+- 改进了 `<wa-animated-image>` 的可访问性，以便键盘用户可以聚焦和切换动画 [issue:1177]
 
 :::
 
@@ -602,53 +602,53 @@ Betas, release candidates, and snapshots from before each major release.
 
 :::added
 
-- Added `.wa-hover-rows` to native styles to opt-in to highlighting table rows on hover.
-- Added `.wa-hover-rows` to native styles to opt-in to highlighting table rows on hover [pr:1111]
-- Added missing changelog entries for beta.1 [pr:1117]
+- 将 `.wa-hover-rows` 添加到原生样式，以选择加入悬停时突出显示表格行。
+- 将 `.wa-hover-rows` 添加到原生样式，以选择加入悬停时突出显示表格行 [pr:1111]
+- 添加了 beta.1 缺失的更新日志条目 [pr:1117]
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-select>` with options that had blank string values. [pr:1136]
-- Fixed a bug in `<wa-dropdown>` that prevented the menu from flipping/shifting to keep the menu in the viewport [pr:1122]
-- Fixed the themes page so it shows the correct palette and imports [pr:1125]
-- Fixed `filled` and `outlined` appearance styles in various components [issue:1102]
-- Fixed active state styles in the Awesome theme [pr:1129]
-- Fixed native text styles when applied to certain backgrounds [pr:https://github.com/shoelace-style/webawesome/pull/1130]
+- 修复了 `<wa-select>` 中的一个 bug：选项有空字符串值 [pr:1136]
+- 修复了 `<wa-dropdown>` 中的一个 bug：防止菜单翻转/移位以保持菜单在视口中 [pr:1122]
+- 修复了主题页面，使其显示正确的调色板和导入 [pr:1125]
+- 修复了各种组件中的 `filled` 和 `outlined` 外观样式 [issue:1102]
+- 修复了 Awesome 主题中的活动状态样式 [pr:1129]
+- 修复了应用于某些背景时的原生文本样式 [pr:https://github.com/shoelace-style/webawesome/pull/1130]
 
 :::
 
 :::changed
 
-- Improved the organization of essential and optional styles [pr:1113]
+- 改进了基本样式和可选样式的组织 [pr:1113]
 
 :::
 
 ## 3.0.0-beta.1
 
-We're excited to share the first beta release of Web Awesome, which includes some breaking changes that make the library significantly more intuitive and consistent!
+我们很高兴分享 Web Awesome 的第一个 Beta 版本，其中包括一些重大更改，使库更加直观和一致！
 
-The list looks extensive, but that's because we've tried to be thorough in documenting every change. We expect most users will only encounter a few of these during their upgrade. The majority are simple attribute renames (like clearable becoming with-clear) and component simplifications that actually reduce the amount of code you need to write.
+列表看起来很广泛，但这是因为我们尝试全面记录了每个更改。我们预计大多数用户在升级期间只会遇到其中的几个。大多数是简单的属性重命名（如 clearable 变为 with-clear）和组件简化，实际上减少了您需要编写的代码量。
 
-**If you're a Web Awesome alpha user, please read through these release notes carefully!**
+**如果您是 Web Awesome alpha 用户，请仔细阅读这些发行说明！**
 
-Many of these changes and improvements were the direct result of feedback from users like you! These changes represent our commitment to getting the fundamentals right as we move from alpha into a more stable beta release.
+这些更改和改进中有许多是像您这样的用户反馈的直接结果！这些更改代表了我们在从 alpha 转向更稳定的 beta 版本时正确处理基础的承诺。
 
 :::breaking
 
-- `input` and `change` events on form controls like `<wa-input>` now are always set to `bubble` and `compose`.
-- Greatly simplified how native styles work and removed redundant utilities
-  - Removed `.wa-button`, `.wa-callout` classes
-  - Removed `themes/native/*.css` files; use `native.css` to opt into native styles
-  - Clarified which utilities classes can be applied to which native elements
-- Renamed the `classic` theme to `shoelace`
-- Removed `:root` selector from all theme, color palette, and semantic color stylesheets except for the default theme and colors. All of these styles are now solely scoped to classes, such as `.wa-theme-awesome`, `.wa-palette-bright`, and `.wa-brand-orange`.
-- Removed most custom properties from components that can otherwise be styled with `::part()` selectors and standard CSS properties.
-- `<wa-dropdown>` was reworked and simplified to not use menu, menu item, menu label; use `<wa-dropdown-item>` instead
-- Renamed `pulse` attribute in `<wa-badge>` to `attention="pulse"` and added `attention="bounce"` [issue:940]
-- Renamed the `vertical` attribute to `orientation="vertical"` in `<wa-split-panel>` and `<wa-divider>` to align with other components and the platform [issue:674]
-- Renamed certain boolean attributes to be consistent using the `with-*` and `without-*` pattern:
+- 表单控件（如 `<wa-input>`）上的 `input` 和 `change` 事件现在始终设置为 `bubble` 和 `compose`。
+- 大大简化了原生样式的工作方式并删除了冗余工具
+  - 删除了 `.wa-button`、`.wa-callout` 类
+  - 删除了 `themes/native/*.css` 文件；使用 `native.css` 选择加入原生样式
+  - 阐明了哪些工具类可以应用于哪些原生元素
+- 将 `classic` 主题重命名为 `shoelace`
+- 除了默认主题和颜色之外，从所有主题、调色板和语义颜色样式表中删除了 `:root` 选择器。所有这些样式现在仅作用域于类，例如 `.wa-theme-awesome`、`.wa-palette-bright` 和 `.wa-brand-orange`。
+- 从组件中删除了大多数自定义属性，这些属性否则可以使用 `::part()` 选择器和标准 CSS 属性设置样式。
+- `<wa-dropdown>` 已重新设计和简化，不再使用菜单、菜单项、菜单标签；请改用 `<wa-dropdown-item>`
+- 将 `<wa-badge>` 中的 `pulse` 属性重命名为 `attention="pulse"` 并添加了 `attention="bounce"` [issue:940]
+- 在 `<wa-split-panel>` 和 `<wa-divider>` 中将 `vertical` 属性重命名为 `orientation="vertical"`，以与其他组件和平台保持一致 [issue:674]
+- 使用 `with-*` 和 `without-*` 模式重命名了某些布尔属性以保持一致：
   - `<wa-button caret>` => `<wa-button with-caret>`
   - `<wa-color-picker no-format-toggle>` => `<wa-color-picker without-format-toggle>`
   - `<wa-format-number no-grouping>` => `<wa-format-number without-grouping>`
@@ -657,78 +657,78 @@ Many of these changes and improvements were the direct result of feedback from u
   - `<wa-select clearable>` => `<wa-select with-clear>`
   - `<wa-tab-group no-scroll-controls>` => `<wa-tab-group without-scroll-controls>`
   - `<wa-tag removable>` => `<wa-tag with-remove>`
-- Renamed all `prefix` and `suffix` slots to `start` and `end`, affecting the following components:
+- 将所有 `prefix` 和 `suffix` 插槽重命名为 `start` 和 `end`，影响以下组件：
   - `<wa-breadcrumb-item>`
   - `<wa-button>`
   - `<wa-input>`
   - `<wa-select>`
   - `<wa-option>`
-- Removed the extra dash in the `<wa-carousel>` CSS part name `pagination-item--active` => `pagination-item-active`
-- Renamed the `eye-dropper-*` parts to `eyedropper` in `<wa-color-picker>`
-- removed the `size` attribute from `<wa-card>`; please set the size of child elements on the children directly
-- Greatly simplified the sizing strategy across components and utilities
-  - Removed `--wa-size`, `--wa-size-smaller`, `--wa-size-larger`, `--wa-space`, `--wa-space-smaller`, and `--wa-space-larger`
-  - Added tokens for `--wa-form-control-padding-inline`, `--wa-form-control-padding-block`, and `--wa-form-control-toggle-size`
-  - Refactored default `--wa-font-size-*` values to use an apparent 1.125 ratio and round rendered values to the nearest whole pixel
-  - Added convenience tokens for `--wa-font-size-smaller` and `--wa-font-size-larger`
-  - Updated components to use relative `em` values for internal padding and margin wherever appropriate
-- Removed the `hint` property and slot from `<wa-radio>`; please apply hints directly to `<wa-radio-group>` instead
-- Redesigned `<wa-slider>` with extensive new functionality
-  - Added support for range sliders with dual thumbs using the `range` attribute
-  - Added vertical orientation support with `orientation="vertical"`
-  - Added visual markers at each step with `with-markers`
-  - Added contextual reference labels with the `reference` slot
-  - Added tooltips showing current values with `with-tooltip`
-  - Added customizable indicator offset with `indicator-offset` attribute
-  - Added value formatting support with the `valueFormatter` property
-  - Improved the styling API to be consistent and more powerful (no more browser-specific selectors and pseudo elements to style)
-  - Updated to use consistent `with-*` attribute naming pattern
-- Reworked `<wa-select>` to use `<wa-option selected>` to set initially selected options, removing the "no spaces allowed" restrictions for option values
+- 删除了 `<wa-carousel>` CSS 部件名称 `pagination-item--active` 中的额外破折号 => `pagination-item-active`
+- 在 `<wa-color-picker>` 中将 `eye-dropper-*` 部件重命名为 `eyedropper`
+- 从 `<wa-card>` 中删除了 `size` 属性；请直接在子元素上设置子元素大小
+- 大大简化了跨组件和工具的大小策略
+  - 删除了 `--wa-size`、`--wa-size-smaller`、`--wa-size-larger`、`--wa-space`、`--wa-space-smaller` 和 `--wa-space-larger`
+  - 添加了 `--wa-form-control-padding-inline`、`--wa-form-control-padding-block` 和 `--wa-form-control-toggle-size` 的令牌
+  - 重构了默认的 `--wa-font-size-*` 值，使用明显的 1.125 比例并将渲染值四舍五入到最近的整像素
+  - 添加了 `--wa-font-size-smaller` 和 `--wa-font-size-larger` 的便捷令牌
+  - 更新了组件在适当的地方使用相对 `em` 值用于内部填充和边距
+- 从 `<wa-radio>` 中删除了 `hint` 属性和插槽；请直接将提示应用于 `<wa-radio-group>`
+- 使用丰富的新功能重新设计了 `<wa-slider>`
+  - 使用 `range` 属性添加了对带双拇指的范围滑块支持
+  - 使用 `orientation="vertical"` 添加了垂直方向支持
+  - 使用 `with-markers` 在每个步骤添加了视觉标记
+  - 使用 `reference` 插槽添加了上下文参考标签
+  - 使用 `with-tooltip` 添加了显示当前值的工具提示
+  - 使用 `indicator-offset` 属性添加了可自定义的指示器偏移
+  - 使用 `valueFormatter` 属性添加了值格式化支持
+  - 改进了样式 API 以保持一致且更强大（不再有浏览器特定的选择器和伪元素样式）
+  - 更新为使用一致的 `with-*` 属性命名模式
+- 重新设计了 `<wa-select>` 以使用 `<wa-option selected>` 来设置初始选定选项，删除了选项值的"不允许空格"限制
 
 :::
 
 :::added
 
-- Added a new component: `<wa-popover>` (#2 of 14 per stretch goals)
-- Added a new component: `<wa-zoomable-frame>` (#3 of 14 per stretch goals)
-- Added a `min-block-size` to `<wa-divider orientation="vertical">` to ensure the divider is visible regardless of container height
-- Added support for `name` in `<wa-details>` for exclusively opening one in a group
-- Added `--wa-content-spacing` to themes to set default spacing between HTML elements in Native Styles
-- Added `--checked-icon-scale` to `<wa-checkbox>`
-- Added `--tag-max-size` to `<wa-select>` when using `multiple`
-- Added support for `data-dialog="open <id>"` to `<wa-dialog>`
-- Added support for `data-drawer="open <id>"` to `<wa-drawer>`
-- Added `@media (hover: hover)` to component hover styles to prevent sticky hover states
-- Added the ability to use `<wa-radio-group disabled>` to disable all radios in the group
+- 添加了新组件：`<wa-popover>`（14 个扩展目标中的第 2 个）
+- 添加了新组件：`<wa-zoomable-frame>`（14 个扩展目标中的第 3 个）
+- 为 `<wa-divider orientation="vertical">` 添加了 `min-block-size`，以确保无论容器高度如何，分隔线都可见
+- 为 `<wa-details>` 添加了对 `name` 的支持，以在组中排他性打开一个
+- 为主题添加了 `--wa-content-spacing`，以在 Native Styles 中设置 HTML 元素之间的默认间距
+- 为 `<wa-checkbox>` 添加了 `--checked-icon-scale`
+- 当使用 `multiple` 时为 `<wa-select>` 添加了 `--tag-max-size`
+- 为 `<wa-dialog>` 添加了对 `data-dialog="open <id>"` 的支持
+- 为 `<wa-drawer>` 添加了对 `data-drawer="open <id>"` 的支持
+- 为组件悬停样式添加了 `@media (hover: hover)`，以防止粘性悬停状态
+- 添加了使用 `<wa-radio-group disabled>` 禁用组中所有单选按钮的能力
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-radio-group>` that caused radios to uncheck when assigning a numeric value
-- Fixed `<wa-button-group>` so dividers properly show between buttons
-- Fixed the tooltip position in `<wa-slider>` when using RTL
-- Fixed a bug in `<wa-details>` and native `<details>` styles that made the summary hard to click
-- Fixed a handful of bugs unify form control height across components and native elements
-- Fixed a bug where `input` events from components weren't bubbling
+- 修复了 `<wa-radio-group>` 中的一个 bug：在分配数值时导致单选按钮取消选中
+- 修复了 `<wa-button-group>`，使分隔线在按钮之间正确显示
+- 修复了使用 RTL 时 `<wa-slider>` 中的工具提示位置
+- 修复了 `<wa-details>` 和原生 `<details>` 样式中的一个 bug：使摘要难以点击
+- 修复了统一跨组件和原生元素表单控件高度的几个 bug
+- 修复了组件的 `input` 事件没有冒泡的 bug
 
 :::
 
 :::changed
 
-- Improved CSS utilities and Native Styles to use [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) for easier end user customization (no more specificity conflicts — your CSS wins!)
-- Improved native `<button>` styles to properly space icons
-- Improved button appearances in `<wa-color-picker>`
-- Improved `<wa-rating>` to have more accessible icons by default
+- 改进了 CSS 工具和原生样式以使用 [CSS 层](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)，以便更轻松地自定义最终用户（不再有特异性冲突 — 您的 CSS 获胜！）
+- 改进了原生 `<button>` 样式以正确间隔图标
+- 改进了 `<wa-color-picker>` 中的按钮外观
+- 改进了 `<wa-rating>` 以默认具有更可访问的图标
 
 :::
 
 :::removed
 
-- Removed the experimental `<wa-code-demo>` component
-- `<wa-menu>`, `<wa-menu-item>`, `<wa-menu-label>` were dropped; use `<wa-dropdown-item>` instead
-- `<wa-icon-button>` was removed; icon buttons can be added via `<wa-button>` now
-- `<wa-radio-button>` was dropped; use `<wa-radio appearance="button">` instead
+- 删除了实验性 `<wa-code-demo>` 组件
+- `<wa-menu>`、`<wa-menu-item>`、`<wa-menu-label>` 已被删除；请改用 `<wa-dropdown-item>`
+- `<wa-icon-button>` 已被删除；现在可以通过 `<wa-button>` 添加图标按钮
+- `<wa-radio-button>` 已被删除；请改用 `<wa-radio appearance="button">`
 
 :::
 
@@ -736,36 +736,36 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::breaking
 
-- 🚨 BREAKING: Renamed `<image-comparer>` to `<wa-comparison>` and improved compatibility for non-image content
-- 🚨 BREAKING: Added slot detection to `<wa-dialog>` and `<wa-drawer>` so you don't need to specify `with-header` and `with-footer`; headers are on by default now, but you can use the `without-header` attribute to turn them off
-- 🚨 BREAKING: Renamed the `image` slot to `media` for a more appropriate naming convention
+- 🚨 重大更改：将 `<image-comparer>` 重命名为 `<wa-comparison>` 并改进了非图像内容的兼容性
+- 🚨 重大更改：为 `<wa-dialog>` 和 `<wa-drawer>` 添加了插槽检测，因此您无需指定 `with-header` 和 `with-footer`；页眉现在默认打开，但您可以使用 `without-header` 属性关闭它们
+- 🚨 重大更改：将 `image` 插槽重命名为 `media` 以获得更合适的命名约定
 
 :::
 
 :::added
 
-- Added Theme Builder to create your own themes
-- Added a new Blog & News pattern category
-- Added a new component: `<wa-scroller>` (#1 of 14 per stretch goals)
-- Added support for Duotone Thin, Light, and Regular styles and the Sharp Duotone family of styles to `<wa-icon>`
-- Added a default `gap` to `<wa-tag>` for better default spacing when used with icons
+- 添加了主题构建器来创建您自己的主题
+- 添加了新的博客与新闻模式类别
+- 添加了新组件：`<wa-scroller>`（14 个扩展目标中的第 1 个）
+- 为 `<wa-icon>` 添加了对双色调浅色、浅色和常规样式以及 Sharp Duotone 系列样式的支持
+- 为 `<wa-tag>` 添加了默认 `gap`，以便在与图标一起使用时获得更好的默认间距
 
 :::
 
 :::fixed
 
-- Fixed a bug that caused `<wa-radio-group>` to have an undesired margin below it
-- Fixed a bug in the Matter theme that prevented clicks on form control labels to not focus the control
-- Fixed a bug in `<wa-select>` that caused incorrect spacing of icons
-- Fixed a bug in `<wa-select>` that caused the listbox to now show after being disabled
-- Fixed a bug in `<wa-radio-group>` that prevented radio buttons from validating
+- 修复了导致 `<wa-radio-group>` 在其下方有不希望的边距的 bug
+- 修复了 Matter 主题中的一个 bug：防止点击表单控件标签时无法聚焦控件
+- 修复了 `<wa-select>` 中的一个 bug：导致图标间距不正确
+- 修复了 `<wa-select>` 中的一个 bug：导致禁用后列表框现在显示
+- 修复了 `<wa-radio-group>` 中的一个 bug：阻止单选按钮验证
 
 :::
 
 :::changed
 
-- Improved native radio alignment
-- Improved the `.wa-cloak` utility class so all FOUCE-related solutions are 100% opt-in
+- 改进了原生单选对齐
+- 改进了 `.wa-cloak` 工具类，使所有与 FOUCE 相关的解决方案 100% 选择加入
 
 :::
 
@@ -773,43 +773,43 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Added `appearance` to [`<wa-details>`](/docs/components/details) and [`<wa-card>`](/docs/components/card) and support for the appearance utilities in the [`<details>` native styles](/docs/utilities/native/#details).
-- Added an `orange` scale to all color palettes
-- Added the [`.wa-cloak` utility](/docs/utilities/fouce) to prevent FOUCE
-- Added the [`allDefined()` utility](/docs/usage/#all-defined) for awaiting component registration
-- Added slots to `checked-icon` and `submenu-icon` in `<wa-menu-item>` so custom icons can be used
+- 为 [`<wa-details>`](/docs/components/details) 和 [`<wa-card>`](/docs/components/card) 添加了 `appearance`，并在 [`<details>` 原生样式](/docs/utilities/native/#details) 中支持外观工具。
+- 为所有调色板添加了 `orange` 比例
+- 添加了 [`.wa-cloak` 工具](/docs/utilities/fouce) 以防止 FOUCE
+- 添加了 [`allDefined()` 工具](/docs/usage/#all-defined) 用于等待组件注册
+- 在 `<wa-menu-item>` 中添加了 `checked-icon` 和 `submenu-icon` 插槽，以便可以使用自定义图标
 
 :::
 
 :::changed
 
-- Simplified `<wa-breadcrumb-item>` by removing the `base` CSS part
-- Simplified `<wa-menu-item>` and `<wa-menu-label>` by removing the `base` CSS part
+- 通过删除 `base` CSS 部件简化了 `<wa-breadcrumb-item>`
+- 通过删除 `base` CSS 部件简化了 `<wa-menu-item>` 和 `<wa-menu-label>`
 
 :::
 
 :::fixed
 
-- Specifying inherited CSS properties on `<wa-tooltip>` now works as expected
-- Fixed a bug in `<wa-select>` that made it hard to use with VueJS, Svelte, and many other frameworks
-- Fixed a bug in `<wa-select multiple>` that sometimes resulted in empty `<div>` elements being output
-- Fixed a bug where changing a `<wa-option>` label wouldn't update the display label in `<wa-select>`
-- Added default spacing to icons slotted into `<wa-tab>`
-- Lots of fixes around pill-shaped elements:
-  - Fixed the `wa-pill` class for text fields
-  - Fixed `pill` style for `<wa-input>` and `<wa-radio-button>` elements
-- Fixed a bug in `<wa-radio-button>` that prevented active buttons from receiving the correct styles
-- Fixed a bug in `<wa-button>` that prevented the focus ring from showing in Safari
-- Fixed alignment of `<wa-dropdown>` inside button groups
-- Removed close watcher logic to backdrop hide animation bugs in `<wa-dialog>` and `<wa-drawer>`; this logic is already handled and we'll revisit `CloseWatcher` when browser support is better and behaviors are consistent
-- Revert `<wa-dialog>` structure and CSS to fix clipped content in dialogs (WA-A #123) and light dismiss in iOS Safari (WA-A #201)
-- Fixed a bug in `<wa-color-picker>` that prevented light dismiss from working when clicking immediately above the color picker dropdown
-- Fixed a bug in `<wa-progress>` that prevented Safari from animation progress changes
-- Fixed the missing indeterminate icon in [native checkbox styles](/docs/utilities/native/#form-controls)
-- Fixed a bug in `<wa-radio>` where elements would stack instead of display inline
-- Docs fixes:
-  - Fixed the search dialog's styles so it doesn't jump around as you search
-  - Theme cards now have icons
+- 在 `<wa-tooltip>` 上指定继承的 CSS 属性现在按预期工作
+- 修复了 `<wa-select>` 中的一个 bug：使其难以与 VueJS、Svelte 和许多其他框架一起使用
+- 修复了 `<wa-select multiple>` 中的一个 bug：有时导致空 `<div>` 元素输出
+- 修复了更改 `<wa-option>` 标签不会在 `<wa-select>` 中更新显示标签的 bug
+- 为 `<wa-tab>` 中的带槽图标添加了默认间距
+- 围绕药丸形状元素的多个修复：
+  - 修复了文本字段的 `wa-pill` 类
+  - 修复了 `<wa-input>` 和 `<wa-radio-button>` 元素的 `pill` 样式
+- 修复了 `<wa-radio-button>` 中的一个 bug：防止活动按钮获得正确样式
+- 修复了 `<wa-button>` 中的一个 bug：阻止焦点环在 Safari 中显示
+- 修复了 `<wa-dropdown>` 在按钮组中的对齐
+- 从 `<wa-dialog>` 和 `<wa-drawer>` 中删除了关闭观察器逻辑，以修复背景隐藏动画 bug；此逻辑已处理，当浏览器支持更好且行为一致时，我们将重新审视 `CloseWatcher`
+- 恢复了 `<wa-dialog>` 结构和 CSS 以修复对话框中内容被裁剪的问题（WA-A #123）和 iOS Safari 中的轻按关闭（WA-A #201）
+- 修复了 `<wa-color-picker>` 中的一个 bug：在颜色选择器下拉列表正上方点击时阻止轻按关闭
+- 修复了 `<wa-progress>` 中的一个 bug：阻止 Safari 动画进度更改
+- 修复了 [原生复选框样式](/docs/utilities/native/#form-controls) 中缺失的不确定图标
+- 修复了 `<wa-radio>` 中的一个 bug：元素堆叠而不是内联显示
+- 文档修复：
+  - 修复了搜索对话框的样式，使其在搜索时不会跳动
+  - 主题卡片现在有图标了
 
 :::
 
@@ -817,50 +817,50 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Color palette tweaking UI. Tweak hue, grays, overall colorfulness, save or share the results.
-- Added a `pink` scale to all color palettes
-- Added `--wa-color-[hue]` tokens with the "core" color of each scale, regardless of which tint it lives on. You can find them in the first column of each color palette.
-- Added `hint` attribute and corresponding slot to `<wa-radio>`
-- Added the `tag` part (and associated exported parts) to `<wa-select>` to allow targeting the tag that shows when more than the max number of visible items have been selected
-- Added `label` attribute and `defaultLabel` property to `<wa-option>` to override the generated label (useful for rich content)
-- Added `label` attribute and `defaultLabel` property to `<wa-menu-item>` to override the generated label (useful for rich content)
-- Re-introduced `--border-color` on `<wa-card>` so that the card itself can have a different border color than its inner borders.
-- Added an orientation example to the native radio docs
+- 调色板调整 UI。调整色相、灰度、整体色彩丰富度，保存或分享结果。
+- 为所有调色板添加了 `pink` 比例
+- 添加了 `--wa-color-[hue]` 令牌，带有每个比例的"核心"颜色，无论它位于哪个色调。您可以在每个调色板的第一列找到它们。
+- 为 `<wa-radio>` 添加了 `hint` 属性和相应插槽
+- 为 `<wa-select>` 添加了 `tag` 部件（以及相关的导出部件），以允许在选择了超过最大可见项数时定位显示的标签
+- 为 `<wa-option>` 添加了 `label` 属性和 `defaultLabel` 属性，以覆盖生成的标签（对于富内容有用）
+- 为 `<wa-menu-item>` 添加了 `label` 属性和 `defaultLabel` 属性，以覆盖生成的标签（对于富内容有用）
+- 在 `<wa-card>` 上重新引入了 `--border-color`，以便卡片本身可以具有与其内部边框不同的边框颜色。
+- 为原生单选文档添加了方向示例
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-switch>` that caused tooltips to work incorrectly when toggling the switch
-- Fixed a bug in `<wa-select>` that prevented the placeholder color from being customized with the `--wa-form-control-placeholder-color` token
-- Fixed an incorrect CSS value in the expand icon in `<wa-select>`
-- Fixed a bug in `<wa-select>` that prevented the description from being read by screen readers
-- Fixed a bug in `<wa-card>` where child elements did not have correct rounding when headers and footers were absent.
-- Fixed a bug in `<wa-card>` that prevented slots from showing automatically without `with-` attributes
-- Fixed a bug that caused `document.createElement('wa-tab')` to fail (which also meant it could not be used in VueJS and other frameworks)
-- Fixed a number of broken event listeners throughout the docs
+- 修复了 `<wa-switch>` 中的一个 bug：在切换开关时工具提示工作不正确
+- 修复了 `<wa-select>` 中的一个 bug：阻止使用 `--wa-form-control-placeholder-color` 令牌自定义占位符颜色
+- 修复了 `<wa-select>` 中展开图标中的错误 CSS 值
+- 修复了 `<wa-select>` 中的一个 bug：防止屏幕阅读器读出描述
+- 修复了 `<wa-card>` 中的一个 bug：缺少页眉和页脚时，子元素没有正确的圆角
+- 修复了 `<wa-card>` 中的一个 bug：阻止插槽在没有 `with-*` 属性时自动显示
+- 修复了导致 `document.createElement('wa-tab')` 失败的 bug（这也意味着它不能在 VueJS 和其他框架中使用）
+- 修复了整个文档中多个断裂的事件监听器
 
 :::
 
 :::changed
 
-- Tweaked hues of all color palettes to make them more distinct and make their hues more intentional
-- Improved UI for theme remixing:
-  - You can now override the brand color of any theme with any of the 9 hues supported.
-  - Rich previews
-  - Generated copyable code snippets.
-  - Permalinks
-- Updated Active, Glossy, Playful, and Premium themes so that `--wa-color-brand-fill-loud` uses the core color of the chosen brand color, regardless of tint.
+- 调整了所有调色板的色相，使它们更独特并使其色相更有意
+- 改进了主题混合 UI：
+  - 现在可以用支持的 9 种色相中的任何一种覆盖任何主题的品牌颜色。
+  - 丰富的预览
+  - 生成可复制的代码片段。
+  - 永久链接
+- 更新了 Active、Glossy、Playful 和 Premium 主题，使 `--wa-color-brand-fill-loud` 使用所选品牌颜色的核心颜色，无论色调如何。
 
 :::
 
 :::removed
 
-- Dropped `violet` and `teal` from color palettes, instead using `purple` and `cyan` (this is not just a renaming, the colors have been adjusted too).
-- Dropped the `base` part from `<wa-radio>`. It can now be styled by directly applying CSS to the element itself.
-- Dropped `getTextLabel()` method from `<wa-option>` (if you need dynamic labels, just set the `label` attribute dynamically)
-- Dropped `base` part from `<wa-option>` for easier styling. CSS can now be applied directly to the element itself.
-- Dropped `getTextLabel()` method from `<wa-menu-item>` (if you need dynamic labels, just set the `label` attribute dynamically)
+- 从调色板中删除了 `violet` 和 `teal`，转而使用 `purple` 和 `cyan`（这不只是重命名，颜色也已调整）。
+- 从 `<wa-radio>` 中删除了 `base` 部件。现在可以通过直接向元素本身应用 CSS 来设置样式。
+- 从 `<wa-option>` 中删除了 `getTextLabel()` 方法（如果需要动态标签，只需动态设置 `label` 属性）
+- 从 `<wa-option>` 中删除了 `base` 部件，以便更轻松地进行样式设置。现在可以通过直接向元素本身应用 CSS 来设置样式。
+- 从 `<wa-menu-item>` 中删除了 `getTextLabel()` 方法（如果需要动态标签，只需动态设置 `label` 属性）
 
 :::
 
@@ -868,39 +868,39 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::breaking
 
-- 🚨 BREAKING: updated all components to use native events instead of `wa-` prefixed events. This will allow components to work more like native elements in your code, frameworks, third-party plugins, etc. To update your code, simply remove the prefix from your event listeners for the following events.
+- 🚨 重大变更：更新所有组件以使用原生事件而非 `wa-` 前缀事件。这将允许组件在您的代码、框架、第三方插件等中更像原生元素一样工作。要更新您的代码，只需从以下事件的事件监听器中移除前缀即可：
   - `wa-input` => `input`
   - `wa-change` => `change`
-  - `wa-blur` => `blur` (this event will no longer bubble, use `focusout` for a bubbling version)
-  - `wa-focus` => `focus` (this event will no longer bubble, use `focusin` for a bubbling version)
+  - `wa-blur` => `blur`（此事件不再冒泡，请使用 `focusout` 获取冒泡版本）
+  - `wa-focus` => `focus`（此事件不再冒泡，请使用 `focusin` 获取冒泡版本）
 
 :::
 
 :::added
 
-- Added `.wa-callout` utility class
-- Added the `orientation` attribute to `<wa-radio-group>` to support vertical and horizontal radio items
-- Added docs for visual tests
-- Added docs on how to cherry-pick native styles
+- 添加了 `.wa-callout` 工具类
+- 为 `<wa-radio-group>` 添加了 `orientation` 属性以支持垂直和水平的单选按钮项
+- 添加了视觉测试文档
+- 添加了如何挑选原生样式的文档
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-tab-group>` that prevented nested tab groups from working properly
-- Fixed slot names for `show-password-icon` and `hide-password-icon` in `<wa-input>` to more intuitively represent their functions
-- Fixed a bug in `<wa-textarea>` that caused empty controls to submit a value if the initial value was deleted a certain way
-- Fixed a bug in `<input>`, `<textarea>`, and `<select>` styles that prevented full-width controls from using 100% width when wrapped in a `<label>`
-- Fixed a bug in `<select>` styles that caused the caret to block interactions and prevented the caret from rendering unless wrapped in a `<label>`
-- Fixed a bug in `<wa-checkbox>` that caused hints to render inline with the label
+- 修复了 `<wa-tab-group>` 中的一个 bug：阻止嵌套的标签组正常工作
+- 修复了 `<wa-input>` 中的 `show-password-icon` 和 `hide-password-icon` 插槽名称，以更直观地表示它们的功能
+- 修复了 `<wa-textarea>` 中的一个 bug：如果以某种方式删除初始值，空控件会提交一个值
+- 修复了 `<input>`、`<textarea>` 和 `<select>` 样式中的一个 bug：当包裹在 `<label>` 中时，阻止全宽控件使用 100% 宽度
+- 修复了 `<select>` 样式中的一个 bug：导致插入符号阻止交互，并且除非包裹在 `<label>` 中，否则阻止插入符号渲染
+- 修复了 `<wa-checkbox>` 中的一个 bug：导致提示与标签内联渲染
 
 :::
 
 :::changed
 
-- Changed the behavior of the `variant` and `size` attributes so that nested components that support these attributes but do not have them set inherit the values set on their ancestors. Additionally:
-  - Added `size` attribute to `<wa-dropdown>`, `<wa-button-group>`, `<wa-menu>`, `<wa-rating>`, `<wa-card>`
-  - Added `variant` attribute to `<wa-button-group>`
+- 更改了 `variant` 和 `size` 属性的行为，以便支持这些属性但未设置它们的嵌套组件继承其父级上设置的值。此外：
+  - 为 `<wa-dropdown>`、`<wa-button-group>`、`<wa-menu>`、`<wa-rating>`、`<wa-card>` 添加了 `size` 属性
+  - 为 `<wa-button-group>` 添加了 `variant` 属性
 
 :::
 
@@ -908,21 +908,21 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Added new themes:
+- 添加了新主题：
   - Glossy
   - Matter
   - Premium
   - Playful
-- Added docs on themes and palettes
-- Added test suite to ensure all color palettes provide the color contrast they are supposed to
-- Added `.wa-invert` utility class to invert the current color scheme
-- Added `:state(blank)` to `<wa-input>`, `<wa-textarea>`, and `<wa-select>` to style form inputs differently when empty.
+- 添加了主题和调色板文档
+- 添加了测试套件以确保所有调色板提供它们应该提供的对比度
+- 添加了 `.wa-invert` 工具类以反转当前配色方案
+- 为 `<wa-input>`、`<wa-textarea>` 和 `<wa-select>` 添加了 `:state(blank)`，以便在空时以不同方式样式化表单输入
 
 :::
 
 :::changed
 
-- Separated colors and typography out from themes so they can be used independently
+- 将颜色和排版从主题中分离出来，以便它们可以独立使用
 
 :::
 
@@ -930,8 +930,8 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Added `appearance` to `<wa-callout>` and `<wa-tag>`
-- Added new themes:
+- 为 `<wa-callout>` 和 `<wa-tag>` 添加了 `appearance`
+- 添加了新主题：
   - Awesome
   - Active
   - Brutalist
@@ -942,35 +942,35 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::fixed
 
-- Fixed a bug in `<wa-switch>` where it would not properly change its "checked" state when its property changed.
-- Fixed a bug in `<wa-switch>` where the value would be incorrectly submitted as "on" when a value is provided and the switch is checked
-- Fixed a bug in the `wa-split` CSS utility that caused it to behave incorrectly
+- 修复了 `<wa-switch>` 中的一个 bug：当属性更改时，它不会正确更改其"checked"状态
+- 修复了 `<wa-switch>` 中的一个 bug：当提供值且开关被选中时，值会错误地提交为"on"
+- 修复了 `wa-split` CSS 工具中的一个 bug：导致它行为不正确
 
 :::
 
 :::changed
 
-- Simplified the internal structure and CSS properties of `<wa-card>`, removed `base` part.
-- Improved performance of `<wa-select>` when using a large number of options
-- Updated the Japanese translation
-- Renamed `--wa-form-control-resting-color` to `--wa-form-control-border-color` for familiarity and accuracy
-- Updated the `--wa-border-width-*` and `--wa-border-radius-*` scale for better DX
-  - Changed the value of `--wa-border-width-scale` to `1` and updated calculations of size-based `--wa-border-width-*` tokens
-  - Changed the value of `--wa-border-radius-scale` to `1` and updated calculations of size-based `--wa-border-radius-*` tokens
-  - Decreased the size of the scale so that `--wa-border-radius-s` is now the smallest border radius token, matching the value of the previous `--wa-border-radius-xs` token
-- Updated the `--wa-shadow-*` scales for better DX
-  - Changed the value of `--wa-shadow-offset-y-scale` to `1` and updated calculations of size-based `--wa-shadow-offset-y-*` tokens
-  - Changed the value of `--wa-shadow-blur-scale` to `1` and updated calculations of size-based `--wa-shadow-blur-*` tokens
-  - Changed the value of `--wa-shadow-spread-scale` to `-0.5` and updated calculations of size-based `--wa-shadow-spread-*` tokens
-  - Updated calculations of size-based `--wa-shadow-offset-x-*` tokens to match calculations used for other shadow qualities (`--wa-shadow-offset-x-scale` remains `0`)
+- 简化了 `<wa-card>` 的内部结构和 CSS 属性，删除了 `base` 部件
+- 提高了使用大量选项时 `<wa-select>` 的性能
+- 更新了日语翻译
+- 为了熟悉度和准确性，将 `--wa-form-control-resting-color` 重命名为 `--wa-form-control-border-color`
+- 更新了 `--wa-border-width-*` 和 `--wa-border-radius-*` 比例以获得更好的开发体验
+  - 将 `--wa-border-width-scale` 的值更改为 `1` 并更新了基于大小的 `--wa-border-width-*` 令牌的计算
+  - 将 `--wa-border-radius-scale` 的值更改为 `1` 并更新了基于大小的 `--wa-border-radius-*` 令牌的计算
+  - 缩小了比例，使 `--wa-border-radius-s` 现在是最小的边框半径令牌，与之前的 `--wa-border-radius-xs` 令牌的值匹配
+- 更新了 `--wa-shadow-*` 比例以获得更好的开发体验
+  - 将 `--wa-shadow-offset-y-scale` 的值更改为 `1` 并更新了基于大小的 `--wa-shadow-offset-y-*` 令牌的计算
+  - 将 `--wa-shadow-blur-scale` 的值更改为 `1` 并更新了基于大小的 `--wa-shadow-blur-*` 令牌的计算
+  - 将 `--wa-shadow-spread-scale` 的值更改为 `-0.5` 并更新了基于大小的 `--wa-shadow-spread-*` 令牌的计算
+  - 更新了基于大小的 `--wa-shadow-offset-x-*` 令牌的计算以匹配其他阴影质量使用的计算（`--wa-shadow-offset-x-scale` 保持为 `0`）
 
 :::
 
 :::removed
 
-- Removed size-based `--wa-form-control-height-*` tokens in favor of `--wa-form-control-height` (see [size utilities](/docs/utilities/size/))
-- Removed unused `--wa-border-radius-xs` token and `wa-border-radius-xs` utility class
-- Removed unused `--wa-shadow-xs` token
+- 删除了基于大小的 `--wa-form-control-height-*` 令牌，转而使用 `--wa-form-control-height`（参见 [尺寸工具](/docs/utilities/size/)）
+- 删除了未使用的 `--wa-border-radius-xs` 令牌和 `wa-border-radius-xs` 工具类
+- 删除了未使用的 `--wa-shadow-xs` 令牌
 
 :::
 
@@ -978,7 +978,7 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::changed
 
-- Renamed applied.css to webawesome.css
+- 将 applied.css 重命名为 webawesome.css
 
 :::
 
@@ -986,40 +986,40 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Added native styles for
-  [buttons](/docs/utilities/native/#buttons),
-  [input fields](/docs/utilities/native/#form-controls),
-  [dialogs](/docs/utilities/native/#dialog),
-  [details](/docs/utilities/native/#details),
-  [tables](/docs/utilities/native/#tables),
-  [lists](/docs/utilities/native/#lists),
-  and most [content elements](/docs/utilities/native/#typography).
-- Added [color variant utilities](/docs/utilities/color/)
-- Added [appearance utilities](/docs/utilities/appearance/)
-- Added [size utilities](/docs/utilities/size/)
-- Added [layout utilities](/docs/layout/#utilities)
-- Added [`.wa-visually hidden`](/docs/utilities/visually-hidden) utility
-- Added [`<wa-page>`](/docs/components/page/#styles) native styles and utilities
-- Added `checked` and `disabled` custom states to `<wa-checkbox>` and `<wa-radio>`
-- Added `disabled`, `expanded`, `indeterminate`, and `selected` custom states to `<wa-tree-item>`
+- 为以下内容添加了原生样式：
+  [按钮](/docs/utilities/native/#buttons)、
+  [输入字段](/docs/utilities/native/#form-controls)、
+  [对话框](/docs/utilities/native/#dialog)、
+  [详情](/docs/utilities/native/#details)、
+  [表格](/docs/utilities/native/#tables)、
+  [列表](/docs/utilities/native/#lists)
+  和大多数 [内容元素](/docs/utilities/native/#typography)
+- 添加了 [颜色变体工具](/docs/utilities/color/)
+- 添加了 [外观工具](/docs/utilities/appearance/)
+- 添加了 [尺寸工具](/docs/utilities/size/)
+- 添加了 [布局工具](/docs/layout/#utilities)
+- 添加了 [`.wa-visually-hidden`](/docs/utilities/visually-hidden) 工具
+- 添加了 [`<wa-page>`](/docs/components/page/#styles) 原生样式和工具
+- 为 `<wa-checkbox>` 和 `<wa-radio>` 添加了 `checked` 和 `disabled` 自定义状态
+- 为 `<wa-tree-item>` 添加了 `disabled`、`expanded`、`indeterminate` 和 `selected` 自定义状态
 
 :::
 
 :::changed
 
-- `<wa-page>`: `mobile-breakpoint` now takes any CSS length, not just pixels
-- Renamed the `navigation-button--previous` and `navigation-button--next` parts to `navigation-button-previous` and `navigation-button-next` in `<wa-carousel>`
-- Renamed the `scroll-button--start` and `scroll-button--end` parts to `scroll-button-start` and `scroll-button-end` in `<wa-tab-group>`
+- `<wa-page>`：`mobile-breakpoint` 现在接受任何 CSS 长度，而不只是像素
+- 在 `<wa-carousel>` 中将 `navigation-button--previous` 和 `navigation-button--next` 部件重命名为 `navigation-button-previous` 和 `navigation-button-next`
+- 在 `<wa-tab-group>` 中将 `scroll-button--start` 和 `scroll-button--end` 部件重命名为 `scroll-button-start` 和 `scroll-button-end`
 
 :::
 
 :::removed
 
-- Removed `<wa-visually-hidden>` in favor of the utility class
-- Removed stateful CSS parts in favor of custom states
-  - `<wa-checkbox>`: `control--checked`, `control--indeterminate`
-  - `<wa-radio>`: `control--checked`
-  - `<wa-tree-item>`: `item--disabled`, `item--expanded`, `item--indeterminate`, `item--selected`
+- 删除了 `<wa-visually-hidden>`，转而使用工具类
+- 删除了有状态 CSS 部件，转而使用自定义状态
+  - `<wa-checkbox>`：`control--checked`、`control--indeterminate`
+  - `<wa-radio>`：`control--checked`
+  - `<wa-tree-item>`：`item--disabled`、`item--expanded`、`item--indeterminate`、`item--selected`
 
 :::
 
@@ -1027,39 +1027,39 @@ Many of these changes and improvements were the direct result of feedback from u
 
 :::added
 
-- Added the Finnish translation
-- Added the Italian translation
-- Added the Ukrainian translation
-- Added support for <kbd>Enter</kbd> to `<wa-split-panel>` to align with ARIA APG's [window splitter pattern](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/)
-- Added more resilient support for lazy loaded options in `<wa-select>`
-- Added support for vertical button groups
-- Added the `focus()` method to `<wa-radio-group>`
+- 添加了芬兰语翻译
+- 添加了意大利语翻译
+- 添加了乌克兰语翻译
+- 为 `<wa-split-panel>` 添加了对 <kbd>Enter</kbd> 的支持，以与 ARIA APG 的 [窗口拆分器模式](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/) 保持一致
+- 为 `<wa-select>` 中的延迟加载选项添加了更强大的支持
+- 添加了对垂直按钮组的支持
+- 为 `<wa-radio-group>` 添加了 `focus()` 方法
 
 :::
 
 :::fixed
 
-- Fixed a bug in `<wa-dialog>` with scroll locking shifting viewports.
-- Fixed a bug in `<wa-dialog>` when using `.show()`
-- Fixed a bug in `<wa-rating>` when using `precision`
-- Fixed a bug in `<wa-rating>` that allowed tabbing into the rating when readonly
-- Fixed a bug in `<wa-relative-time>` where the title attribute would show with redundant info
-- Fixed a bug in `<wa-select>` that caused the placeholder to display incorrectly when using placeholder and multiple
-- Fixed a bug in `<wa-tooltip>` that caused a memory leak in disconnected elements
-- Fixed a bug in `<wa-select>` that prevented label changes in `<wa-option>` from updating the controller
-- Fixed a bug in `<wa-carousel>` that caused interactive elements to be activated when dragging
-- Fixed a bug in `<wa-tab-group>` that prevented changing tabs by setting `active` on `<wa-tab>` elements
-- Fixed a bug in `<wa-tab-group>` that caused an error when removed from the DOM too quickly
-- Fixed a bug in `<wa-textarea>` causing scroll jumping when using `resize="auto"`
-- Fixed a bug with certain bundlers when using dynamic imports
+- 修复了 `<wa-dialog>` 中滚动锁定导致视口移动的 bug
+- 修复了使用 `.show()` 时 `<wa-dialog>` 中的 bug
+- 修复了使用 `precision` 时 `<wa-rating>` 中的 bug
+- 修复了 `<wa-rating>` 中的一个 bug：在只读时允许 tab 键进入评分
+- 修复了 `<wa-relative-time>` 中的一个 bug：title 属性会显示冗余信息
+- 修复了 `<wa-select>` 中的一个 bug：在使用占位符和多选时导致占位符显示不正确
+- 修复了 `<wa-tooltip>` 中的一个 bug：在断开连接的元素中导致内存泄漏
+- 修复了 `<wa-select>` 中的一个 bug：阻止 `<wa-option>` 中的标签更改更新控制器
+- 修复了 `<wa-carousel>` 中的一个 bug：在拖动时激活交互元素
+- 修复了 `<wa-tab-group>` 中的一个 bug：阻止通过在 `<wa-tab>` 元素上设置 `active` 来更改标签
+- 修复了 `<wa-tab-group>` 中的一个 bug：当太快地从 DOM 中移除时导致错误
+- 修复了 `<wa-textarea>` 中的 bug：使用 `resize="auto"` 时导致滚动跳转
+- 修复了某些打包工具使用动态导入时的 bug
 
 :::
 
 :::changed
 
-- Improved alignment of the play icon in `<wa-animated-image>`
-- Improved behavior of link buttons to not set `noreferrer noopener` by default
-- Updated all checks for directionality to use `this.localize.dir()` instead of `el.matches(:dir(rtl))` so older browsers don't error out
+- 改进了 `<wa-animated-image>` 中播放图标的对齐方式
+- 改进了链接按钮的行为，默认不设置 `noreferrer noopener`
+- 更新了所有方向检查，使用 `this.localize.dir()` 而非 `el.matches(:dir(rtl))`，这样旧浏览器不会报错
 
 :::
 
@@ -1068,8 +1068,8 @@ Many of these changes and improvements were the direct result of feedback from u
 <wa-callout>
   <div class="wa-flank:end">
     <div class="wa-stack wa-gap-2xs">
-      <strong>Something seem off or missing?</strong>
-      <span>If you spotted a typo, a missing change, or anything that doesn't look right, let us know.</span>
+      <strong>看起来有什么不对或缺少什么吗？</strong>
+      <span>如果您发现了拼写错误、缺少的更改或任何看起来不正确的内容，请告诉我们。</span>
     </div>
     <div class="wa-cluster wa-gap-s">
       <wa-button
@@ -1081,7 +1081,7 @@ Many of these changes and improvements were the direct result of feedback from u
         data-track-destination="report_bug"
       >
         <wa-icon slot="start" variant="regular" name="bug"></wa-icon>
-        Report a bug
+        报告 bug
       </wa-button>
       <wa-button
         size="s"
@@ -1092,7 +1092,7 @@ Many of these changes and improvements were the direct result of feedback from u
         data-track-destination="ask_for_help"
       >
         <wa-icon slot="start" variant="regular" name="message-question"></wa-icon>
-        Ask for help
+        寻求帮助
       </wa-button>
     </div>
   </div>

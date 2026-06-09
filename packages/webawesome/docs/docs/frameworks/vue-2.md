@@ -1,40 +1,40 @@
 ---
-title: Vue (version 2)
-description: Tips for using Web Awesome in your Vue 2 app.
+title: Vue（版本 2）
+description: 在 Vue 2 应用中使用 Web Awesome 的提示。
 layout: page-outline
 ---
 
 <wa-breadcrumb class="page-breadcrumbs">
   <wa-icon slot="separator" name="angle-right" variant="regular"></wa-icon>
-  <wa-breadcrumb-item href="/docs/frameworks">Frameworks</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="/docs/frameworks">框架集成</wa-breadcrumb-item>
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Vue [plays nice](https://custom-elements-everywhere.com/#vue) with custom elements, so you can use Web Awesome in your Vue apps with ease.
+Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素，因此您可以轻松地在 Vue 应用中使用 Web Awesome。
 
 :::info
-These instructions are for Vue 2. If you're using Vue 3 or above, please see the [Vue 3 instructions](/frameworks/vue).
+这些说明适用于 Vue 2。如果您使用的是 Vue 3 及以上版本，请参阅 [Vue 3 说明](/frameworks/vue)。
 :::
 
-## Installation
+## 安装
 
-To add Web Awesome to your Vue app, install the package from npm.
+要添加 Web Awesome 到您的 Vue 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-Next, import the Web Awesome stylesheet, import the components you need, and then start using Web Awesome!
+接下来，导入 Web Awesome 样式表，导入您需要的组件，然后开始使用 Web Awesome！
 
 ```jsx
-// main.js or main.ts
+// main.js 或 main.ts
 import '@awesome.me/webawesome/dist/styles/webawesome.css';
 import '@awesome.me/webawesome/dist/components/button/button.js';
 ```
 
-## Configuration
+## 配置
 
-You'll need to tell Vue to ignore Web Awesome components. This is pretty easy because they all start with `wa-`.
+您需要告诉 Vue 忽略 Web Awesome 组件。这非常简单，因为它们都以 `wa-` 开头。
 
 ```js
 import Vue from 'vue';
@@ -49,29 +49,29 @@ const app = new Vue({
 app.$mount('#app');
 ```
 
-Now you can start using Web Awesome components in your app!
+现在您可以开始在应用中使用 Web Awesome 组件了！
 
-## Usage
+## 使用
 
-### Binding Complex Data
+### 绑定复杂数据
 
-When binding complex data such as objects and arrays, use the `.prop` modifier to make Vue bind them as a property instead of an attribute.
+当绑定复杂数据（如对象和数组）时，使用 `.prop` 修饰符使 Vue 将它们作为属性而非特性进行绑定。
 
 ```html
 <wa-color-picker :swatches.prop="mySwatches" />
 ```
 
-### Two-way Binding
+### 双向绑定
 
-One caveat is there's currently [no support for v-model on custom elements](https://github.com/vuejs/vue/issues/7830), but you can still achieve two-way binding manually.
+一个需要注意的问题是，目前[自定义元素不支持 v-model](https://github.com/vuejs/vue/issues/7830)，但您仍然可以手动实现双向绑定。
 
 ```html
-<!-- ❌ This doesn't work -->
+<!-- ❌ 这不起作用 -->
 <wa-input v-model="name"></wa-input>
-<!-- ✅ This works, but it's a bit longer -->
+<!-- ✅ 这有效，但稍微长一些 -->
 <wa-input :value="name" @input="name = $event.target.value"></wa-input>
 ```
 
 :::info
-Are you using Web Awesome with Vue 2? [Help us improve this page!](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue-2.md)
+您正在使用 Web Awesome 和 Vue 2？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue-2.md)
 :::

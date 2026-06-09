@@ -1,5 +1,5 @@
 ---
-title: Animation
+title: 动画
 layout: component
 category: Utilities
 synonyms:
@@ -7,14 +7,21 @@ synonyms:
   - transition
   - keyframes
   - animate
+  - 动效
+  - 过渡
+  - 关键帧
 use-cases:
   - entrance animation
   - exit animation
   - attention seeker
   - scroll animation
+  - 入场动画
+  - 出场动画
+  - 吸引注意力
+  - 滚动动画
 ---
 
-To animate an element, wrap it in `<wa-animation>` and set an animation `name`. The animation will not start until you add the `play` attribute. Refer to the [properties table](#attributes-and-properties) for a list of all animation options.
+要动画化一个元素，请将其包裹在 `<wa-animation>` 中并设置动画的 `name`（名称）。动画在您添加 `play` 属性之前不会开始播放。有关所有动画选项的列表，请参阅[属性表](#attributes-and-properties)。
 
 ```html {.example}
 <div class="animation-overview">
@@ -36,14 +43,14 @@ To animate an element, wrap it in `<wa-animation>` and set an animation `name`. 
 ```
 
 :::info
-The animation will only be applied to the first child element found in `<wa-animation>`.
+动画只会应用于 `<wa-animation>` 中找到的第一个子元素。
 :::
 
-## Examples
+## 示例
 
-### Animations & Easings
+### 动画与缓动
 
-This example demonstrates all of the baked-in animations and easings. Animations are based on those found in the popular [Animate.css](https://animate.style/) library.
+此示例演示了所有内置动画和缓动。动画基于流行的 [Animate.css](https://animate.style/) 库中的动画。
 
 ```html {.example}
 <div class="animation-sandbox">
@@ -52,9 +59,9 @@ This example demonstrates all of the baked-in animations and easings. Animations
   </wa-animation>
 
   <div class="controls">
-    <wa-select label="Animation" value="bounce"></wa-select>
-    <wa-select label="Easing" value="linear"></wa-select>
-    <wa-input label="Playback Rate" type="number" min="0" max="2" step=".25" value="1"></wa-input>
+    <wa-select label="动画" value="bounce"></wa-select>
+    <wa-select label="缓动" value="linear"></wa-select>
+    <wa-input label="播放速率" type="number" min="0" max="2" step=".25" value="1"></wa-input>
   </div>
 </div>
 
@@ -115,9 +122,9 @@ This example demonstrates all of the baked-in animations and easings. Animations
   </wa-animation>
 
   <div class="controls">
-    <wa-combobox label="Animation" placeholder="Select animation..."></wa-combobox>
-    <wa-combobox label="Easing" placeholder="Select easing..."></wa-combobox>
-    <wa-input label="Playback Rate" type="number" min="0" max="2" step=".25" value="1"></wa-input>
+    <wa-combobox label="动画" placeholder="选择动画..."></wa-combobox>
+    <wa-combobox label="缓动" placeholder="选择缓动..."></wa-combobox>
+    <wa-input label="播放速率" type="number" min="0" max="2" step=".25" value="1"></wa-input>
   </div>
 </div>
 
@@ -177,9 +184,9 @@ This example demonstrates all of the baked-in animations and easings. Animations
 </style>
 ```
 
-### Using Intersection Observer
+### 使用交叉观察器
 
-Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to control the animation when an element enters or exits the viewport. For example, scroll the box below in and out of your screen. The animation stops when the box exits the viewport and restarts each time it enters the viewport.
+使用[交叉观察器](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API)在元素进入或离开视口时控制动画。例如，在屏幕中滚动下方的框。当框离开视口时，动画会停止，每次进入视口时重新开始。
 
 ```html {.example}
 <div class="animation-scroll">
@@ -191,10 +198,10 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
   const animation = container.querySelector('wa-animation');
   const box = animation.querySelector('.box');
 
-  // Watch for the box to enter and exit the viewport. Note that we're observing the box, not the animation element!
+  // 观察框进入和离开视口。注意我们正在观察的是框，而不是动画元素！
   const observer = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
-      // Start the animation when the box enters the viewport
+      // 当框进入视口时开始动画
       animation.play = true;
     } else {
       animation.play = false;
@@ -214,9 +221,9 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
 </style>
 ```
 
-### Custom Keyframe Formats
+### 自定义关键帧格式
 
-Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats) to build custom animations.
+提供你自己的[关键帧格式](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Animations_API/Keyframe_Formats)来构建自定义动画。
 
 ```html {.example}
 <div class="animation-keyframes">
@@ -254,14 +261,14 @@ Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/
 </style>
 ```
 
-### Playing Animations on Demand
+### 按需播放动画
 
-Animations won't play until you apply the `play` attribute. You can omit it initially, then apply it on demand such as after a user interaction. In this example, the button will animate once every time the button is clicked.
+动画在你应用 `play` 属性之前不会播放。你可以最初省略它，然后按需应用，例如在用户交互之后。在此示例中，每次单击按钮时按钮会动画一次。
 
 ```html {.example}
 <div class="animation-form">
   <wa-animation name="rubberBand" duration="1000" iterations="1">
-    <wa-button appearance="filled" variant="brand">Click me</wa-button>
+    <wa-button appearance="filled" variant="brand">点击我</wa-button>
   </wa-animation>
 </div>
 

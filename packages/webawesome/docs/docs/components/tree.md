@@ -1,5 +1,5 @@
 ---
-title: Tree
+title: 树
 layout: component
 category: Navigation
 synonyms:
@@ -7,92 +7,99 @@ synonyms:
   - tree view
   - file tree
   - hierarchy
+  - 树视图
+  - 文件树
+  - 层次结构
 use-cases:
   - file browser
   - directory tree
   - nested list
   - org chart
+  - 文件浏览器
+  - 目录树
+  - 嵌套列表
+  - 组织架构图
 ---
 
 ```html {.example}
 <wa-tree style="--indent-guide-width: 1px;">
   <wa-tree-item expanded>
-    Deciduous
-    <wa-tree-item>Birch</wa-tree-item>
+    落叶树
+    <wa-tree-item>桦树</wa-tree-item>
     <wa-tree-item expanded>
-      Maple
-      <wa-tree-item>Field maple</wa-tree-item>
-      <wa-tree-item>Red maple</wa-tree-item>
-      <wa-tree-item>Sugar maple</wa-tree-item>
+      枫树
+      <wa-tree-item>糖枫</wa-tree-item>
+      <wa-tree-item>红枫</wa-tree-item>
+      <wa-tree-item>银枫</wa-tree-item>
     </wa-tree-item>
-    <wa-tree-item>Oak</wa-tree-item>
-    <wa-tree-item>Walnut</wa-tree-item>
+    <wa-tree-item>橡树</wa-tree-item>
+    <wa-tree-item>胡桃树</wa-tree-item>
   </wa-tree-item>
 
   <wa-tree-item>
-    Coniferous
-    <wa-tree-item>Cedar</wa-tree-item>
+    常绿树
+    <wa-tree-item>雪松</wa-tree-item>
     <wa-tree-item>
-      Pine
-      <wa-tree-item>Eastern white pine</wa-tree-item>
-      <wa-tree-item>Ponderosa pine</wa-tree-item>
-      <wa-tree-item>Scots pine</wa-tree-item>
+      松树
+      <wa-tree-item>东部白松</wa-tree-item>
+      <wa-tree-item>西黄松</wa-tree-item>
+      <wa-tree-item>苏格兰松</wa-tree-item>
     </wa-tree-item>
-    <wa-tree-item>Spruce</wa-tree-item>
-    <wa-tree-item>Fir</wa-tree-item>
+    <wa-tree-item>云杉</wa-tree-item>
+    <wa-tree-item>冷杉</wa-tree-item>
   </wa-tree-item>
 
   <wa-tree-item>
-    Tropical
-    <wa-tree-item>Banyan</wa-tree-item>
-    <wa-tree-item>Coconut palm</wa-tree-item>
-    <wa-tree-item>Mahogany</wa-tree-item>
-    <wa-tree-item>Teak</wa-tree-item>
+    热带树
+    <wa-tree-item>榕树</wa-tree-item>
+    <wa-tree-item>椰子树</wa-tree-item>
+    <wa-tree-item>桃花心木</wa-tree-item>
+    <wa-tree-item>柚木</wa-tree-item>
   </wa-tree-item>
 </wa-tree>
 ```
 
-## Examples
+## 示例
 
-### Selection Modes
+### 选择模式
 
-The `selection` attribute lets you change the selection behavior of the tree.
+`selection` 属性允许您更改树的选择行为。
 
-- Use `single` to allow the selection of a single item (default).
-- Use `multiple` to allow the selection of multiple items.
-- Use `leaf` to only allow leaf nodes to be selected.
+- 使用 `single` 允许选择单个项（默认）。
+- 使用 `multiple` 允许选择多个项。
+- 使用 `leaf` 仅允许选择叶子节点。
 
 ```html {.example}
-<wa-select id="selection-mode" value="single" label="Selection">
-  <wa-option value="single">Single</wa-option>
-  <wa-option value="multiple">Multiple</wa-option>
-  <wa-option value="leaf">Leaf</wa-option>
+<wa-select id="selection-mode" value="single" label="选择">
+  <wa-option value="single">单个</wa-option>
+  <wa-option value="multiple">多个</wa-option>
+  <wa-option value="leaf">叶子</wa-option>
 </wa-select>
 
 <br />
 
 <wa-tree class="tree-selectable">
   <wa-tree-item expanded>
-    Electronics
+    电子产品
     <wa-tree-item expanded>
-      Computers
-      <wa-tree-item>Laptops</wa-tree-item>
-      <wa-tree-item>Desktops</wa-tree-item>
-      <wa-tree-item>Tablets</wa-tree-item>
+      计算机
+      <wa-tree-item>笔记本电脑</wa-tree-item>
+      <wa-tree-item>台式机</wa-tree-item>
+      <wa-tree-item>平板电脑</wa-tree-item>
     </wa-tree-item>
     <wa-tree-item>
-      Phones
-      <wa-tree-item>Smartphones</wa-tree-item>
-      <wa-tree-item>Accessories</wa-tree-item>
+      手机
+      <wa-tree-item>智能手机</wa-tree-item>
+      <wa-tree-item>配件</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
   <wa-tree-item>
-    Clothing
-    <wa-tree-item>Shirts</wa-tree-item>
-    <wa-tree-item>Pants</wa-tree-item>
-    <wa-tree-item>Shoes</wa-tree-item>
+    服装
+    <wa-tree-item>衬衫</wa-tree-item>
+    <wa-tree-item>裤子</wa-tree-item>
+    <wa-tree-item>鞋子</wa-tree-item>
   </wa-tree-item>
-  <wa-tree-item>Books</wa-tree-item>
+  <wa-tree-item>书籍</wa-tree-item>
 </wa-tree>
 
 <script>
@@ -106,19 +113,19 @@ The `selection` attribute lets you change the selection behavior of the tree.
 </script>
 ```
 
-### Size
+### 尺寸
 
-Trees inherit their font size by default. You can change the size of a tree and all of its items by setting `font-size` on the `<wa-tree>` element. All internal dimensions, including checkboxes, expand buttons, and labels, scale proportionally.
+树默认继承其字体大小。可以通过在 `<wa-tree>` 元素上设置 `font-size` 来更改树及其所有项的大小。所有内部尺寸，包括复选框、展开按钮和标签，都会按比例缩放。
 
 ```html {.example}
 <wa-tree style="font-size: .75rem;" selection="multiple">
   <wa-tree-item expanded>
-    Small
-    <wa-tree-item>Newsletters</wa-tree-item>
+    小
+    <wa-tree-item>新闻通讯</wa-tree-item>
     <wa-tree-item>
-      Promotions
-      <wa-tree-item>Weekly deals</wa-tree-item>
-      <wa-tree-item>Seasonal sales</wa-tree-item>
+      促销
+      <wa-tree-item>每周优惠</wa-tree-item>
+      <wa-tree-item>季节特卖</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
 </wa-tree>
@@ -127,12 +134,12 @@ Trees inherit their font size by default. You can change the size of a tree and 
 
 <wa-tree selection="multiple">
   <wa-tree-item expanded>
-    Default
-    <wa-tree-item>Newsletters</wa-tree-item>
+    默认
+    <wa-tree-item>新闻通讯</wa-tree-item>
     <wa-tree-item>
-      Promotions
-      <wa-tree-item>Weekly deals</wa-tree-item>
-      <wa-tree-item>Seasonal sales</wa-tree-item>
+      促销
+      <wa-tree-item>每周优惠</wa-tree-item>
+      <wa-tree-item>季节特卖</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
 </wa-tree>
@@ -141,51 +148,51 @@ Trees inherit their font size by default. You can change the size of a tree and 
 
 <wa-tree style="font-size: 1.5rem;" selection="multiple">
   <wa-tree-item expanded>
-    Large
-    <wa-tree-item>Newsletters</wa-tree-item>
+    大
+    <wa-tree-item>新闻通讯</wa-tree-item>
     <wa-tree-item>
-      Promotions
-      <wa-tree-item>Weekly deals</wa-tree-item>
-      <wa-tree-item>Seasonal sales</wa-tree-item>
+      促销
+      <wa-tree-item>每周优惠</wa-tree-item>
+      <wa-tree-item>季节特卖</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
 </wa-tree>
 ```
 
-### Showing Indent Guides
+### 显示缩进指南
 
-Indent guides can be drawn by setting `--indent-guide-width`. You can also change the color, offset, and style, using `--indent-guide-color`, `--indent-guide-style`, and `--indent-guide-offset`, respectively.
+可以通过设置 `--indent-guide-width` 来绘制缩进指南。还可以分别使用 `--indent-guide-color`、`--indent-guide-style` 和 `--indent-guide-offset` 来更改颜色、样式和偏移。
 
 ```html {.example}
 <wa-tree class="tree-with-lines">
   <wa-tree-item expanded>
-    Design
+    设计
     <wa-tree-item expanded>
-      Brand
-      <wa-tree-item>Colors</wa-tree-item>
-      <wa-tree-item>Typography</wa-tree-item>
-      <wa-tree-item>Logo</wa-tree-item>
+      品牌
+      <wa-tree-item>颜色</wa-tree-item>
+      <wa-tree-item>排版</wa-tree-item>
+      <wa-tree-item>标识</wa-tree-item>
     </wa-tree-item>
     <wa-tree-item>
-      Components
-      <wa-tree-item>Buttons</wa-tree-item>
-      <wa-tree-item>Forms</wa-tree-item>
-      <wa-tree-item>Navigation</wa-tree-item>
+      组件
+      <wa-tree-item>按钮</wa-tree-item>
+      <wa-tree-item>表单</wa-tree-item>
+      <wa-tree-item>导航</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
 
   <wa-tree-item expanded>
-    Development
-    <wa-tree-item>Frontend</wa-tree-item>
-    <wa-tree-item>Backend</wa-tree-item>
-    <wa-tree-item>Infrastructure</wa-tree-item>
+    开发
+    <wa-tree-item>前端</wa-tree-item>
+    <wa-tree-item>后端</wa-tree-item>
+    <wa-tree-item>基础设施</wa-tree-item>
   </wa-tree-item>
 
   <wa-tree-item>
-    Marketing
-    <wa-tree-item>Social Media</wa-tree-item>
-    <wa-tree-item>Email Campaigns</wa-tree-item>
-    <wa-tree-item>Analytics</wa-tree-item>
+    营销
+    <wa-tree-item>社交媒体</wa-tree-item>
+    <wa-tree-item>邮件活动</wa-tree-item>
+    <wa-tree-item>分析</wa-tree-item>
   </wa-tree-item>
 </wa-tree>
 
@@ -196,22 +203,22 @@ Indent guides can be drawn by setting `--indent-guide-width`. You can also chang
 </style>
 ```
 
-### Lazy Loading
+### 懒加载
 
-Use the `lazy` attribute on a tree item to indicate that the content is not yet present and will be loaded later. When the user tries to expand the node, the `loading` state is set to `true` and the `wa-lazy-load` event will be emitted to allow you to load data asynchronously. The item will remain in a loading state until its content is changed.
+在树节点上使用 `lazy` 属性来指示内容尚未存在，稍后将加载。当用户尝试展开节点时，`loading` 状态被设置为 `true`，并且将发出 `wa-lazy-load` 事件以允许您异步加载数据。节点将保持加载状态，直到其内容被更改。
 
-If you want to disable this behavior after the first load, simply remove the `lazy` attribute and, on the next expand, the existing content will be shown instead.
+如果您想在第一次加载后禁用此行为，只需删除 `lazy` 属性，然后在下一次展开时，将显示现有内容。
 
 ```html {.example}
 <wa-tree>
-  <wa-tree-item lazy>Remote Repositories</wa-tree-item>
+  <wa-tree-item lazy>远程仓库</wa-tree-item>
 </wa-tree>
 
 <script type="module">
   const lazyItem = document.querySelector('wa-tree-item[lazy]');
 
   lazyItem.addEventListener('wa-lazy-load', () => {
-    // Simulate fetching data from a server
+    // 模拟从服务器获取数据
     setTimeout(() => {
       const repos = ['design-system', 'marketing-site', 'mobile-app', 'api-gateway'];
 
@@ -221,16 +228,16 @@ If you want to disable this behavior after the first load, simply remove the `la
         lazyItem.append(treeItem);
       }
 
-      // Disable lazy mode once the content has been loaded
+      // 加载内容后禁用懒加载模式
       lazyItem.lazy = false;
     }, 1000);
   });
 </script>
 ```
 
-### Customizing the Expand and Collapse Icons
+### 自定义展开和折叠图标
 
-Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `expand-button` part as shown below.
+分别使用 `expand-icon` 和 `collapse-icon` 插槽来更改展开和折叠图标。要禁用动画，请覆盖 `expand-button` 部件上的 `rotate` 属性，如下所示。
 
 ```html {.example}
 <wa-tree class="custom-icons">
@@ -238,55 +245,55 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
   <wa-icon name="square-minus" variant="solid" slot="collapse-icon"></wa-icon>
 
   <wa-tree-item expanded>
-    Recipes
+    食谱
     <wa-tree-item expanded>
-      Breakfast
-      <wa-tree-item>Pancakes</wa-tree-item>
-      <wa-tree-item>Omelette</wa-tree-item>
-      <wa-tree-item>Granola</wa-tree-item>
+      早餐
+      <wa-tree-item>煎饼</wa-tree-item>
+      <wa-tree-item>煎蛋卷</wa-tree-item>
+      <wa-tree-item>格兰诺拉麦片</wa-tree-item>
     </wa-tree-item>
     <wa-tree-item>
-      Lunch
-      <wa-tree-item>Caesar salad</wa-tree-item>
-      <wa-tree-item>Grilled chicken wrap</wa-tree-item>
+      午餐
+      <wa-tree-item>凯撒沙拉</wa-tree-item>
+      <wa-tree-item>烤鸡卷</wa-tree-item>
     </wa-tree-item>
     <wa-tree-item>
-      Dinner
-      <wa-tree-item>Pasta carbonara</wa-tree-item>
-      <wa-tree-item>Stir fry</wa-tree-item>
-      <wa-tree-item>Roasted salmon</wa-tree-item>
+      晚餐
+      <wa-tree-item>意大利面碳烤</wa-tree-item>
+      <wa-tree-item>炒菜</wa-tree-item>
+      <wa-tree-item>烤三文鱼</wa-tree-item>
     </wa-tree-item>
   </wa-tree-item>
 
   <wa-tree-item>
-    Desserts
-    <wa-tree-item>Chocolate cake</wa-tree-item>
-    <wa-tree-item>Tiramisu</wa-tree-item>
-    <wa-tree-item>Fruit tart</wa-tree-item>
+    甜点
+    <wa-tree-item>巧克力蛋糕</wa-tree-item>
+    <wa-tree-item>提拉米苏</wa-tree-item>
+    <wa-tree-item>水果塔</wa-tree-item>
   </wa-tree-item>
 </wa-tree>
 
 <style>
   .custom-icons wa-tree-item::part(expand-button) {
-    /* Disable the expand/collapse animation */
+    /* 禁用展开/折叠动画 */
     rotate: none;
   }
 </style>
 ```
 
-### With Icons
+### 带图标
 
-Decorative icons can be used before labels to provide hints for each node.
+可以在标签前使用装饰性图标来为每个节点提供提示。
 
 ```html {.example}
 <wa-tree class="tree-with-icons">
   <wa-tree-item expanded>
     <wa-icon name="folder" variant="regular"></wa-icon>
-    Documents
+    文档
 
     <wa-tree-item expanded>
       <wa-icon name="folder" variant="regular"></wa-icon>
-      Photos
+      照片
       <wa-tree-item>
         <wa-icon name="image" variant="regular"></wa-icon>
         vacation.jpg
@@ -303,7 +310,7 @@ Decorative icons can be used before labels to provide hints for each node.
 
     <wa-tree-item expanded>
       <wa-icon name="folder" variant="regular"></wa-icon>
-      Work
+      工作
       <wa-tree-item>
         <wa-icon name="file-pdf" variant="regular"></wa-icon>
         quarterly-report.pdf
@@ -320,7 +327,7 @@ Decorative icons can be used before labels to provide hints for each node.
 
     <wa-tree-item>
       <wa-icon name="folder" variant="regular"></wa-icon>
-      Personal
+      个人
       <wa-tree-item>
         <wa-icon name="file" variant="regular"></wa-icon>
         journal.txt
@@ -334,7 +341,7 @@ Decorative icons can be used before labels to provide hints for each node.
 
   <wa-tree-item>
     <wa-icon name="folder" variant="regular"></wa-icon>
-    Downloads
+    下载
     <wa-tree-item>
       <wa-icon name="file-zipper" variant="regular"></wa-icon>
       archive.zip

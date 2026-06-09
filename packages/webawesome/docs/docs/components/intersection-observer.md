@@ -6,13 +6,19 @@ synonyms:
   - scroll spy
   - lazy load trigger
   - viewport observer
+  - 滚动监听
+  - 懒加载触发器
+  - 视口观察者
 use-cases:
   - infinite scroll
   - scroll tracking
   - element visibility
+  - 无限滚动
+  - 滚动追踪
+  - 元素可见性
 ---
 
-This component leverages the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) to track when its direct children enter or leave a designated root element. The `wa-intersect` event fires whenever elements cross the visibility threshold.
+这个组件利用 [IntersectionObserver API](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver) 来跟踪它的直接子元素何时进入或离开指定的根元素。每当元素越过可见性阈值时，就会触发 `wa-intersect` 事件。
 
 ```html {.example}
 <div id="intersection__overview">
@@ -21,10 +27,10 @@ This component leverages the [IntersectionObserver API](https://developer.mozill
   </wa-intersection-observer>
 </div>
 
-<small>Scroll to see the element intersect at 100% visibility</small>
+<small>滚动以查看元素在 100% 可见度时的相交</small>
 
 <style>
-  /* Container styles */
+  /* 容器样式 */
   #intersection__overview {
     display: flex;
     flex-direction: column;
@@ -34,7 +40,7 @@ This component leverages the [IntersectionObserver API](https://developer.mozill
     padding: 1rem;
     overflow-y: auto;
 
-    /* Spacers to demonstrate scrolling */
+    /* 用于演示滚动的间隔 */
     &::before {
       content: '';
       height: 260px;
@@ -47,7 +53,7 @@ This component leverages the [IntersectionObserver API](https://developer.mozill
       flex-shrink: 0;
     }
 
-    /* Box styles */
+    /* 盒子样式 */
     .box {
       flex-shrink: 0;
       width: 120px;
@@ -81,44 +87,44 @@ This component leverages the [IntersectionObserver API](https://developer.mozill
 ```
 
 :::info
-Keep in mind that only direct children of the host element are monitored. Nested elements won't trigger intersection events.
+请记住，只有宿主元素的直接子元素会被监控。嵌套元素不会触发相交事件。
 :::
 
-## Usage Examples
+## 使用示例
 
-### Adding Observable Content
+### 添加可观察内容
 
-The intersection observer tracks only its direct children. The component uses [`display: contents`](https://developer.mozilla.org/en-US/docs/Web/CSS/display#contents) styling, which makes it seamless to integrate with flex and grid layouts from a parent container.
+相交观察者只跟踪它的直接子元素。该组件使用 [`display: contents`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display#contents) 样式，这使得它可以与父容器的 flex 和 grid 布局无缝集成。
 
 ```html
 <div style="display: flex; flex-direction: column;">
   <wa-intersection-observer>
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
+    <div class="box">盒子 1</div>
+    <div class="box">盒子 2</div>
+    <div class="box">盒子 3</div>
   </wa-intersection-observer>
 </div>
 ```
 
-The component tracks elements as they enter and exit the root element (viewport by default) and emits the `wa-intersect` event on state changes. The event provides `event.detail.entry`, an [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) object with intersection details.
+该组件在元素进入和退出根元素（默认是视口）时跟踪它们，并在状态变化时发出 `wa-intersect` 事件。该事件提供 `event.detail.entry`，一个包含相交详细信息的 [`IntersectionObserverEntry`](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserverEntry) 对象。
 
-You can identify the triggering element through `entry.target`. Check `entry.isIntersecting` to determine if an element is entering or exiting the viewport.
+你可以通过 `entry.target` 识别触发元素。检查 `entry.isIntersecting` 以确定元素是进入还是退出视口。
 
 ```javascript
 observer.addEventListener('wa-intersect', event => {
   const entry = event.detail.entry;
 
   if (entry.isIntersecting) {
-    console.log('Element entered viewport:', entry.target);
+    console.log('元素进入视口:', entry.target);
   } else {
-    console.log('Element left viewport:', entry.target);
+    console.log('元素离开视口:', entry.target);
   }
 });
 ```
 
-### Setting a Custom Root Element
+### 设置自定义根元素
 
-You can observe intersections within a specific container by assigning the `root` attribute to the [root element's](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root) ID. Apply [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin) with the `root-margin` attribute to expand or contract the observation area.
+你可以通过将 `root` 属性分配给 [根元素的](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver/root) ID 来观察特定容器内的相交。使用 `root-margin` 属性应用 [`rootMargin`](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver/rootMargin) 来扩展或收缩观察区域。
 
 ```html
 <div id="scroll-container">
@@ -126,32 +132,32 @@ You can observe intersections within a specific container by assigning the `root
 </div>
 ```
 
-### Configuring Multiple Thresholds
+### 配置多个阈值
 
-Track different visibility percentages by providing multiple [`threshold`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#threshold) values as a space-separated list.
+通过以空格分隔列表的形式提供多个 [`threshold`](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API#threshold) 值来跟踪不同的可见性百分比。
 
 ```html
 <wa-intersection-observer threshold="0 0.25 0.5 0.75 1"> ... </wa-intersection-observer>
 ```
 
-### Applying Classes on Intersect
+### 在相交时应用类
 
-The `intersect-class` attribute automatically toggles the specified class on direct children when they become visible. This enables pure CSS styling without JavaScript event handlers.
+当直接子元素变得可见时，`intersect-class` 属性会自动切换指定的类。这支持纯 CSS 样式，无需 JavaScript 事件处理程序。
 
 ```html {.example}
 <div id="intersection__classes">
   <wa-intersection-observer threshold="0.5" intersect-class="visible" root="intersection__classes">
-    <div class="box fade">Fade In</div>
-    <div class="box slide">Slide In</div>
-    <div class="box scale">Scale & Rotate</div>
-    <div class="box bounce">Bounce</div>
+    <div class="box fade">淡入</div>
+    <div class="box slide">滑入</div>
+    <div class="box scale">缩放 & 旋转</div>
+    <div class="box bounce">弹跳</div>
   </wa-intersection-observer>
 </div>
 
-<small>Scroll to see elements transition at 50% visibility</small>
+<small>滚动以查看元素在 50% 可见度时的过渡</small>
 
 <style>
-  /* Container styles */
+  /* 容器样式 */
   #intersection__classes {
     display: flex;
     flex-direction: column;
@@ -161,7 +167,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
     padding: 1rem;
     overflow-y: auto;
 
-    /* Spacers to demonstrate scrolling */
+    /* 用于演示滚动的间隔 */
     &::before {
       content: '';
       height: 260px;
@@ -180,7 +186,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
       margin-block-start: 1rem;
     }
 
-    /* Shared box styles */
+    /* 共享盒子样式 */
     .box {
       flex-shrink: 0;
       width: 120px;
@@ -194,7 +200,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
       padding: 2rem;
       margin-inline: auto;
 
-      /* Fade */
+      /* 淡入 */
       &.fade {
         background: var(--wa-color-brand-fill-loud);
         color: var(--wa-color-brand-on-loud);
@@ -207,7 +213,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
         }
       }
 
-      /* Slide */
+      /* 滑入 */
       &.slide {
         background: var(--wa-color-brand-fill-loud);
         color: var(--wa-color-brand-on-loud);
@@ -220,7 +226,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
         }
       }
 
-      /* Scale */
+      /* 缩放 */
       &.scale {
         background: var(--wa-color-brand-fill-loud);
         color: var(--wa-color-brand-on-loud);
@@ -233,7 +239,7 @@ The `intersect-class` attribute automatically toggles the specified class on dir
         }
       }
 
-      /* Bounce In and Out */
+      /* 弹跳进入和退出 */
       &.bounce {
         background: var(--wa-color-brand-fill-loud);
         color: var(--wa-color-brand-on-loud);

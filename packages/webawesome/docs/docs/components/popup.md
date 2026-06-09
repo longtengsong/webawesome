@@ -6,18 +6,24 @@ synonyms:
   - floating element
   - anchor
   - positioned element
+  - 浮动元素
+  - 锚点
+  - 定位元素
 use-cases:
   - tooltip anchor
   - dropdown anchor
   - floating UI
+  - 工具提示锚点
+  - 下拉菜单锚点
+  - 浮动UI
 ---
 
-This component's name is inspired by [`<popup>`](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Popup/explainer.md). It uses [Floating UI](https://floating-ui.com/) under the hood to provide a well-tested, lightweight, and fully declarative positioning utility for tooltips, dropdowns, and more.
+此组件的名称灵感来源于 [`<popup>`](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Popup/explainer.md)。它在底层使用 [Floating UI](https://floating-ui.com/) 为工具提示、下拉菜单等提供经过充分测试、轻量级且完全声明式的定位工具。
 
-Popup doesn't provide any styles — just positioning! The popup's preferred placement, distance, and skidding (offset) can be configured using attributes. An arrow that points to the anchor can be shown and customized to your liking. Additional positioning options are available and described in more detail below.
+Popup 不提供任何样式 — 仅提供定位功能！可以使用属性配置 popover 的首选位置、距离和偏移量（skidding）。可以显示指向锚点的箭头，并根据喜好进行自定义。其他定位选项可用，并在下面有更详细的描述。
 
 :::warning
-Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](/docs/components/tooltip) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<wa-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
+Popup 是专门为元素定位构建的底层工具。不要将它误当作 [工具提示](/docs/components/tooltip) 或类似组件，因为它_无法提供无障碍体验！_ 几乎所有 `<wa-popup>` 的正确用法都涉及构建其他组件。它应该很少（如果有的话）直接出现在你的 HTML 中。
 :::
 
 ```html {.example}
@@ -28,14 +34,14 @@ Popup is a low-level utility built specifically for positioning elements. Do not
   </wa-popup>
 
   <div class="popup-overview-options">
-    <wa-combobox label="Placement" name="placement" placeholder="Select placement..." class="popup-overview-select"></wa-combobox>
-    <wa-input type="number" name="distance" label="distance" value="0"></wa-input>
-    <wa-input type="number" name="skidding" label="Skidding" value="0"></wa-input>
+    <wa-combobox label="位置" name="placement" placeholder="选择位置..." class="popup-overview-select"></wa-combobox>
+    <wa-input type="number" name="distance" label="距离" value="0"></wa-input>
+    <wa-input type="number" name="skidding" label="偏移" value="0"></wa-input>
   </div>
 
   <div class="popup-overview-options">
-    <wa-switch name="active" checked>Active</wa-switch>
-    <wa-switch name="arrow">Arrow</wa-switch>
+    <wa-switch name="active" checked>激活</wa-switch>
+    <wa-switch name="arrow">箭头</wa-switch>
   </div>
 </div>
 
@@ -113,14 +119,14 @@ Popup is a low-level utility built specifically for positioning elements. Do not
 ```
 
 :::info
-A popup's anchor should not be styled with `display: contents` since the coordinates will not be eligible for calculation. However, if the anchor is a `<slot>` element, popup will use the first assigned element as the anchor. This behavior allows other components to pass anchors through more easily via composition.
+popup 的锚点不应该使用 `display: contents` 样式，因为坐标将无法计算。但是，如果锚点是 `<slot>` 元素，popup 将使用第一个分配的元素作为锚点。此行为允许其他组件通过组合更轻松地传递锚点。
 :::
 
-## Examples
+## 示例
 
-### Activating
+### 激活
 
-Popups are inactive and hidden until the `active` attribute is applied. Removing the attribute will tear down all positioning logic and listeners, meaning you can have many idle popups on the page without affecting performance.
+Popup 处于非活动和隐藏状态，直到应用 `active` 属性。移除该属性将拆除所有定位逻辑和监听器，这意味着你可以在页面上放置许多空闲的 popups 而不会影响性能。
 
 ```html {.example}
 <div class="popup-active">
@@ -130,7 +136,7 @@ Popups are inactive and hidden until the `active` attribute is applied. Removing
   </wa-popup>
 
   <br />
-  <wa-switch checked>Active</wa-switch>
+  <wa-switch checked>激活</wa-switch>
 </div>
 
 <style>
@@ -159,9 +165,9 @@ Popups are inactive and hidden until the `active` attribute is applied. Removing
 </script>
 ```
 
-### External Anchors
+### 外部锚点
 
-By default, anchors are slotted into the popup using the `anchor` slot. If your anchor needs to live outside of the popup, you can pass the anchor's `id` to the `anchor` attribute. Alternatively, you can pass an element reference to the `anchor` property to achieve the same effect without using an `id`.
+默认情况下，锚点使用 `anchor` 插槽放置到 popup 中。如果你的锚点需要位于 popup 外部，可以将锚点的 `id` 传递给 `anchor` 属性。或者，你可以将元素引用传递给 `anchor` 属性，在不使用 `id` 的情况下达到相同效果。
 
 ```html {.example}
 <span id="external-anchor"></span>
@@ -188,11 +194,11 @@ By default, anchors are slotted into the popup using the `anchor` slot. If your 
 </style>
 ```
 
-### Placement
+### 位置
 
-Use the `placement` attribute to tell the popup the preferred placement of the popup. Note that the actual position will vary to ensure the panel remains in the viewport if you're using positioning features such as `flip` and `shift`.
+使用 `placement` 属性告诉 popover 首选放置位置。注意，如果你使用 `flip` 和 `shift` 等定位功能，实际位置会有所变化，以确保面板保持在视口中。
 
-Since placement is preferred when using `flip`, you can observe the popup's current placement when it's active by looking at the `data-current-placement` attribute. This attribute will update as the popup flips to find available space and it will be removed when the popup is deactivated.
+由于使用 `flip` 时放置是首选的，你可以通过查看 `data-current-placement` 属性来观察 popover 激活时的当前位置。此属性会在 popover 翻转寻找可用空间时更新，并在 popover 停用时被移除。
 
 ```html {.example}
 <div class="popup-placement">
@@ -201,7 +207,7 @@ Since placement is preferred when using `flip`, you can observe the popup's curr
     <div class="box"></div>
   </wa-popup>
 
-  <wa-combobox name="placement" label="Placement" placeholder="Select placement..."></wa-combobox>
+  <wa-combobox name="placement" label="位置" placeholder="选择位置..."></wa-combobox>
 </div>
 
 <style>
@@ -250,9 +256,9 @@ Since placement is preferred when using `flip`, you can observe the popup's curr
 </script>
 ```
 
-### Distance
+### 距离
 
-Use the `distance` attribute to change the distance between the popup and its anchor. A positive value will move the popup further away and a negative value will move it closer.
+使用 `distance` 属性更改 popover 与其锚点之间的距离。正值将使 popover 远离，负值将使其靠近。
 
 ```html {.example}
 <div class="popup-distance">
@@ -261,7 +267,7 @@ Use the `distance` attribute to change the distance between the popup and its an
     <div class="box"></div>
   </wa-popup>
 
-  <wa-slider min="-50" max="50" step="1" value="0" label="Distance"></wa-slider>
+  <wa-slider min="-50" max="50" step="1" value="0" label="距离"></wa-slider>
 </div>
 
 <style>
@@ -294,9 +300,9 @@ Use the `distance` attribute to change the distance between the popup and its an
 </script>
 ```
 
-### Skidding
+### 偏移
 
-The `skidding` attribute is similar to `distance`, but instead allows you to offset the popup along the anchor's axis. Both positive and negative values are allowed.
+`skidding` 属性与 `distance` 类似，但允许你沿着锚点的轴偏移 popover。允许正值和负值。
 
 ```html {.example}
 <div class="popup-skidding">
@@ -305,7 +311,7 @@ The `skidding` attribute is similar to `distance`, but instead allows you to off
     <div class="box"></div>
   </wa-popup>
 
-  <wa-slider min="-50" max="50" step="1" value="0" label="Skidding"></wa-slider>
+  <wa-slider min="-50" max="50" step="1" value="0" label="偏移"></wa-slider>
 </div>
 
 <style>
@@ -338,11 +344,11 @@ The `skidding` attribute is similar to `distance`, but instead allows you to off
 </script>
 ```
 
-### Arrows
+### 箭头
 
-Add an arrow to your popup with the `arrow` attribute. It's usually a good idea to set a `distance` to make room for the arrow. To adjust the arrow's color and size, use the `--arrow-color` and `--arrow-size` custom properties, respectively. You can also target the `arrow` part to add additional styles such as shadows and borders to match styles applied to rest of the popup element. 
+使用 `arrow` 属性为 popover 添加箭头。通常设置 `distance` 为箭头留出空间是个好主意。要调整箭头的颜色和大小，分别使用 `--arrow-color` 和 `--arrow-size` 自定义属性。你也可以定位 `arrow` 部分来添加额外的样式，如阴影和边框，以匹配应用于 popover 元素其余部分的样式。
 
-By default, the arrow will be aligned as close to the center of the _anchor_ as possible, considering available space and `arrow-padding`. You can use the `arrow-placement` attribute to force the arrow to align to the start, end, or center of the _popup_ instead.
+默认情况下，箭头会尽可能靠近锚点的中心对齐，考虑可用空间和 `arrow-padding`。你可以使用 `arrow-placement` 属性强制箭头对齐到 popover 的起始、结束或中心。
 
 ```html {.example}
 <div class="popup-arrow">
@@ -352,18 +358,18 @@ By default, the arrow will be aligned as close to the center of the _anchor_ as 
   </wa-popup>
 
   <div class="popup-arrow-options">
-    <wa-combobox label="Placement" name="placement" placeholder="Select placement..." class="popup-overview-select"></wa-combobox>
+    <wa-combobox label="位置" name="placement" placeholder="选择位置..." class="popup-overview-select"></wa-combobox>
 
-    <wa-select label="Arrow Placement" name="arrow-placement" value="anchor">
-      <wa-option value="anchor">anchor</wa-option>
-      <wa-option value="start">start</wa-option>
-      <wa-option value="end">end</wa-option>
-      <wa-option value="center">center</wa-option>
+    <wa-select label="箭头位置" name="arrow-placement" value="anchor">
+      <wa-option value="anchor">锚点</wa-option>
+      <wa-option value="start">起始</wa-option>
+      <wa-option value="end">结束</wa-option>
+      <wa-option value="center">中心</wa-option>
     </wa-select>
   </div>
 
   <div class="popup-arrow-options">
-    <wa-switch name="arrow" checked>Arrow</wa-switch>
+    <wa-switch name="arrow" checked>箭头</wa-switch>
   </div>
 
   <style>
@@ -433,11 +439,11 @@ By default, the arrow will be aligned as close to the center of the _anchor_ as 
 </div>
 ```
 
-### Adding a border
+### 添加边框
 
-Borders can also be added to the popup element by targeting the contents of the `wa-popup` element. This styling can also be extended to the arrow itself by targeting `.arrow` class in the popup.
+也可以通过定位 `wa-popup` 元素的内容为 popover 元素添加边框。这种样式也可以通过定位 popover 中的 `.arrow` 类扩展到箭头本身。
 
-When adding borders to the popup element which has an arrow, make sure to set the `--popup-border-width` custom property to match the width of the border of the popup. Setting this will allow the arrow to overlap the border of the popup so that they visually appear connected.
+在为带有箭头的 popover 元素添加边框时，请确保设置 `--popup-border-width` 自定义属性以匹配 popover 边框的宽度。设置此属性将允许箭头重叠 popover 的边框，使它们在视觉上看起来是连接的。
 
 ```html {.example}
 <div class="popup-border">
@@ -447,7 +453,7 @@ When adding borders to the popup element which has an arrow, make sure to set th
   </wa-popup>
 
   <div class="popup-border-options">
-    <wa-combobox label="Placement" name="placement" placeholder="Select placement..." class="popup-overview-select"></wa-combobox>
+    <wa-combobox label="位置" name="placement" placeholder="选择位置..." class="popup-overview-select"></wa-combobox>
   </div>
 
   <style>
@@ -519,9 +525,9 @@ When adding borders to the popup element which has an arrow, make sure to set th
 
 {# TODO: this example totally destroys browsers. Needs investigation.
 
-### Syncing with the Anchor's Dimensions
+### 与锚点尺寸同步
 
-Use the `sync` attribute to make the popup the same width or height as the anchor element. This is useful for controls that need the popup to stay the same width or height as the trigger.
+使用 `sync` 属性使 popover 与锚点元素具有相同的宽度或高度。这对于需要 popover 保持与触发器相同宽度或高度的控件很有用。
 
 ```html {.example}
 <div class="popup-sync">
@@ -530,11 +536,11 @@ Use the `sync` attribute to make the popup the same width or height as the ancho
     <div class="box"></div>
   </wa-popup>
 
-  <wa-select value="width" label="Sync">
-    <wa-option value="width">Width</wa-option>
-    <wa-option value="height">Height</wa-option>
-    <wa-option value="both">Both</wa-option>
-    <wa-option value="">None</wa-option>
+  <wa-select value="width" label="同步">
+    <wa-option value="width">宽度</wa-option>
+    <wa-option value="height">高度</wa-option>
+    <wa-option value="both">两者</wa-option>
+    <wa-option value="">无</wa-option>
   </wa-select>
 </div>
 
@@ -572,15 +578,15 @@ Use the `sync` attribute to make the popup the same width or height as the ancho
 ```
 #}
 
-### Flip
+### 翻转
 
-When the popup doesn't have enough room in its preferred placement, it can automatically flip to keep it in view and visually connected to its anchor.
-To enable this, use the `flip` attribute. By default, the popup will flip to the opposite placement, but you can configure preferred fallback placements using `flip-fallback-placement` and `flip-fallback-strategy`. Additional options are available to control the flip behavior's boundary and padding.
+当 popover 在其首选位置没有足够的空间时，它可以自动翻转以保持可见并与锚点在视觉上连接。
+要启用此功能，请使用 `flip` 属性。默认情况下，popover 会翻转到相反的位置，但你可以使用 `flip-fallback-placement` 和 `flip-fallback-strategy` 配置首选的回退位置。其他选项可用于控制翻转行为的边界和填充。
 
-By default, flip takes effect when the popup would overflow the viewport.
-You can use `boundary="scroll"` to make the popup resize when it overflows its nearest scrollable container instead.
+默认情况下，当 popover 会溢出视口时，翻转生效。
+你可以使用 `boundary="scroll"` 使 popover 在溢出其最近的可滚动容器时调整大小。
 
-Scroll the container to see how the popup flips to prevent clipping.
+滚动容器以查看 popover 如何翻转以防止被裁剪。
 
 ```html {.example}
 <div class="popup-flip">
@@ -592,7 +598,7 @@ Scroll the container to see how the popup flips to prevent clipping.
   </div>
 
   <br />
-  <wa-switch checked>Flip</wa-switch>
+  <wa-switch checked>翻转</wa-switch>
 </div>
 
 <style>
@@ -628,15 +634,15 @@ Scroll the container to see how the popup flips to prevent clipping.
 </script>
 ```
 
-### Flip Fallbacks
+### 翻转回退
 
-While using the `flip` attribute, you can customize the placement of the popup when the preferred placement doesn't have room. For this, use `flip-fallback-placements` and `flip-fallback-strategy`.
+在使用 `flip` 属性时，你可以在首选位置没有空间时自定义 popover 的位置。为此，请使用 `flip-fallback-placements` 和 `flip-fallback-strategy`。
 
-If the preferred placement doesn't have room, the first suitable placement found in `flip-fallback-placement` will be used. The value of this attribute must be a string including any number of placements separated by a space, e.g. `"right bottom"`.
+如果首选位置没有空间，将使用 `flip-fallback-placement` 中找到的第一个合适位置。此属性的值必须是包含任意数量位置的字符串，用空格分隔，例如 `"right bottom"`。
 
-If no fallback placement works, the final placement will be determined by `flip-fallback-strategy`. This value can be either `initial` (default), where the placement reverts to the position in `placement`, or `best-fit`, where the placement is chosen based on available space.
+如果没有回退位置有效，最终位置将由 `flip-fallback-strategy` 确定。此值可以是 `initial`（默认），其中位置恢复到 `placement` 中的位置，或者是 `best-fit`，其中根据可用空间选择位置。
 
-Scroll the container to see how the popup changes it's fallback placement to prevent clipping.
+滚动容器以查看 popover 如何更改其回退位置以防止被裁剪。
 
 ```html {.example}
 <div class="popup-flip-fallbacks">
@@ -680,15 +686,15 @@ Scroll the container to see how the popup changes it's fallback placement to pre
 </style>
 ```
 
-### Shift
+### 移位
 
-When a popup is longer than its anchor, it risks overflowing.
-In this case, use the `shift` attribute to shift the popup along its axis and back into view. You can customize the shift behavior using `shiftBoundary` and `shift-padding`.
+当 popover 比其锚点长时，它有溢出的风险。
+在这种情况下，使用 `shift` 属性沿其轴移动 popover 并回到视图中。你可以使用 `shiftBoundary` 和 `shift-padding` 自定义移位行为。
 
-By default, auto-size takes effect when the popup would overflow the viewport.
-You can use `boundary="scroll"` to make the popup resize when it overflows its nearest scrollable container instead.
+默认情况下，当 popover 会溢出视口时，自动大小生效。
+你可以使用 `boundary="scroll"` 使 popover 在溢出其最近的可滚动容器时调整大小。
 
-Toggle the switch to see the difference.
+切换开关以查看区别。
 
 ```html {.example}
 <div class="popup-shift">
@@ -699,7 +705,7 @@ Toggle the switch to see the difference.
     </wa-popup>
   </div>
 
-  <wa-switch checked>Shift</wa-switch>
+  <wa-switch checked>移位</wa-switch>
 </div>
 
 <style>
@@ -734,17 +740,17 @@ Toggle the switch to see the difference.
 </script>
 ```
 
-### Auto-size
+### 自动大小
 
-Use the `auto-size` attribute to tell the popup to resize when necessary to prevent it from overflowing.
-Possible values are `horizontal`, `vertical`, and `both`. You can use `autoSizeBoundary` and `auto-size-padding` to customize the behavior of this option. Auto-size works well with `flip`, but if you're using `auto-size-padding` make sure `flip-padding` is the same value.
+使用 `auto-size` 属性告诉 popover 在必要时调整大小以防止溢出。
+可能的值是 `horizontal`、`vertical` 和 `both`。你可以使用 `autoSizeBoundary` 和 `auto-size-padding` 自定义此选项的行为。自动大小与 `flip` 配合使用效果很好，但如果你使用 `auto-size-padding`，请确保 `flip-padding` 是相同的值。
 
-By default, auto-size takes effect when the popup would overflow the viewport.
-You can use `boundary="scroll"` to make the popup resize when it overflows its nearest scrollable container instead.
+默认情况下，当 popover 会溢出视口时，自动大小生效。
+你可以使用 `boundary="scroll"` 使 popover 在溢出其最近的可滚动容器时调整大小。
 
-When using `auto-size`, one or both of `--auto-size-available-width` and `--auto-size-available-height` will be applied to the host element. These values determine the available space the popover has before clipping will occur. Since they cascade, you can use them to set a max-width/height on your popup's content and easily control its overflow.
+在使用 `auto-size` 时，`--auto-size-available-width` 和 `--auto-size-available-height` 中的一个或两个将应用于宿主元素。这些值确定 popover 在裁剪发生之前可用的空间。由于它们级联，你可以使用它们来设置 popover 内容的最大宽度/高度，并轻松控制其溢出。
 
-Scroll the container to see the popup resize as its available space changes.
+滚动容器以查看 popover 在可用空间变化时如何调整大小。
 
 ```html {.example}
 <div class="popup-auto-size">
@@ -756,7 +762,7 @@ Scroll the container to see the popup resize as its available space changes.
   </div>
 
   <br />
-  <wa-switch checked>Auto-size</wa-switch>
+  <wa-switch checked>自动大小</wa-switch>
 </div>
 
 <style>
@@ -779,11 +785,11 @@ Scroll the container to see the popup resize as its available space changes.
     background: var(--wa-color-brand-fill-loud);
     border-radius: var(--wa-border-radius-m);
 
-    /* This sets the preferred size of the popup's content */
+    /* 这设置了 popover 内容的首选大小 */
     width: 100px;
     height: 200px;
 
-    /* This sets the maximum dimensions and allows scrolling when auto-size kicks in */
+    /* 这设置了最大尺寸，并在自动大小生效时允许滚动 */
     max-width: var(--auto-size-available-width);
     max-height: var(--auto-size-available-height);
     overflow: auto;
@@ -799,9 +805,9 @@ Scroll the container to see the popup resize as its available space changes.
 </script>
 ```
 
-### Hover Bridge
+### 悬停桥
 
-When a gap exists between the anchor and the popup element, this option will add a "hover bridge" that fills the gap using an invisible element. This makes listening for events such as `mouseover` and `mouseout` more sane because the pointer never technically leaves the element. The hover bridge will only be drawn when the popover is active. For demonstration purposes, the bridge in this example is shown in orange.
+当锚点和 popover 元素之间存在间隙时，此选项将添加一个"悬停桥"，使用不可见元素填充间隙。这使得监听 `mouseover` 和 `mouseout` 等事件更加合理，因为指针从未真正离开元素。悬停桥只有在 popover 激活时才会绘制。为了演示目的，此示例中的桥显示为橙色。
 
 ```html {.example}
 <div class="popup-hover-bridge">
@@ -810,9 +816,9 @@ When a gap exists between the anchor and the popup element, this option will add
     <div class="box"></div>
   </wa-popup>
   <br />
-  <wa-switch checked>Hover Bridge</wa-switch><br />
-  <wa-slider min="0" max="50" step="1" value="10" label="Distance"></wa-slider>
-  <wa-slider min="-50" max="50" step="1" value="0" label="Skidding"></wa-slider>
+  <wa-switch checked>悬停桥</wa-switch><br />
+  <wa-slider min="0" max="50" step="1" value="10" label="距离"></wa-slider>
+  <wa-slider min="-50" max="50" step="1" value="0" label="偏移"></wa-slider>
 </div>
 <style>
   .popup-hover-bridge span[slot='anchor'] {
@@ -844,17 +850,17 @@ When a gap exists between the anchor and the popup element, this option will add
   const container = document.querySelector('.popup-hover-bridge');
   const popup = container.querySelector('wa-popup');
   const hoverBridge = container.querySelector('wa-switch');
-  const distance = container.querySelector('wa-slider[label="Distance"]');
-  const skidding = container.querySelector('wa-slider[label="Skidding"]');
+  const distance = container.querySelector('wa-slider[label="距离"]');
+  const skidding = container.querySelector('wa-slider[label="偏移"]');
   distance.addEventListener('input', () => (popup.distance = distance.value));
   skidding.addEventListener('input', () => (popup.skidding = skidding.value));
   hoverBridge.addEventListener('change', () => (popup.hoverBridge = hoverBridge.checked));
 </script>
 ```
 
-### Virtual Elements
+### 虚拟元素
 
-In most cases, popups are anchored to an actual element. Sometimes, it can be useful to anchor them to a non-element. To do this, you can pass a `VirtualElement` to the anchor property. A virtual element must contain a function called `getBoundingClientRect()` that returns a [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) object as shown below.
+在大多数情况下，popups 锚定到实际元素。有时，将它们锚定到非元素可能很有用。为此，你可以将 `VirtualElement` 传递给 anchor 属性。虚拟元素必须包含一个名为 `getBoundingClientRect()` 的函数，该函数返回如下所示的 [`DOMRect`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMRect) 对象。
 
 ```ts
 const virtualElement = {
@@ -865,7 +871,7 @@ const virtualElement = {
 };
 ```
 
-This example anchors a popup to the mouse cursor using a virtual element. As such, a mouse is required to properly view it.
+此示例使用虚拟元素将 popover 锚定到鼠标光标。因此，需要鼠标才能正确查看它。
 
 ```html {.example}
 <div class="popup-virtual-element">
@@ -873,7 +879,7 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
     <div class="circle"></div>
   </wa-popup>
 
-  <wa-switch>Highlight mouse cursor</wa-switch>
+  <wa-switch>高亮鼠标光标</wa-switch>
 </div>
 
 <script>
@@ -884,7 +890,7 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
   let clientX = 0;
   let clientY = 0;
 
-  // Set the virtual element as a property
+  // 将虚拟元素设置为属性
   popup.anchor = {
     getBoundingClientRect() {
       return {
@@ -900,20 +906,20 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
     },
   };
 
-  // Only activate the popup when the switch is checked
+  // 仅在开关选中时激活 popover
   enabled.addEventListener('change', () => {
     popup.active = enabled.checked;
   });
 
-  // Listen for the mouse to move
+  // 监听鼠标移动
   document.addEventListener('mousemove', handleMouseMove);
 
-  // Update the virtual element as the mouse moves
+  // 随着鼠标移动更新虚拟元素
   function handleMouseMove(event) {
     clientX = event.clientX;
     clientY = event.clientY;
 
-    // Reposition the popup when the virtual anchor moves
+    // 当虚拟锚点移动时重新定位 popover
     if (popup.active) {
       popup.reposition();
     }
@@ -921,7 +927,7 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
 </script>
 
 <style>
-  /* If you need to set a z-index, set it on the popup part like this */
+  /* 如果你需要设置 z-index，像这样在 popup 部分上设置 */
   .popup-virtual-element wa-popup::part(popup) {
     z-index: 1000;
     pointer-events: none;
@@ -947,9 +953,9 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
 </style>
 ```
 
-### Built-in Animations
+### 内置动画
 
-The following classes can be applied to the popup's `popup` part to animate it in or out programmatically. You can control the animation duration with the `--show-duration` and `--hide-duration` custom properties.
+以下类可以应用于 popover 的 `popup` 部分，以编程方式使其淡入或淡出。你可以使用 `--show-duration` 和 `--hide-duration` 自定义属性控制动画持续时间。
 
-- `show` / `hide` - Shows or hides the popover with a fade
-- `show-with-scale` / `hide-with-scale` - Shows or hides the popover with a fade and subtle scale effect
+- `show` / `hide` - 使用淡入淡出显示或隐藏 popover
+- `show-with-scale` / `hide-with-scale` - 使用淡入淡出和细微缩放效果显示或隐藏 popover

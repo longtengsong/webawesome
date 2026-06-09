@@ -1,5 +1,5 @@
 ---
-title: Details
+title: 详情折叠
 layout: component
 category: Layout
 synonyms:
@@ -8,11 +8,15 @@ synonyms:
   - expandable
   - disclosure
   - expander
+  - 折叠面板
+  - 可折叠
 use-cases:
   - FAQ
   - show more
   - expandable section
   - toggle content
+  - 常见问题
+  - 显示更多
 ---
 
 ```html {.example}
@@ -22,11 +26,11 @@ use-cases:
 </wa-details>
 ```
 
-## Examples
+## 示例
 
-### Expanded Initially
+### 初始展开
 
-Use the `open` attribute to expand the details initially.
+使用 `open` 属性初始展开详情。
 
 ```html {.example}
 <wa-details summary="Toggle Me" open>
@@ -35,9 +39,9 @@ Use the `open` attribute to expand the details initially.
 </wa-details>
 ```
 
-### Disabled
+### 禁用
 
-Use the `disabled` attribute to prevent the details from expanding.
+使用 `disabled` 属性防止详情展开。
 
 ```html {.example}
 <wa-details summary="Disabled" disabled>
@@ -46,9 +50,9 @@ Use the `disabled` attribute to prevent the details from expanding.
 </wa-details>
 ```
 
-### Customizing the Summary Icon
+### 自定义摘要图标
 
-Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `icon` part as shown below.
+使用 `expand-icon` 和 `collapse-icon` 插槽分别更改展开和折叠图标。要禁用动画，请覆盖 `icon` 部件上的 `rotate` 属性，如下所示。
 
 ```html {.example}
 <wa-details summary="Toggle Me" class="custom-icons">
@@ -60,16 +64,16 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 </wa-details>
 
 <style>
-  /* Disable the expand/collapse animation */
+  /* 禁用展开/折叠动画 */
   wa-details.custom-icons::part(icon) {
     rotate: none;
   }
 </style>
 ```
 
-### Icon Position
+### 图标位置
 
-The default position for the expand and collapse icons is at the end of the summary. Set the `icon-placement` attribute to `start` to place the icon at the start of the summary.
+展开和折叠图标的默认位置在摘要的末尾。将 `icon-placement` 属性设置为 `start` 以将图标放置在摘要的开头。
 
 ```html {.example}
 <div class="wa-stack">
@@ -84,10 +88,10 @@ The default position for the expand and collapse icons is at the end of the summ
 </div>
 ```
 
-### HTML in Summary
+### 摘要中的 HTML
 
-To use HTML in the summary, use the `summary` slot.
-Links and other interactive elements will still retain their behavior:
+要在摘要中使用 HTML，请使用 `summary` 插槽。
+链接和其他交互式元素仍将保留其行为：
 
 ```html {.example}
 <wa-details>
@@ -102,9 +106,9 @@ Links and other interactive elements will still retain their behavior:
 </wa-details>
 ```
 
-### Right-to-Left Languages
+### 从右到左语言
 
-The details component, including its `icon-placement`, automatically adapts to right-to-left languages:
+详情组件，包括其 `icon-placement`，会自动适应从右到左的语言：
 
 ```html {.example}
 <div class="wa-stack">
@@ -117,9 +121,9 @@ The details component, including its `icon-placement`, automatically adapts to r
 </div>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the element’s visual appearance.
+使用 `appearance` 属性来更改元素的视觉外观。
 
 ```html {.example}
 <div class="wa-stack">
@@ -140,9 +144,9 @@ Use the `appearance` attribute to change the element’s visual appearance.
 </div>
 ```
 
-### Grouping Details
+### 分组详情
 
-Use the `name` attribute to create accordion-like behavior where only one details element with the same name can be open at a time. This matches the behavior of native `<details>` elements.
+使用 `name` 属性来创建手风琴式的行为，其中只有一个具有相同名称的详情元素可以同时打开。这与原生 `<details>` 元素的行为相匹配。
 
 ```html {.example}
 <div class="wa-stack">

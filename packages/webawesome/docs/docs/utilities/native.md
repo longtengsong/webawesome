@@ -1,22 +1,29 @@
 ---
-title: Native Styles
-description: Native styles apply your theme to native HTML elements so they match the look and feel of Web Awesome components.
+title: 原生样式
+description: 原生样式将您的主题应用于原生 HTML 元素，使它们与 Web Awesome 组件的外观和感觉相匹配。
 layout: page-outline
 tags: styleUtilities
 synonyms:
   - browser default
   - native styles
   - global styles
+  - 浏览器默认
+  - 原生样式
+  - 全局样式
 use-cases:
   - native HTML
   - style native elements
   - reset
   - default styles
+  - 原生 HTML
+  - 样式原生元素
+  - 重置
+  - 默认样式
 ---
 
-Native styles use design tokens to spruce up native HTML elements so that they match the look and feel of your theme. While these native styles are completely optional, they're a great starting point for a cohesive design and a huge help when using a combination of native elements and Web Awesome components in your project.
+原生样式使用设计标记来美化原生 HTML 元素，使它们与您主题的外观和感觉相匹配。虽然这些原生样式完全可选，但它们是统一设计的绝佳起点，并且在您的项目中结合使用原生元素和 Web Awesome 组件时非常有帮助。
 
-## Using native styles
+## 使用原生样式
 
 <wa-tab-group>
   <wa-tab panel="cdn"><wa-icon name="rocket-launch" variant="regular"></wa-icon> CDN</wa-tab>
@@ -25,54 +32,52 @@ Native styles use design tokens to spruce up native HTML elements so that they m
 
   <wa-tab-panel name="cdn">
 {% markdown %}
-1. Head over to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
-2. Next to <wa-tag class="tag-ui" appearance="outlined">Features</wa-tag>, select the <wa-tag class="tag-ui" appearance="outlined">Native styles</wa-tag> checkbox.
-3. <wa-tag class="tag-ui" appearance="outlined">Save Changes</wa-tag> to immediately update anywhere you're using your project.
+1. 前往您的项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 在 <wa-tag class="tag-ui" appearance="outlined">功能</wa-tag> 旁边，选中 <wa-tag class="tag-ui" appearance="outlined">原生样式</wa-tag> 复选框。
+3. <wa-tag class="tag-ui" appearance="outlined">保存更改</wa-tag> 以立即更新您使用项目的任何位置。
 {% endmarkdown %}
   </wa-tab-panel>
 
   <wa-tab-panel name="npm">
 {% markdown %}
-To use all Web Awesome styles (including [utilities](/docs/utilities/)), import the following stylesheet in your project:
+要使用所有 Web Awesome 样式（包括 [工具](/docs/utilities/)），请在您的项目中导入以下样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/webawesome.css';
 ```
 
-Or, if you only want styles for native elements, import a theme and native styles individually:
+或者，如果您只想要原生元素的样式，请单独导入主题和原生样式：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/themes/default.css';
 import '@awesome.me/webawesome/dist/styles/native.css';
 ```
-
 {% endmarkdown %}
 </wa-tab-panel>
 
   <wa-tab-panel name="self-hosted">
 {% markdown %}
-To use all Web Awesome styles (including [utilities](/docs/utilities/)), include the following stylesheet in your project:
+要使用所有 Web Awesome 样式（包括 [工具](/docs/utilities/)），请在您的项目中包含以下样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/webawesome.css" />
 ```
 
-Or, if you only want styles for native elements, include a theme and native styles individually:
+或者，如果您只想要原生元素的样式，请单独包含主题和原生样式：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/themes/default.css" />
 <link rel="stylesheet" href="/dist/styles/native.css" />
 ```
-
 {% endmarkdown %}
 </wa-tab-panel>
 </wa-tab-group>
 
-You can additionally include any pre-made [theme](/docs/themes/) or [color palette](/docs/color-palettes/) to change the look of native elements.
+您还可以包含任何预制的 [主题](/docs/themes/) 或 [颜色调色板](/docs/color-palettes/) 来更改原生元素的外观。
 
-## Opting out of native styles
+## 选择不使用原生样式
 
-If you want to keep Web Awesome's components, tokens, and utilities but let a native element fall back to browser defaults, reset that element in your own stylesheet.
+如果您想保留 Web Awesome 的组件、标记和工具，但让原生元素回退到浏览器默认值，请在您自己的样式表中重置该元素。
 
 ```html {.example}
 <div class="wa-cluster wa-align-items-center">
@@ -88,9 +93,9 @@ If you want to keep Web Awesome's components, tokens, and utilities but let a na
 </style>
 ```
 
-Use `all: revert` on the exact element you want to opt out of native styles. Re-apply any properties you still want to inherit from your app, such as `font`.
+对您想要选择不使用原生样式的确切元素使用 `all: revert`。重新应用您仍然想要从应用中继承的任何属性，例如 `font`。
 
-To opt out for an entire section, apply the same reset within a wrapper and target only the native elements in that area.
+要为整个区域选择不使用，请在包装器中应用相同的重置，并且仅针对该区域中的原生元素。
 
 ```css
 .native-reset-zone :where(button, input, select, textarea, table, details, dialog, progress) {
@@ -99,25 +104,23 @@ To opt out for an entire section, apply the same reset within a wrapper and targ
 }
 ```
 
-If your app has separate page-level entry points, the simplest page-level opt-out is to not load `native.css` on pages that should keep browser defaults. You can still load your theme, components, and any [utilities](/docs/utilities/) you want on those pages.
+如果您的应用程序具有单独的页面级入口点，最简单的页面级选择不使用方法是在应该保留浏览器默认值的页面上不加载 `native.css`。您仍然可以在这些页面上加载您想要的主题、组件和任何 [工具](/docs/utilities/)。
 
-## Content flow
+## 内容流动
 
-Native styles set default space between many block-level HTML elements using the `--wa-content-spacing` token from your theme. This helps ensure that your content is readable.
+原生样式使用主题中的 `--wa-content-spacing` 标记在许多块级 HTML 元素之间设置默认空间。这有助于确保您的内容是可读的。
 
 ```html {.example}
 <h3>Content flows naturally</h3>
 <p>
-  Native styles set consistent spacing between block-level elements using your theme's design tokens. This means
-  headings, paragraphs, lists, and other elements look great together without extra effort.
+  原生样式使用您主题的设计标记在块级元素之间设置一致的间距。这意味着标题、段落、列表和其他元素无需额外努力就能很好地配合在一起。
 </p>
 <blockquote>
   The Road goes ever on and on<br />
   Out from the door where it began.
 </blockquote>
 <p>
-  Spacing is controlled by the <code>--wa-content-spacing</code> token, so you can easily adjust it to match your
-  design. Set it to zero if you prefer to handle spacing yourself.
+  间距由 `--wa-content-spacing` 标记控制，因此您可以轻松调整它以匹配您的设计。如果您更愿意自己处理间距，请将其设置为零。
 </p>
 <hr />
 <ul>
@@ -127,15 +130,15 @@ Native styles set default space between many block-level HTML elements using the
 </ul>
 ```
 
-To remove this default spacing, you can set `--wa-content-spacing: 0` in your styles.
+要删除此默认间距，您可以在样式中设置 `--wa-content-spacing: 0`。
 
-## Typography
+## 排版
 
-Native styles use [typography design tokens](/docs/tokens/typography/) to style text elements. A number of styles — such as `color`, `font-family`, `font-size`, `font-weight`, and `line-height` — are set on the `<body>` element to be inherited by child elements.
+原生样式使用 [排版设计标记](/docs/tokens/typography/) 来样式化文本元素。许多样式 - 例如 `color`、`font-family`、`font-size`、`font-weight` 和 `line-height` - 都设置在 `<body>` 元素上，以便由子元素继承。
 
-### Headings
+### 标题
 
-Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-heading` suffix, condensed line height, and `text-wrap: balance` for a prominent yet compact appearance.
+使用 `<h1>` 到 `<h6>` 创建标题。标题使用带有 `-heading` 后缀的标记、紧凑的行高和 `text-wrap: balance` 来实现突出但紧凑的外观。
 
 ```html {.example}
 <h1>Heading 1</h1>
@@ -146,25 +149,23 @@ Create headings with `<h1>` through `<h6>`. Headings use tokens with the `-headi
 <h6>Heading 6</h6>
 ```
 
-### Paragraphs
+### 段落
 
-Create paragraphs with `<p>`. Paragraphs inherit the default text styles set on the `<body>` element and use `text-wrap: pretty` to prevent orphaned lines in supported browsers.
+使用 `<p>` 创建段落。段落继承在 `<body>` 元素上设置的默认文本样式，并使用 `text-wrap: pretty` 来防止支持的浏览器中出现孤儿行。
 
 ```html {.example}
 <p>
-  Paragraphs inherit the default text styles set on the body element, including font family, size, weight, and line
-  height. They also use <code>text-wrap: pretty</code> to prevent orphaned lines in supported browsers.
+  段落继承在 body 元素上设置的默认文本样式，包括字体族、大小、粗细和行高。它们还使用 `text-wrap: pretty` 来防止支持的浏览器中出现孤儿行。
 </p>
 
 <p>
-  You can have as many paragraphs as you need and they'll maintain consistent spacing between them. Native styles ensure
-  everything stays readable and well-proportioned, no matter how much content you throw at it.
+  您可以拥有任意数量的段落，它们之间会保持一致的间距。原生样式确保无论您投入多少内容，一切都保持可读和比例匀称。
 </p>
 ```
 
-### Blockquotes
+### 块引用
 
-Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's serif font family, a quiet color, a leading border, and a larger font size that scales with surrounding text.
+使用 `<blockquote>` 强调较长的引用。块引用使用您主题的衬线字体系列、柔和的颜色、左侧边框以及随周围文本缩放的大号字体。
 
 ```html {.example}
 <blockquote>
@@ -174,9 +175,9 @@ Emphasize longer quotations with `<blockquote>`. Block quotes use your theme's s
 </blockquote>
 ```
 
-### Lists
+### 列表
 
-Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list items within. Markers use `currentColor` at reduced opacity so they sit quietly next to text.
+使用 `<ol>` 和 `<ul>` 创建有序和无序列表，以及其中的 `<li>` 列表项。标记使用降低不透明度的 `currentColor`，使它们安静地位于文本旁边。
 
 ```html {.example}
 <div class="wa-grid">
@@ -206,7 +207,7 @@ Create ordered and unordered lists with `<ol>` and `<ul>`, plus `<li>` for list 
 </div>
 ```
 
-Use `<menu>` as a semantic alternative to unordered lists. Native styles reset the browser's default list styles for `<menu>` to support more flexible styling.
+使用 `<menu>` 作为无序列表的语义替代。原生样式重置了浏览器对 `<menu>` 的默认列表样式，以支持更灵活的样式设置。
 
 ```html {.example}
 <menu class="wa-cluster">
@@ -231,31 +232,28 @@ Use `<menu>` as a semantic alternative to unordered lists. Native styles reset t
 </menu>
 ```
 
-Use `<dl>` to create lists of terms (`<dt>`) and definitions (`<dd>`).
+使用 `<dl>` 创建术语（`<dt>`）和定义（`<dd>`）列表。
 
 ```html {.example}
 <dl>
   <dt>Web Components</dt>
   <dd>
-    A set of web platform APIs that let you create custom, reusable HTML elements. They work across frameworks and
-    browsers, making them ideal for building design systems and component libraries.
+    一组 Web 平台 API，允许您创建自定义、可重用的 HTML 元素。它们跨框架和浏览器工作，使其非常适合构建设计系统和组件库。
   </dd>
   <dt>Shadow DOM</dt>
   <dd>
-    A browser feature that lets you attach a hidden DOM tree to an element. This keeps your component's styles and
-    markup encapsulated, so they won't accidentally interfere with the rest of the page.
+    一种浏览器功能，允许您将隐藏的 DOM 树附加到元素。这使组件的样式和标记保持封装，因此它们不会意外干扰页面的其余部分。
   </dd>
   <dt>Custom Elements</dt>
   <dd>
-    A JavaScript API that lets you define new HTML tags with their own behavior. Once registered, you can use them
-    anywhere in your markup just like built-in elements.
+    一个 JavaScript API，允许您定义具有自己行为的新 HTML 标签。一旦注册，您就可以像内置元素一样在任何地方使用它们。
   </dd>
 </dl>
 ```
 
-### Code blocks
+### 代码块
 
-Create code blocks or other preformatted text with `<pre>`. Preformatted text uses your theme's monospace font family and a subtle background color.
+使用 `<pre>` 创建代码块或其他预格式化文本。预格式化文本使用您主题的等宽字体系列和微妙的背景颜色。
 
 ```html {.example}
 <pre>
@@ -266,9 +264,9 @@ export function thing() {
 </pre>
 ```
 
-### Inline text
+### 内联文本
 
-Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others to stylize or emphasize text.
+使用任何内联文本元素，如 `<strong>`、`<em>`、`<a>`、`<kbd>` 等，来样式化或强调文本。
 
 ```html {.example}
 <div class="wa-grid">
@@ -293,11 +291,11 @@ Use any inline text element like `<strong>`, `<em>`, `<a>`, `<kbd>`, and others 
 </div>
 ```
 
-## Widgets & media
+## 小部件和媒体
 
-### Media
+### 媒体
 
-Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. Media takes up 100% width by default and scales according to its container's width.
+使用 `<img>`、`<svg>`、`<video>`、`<iframe>` 等添加响应式媒体。媒体默认占据 100% 的宽度，并根据其容器的宽度进行缩放。
 
 ```html {.example}
 <img
@@ -306,9 +304,9 @@ Add responsive media with `<img>`, `<svg>`, `<video>`, `<iframe>`, and others. M
 />
 ```
 
-### Figures
+### 图形
 
-Pair media with a caption using `<figure>` and `<figcaption>`. Captions use a quiet color and condensed line-height so they read as a label, not running text.
+使用 `<figure>` 和 `<figcaption>` 将媒体与标题配对。标题使用安静的颜色和紧凑的行高，使其读起来像标签，而不是连续的文本。
 
 ```html {.example}
 <figure>
@@ -316,13 +314,13 @@ Pair media with a caption using `<figure>` and `<figcaption>`. Captions use a qu
     src="https://images.unsplash.com/photo-1620196244888-d31ff5bbf163?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     alt="A gray kitten lays next to a toy"
   />
-  <figcaption>A gray kitten taking a break next to a felt mouse, somewhere off-camera.</figcaption>
+  <figcaption>一只灰色的小猫在镜头外的某个地方，在毛毡老鼠旁边休息。</figcaption>
 </figure>
 ```
 
-### Tables
+### 表格
 
-Structure tabular data with `<table>` and related elements like `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<tr>`, and `<td>`. Headers carry a subtle bottom border, and numeric columns use `tabular-nums` so digits line up.
+使用 `<table>` 及相关元素如 `<caption>`、`<thead>`、`<tbody>`、`<th>`、`<tr>` 和 `<td>` 来结构化表格数据。表头带有微妙的底部边框，数字列使用 `tabular-nums` 以便数字对齐。
 
 ```html {.example}
 <table>
@@ -360,7 +358,7 @@ Structure tabular data with `<table>` and related elements like `<caption>`, `<t
 </table>
 ```
 
-Add the `wa-hover-rows` class to highlight table rows on hover and the `wa-zebra-rows` class to add alternating row colors to your table.
+添加 `wa-hover-rows` 类以在悬停时高亮表格行，添加 `wa-zebra-rows` 类以向您的表格添加交替的行颜色。
 
 ```html {.example}
 <table class="wa-zebra-rows wa-hover-rows">
@@ -401,23 +399,22 @@ Add the `wa-hover-rows` class to highlight table rows on hover and the `wa-zebra
 </table>
 ```
 
-### Details
+### 详情
 
-Create disclosure widgets with `<details>` and `<summary>`. Details closely match the appearance of [`<wa-details>`](/docs/components/details/).
+使用 `<details>` 和 `<summary>` 创建公开小部件。详情与 [`<wa-details>`](/docs/components/details/) 的外观非常匹配。
 
 ```html {.example}
 <details>
   <summary>Summary</summary>
   <p>
-    Click the summary to expand and reveal this content. Native details elements are styled to closely match the
-    appearance of the <code>&lt;wa-details&gt;</code> component, so they fit right in with the rest of your UI.
+    单击摘要以展开并显示此内容。原生详情元素被样式化为与 `<wa-details>` 组件的外观紧密匹配，因此它们与 UI 的其余部分完美配合。
   </p>
 </details>
 ```
 
-### Dialog
+### 对话框
 
-Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match the appearance of [`<wa-dialog>`](/docs/components/dialog/).
+使用 `<dialog>` 创建模态和非模态对话框。对话框与 [`<wa-dialog>`](/docs/components/dialog/) 的外观非常匹配。
 
 ```html {.example}
 <dialog id="dialog-example">
@@ -437,9 +434,9 @@ Create modal and non-modal dialog boxes with `<dialog>`. Dialogs closely match t
 </script>
 ```
 
-### Progress
+### 进度
 
-Create progress indicators with `<progress>`. Progress indicators closely match the appearance of [`<wa-progress-bar>`](/docs/components/progress-bar/).
+使用 `<progress>` 创建进度指示器。进度指示器与 [`<wa-progress-bar>`](/docs/components/progress-bar/) 的外观非常匹配。
 
 ```html {.example}
 <progress value="40" max="100"></progress>
@@ -447,13 +444,13 @@ Create progress indicators with `<progress>`. Progress indicators closely match 
 <progress></progress>
 ```
 
-## Forms
+## 表单
 
-Native styles use [form control design tokens](/docs/tokens/component-groups/#form-controls) to style form elements like buttons and inputs. Form elements additionally inherit `font-family` from the `<body>` element.
+原生样式使用 [表单控件设计标记](/docs/tokens/component-groups/#form-controls) 来样式化按钮和输入等表单元素。表单元素还从 `<body>` 元素继承 `font-family`。
 
-### Buttons
+### 按钮
 
-Create buttons with `<button>` or `<input type="button | submit | reset">`. Buttons closely match the appearance of [`<wa-button>`](/docs/components/button/).
+使用 `<button>` 或 `<input type="button | submit | reset">` 创建按钮。按钮与 [`<wa-button>`](/docs/components/button/) 的外观非常匹配。
 
 ```html {.example}
 <button>Button</button>
@@ -462,13 +459,13 @@ Create buttons with `<button>` or `<input type="button | submit | reset">`. Butt
 <input type="reset" value="Input (reset)" />
 ```
 
-To create links that look like buttons, add the `wa-button` class to an `<a>` element.
+要创建看起来像按钮的链接，请将 `wa-button` 类添加到 `<a>` 元素。
 
 ```html {.example}
 <a href="" class="wa-button">Link Button</a>
 ```
 
-Add the `wa-brand`, `wa-neutral`, `wa-success`, `wa-warning`, or `wa-danger` class to specify the button's [color variant](/docs/utilities/color/).
+添加 `wa-brand`、`wa-neutral`、`wa-success`、`wa-warning` 或 `wa-danger` 类以指定按钮的 [颜色变体](/docs/utilities/color/)。
 
 ```html {.example}
 <button class="wa-neutral">Neutral</button>
@@ -478,7 +475,7 @@ Add the `wa-brand`, `wa-neutral`, `wa-success`, `wa-warning`, or `wa-danger` cla
 <button class="wa-danger">Danger</button>
 ```
 
-Add the `wa-accent`, `wa-filled`, `wa-outlined`, or `wa-plain` class to specify the button's visual appearance.
+添加 `wa-accent`、`wa-filled`、`wa-outlined` 或 `wa-plain` 类以指定按钮的视觉外观。
 
 ```html {.example}
 <button class="wa-accent wa-neutral">Accent</button>
@@ -488,7 +485,7 @@ Add the `wa-accent`, `wa-filled`, `wa-outlined`, or `wa-plain` class to specify 
 <button class="wa-plain wa-neutral">Plain</button>
 ```
 
-Add a `wa-size-*` class to specify the size of the button. Available sizes are `wa-size-xs`, `wa-size-s`, `wa-size-m`, `wa-size-l`, and `wa-size-xl`.
+添加 `wa-size-*` 类以指定按钮的大小。可用大小为 `wa-size-xs`、`wa-size-s`、`wa-size-m`、`wa-size-l` 和 `wa-size-xl`。
 
 ```html {.example}
 <button class="wa-size-xs">Extra Small</button>
@@ -498,13 +495,13 @@ Add a `wa-size-*` class to specify the size of the button. Available sizes are `
 <button class="wa-size-xl">Extra Large</button>
 ```
 
-Add the `wa-pill` class to give buttons rounded edges.
+添加 `wa-pill` 类以给按钮提供圆角边缘。
 
 ```html {.example}
 <button class="wa-pill">Pill button</button>
 ```
 
-When using `<wa-icon>` within a button, wrap adjacent label text in `<span>` or similar to automatically add margin between the icon and the label, just like the `start` and `end` slots of `<wa-button>`.
+在按钮中使用 `<wa-icon>` 时，将相邻的标签文本包装在 `<span>` 或类似的标签中，以便在图标和标签之间自动添加边距，就像 `<wa-button>` 的 `start` 和 `end` 插槽一样。
 
 ```html {.example}
 <button>
@@ -517,9 +514,9 @@ When using `<wa-icon>` within a button, wrap adjacent label text in `<span>` or 
 </button>
 ```
 
-### Form controls
+### 表单控件
 
-Create a variety of form controls with `<input type="">`, `<select>`, and `<textarea>`. Each control closely matches the appearance of the corresponding Web Awesome component.
+使用 `<input type="">`、`<select>` 和 `<textarea>` 创建各种表单控件。每个控件都与相应的 Web Awesome 组件的外观紧密匹配。
 
 ```html {.example}
 <div class="wa-stack">
@@ -530,8 +527,8 @@ Create a variety of form controls with `<input type="">`, `<select>`, and `<text
   <label>Color <input type="color" value="#f36944" /></label>
   <label>File <input type="file" multiple /></label>
   <label>Range <input type="range" /></label>
-  <label
-    >Select
+  <label>
+    Select
     <select>
       <option value="option-1">Option 1</option>
       <option value="option-2">Option 2</option>
@@ -556,7 +553,7 @@ Create a variety of form controls with `<input type="">`, `<select>`, and `<text
 </script>
 ```
 
-Add a `wa-size-*` class to any form control or its parent `<label>` to specify its size. Available sizes are `wa-size-xs`, `wa-size-s`, `wa-size-m`, `wa-size-l`, and `wa-size-xl`.
+向任何表单控件或其父 `<label>` 添加 `wa-size-*` 类以指定其大小。可用大小为 `wa-size-xs`、`wa-size-s`、`wa-size-m`、`wa-size-l` 和 `wa-size-xl`。
 
 ```html {.example}
 <div class="wa-stack">
@@ -588,7 +585,7 @@ Add a `wa-size-*` class to any form control or its parent `<label>` to specify i
 </div>
 ```
 
-Add the `wa-filled` class to an input to give it a filled background.
+向输入添加 `wa-filled` 类以给它一个填充的背景。
 
 ```html {.example}
 <div class="wa-stack">
@@ -600,7 +597,7 @@ Add the `wa-filled` class to an input to give it a filled background.
 </div>
 ```
 
-Add the `wa-pill` class to an input or select to give it rounded edges.
+向输入或选择添加 `wa-pill` 类以给它圆角边缘。
 
 ```html {.example}
 <div class="wa-stack">
@@ -611,15 +608,15 @@ Add the `wa-pill` class to an input or select to give it rounded edges.
 </div>
 ```
 
-Add any [button](#buttons) modifier class to `<input type="file">` to change the file selector button's color variant, appearance, size, and shape.
+向 `<input type="file">` 添加任何 [按钮](#buttons) 修饰符类以更改文件选择器按钮的颜色变体、外观、大小和形状。
 
 ```html {.example}
 <input type="file" class="wa-filled wa-outlined wa-warning wa-size-s wa-pill" />
 ```
 
-### Fieldsets
+### 字段集
 
-Group form controls together with `<fieldset>` and `<legend>`.
+使用 `<fieldset>` 和 `<legend>` 将表单控件分组在一起。
 
 ```html {.example}
 <fieldset class="wa-stack wa-align-items-start">
@@ -630,9 +627,9 @@ Group form controls together with `<fieldset>` and `<legend>`.
 </fieldset>
 ```
 
-### Form layouts
+### 表单布局
 
-Wrap form controls in a flex container to arrange them horizontally or vertically with even spacing. Layout utility classes like [`wa-cluster`](/docs/utilities/cluster) and [`wa-stack`](/docs/utilities/stack) can be added directly to a `<fieldset>` or `<form>` to make this especially easy.
+将表单控件包装在 flex 容器中，以均匀间距水平或垂直排列它们。布局工具类，如 [`wa-cluster`](/docs/utilities/cluster) 和 [`wa-stack`](/docs/utilities/stack)，可以直接添加到 `<fieldset>` 或 `<form>` 中，使这变得特别容易。
 
 ```html {.example}
 <fieldset class="wa-cluster">
@@ -646,8 +643,8 @@ Wrap form controls in a flex container to arrange them horizontally or verticall
 
 <form class="wa-stack">
   <label>Number of pancakes <input type="number" value="5" /></label>
-  <label
-    >Syrup flavor
+  <label>
+    Syrup flavor
     <select>
       <option value="maple">Maple</option>
       <option value="strawberry">Strawberry</option>

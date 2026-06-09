@@ -1,6 +1,6 @@
 ---
-title: Sample Media App Page
-description: A sample page for a media app using Web Awesome's page component.
+title: 示例媒体应用页面
+description: 使用 Web Awesome 页面组件的媒体应用示例页面。
 layout: blank
 eleventyExcludeFromCollections: true
 ---
@@ -8,96 +8,96 @@ eleventyExcludeFromCollections: true
 <wa-page class="wa-dark">
   <header slot="header">
     <div class="wa-cluster">
-      <wa-icon-button name="bars" label="Menu" data-toggle-nav></wa-icon-button>
+      <wa-icon-button name="bars" label="菜单" data-toggle-nav></wa-icon-button>
       <wa-icon name="record-vinyl" family="duotone"></wa-icon>
-      <span class="wa-heading-l">radiogaga</span>
+      <span class="wa-heading-l">radio嘎嘎</span>
     </div>
-    <wa-input placeholder="Search" style="max-inline-size: 100%;">
+    <wa-input placeholder="搜索" style="max-inline-size: 100%;">
       <wa-icon slot="start" name="magnifying-glass" ></wa-icon>
     </wa-input>
     <div class="wa-cluster">
-      <wa-button appearance="outlined">Log In</wa-button>
-      <wa-button>Sign Up</wa-button>
+      <wa-button appearance="outlined">登录</wa-button>
+      <wa-button>注册</wa-button>
     </div>
   </header>
   <div slot="navigation-header" class="wa-split">
-    <h2 class="wa-heading-m">For You</h2>
-    <wa-icon-button id="settings" name="gear" label="Settings"></wa-icon-button>
+    <h2 class="wa-heading-m">为您推荐</h2>
+    <wa-icon-button id="settings" name="gear" label="设置"></wa-icon-button>
   </div>
   <nav slot="navigation">
-    <h3 class="wa-heading-s">Discover</h3>
+    <h3 class="wa-heading-s">发现更多</h3>
     <ul class="wa-stack wa-gap-0">
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="house"></wa-icon>
-          <span>Home</span>
+          <span>首页</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="sparkles"></wa-icon>
-          <span>New</span>
+          <span>新品</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="tower-broadcast"></wa-icon>
-          <span>Stations</span>
+          <span>电台</span>
         </a>
       </li>
     </ul>
-    <h3 class="wa-heading-s">Library</h3>
+    <h3 class="wa-heading-s">我的音乐库</h3>
     <ul class="wa-stack wa-gap-0">
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="heart"></wa-icon>
-          <span>Favorites</span>
+          <span>收藏夹</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="list-music"></wa-icon>
-          <span>Playlists</span>
+          <span>播放列表</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="microphone-stand"></wa-icon>
-          <span>Artists</span>
+          <span>艺术家</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="grid-2"></wa-icon>
-          <span>Albums</span>
+          <span>专辑</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="podcast"></wa-icon>
-          <span>Podcasts</span>
+          <span>播客</span>
         </a>
       </li>
     </ul>
-    <h3 class="wa-heading-s">Recently Played</h3>
+    <h3 class="wa-heading-s">最近播放</h3>
     <ul id="recent" class="wa-stack wa-gap-0">
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="cassette-tape" style="background: var(--wa-color-red-90); color: var(--wa-color-red-60);"></wa-icon>
-          <span>Lo-Fi Station</span>
+          <span>Lo-Fi 电台</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="face-awesome" style="background: var(--wa-color-blue-30); color: var(--wa-color-yellow-90);"></wa-icon>
-          <span>Podcast Awesome</span>
+          <span>Awesome 播客</span>
         </a>
       </li>
       <li>
         <a href="#" class="wa-flank">
           <wa-icon name="seedling" style="background: var(--wa-color-green-70); color: var(--wa-color-green-90);"></wa-icon>
           <div class="wa-stack wa-gap-0">
-            <span>Seasons</span>
+            <span>季节</span>
             <span class="wa-caption-xs">Blister Soul</span>
           </div>
         </a>
@@ -105,39 +105,39 @@ eleventyExcludeFromCollections: true
     </ul>
   </nav>
   <div slot="main-header">
-    <wa-icon-button id="back" name="chevron-left" label="Back"></wa-icon-button>
-    <wa-tooltip for="back" placement="bottom" distance="2">Back</wa-tooltip>
+    <wa-icon-button id="back" name="chevron-left" label="返回"></wa-icon-button>
+    <wa-tooltip for="back" placement="bottom" distance="2">返回</wa-tooltip>
     <div class="wa-cluster">
-      <wa-icon-button id="favorite" name="heart" variant="regular" label="Favorite"></wa-icon-button>
-      <wa-tooltip for="favorite" placement="bottom" distance="2">Favorite</wa-tooltip>
-      <wa-icon-button id="options" name="ellipsis" label="Options"></wa-icon-button>
-      <wa-tooltip for="options" placement="bottom" distance="2">Options</wa-tooltip>
+      <wa-icon-button id="favorite" name="heart" variant="regular" label="收藏"></wa-icon-button>
+      <wa-tooltip for="favorite" placement="bottom" distance="2">收藏</wa-tooltip>
+      <wa-icon-button id="options" name="ellipsis" label="选项"></wa-icon-button>
+      <wa-tooltip for="options" placement="bottom" distance="2">选项</wa-tooltip>
     </div>
   </div>
   <main>
     <div class="wa-stack wa-gap-3xl">
       <div class="wa-flank wa-gap-3xl" style="--flank-size: 35%; --content-percentage: 55%;">
         <div class="wa-frame wa-border-radius-l" style="max-inline-size: 40ch;">
-          <img src="https://images.unsplash.com/photo-1732430579016-8d5e5ebd3c99?q=20" alt="Home for the Holidays album artwork" />
+          <img src="https://images.unsplash.com/photo-1732430579016-8d5e5ebd3c99?q=20" alt="回家过节专辑封面" />
         </div>
         <div class="wa-split:column wa-align-items-start">
           <div class="wa-stack" style="margin-block: auto;">
-            <h1 class="wa-heading-4xl">Home for the Holidays</h1>
-            <a href="#" class="wa-heading-l">The Shire Choir</a>
+            <h1 class="wa-heading-4xl">回家过节</h1>
+            <a href="#" class="wa-heading-l">夏尔合唱团</a>
             <div class="wa-cluster wa-caption-s wa-gap-2xs">
-              <span>Holiday</span>
+              <span>节日</span>
               <span>&bull;</span>
               <span>2024</span>
               <span>&bull;</span>
-              <span>12 songs, 41 minutes 9 seconds</span>
+              <span>12 首歌曲，41 分 9 秒</span>
             </div>
           </div>
           <div id="play-controls" class="wa-split wa-gap-xl">
             <div class="wa-cluster wa-gap-xl">
-              <wa-icon-button name="play" label="Play"></wa-icon-button>
-              <wa-icon-button name="shuffle" label="Shuffle"></wa-icon-button>
+              <wa-icon-button name="play" label="播放"></wa-icon-button>
+              <wa-icon-button name="shuffle" label="随机播放"></wa-icon-button>
             </div>
-            <wa-icon-button name="plus" label="Add to Library"></wa-icon-button>
+            <wa-icon-button name="plus" label="添加到音乐库"></wa-icon-button>
           </div>
         </div>
       </div>
@@ -145,91 +145,91 @@ eleventyExcludeFromCollections: true
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="1"></wa-icon>
-            <span>Fa-La-La-Fellowship</span>
+            <span>Fa-La-La 联谊会</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:27</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="2"></wa-icon>
-            <span>Sleigh Ride</span>
+            <span>雪橇之旅</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">2:36</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="3"></wa-icon>
-            <span>All I Want For Christmas Is Stew</span>
+            <span>我想要的圣诞节只有炖菜</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">2:51</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="4"></wa-icon>
-            <span>Rockin' Around the Christmas Ent</span>
+            <span>在 Ent 周围摇摆</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:05</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="5"></wa-icon>
-            <span>Merry, Did You Know?</span>
+            <span>快乐，你知道吗？</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">1:56</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="6"></wa-icon>
-            <span>Run Run Shadowfax</span>
+            <span>快跑，Shadowfax</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:32</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="7"></wa-icon>
-            <span>You're a Mean One, Mr. Grima</span>
+            <span>你这个卑鄙的 Grima</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">2:46</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="8"></wa-icon>
-            <span>O Come, All Ye Faithful</span>
+            <span>来吧，所有忠诚的信徒</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:27</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
           <span class="wa-flank">
             <wa-icon name="9"></wa-icon>
-            <span>Do You Hear What I Hear</span>
+            <span>你听到我听到的了吗</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">2:13</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
@@ -238,11 +238,11 @@ eleventyExcludeFromCollections: true
               <wa-icon name="1"></wa-icon>
               <wa-icon name="0"></wa-icon>
             </span>
-            <span>Carol of the Horns</span>
+            <span>号角颂歌</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">2:55</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
@@ -251,11 +251,11 @@ eleventyExcludeFromCollections: true
               <wa-icon name="1"></wa-icon>
               <wa-icon name="1"></wa-icon>
             </span>
-            <span>Silent Night</span>
+            <span>平安夜</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:10</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
         <li class="wa-split">
@@ -264,38 +264,38 @@ eleventyExcludeFromCollections: true
               <wa-icon name="1"></wa-icon>
               <wa-icon name="2"></wa-icon>
             </span>
-            <span>Wizard Wonderland</span>
+            <span>巫师仙境</span>
           </span>
           <span class="wa-cluster">
             <span class="wa-caption-s">3:22</span>
-            <wa-icon-button name="ellipsis" label="Song Options"></wa-icon-button>
+            <wa-icon-button name="ellipsis" label="歌曲选项"></wa-icon-button>
           </span>
         </li>
       </ol>
     </div>
   </main>
   <div slot="main-footer" class="wa-grid wa-gap-xl">
-    <h2 class="wa-heading-3xl">More You Might Like</h2>
+    <h2 class="wa-heading-3xl">您可能还喜欢</h2>
     <div class="wa-stack wa-gap-xs">
       <div class="wa-frame wa-border-radius-l">
         <img src="https://images.unsplash.com/photo-1675219119611-40323b738563?q=20" alt="" />
       </div>
-      <span class="wa-heading-m">Festival of Lights</span>
-      <span class="wa-caption-xs">Station</span>
+      <span class="wa-heading-m">灯节</span>
+      <span class="wa-caption-xs">电台</span>
     </div>
     <div class="wa-stack wa-gap-xs">
       <div class="wa-frame wa-border-radius-l">
         <img src="https://images.unsplash.com/photo-1481930916222-5ec4696fc0f2?q=20" alt="" />
       </div>
-      <span class="wa-heading-m">Holiday Cheer</span>
-      <span class="wa-caption-xs">Essential Playlist</span>
+      <span class="wa-heading-m">节日欢乐</span>
+      <span class="wa-caption-xs">精选播放列表</span>
     </div>
     <div class="wa-stack wa-gap-xs">
       <div class="wa-frame wa-border-radius-l">
         <img src="https://images.unsplash.com/photo-1667514627762-521b1c815a89?q=20" alt="" />
       </div>
-      <span class="wa-heading-m">Nursery Rhymes from the Shire</span>
-      <span class="wa-caption-xs">The Shire Choir</span>
+      <span class="wa-heading-m">夏尔童谣</span>
+      <span class="wa-caption-xs">夏尔合唱团</span>
     </div>
   </div>
 </wa-page>
@@ -362,7 +362,7 @@ eleventyExcludeFromCollections: true
   [slot='main-header'] {
     border-block-start: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
     border-inline: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
-    border-radius: var(--wa-border-radius-l) var(--wa-border-radius-l) 0 0
+    border-radius: var(--wa-border-radius-l) var(--wa-border-radius-l) 0 0;
   }
   main,
   [slot*='main'] {

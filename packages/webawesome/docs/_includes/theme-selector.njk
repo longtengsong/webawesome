@@ -1,9 +1,9 @@
-<wa-dropdown class="theme-selector" title="Select Theme">
+<wa-dropdown class="theme-selector" title="选择主题">
   <wa-button slot="trigger" id="theme-selector-trigger" appearance="plain" pill>
-    <wa-icon name="palette" variant="regular" label="Select Theme"></wa-icon>
+    <wa-icon name="palette" variant="regular" label="选择主题"></wa-icon>
   </wa-button>
 
-  {# Free themes #}
+  {# 免费主题 #}
   {% for theme in themer.themes %}
   {% if not theme.isPro %}
   <wa-dropdown-item value="{{ theme.filename | stripExtension }}" data-brand="{{ theme.colorBrand.color }}"
@@ -13,7 +13,7 @@
   {% endif %}
   {% endfor %}
 
-  {# Pro themes #}
+  {# Pro 主题 #}
   {% for theme in themer.themes %}
   {% if loop.first %}<wa-divider></wa-divider>{% endif %}
   {% if theme.isPro %}
@@ -27,10 +27,10 @@
   <wa-divider></wa-divider>
   <wa-dropdown-item value="/docs/theming-overview">
     <wa-icon slot="icon" name="book-open" variant="regular"></wa-icon>
-    Docs
+    文档
   </wa-dropdown-item>
 </wa-dropdown>
-<wa-tooltip for="theme-selector-trigger" id="theme-tooltip">Select Theme</wa-tooltip>
+<wa-tooltip for="theme-selector-trigger" id="theme-tooltip">选择主题</wa-tooltip>
 
 <script>
   // Handle dropdown selection and trigger input event for theme.js

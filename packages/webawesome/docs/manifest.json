@@ -1,7 +1,7 @@
 {
   "name": "Web Awesome",
   "short_name": "Web Awesome",
-  "description": "Build better with Web Awesome, the open source library of web components from Font Awesome.",
+  "description": "使用 Web Awesome 构建更好的应用，来自 Font Awesome 的开源 Web 组件库。",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#f36944",

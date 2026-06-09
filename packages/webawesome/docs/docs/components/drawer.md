@@ -1,5 +1,5 @@
 ---
-title: Drawer
+title: 抽屉
 layout: component
 category: Layout
 synonyms:
@@ -9,11 +9,16 @@ synonyms:
   - slide-out
   - tray
   - sheet
+  - 侧边栏
+  - 滑出面板
 use-cases:
   - navigation drawer
   - filter panel
   - mobile menu
   - bottom sheet
+  - 导航抽屉
+  - 筛选面板
+  - 移动菜单
 ---
 
 ```html {.example}
@@ -32,11 +37,11 @@ use-cases:
 </script>
 ```
 
-## Examples
+## 示例
 
-### Drawer without Header
+### 无头部的抽屉
 
-Headers are enabled by default. To render a drawer without a header, add the `without-header` attribute.
+头部默认启用。要渲染没有头部的抽屉，请添加 `without-header` 属性。
 
 ```html {.example}
 <wa-drawer label="Drawer" without-header class="drawer-without-header">
@@ -54,9 +59,9 @@ Headers are enabled by default. To render a drawer without a header, add the `wi
 </script>
 ```
 
-### Drawer with Footer
+### 带底部的抽屉
 
-Footers can be used to display titles and more. Use the `footer` slot to add a footer to the drawer.
+底部可用于显示标题等。使用 `footer` 插槽为抽屉添加底部。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-footer">
@@ -74,9 +79,9 @@ Footers can be used to display titles and more. Use the `footer` slot to add a f
 </script>
 ```
 
-### Opening and Closing Drawers Declaratively
+### 声明式打开和关闭抽屉
 
-You can open and close drawers with JavaScript by toggling the `open` attribute, but you can also do it declaratively. Add the `data-drawer="open id"` to any button on the page, where `id` is the ID of the drawer you want to open.
+你可以通过切换 `open` 属性来使用 JavaScript 打开和关闭抽屉，但你也可以声明式地这样做。将 `data-drawer="open id"` 添加到页面上的任何按钮，其中 `id` 是你要打开的抽屉的 ID。
 
 ```html {.example}
 <wa-drawer label="Drawer" id="drawer-opening">
@@ -87,7 +92,7 @@ You can open and close drawers with JavaScript by toggling the `open` attribute,
 <wa-button appearance="filled" data-drawer="open drawer-opening">Open Drawer</wa-button>
 ```
 
-Similarly, you can add `data-drawer="close"` to a button _inside_ of a drawer to tell it to close.
+同样，你可以将 `data-drawer="close"` 添加到抽屉_内部_的按钮来告诉它关闭。
 
 ```html {.example}
 <wa-drawer label="Drawer" id="drawer-dismiss">
@@ -98,9 +103,9 @@ Similarly, you can add `data-drawer="close"` to a button _inside_ of a drawer to
 <wa-button appearance="filled" data-drawer="open drawer-dismiss">Open Drawer</wa-button>
 ```
 
-### Slide in From Start
+### 从起始端滑入
 
-By default, drawers slide in from the end. To make the drawer slide in from the start, set the `placement` attribute to `start`.
+默认情况下，抽屉从末端滑入。要使抽屉从起始端滑入，请将 `placement` 属性设置为 `start`。
 
 ```html {.example}
 <wa-drawer label="Drawer" placement="start" class="drawer-placement-start">
@@ -118,9 +123,9 @@ By default, drawers slide in from the end. To make the drawer slide in from the 
 </script>
 ```
 
-### Slide in From Top
+### 从顶部滑入
 
-To make the drawer slide in from the top, set the `placement` attribute to `top`.
+要使抽屉从顶部滑入，请将 `placement` 属性设置为 `top`。
 
 ```html {.example}
 <wa-drawer label="Drawer" placement="top" class="drawer-placement-top">
@@ -138,9 +143,9 @@ To make the drawer slide in from the top, set the `placement` attribute to `top`
 </script>
 ```
 
-### Slide in From Bottom
+### 从底部滑入
 
-To make the drawer slide in from the bottom, set the `placement` attribute to `bottom`.
+要使抽屉从底部滑入，请将 `placement` 属性设置为 `bottom`。
 
 ```html {.example}
 <wa-drawer label="Drawer" placement="bottom" class="drawer-placement-bottom">
@@ -158,9 +163,9 @@ To make the drawer slide in from the bottom, set the `placement` attribute to `b
 </script>
 ```
 
-### Custom Size
+### 自定义尺寸
 
-Use the `--size` custom property to set the drawer's size. This will be applied to the drawer's width or height depending on its `placement`.
+使用 `--size` 自定义属性来设置抽屉的尺寸。这将根据其 `placement` 应用于抽屉的宽度或高度。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-custom-size" style="--size: 50vw;">
@@ -178,9 +183,9 @@ Use the `--size` custom property to set the drawer's size. This will be applied 
 </script>
 ```
 
-### Scrolling
+### 滚动
 
-By design, a drawer's height will never exceed 100% of its container. As such, drawers will not scroll with the page to ensure the header and footer are always accessible to the user.
+根据设计，抽屉的高度永远不会超过其容器的 100%。因此，抽屉不会随页面滚动，以确保头部和底部始终对用户可访问。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-scrolling">
@@ -200,9 +205,9 @@ By design, a drawer's height will never exceed 100% of its container. As such, d
 </script>
 ```
 
-### Header Actions
+### 头部操作
 
-The header shows a functional close button by default. You can use the `header-actions` slot to add additional [buttons](/docs/components/button) if needed.
+头部默认显示一个功能性的关闭按钮。如果需要，你可以使用 `header-actions` 插槽添加额外的[按钮](/docs/components/button)。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-header-actions">
@@ -225,9 +230,9 @@ The header shows a functional close button by default. You can use the `header-a
 </script>
 ```
 
-### Light Dismissal
+### 轻触关闭
 
-If you want the drawer to close when the user clicks on the overlay, add the `light-dismiss` attribute.
+如果你希望抽屉在用户点击遮罩层时关闭，请添加 `light-dismiss` 属性。
 
 ```html {.example}
 <wa-drawer label="Drawer" light-dismiss class="drawer-light-dismiss">
@@ -245,13 +250,13 @@ If you want the drawer to close when the user clicks on the overlay, add the `li
 </script>
 ```
 
-### Preventing the Drawer from Closing
+### 防止抽屉关闭
 
-By default, drawers will close when the user clicks the close button, clicks the overlay, or presses the [[Escape]] key. In most cases, the default behavior is the best behavior in terms of UX. However, there are situations where this may be undesirable, such as when data loss will occur.
+默认情况下，当用户点击关闭按钮、点击遮罩层或按 [[Escape]] 键时，抽屉会关闭。在大多数情况下，默认行为在 UX 方面是最好的。但是，有些情况下这可能是不可取的，例如当会发生数据丢失时。
 
-To keep the drawer open in such cases, you can cancel the `wa-hide` event. When canceled, the drawer will remain open and pulse briefly to draw the user's attention to it.
+要在这种情况下保持抽屉打开，你可以取消 `wa-hide` 事件。取消后，抽屉将保持打开并短暂脉冲以吸引用户的注意力。
 
-You can use `event.detail.source` to determine what triggered the request to close. This example prevents the drawer from closing when the overlay is clicked, but allows the close button or [[Escape]] to dismiss it.
+你可以使用 `event.detail.source` 来确定是什么触发了关闭请求。这个示例防止在点击遮罩层时关闭抽屉，但允许关闭按钮或 [[Escape]] 来关闭它。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-deny-close">
@@ -268,7 +273,7 @@ You can use `event.detail.source` to determine what triggered the request to clo
 
   openButton.addEventListener('click', () => (drawer.open = true));
 
-  // Prevent the drawer from closing unless the close button is clicked
+  // 防止抽屉关闭，除非点击关闭按钮
   drawer.addEventListener('wa-hide', event => {
     if (event.detail.source !== closeButton) {
       event.preventDefault();
@@ -277,9 +282,9 @@ You can use `event.detail.source` to determine what triggered the request to clo
 </script>
 ```
 
-### Setting Initial Focus
+### 设置初始焦点
 
-To give focus to a specific element when the drawer opens, use the `autofocus` attribute.
+要在抽屉打开时聚焦到特定元素，请使用 `autofocus` 属性。
 
 ```html {.example}
 <wa-drawer label="Drawer" class="drawer-focus">

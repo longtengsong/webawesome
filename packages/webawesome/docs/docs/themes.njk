@@ -1,18 +1,17 @@
 ---
-title: Built-in Themes
-description: Style (and restyle) your website at will with any of Web Awesome's pre-built themes.
+title: 内置主题
+description: 使用 Web Awesome 的预建主题，随心所欲地设置（和重新设置）您的网站样式。
 layout: page
 ---
 
 <h1>{{ title }}</h1>
 
-<p>Themes give your project a cohesive look and feel across the entire Web Awesome library.</p>
+<p>主题为您的项目在整个 Web Awesome 库中提供统一的风格。</p>
 
-<p>A theme sets typography, spacing, borders, shadows, and how <a href="/docs/tokens/color#variant-colors">variants</a>
-  show up on components — all as <a href="/docs/tokens">design tokens</a>. Two themes can share a <a
-    href="/docs/color-palettes">color palette</a> and <a href="/docs/tokens/color#variant-colors">variant colors</a> and
-  still feel completely different. Each pre-built theme ships with a default palette and may include custom overrides
-  for individual components.</p>
+<p>主题设置版式、间距、边框、阴影以及 <a href="/docs/tokens/color#variant-colors">变体</a>
+  在组件上的显示方式 — 全部作为 <a href="/docs/tokens">设计令牌</a>。两个主题可以共享同一个 <a
+    href="/docs/color-palettes">颜色调色板</a>和<a href="/docs/tokens/color#variant-colors">变体颜色</a>，
+  但仍然给人完全不同的感觉。每个预建主题都附带一个默认调色板，并可能包含针对个别组件的自定义覆盖。</p>
 
 {% include "theming/theme-picker.njk" %}
 
@@ -23,18 +22,17 @@ layout: page
   <wa-icon slot="icon" name="hand-wave" animation="shake"
     style="--animation-delay: 2s; --animation-duration: 4s;"></wa-icon>
   <strong>
-    <a href="/purchase?from=pro-docs&context=themes">Unlock every theme with {{ site.namePro }}!</a>
+    <a href="/purchase?from=pro-docs&context=themes">使用 {{ site.namePro }} 解锁所有主题！</a>
   </strong>
 
   <wa-details appearance="plain">
-    <span slot="summary">Subscribing to {{ site.namePro }} unlocks every theme, plus premium color palettes, the visual
-      Theme Builder, and <u class="appearance-underlined variant-drawn">more</u>.</span>
+    <span slot="summary">订阅 {{ site.namePro }} 可解锁所有主题，以及高级调色板、可视化主题构建器和<u class="appearance-underlined variant-drawn">更多</u>功能。</span>
 
     <div class="wa-stack wa-gap-xl">
       {% include "pro-perks.njk" ignore missing %}
 
       <wa-button href="/purchase?from=pro-docs&context=themes">
-        Get {{ site.namePro }}
+        获取 {{ site.namePro }}
         <wa-icon slot="end" name="arrow-right"></wa-icon>
       </wa-button>
     </div>
@@ -44,7 +42,7 @@ layout: page
 {% endif %}
 {% endraw %}
 
-<h2>Using This Theme</h2>
+<h2>使用此主题</h2>
 
 <div id="import-code">
   {% for theme in themer.themes %}
@@ -54,27 +52,27 @@ layout: page
     <wa-tab-group data-install-tabs>
       <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
       <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
       <wa-tab-panel name="cdn">
         {% if theme.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
   <wa-icon name="info-circle" variant="regular"></wa-icon>
-  This theme can only be used on workspaces with a Pro subscription.
+  该主题仅可在拥有 Pro 订阅的工作区中使用。
 </wa-callout>
 {% endmarkdown %}
         {% else %}
         {% set themeCdnUrl %}{% cdnUrl 'styles/themes/' %}{{ theme.filename }}{% endset %}
 {% markdown %}
-To use this theme, add the theme's stylesheet from the CDN:
+要使用此主题，请从 CDN 添加主题样式表：
 
 ```html
 <link rel="stylesheet" href="{{ themeCdnUrl }}">
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html
@@ -86,13 +84,13 @@ Then apply the following classes to the `<html>` element:
 
       <wa-tab-panel name="npm">
 {% markdown %}
-After installing <code>@awesome.me/webawesome</code>, import the theme's stylesheet:
+安装 <code>@awesome.me/webawesome</code> 后，导入主题样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/themes/{{ theme.filename }}';
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html
@@ -103,13 +101,13 @@ Then apply the following classes to the `<html>` element:
 
       <wa-tab-panel name="self-hosted">
 {% markdown %}
-If you're self-hosting Web Awesome, include the theme's stylesheet from your server:
+如果您正在自行托管 Web Awesome，请从您的服务器引入主题样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/themes/{{ theme.filename }}">
 ```
 
-Then apply the following classes to the `<html>` element:
+然后在 `<html>` 元素上应用以下类：
 
 ```html
 <html
@@ -121,25 +119,25 @@ Then apply the following classes to the `<html>` element:
       <wa-tab-panel name="hosted">
         {% if theme.isPro %}
 {% markdown %}
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
-2. Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag> to open the Theme Builder.
-3. Open <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>.
-4. Press <wa-tag class="tag-ui" appearance="outlined">Save Theme</wa-tag> to immediately update anywhere you're using your project.
+**Pro 工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。
+3. 打开 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存主题</wa-tag> 以立即更新所有使用您项目的位置。
 {% endmarkdown %}
         {% else %}
 {% markdown %}
-**For projects on Free workspaces:**
-1. Head over to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
-2. For your <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag>, select <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> {{ theme.filename | stripExtension | capitalize }}</wa-tag>.
-3. For your <wa-tag class="tag-ui" appearance="outlined">Color Palette</wa-tag>, select <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon> {{ theme.palette.filename | stripExtension | capitalize }}</wa-tag>.
-4. Press <wa-tag class="tag-ui" appearance="outlined">Save Changes</wa-tag> to immediately update anywhere you're using your project.
+**免费工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 在 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag>中，选择 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> {{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+3. 在 <wa-tag class="tag-ui" appearance="outlined">颜色调色板</wa-tag>中，选择 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon> {{ theme.palette.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存更改</wa-tag> 以立即更新所有使用您项目的位置。
 
-**For projects on Pro workspaces:**
-1. Head over to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
-2. Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> Edit Your Theme</wa-tag> to open the Theme Builder.
-3. Open <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag> and select <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>.
-4. Press <wa-tag class="tag-ui" appearance="outlined">Save Theme</wa-tag> to immediately update anywhere you're using your project.
+**Pro 工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。
+3. 打开 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存主题</wa-tag> 以立即更新所有使用您项目的位置。
 {% endmarkdown %}
         {% endif %}
       </wa-tab-panel>

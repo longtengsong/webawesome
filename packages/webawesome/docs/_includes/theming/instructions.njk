@@ -9,8 +9,8 @@
 #}
 <div id="using-themes">
   <fieldset class="theme-options wa-stack" style="margin-block-end: var(--wa-content-spacing);">
-    <legend style="align-self: start;">Theme Options</legend>
-    <wa-select id="pick-theme" label="Theme" value="default" size="small">
+    <legend style="align-self: start;">主题选项</legend>
+    <wa-select id="pick-theme" label="主题" value="default" size="small">
       <wa-badge slot="end" appearance="accent" pill class="pro pro-only-value">Pro</wa-badge>
       {%- for theme in themer.themes -%}
       {%- if not theme.isPro -%}
@@ -30,7 +30,7 @@
       {%- endif -%}
       {%- endfor -%}
     </wa-select>
-    <wa-select id="pick-palette" label="Color Palette" value="default" size="small">
+    <wa-select id="pick-palette" label="调色板" value="default" size="small">
       <wa-badge slot="end" appearance="accent" pill class="pro pro-only-value">Pro</wa-badge>
       {%- for palette in themer.palettes -%}
       {%- if not palette.isPro -%}
@@ -52,11 +52,11 @@
     <div class="wa-grid">
       {%- set colorVariants = ['brand', 'neutral', 'success', 'warning', 'danger'] -%}
       {%- for colorVariant in colorVariants -%}
-      <wa-select id="pick-{{ colorVariant }}" label="{{ colorVariant | capitalize }}" size="small">
+      <wa-select id="pick-{{ colorVariant }}" label="{{ { 'brand': '品牌色', 'neutral': '中性色', 'success': '成功色', 'warning': '警告色', 'danger': '危险色' }[colorVariant] | default(colorVariant | capitalize) }}" size="small">
         <wa-icon slot="start" name="square" class="selected-color"></wa-icon>
         {%- for color in themer.colors -%}
         <wa-option value="{{ color }}">
-          {{ color | capitalize }}
+          {{ { 'blue': '蓝色', 'cyan': '青色', 'gray': '灰色', 'green': '绿色', 'indigo': '靛蓝色', 'lime': '青柠色', 'orange': '橙色', 'pink': '粉红色', 'purple': '紫色', 'red': '红色', 'slate': '石板色', 'teal': '蓝绿色', 'violet': '紫罗兰色', 'yellow': '黄色' }[color] | default(color | capitalize) }}
           <wa-icon slot="start" name="square"
             style="--color: var(--wa-color-{{ color }}); color: var(--color);"></wa-icon>
         </wa-option>
@@ -70,80 +70,78 @@
 <wa-tab-group data-install-tabs>
   <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
   <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-  <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+  <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
   <wa-tab-panel name="cdn">
     <wa-callout variant="neutral" id="pro-only-callout">
       <wa-icon slot="icon" name="info-circle" variant="regular"></wa-icon>
-      These options can only be used with a Pro subscription. {% raw %}{% if session.isLoggedIn %}{% endraw %}For
-      instructions unique to your Pro project, open a project from your <a href="/workspaces">workspace</a>.{% raw %}{%
-      endif %}{% endraw %}
+      这些选项仅可通过 Pro 订阅使用。{% raw %}{% if session.isLoggedIn %}{% endraw %}如需特定于您 Pro 项目的说明，请从您的<a href="/workspaces">工作区</a>中打开一个项目。{% raw %}{% endif %}{% endraw %}
     </wa-callout>
     <div class="free-instructions">
-      <p>To use these choices, add the following stylesheets from the CDN:</p>
-      <pre><code id="stylesheet-cdn-links" class="language-html" data-dynamic-snippet>&lt;link rel="stylesheet" href="{% cdnUrl 'styles/themes/' %}__THEME__.css" /&gt;__OPT_PALETTE_LINK_START__
-&lt;link rel="stylesheet" href="{% cdnUrl 'styles/color/palettes/' %}__PALETTE__.css" /&gt;__OPT_PALETTE_LINK_END__</code></pre>
-      <p>Then, apply the following classes to the <code>&lt;html&gt;</code> element:</p>
-      <pre><code class="html-classes language-html" data-dynamic-snippet>&lt;html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"&gt;</code></pre>
+      <p>要使用这些选项，请从 CDN 添加以下样式表：</p>
+      <pre><code id="stylesheet-cdn-links" class="language-html" data-dynamic-snippet><link rel="stylesheet" href="{% cdnUrl 'styles/themes/' %}__THEME__.css" />__OPT_PALETTE_LINK_START__
+<link rel="stylesheet" href="{% cdnUrl 'styles/color/palettes/' %}__PALETTE__.css" />__OPT_PALETTE_LINK_END__</code></pre>
+      <p>然后，将以下类应用到 <code><html></code> 元素上：</p>
+      <pre><code class="html-classes language-html" data-dynamic-snippet><html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"></code></pre>
     </div>
   </wa-tab-panel>
 
   <wa-tab-panel name="npm">
-    <p>After installing <code>@awesome.me/webawesome</code>, import the following stylesheets:</p>
+    <p>安装 <code>@awesome.me/webawesome</code> 后，导入以下样式表：</p>
     <pre><code id="stylesheet-imports" class="language-js" data-dynamic-snippet>import '@awesome.me/webawesome/dist/styles/themes/__THEME__.css';__OPT_PALETTE_LINK_START__
 import '@awesome.me/webawesome/dist/styles/color/palettes/__PALETTE__.css';__OPT_PALETTE_LINK_END__</code></pre>
-    <p>Then, apply the following classes to the <code>&lt;html&gt;</code> element:</p>
-    <pre><code class="html-classes language-html" data-dynamic-snippet>&lt;html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"&gt;</code></pre>
+    <p>然后，将以下类应用到 <code><html></code> 元素上：</p>
+    <pre><code class="html-classes language-html" data-dynamic-snippet><html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"></code></pre>
   </wa-tab-panel>
 
   <wa-tab-panel name="self-hosted">
-    <p>If you're self-hosting Web Awesome, include the following stylesheets from your server:</p>
-    <pre><code id="stylesheet-dist-links" class="language-html" data-dynamic-snippet>&lt;link rel="stylesheet" href="/dist/styles/themes/__THEME__.css" /&gt;__OPT_PALETTE_LINK_START__
-&lt;link rel="stylesheet" href="/dist/styles/color/palettes/__PALETTE__.css" /&gt;__OPT_PALETTE_LINK_END__</code></pre>
-    <p>Then, apply the following classes to the <code>&lt;html&gt;</code> element:</p>
-    <pre><code class="html-classes language-html" data-dynamic-snippet>&lt;html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"&gt;</code></pre>
+    <p>如果您正在自托管 Web Awesome，请从您的服务器包含以下样式表：</p>
+    <pre><code id="stylesheet-dist-links" class="language-html" data-dynamic-snippet><link rel="stylesheet" href="/dist/styles/themes/__THEME__.css" />__OPT_PALETTE_LINK_START__
+<link rel="stylesheet" href="/dist/styles/color/palettes/__PALETTE__.css" />__OPT_PALETTE_LINK_END__</code></pre>
+    <p>然后，将以下类应用到 <code><html></code> 元素上：</p>
+    <pre><code class="html-classes language-html" data-dynamic-snippet><html class="wa-theme-__THEME____OPT_PALETTE_CLASS_START__ wa-palette-__PALETTE____OPT_PALETTE_CLASS_END____OPT_BRAND_START__ wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"></code></pre>
   </wa-tab-panel>
 
   <wa-tab-panel name="hosted">
     <div class="hosted-project-instructions">
       <div class="free-instructions instruction-group wa-stack wa-gap-2xs">
         <h3 class="wa-heading-m" data-no-anchor data-no-outline>
-          Free Workspace Projects
+          免费工作区项目
         </h3>
         <table class="wa-hover-rows">
           <thead>
             <tr>
-              <th scope="col">Step</th>
-              <th scope="col">Action</th>
+              <th scope="col">步骤</th>
+              <th scope="col">操作</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.</td>
+              <td>前往您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>For <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag>, select <wa-tag class="tag-ui"
+              <td>在 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 中，选择 <wa-tag class="tag-ui"
                   appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> <strong
-                    class="theme-name"></strong></wa-tag>.</td>
+                    class="theme-name"></strong></wa-tag>。</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>For <wa-tag class="tag-ui" appearance="outlined">Color Palette</wa-tag>, select <wa-tag
+              <td>在 <wa-tag class="tag-ui" appearance="outlined">调色板</wa-tag> 中，选择 <wa-tag
                   class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon> <strong
-                    class="palette-name"></strong></wa-tag>.
+                    class="palette-name"></strong></wa-tag>。
               </td>
             </tr>
             <tr>
               <td>4</td>
-              <td>Save your theme to immediately update anywhere you're using your project.</td>
+              <td>保存您的主题，以立即更新任何使用您项目的地方。</td>
             </tr>
             <tr class="custom-variants">
               <td>5</td>
-              <td>In your own files, apply the following classes to the <code>&lt;html&gt;</code> element:<br />
-                <pre><code class="variant-classes language-html" data-dynamic-snippet>&lt;html class="__OPT_BRAND_START__wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"&gt;</code></pre>
+              <td>在您自己的文件中，将以下类应用到 <code><html></code> 元素上：<br />
+                <pre><code class="variant-classes language-html" data-dynamic-snippet><html class="__OPT_BRAND_START__wa-brand-__BRAND____OPT_BRAND_END____OPT_NEUTRAL_START__ wa-neutral-__NEUTRAL____OPT_NEUTRAL_END____OPT_SUCCESS_START__ wa-success-__SUCCESS____OPT_SUCCESS_END____OPT_WARNING_START__ wa-warning-__WARNING____OPT_WARNING_END____OPT_DANGER_START__ wa-danger-__DANGER____OPT_DANGER_END__"></code></pre>
               </td>
             </tr>
           </tbody>
@@ -151,41 +149,40 @@ import '@awesome.me/webawesome/dist/styles/color/palettes/__PALETTE__.css';__OPT
       </div>
       <div class="pro-instructions instruction-group wa-stack wa-gap-2xs">
         <h3 class="wa-heading-m" data-no-anchor data-no-outline>
-          Pro Workspace Projects
+          Pro 工作区项目
         </h3>
         <table class="wa-hover-rows">
           <thead>
             <tr>
-              <th scope="col">Step</th>
-              <th scope="col">Action</th>
+              <th scope="col">步骤</th>
+              <th scope="col">操作</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Go to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.</td>
+              <td>前往您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>Press <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush"
-                    variant="regular"></wa-icon> Edit Your Theme</wa-tag> to open the Theme Builder.</td>
+              <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush"
+                    variant="regular"></wa-icon> 编辑您的主题</wa-tag> 以打开主题构建器。</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Open <wa-tag class="tag-ui" appearance="outlined">Theme</wa-tag> and select <wa-tag class="tag-ui"
-                  appearance="outlined"><strong class="theme-name"></strong></wa-tag>.</td>
+              <td>打开 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择 <wa-tag class="tag-ui"
+                  appearance="outlined"><strong class="theme-name"></strong></wa-tag>。</td>
             </tr>
             <tr>
               <td>4</td>
-              <td>Open <wa-tag class="tag-ui" appearance="outlined">Colors</wa-tag>. On the <wa-tag class="tag-ui"
-                  appearance="outlined">Basic</wa-tag> tab, select <wa-tag class="tag-ui" appearance="outlined"><strong
-                    class="palette-name"></strong></wa-tag>. <span class="custom-variants">On the <wa-tag
-                    class="tag-ui" appearance="outlined">Advanced</wa-tag> tab, select your preferred variant
-                  colors.</span></td>
+              <td>打开 <wa-tag class="tag-ui" appearance="outlined">颜色</wa-tag>。在 <wa-tag class="tag-ui"
+                  appearance="outlined">基本</wa-tag> 标签页中，选择 <wa-tag class="tag-ui" appearance="outlined"><strong
+                    class="palette-name"></strong></wa-tag>。<span class="custom-variants">在 <wa-tag
+                    class="tag-ui" appearance="outlined">高级</wa-tag> 标签页中，选择您偏好的变体颜色。</span></td>
             </tr>
             <tr>
               <td>5</td>
-              <td>Save your theme to immediately update anywhere you're using your project.</td>
+              <td>保存您的主题，以立即更新任何使用您项目的地方。</td>
             </tr>
           </tbody>
         </table>

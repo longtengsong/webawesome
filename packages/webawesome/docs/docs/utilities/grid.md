@@ -1,16 +1,21 @@
 ---
-title: Grid
-description: 'Use the `wa-grid` class to arrange elements into rows and columns that automatically adapt to the available space.'
+title: 网格布局
+description: 使用 `wa-grid` 类将元素排列成自动适应可用空间的行和列。
 layout: docs
 tags: layoutUtilities
 synonyms:
   - columns
   - layout grid
+  - 列
+  - 布局网格
   - css grid
 use-cases:
   - responsive grid
   - card grid
   - auto grid
+  - 响应式网格
+  - 卡片网格
+  - 自动网格
   - masonry
 ---
 
@@ -29,9 +34,9 @@ use-cases:
   }
 </style>
 
-A grid places its children in evenly-sized columns that shrink, grow, and reflow as the container resizes, without any breakpoints to manage. Drop any number of items into `wa-grid` and the utility figures out how many fit on each row based on the container's width and the minimum column size you've asked for. It's the quickest way to build card galleries, product listings, dashboards, and any content that should adapt from one column on a phone to several on a desktop.
+网格将其子元素放置在大小均匀的列中，这些列会随着容器大小调整而收缩、增长和重新流动，无需管理任何断点。将任意数量的项目放入 `wa-grid` 中，该工具会根据容器的宽度和您要求的最小列大小计算出每行可以容纳多少个。这是构建卡片画廊、产品列表、仪表板以及任何应该从手机上的一列适应到桌面上的多列内容的最快方法。
 
-Set `--min-column-size` to change the threshold at which items start to wrap, pair `wa-grid` with a [`wa-gap-*`](/docs/utilities/gap) class to adjust the spacing between cells, or add `wa-span-grid` to an individual item to make it span every column.
+设置 `--min-column-size` 来更改项目开始换行的阈值，将 `wa-grid` 与 [`wa-gap-*`](/docs/utilities/gap) 类配对以调整单元格之间的间距，或者向单个项目添加 `wa-span-grid` 以使其跨越所有列。
 
 ```html {.example}
 <div class="wa-grid">
@@ -44,9 +49,9 @@ Set `--min-column-size` to change the threshold at which items start to wrap, pa
 </div>
 ```
 
-## Examples
+## 示例
 
-Grids work especially well for card lists and content designed for browsing.
+网格非常适合卡片列表和设计用于浏览的内容。
 
 ```html {.example}
 <div class="wa-grid">
@@ -155,9 +160,9 @@ Grids work especially well for card lists and content designed for browsing.
 </style>
 ```
 
-## Sizing
+## 尺寸
 
-By default, grid items will wrap when the grid's column size is less than `20ch`, but you can set a custom minimum column size using the `--min-column-size` property.
+默认情况下，当网格的列大小小于 `20ch` 时，网格项目会换行，但您可以使用 `--min-column-size` 属性设置自定义的最小列大小。
 
 ```html {.example}
 <div class="wa-stack">
@@ -180,9 +185,9 @@ By default, grid items will wrap when the grid's column size is less than `20ch`
 </div>
 ```
 
-## Gap
+## 间距
 
-By default, the gap between grid items uses `--wa-space-m` from your theme. You can add any of the following [`wa-gap-*`](/docs/utilities/gap) classes to an element with `wa-grid` to specify the gap between items:
+默认情况下，网格项目之间的间距使用主题中的 `--wa-space-m`。您可以向带有 `wa-grid` 的元素添加以下任何 [`wa-gap-*`](/docs/utilities/gap) 类，以指定项目之间的间距：
 
 - `wa-gap-0`
 - `wa-gap-3xs`
@@ -216,9 +221,9 @@ By default, the gap between grid items uses `--wa-space-m` from your theme. You 
 </div>
 ```
 
-## Span Grid
+## 跨越网格
 
-You can add `wa-span-grid` to any grid item to allow it to span all grid columns. With this, the grid item occupies its own grid row.
+您可以向任何网格项目添加 `wa-span-grid` 以允许它跨越所有网格列。这样，网格项目占据自己的网格行。
 
 ```html {.example}
 <div class="wa-grid">

@@ -1,6 +1,6 @@
 ---
-title: Cluster
-description: 'Use the `wa-cluster` class to arrange elements inline with even spacing, allowing items to wrap when space is limited.'
+title: 集群布局
+description: 使用 `wa-cluster` 类在一行中以均匀间距排列元素，当空间有限时允许项目换行。
 layout: docs
 tags: layoutUtilities
 synonyms:
@@ -8,12 +8,21 @@ synonyms:
   - horizontal group
   - tag group
   - flow layout
+  - 内联组
+  - 水平组
+  - 标签组
+  - 流式布局
 use-cases:
   - button row
   - tag list
   - chip group
   - inline list
   - pill group
+  - 按钮行
+  - 标签列表
+  - 芯片组
+  - 内联列表
+  - 胶囊组
 ---
 
 <style>
@@ -31,9 +40,9 @@ use-cases:
   }
 </style>
 
-A cluster arranges its children inline with even spacing and wraps them onto a new line whenever the container runs out of room. Reach for it whenever you have a horizontal group of items of varying widths, like tag lists, button rows, inline metadata, or breadcrumb-style trails, and want the layout to stay tidy on every screen size without writing any media queries.
+集群布局将其子元素以内联方式排列，间距均匀，并在容器空间不足时将项目换行到新行。当您有一组不同宽度的水平项目（如标签列表、按钮行、内联元数据或面包屑导航）时使用它，无需编写任何媒体查询即可在每个屏幕尺寸上保持布局整洁。
 
-By default, cluster children are centered vertically. Pair `wa-cluster` with a [`wa-gap-*`](/docs/utilities/gap) class to change the spacing and a [`wa-align-items-*`](/docs/utilities/align-items) class to change how items align on the cross axis.
+默认情况下，集群的子元素垂直居中。将 `wa-cluster` 与 [`wa-gap-*`](/docs/utilities/gap) 类配对以更改间距，并与 [`wa-align-items-*`](/docs/utilities/align-items) 类配对以更改项目在交叉轴上的对齐方式。
 
 ```html {.example}
 <div class="wa-cluster">
@@ -48,7 +57,7 @@ By default, cluster children are centered vertically. Pair `wa-cluster` with a [
   <div></div>
 </div>
 
-<!-- We'll vary the div sizes to show the flow of cluster elements -->
+<!-- 我们会改变 div 的大小来展示集群元素的流动 -->
 <style>
   .wa-cluster div:empty:nth-child(3n) {
     min-inline-size: 6rem;
@@ -59,9 +68,9 @@ By default, cluster children are centered vertically. Pair `wa-cluster` with a [
 </style>
 ```
 
-## Examples
+## 示例
 
-Clusters are great for inline lists and aligning items of varying sizes.
+集群布局非常适合内联列表和对齐不同大小的项目。
 
 ```html {.example}
 <div class="wa-cluster">
@@ -97,9 +106,9 @@ Clusters are great for inline lists and aligning items of varying sizes.
 </div>
 ```
 
-## Align Items
+## 对齐项目
 
-By default, items are centered in the block direction of the `wa-cluster` container. You can add any of the following [`wa-align-items-*`](/docs/utilities/align-items) classes to an element with `wa-cluster` to specify how items are aligned in the block direction:
+默认情况下，项目在 `wa-cluster` 容器的块方向上居中。您可以向带有 `wa-cluster` 的元素添加以下任何 [`wa-align-items-*`](/docs/utilities/align-items) 类，以指定项目在块方向上的对齐方式：
 
 - `wa-align-items-start`
 - `wa-align-items-end`
@@ -132,9 +141,9 @@ By default, items are centered in the block direction of the `wa-cluster` contai
 </div>
 ```
 
-## Gap
+## 间距
 
-By default, the gap between cluster items uses `--wa-space-m` from your theme. You can add any of the following [`wa-gap-*`](/docs/utilities/gap) classes to an element with `wa-cluster` to specify the gap between items:
+默认情况下，集群项目之间的间距使用主题中的 `--wa-space-m`。您可以向带有 `wa-cluster` 的元素添加以下任何 [`wa-gap-*`](/docs/utilities/gap) 类，以指定项目之间的间距：
 
 - `wa-gap-0`
 - `wa-gap-3xs`

@@ -18,7 +18,7 @@
   <wa-tab panel="{{ palette.name | lower }}" {% raw %}{%- if not currentUser.hasPro -%}{% endraw %} disabled {% raw %}{%- endif -%}{% endraw %}>
     <span class="wa-cluster wa-gap-xs wa-flex-nowrap">
       {{ palette.name }}
-      {% raw %}{%- if not currentUser.hasPro -%}{% endraw %}{{ proBadge({ description: "This palette requires access to " ~ site.namePro }) }}{% raw %}{%- endif -%}{% endraw %}
+      {% raw %}{%- if not currentUser.hasPro -%}{% endraw %}{{ proBadge({ description: "此调色板需要 " ~ site.namePro ~ " 访问权限" }) }}{% raw %}{%- endif -%}{% endraw %}
     </span>
   </wa-tab>
   {%- endif -%}

@@ -7,10 +7,10 @@
 {# Component header #}
 {% block beforeContent %}
 <div class="component-info wa-cluster">
-  <code class="component-tag">&lt;{{ component.tagName }}&gt;</code>
+  <code class="component-tag"><{{ component.tagName }}></code>
   <div class="wa-cluster wa-gap-xs">
     {% if isProComponent %}
-    {{ proBadge({ description: "Included with " ~ site.namePro }) }}
+    {{ proBadge({ description: "包含在 " ~ site.namePro ~ " 中" }) }}
     {% endif %}
     {{ componentMetaBadges(component, category, componentCategories) }}
   </div>
@@ -28,52 +28,51 @@
 {# Component API #}
 {% block afterContent %}
 {# Importing #}
-<h2>Importing</h2>
+<h2>导入</h2>
 <p>
-  If you're using the autoloader or a hosted project, components load on demand &mdash; no manual import needed. To
-  cherry-pick a component manually, use one of the following snippets.
+  如果您使用自动加载器或托管项目，组件将按需加载 &mdash; 无需手动导入。要手动挑选一个组件，请使用以下代码片段之一。
 </p>
 
 {% set componentName = component.tagName | stripPrefix %}
 {% set componentPath = ["components/", componentName, "/", componentName, ".js"] | join("") %}
-<wa-tab-group label="How would you like to import this component?" data-install-tabs>
+<wa-tab-group label="如何导入此组件？" data-install-tabs>
   <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
   <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
+  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
   <wa-tab panel="react"><wa-icon name="react" family="brands"></wa-icon> React</wa-tab>
 
   <wa-tab-panel name="cdn">
-    <p>Import this component directly from the CDN:</p>
+    <p>直接从 CDN 导入此组件：</p>
     <pre><code class="language-js">import '{% cdnUrl componentPath %}';</code></pre>
   </wa-tab-panel>
 
   <wa-tab-panel name="npm">
-    <p>After installing Web Awesome via npm, import this component:</p>
+    <p>通过 npm 安装 Web Awesome 后，导入此组件：</p>
     <pre><code class="language-js">import '@awesome.me/webawesome/dist/{{ componentPath }}';</code></pre>
   </wa-tab-panel>
 
   <wa-tab-panel name="self-hosted">
-    <p>If you're self-hosting Web Awesome, import this component from your server:</p>
+    <p>如果您正在自托管 Web Awesome，请从您的服务器导入此组件：</p>
     <pre><code class="language-js">import './webawesome/dist/{{ componentPath }}';</code></pre>
   </wa-tab-panel>
 
   <wa-tab-panel name="react">
-    <p>To import this component for React 18 or below, use the following code:</p>
+    <p>要为 React 18 或更低版本导入此组件，请使用以下代码：</p>
     <pre><code class="language-js">import {{ component.name }} from '@awesome.me/webawesome/dist/react/{{ componentName }}/index.js';</code></pre>
   </wa-tab-panel>
 </wa-tab-group>
 
 {# Slots #}
 {% if component.slots.length %}
-<h2>Slots</h2>
-<p>Learn more about <a href="/docs/usage/#slots">using slots</a>.</p>
+<h2>插槽</h2>
+<p>了解更多关于 <a href="/docs/usage/#slots">使用插槽</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
       </tr>
     </thead>
     <tbody>
@@ -83,7 +82,7 @@
           {% if slot.name %}
           <code>{{ slot.name }}</code>
           {% else %}
-          (default)
+          （默认）
           {% endif %}
         </td>
         <td class="table-description">{{ slot.description | inlineMarkdown | safe }}</td>
@@ -96,36 +95,36 @@
 
 {# Properties #}
 {% if component.properties.length %}
-<h2>Attributes & Properties</h2>
-<p>Learn more about <a href="/docs/usage/#attributes-and-properties">attributes and properties</a>.</p>
+<h2>属性</h2>
+<p>了解更多关于 <a href="/docs/usage/#attributes-and-properties">属性和特性</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
-        <th class="table-reflect">Reflects</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
+        <th class="table-reflect">反射</th>
       </tr>
     </thead>
     <tbody>
       {% for prop in component.properties %}
       <tr>
         <td class="table-name">
-          <code title="JS property">{{ prop.name }}</code><br>
+          <code title="JS 属性">{{ prop.name }}</code><br>
           {% if prop.attribute %}
-          <div><small><code title="HTML attribute">{{ prop.attribute }}</code></small></div>
+          <div><small><code title="HTML 属性">{{ prop.attribute }}</code></small></div>
           {% endif %}
         </td>
         <td class="table-description">
           <div>{{ prop.description | inlineMarkdown | safe }}</div>
           {% if prop.type.text %}
           <div>
-            <small><strong>Type</strong>&nbsp;<code>{{ prop.type.text | trimPipes | inlineMarkdown | safe }}</code></small>
+            <small><strong>类型</strong>&nbsp;<code>{{ prop.type.text | trimPipes | inlineMarkdown | safe }}</code></small>
           </div>
           {% endif %}
           {% if prop.default %}
-          <div><small><strong>Default</strong>&nbsp;<code>{{ prop.default | inlineMarkdown | safe }}</code></small>
+          <div><small><strong>默认值</strong>&nbsp;<code>{{ prop.default | inlineMarkdown | safe }}</code></small>
           </div>
           {% endif %}
         </td>
@@ -146,16 +145,16 @@
 
 {# Methods #}
 {% if component.methods.length %}
-<h2>Methods</h2>
-<p>Learn more about <a href="/docs/usage/#methods">methods</a>.</p>
+<h2>方法</h2>
+<p>了解更多关于 <a href="/docs/usage/#methods">方法</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
-        <th class="table-arguments">Arguments</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
+        <th class="table-arguments">参数</th>
       </tr>
     </thead>
     <tbody>
@@ -181,15 +180,15 @@
 
 {# Events #}
 {% if component.events.length %}
-<h2>Events</h2>
-<p>Learn more about <a href="/docs/usage/#events">events</a>.</p>
+<h2>事件</h2>
+<p>了解更多关于 <a href="/docs/usage/#events">事件</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
       </tr>
     </thead>
     <tbody>
@@ -208,15 +207,15 @@
 
 {# Custom Properties #}
 {% if component.cssProperties.length %}
-<h2>CSS custom properties</h2>
-<p>Learn more about <a href="/docs/usage/#custom-properties">CSS custom properties</a>.</p>
+<h2>CSS 自定义属性</h2>
+<p>了解更多关于 <a href="/docs/usage/#custom-properties">CSS 自定义属性</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
       </tr>
     </thead>
     <tbody>
@@ -227,7 +226,7 @@
           <div>{{ cssProperty.description | inlineMarkdown | safe }}</div>
           {% if cssProperty.default %}
           <div>
-            <small><strong>Default</strong>&nbsp;<code>{{ cssProperty.default }}</code></small>
+            <small><strong>默认值</strong>&nbsp;<code>{{ cssProperty.default }}</code></small>
           </div>
           {% endif %}
         </td>
@@ -240,16 +239,16 @@
 
 {# Custom States #}
 {% if component.cssStates.length %}
-<h2>Custom States</h2>
-<p>Learn more about <a href="/docs/usage/#custom-states">custom states</a>.</p>
+<h2>自定义状态</h2>
+<p>了解更多关于 <a href="/docs/usage/#custom-states">自定义状态</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
-        <th class="table-selector">CSS selector</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
+        <th class="table-selector">CSS 选择器</th>
       </tr>
     </thead>
     <tbody>
@@ -272,16 +271,16 @@
 
 {# CSS Parts #}
 {% if component.cssParts.length %}
-<h2>CSS parts</h2>
-<p>Learn more about <a href="/docs/usage/#css-parts">CSS parts</a>.</p>
+<h2>CSS 部件</h2>
+<p>了解更多关于 <a href="/docs/usage/#css-parts">CSS 部件</a>。</p>
 
 <wa-scroller>
   <table class="component-table wa-hover-rows">
     <thead>
       <tr>
-        <th class="table-name">Name</th>
-        <th class="table-description">Description</th>
-        <th class="table-selector">CSS selector</th>
+        <th class="table-name">名称</th>
+        <th class="table-description">描述</th>
+        <th class="table-selector">CSS 选择器</th>
       </tr>
     </thead>
     <tbody>
@@ -304,15 +303,14 @@
 
 {# Dependencies #}
 {% if component.dependencies.length %}
-<h2>Dependencies</h2>
+<h2>依赖</h2>
 <p>
-  This component automatically imports the following elements. Sub-dependencies, if any exist, will also be included in
-  this list.
+  此组件会自动导入以下元素。子依赖（如有）也将包含在此列表中。
 </p>
 
 <ul class="dependency-list">
   {% for dependency in component.dependencies %}
-  <li><a href="/docs/components/{{ dependency | stripPrefix }}"><code>&lt;{{ dependency }}&gt;</code></a></li>
+  <li><a href="/docs/components/{{ dependency | stripPrefix }}"><code><{{ dependency }}></code></a></li>
   {% endfor %}
 </ul>
 {% endif %}
@@ -320,14 +318,14 @@
 <wa-divider></wa-divider>
 
 <div class="component-help">
-  <strong>Need a hand?</strong>
+  <strong>需要帮助？</strong>
   <wa-button size="s" appearance="filled" variant="neutral" href="{{ site.github.issues }}" target="_blank">
     <wa-icon slot="start" variant="regular" name="bug"></wa-icon>
-    Report a bug
+    报告错误
   </wa-button>
   <wa-button size="s" appearance="filled" variant="neutral" href="{{ site.github.discussions }}" target="_blank">
     <wa-icon slot="start" variant="regular" name="message-question"></wa-icon>
-    Ask for help
+    寻求帮助
   </wa-button>
 </div>
 {% endblock %}

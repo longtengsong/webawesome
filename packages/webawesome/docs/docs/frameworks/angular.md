@@ -1,32 +1,32 @@
 ---
 title: Angular
-description: Tips for using Web Awesome in your Angular app.
+description: 在 Angular 应用中使用 Web Awesome 的提示。
 layout: page-outline
 ---
 
 <wa-breadcrumb class="page-breadcrumbs">
   <wa-icon slot="separator" name="angle-right" variant="regular"></wa-icon>
-  <wa-breadcrumb-item href="/docs/frameworks">Frameworks</wa-breadcrumb-item>
+  <wa-breadcrumb-item href="/docs/frameworks">框架集成</wa-breadcrumb-item>
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Angular [plays nice](https://custom-elements-everywhere.com/#angular) with custom elements, so you can use Web Awesome in your Angular apps with ease.
+Angular [完美支持](https://custom-elements-everywhere.com/#angular)自定义元素，因此您可以轻松地在 Angular 应用中使用 Web Awesome。
 
-## Installation
+## 安装
 
-### Download the npm package
+### 下载 npm 包
 
-To add Web Awesome to your Angular app, install the package from npm.
+要添加 Web Awesome 到您的 Angular 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-### Update the Angular Configuration
+### 更新 Angular 配置
 
-Next, [include a theme](/docs/themes). In this example, we'll import the light theme.
+接下来，[引入一个主题](/docs/themes)。在这个示例中，我们将导入浅色主题。
 
-Its also important to load the components by using a `<script>` tag into the index.html file. However, the Angular way to do it is by adding a script configurations into your angular.json file as follows:
+同样重要的是通过 `<script>` 标签将组件加载到 index.html 文件中。不过，Angular 的做法是通过在您的 angular.json 文件中添加脚本配置，如下所示：
 
 ```json
 "architect": {
@@ -44,9 +44,9 @@ Its also important to load the components by using a `<script>` tag into the ind
 }
 ```
 
-## Configuration
+## 配置
 
-Then make sure to apply the custom elements schema as shown below.
+然后确保应用自定义元素模式，如下所示。
 
 ```js
 import { BrowserModule } from '@angular/platform-browser';
@@ -64,20 +64,20 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-## Reference Web Awesome components in your Angular component code
+## 在 Angular 组件代码中引用 Web Awesome 组件
 
 ```js
-// need to have both or Angular will tree shake the component out.
+// 需要同时导入两者，否则 Angular 会通过摇树优化移除组件。
 import type { WaDrawer } from '@awesome.me/webawesome/dist/components/drawer/drawer.js';
 import "@awesome.me/webawesome/dist/components/drawer/drawer.js";
 
 @Component({
   selector: 'app-drawer-example',
-  template: '<div id="page"><button (click)="showDrawer()">Show drawer</button><wa-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"><p>Drawer content</p></wa-drawer></div>'
+  template: '<div id="page"><button (click)="showDrawer()">显示抽屉</button><wa-drawer #drawer label="抽屉" class="drawer-focus" style="--size: 50vw"><p>抽屉内容</p></wa-drawer></div>'
 })
 export class DrawerExampleComponent implements OnInit {
 
-  // use @ViewChild to get a reference to the #drawer element within component template
+  // 使用 @ViewChild 获取组件模板中 #drawer 元素的引用
   @ViewChild('drawer')
   drawer?: ElementRef<WaDrawer>;
 
@@ -92,14 +92,14 @@ export class DrawerExampleComponent implements OnInit {
   ...
 
   showDrawer() {
-    // use nativeElement to access Web Awesome components
+    // 使用 nativeElement 访问 Web Awesome 组件
     this.drawer?.nativeElement.show();
   }
 }
 ```
 
-Now you can start using Web Awesome components in your app!
+现在您可以开始在应用中使用 Web Awesome 组件了！
 
 :::info
-Are you using Web Awesome with Angular? [Help us improve this page!](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/angular.md)
+您正在使用 Web Awesome 和 Angular？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/angular.md)
 :::

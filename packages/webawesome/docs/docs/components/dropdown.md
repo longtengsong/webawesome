@@ -1,5 +1,5 @@
 ---
-title: Dropdown
+title: 下拉菜单
 layout: component
 category: Actions
 synonyms:
@@ -7,16 +7,22 @@ synonyms:
   - context menu
   - action menu
   - popout
+  - 菜单
+  - 上下文菜单
+  - 操作菜单
 use-cases:
   - dropdown menu
   - action list
   - command menu
   - right-click menu
+  - 下拉菜单
+  - 操作列表
+  - 右键菜单
 ---
 
-Dropdowns consist of a trigger and a panel. By default, activating the trigger will expose the panel and interacting outside of the panel will close it.
+下拉菜单由触发器和面板组成。默认情况下，激活触发器将显示面板，与面板外部交互将关闭它。
 
-Dropdowns are designed to work well with [dropdown items](/docs/components/dropdown-item) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications. The API gives you complete control over showing, hiding, and positioning the panel.
+下拉菜单设计用于与[下拉项](/docs/components/dropdown-item)良好配合，以提供用户可以选择的选项列表。但是，下拉菜单也可以用于较低级别的应用程序。API 让你完全控制显示、隐藏和定位面板。
 
 ```html {.example}
 <wa-dropdown>
@@ -51,11 +57,11 @@ Dropdowns are designed to work well with [dropdown items](/docs/components/dropd
 </wa-dropdown>
 ```
 
-## Examples
+## 示例
 
-### Getting the Selected Item
+### 获取选择的项
 
-When an item is selected, the `wa-select` event will be emitted by the dropdown. You can inspect `event.detail.item` to get a reference to the selected item. If you've provided a value for each [dropdown item](/docs/components/dropdown-item), it will be available in `event.detail.item.value`.
+当选择一项时，下拉菜单将发出 `wa-select` 事件。你可以检查 `event.detail.item` 以获取对所选项的引用。如果你为每个[下拉项](/docs/components/dropdown-item)提供了值，它将在 `event.detail.item.value` 中可用。
 
 ```html {.example}
 <div class="dropdown-selection">
@@ -79,12 +85,12 @@ When an item is selected, the `wa-select` event will be emitted by the dropdown.
 ```
 
 :::info
-To keep the dropdown open after selection, call `event.preventDefault()` in the `wa-select` event's callback.
+要在选择后保持下拉菜单打开，请在 `wa-select` 事件的回调中调用 `event.preventDefault()`。
 :::
 
-### Showing Icons
+### 显示图标
 
-Use the `icon` slot to add icons to [dropdown items](/docs/components/dropdown-item). This works best with [icon](/docs/components/icon) elements.
+使用 `icon` 插槽为[下拉项](/docs/components/dropdown-item)添加图标。这与[图标](/docs/components/icon)元素配合得最好。
 
 ```html {.example}
 <wa-dropdown>
@@ -112,9 +118,9 @@ Use the `icon` slot to add icons to [dropdown items](/docs/components/dropdown-i
 </wa-dropdown>
 ```
 
-### Showing Labels & Dividers
+### 显示标签和分隔线
 
-Use any heading, e.g. `<h1>`–`<h6>` to add labels and the [`<wa-divider>`](/docs/components/divider) element for separators.
+使用任何标题，例如 `<h1>`–`<h6>` 来添加标签，并使用 [`<wa-divider>`](/docs/components/divider) 元素作为分隔符。
 
 ```html {.example}
 <wa-dropdown>
@@ -131,9 +137,9 @@ Use any heading, e.g. `<h1>`–`<h6>` to add labels and the [`<wa-divider>`](/do
 </wa-dropdown>
 ```
 
-### Showing Details
+### 显示详情
 
-Use the `details` slot to display details, such as keyboard shortcuts, inside [dropdown items](/docs/components/dropdown-item).
+使用 `details` 插槽在[下拉项](/docs/components/dropdown-item)内部显示详情，例如键盘快捷键。
 
 ```html {.example}
 <wa-dropdown>
@@ -168,9 +174,9 @@ Use the `details` slot to display details, such as keyboard shortcuts, inside [d
 </wa-dropdown>
 ```
 
-### Checkable Items
+### 可勾选项
 
-You can turn a [dropdown item](/docs/components/dropdown-item) into a checkable option by setting `type="checkbox"`. Add the `checked` attribute to make it checked initially. When clicked, the item's checked state will toggle and the dropdown will close. You can cancel the `wa-select` event if you want to keep it open instead.
+你可以通过设置 `type="checkbox"` 将[下拉项](/docs/components/dropdown-item)转换为可勾选选项。添加 `checked` 属性使其初始被选中。点击时，项的选中状态将切换，下拉菜单将关闭。如果你希望保持打开，可以取消 `wa-select` 事件。
 
 ```html {.example}
 <div class="dropdown-checkboxes">
@@ -204,12 +210,12 @@ You can turn a [dropdown item](/docs/components/dropdown-item) into a checkable 
 ```
 
 :::info
-When a checkable option exists anywhere in the dropdown, all items will receive additional padding so they align properly.
+当下拉菜单中任何地方存在可勾选选项时，所有项将获得额外的内边距，以便它们正确对齐。
 :::
 
-### Destructive Items
+### 破坏性操作项
 
-Add `variant="danger"` to any [dropdown item](/docs/components/dropdown-item) to highlight that it's a dangerous action.
+向任何[下拉项](/docs/components/dropdown-item)添加 `variant="danger"` 以突出显示它是一个危险的操作。
 
 ```html {.example}
 <wa-dropdown>
@@ -241,9 +247,9 @@ Add `variant="danger"` to any [dropdown item](/docs/components/dropdown-item) to
 </wa-dropdown>
 ```
 
-### Placement
+### 位置
 
-The preferred placement of the dropdown can be set with the `placement` attribute. Note that the actual position may vary to ensure the panel remains in the viewport.
+下拉菜单的首选位置可以用 `placement` 属性设置。请注意，实际位置可能会有所不同，以确保面板保持在视口中。
 
 ```html {.example}
 <wa-dropdown placement="right-start">
@@ -261,9 +267,9 @@ The preferred placement of the dropdown can be set with the `placement` attribut
 </wa-dropdown>
 ```
 
-### Distance
+### 距离
 
-The distance from the panel to the trigger can be customized using the `distance` attribute. This value is specified in pixels.
+面板到触发器的距离可以使用 `distance` 属性自定义。此值以像素为单位指定。
 
 ```html {.example}
 <wa-dropdown distance="30">
@@ -280,9 +286,9 @@ The distance from the panel to the trigger can be customized using the `distance
 </wa-dropdown>
 ```
 
-### Offset
+### 偏移
 
-The offset of the panel along the trigger can be customized using the `skidding` attribute. This value is specified in pixels.
+面板沿触发器的偏移可以使用 `skidding` 属性自定义。此值以像素为单位指定。
 
 ```html {.example}
 <wa-dropdown skidding="30">
@@ -299,9 +305,9 @@ The offset of the panel along the trigger can be customized using the `skidding`
 </wa-dropdown>
 ```
 
-### Submenus
+### 子菜单
 
-To create submenus, nest [dropdown items](/docs/components/dropdown-item) inside of a dropdown item and assign `slot="submenu"` to each one. You can also add [dividers](/docs/components/divider) as needed.
+要创建子菜单，请在下拉项内部嵌套[下拉项](/docs/components/dropdown-item)，并为每个项分配 `slot="submenu"`。你还可以根据需要添加[分隔线](/docs/components/divider)。
 
 ```html {.example}
 <div class="dropdown-submenus">
@@ -355,16 +361,16 @@ To create submenus, nest [dropdown items](/docs/components/dropdown-item) inside
 ```
 
 :::info
-Dropdown items that have a submenu will not dispatch the `wa-select` event. However, items inside the submenu will, unless they also have a submenu.
+具有子菜单的下拉项不会发出 `wa-select` 事件。但是，子菜单内的项会发出，除非它们也有子菜单。
 :::
 
 :::warning
-As a UX best practice, avoid using more than one level of submenu when possible.
+作为 UX 最佳实践，尽可能避免使用多于一级的子菜单。
 :::
 
-### Disabling Items
+### 禁用项
 
-Add the `disabled` attribute to any [dropdown item](/docs/components/dropdown-item) to disable it.
+向任何[下拉项](/docs/components/dropdown-item)添加 `disabled` 属性以禁用它。
 
 ```html {.example}
 <wa-dropdown>

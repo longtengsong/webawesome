@@ -1,6 +1,6 @@
 ---
-title: Visual Tests
-description: A page to visually test component styles against native styles.
+title: 可视化测试
+description: 用于可视化测试组件样式与原生样式的页面。
 layout: page
 wide: true
 ---
@@ -36,22 +36,22 @@ wide: true
   }
 </style>
 
-With so many ways to build with and use Web Awesome components, visual tests help ensure consistency and prevent broken styles from leaking into production.
+构建和使用 Web Awesome 组件的方式多种多样，可视化测试有助于确保一致性，并防止错误的样式泄露到生产环境中。
 
-These tests can come in handy when creating or customizing your own theme. Look through each test case to make sure that custom styles in your theme cover all of the attributes, utilities, and built-in styles Web Awesome offers.
+这些测试在创建或自定义您自己的主题时会派上用场。逐个查看每个测试用例，确保您主题中的自定义样式涵盖了 Web Awesome 提供的所有特性、工具类和内置样式。
 
 <wa-tab-group>
-  <wa-tab panel="native">Native</wa-tab>
-  <wa-tab panel="color">Color</wa-tab>
-  <wa-tab panel="size">Size</wa-tab>
-  <wa-tab panel="alignment">Alignment</wa-tab>
-  <wa-tab panel="harmony">Harmony</wa-tab>
+  <wa-tab panel="native">原生</wa-tab>
+  <wa-tab panel="color">颜色</wa-tab>
+  <wa-tab panel="size">尺寸</wa-tab>
+  <wa-tab panel="alignment">对齐</wa-tab>
+  <wa-tab panel="harmony">和谐</wa-tab>
 
 <wa-tab-panel name="alignment">
 
-## Alignment
+## 对齐
 
-Alignment tests reveal the top boundary, vertical center, and bottom boundary of components. These help to evaluate how well components align with one another when arranged horizontally.
+对齐测试展示了组件的顶部边界、垂直居中和底部边界。这些有助于评估组件在水平排列时的对齐效果。
 
 {% include 'visual-tests/alignment.njk' %}
 
@@ -59,9 +59,9 @@ Alignment tests reveal the top boundary, vertical center, and bottom boundary of
 
 <wa-tab-panel name="color">
 
-## Color
+## 颜色
 
-Color tests ensure that both the `variant` attribute and `.wa-[variant]` classes have identical results for components that support them. Developers should be able to use both of these interchangeably to give the component the intended semantic color.
+颜色测试确保 `variant` 特性和 `.wa-[variant]` 类对于支持它们的组件具有相同的结果。开发者应该能够互换使用这两者，为组件赋予预期的语义颜色。
 
 {% include 'visual-tests/color.njk' %}
 
@@ -69,9 +69,9 @@ Color tests ensure that both the `variant` attribute and `.wa-[variant]` classes
 
 <wa-tab-panel name="harmony">
 
-## Harmony
+## 和谐
 
-Harmony tests show how related components look together. These can help validate design choices or reveal where design intervention is needed to get a consistent, harmonious look and feel.
+和谐测试展示了相关组件放在一起时的外观。这些有助于验证设计选择，或揭示需要设计干预的地方，以获得一致、和谐的外观和感觉。
 
 {% include 'visual-tests/harmony.njk' %}
 
@@ -79,9 +79,9 @@ Harmony tests show how related components look together. These can help validate
 
 <wa-tab-panel name="native">
 
-## Native
+## 原生
 
-Native style tests ensure that supported native elements and utilities look the same as their Web Awesome component counterparts. Native elements may also support the same appearance, color, and size utilities as components.
+原生样式测试确保支持的原生元素和工具类与对应的 Web Awesome 组件外观一致。原生元素也可以支持与组件相同的外观、颜色和尺寸工具类。
 
 {% include 'visual-tests/native.njk' %}
 
@@ -89,9 +89,9 @@ Native style tests ensure that supported native elements and utilities look the 
 
 <wa-tab-panel name="size">
 
-## Size
+## 尺寸
 
-Size tests ensure that both the `size` attribute and `.wa-size-[xs|s|m|l|xl]` classes have identical results for components that support them. Developers should be able to use both of these interchangeably on components to get the intended size.
+尺寸测试确保 `size` 特性和 `.wa-size-[xs|s|m|l|xl]` 类对于支持它们的组件具有相同的结果。开发者应该能够互换使用这两者来为组件设置预期的尺寸。
 
 {% include 'visual-tests/size.njk' %}
 

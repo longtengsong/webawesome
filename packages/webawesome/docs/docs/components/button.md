@@ -1,5 +1,5 @@
 ---
-title: Button
+title: 按钮
 layout: component
 category: Actions
 synonyms:
@@ -7,258 +7,266 @@ synonyms:
   - action
   - CTA
   - submit
+  - 按钮
+  - 操作
+  - 行动号召
+  - 提交
 use-cases:
   - form submit
   - link button
   - icon button
   - loading button
+  - 表单提交
+  - 链接按钮
+  - 图标按钮
+  - 加载按钮
 ---
 
 ```html {.example}
-<wa-button>Button</wa-button>
+<wa-button>按钮</wa-button>
 ```
 
-## Examples
+## 示例
 
-### Variants
+### 变体
 
 Use the `variant` attribute to set the button's [semantic variant](/docs/theming-overview#variants).
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button variant="neutral">Neutral</wa-button>
-  <wa-button variant="brand">Brand</wa-button>
-  <wa-button variant="success">Success</wa-button>
-  <wa-button variant="warning">Warning</wa-button>
-  <wa-button variant="danger">Danger</wa-button>
+  <wa-button variant="neutral">中性</wa-button>
+  <wa-button variant="brand">品牌</wa-button>
+  <wa-button variant="success">成功</wa-button>
+  <wa-button variant="warning">警告</wa-button>
+  <wa-button variant="danger">危险</wa-button>
 </div>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the button's visual appearance.
+使用 `appearance` 属性来更改按钮的视觉外观。
 
 ```html {.example}
 <div class="wa-stack">
   <div class="wa-cluster wa-gap-2xs">
-    <wa-button appearance="accent" variant="neutral">Accent</wa-button>
-    <wa-button appearance="filled-outlined" variant="neutral">Filled-Outlined</wa-button>
-    <wa-button appearance="filled" variant="neutral">Filled</wa-button>
-    <wa-button appearance="outlined" variant="neutral">Outlined</wa-button>
-    <wa-button appearance="plain" variant="neutral">Plain</wa-button>
+    <wa-button appearance="accent" variant="neutral">强调</wa-button>
+    <wa-button appearance="filled-outlined" variant="neutral">填充轮廓</wa-button>
+    <wa-button appearance="filled" variant="neutral">填充</wa-button>
+    <wa-button appearance="outlined" variant="neutral">轮廓</wa-button>
+    <wa-button appearance="plain" variant="neutral">朴素</wa-button>
   </div>
   <div class="wa-cluster wa-gap-2xs">
-    <wa-button appearance="accent" variant="brand">Accent</wa-button>
-    <wa-button appearance="filled-outlined" variant="brand">Filled-Outlined</wa-button>
-    <wa-button appearance="filled" variant="brand">Filled</wa-button>
-    <wa-button appearance="outlined" variant="brand">Outlined</wa-button>
-    <wa-button appearance="plain" variant="brand">Plain</wa-button>
+    <wa-button appearance="accent" variant="brand">强调</wa-button>
+    <wa-button appearance="filled-outlined" variant="brand">填充轮廓</wa-button>
+    <wa-button appearance="filled" variant="brand">填充</wa-button>
+    <wa-button appearance="outlined" variant="brand">轮廓</wa-button>
+    <wa-button appearance="plain" variant="brand">朴素</wa-button>
   </div>
   <div class="wa-cluster wa-gap-2xs">
-    <wa-button appearance="accent" variant="success">Accent</wa-button>
-    <wa-button appearance="filled-outlined" variant="success">Filled-Outlined</wa-button>
-    <wa-button appearance="filled" variant="success">Filled</wa-button>
-    <wa-button appearance="outlined" variant="success">Outlined</wa-button>
-    <wa-button appearance="plain" variant="success">Plain</wa-button>
+    <wa-button appearance="accent" variant="success">强调</wa-button>
+    <wa-button appearance="filled-outlined" variant="success">填充轮廓</wa-button>
+    <wa-button appearance="filled" variant="success">填充</wa-button>
+    <wa-button appearance="outlined" variant="success">轮廓</wa-button>
+    <wa-button appearance="plain" variant="success">朴素</wa-button>
   </div>
   <div class="wa-cluster wa-gap-2xs">
-    <wa-button appearance="accent" variant="warning">Accent</wa-button>
-    <wa-button appearance="filled-outlined" variant="warning">Filled-Outlined</wa-button>
-    <wa-button appearance="filled" variant="warning">Filled</wa-button>
-    <wa-button appearance="outlined" variant="warning">Outlined</wa-button>
-    <wa-button appearance="plain" variant="warning">Plain</wa-button>
+    <wa-button appearance="accent" variant="warning">强调</wa-button>
+    <wa-button appearance="filled-outlined" variant="warning">填充轮廓</wa-button>
+    <wa-button appearance="filled" variant="warning">填充</wa-button>
+    <wa-button appearance="outlined" variant="warning">轮廓</wa-button>
+    <wa-button appearance="plain" variant="warning">朴素</wa-button>
   </div>
   <div class="wa-cluster wa-gap-2xs">
-    <wa-button appearance="accent" variant="danger">Accent</wa-button>
-    <wa-button appearance="filled-outlined" variant="danger">Filled-Outlined</wa-button>
-    <wa-button appearance="filled" variant="danger">Filled</wa-button>
-    <wa-button appearance="outlined" variant="danger">Outlined</wa-button>
-    <wa-button appearance="plain" variant="danger">Plain</wa-button>
+    <wa-button appearance="accent" variant="danger">强调</wa-button>
+    <wa-button appearance="filled-outlined" variant="danger">填充轮廓</wa-button>
+    <wa-button appearance="filled" variant="danger">填充</wa-button>
+    <wa-button appearance="outlined" variant="danger">轮廓</wa-button>
+    <wa-button appearance="plain" variant="danger">朴素</wa-button>
   </div>
 </div>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change a button's size.
+使用 `size` 属性来更改按钮的尺寸。
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button size="xs">Extra Small</wa-button>
-  <wa-button size="s">Small</wa-button>
-  <wa-button size="m">Medium</wa-button>
-  <wa-button size="l">Large</wa-button>
-  <wa-button size="xl">Extra Large</wa-button>
+  <wa-button size="xs">极小</wa-button>
+  <wa-button size="s">小</wa-button>
+  <wa-button size="m">中</wa-button>
+  <wa-button size="l">大</wa-button>
+  <wa-button size="xl">极大</wa-button>
 </div>
 ```
 
-### Pill Buttons
+### 圆角按钮
 
-Use the `pill` attribute to give buttons rounded edges.
+使用 `pill` 属性为按钮添加圆角边缘。
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button size="xs" pill>Extra Small</wa-button>
-  <wa-button size="s" pill>Small</wa-button>
-  <wa-button size="m" pill>Medium</wa-button>
-  <wa-button size="l" pill>Large</wa-button>
-  <wa-button size="xl" pill>Extra Large</wa-button>
+  <wa-button size="xs" pill>极小</wa-button>
+  <wa-button size="s" pill>小</wa-button>
+  <wa-button size="m" pill>中</wa-button>
+  <wa-button size="l" pill>大</wa-button>
+  <wa-button size="xl" pill>极大</wa-button>
 </div>
 ```
 
-### Link Buttons
+### 链接按钮
 
-It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `rel`, `target`, and `download` attributes.
+拥有一个像链接一样工作的按钮通常很有帮助。通过设置 `href` 属性可以实现这一点，这将使组件在底层渲染一个 `<a>`。这为你提供了浏览器提供的所有默认链接行为（例如 [[CMD/CTRL/SHIFT]] + [[CLICK]]），并暴露了 `rel`、`target` 和 `download` 属性。
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button href="https://example.com/">Link</wa-button>
-  <wa-button href="https://example.com/" target="_blank">New Window</wa-button>
-  <wa-button href="/assets/images/logo.svg" download="shoelace.svg">Download</wa-button>
+  <wa-button href="https://example.com/">链接</wa-button>
+  <wa-button href="https://example.com/" target="_blank">新窗口</wa-button>
+  <wa-button href="/assets/images/logo.svg" download="shoelace.svg">下载</wa-button>
 </div>
 ```
 
-### Icon Buttons
+### 图标按钮
 
-When only an [icon](/docs/components/icon) is slotted into the `label` slot, the button becomes an icon button. In this case, it's important to give the icon a label for users with assistive devices. Icon buttons can use any appearance or variant.
+当只有一个[图标](/docs/components/icon)被插入到 `label` 插槽中时，按钮就变成了图标按钮。在这种情况下，为辅助设备用户给图标提供标签是很重要的。图标按钮可以使用任何外观或变体。
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button variant="neutral" appearance="accent"><wa-icon name="house" label="Home"></wa-icon></wa-button>
-  <wa-button variant="neutral" appearance="outlined"><wa-icon name="house" label="Home"></wa-icon></wa-button>
-  <wa-button variant="neutral" appearance="filled"><wa-icon name="house" label="Home"></wa-icon></wa-button>
-  <wa-button variant="neutral" appearance="plain"><wa-icon name="house" label="Home"></wa-icon></wa-button>
+  <wa-button variant="neutral" appearance="accent"><wa-icon name="house" label="首页"></wa-icon></wa-button>
+  <wa-button variant="neutral" appearance="outlined"><wa-icon name="house" label="首页"></wa-icon></wa-button>
+  <wa-button variant="neutral" appearance="filled"><wa-icon name="house" label="首页"></wa-icon></wa-button>
+  <wa-button variant="neutral" appearance="plain"><wa-icon name="house" label="首页"></wa-icon></wa-button>
 </div>
 ```
 
-### Setting a Custom Width
+### 设置自定义宽度
 
-As expected, buttons can be given a custom width by setting the `width` CSS property. This is useful for making buttons span the full width of their container on smaller screens.
+正如预期的那样，可以通过设置 `width` CSS 属性来给按钮设置自定义宽度。这对于在较小屏幕上让按钮跨越容器的整个宽度很有用。
 
 ```html {.example}
 <div class="wa-stack">
-  <wa-button size="xs" style="width: 100%;">Extra Small</wa-button>
-  <wa-button size="s" style="width: 100%;">Small</wa-button>
-  <wa-button size="m" style="width: 100%;">Medium</wa-button>
-  <wa-button size="l" style="width: 100%;">Large</wa-button>
-  <wa-button size="xl" style="width: 100%;">Extra Large</wa-button>
+  <wa-button size="xs" style="width: 100%;">极小</wa-button>
+  <wa-button size="s" style="width: 100%;">小</wa-button>
+  <wa-button size="m" style="width: 100%;">中</wa-button>
+  <wa-button size="l" style="width: 100%;">大</wa-button>
+  <wa-button size="xl" style="width: 100%;">极大</wa-button>
 </div>
 ```
 
-### Start & End Decorations
+### 开始和结束装饰
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` next to the button label.
+使用 `start` 和 `end` 插槽在按钮标签旁边添加装饰元素，如 `<wa-icon>`。
 
 ```html {.example}
 <div class="wa-stack">
   <div class="wa-cluster wa-gap-2xs">
     <wa-button size="s">
       <wa-icon slot="start" name="gear"></wa-icon>
-      Settings
+      设置
     </wa-button>
 
     <wa-button size="s">
       <wa-icon slot="end" name="undo"></wa-icon>
-      Refresh
+      刷新
     </wa-button>
 
     <wa-button size="s">
       <wa-icon slot="start" name="link"></wa-icon>
       <wa-icon slot="end" name="arrow-up-right-from-square"></wa-icon>
-      Open
+      打开
     </wa-button>
   </div>
 
   <div class="wa-cluster wa-gap-2xs">
     <wa-button>
       <wa-icon slot="start" name="gear"></wa-icon>
-      Settings
+      设置
     </wa-button>
 
     <wa-button>
       <wa-icon slot="end" name="undo"></wa-icon>
-      Refresh
+      刷新
     </wa-button>
 
     <wa-button>
       <wa-icon slot="start" name="link"></wa-icon>
       <wa-icon slot="end" name="arrow-up-right-from-square"></wa-icon>
-      Open
+      打开
     </wa-button>
   </div>
 
   <div class="wa-cluster wa-gap-2xs">
     <wa-button size="l">
       <wa-icon slot="start" name="gear"></wa-icon>
-      Settings
+      设置
     </wa-button>
 
     <wa-button size="l">
       <wa-icon slot="end" name="undo"></wa-icon>
-      Refresh
+      刷新
     </wa-button>
 
     <wa-button size="l">
       <wa-icon slot="start" name="link"></wa-icon>
       <wa-icon slot="end" name="arrow-up-right-from-square"></wa-icon>
-      Open
+      打开
     </wa-button>
   </div>
 </div>
 ```
 
-### Caret
+### 下拉指示器
 
-Use the `with-caret` attribute to add a dropdown indicator when a button will trigger a dropdown, menu, or popover.
-
-```html {.example}
-<div class="wa-cluster wa-gap-2xs">
-  <wa-button size="xs" with-caret>Extra Small</wa-button>
-  <wa-button size="s" with-caret>Small</wa-button>
-  <wa-button size="m" with-caret>Medium</wa-button>
-  <wa-button size="l" with-caret>Large</wa-button>
-  <wa-button size="xl" with-caret>Extra Large</wa-button>
-</div>
-```
-
-### Loading
-
-Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around.
+当按钮将触发下拉菜单、菜单或弹出框时，使用 `with-caret` 属性添加下拉指示器。
 
 ```html {.example}
 <div class="wa-cluster wa-gap-2xs">
-  <wa-button variant="brand" loading>Brand</wa-button>
-  <wa-button variant="success" loading>Success</wa-button>
-  <wa-button variant="neutral" loading>Neutral</wa-button>
-  <wa-button variant="warning" loading>Warning</wa-button>
-  <wa-button variant="danger" loading>Danger</wa-button>
+  <wa-button size="xs" with-caret>极小</wa-button>
+  <wa-button size="s" with-caret>小</wa-button>
+  <wa-button size="m" with-caret>中</wa-button>
+  <wa-button size="l" with-caret>大</wa-button>
+  <wa-button size="xl" with-caret>极大</wa-button>
 </div>
 ```
 
-### Disabled
+### 加载
 
-Use the `disabled` attribute to disable a button.
+使用 `loading` 属性使按钮处于忙碌状态。宽度将保持与之前相同，防止相邻元素移动。
 
 ```html {.example}
-<wa-button variant="brand" disabled>Brand</wa-button>
-<wa-button variant="success" disabled>Success</wa-button>
-<wa-button variant="neutral" disabled>Neutral</wa-button>
-<wa-button variant="warning" disabled>Warning</wa-button>
-<wa-button variant="danger" disabled>Danger</wa-button>
+<div class="wa-cluster wa-gap-2xs">
+  <wa-button variant="brand" loading>品牌</wa-button>
+  <wa-button variant="success" loading>成功</wa-button>
+  <wa-button variant="neutral" loading>中性</wa-button>
+  <wa-button variant="warning" loading>警告</wa-button>
+  <wa-button variant="danger" loading>危险</wa-button>
+</div>
+```
+
+### 禁用
+
+使用 `disabled` 属性禁用按钮。
+
+```html {.example}
+<wa-button variant="brand" disabled>品牌</wa-button>
+<wa-button variant="success" disabled>成功</wa-button>
+<wa-button variant="neutral" disabled>中性</wa-button>
+<wa-button variant="warning" disabled>警告</wa-button>
+<wa-button variant="danger" disabled>危险</wa-button>
 
 <br /><br />
 
-<wa-button href="https://example.com/" disabled>Link</wa-button>
-<wa-button href="https://example.com/" target="_blank" disabled>New Window</wa-button>
-<wa-button href="/assets/images/logo.svg" download="shoelace.svg" disabled>Download</wa-button>
+<wa-button href="https://example.com/" disabled>链接</wa-button>
+<wa-button href="https://example.com/" target="_blank" disabled>新窗口</wa-button>
+<wa-button href="/assets/images/logo.svg" download="shoelace.svg" disabled>下载</wa-button>
 ```
 
-### Styling Buttons
+### 样式化按钮
 
-This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `wa-button[variant="brand"]`).
+此示例演示了如何使用自定义类来样式化按钮。如果你需要添加其他变体，这是推荐的方法。要自定义现有变体，请修改选择器以针对按钮的 `variant` 属性而不是类（例如 `wa-button[variant="brand"]`）。
 
 ```html {.example}
-<wa-button class="pink">Pink Button</wa-button>
+<wa-button class="pink">粉色按钮</wa-button>
 
 <style>
   wa-button.pink::part(base) {

@@ -1,6 +1,6 @@
 ---
-title: CSS Utilities
-description: Preset CSS utility classes that let you efficiently customize styles and layouts for components and native elements alike.
+title: CSS 工具
+description: 预设的 CSS 工具类，让您可以高效地为组件和原生元素自定义样式和布局。
 layout: docs
 hasBreadcrumbs: false
 hasOutline: false
@@ -13,22 +13,22 @@ hasOutline: false
 </p>
 
 {% markdown %}
-Instead of hand-writing the same CSS over and over, reach for a utility class and your theme takes care of the rest. CSS utilities pull directly from your Web Awesome [theme](/docs/themes) and [design tokens](/docs/tokens), so colors, typography, rounding, and spacing stay consistent with every component on the page. They're framework-agnostic, work on any native HTML element, and can be combined freely.
+与其一遍又一遍地手写相同的 CSS，不如使用工具类，您的主题会处理其余部分。CSS 工具直接从您的 Web Awesome [主题](/docs/themes)和[设计令牌](/docs/tokens)中提取，因此颜色、排版、圆角和间距与页面上的每个组件保持一致。它们与框架无关，适用于任何原生 HTML 元素，并可以自由组合。
 
-## Using CSS Utilities
+## 使用 CSS 工具
 
-CSS utilities ship as part of `webawesome.css`, so if you're already including that stylesheet you don't need to import anything else. Otherwise, follow these instructions to include the utilities stylesheet on its own.
+CSS 工具作为 `webawesome.css` 的一部分提供，因此如果您已经包含该样式表，则无需额外导入。否则，请按照以下说明单独包含工具样式表。
 {% endmarkdown %}
 
 <wa-tab-group data-install-tabs>
   <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
   <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> Self-Hosted</wa-tab>
-  <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> Hosted Projects</wa-tab>
+  <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+  <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
   <wa-tab-panel name="cdn">
 {% markdown %}
-Add the following stylesheet to the `<head>` section of your pages:
+将以下样式表添加到页面的 `<head>` 部分：
 
 ```html
 <link rel="stylesheet" href="{% cdnUrl 'styles/utilities.css' %}">
@@ -38,7 +38,7 @@ Add the following stylesheet to the `<head>` section of your pages:
 
   <wa-tab-panel name="npm">
 {% markdown %}
-After installing `@awesome.me/webawesome`, import the following stylesheet into your app:
+安装 `@awesome.me/webawesome` 后，将以下样式表导入到您的应用中：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/utilities.css';
@@ -48,7 +48,7 @@ import '@awesome.me/webawesome/dist/styles/utilities.css';
 
   <wa-tab-panel name="self-hosted">
 {% markdown %}
-Add the following stylesheet to the `<head>` section of your pages:
+将以下样式表添加到页面的 `<head>` 部分：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/utilities.css">
@@ -58,7 +58,7 @@ Add the following stylesheet to the `<head>` section of your pages:
 
   <wa-tab-panel name="hosted">
 {% markdown %}
-If you're using a [hosted project](/workspaces), CSS utilities can be toggled on from your project settings.
+如果您使用的是[托管项目](/workspaces)，可以从项目设置中开启 CSS 工具。
 
 1. Head over to your project's <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> Settings</wa-tag>.
 2. Next to <wa-tag class="tag-ui" appearance="outlined">Features</wa-tag>, select the <wa-tag class="tag-ui" appearance="outlined">CSS utilities</wa-tag> checkbox.
@@ -69,9 +69,9 @@ If you're using a [hosted project](/workspaces), CSS utilities can be toggled on
 
 <wa-divider></wa-divider>
 
-<h2 class="modern-card-list-heading">Style Utilities</h2>
+<h2 class="modern-card-list-heading">样式工具</h2>
 {% markdown %}
-Preset rules for customizing colors, typography, rounding, and more &mdash; framework-agnostic and composable on any element.
+用于自定义颜色、排版、圆角等的预设规则 &mdash; 与框架无关，可在任何元素上组合使用。
 {% endmarkdown %}
 
 <div class="modern-card-list">
@@ -89,9 +89,9 @@ Preset rules for customizing colors, typography, rounding, and more &mdash; fram
   </section>
 </div>
 
-<h2 class="modern-card-list-heading">Layout Utilities</h2>
+<h2 class="modern-card-list-heading">布局工具</h2>
 {% markdown %}
-Named layouts like [`wa-stack`](/docs/utilities/stack), [`wa-cluster`](/docs/utilities/cluster), [`wa-split`](/docs/utilities/split), [`wa-flank`](/docs/utilities/flank), [`wa-frame`](/docs/utilities/frame), and [`wa-grid`](/docs/utilities/grid) &mdash; plus property-level helpers for gap, alignment, and wrap &mdash; that organize content responsively without custom CSS.
+命名布局如 [`wa-stack`](/docs/utilities/stack)、[`wa-cluster`](/docs/utilities/cluster)、[`wa-split`](/docs/utilities/split)、[`wa-flank`](/docs/utilities/flank)、[`wa-frame`](/docs/utilities/frame) 和 [`wa-grid`](/docs/utilities/grid) &mdash; 加上用于间距、对齐和换行的属性级辅助工具 &mdash; 无需自定义 CSS 即可响应式地组织内容。
 {% endmarkdown %}
 
 <div class="modern-card-list">

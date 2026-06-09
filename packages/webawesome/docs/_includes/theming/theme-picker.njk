@@ -19,7 +19,7 @@
     {% raw %}{%- if not currentUser.hasPro -%}{% endraw %} disabled {% raw %}{%- endif -%}{% endraw %}>
     <span class="wa-cluster wa-gap-xs wa-flex-nowrap">
       {{ theme.name }}
-      {% raw %}{%- if not currentUser.hasPro -%}{% endraw %}{{ proBadge({ description: "This theme requires access to " ~ site.namePro }) }}{% raw %}{%- endif -%}{% endraw %}
+      {% raw %}{%- if not currentUser.hasPro -%}{% endraw %}{{ proBadge({ description: "此主题需要 " ~ site.namePro ~ " 访问权限" }) }}{% raw %}{%- endif -%}{% endraw %}
     </span>
   </wa-tab>
   {%- endif -%}
@@ -37,8 +37,8 @@
 
 <div id="theme-preview" class="wa-stack">
   <header class="wa-stack">
-    <h2 data-theme-name>Theme</h2>
-    <p data-theme-description>Description</p>
+    <h2 data-theme-name>主题</h2>
+    <p data-theme-description>描述</p>
   </header>
 
   {% include "theming/theme-viewer.njk" %}

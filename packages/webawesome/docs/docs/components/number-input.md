@@ -7,58 +7,64 @@ synonyms:
   - stepper
   - spin button
   - counter
+  - 数字输入框
+  - 步进器
+  - 计数
 use-cases:
   - quantity selector
   - increment decrement
   - numeric field
+  - 数量选择器
+  - 增减
+  - 数字字段
 ---
 
 ```html {.example}
-<wa-number-input label="Quantity" value="1" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="数量" value="1" style="max-width: 260px;"></wa-number-input>
 ```
 
 :::info
-This component works with standard `<form>` elements. Please refer to the section on [form controls](/docs/form-controls) to learn more about form submission and client-side validation.
+此组件与标准 `<form>` 元素配合使用。请参阅[表单控件](/docs/form-controls)一节，了解关于表单提交和客户端验证的更多信息。
 :::
 
-## Examples
+## 示例
 
-### Labels
+### 标签
 
-Use the `label` attribute to give the input an accessible label. For labels that contain HTML, use the `label` slot instead.
+使用 `label` 属性为输入框提供可访问的标签。对于包含 HTML 的标签，请改用 `label` 插槽。
 
 ```html {.example}
-<wa-number-input label="How many items?" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="多少项？" style="max-width: 260px;"></wa-number-input>
 ```
 
-### Hint
+### 提示
 
-Add descriptive hint to an input with the `hint` attribute. For hints that contain HTML, use the `hint` slot instead.
+使用 `hint` 属性为输入框添加描述性提示。对于包含 HTML 的提示，请改用 `hint` 插槽。
 
 ```html {.example}
 <wa-number-input
-  label="Order quantity"
-  hint="Enter the number of items you'd like to order"
+  label="订单数量"
+  hint="输入你想要订购的物品数量"
   style="max-width: 260px;"
 ></wa-number-input>
 ```
 
-### Placeholders
+### 占位符
 
-Use the `placeholder` attribute to add a placeholder.
+使用 `placeholder` 属性添加占位符。
 
 ```html {.example}
-<wa-number-input placeholder="Enter a number" style="max-width: 260px;"></wa-number-input>
+<wa-number-input placeholder="输入数字" style="max-width: 260px;"></wa-number-input>
 ```
 
-### Setting Min, Max, and Step
+### 设置最小值、最大值和步长
 
-Use the `min` and `max` attributes to set a minimum and maximum value. Use the `step` attribute to change the granularity the value must adhere to when using the stepper buttons or arrow keys.
+使用 `min` 和 `max` 属性设置最小值和最大值。使用 `step` 属性更改使用步进按钮或方向键时值必须遵循的粒度。
 
 ```html {.example}
 <wa-number-input
-  label="Donation amount"
-  hint="Amount in dollars (10-100, increments of 5)"
+  label="捐赠金额"
+  hint="金额以美元计（10-100，增量为 5）"
   min="10"
   max="100"
   step="5"
@@ -67,118 +73,118 @@ Use the `min` and `max` attributes to set a minimum and maximum value. Use the `
 ></wa-number-input>
 ```
 
-### Appearance
+### 外观
 
-Use the `appearance` attribute to change the input's visual appearance.
+使用 `appearance` 属性更改输入框的视觉外观。
 
 ```html {.example}
-<wa-number-input label="Outlined" appearance="outlined" value="42" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="轮廓" appearance="outlined" value="42" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Filled" appearance="filled" value="42" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="填充" appearance="filled" value="42" style="max-width: 260px;"></wa-number-input>
 <br />
 <wa-number-input
-  label="Filled Outlined"
+  label="填充轮廓"
   appearance="filled-outlined"
   value="42"
   style="max-width: 260px;"
 ></wa-number-input>
 ```
 
-### Disabled
+### 禁用
 
-Use the `disabled` attribute to disable an input.
+使用 `disabled` 属性禁用输入框。
 
 ```html {.example}
-<wa-number-input label="Disabled" value="100" disabled style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="禁用" value="100" disabled style="max-width: 260px;"></wa-number-input>
 ```
 
-### Readonly
+### 只读
 
-Use the `readonly` attribute to make the input readonly. The value can still be selected and copied, but it cannot be changed.
+使用 `readonly` 属性使输入框只读。值仍可选择和复制，但不能更改。
 
 ```html {.example}
-<wa-number-input label="Readonly" value="42" readonly style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="只读" value="42" readonly style="max-width: 260px;"></wa-number-input>
 ```
 
-### Sizes
+### 尺寸
 
-Use the `size` attribute to change an input's size.
+使用 `size` 属性更改输入框的尺寸。
 
 ```html {.example}
-<wa-number-input label="Extra Small" size="xs" value="5" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="超小" size="xs" value="5" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Small" size="s" value="10" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="小" size="s" value="10" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Medium" size="m" value="20" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="中" size="m" value="20" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Large" size="l" value="30" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="大" size="l" value="30" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Extra Large" size="xl" value="40" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="超大" size="xl" value="40" style="max-width: 260px;"></wa-number-input>
 ```
 
-### Pill
+### 圆角
 
-Use the `pill` attribute to give inputs rounded edges.
+使用 `pill` 属性为输入框提供圆角边缘。
 
 ```html {.example}
-<wa-number-input label="Extra Small Pill" size="xs" pill value="5" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="超小圆角" size="xs" pill value="5" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Small Pill" size="s" pill value="10" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="小圆角" size="s" pill value="10" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Medium Pill" size="m" pill value="20" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="中圆角" size="m" pill value="20" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Large Pill" size="l" pill value="30" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="大圆角" size="l" pill value="30" style="max-width: 260px;"></wa-number-input>
 <br />
-<wa-number-input label="Extra Large Pill" size="xl" pill value="40" style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="超大圆角" size="xl" pill value="40" style="max-width: 260px;"></wa-number-input>
 ```
 
-### Without Steppers
+### 无步进器
 
-Add the `without-steppers` attribute to remove the increment/decrement buttons. Users can still modify the value using the keyboard.
+添加 `without-steppers` 属性以移除增减按钮。用户仍可使用键盘修改值。
 
 ```html {.example}
-<wa-number-input label="No steppers" value="50" without-steppers style="max-width: 260px;"></wa-number-input>
+<wa-number-input label="无步进器" value="50" without-steppers style="max-width: 260px;"></wa-number-input>
 ```
 
 :::info
-When steppers are hidden, users can still use the arrow keys to increment and decrement the value.
+当步进器被隐藏时，用户仍可使用方向键增减值。
 :::
 
-### Start & End Decorations
+### 开始和结束装饰
 
-Use the `start` and `end` slots to add presentational elements like `<wa-icon>` within the input.
+使用 `start` 和 `end` 插槽在输入框内添加表示性元素，如 `<wa-icon>`。
 
 ```html {.example}
-<wa-number-input label="Price" value="100" style="max-width: 260px;">
+<wa-number-input label="价格" value="100" style="max-width: 260px;">
   <wa-icon slot="start" name="dollar-sign" family="utility" variant="semibold"></wa-icon>
 </wa-number-input>
 
 <br />
 
-<wa-number-input label="Weight (kg)" value="75" style="max-width: 260px;">
+<wa-number-input label="重量（千克）" value="75" style="max-width: 260px;">
   <wa-icon slot="end" name="bag-shopping" family="utility" variant="semibold"></wa-icon>
 </wa-number-input>
 ```
 
-### Custom Stepper Icons
+### 自定义步进器图标
 
-Use the `increment-icon` and `decrement-icon` slots to customize the stepper button icons.
+使用 `increment-icon` 和 `decrement-icon` 插槽自定义步进按钮图标。
 
 ```html {.example}
-<wa-number-input label="Custom icons" value="5" style="max-width: 260px;">
+<wa-number-input label="自定义图标" value="5" style="max-width: 260px;">
   <wa-icon slot="increment-icon" name="plus" family="notdog-duo" variant="solid"></wa-icon>
   <wa-icon slot="decrement-icon" name="minus" family="notdog-duo" variant="solid"></wa-icon>
 </wa-number-input>
 ```
 
-### Customizing Label Position
+### 自定义标签位置
 
-Use [CSS parts](#css-parts) to customize the way form controls are drawn. This example uses CSS grid to position the label to the left of the control, but the possible orientations are nearly endless. The same technique works for inputs, textareas, radio groups, and similar form controls.
+使用 [CSS 部件](#css-parts) 自定义表单控件的绘制方式。此示例使用 CSS grid 将标签定位在控件的左侧，但可能的方向几乎是无限的。相同的技术适用于输入框、文本域、单选组和类似的表单控件。
 
 ```html {.example}
 <div class="label-on-left">
-  <wa-number-input label="Quantity" hint="How many do you need?" value="1"></wa-number-input>
-  <wa-number-input label="Price" hint="Cost per unit" value="25"></wa-number-input>
+  <wa-number-input label="数量" hint="你需要多少？" value="1"></wa-number-input>
+  <wa-number-input label="价格" hint="每个单位的成本" value="25"></wa-number-input>
 </div>
 
 <style>
@@ -208,16 +214,16 @@ Use [CSS parts](#css-parts) to customize the way form controls are drawn. This e
 </style>
 ```
 
-### Form Validation
+### 表单验证
 
-Use the `required` attribute to make the field required. Combine with `min` and `max` for range validation.
+使用 `required` 属性使该字段必填。与 `min` 和 `max` 组合进行范围验证。
 
 ```html {.example}
 <form class="number-input-validation">
   <wa-number-input
     name="quantity"
-    label="Quantity"
-    hint="Enter a value between 1 and 10"
+    label="数量"
+    hint="输入 1 到 10 之间的值"
     min="1"
     max="10"
     required
@@ -226,16 +232,16 @@ Use the `required` attribute to make the field required. Combine with `min` and 
   <br />
   <wa-number-input
     name="price"
-    label="Price"
-    hint="Must be a multiple of 0.25"
+    label="价格"
+    hint="必须是 0.25 的倍数"
     min="0"
     step="0.25"
     required
     style="max-width: 260px;"
   ></wa-number-input>
   <br />
-  <wa-button appearance="filled" type="submit" variant="neutral">Submit</wa-button>
-  <wa-button appearance="filled" type="reset" variant="neutral">Reset</wa-button>
+  <wa-button appearance="filled" type="submit" variant="neutral">提交</wa-button>
+  <wa-button appearance="filled" type="reset" variant="neutral">重置</wa-button>
 </form>
 
 <script type="module">
@@ -244,7 +250,7 @@ Use the `required` attribute to make the field required. Combine with `min` and 
   form.addEventListener('submit', event => {
     event.preventDefault();
 
-    // Log data to the console for the demo
+    // 在控制台中记录数据用于演示
     console.log(...new FormData(form));
   });
 </script>

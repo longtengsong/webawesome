@@ -1,5 +1,5 @@
 ---
-title: Tooltip
+title: 工具提示
 layout: component
 category: Feedback
 synonyms:
@@ -7,24 +7,31 @@ synonyms:
   - hover text
   - info bubble
   - title attribute
+  - 提示
+  - 悬停文本
+  - 信息气泡
+  - 标题属性
 use-cases:
   - help text
   - contextual help
   - hover info
+  - 帮助文本
+  - 上下文帮助
+  - 悬停信息
 ---
 
-A tooltip's target is based on the `for` attribute which points to an element id.
+工具提示的目标基于指向元素 id 的 `for` 属性。
 
 ```html {.example}
-<wa-tooltip for="my-button">This is a tooltip</wa-tooltip>
-<wa-button appearance="filled" id="my-button">Hover Me</wa-button>
+<wa-tooltip for="my-button">这是一个工具提示</wa-tooltip>
+<wa-button appearance="filled" id="my-button">悬停我</wa-button>
 ```
 
-## Examples
+## 示例
 
-### Placement
+### 位置
 
-Use the `placement` attribute to set the preferred placement of the tooltip.
+使用 `placement` 属性来设置工具提示的首选位置。
 
 ```html {.example}
 <div class="tooltip-placement-example">
@@ -56,18 +63,18 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
   </div>
 </div>
 
-<wa-tooltip for="tooltip-top-start" placement="top-start">top-start</wa-tooltip>
-<wa-tooltip for="tooltip-top" placement="top">top</wa-tooltip>
-<wa-tooltip for="tooltip-top-end" placement="top-end">top-end</wa-tooltip>
-<wa-tooltip for="tooltip-left-start" placement="left-start">left-start</wa-tooltip>
-<wa-tooltip for="tooltip-right-start" placement="right-start">right-start</wa-tooltip>
-<wa-tooltip for="tooltip-left" placement="left">left</wa-tooltip>
-<wa-tooltip for="tooltip-right" placement="right">right</wa-tooltip>
-<wa-tooltip for="tooltip-left-end" placement="left-end">left-end</wa-tooltip>
-<wa-tooltip for="tooltip-right-end" placement="right-end">right-end</wa-tooltip>
-<wa-tooltip for="tooltip-bottom-start" placement="bottom-start">bottom-start</wa-tooltip>
-<wa-tooltip for="tooltip-bottom" placement="bottom">bottom</wa-tooltip>
-<wa-tooltip for="tooltip-bottom-end" placement="bottom-end">bottom-end</wa-tooltip>
+<wa-tooltip for="tooltip-top-start" placement="top-start">顶部开始</wa-tooltip>
+<wa-tooltip for="tooltip-top" placement="top">顶部</wa-tooltip>
+<wa-tooltip for="tooltip-top-end" placement="top-end">顶部结束</wa-tooltip>
+<wa-tooltip for="tooltip-left-start" placement="left-start">左侧开始</wa-tooltip>
+<wa-tooltip for="tooltip-right-start" placement="right-start">右侧开始</wa-tooltip>
+<wa-tooltip for="tooltip-left" placement="left">左侧</wa-tooltip>
+<wa-tooltip for="tooltip-right" placement="right">右侧</wa-tooltip>
+<wa-tooltip for="tooltip-left-end" placement="left-end">左侧结束</wa-tooltip>
+<wa-tooltip for="tooltip-right-end" placement="right-end">右侧结束</wa-tooltip>
+<wa-tooltip for="tooltip-bottom-start" placement="bottom-start">底部开始</wa-tooltip>
+<wa-tooltip for="tooltip-bottom" placement="bottom">底部</wa-tooltip>
+<wa-tooltip for="tooltip-bottom-end" placement="bottom-end">底部结束</wa-tooltip>
 
 <style>
   .tooltip-placement-example {
@@ -93,24 +100,24 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
 </style>
 ```
 
-### Click Trigger
+### 点击触发
 
-Set the `trigger` attribute to `click` to toggle the tooltip on click instead of hover.
+将 `trigger` 属性设置为 `click` 以在点击而不是悬停时切换工具提示。
 
 ```html {.example}
-<wa-button appearance="filled" id="toggle-button">Click to Toggle</wa-button>
-<wa-tooltip for="toggle-button" trigger="click">Click again to dismiss</wa-tooltip>
+<wa-button appearance="filled" id="toggle-button">点击切换</wa-button>
+<wa-tooltip for="toggle-button" trigger="click">再次点击关闭</wa-tooltip>
 ```
 
-### Manual Trigger
+### 手动触发
 
-Tooltips can be controller programmatically by setting the `trigger` attribute to `manual`. Use the `open` attribute to control when the tooltip is shown.
+可以通过将 `trigger` 属性设置为 `manual` 来以编程方式控制工具提示。使用 `open` 属性来控制何时显示工具提示。
 
 ```html {.example}
-<wa-button appearance="filled" style="margin-right: 4rem;">Toggle Manually</wa-button>
+<wa-button appearance="filled" style="margin-right: 4rem;">手动切换</wa-button>
 
-<wa-tooltip for="manual-trigger-tooltip" trigger="manual" class="manual-tooltip">This is an avatar!</wa-tooltip>
-<wa-avatar id="manual-trigger-tooltip" label="User"></wa-avatar>
+<wa-tooltip for="manual-trigger-tooltip" trigger="manual" class="manual-tooltip">这是一个头像！</wa-tooltip>
+<wa-avatar id="manual-trigger-tooltip" label="用户"></wa-avatar>
 
 <script>
   const tooltip = document.querySelector('.manual-tooltip');
@@ -120,16 +127,16 @@ Tooltips can be controller programmatically by setting the `trigger` attribute t
 </script>
 ```
 
-### Removing Arrows
+### 移除箭头
 
-You can control the size of tooltip arrows by overriding the `--wa-tooltip-arrow-size` design token. To remove the arrow, use the `without-arrow` attribute.
+可以通过覆盖 `--wa-tooltip-arrow-size` 设计令牌来控制工具提示箭头的大小。要移除箭头，请使用 `without-arrow` 属性。
 
 ```html {.example}
-<wa-button appearance="filled" id="no-arrow">No Arrow</wa-button>
-<wa-tooltip for="no-arrow" without-arrow>This is a tooltip with no arrow</wa-tooltip>
+<wa-button appearance="filled" id="no-arrow">没有箭头</wa-button>
+<wa-tooltip for="no-arrow" without-arrow>这是一个没有箭头的工具提示</wa-tooltip>
 ```
 
-To override it globally, set it in a root block in your stylesheet after the Web Awesome stylesheet is loaded.
+要全局覆盖它，请在 Web Awesome 样式表加载后在样式表的根块中设置它。
 
 ```css
 :root {
@@ -137,24 +144,24 @@ To override it globally, set it in a root block in your stylesheet after the Web
 }
 ```
 
-### HTML in Tooltips
+### 工具提示中的 HTML
 
-Use the default slot to create tooltips with HTML content. Tooltips are designed only for text and presentational elements. Avoid placing interactive content, such as buttons, links, and form controls, in a tooltip.
+使用默认插槽来创建带有 HTML 内容的工具提示。工具提示仅设计用于文本和展示性元素。避免在工具提示中放置交互式内容，如按钮、链接和表单控件。
 
 ```html {.example}
-<wa-button appearance="filled" id="rich-tooltip">Hover me</wa-button>
+<wa-button appearance="filled" id="rich-tooltip">悬停我</wa-button>
 <wa-tooltip for="rich-tooltip">
-  <div>I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
+  <div>我不只是<strong>一个</strong>工具提示，我是一个带有 HTML 的<em>工具提示</em>！</div>
 </wa-tooltip>
 ```
 
-### Setting a Maximum Width
+### 设置最大宽度
 
-Use the `--max-width` custom property to change the width the tooltip can grow to before wrapping occurs.
+使用 `--max-width` 自定义属性来更改工具提示在换行之前可以扩展的宽度。
 
 ```html {.example}
 <wa-tooltip for="wrapping-tooltip" style="--max-width: 80px;">
-  This tooltip will wrap after only 80 pixels.
+  这个工具提示将在仅 80 像素后换行。
 </wa-tooltip>
-<wa-button appearance="filled" id="wrapping-tooltip">Hover me</wa-button>
+<wa-button appearance="filled" id="wrapping-tooltip">悬停我</wa-button>
 ```

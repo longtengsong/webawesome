@@ -1,6 +1,6 @@
 ---
 title: Web Awesome
-description: Build better with Web Awesome, the open source library of web components from Font Awesome.
+description: 使用 Web Awesome 构建更好的应用，来自 Font Awesome 的开源 Web 组件库。
 layout: page
 ---
 
@@ -229,19 +229,19 @@ layout: page
 <div class="hero-background">
   <div class="hero-content">
     <wa-icon name="web-awesome" family="brands" class="logo-app wa-heading-4xl"></wa-icon>
-    <h1 class="font-brand">Make something <span class="emphasis">awesome</span> with open-source web components</h1>
+    <h1 class="font-brand">用开源 Web 组件创造<span class="emphasis">卓越</span>体验</h1>
     <div class="hero-cta">
       {%- raw -%}
         {% if currentUser.hasPro %}
-          <span class="wa-font-size-l" style="text-align: center; width: 100%;">Thanks for being a {{ site.namePro }} subscriber!</span>
+          <span class="wa-font-size-l" style="text-align: center; width: 100%;">感谢您成为 {{ site.namePro }} 订阅用户！</span>
         {% else %}
           <div class="wa-stack wa-gap-xs">
-            <h3 class="wa-heading-m">Get More with {{ site.namePro }}!</h3>
-            <p>Unlock Pro-only themes, components, patterns, and great services like the Theme Builder.</p>
+            <h3 class="wa-heading-m">使用 {{ site.namePro }} 获取更多！</h3>
+            <p>解锁 Pro 专属主题、组件、模式以及 Theme Builder 等优秀服务。</p>
           </div>
           <wa-button class="wa-dark" size="s" href="/purchase">
             <wa-icon slot="start" name="rocket-launch"></wa-icon>
-            Purchase Pro
+            购买 Pro
           </wa-button>
         {% endif %}
       {% endraw %}
@@ -255,54 +255,54 @@ layout: page
       <div class="wa-split">
         <div class="wa-cluster icon-heading">
           <wa-icon name="pen-ruler" class="brand-orange"></wa-icon>
-          <h3>Get started</h3>
+          <h3>开始使用</h3>
         </div>
         <wa-icon name="arrow-right"></wa-icon>
       </div>
-      <p>Check out our installation guide to start building with Web Awesome.</p>
+      <p>查看我们的安装指南，开始使用 Web Awesome 构建应用。</p>
     </div>
   </wa-button>
   <wa-divider></wa-divider>
   <div class="summary">
-    <h2 class="font-brand">What's <span class="emphasis">Web</span> Awesome?</h2>
-    <p>Web Awesome is the biggest open-source library of meticulously designed, highly customizable, and framework-agnostic UI components.</p>
+    <h2 class="font-brand"><span class="emphasis">Web</span> Awesome 是什么？</h2>
+    <p>Web Awesome 是最大的开源 UI 组件库，精心设计、高度可定制，且与框架无关。</p>
     <div class="grid">
       <div class="wa-stack">
         <div class="wa-cluster icon-heading">
           <wa-icon name="code" class="brand-orange"></wa-icon>
-          <h3>Entirely native</h3>
+          <h3>完全原生</h3>
         </div>
-        <p>Built on web standards to last for years to come. No excess tooling. No third-party bloat.</p>
+        <p>基于 Web 标准构建，经得起未来考验。无需多余工具，没有第三方臃肿。</p>
       </div>
       <div class="wa-stack">
         <div class="wa-cluster icon-heading">
           <wa-icon name="palette" class="brand-orange"></wa-icon>
-          <h3>Fully customizable</h3>
+          <h3>完全可定制</h3>
         </div>
-        <p>Show off your own style with components that consistently adapt to your theme.</p>
+        <p>使用始终与您的主题保持一致适配的组件，展示您自己的风格。</p>
       </div>
       <div class="wa-stack">
         <div class="wa-cluster icon-heading">
           <wa-icon name="wheelchair-move" class="brand-orange"></wa-icon>
-          <h3>Accessibility forward</h3>
+          <h3>无障碍优先</h3>
         </div>
-        <p>Build a website that everyone can use. Designed to be inclusive and usable by everyone.</p>
+        <p>构建每个人都能使用的网站。设计上力求包容且人人可用。</p>
       </div>
       <div class="wa-stack">
         <div class="wa-cluster icon-heading">
           <wa-icon name="handshake-simple" class="brand-orange"></wa-icon>
-          <h3>Proudly open source</h3>
+          <h3>自豪地开源</h3>
         </div>
-        <p>Use {{ site.nameCore }} however you like. Always free, always open source.</p>
+        <p>随心使用 {{ site.nameCore }}。永远免费，永远开源。</p>
       </div>
     </div>
   </div>
 
   <div class="split-block">
     <div>
-      <h2 class="font-brand"><span class="emphasis">You</span> put the awesome in Web Awesome</h2>
-      <p>Web Awesome started as an open-source project fueled by contributions from an engaged community of developers, and we want to keep it that way. The core of Web Awesome is — and always will be — free and open source.</p>
-      <p>Whether you’re a developer, designer, or budding tech nerd, we want you a part of the conversation.</p>
+      <h2 class="font-brand"><span class="emphasis">您</span>让 Web Awesome 变得卓越</h2>
+      <p>Web Awesome 始于一个由开发者社区贡献推动的开源项目，我们希望能够保持下去。Web Awesome 的核心——现在和将来——始终是免费且开源的。</p>
+      <p>无论您是开发者、设计师，还是初出茅庐的技术爱好者，我们都希望您能加入讨论。</p>
     </div>
     <div>
       <wa-button href="{{ site.github.repo }}" rel="noopener noreferrer" target="_blank" appearance="filled" class="tile">
@@ -314,7 +314,7 @@ layout: page
             </div>
             <wa-icon name="arrow-up-right"></wa-icon>
           </div>
-          <p>Get involved by opening issues, contributing to discussions, or creating PRs.</p>
+          <p>通过提交 Issue、参与讨论或创建 PR 来参与其中。</p>
         </div>
       </wa-button>
       <wa-button href="{{ site.urls.discord }}" rel="noopener noreferrer" target="_blank" appearance="filled" class="tile">
@@ -326,7 +326,7 @@ layout: page
             </div>
             <wa-icon name="arrow-up-right"></wa-icon>
           </div>
-          <p>Share your work, ask questions, and explore ideas with other Web Awesome builders.</p>
+          <p>分享作品、提问交流，与其他 Web Awesome 开发者共同探索创意。</p>
         </div>
       </wa-button>
       <wa-button href="mailto:{{ site.emails.hello }}" appearance="filled" class="tile">
@@ -349,7 +349,7 @@ layout: page
   <div class="wa-stack wa-gap-xl">
     <h2 class="wa-cluster font-brand">
       <wa-icon name="hashtag" style="color: var(--wa-brand-orange);"></wa-icon>
-      <span>Stay in the know</span>
+      <span>关注我们</span>
     </h2>
     <div class="wa-grid" style="--min-column-size: 30ch;">
       <wa-button href="{{ site.urls.bluesky }}" rel="noopener noreferrer" target="_blank" appearance="filled" class="tile">
@@ -397,11 +397,11 @@ layout: page
     <wa-icon name="web-awesome" family="brands" class="logo-app wa-body-l"></wa-icon>
     <div class="split-block">
       <div>
-        <strong class="font-brand tagline">Let's Make Something Awesome</strong>
-        <p>Web Awesome is the design system platform and open source library of web components from your fellow nerds at <a href="{{ site.siblings.fontAwesome.url }}">{{ site.siblings.fontAwesome.name }}</a>.</p>
+        <strong class="font-brand tagline">一起创造卓越</strong>
+        <p>Web Awesome 是来自 <a href="{{ site.siblings.fontAwesome.url }}">{{ site.siblings.fontAwesome.name }}</a> 的开发极客们打造的设计系统平台和开源 Web 组件库。</p>
       </div>
       <div class="attribution">
-        <span>Special thanks</span>
+        <span>特别鸣谢</span>
         <div class="button-list">
           <wa-button appearance="filled" pill href="https://www.11ty.dev/">11ty</wa-button>
           <wa-button appearance="filled" pill href="https://lit.dev/">Lit</wa-button>
