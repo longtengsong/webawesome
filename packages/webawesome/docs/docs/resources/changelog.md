@@ -14,11 +14,21 @@ These have a settled API. Breaking changes land only in major versions, and depr
 <h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>Experimental Components {{ statusBadge('experimental') }}</h2>
 These are still finding their shape. APIs can change between minor versions, so use them in prototypes — not production code you can't easily update.
 
+{% include "changelog-email-signup.njk" %}
+
 ## Unreleased
 
 :::added
 
 - Added the `capture` attribute to `<wa-file-input>` for capturing media directly from a device's camera or microphone [discuss:2380]
+- Added the `wa-text-uppercase` text utility class for transforming text to uppercase
+- Added the `wa-text-lowercase` text utility class for transforming text to lowercase
+- Added the `wa-text-capitalize` text utility class for capitalizing the first letter of each word
+- Added the `wa-text-start` text utility class for logical (direction-aware) text alignment
+- Added the `wa-text-center` text utility class for centered text alignment
+- Added the `wa-text-end` text utility class for logical (direction-aware) text alignment
+- Added the `wa-text-justify` text utility class for justified text alignment
+- Added the `wa-prose` utility class for applying typographic rhythm to long-form content (docs, blog posts, marketing copy)
 
 :::
 
@@ -30,6 +40,9 @@ These are still finding their shape. APIs can change between minor versions, so 
 - Fixed a regression in `<wa-popover>` where the body's viewport-edge margin caused the popover and arrow to be misaligned for `top/bottom-start` and `top/bottom-end` placements
 - Fixed a bug in `<wa-textarea>` where the disabled state had no visual styling, unlike other form controls [issue:2416]
 - Fixed default show/hide animations in `<wa-dropdown>`, `<wa-popup>`, `<wa-popover>`, `<wa-select>`, `<wa-details>`, `<wa-dialog>`, `<wa-drawer>`, and `<wa-tree-item>` to honor `prefers-reduced-motion: reduce`
+- Fixed a bug in `<wa-drawer>` that caused the `light-dismiss` option not work as intended [pr:2437]
+- Fixed a bug in `<wa-dropdown>` that prevented items from being visible when the selected overflowed [pr:2430]
+- Fixed a bug in `<wa-carousel>` that prevented the carousel from smoothly snapping back into position when using with the mouse [issue:1103]
 
 :::
 
@@ -37,6 +50,22 @@ These are still finding their shape. APIs can change between minor versions, so 
 
 - Synced default `--show-duration` and `--hide-duration` values in `<wa-dropdown>`, `<wa-popup>`, `<wa-popover>`, `<wa-select>`, `<wa-combobox>`, `<wa-details>`, `<wa-dialog>`, `<wa-drawer>`, `<wa-tree-item>`, and `<wa-toast-item>` with `--wa-transition-fast` and `--wa-transition-normal` tokens
 - Synced hardcoded transitions in `<wa-copy-button>`, `<wa-select>`, `<wa-combobox>`, and `<wa-toast-item>` with `--wa-transition-*` tokens
+- Improved the vertical placement of content within `<wa-textarea>` and `textarea` when the content overflows the control [pr:2424]
+- Updated Native Styles for several text elements [pr:2459]:
+  - Updated `<blockquote>` to use a quiet text color and a font-size based on `--wa-font-size-larger`
+  - Updated `<h6>` to use `--wa-font-size-xs`, further distinguishing small headings from surrounding body text
+  - Updated `<table>` to use `font-variant-numeric: tabular-nums` so numeric columns align
+  - Updated `<th>` to render a visually stronger bottom border, distinguishing the header row from body cells
+  - Added `<figcaption>` (previously unstyled): quiet text color, smaller font-size, condensed line-height, and a small top margin
+  - Added `<ul>` and `<ol>` markers using `currentColor` with reduced opacity; `<ol>` markers retain more contrast since numerals are text rather than graphical elements
+- Added Native Styles for `<menu>` (previously unstyled) to reset `list-style`, `margin`, and `padding` [discuss:2436]
+- Renamed `wa-text-wrap-nowrap`, `wa-text-wrap-balance`, and `wa-text-wrap-pretty` to `wa-text-nowrap`, `wa-text-balance`, and `wa-text-pretty` to align with the flat `wa-text-*` utility namespace. The original class names continue to work as aliases.
+
+:::
+
+:::deprecated
+
+- Deprecated `wa-text-wrap-nowrap`, `wa-text-wrap-balance`, and `wa-text-wrap-pretty` in favor of their shorter `wa-text-*` equivalents. The original names still work but will be removed in a future major version.
 
 :::
 
@@ -75,8 +104,6 @@ These are still finding their shape. APIs can change between minor versions, so 
   - Added `tooltip` attribute to control when feedback is shown in the tooltip on hover and click
 
 :::
-
-{% include "changelog-email-signup.njk" %}
 
 ## 3.6.0
 
