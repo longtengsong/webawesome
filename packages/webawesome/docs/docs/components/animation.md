@@ -21,7 +21,7 @@ use-cases:
   - 滚动动画
 ---
 
-要为元素添加动画，请将其包裹在 `<wa-animation>` 中并设置动画 `name`。动画在你添加 `play` 属性之前不会开始。请参阅[属性表](#properties)以获取所有动画选项的列表。
+要动画化一个元素，请将其包裹在 `<wa-animation>` 中并设置动画的 `name`（名称）。动画在您添加 `play` 属性之前不会开始播放。有关所有动画选项的列表，请参阅[属性表](#attributes-and-properties)。
 
 ```html {.example}
 <div class="animation-overview">
@@ -186,7 +186,7 @@ use-cases:
 
 ### 使用交叉观察器
 
-使用[交叉观察器](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)在元素进入或离开视口时控制动画。例如，在屏幕中滚动下方的框。当框离开视口时，动画会停止，每次进入视口时重新开始。
+使用[交叉观察器](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API)在元素进入或离开视口时控制动画。例如，在屏幕中滚动下方的框。当框离开视口时，动画会停止，每次进入视口时重新开始。
 
 ```html {.example}
 <div class="animation-scroll">
@@ -223,7 +223,7 @@ use-cases:
 
 ### 自定义关键帧格式
 
-提供你自己的[关键帧格式](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats)来构建自定义动画。
+提供你自己的[关键帧格式](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Animations_API/Keyframe_Formats)来构建自定义动画。
 
 ```html {.example}
 <div class="animation-keyframes">

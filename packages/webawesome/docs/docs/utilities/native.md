@@ -32,9 +32,9 @@ use-cases:
 
   <wa-tab-panel name="cdn">
 {% markdown %}
-1. 前往项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 在 **功能** 旁边，选中 **原生样式** 复选框。
-3. **保存更改** 以立即更新您使用项目的任何地方。
+1. 前往您的项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 在 <wa-tag class="tag-ui" appearance="outlined">功能</wa-tag> 旁边，选中 <wa-tag class="tag-ui" appearance="outlined">原生样式</wa-tag> 复选框。
+3. <wa-tag class="tag-ui" appearance="outlined">保存更改</wa-tag> 以立即更新您使用项目的任何位置。
 {% endmarkdown %}
   </wa-tab-panel>
 
@@ -165,7 +165,7 @@ import '@awesome.me/webawesome/dist/styles/native.css';
 
 ### 块引用
 
-使用 `<blockquote>` 强调更长的引用。块引用使用您主题的衬线字体系列和前导边框来突出。
+使用 `<blockquote>` 强调较长的引用。块引用使用您主题的衬线字体系列、柔和的颜色、左侧边框以及随周围文本缩放的大号字体。
 
 ```html {.example}
 <blockquote>
@@ -177,7 +177,7 @@ import '@awesome.me/webawesome/dist/styles/native.css';
 
 ### 列表
 
-使用 `<ol>` 和 `<ul>` 以及 `<li>` 作为其中的列表项来创建有序和无序列表。
+使用 `<ol>` 和 `<ul>` 创建有序和无序列表，以及其中的 `<li>` 列表项。标记使用降低不透明度的 `currentColor`，使它们安静地位于文本旁边。
 
 ```html {.example}
 <div class="wa-grid">
@@ -207,7 +207,32 @@ import '@awesome.me/webawesome/dist/styles/native.css';
 </div>
 ```
 
-使用 `<dl>` 创建术语列表 (`<dt>`) 和定义 (`<dd>`)。
+使用 `<menu>` 作为无序列表的语义替代。原生样式重置了浏览器对 `<menu>` 的默认列表样式，以支持更灵活的样式设置。
+
+```html {.example}
+<menu class="wa-cluster">
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="cut"></wa-icon>
+      <span>Cut</span>
+    </button>
+  </li>
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="copy"></wa-icon>
+      <span>Copy</span>
+    </button>
+  </li>
+  <li>
+    <button class="wa-filled wa-size-s">
+      <wa-icon name="paste"></wa-icon>
+      <span>Paste</span>
+    </button>
+  </li>
+</menu>
+```
+
+使用 `<dl>` 创建术语（`<dt>`）和定义（`<dd>`）列表。
 
 ```html {.example}
 <dl>
@@ -279,49 +304,55 @@ export function thing() {
 />
 ```
 
+### 图形
+
+使用 `<figure>` 和 `<figcaption>` 将媒体与标题配对。标题使用安静的颜色和紧凑的行高，使其读起来像标签，而不是连续的文本。
+
+```html {.example}
+<figure>
+  <img
+    src="https://images.unsplash.com/photo-1620196244888-d31ff5bbf163?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="A gray kitten lays next to a toy"
+  />
+  <figcaption>一只灰色的小猫在镜头外的某个地方，在毛毡老鼠旁边休息。</figcaption>
+</figure>
+```
+
 ### 表格
 
-使用 `<table>` 和相关元素（如 `<caption>`、`<thead>`、`<tbody>`、`<th>`、`<tr>` 和 `<td>`）来构建表格数据。
+使用 `<table>` 及相关元素如 `<caption>`、`<thead>`、`<tbody>`、`<th>`、`<tr>` 和 `<td>` 来结构化表格数据。表头带有微妙的底部边框，数字列使用 `tabular-nums` 以便数字对齐。
 
 ```html {.example}
 <table>
   <caption>
-    这个
-    <code>&lt;caption&gt;</code>
-    描述表格
+    Average rainfall, in millimeters
   </caption>
   <thead>
     <tr>
-      <th>First column</th>
-      <th>Second column</th>
-      <th>Third column</th>
-      <th>Final column</th>
+      <th>City</th>
+      <th>Spring</th>
+      <th>Summer</th>
+      <th>Autumn</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Lisbon</td>
+      <td>119</td>
+      <td>14</td>
+      <td>97</td>
     </tr>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Reykjavík</td>
+      <td>148</td>
+      <td>156</td>
+      <td>219</td>
     </tr>
     <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-    </tr>
-    <tr>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
-      <td>Data</td>
+      <td>Kyoto</td>
+      <td>362</td>
+      <td>508</td>
+      <td>327</td>
     </tr>
   </tbody>
 </table>

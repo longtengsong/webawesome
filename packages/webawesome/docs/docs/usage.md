@@ -195,6 +195,7 @@ checkbox.updateComplete.then(() => {
 ```js
 await Promise.all(elements.map(el => el.updateComplete));
 ```
+
 :::
 
 ## 代码补全
@@ -249,8 +250,8 @@ Web Awesome 附带一个名为 `vscode.html-custom-data.json` 的文件，可用
 
 ## 下一步
 
-- [自定义](/docs/customizing) — 主题、CSS 部件、自定义属性和自定义状态。
-- [表单控件](/docs/form-controls) — 使用 Web Awesome 输入框、验证和表单提交。
-- [框架](/docs/frameworks) — React、Vue、Angular 和 Svelte 指南。
-- [本地化](/docs/localization) — 翻译组件字符串和配置文本方向。
-- [防止 FOUCE](/docs/utilities/fouce) — 避免首次加载时未升级自定义元素的闪烁。
+- [Customizing & Theming](/docs/customizing) — themes, CSS parts, custom properties, and custom states.
+- [Form Controls](/docs/form-controls) — using Web Awesome inputs, validation, and form submission.
+- [Frameworks](/docs/frameworks) — guides for React, Vue, Angular, and Svelte.
+- [Localization](/docs/localization) — translating component strings and configuring text direction.
+- [Preventing FOUCE](/docs/utilities/fouce) — avoid the flash of un-upgraded custom elements on first load.

@@ -1,0 +1,10 @@
+[
+  { "label": "操作", "slug": "actions", "icon": "hand-pointer" },
+  { "label": "反馈", "slug": "feedback", "icon": "comments" },
+  { "label": "表单", "slug": "forms", "icon": "pen-field" },
+  { "label": "媒体", "slug": "media", "icon": "image" },
+  { "label": "导航", "slug": "navigation", "icon": "compass" },
+  { "label": "布局", "slug": "layout", "icon": "layer" },
+  { "label": "工具", "slug": "utilities", "icon": "wrench" },
+  { "label": "数据可视化", "slug": "data-viz", "icon": "chart-line" }
+]

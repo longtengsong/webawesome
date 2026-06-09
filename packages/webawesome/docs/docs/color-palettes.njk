@@ -4,87 +4,65 @@ description: '调色板为您提供全谱色彩，为您的项目增添活力。
 layout: page
 ---
 
-<p>调色板为您提供全谱色彩，为您的项目增添活力。</p>
+<p>调色板为您提供全谱色彩，可在您的项目中使用。</p>
 
-<p>每个调色板定义了 10 个色相，每个色相有 11 个色阶的色调比例。虽然各调色板的色调具有一致的明度值，但每个调色板具有独特的色相偏移和色彩饱和度，赋予其独特的个性，以便您为项目找到恰到好处的氛围。</p>
+<p>一个调色板定义了 10 种色调 — 红色、橙色、黄色、绿色、青色、蓝色、靛蓝色、紫色、粉红色和灰色 — 每种色调
+  都有从 <code>05</code>（最深）到 <code>95</code>（最浅）的 11 级色阶，可作为 <a
+    href="/docs/tokens/color">颜色设计令牌</a> 使用。虽然各调色板的色阶亮度值相似，
+  但每个调色板都有独特的色调偏移和色度，让您为项目找到恰到好处的风格。将调色板
+  与<a href="/docs/themes">主题</a>和<a href="/docs/tokens/color#variant-colors">变体颜色</a>结合，
+  即可为整个库设置样式。</p>
 
-{% for palette in themer.palettes %}
-  <link rel="stylesheet" href="/dist/styles/color/palettes/{{palette.filename}}" />
-{% endfor %}
+{% include "theming/color-palette-picker.njk" %}
 
-<div id="color-palettes">
-  {% raw %}
-    {% if not currentUser.hasPro %}
-      <p>
-        更多调色板可供 Pro 用户使用。请<a href="/login">登录查看 Pro 调色板</a>。
-      </p>
-    {% endif %}
-  {% endraw %}
-  <wa-radio-group id="palette-picker" label="调色板" value="default" orientation="horizontal">
-    {% for palette in themer.palettes %}
-      {% if not palette.isPro %}
-        <wa-radio
-          class="palette-card"
-          value="{{ palette.name | lower }}"
-        >
-          {{ palette.name }}
-        </wa-radio>
-      {% else %}
-        {% raw %}
-          {% if currentUser.hasPro %}
-        {% endraw %}
-            <wa-radio
-              class="palette-card"
-              value="{{ palette.name | lower }}"
-            >
-              {{ palette.name }}
-            </wa-radio>
-        {% raw %}
-          {% endif %}
-        {% endraw %}
-      {% endif %}
-    {% endfor %}
-  </wa-radio-group>
+{% raw %}
+{% if not currentUser or not currentUser.hasPro %}
+{% endraw %}
+<wa-callout class="pro">
+  <wa-icon slot="icon" name="hand-wave" animation="shake"
+    style="--animation-delay: 2s; --animation-duration: 4s;"></wa-icon>
+  <strong>
+    <a href="/purchase?from=pro-docs&context=color-palettes">使用 {{ site.namePro }} 解锁所有调色板！</a>
+  </strong>
 
-  {% for color in themer.colors %}
-  <div class="palette">
-    <div class="palette-label">{{ color }}</div>
-    <div class="palette-swatches">
-      {% for tint in themer.tints %}
-      <wa-copy-button
-        class="palette-swatch"
-        value="var(--wa-color-{{ color }}-{{ tint }})"
-        style="--color: var(--wa-color-{{ color }}-{{ tint }}); --tint: '{{ tint }}'"
-      >
-        <button class="swatch-button" aria-label="{{ color }} {{ tint }}（点击复制）"></button>
-      </wa-copy-button>
-      {% endfor %}
+  <wa-details appearance="plain">
+    <span slot="summary">订阅 {{ site.namePro }} 可解锁所有调色板、高级主题、可视化主题构建器以及<u class="appearance-underlined variant-drawn">更多</u>功能。</span>
+
+    <div class="wa-stack wa-gap-xl">
+      {% include "pro-perks.njk" ignore missing %}
+
+      <wa-button href="/purchase?from=pro-docs&context=color-palettes">
+        获取 {{ site.namePro }}
+        <wa-icon slot="end" name="arrow-right"></wa-icon>
+      </wa-button>
     </div>
-  </div>
-  {% endfor %}
-</div>
+  </wa-details>
+</wa-callout>
+{% raw %}
+{% endif %}
+{% endraw %}
 
 <h2>使用此调色板</h2>
 
 <div id="import-code">
   {% for palette in themer.palettes %}
-    <div class="palette-instructions" data-palette="{{ palette.name | lower }}" {% if not loop.first %}hidden{% endif %}>
-      <wa-tab-group data-install-tabs>
-        <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
-        <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
-        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
+  <div class="palette-instructions" data-palette="{{ palette.name | lower }}" {% if not loop.first %}hidden{% endif %}>
+    <wa-tab-group data-install-tabs>
+      <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
+      <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
+      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
-        <wa-tab-panel name="cdn">
-{% if palette.isPro %}
+      <wa-tab-panel name="cdn">
+        {% if palette.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
-  <wa-icon name="info-circle" variant="regular"></wa-icon>
-  该调色板仅可在拥有 Pro 订阅的工作区中使用。
+  <wa-icon slot="icon" name="info-circle" variant="regular"></wa-icon>
+  此调色板仅可通过 Pro 订阅使用。{% raw %}{% if session.isLoggedIn %}{% endraw %}如需特定于您 Pro 项目的说明，请从<a href="/workspaces">您的工作区</a>中打开一个项目。{% raw %}{% endif %}{% endraw %}
 </wa-callout>
 {% endmarkdown %}
-{% else %}
-{% set paletteCdnUrl %}{% cdnUrl 'styles/color/palettes/' %}{{ palette.filename }}{% endset %}
+        {% else %}
+        {% set paletteCdnUrl %}{% cdnUrl 'styles/color/palettes/' %}{{ palette.filename }}{% endset %}
 {% markdown %}
 要使用此调色板，请从 CDN 添加调色板样式表：
 
@@ -92,16 +70,16 @@ layout: page
 <link rel="stylesheet" href="{{ paletteCdnUrl }}">
 ```
 
-然后在 `<html>` 元素上应用以下类：
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
 ```
 {% endmarkdown %}
-{% endif %}
-        </wa-tab-panel>
+        {% endif %}
+      </wa-tab-panel>
 
-        <wa-tab-panel name="npm">
+      <wa-tab-panel name="npm">
 {% markdown %}
 安装 <code>@awesome.me/webawesome</code> 后，导入调色板样式表：
 
@@ -109,15 +87,15 @@ layout: page
 import '@awesome.me/webawesome/dist/styles/color/palettes/{{ palette.filename }}';
 ```
 
-然后在 `<html>` 元素上应用以下类：
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
 ```
 {% endmarkdown %}
-        </wa-tab-panel>
+      </wa-tab-panel>
 
-        <wa-tab-panel name="self-hosted">
+      <wa-tab-panel name="self-hosted">
 {% markdown %}
 如果您正在自行托管 Web Awesome，请从您的服务器引入调色板样式表：
 
@@ -125,241 +103,138 @@ import '@awesome.me/webawesome/dist/styles/color/palettes/{{ palette.filename }}
 <link rel="stylesheet" href="/dist/styles/color/palettes/{{ palette.filename }}">
 ```
 
-然后在 `<html>` 元素上应用以下类：
+然后将以下类应用到 `<html>` 元素上：
 
 ```html
 <html class="wa-palette-{{ palette.name | lower }}">
 ```
 {% endmarkdown %}
-        </wa-tab-panel>
+      </wa-tab-panel>
 
-        <wa-tab-panel name="hosted">
-{% if palette.isPro %}
-{% markdown %}
-**对于 Pro 工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
-3. 打开 **颜色** 并选择 **{{ palette.name | capitalize }}**。
-4. 保存您的主题，使用您项目的任何地方都会立即更新。
-{% endmarkdown %}
-{% else %}
-{% markdown %}
-**对于免费工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 找到 **调色板**。选择 <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ palette.name | capitalize }}**。
-3. 保存您的主题，使用您项目的任何地方都会立即更新。
+      <wa-tab-panel name="hosted">
+        <div class="hosted-project-instructions">
+          {% if palette.isPro %}
+          <div class="instruction-group wa-stack wa-gap-2xs">
+            <h3 class="wa-heading-m" data-no-anchor data-no-outline>
+              Pro 工作区项目
+            </h3>
+            <table class="wa-hover-rows">
+              <thead>
+                <tr>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>打开 <wa-tag class="tag-ui" appearance="outlined">颜色</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>。</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="instruction-group wa-stack wa-gap-2xs">
+            <h3 class="wa-heading-m" data-no-anchor data-no-outline>
+              免费工作区项目
+            </h3>
+            <table class="wa-hover-rows">
+              <thead>
+                <tr>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>找到 <wa-tag class="tag-ui" appearance="outlined">颜色调色板</wa-tag>。选择 <wa-tag
+                      class="tag-ui" appearance="outlined"><wa-icon name="swatchbook"
+                        variant="regular"></wa-icon>
+                      {{ palette.name | capitalize }}</wa-tag>。
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-**对于 Pro 工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
-3. 打开 **颜色** 并选择 **{{ palette.name | capitalize }}**。
-4. 保存您的主题，使用您项目的任何地方都会立即更新。
-{% endmarkdown %}
-{% endif %}
-        </wa-tab-panel>
-      </wa-tab-group>
-    </div>
+          <div class="instruction-group wa-stack wa-gap-2xs">
+            <h3 class="wa-heading-m" data-no-anchor data-no-outline>
+              Pro 工作区项目
+            </h3>
+            <table class="wa-hover-rows">
+              <thead>
+                <tr>
+                  <th scope="col">步骤</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>打开 <wa-tag class="tag-ui" appearance="outlined">颜色</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ palette.name | capitalize }}</wa-tag>。</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>保存主题以立即更新所有使用您项目的位置。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {% endif %}
+        </div>
+      </wa-tab-panel>
+    </wa-tab-group>
+  </div>
   {% endfor %}
 </div>
 
-<script type="module">
-  const paletteContainer = document.getElementById('color-palettes');
-  const palettePicker = document.getElementById('palette-picker');
+<h2>使用调色板颜色设置样式</h2>
 
-  // Set first radio as checked and add initial palette class
-  const firstRadio = palettePicker.querySelector('wa-radio');
-  if (firstRadio) {
-    firstRadio.checked = true;
-    paletteContainer.classList.add(`wa-palette-${firstRadio.value}`);
-  }
+<p>调色板加载后，您可以在自己的 CSS 中使用其任何色调和色阶的令牌。将某个色调的<a href="/docs/tokens/color#core-colors">核心颜色</a>（<code>--wa-color-{hue}</code>）与其匹配的对应颜色（<code>--wa-color-{hue}-on</code>）配对使用，以保持其上的文本和图标清晰可读：</p>
 
-  // Listen for radio changes
-  palettePicker.addEventListener('input', function(event) {
-    const selectedValue = event.target.value;
+{% markdown %}
+```css
+.callout-custom {
+  background: var(--wa-color-blue);
+  color: var(--wa-color-blue-on);
+}
+```
+{% endmarkdown %}
 
-    // Update palette container class
-    const existingThemeClasses = [...paletteContainer.classList].filter(className => className.startsWith('wa-palette-'));
-    existingThemeClasses.forEach(className => paletteContainer.classList.remove(className));
-    paletteContainer.classList.add(`wa-palette-${selectedValue}`);
-
-    // Show/hide appropriate instructions
-    document.querySelectorAll('.palette-instructions').forEach(instruction => {
-      instruction.hidden = instruction.dataset.palette !== selectedValue;
-    });
-  });
-</script>
-
-<style>
-  wa-page > main {
-    max-width: 120ch;
-    margin-inline: auto;
-  }
-
-  #color-palettes {
-    margin-block-end: var(--wa-space-xl);
-  }
-
-  #palette-picker {
-    margin-bottom: var(--wa-space-l);
-
-    &::part(form-control-input) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: var(--wa-space-m);
-    }
-
-    &::part(form-control-label) {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      border: none;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 0;
-    }
-
-    wa-radio {
-      margin-inline: 0;
-    }
-  }
-
-  .palette-card {
-    --border-radius: var(--wa-border-radius-m);
-    --spacing: var(--wa-space-s) var(--wa-space-m);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--wa-space-3xl);
-    padding: var(--spacing);
-    background-color: var(--wa-color-surface-default);
-    border: 1px solid var(--wa-color-surface-border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--wa-shadow-s);
-    transition: all 0.2s ease;
-    text-align: center;
-    font-weight: var(--wa-font-weight-action);
-    text-transform: capitalize;
-  }
-
-  .palette-card:not(:state(disabled)) {
-    cursor: pointer;
-  }
-
-  .palette-card:state(checked) {
-    border-color: var(--wa-color-brand-border-loud);
-    background-color: var(--wa-color-brand-fill-quiet);
-    color: var(--wa-color-brand-text-loud);
-  }
-
-  .palette-card::part(control) {
-    display: none;
-  }
-
-  .palette-card::part(label) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0;
-  }
-
-  .palette {
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    align-items: center;
-    gap: var(--wa-space-m);
-    margin-bottom: var(--wa-space-s);
-    width: 100%;
-    padding-top: var(--wa-space-l);
-  }
-
-  .palette-label {
-    font-weight: var(--wa-font-weight-bold);
-    text-transform: capitalize;
-    font-size: var(--wa-font-size-s);
-    color: var(--wa-color-text-normal);
-  }
-
-  .palette-swatches {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    gap: var(--wa-space-3xs);
-  }
-
-  .palette-swatch {
-    display: block;
-    position: relative;
-    aspect-ratio: 1.75 / 1; /* Wider than tall on desktop */
-
-    &::before {
-      content: var(--tint);
-      position: absolute;
-      top: calc(-1 * var(--wa-space-l));
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: var(--wa-font-size-xs);
-      color: var(--wa-color-text-quiet);
-      font-weight: var(--wa-font-weight-action);
-      text-align: center;
-      z-index: 2;
-    }
-  }
-
-  .swatch-button {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    background-color: var(--color);
-    border-radius: var(--wa-border-radius-m);
-    transition: transform 0.1s ease, translate 0.1s ease, box-shadow 0.1s ease;
-
-    &:hover {
-      transform: scale(1.075);
-      box-shadow: var(--wa-shadow-s);
-      z-index: 1;
-    }
-
-    &:active {
-      translate: 0 1px;
-      box-shadow: none;
-    }
-  }
-
-  /* Smaller screens */
-  @media (max-width: 768px) {
-    .palette {
-      grid-template-columns: 3.75rem 1fr;
-      gap: var(--wa-space-s);
-      margin-bottom: var(--wa-space-m);
-      padding-top: var(--wa-space-xl);
-    }
-
-    .palette-label {
-      font-size: var(--wa-font-size-xs);
-    }
-
-    .palette-swatches {
-      grid-template-columns: repeat(6, 1fr); /* Two rows on mobile */
-      gap: var(--wa-space-2xs);
-      row-gap: var(--wa-space-l);
-    }
-
-    .palette-swatch {
-      aspect-ratio: 1 / 1; /* Square on mobile */
-
-      &::before {
-        font-size: var(--wa-font-size-2xs);
-        top: calc(-1 * var(--wa-space-m));
-      }
-    }
-  }
-
-</style>
+{% markdown %}
+:::info
+**需要使用其他色阶吗？** [颜色令牌](/docs/tokens/color) 参考列出了每个色阶和语义变体 — 在色阶范围内配对使用，无需计算即可达到 WCAG 对比度要求。
+:::
+{% endmarkdown %}

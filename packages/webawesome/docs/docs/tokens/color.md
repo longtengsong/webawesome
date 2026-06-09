@@ -98,11 +98,13 @@ use-cases:
   }
 </style>
 
+Web Awesome 的颜色系统由三层组成：[调色板](/docs/color-palettes)提供完整的色相光谱，[变体颜色](#variant-colors)定义语义颜色变化（如成功和危险），以及[主题元素颜色](#color-for-themed-elements)将调色板和变体颜色的特定色调应用于构成主题的元素。
 
-Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**调色板**、定义语义颜色变体（如成功和危险）的**变体颜色**，以及将调色板和变体颜色中的色调分配给设计令牌以设置组件样式的**主题颜色**。
+有关主题如何在库中工作的概述，请参阅[主题 <wa-icon name="arrow-right" variant="regular"></wa-icon>](/docs/theming-overview)。
 
 ## 调色板
-[调色板](/docs/color-palettes)为您的项目提供完整的颜色光谱，是最低级别的颜色令牌。每个调色板包含 10 种不同的色调，每种色调都有 11 种数值色调，构成从浅到深的颜色刻度——`95` 接近白色，`05` 接近黑色。
+
+[调色板](/docs/color-palettes)为您提供项目中使用的完整颜色光谱，是最低级别的颜色令牌。每个调色板包含 10 种不同的色相，每种色相有 11 个数值色调，构成从浅到深的颜色比例——`95` 接近白色，`05` 接近黑色。
 
 这些数值色调有助于确保符合 [WCAG 2.1 成功标准](https://www.w3.org/TR/WCAG21/#contrast-minimum)的可访问颜色对比度：
 
@@ -110,34 +112,15 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
 - 差值为 50 时提供最小 4.5:1 的对比度，适合正常文本（AA）和大文本（AAA）
 - 差值为 60 时提供最小 7:1 的对比度，适合所有文本（AAA）
 
-
-{% for hue in ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'indigo', 'purple', 'pink', 'gray'] %}
-<div class="palette">
-  <div class="palette-label"><code>--wa-color-{{ hue }}-*</code></div>
-  <div class="palette-swatches">
-    {% for tint in ['95', '90', '80', '70', '60', '50', '40', '30', '20', '10', '05'] -%}
-    <wa-copy-button
-      class="palette-swatch"
-      value="--wa-color-{{ hue }}-{{ tint }}"
-      copy-label="--wa-color-{{ hue }}-{{ tint }}"
-      style="--color: var(--wa-color-{{ hue }}-{{ tint }}); --tint: '{{ tint }}'"
-    >
-      <button class="swatch-button" aria-label="{{ hue }} {{ tint }} (点击复制)"></button>
-    </wa-copy-button>
-    {%- endfor %}
-  </div>
-</div>
-{% endfor %}
-
+{% include 'theming/color-palette-viewer.njk' %}
 
 ### 核心颜色
 
-除了数值色调外，每种色调还有一个**核心颜色**——刻度中最鲜艳、最饱满的色调。具体的色调因调色板而异。当您想要一种色调的代表性颜色而不指定具体色调时，使用 `--wa-color-{hue}`。
+除了数值色调外，每种色相都有一个_核心颜色_——该比例中最鲜艳、最生动的色调。具体色调因调色板而异。当您需要某种色相的代表颜色而不指定具体色调时，使用 `--wa-color-{hue}`。
 
 每个核心颜色的色调以整数形式存储在 `--wa-color-{hue}-key` 中。这些令牌在内部用于确定在核心颜色作为背景时兼容的文本颜色，不直接由组件使用。
 
-使用此键，颜色系统会派生一个配对的**前景颜色**，保证在相应核心颜色之上时满足 WCAG 2.1 AA 对比度标准。如果核心色调是浅色（≥ 60），则前景颜色是该色调的深色；否则为白色。每当您在核心颜色背景上渲染文本或图标时，使用 `--wa-color-{hue}-on`。
-
+使用此键，颜色系统会派生出一个配对的_前景颜色_，当放置在相应的核心颜色之上时，保证满足 WCAG 2.1 AA 对比度。如果核心色调是浅色（≥ 60），前景颜色是该色相的深色变体；否则为白色。在核心颜色背景上渲染文本或图标时，请使用 `--wa-color-{hue}-on`。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -166,44 +149,30 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ## 变体颜色
 
-变体颜色是调色板中特定色调的别名，为它们赋予了额外的语义含义层。这些变体是熟悉的、有意义的色调，强化特定信息或预期用途：
-- **品牌**用于产品识别
-- **中性**用于通用和普通内容
-- **成功**用于有效性或确认
-- **警告**用于谨慎或不确定性
-- **危险**用于错误或风险
+变体颜色是调色板中特定色相的别名，为它们增加了一层额外的语义含义。这些变体是熟悉且富有意义的色相，用于强化特定的消息或预期用途：
+
+| 变体 | 用途                    | 默认值                                                                         |
+| ---- | ----------------------- | ------------------------------------------------------------------------------ |
+| Brand   | 产品识别          | <wa-icon name="square" style="color: var(--wa-color-blue);"></wa-icon> blue     |
+| Neutral | 通用和普通内容 | <wa-icon name="square" style="color: var(--wa-color-gray);"></wa-icon> gray     |
+| Success | 有效性或确认     | <wa-icon name="square" style="color: var(--wa-color-green);"></wa-icon> green   |
+| Warning | 警告或不确定性       | <wa-icon name="square" style="color: var(--wa-color-yellow);"></wa-icon> yellow |
+| Danger  | 错误或风险               | <wa-icon name="square" style="color: var(--wa-color-red);"></wa-icon> red       |
+
+Brand 和 Neutral 被库中几乎所有元素、组件和模式使用。Success、Warning 和 Danger 被那些可从语义强化中受益的组件（如按钮和标注）选择性地使用。
 
 每个变体颜色都是调色板颜色的别名，并遵循相同的令牌格式：`--wa-color-{variant}-{tint}`。
 
-
-{% for variant in ['brand', 'neutral', 'success', 'warning', 'danger'] %}
-<div class="palette">
-  <div class="palette-label"><code>--wa-color-{{ variant }}-*</code></div>
-  <div class="palette-swatches">
-    {% for tint in ['95', '90', '80', '70', '60', '50', '40', '30', '20', '10', '05'] -%}
-    <wa-copy-button
-      class="palette-swatch"
-      value="--wa-color-{{ variant }}-{{ tint }}"
-      copy-label="--wa-color-{{ variant }}-{{ tint }}"
-      style="--color: var(--wa-color-{{ variant }}-{{ tint }}); --tint: '{{ tint }}'"
-    >
-      <button class="swatch-button" aria-label="{{ variant }} {{ tint }} (点击复制)"></button>
-    </wa-copy-button>
-    {%- endfor %}
-  </div>
-</div>
-{% endfor %}
-
+{% set colorScales = ["brand", "neutral", "success", "warning", "danger"] %}
+{% include "theming/color-palette-viewer.njk" %}
 
 ### 核心颜色
 
-就像调色板中的色调一样，每个变体都有一个**核心颜色**——为您的变体选择的颜色刻度中最鲜艳、最饱满色调的别名。当您想要变体的代表性颜色而不指定具体色调时，使用 `--wa-color-{variant}`。
+与调色板中的色相一样，每个变体都有一个_核心颜色_——为您的变体选择的颜色比例中最鲜艳、最生动的色调的别名。当您需要某个变体的代表颜色而不指定具体色调时，使用 `--wa-color-{variant}`。
 
-每个核心颜色也有一个配对的**前景颜色**（`--wa-color-{variant}-on`），保证在其之上时满足 WCAG 2.1 AA 对比度标准。每当您在核心颜色背景上渲染文本或图标时，使用前景颜色令牌。
-
+每个核心颜色还有一个配对的_前景颜色_（`--wa-color-{variant}-on`），保证在其上放置时满足 WCAG 2.1 AA 对比度。在核心颜色背景上渲染文本或图标时，请使用前景颜色令牌。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -230,26 +199,23 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ### 更改变体颜色
 
 调色板中的任何色调都可以分配给任何变体，而无需在您自己的样式表中重新定义令牌。要使用不同的色调，只需将类 `"wa-{variant}-{hue}"` 应用于 `<html>` 元素。
 
 ```html
-<html class="wa-brand-purple wa-success-cyan">
+<html class="wa-brand-purple wa-success-cyan"></html>
 ```
 
 所有十种调色板色调——`red`、`orange`、`yellow`、`green`、`cyan`、`blue`、`indigo`、`purple`、`pink` 和 `gray`——都可用于每个变体。
 
+## 主题元素颜色
 
-## 主题颜色
-
-主题颜色将调色板和变体颜色中的特定色调分配给设计令牌，以设置元素和组件的样式。这些令牌根据其作用而非外观命名，设计为适应明暗模式。
+这些令牌将调色板和变体颜色的特定色调应用于构成主题的元素和组件。它们以所扮演的角色而非外观命名，并适应浅色和深色模式。
 
 ### 表面
 
 表面是内容所依赖的背景层。它们传达层级结构——`raised` 最接近用户（例如对话框），而 `lowered` 最远（例如井）。
-
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -285,11 +251,9 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ### 文本
 
 文本颜色用于可读内容。我们建议文本颜色与表面颜色的对比度至少为 4.5:1。
-
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -320,11 +284,9 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ### 覆盖层
 
 覆盖层提供隔离内容的背景，通常带有一些透明度，以便背景上下文显示出来。
-
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -350,11 +312,9 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ### 阴影
 
 所有阴影都使用单一颜色。与[阴影令牌](?active_tab=shadows)一起使用以构现实的阴影。
-
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -375,11 +335,9 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
   </table>
 </wa-scroller>
 
-
 ### 交互
 
-这些令牌在所有交互组件中提供一致的悬停、激活和焦点状态。
-
+这些令牌驱动您在交互组件上看到的一致悬停、激活和焦点反馈。`--wa-color-focus` 令牌设置键盘焦点环的颜色。`--wa-color-mix-hover` 和 `--wa-color-mix-active` 令牌是覆盖层——它们通过 [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) 混合到组件的背景中，在悬停和按下时微妙地改变颜色，从而使每个交互组件都能一致地响应，无需各自定义自己的悬停/激活调色板。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">
@@ -398,18 +356,17 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
       </tr>
       <tr id="token-wa-color-mix-hover">
         <td class="token-name"><code>--wa-color-mix-hover</code></td>
-        <td>通过 <code>color-mix()</code> 在悬停时混合到组件颜色中的颜色和可选百分比</td>
-        <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-hover)"><small>混合</small></div></td>
+        <td>悬停时混合到组件填充中的颜色</td>
+        <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-hover)"><small>mix</small></div></td>
       </tr>
       <tr id="token-wa-color-mix-active">
         <td class="token-name"><code>--wa-color-mix-active</code></td>
-        <td>通过 <code>color-mix()</code> 在按下/激活时混合到组件颜色中的颜色和可选百分比</td>
-        <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-active)"><small>混合</small></div></td>
+        <td>按下时混合到组件填充中的颜色</td>
+        <td><div class="swatch color-mix-example" style="--mix-color: var(--wa-color-mix-active)"><small>mix</small></div></td>
       </tr>
     </tbody>
   </table>
 </wa-scroller>
-
 
 ### 语义变体
 
@@ -417,15 +374,15 @@ Web Awesome 的颜色系统由三层组成：为您提供完整色调光谱的**
 
 令牌遵循格式 `--wa-color-{variant}-{role}-{attention}`。三个**作用**是：
 
-- **Fill** 用于背景或大于几个像素的区域
-- **Border** 用于边框、分隔线和描边
-- **On** 用于显示在填充*上方*的内容（将 `on-loud` 与 `fill-loud` 配对）
+- **填充 (Fill)** 用于背景或大于几个像素的区域
+- **边框 (Border)** 用于边框、分隔线和描边
+- **前景 (On)** 用于显示在填充_之上_的内容（将 `on-loud` 与 `fill-loud` 配对使用）
 
 三个**注意力**级别是 `quiet`、`normal` 和 `loud`——从视觉上最不突出到最突出。
 
-
 {% set variants = ['brand', 'neutral', 'success', 'warning', 'danger'] %}
 <wa-scroller>
+
   <table class="token-table wa-hover-rows">
     <thead>
       <tr>

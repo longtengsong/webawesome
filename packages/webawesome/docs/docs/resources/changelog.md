@@ -14,22 +14,35 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 <h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>实验性组件 {{ statusBadge('experimental') }}</h2>
 这些组件仍在成型中。API 可能会在次要版本之间更改，因此请在原型中使用它们 — 不要在难以更新的生产代码中使用。
 
-## 未发布
+{% include "changelog-email-signup.njk" %}
+
+## Unreleased
 
 :::added
 
-- 为 `<wa-file-input>` 添加了 `capture` 属性，用于直接从设备摄像头或麦克风捕获媒体 [discuss:2380]
+- 为 `<wa-file-input>` 添加了 `capture` 属性，用于直接从设备的摄像头或麦克风捕获媒体 [discuss:2380]
+- 添加了 `wa-text-uppercase` 文本工具类，用于将文本转换为大写
+- 添加了 `wa-text-lowercase` 文本工具类，用于将文本转换为小写
+- 添加了 `wa-text-capitalize` 文本工具类，用于将每个单词的首字母大写
+- 添加了 `wa-text-start` 文本工具类，用于逻辑（方向感知）文本对齐
+- 添加了 `wa-text-center` 文本工具类，用于居中对齐文本
+- 添加了 `wa-text-end` 文本工具类，用于逻辑（方向感知）文本对齐
+- 添加了 `wa-text-justify` 文本工具类，用于两端对齐文本
+- 添加了 `wa-prose` 工具类，用于为长格式内容（文档、博客文章、营销文案）应用排版节奏
 
 :::
 
 :::fixed
 
-- 修复了 `<wa-video>` 中的一个 bug：在搜索或 scrub 时间轴时，`timeupdate` 方法未发出 [issue:2393]
-- 修复了 `<wa-breadcrumb-item>` 中的一个 bug：`href=""` 渲染为按钮而不是链接，使得当前页面项更难遵循 [WAI-ARIA 面包屑模式](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) [issue:2387]
+- 修复了 `<wa-video>` 中的一个 bug：在快进或拖动时间轴时，`timeupdate` 方法未触发 [issue:2393]
+- 修复了 `<wa-breadcrumb-item>` 中的一个 bug：当 `href=""` 时渲染为按钮而不是链接，使得当前页面项更难遵循 [WAI-ARIA 面包屑导航模式](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) [issue:2387]
 - 修复了 `<wa-breadcrumb-item>` 中的一个回归问题：导致没有 `href` 的项渲染为链接而不是按钮
-- 修复了 `<wa-popover>` 中的一个回归问题：对于 `top/bottom-start` 和 `top/bottom-end` 位置，正文的视口边缘边距导致弹出框和箭头错位
+- 修复了 `<wa-popover>` 中的一个回归问题：body 的视口边缘边距导致弹出框和箭头在 `top/bottom-start` 和 `top/bottom-end` 位置时未对齐
 - 修复了 `<wa-textarea>` 中的一个 bug：与其他表单控件不同，禁用状态没有视觉样式 [issue:2416]
-- 修复了 `<wa-dropdown>`、`<wa-popup>`、`<wa-popover>`、`<wa-select>`、`<wa-details>`、`<wa-dialog>`、`<wa-drawer>` 和 `<wa-tree-item>` 中的默认显示/隐藏动画，以尊重 `prefers-reduced-motion: reduce`
+- 修复了 `<wa-dropdown>`、`<wa-popup>`、`<wa-popover>`、`<wa-select>`、`<wa-details>`、`<wa-dialog>`、`<wa-drawer>` 和 `<wa-tree-item>` 中的默认显示/隐藏动画，使其尊重 `prefers-reduced-motion: reduce`
+- 修复了 `<wa-drawer>` 中的一个 bug：导致 `light-dismiss` 选项无法按预期工作 [pr:2437]
+- 修复了 `<wa-dropdown>` 中的一个 bug：当所选项溢出时，阻止项可见 [pr:2430]
+- 修复了 `<wa-carousel>` 中的一个 bug：使用鼠标时，阻止轮播平滑地回弹到位置 [issue:1103]
 
 :::
 
@@ -37,6 +50,22 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 
 - 将 `<wa-dropdown>`、`<wa-popup>`、`<wa-popover>`、`<wa-select>`、`<wa-combobox>`、`<wa-details>`、`<wa-dialog>`、`<wa-drawer>`、`<wa-tree-item>` 和 `<wa-toast-item>` 中的默认 `--show-duration` 和 `--hide-duration` 值与 `--wa-transition-fast` 和 `--wa-transition-normal` 令牌同步
 - 将 `<wa-copy-button>`、`<wa-select>`、`<wa-combobox>` 和 `<wa-toast-item>` 中的硬编码过渡与 `--wa-transition-*` 令牌同步
+- 改进了 `<wa-textarea>` 和 `textarea` 中内容溢出控件时的垂直位置 [pr:2424]
+- 更新了多个文本元素的 Native Styles [pr:2459]：
+  - 更新了 `<blockquote>` 以使用柔和文本颜色和基于 `--wa-font-size-larger` 的字体大小
+  - 更新了 `<h6>` 以使用 `--wa-font-size-xs`，进一步将小标题与周围正文文本区分开来
+  - 更新了 `<table>` 以使用 `font-variant-numeric: tabular-nums`，使数字列对齐
+  - 更新了 `<th>` 以渲染视觉上更强的底部边框，将标题行与正文单元格区分开来
+  - 添加了 `<figcaption>`（之前未设置样式）：柔和文本颜色、更小的字体大小、紧凑的行高和一个小的上边距
+  - 添加了使用 `currentColor` 且降低不透明度的 `<ul>` 和 `<ol>` 标记；`<ol>` 标记保留更多对比度，因为数字是文本而非图形元素
+- 为 `<menu>` 添加了 Native Styles（之前未设置样式），以重置 `list-style`、`margin` 和 `padding` [discuss:2436]
+- 将 `wa-text-wrap-nowrap`、`wa-text-wrap-balance` 和 `wa-text-wrap-pretty` 重命名为 `wa-text-nowrap`、`wa-text-balance` 和 `wa-text-pretty`，以与扁平的 `wa-text-*` 工具命名空间对齐。原始的类名继续作为别名工作。
+
+:::
+
+:::deprecated
+
+- 弃用了 `wa-text-wrap-nowrap`、`wa-text-wrap-balance` 和 `wa-text-wrap-pretty`，推荐使用其更短的 `wa-text-*` 等效项。原始名称仍然有效，但将在未来的主要版本中移除。
 
 :::
 
@@ -75,8 +104,6 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
   - 添加了 `tooltip` 属性，用于控制在悬停和点击时工具提示中何时显示反馈
 
 :::
-
-{% include "changelog-email-signup.njk" %}
 
 ## 3.6.0
 

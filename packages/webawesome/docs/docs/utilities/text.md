@@ -184,16 +184,57 @@ use-cases:
 
 ## 换行
 
-使用 `wa-text-wrap-*` 类来控制文本跨多行的换行方式。这些工具应用标准 CSS [`text-wrap`](https://developer.mozilla.org/docs/Web/CSS/text-wrap) 值。
+使用这些类来控制文本如何跨行换行。它们应用标准的 CSS [`text-wrap`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-wrap) 值。
 
-| 类名                  | 预览                                                                                                                                            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `wa-text-wrap-nowrap` | <div class="wa-text-wrap-nowrap" style="max-width: 40ch; overflow: hidden;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div> |
-| `wa-text-wrap-balance`| <div class="wa-text-wrap-balance" style="max-width: 40ch;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div>     |
-| `wa-text-wrap-pretty` | <div class="wa-text-wrap-pretty" style="max-width: 40ch;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div>      |
+| 类名               | 预览                                                                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `wa-text-nowrap`  | <div class="wa-text-nowrap" style="max-width: 40ch; overflow: hidden;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div> |
+| `wa-text-balance` | <div class="wa-text-balance" style="max-width: 40ch;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div>                  |
+| `wa-text-pretty`  | <div class="wa-text-pretty" style="max-width: 40ch;">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div>                   |
 
 :::info
-`wa-text-wrap-pretty` 包装在 `@supports` 规则中，因为 Firefox 尚不支持 `text-wrap: pretty`。在不支持的浏览器中，该类没有效果，文本正常换行。
+`wa-text-pretty` 被包裹在 `@supports` 规则中，因为 Firefox 尚不支持 `text-wrap: pretty`。在不支持的浏览器中，该类没有效果，文本会正常换行。
+:::
+
+:::info
+原始的 `wa-text-wrap-nowrap`、`wa-text-wrap-balance` 和 `wa-text-wrap-pretty` 类名作为向后兼容的别名继续有效。这些旧名称已被弃用，并将在未来的主版本中移除——我们建议更新为上面更短的 `wa-text-*` 名称。
+:::
+
+## 转换
+
+使用这些类来更改文本的大小写。它们应用标准的 CSS [`text-transform`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-transform) 值。
+
+| 类名                 | 预览                                                   |
+| -------------------- | --------------------------------------------------------- |
+| `wa-text-uppercase`  | <div class="wa-text-uppercase">Five boxing wizards</div>  |
+| `wa-text-lowercase`  | <div class="wa-text-lowercase">Five boxing wizards</div>  |
+| `wa-text-capitalize` | <div class="wa-text-capitalize">Five boxing wizards</div> |
+
+:::info
+大段的大写文本[对每个人都更难阅读](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html)，尤其是对有阅读障碍的人群。请将其保留用于按钮、徽章或简短标题。
+:::
+
+## 对齐
+
+<style>
+  .preview-wrapper {
+    border: var(--layout-example-border);
+    border-radius: var(--wa-border-radius-m);
+    padding: var(--wa-space-xs);
+  }
+</style>
+
+使用这些类来对齐容器内的文本。它们使用逻辑属性应用标准的 CSS [`text-align`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align) 值，因此它们会自动适应文档的书写方向。
+
+| 类名              | 预览                                                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `wa-text-start`   | <div class="wa-text-start preview-wrapper">Five boxing wizards</div>                                                          |
+| `wa-text-center`  | <div class="wa-text-center preview-wrapper">Five boxing wizards</div>                                                         |
+| `wa-text-end`     | <div class="wa-text-end preview-wrapper">Five boxing wizards</div>                                                            |
+| `wa-text-justify` | <div class="wa-text-justify preview-wrapper">The five boxing wizards jump quickly. How quickly daft jumping zebras vex!</div> |
+
+::: info
+两端对齐的文本可能会产生不均匀的单词间距，[对每个人都更难阅读](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html)，尤其是对有阅读障碍的人群。请将其保留用于简短、狭窄的文本列。
 :::
 
 ## 截断

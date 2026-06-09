@@ -1,115 +1,70 @@
 ---
-title: 主题
-description: 使用 Web Awesome 的预制主题，随心所欲地样式化（和重新样式化）您的网站。
+title: 内置主题
+description: 使用 Web Awesome 的预建主题，随心所欲地设置（和重新设置）您的网站样式。
 layout: page
 ---
 
-{% from "pro-badge.njk" import proBadge %}
-{% from "free-badge.njk" import freeBadge %}
-
 <h1>{{ title }}</h1>
 
-<p>主题是<a href="/docs/tokens">设计令牌</a>的集合，为整个 Web Awesome 库赋予统一的视觉风格。通过加载任意预制主题，随心所欲地样式化和重新样式化您的网站。</p>
+<p>主题为您的项目在整个 Web Awesome 库中提供统一的风格。</p>
+
+<p>主题设置版式、间距、边框、阴影以及 <a href="/docs/tokens/color#variant-colors">变体</a>
+  在组件上的显示方式 — 全部作为 <a href="/docs/tokens">设计令牌</a>。两个主题可以共享同一个 <a
+    href="/docs/color-palettes">颜色调色板</a>和<a href="/docs/tokens/color#variant-colors">变体颜色</a>，
+  但仍然给人完全不同的感觉。每个预建主题都附带一个默认调色板，并可能包含针对个别组件的自定义覆盖。</p>
+
+{% include "theming/theme-picker.njk" %}
 
 {% raw %}
-<p>看到喜欢的了？&nbsp;
-{%- if not session.isLoggedIn -%}
-  <a href="/login">登录</a>&nbsp;
-{%- else -%}
-  前往<a href="/teams">您的团队</a>&nbsp;
-{%- endif -%}
-使用这些主题中的任意一个创建项目。
-{%- if not currentUser.hasPro -%}
-  &nbsp;（此外，还有更多主题等待您使用 {{ site.namePro }} 探索。<wa-icon name="heart" style="color: var(--wa-color-red-70);"></wa-icon>）
-{%- endif -%}
-</p>
+{% if not currentUser or not currentUser.hasPro %}
 {% endraw %}
+<wa-callout class="pro">
+  <wa-icon slot="icon" name="hand-wave" animation="shake"
+    style="--animation-delay: 2s; --animation-duration: 4s;"></wa-icon>
+  <strong>
+    <a href="/purchase?from=pro-docs&context=themes">使用 {{ site.namePro }} 解锁所有主题！</a>
+  </strong>
 
-<div id="theme-viewer">
-  <wa-radio-group id="theme-picker" label="主题选择器" value="default" orientation="horizontal">
-    {% for theme in themer.themes %}
-      {% if not theme.isPro %}
-        <wa-radio
-          class="theme-card"
-          value="{{ theme.filename | stripExtension }}"
-          data-description="{{ theme.description }}"
-          data-title="{{ theme.name }}"
-          data-palette="{{ theme.palette.filename | stripExtension}}"
-          data-brand="{{ theme.colorBrand.color }}"
-          {% if theme.isPro %}data-is-pro{% endif %}
-        >
-          {{ theme.name }}
-        </wa-radio>
-      {% else %}
-        {% raw %}
-          {% if currentUser.hasPro %}
-        {% endraw %}
-          <wa-radio
-            class="theme-card"
-            value="{{ theme.filename | stripExtension }}"
-            data-description="{{ theme.description }}"
-            data-title="{{ theme.name }}"
-            data-palette="{{ theme.palette.filename | stripExtension}}"
-            data-brand="{{ theme.colorBrand.color }}"
-            {% if theme.isPro %}data-is-pro{% endif %}
-          >
-            {{ theme.name }}
-          </wa-radio>
-        {% raw %}
-          {% endif %}
-        {% endraw %}
-      {% endif %}
-    {% endfor %}
-  </wa-radio-group>
-</div>
+  <wa-details appearance="plain">
+    <span slot="summary">订阅 {{ site.namePro }} 可解锁所有主题，以及高级调色板、可视化主题构建器和<u class="appearance-underlined variant-drawn">更多</u>功能。</span>
 
-<div id="theme-preview" class="wa-stack">
-  <header class="wa-stack">
-    <div class="wa-cluster">
-      <h2 data-theme-name="name">主题</h2>
-      {{ freeBadge({ id: "free-badge", description: "该主题在 Web Awesome 免费版本中可用。" }) }}
-      {{ proBadge({ id: "pro-badge", description: "该主题需要访问 " ~ site.namePro ~ "。" }) }}
+    <div class="wa-stack wa-gap-xl">
+      {% include "pro-perks.njk" ignore missing %}
 
+      <wa-button href="/purchase?from=pro-docs&context=themes">
+        获取 {{ site.namePro }}
+        <wa-icon slot="end" name="arrow-right"></wa-icon>
+      </wa-button>
     </div>
-    <p data-theme-description>描述</p>
-  </header>
-  <wa-comparison position="80">
-    <wa-zoomable-frame
-      src="/examples/themes/showcase?color-scheme=dark"
-      slot="before"
-      without-controls
-      without-interaction
-    ></wa-zoomable-frame>
-    <wa-zoomable-frame
-      src="/examples/themes/showcase"
-      slot="after"
-      without-controls
-      without-interaction
-    ></wa-zoomable-frame>
-  </wa-comparison>
-</div>
+  </wa-details>
+</wa-callout>
+{% raw %}
+{% endif %}
+{% endraw %}
 
 <h2>使用此主题</h2>
 
 <div id="import-code">
   {% for theme in themer.themes %}
-    <div class="theme-instructions" data-theme="{{ theme.filename | stripExtension }}" {% if not loop.first %}hidden{% endif %}>
-      <wa-tab-group data-install-tabs>
-        <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
-        <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
-        <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
-        <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
+  {% if theme.isPro %}{% raw %}{% if currentUser.hasPro %}{% endraw %}{% endif %}
+  <div class="theme-instructions" data-theme="{{ theme.filename | stripExtension }}" {% if not loop.first %}hidden{%
+    endif %}>
+    <wa-tab-group data-install-tabs>
+      <wa-tab panel="cdn"><wa-icon name="globe" variant="regular"></wa-icon> CDN</wa-tab>
+      <wa-tab panel="npm"><wa-icon name="box-open" variant="regular"></wa-icon> npm</wa-tab>
+      <wa-tab panel="self-hosted"><wa-icon name="arrow-down-to-line" variant="regular"></wa-icon> 自托管</wa-tab>
+      <wa-tab panel="hosted"><wa-icon name="rocket-launch" variant="regular"></wa-icon> 托管项目</wa-tab>
 
-        <wa-tab-panel name="cdn">
-{% if theme.isPro %}
+      <wa-tab-panel name="cdn">
+        {% if theme.isPro %}
 {% markdown %}
 <wa-callout variant="neutral" size="s">
   <wa-icon name="info-circle" variant="regular"></wa-icon>
   该主题仅可在拥有 Pro 订阅的工作区中使用。
 </wa-callout>
 {% endmarkdown %}
-{% else %}
-{% set themeCdnUrl %}{% cdnUrl 'styles/themes/' %}{{ theme.filename }}{% endset %}
+        {% else %}
+        {% set themeCdnUrl %}{% cdnUrl 'styles/themes/' %}{{ theme.filename }}{% endset %}
 {% markdown %}
 要使用此主题，请从 CDN 添加主题样式表：
 
@@ -120,13 +75,14 @@ layout: page
 然后在 `<html>` 元素上应用以下类：
 
 ```html
-<html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
+<html
+  class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
 ```
 {% endmarkdown %}
-{% endif %}
-        </wa-tab-panel>
+        {% endif %}
+      </wa-tab-panel>
 
-        <wa-tab-panel name="npm">
+      <wa-tab-panel name="npm">
 {% markdown %}
 安装 <code>@awesome.me/webawesome</code> 后，导入主题样式表：
 
@@ -137,12 +93,13 @@ import '@awesome.me/webawesome/dist/styles/themes/{{ theme.filename }}';
 然后在 `<html>` 元素上应用以下类：
 
 ```html
-<html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
+<html
+  class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
 ```
 {% endmarkdown %}
-        </wa-tab-panel>
+      </wa-tab-panel>
 
-        <wa-tab-panel name="self-hosted">
+      <wa-tab-panel name="self-hosted">
 {% markdown %}
 如果您正在自行托管 Web Awesome，请从您的服务器引入主题样式表：
 
@@ -153,252 +110,39 @@ import '@awesome.me/webawesome/dist/styles/themes/{{ theme.filename }}';
 然后在 `<html>` 元素上应用以下类：
 
 ```html
-<html class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
+<html
+  class="wa-theme-{{ theme.filename | stripExtension }} wa-palette-{{ theme.palette.filename | stripExtension }} wa-brand-{{ theme.colorBrand.color}}">
 ```
 {% endmarkdown %}
-        </wa-tab-panel>
+      </wa-tab-panel>
 
-        <wa-tab-panel name="hosted">
-{% if theme.isPro %}
+      <wa-tab-panel name="hosted">
+        {% if theme.isPro %}
 {% markdown %}
-**对于 Pro 工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
-3. 打开 **主题** 并选择 **{{ theme.filename | stripExtension | capitalize }}**。
-4. 点击 **保存主题**，使用您项目的任何地方都会立即更新。
+**Pro 工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。
+3. 打开 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存主题</wa-tag> 以立即更新所有使用您项目的位置。
 {% endmarkdown %}
-{% else %}
+        {% else %}
 {% markdown %}
-**对于免费工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 对于您的 **主题**，选择 <wa-icon name="paintbrush" variant="regular"></wa-icon> **{{ theme.filename | stripExtension | capitalize }}**。
-3. 对于您的 **调色板**，选择 <wa-icon name="swatchbook" variant="regular"></wa-icon> **{{ theme.palette.filename | stripExtension | capitalize }}**。
-4. 点击 **保存更改**，使用您项目的任何地方都会立即更新。
+**免费工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 在 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag>中，选择 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> {{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+3. 在 <wa-tag class="tag-ui" appearance="outlined">颜色调色板</wa-tag>中，选择 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="swatchbook" variant="regular"></wa-icon> {{ theme.palette.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存更改</wa-tag> 以立即更新所有使用您项目的位置。
 
-**对于 Pro 工作区上的项目：**
-1. 前往您项目的 <wa-icon name="gear" variant="regular"></wa-icon> **设置**。
-2. 点击 <wa-icon name="paintbrush" variant="regular"></wa-icon> **编辑主题** 打开主题构建器。
-3. 打开 **主题** 并选择 **{{ theme.filename | stripExtension | capitalize }}**。
-4. 点击 **保存主题**，使用您项目的任何地方都会立即更新。
+**Pro 工作区项目：**
+1. 转到您项目的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="gear" variant="regular"></wa-icon> 设置</wa-tag>。
+2. 点击 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="paintbrush" variant="regular"></wa-icon> 编辑主题</wa-tag> 打开主题构建器。
+3. 打开 <wa-tag class="tag-ui" appearance="outlined">主题</wa-tag> 并选择 <wa-tag class="tag-ui" appearance="outlined">{{ theme.filename | stripExtension | capitalize }}</wa-tag>。
+4. 点击 <wa-tag class="tag-ui" appearance="outlined">保存主题</wa-tag> 以立即更新所有使用您项目的位置。
 {% endmarkdown %}
-{% endif %}
-        </wa-tab-panel>
-      </wa-tab-group>
-    </div>
+        {% endif %}
+      </wa-tab-panel>
+    </wa-tab-group>
+  </div>
+  {% if theme.isPro %}{% raw %}{% endif %}{% endraw %}{% endif %}
   {% endfor %}
 </div>
-
-
-<script type="module">
-  import { doViewTransition } from '/assets/scripts/view-transitions.js';
-
-  const themePicker = document.getElementById('theme-picker');
-  const afterFrame = document.querySelector('wa-zoomable-frame[slot="after"]');
-  const beforeFrame = document.querySelector('wa-zoomable-frame[slot="before"]');
-  const nameElement = document.querySelector('[data-theme-name]');
-  const descriptionElement = document.querySelector('[data-theme-description]');
-  const freeBadge = document.getElementById('free-badge');
-  const proBadge = document.getElementById('pro-badge');
-
-  // Hide both badges initially
-  if (freeBadge) freeBadge.hidden = true;
-  if (proBadge) proBadge.hidden = true;
-
-  function updateFrames(selectedValue, title, description, isPro, palette, brand) {
-    // Update theme classes on both frames
-    [afterFrame, beforeFrame].forEach(frame => {
-      if (frame.contentDocument) {
-        const html = frame.contentDocument.documentElement;
-        if (!html) return;
-
-        // Remove all existing wa-theme-*, wa-palette-*, and wa-brand-* classes
-        [...html.classList].forEach(className => {
-          if (className.startsWith('wa-theme-') || className.startsWith('wa-palette-') || className.startsWith('wa-brand-')) {
-            html.classList.remove(className);
-          }
-        });
-
-        // Add new theme, palette, and brand classes
-        if (selectedValue !== 'default') {
-          html.classList.add(`wa-theme-${selectedValue}`);
-          html.classList.add(`wa-palette-${palette}`);
-          html.classList.add(`wa-brand-${brand}`);
-        }
-      }
-    });
-
-    // Update header elements directly
-    if (nameElement && title) {
-      nameElement.textContent = title;
-    }
-    if (descriptionElement && description) {
-      descriptionElement.textContent = description;
-    }
-
-    freeBadge.hidden = isPro;
-    proBadge.hidden = !isPro;
-
-    // Show/hide appropriate instructions
-    document.querySelectorAll('.theme-instructions').forEach(instruction => {
-      instruction.hidden = instruction.dataset.theme !== selectedValue;
-    });
-  }
-
-  // Set default radio as checked and initialize frames
-  const defaultRadio = themePicker.querySelector('wa-radio[value="default"]');
-  if (defaultRadio) {
-    defaultRadio.checked = true;
-    const title = defaultRadio.getAttribute('data-title');
-    const description = defaultRadio.getAttribute('data-description');
-    const palette = defaultRadio.getAttribute('data-palette');
-    const brand = defaultRadio.getAttribute('data-brand');
-    const isPro = defaultRadio.hasAttribute('data-is-pro');
-    updateFrames('default', title, description, isPro, palette, brand);
-  }
-
-  // Listen for radio changes
-  themePicker.addEventListener('input', function(event) {
-    const selectedRadio = event.target.querySelector(':state(checked)');
-    const title = selectedRadio.getAttribute('data-title');
-    const description = selectedRadio.getAttribute('data-description');
-    const palette = selectedRadio.getAttribute('data-palette');
-    const brand = selectedRadio.getAttribute('data-brand');
-    const isPro = selectedRadio.hasAttribute('data-is-pro');
-    doViewTransition(() => {
-      updateFrames(selectedRadio.value, title, description, isPro, palette, brand);
-    });
-  });
-</script>
-
-<style>
-  [hidden] {
-    display: none !important;
-  }
-
-  #theme-preview,
-  #using-this-theme {
-    margin-block-start: var(--wa-space-3xl);
-  }
-
-  .title {
-    display: none;
-  }
-
-  #theme-preview {
-    header {
-      p {
-        font-size: var(--wa-font-size-s);
-      }
-    }
-  }
-
-  wa-page > main {
-    max-width: 140ch;
-    margin-inline: auto;
-  }
-
-  wa-comparison {
-    --handle-color: black;
-    --divider-color: white;
-    --divider-width: 4px;
-
-    &::part(before) {
-      border-radius: var(--wa-border-radius-m);
-      background-color: white;
-    }
-
-    &::part(after) {
-      border-radius: var(--wa-border-radius-m);
-      background-color: var(--wa-color-surface-default);
-    }
-  }
-
-  wa-zoomable-frame {
-    aspect-ratio: 5 / 3;
-  }
-
-  #theme-viewer {
-    #theme-picker {
-
-      &::part(form-control-input) {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--wa-space-m);
-      }
-
-      &::part(form-control-label) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        border: none;
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 0;
-      }
-
-      wa-radio {
-        margin-inline: 0;
-      }
-    }
-
-    .theme-card {
-      --border-radius: var(--wa-border-radius-m);
-      --spacing: var(--wa-space-s) var(--wa-space-m);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: var(--wa-space-3xl);
-      padding: var(--spacing);
-      border: 1px solid var(--wa-color-surface-border);
-      border-radius: var(--border-radius);
-      box-shadow: var(--wa-shadow-s);
-      transition: all 0.2s ease;
-      text-align: center;
-      font-weight: var(--wa-font-weight-action);
-      text-transform: capitalize;
-
-      &:not(:state(disabled)) {
-        cursor: pointer;
-      }
-
-      &:state(checked) {
-        border-color: var(--wa-color-brand-border-loud);
-        background-color: var(--wa-color-brand-fill-quiet);
-        color: var(--wa-color-brand-text-loud);
-      }
-
-      &::part(control) {
-        display: none;
-      }
-
-      &::part(label) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-      }
-    }
-  }
-
-  /* Smaller screens */
-  @media (max-width: 768px) {
-    #theme-viewer {
-      padding: var(--wa-space-m);
-
-      #theme-picker::part(form-control-input) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--wa-space-xs);
-      }
-
-      .theme-card {
-        min-height: var(--wa-space-2xl);
-        font-size: var(--wa-font-size-s);
-      }
-    }
-  }
-</style>

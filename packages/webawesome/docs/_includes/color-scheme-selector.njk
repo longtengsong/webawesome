@@ -1,4 +1,4 @@
-<wa-dropdown class="color-scheme-selector" title="按 \ 键切换">
+<wa-dropdown class="color-scheme-selector" title="按键盘 \ 键切换配色方案">
   <wa-button slot="trigger" id="color-scheme-selector-trigger" appearance="plain" pill>
     <wa-icon name="sun-bright" variant="regular" class="only-light" label="选择配色方案"></wa-icon>
     <wa-icon name="moon-stars" variant="regular" class="only-dark" label="选择配色方案"></wa-icon>
@@ -17,6 +17,11 @@
     <wa-icon slot="icon" name="moon-stars" variant="regular" class="only-dark"></wa-icon>
     系统
   </wa-dropdown-item>
+  <wa-divider></wa-divider>
+  <wa-dropdown-item value="/docs/customizing#light-and-dark-mode">
+    <wa-icon slot="icon" name="book-open" variant="regular"></wa-icon>
+    文档
+  </wa-dropdown-item>
 </wa-dropdown>
 <wa-tooltip for="color-scheme-selector-trigger" id="color-scheme-tooltip">选择配色方案</wa-tooltip>
 
@@ -26,10 +31,15 @@
     el.addEventListener('wa-select', (event) => {
       const selectedValue = event.detail.item.value;
 
+      // Navigate if the value is a URL
+      if (selectedValue.startsWith('/')) {
+        window.location.href = selectedValue;
+        return;
+      }
+
       // Trigger input event for color-scheme.js
       el.value = selectedValue;
       el.dispatchEvent(new Event('input', { bubbles: true }));
     });
   });
 </script>
-
