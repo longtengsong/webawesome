@@ -1,6 +1,6 @@
-# Shoelace to Web Awesome Migration Checklist
+# Shoelace to @SITE_NAME@ Migration Checklist
 
-Drop this file into your project (e.g. at the repo root or under `docs/`) and check items off as you go. Each section maps to a step in the [official migration guide](https://webawesome.com/docs/resources/migrating-from-shoelace).
+Drop this file into your project (e.g. at the repo root or under `docs/`) and check items off as you go. Each section maps to a step in the [official migration guide](@SITE_URL@/docs/resources/migrating-from-shoelace).
 
 **Project:** _your project name_
 **Started:** _YYYY-MM-DD_
@@ -96,7 +96,7 @@ Run these in order. Commit between passes.
 - [ ] Replaced `<sl-alert>` static usage with `<wa-callout>`
 - [ ] Removed `open`, `closable`, `duration` (callouts always render)
 - [ ] Removed `show()`/`hide()` calls (use conditional rendering)
-- [ ] Migrated `.toast()` calls to Web Awesome Pro `<wa-toast>` (or built your own)
+- [ ] Migrated `.toast()` calls to @SITE_NAME@ Pro `<wa-toast>` (or built your own)
 
 ### Dialog and drawer
 
@@ -160,7 +160,7 @@ Run these in order. Commit between passes.
 - [ ] Replaced `--sl-color-neutral-0` with `--wa-color-surface-default`
 - [ ] Replaced `--sl-color-neutral-1000` with `--wa-color-text-normal`
 - [ ] Removed `--sl-z-index-*` references (use cascade layers and stacking contexts instead)
-- [ ] Adjusted color-scale references: Shoelace 50/100/.../950 → Web Awesome 95/90/.../05 (lightness, inverted)
+- [ ] Adjusted color-scale references: Shoelace 50/100/.../950 → @SITE_NAME@ 95/90/.../05 (lightness, inverted)
 - [ ] Reviewed any `var(--sl-*, fallback)` calls so the fallback isn't silently masking missed migrations
 
 ## 5. Forms and validation
@@ -198,12 +198,12 @@ Run these in order. Commit between passes.
 
 ## 8. Optional follow-ups
 
-- [ ] Adopted `wa-theme-shoelace` initially? Consider switching to `default` or `awesome` for the full Web Awesome look.
+- [ ] Adopted `wa-theme-shoelace` initially? Consider switching to `default` or `awesome` for the full @SITE_NAME@ look.
 - [ ] Tried the new utility classes (`wa-cluster`, `wa-stack`, `wa-grid`, etc.) to replace custom layout CSS
 - [ ] Tried `<wa-page>` for app shell layout
 - [ ] Tried `<wa-popover>` where you previously used a tooltip with rich content
 - [ ] Tried `<wa-number-input>` instead of `<wa-input type="number">`
-- [ ] Evaluated Web Awesome Pro for `<wa-toast>`, `<wa-combobox>`, `<wa-file-input>`, charts, sparklines, additional themes
+- [ ] Evaluated @SITE_NAME@ Pro for `<wa-toast>`, `<wa-combobox>`, `<wa-file-input>`, charts, sparklines, additional themes
 
 ---
 

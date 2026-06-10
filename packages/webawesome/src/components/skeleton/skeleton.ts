@@ -6,7 +6,7 @@ import styles from './skeleton.styles.js';
 /**
  * @summary Skeletons show placeholder shapes where content will appear once it finishes loading, reducing perceived
  *  wait time and preventing layout shift.
- * @documentation https://webawesome.com/docs/components/skeleton
+ * @documentation @SITE_URL@/docs/components/skeleton
  * @status stable
  * @since 2.0
  *

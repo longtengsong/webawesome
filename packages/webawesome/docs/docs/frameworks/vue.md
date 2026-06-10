@@ -1,6 +1,6 @@
 ---
 title: Vue 3
-description: 在 Vue 3 应用中使用 Web Awesome 的提示。
+description: 在 Vue 3 应用中使用 @SITE_NAME@ 的提示。
 layout: page-outline
 ---
 
@@ -10,7 +10,7 @@ layout: page-outline
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素，因此您可以轻松地在 Vue 应用中使用 Web Awesome。
+Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素，因此您可以轻松地在 Vue 应用中使用 @SITE_NAME@。
 
 :::info
 这些说明适用于 Vue 3 及以上版本。如果您使用的是 Vue 2，请参阅 [Vue 2 说明](/frameworks/vue-2)。
@@ -18,13 +18,13 @@ Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素�
 
 ## 安装
 
-要添加 Web Awesome 到您的 Vue 应用，请从 npm 安装该包。
+要添加 @SITE_NAME@ 到您的 Vue 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-接下来，导入 Web Awesome 样式表，导入您需要的组件，然后开始使用 Web Awesome！
+接下来，导入 @SITE_NAME@ 样式表，导入您需要的组件，然后开始使用 @SITE_NAME@！
 
 ```jsx
 // main.js 或 main.ts
@@ -36,7 +36,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js';
 
 如果您尚未配置 Vue.js 项目以支持自定义元素/Web 组件，请根据您的项目类型 [按照这里的说明](https://vuejs.org/guide/extras/web-components.html#using-custom-elements-in-vue) 操作，以确保您的项目在遇到自定义元素时不会抛出错误。
 
-现在您可以开始在应用中使用 Web Awesome 组件了！
+现在您可以开始在应用中使用 @SITE_NAME@ 组件了！
 
 ## 类型
 
@@ -102,7 +102,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js';
 
 ### 插槽
 
-Web Awesome/Web 组件中的插槽在功能上与 Vue 中的基本插槽相同。可以使用 `slot` 属性后跟插槽名称将插槽分配给元素。
+@SITE_NAME@/Web 组件中的插槽在功能上与 Vue 中的基本插槽相同。可以使用 `slot` 属性后跟插槽名称将插槽分配给元素。
 
 以下是一个示例：
 
@@ -118,5 +118,5 @@ Web Awesome/Web 组件中的插槽在功能上与 Vue 中的基本插槽相同�
 有关更多关于插槽以及 Web 组件限制的信息，请查阅 Vue 文档：<https://vuejs.org/guide/extras/web-components#slots>
 
 :::info
-您正在使用 Web Awesome 和 Vue？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue.md)
+您正在使用 @SITE_NAME@ 和 Vue？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue.md)
 :::

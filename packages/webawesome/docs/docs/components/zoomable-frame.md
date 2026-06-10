@@ -77,7 +77,7 @@ use-cases:
 
 ### 启用主题同步
 
-默认情况下，框架不会将主题类同步到 iframe 中。添加 `with-theme-sync` 属性可以将宿主页面的浅色/深色模式和[主题选择器类](/docs/theming-overview)（例如 `wa-theme-*`、`wa-brand-*` 和 `wa-palette-*`）镜像到 iframe 文档中。当 iframe 渲染应与宿主页面主题匹配的 Web Awesome 样式时，这非常有用。
+默认情况下，框架不会将主题类同步到 iframe 中。添加 `with-theme-sync` 属性可以将宿主页面的浅色/深色模式和[主题选择器类](/docs/theming-overview)（例如 `wa-theme-*`、`wa-brand-*` 和 `wa-palette-*`）镜像到 iframe 文档中。当 iframe 渲染应与宿主页面主题匹配的 @SITE_NAME@ 样式时，这非常有用。
 
 ```html {.example}
 <wa-zoomable-frame src="/examples/themes/showcase" zoom="0.5" with-theme-sync> </wa-zoomable-frame>

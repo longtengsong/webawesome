@@ -12,7 +12,7 @@ import styles from './dropdown-item.styles.js';
 /**
  * @summary Dropdown items represent selectable entries within a dropdown menu, including standard actions, checkable
  *  items, and submenu triggers.
- * @documentation https://webawesome.com/docs/components/dropdown-item
+ * @documentation @SITE_URL@/docs/components/dropdown-item
  * @status stable
  * @since 3.0
  *

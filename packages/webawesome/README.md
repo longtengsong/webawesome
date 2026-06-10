@@ -1,1 +1,1 @@
-Visit our documentation! <https://webawesome.com>
+Visit our documentation! <@SITE_URL@>

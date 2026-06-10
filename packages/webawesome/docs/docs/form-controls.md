@@ -1,6 +1,6 @@
 ---
 title: 表单控件
-description: 使用 Web Awesome 表单控件。
+description: 使用 @SITE_NAME@ 表单控件。
 layout: page-outline
 synonyms:
   - forms
@@ -18,11 +18,11 @@ use-cases:
   - 约束验证
 ---
 
-Web Awesome 表单控件是与表单关联的自定义元素，这意味着它们会像原生 `<form>` 控件一样随表单一起提交。它们还支持约束验证，这是浏览器原生的客户端表单验证功能。
+@SITE_NAME@ 表单控件是与表单关联的自定义元素，这意味着它们会像原生 `<form>` 控件一样随表单一起提交。它们还支持约束验证，这是浏览器原生的客户端表单验证功能。
 
 ## 约束验证
 
-Web Awesome 表单控件可以通过浏览器的[约束验证 API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 启用客户端验证。您可以使用 `required`、`pattern`、`minlength`、`maxlength` 等属性来激活它。Web Awesome 实现了与原生表单控件相同的许多属性，但请查看文档以了解每个组件支持的属性列表。
+@SITE_NAME@ 表单控件可以通过浏览器的[约束验证 API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 启用客户端验证。您可以使用 `required`、`pattern`、`minlength`、`maxlength` 等属性来激活它。@SITE_NAME@ 实现了与原生表单控件相同的许多属性，但请查看文档以了解每个组件支持的属性列表。
 
 如果您不想使用客户端验证，可以通过在周围的 `<form>` 元素上添加 `novalidate` 来抑制此行为。
 
@@ -166,7 +166,7 @@ Web Awesome 表单控件可以通过浏览器的[约束验证 API](https://devel
 
 ## 自定义验证样式
 
-由于表单控件的使用方式多样，Web Awesome 的默认主题不提供开箱即用的表单控件验证样式。
+由于表单控件的使用方式多样，@SITE_NAME@ 的默认主题不提供开箱即用的表单控件验证样式。
 
 相反，以下[自定义状态](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/states)会在用户与控件交互时被应用，以反映控件的有效性。您可以使用它们为您感兴趣的任意验证状态创建自定义样式。
 

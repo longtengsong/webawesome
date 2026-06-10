@@ -1,5 +1,5 @@
 {%- macro proBadge(params) -%}
-{%- set description = params and params.description or "此功能需要 Web Awesome Pro 访问权限" -%}
+{%- set description = params and params.description or "此功能需要 @SITE_NAME@ Pro 访问权限" -%}
 {%- set badgeId = params and params.id or ("pro-badge-" + ("" | uniqueId(8))) -%}
 <wa-badge appearance="accent" pill class="pro" id="{{ badgeId }}" data-pro-badge>Pro</wa-badge><wa-tooltip for="{{ badgeId }}">{{ description }}</wa-tooltip>
 {%- endmacro -%}

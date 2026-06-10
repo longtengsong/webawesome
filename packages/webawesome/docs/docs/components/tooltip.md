@@ -136,7 +136,7 @@ use-cases:
 <wa-tooltip for="no-arrow" without-arrow>这是一个没有箭头的工具提示</wa-tooltip>
 ```
 
-要全局覆盖它，请在 Web Awesome 样式表加载后在样式表的根块中设置它。
+要全局覆盖它，请在 @SITE_NAME@ 样式表加载后在样式表的根块中设置它。
 
 ```css
 :root {

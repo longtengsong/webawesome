@@ -7,7 +7,7 @@ import styles from './scroller.styles.js';
 /**
  * @summary Scrollers wrap overflowing content in an accessible container with visual cues that help users recognize and
  *  navigate scrollable regions.
- * @documentation https://webawesome.com/docs/components/scroller
+ * @documentation @SITE_URL@/docs/components/scroller
  * @status stable
  * @since 3.0
  *

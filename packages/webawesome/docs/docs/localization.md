@@ -1,6 +1,6 @@
 ---
 title: 本地化
-description: 了解如何以最小的代价本地化 Web Awesome。
+description: 了解如何以最小的代价本地化 @SITE_NAME@。
 layout: page-outline
 synonyms:
   - i18n
@@ -19,7 +19,7 @@ use-cases:
   - 从右到左
 ---
 
-组件可以通过导入相应的翻译文件并设置 `<html>` 元素上的 [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) 和/或 [`dir`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) 属性来实现本地化。以下是一个使用西班牙语渲染 Web Awesome 组件的示例。
+组件可以通过导入相应的翻译文件并设置 `<html>` 元素上的 [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) 和/或 [`dir`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) 属性来实现本地化。以下是一个使用西班牙语渲染 @SITE_NAME@ 组件的示例。
 
 ```html
 <html lang="es">
@@ -37,7 +37,7 @@ use-cases:
 
 ## 可用翻译
 
-Web Awesome 提供了[多种翻译](https://github.com/shoelace-style/webawesome/tree/next/packages/webawesome/src/translations)。默认语言为英语（美国），同时也是回退语言环境。因此，您无需导入英语翻译。
+@SITE_NAME@ 提供了[多种翻译](https://github.com/shoelace-style/webawesome/tree/next/packages/webawesome/src/translations)。默认语言为英语（美国），同时也是回退语言环境。因此，您无需导入英语翻译。
 
 您可以使用以下语法导入翻译，其中 `<code>` 替换为上述任何语言代码。
 
@@ -63,7 +63,7 @@ import('/translations/<code>.js');
 2. 查找 `es`
 3. 回退到 `en`
 
-Web Awesome 使用英语作为回退，以提供比渲染空白或抛出错误更好的体验。
+@SITE_NAME@ 使用英语作为回退，以提供比渲染空白或抛出错误更好的体验。
 
 ### 提交新翻译或改进
 
@@ -74,7 +74,7 @@ Web Awesome 使用英语作为回退，以提供比渲染空白或抛出错误�
 如果您有任何疑问，请发起[讨论]({{ site.github.discussions }})或在[社区聊天]({{ site.urls.discord }})中提问。
 
 :::info
-Web Awesome 为组件内部提供本地化机制。这不适用于整个应用程序的本地化。如果您需要在应用中本地化内容，应使用更合适的工具，例如 [i18next](https://www.i18next.com/)。
+@SITE_NAME@ 为组件内部提供本地化机制。这不适用于整个应用程序的本地化。如果您需要在应用中本地化内容，应使用更合适的工具，例如 [i18next](https://www.i18next.com/)。
 :::
 
 ## 单页多语言环境

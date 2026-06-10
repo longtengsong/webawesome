@@ -20,7 +20,7 @@ use-cases:
   - 导航图标
 ---
 
-Web Awesome 附带了超过 2,000 个由 [Font Awesome](https://fontawesome.com/) 提供的免费图标。这些图标属于 `default` 图标库。Font Awesome Pro 用户可以解锁额外的图标系列。或者，如果你愿意，可以注册自己的[自定义图标库](#icon-libraries)。
+@SITE_NAME@ 附带了超过 2,000 个由 [Font Awesome](https://fontawesome.com/) 提供的免费图标。这些图标属于 `default` 图标库。Font Awesome Pro 用户可以解锁额外的图标系列。或者，如果你愿意，可以注册自己的[自定义图标库](#icon-libraries)。
 
 ```html {.example}
 <wa-icon name="star" label="星星" style="font-size: 2em;"></wa-icon>
@@ -158,7 +158,7 @@ Web Awesome 附带了超过 2,000 个由 [Font Awesome](https://fontawesome.com/
 
 ### 旋转和翻转
 
-Web Awesome 支持 [{{ site.siblings.fontAwesome.name }} 的旋转和翻转实用程序](https://docs.fontawesome.com/web/style/rotate/)来调整图标方向。要旋转或翻转型号，在引用图标时使用 `rotate` 和 `flip` 属性。
+@SITE_NAME@ 支持 [{{ site.siblings.fontAwesome.name }} 的旋转和翻转实用程序](https://docs.fontawesome.com/web/style/rotate/)来调整图标方向。要旋转或翻转型号，在引用图标时使用 `rotate` 和 `flip` 属性。
 
 ```html {.example}
 <wa-icon name="snowboarding" label="单板滑雪" style="font-size: 2em;"></wa-icon>
@@ -172,7 +172,7 @@ Web Awesome 支持 [{{ site.siblings.fontAwesome.name }} 的旋转和翻转实�
 
 ### 动画
 
-Web Awesome 支持 [{{ site.siblings.fontAwesome.name }} 的动画实用程序](https://docs.fontawesome.com/web/style/animate/)来为图标添加视觉吸引力。要选择不同类型的动画，在引用图标时使用 `animation` 属性。
+@SITE_NAME@ 支持 [{{ site.siblings.fontAwesome.name }} 的动画实用程序](https://docs.fontawesome.com/web/style/animate/)来为图标添加视觉吸引力。要选择不同类型的动画，在引用图标时使用 `animation` 属性。
 
 :::info
 所有[图标动画都遵守](https://docs.fontawesome.com/web/style/animate/#accessibility) `prefers-reduced-motion` 并在设置为 `reduce` 时自动禁用。
@@ -650,7 +650,7 @@ Pro+ 图标可以通过[提供有效的 {{ site.siblings.fontAwesome.name }} 工
 ```
 
 :::warning
-`setIconPath()` 必须在 Web Awesome 组件加载之前调用，类似于 `setBasePath()` 和 `setKitCode()`。
+`setIconPath()` 必须在 @SITE_NAME@ 组件加载之前调用，类似于 `setBasePath()` 和 `setKitCode()`。
 :::
 
 ### 自定义默认库
@@ -698,9 +698,9 @@ Pro+ 图标可以通过[提供有效的 {{ site.siblings.fontAwesome.name }} 工
 
 ### 自定义系统库
 
-系统库仅包含 Web Awesome 组件内部使用的图标。与默认图标库不同，系统库不依赖于物理资产。相反，它的图标作为数据 URI 硬编码在解析器中，以确保它们的可用性。
+系统库仅包含 @SITE_NAME@ 组件内部使用的图标。与默认图标库不同，系统库不依赖于物理资产。相反，它的图标作为数据 URI 硬编码在解析器中，以确保它们的可用性。
 
-如果你想更改 Web Awesome 内部使用的图标，可以使用 `system` 名称和自定义解析器注册一个图标库。如果你选择这样做，你有责任提供组件所需的所有图标。你可以参考 `src/components/library.system.ts` 获取 Web Awesome 使用的系统图标的完整列表。
+如果你想更改 @SITE_NAME@ 内部使用的图标，可以使用 `system` 名称和自定义解析器注册一个图标库。如果你选择这样做，你有责任提供组件所需的所有图标。你可以参考 `src/components/library.system.ts` 获取 @SITE_NAME@ 使用的系统图标的完整列表。
 
 ```html
 <script type="module">
@@ -716,7 +716,7 @@ Pro+ 图标可以通过[提供有效的 {{ site.siblings.fontAwesome.name }} 工
 
 你可以通过图标库注册额外的图标以与 `<wa-icon>` 组件一起使用。图标文件可以存在于本地或启用 CORS 的端点（例如 CDN）。你可以注册的图标库数量没有限制，注册它们也没有相关成本，因为单个图标仅在使用时才会被请求。
 
-Web Awesome 附带两个内置图标库，`default` 和 `system`。[默认图标库](#customizing-the-default-library)由 [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}) 提供。[系统图标库](#customizing-the-system-library)仅包含 Web Awesome 组件内部使用的一小部分图标。
+@SITE_NAME@ 附带两个内置图标库，`default` 和 `system`。[默认图标库](#customizing-the-default-library)由 [{{ site.siblings.fontAwesome.name }}]({{ site.siblings.fontAwesome.url }}) 提供。[系统图标库](#customizing-the-system-library)仅包含 @SITE_NAME@ 组件内部使用的一小部分图标。
 
 要注册额外的图标库，请使用从 `dist/webawesome.js` 导出的 `registerIconLibrary()` 函数。至少，你必须提供一个名称和一个解析器函数。解析器函数将图标名称转换为相应 SVG 文件存在的 URL。请参考下面的示例以更好地理解它的工作原理。
 

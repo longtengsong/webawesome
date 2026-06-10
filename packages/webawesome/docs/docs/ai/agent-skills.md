@@ -1,12 +1,12 @@
 ---
 title: Agent Skills
-description: Web Awesome 发布 Agent Skills 来帮助 AI 编程助手理解并使用我们的组件。
+description: "@SITE_NAME@ 发布 Agent Skills 来帮助 AI 编程助手理解并使用我们的组件。"
 layout: page-outline
 ---
 
 [Agent Skills 规范](https://agentskills.io/) 是一个标准，用于为 AI 编程助手提供结构化文档。它通过一个组织良好的 markdown 文件目录，帮助 AI 工具理解您项目的 API、约定和最佳实践。
 
-Web Awesome 发布了一个 Agent Skills，为 AI 工具提供关于我们组件的全面信息，包括它们的 API、使用模式、主题选项等。
+@SITE_NAME@ 发布了一个 Agent Skills，为 AI 工具提供关于我们组件的全面信息，包括它们的 API、使用模式、主题选项等。
 
 :::warning
 此功能是实验性的！Agent Skills 格式及其内容可能会根据反馈和 AI 能力的发展而发生变化。
@@ -14,20 +14,20 @@ Web Awesome 发布了一个 Agent Skills，为 AI 工具提供关于我们组件
 
 ## 为什么要使用它？
 
-在使用像 Claude Code、Cursor 或其他支持 Agent Skills 的 AI 编程助手时，您可以引用 Web Awesome skill，为 AI 提供关于我们组件的深入上下文。这可以带来更准确的代码建议，更好地理解组件 API，并在生成 Web Awesome 代码时减少幻觉。
+在使用像 Claude Code、Cursor 或其他支持 Agent Skills 的 AI 编程助手时，您可以引用 @SITE_NAME@ skill，为 AI 提供关于我们组件的深入上下文。这可以带来更准确的代码建议，更好地理解组件 API，并在生成 @SITE_NAME@ 代码时减少幻觉。
 
 与单个文件不同，Agent Skills 使用渐进式披露——AI 只加载当前任务所需的文档，使其在复杂项目中更高效。
 
 ## 访问 Skill
 
-Agent Skills 在每个 Web Awesome 构建中都可以在以下位置找到：
+Agent Skills 在每个 @SITE_NAME@ 构建中都可以在以下位置找到：
 
 ```
 /dist/skills/webawesome/
 /dist-cdn/skills/webawesome/
 ```
 
-如果您通过 npm 安装了 Web Awesome，也可以在 `node_modules` 目录中找到它：
+如果您通过 npm 安装了 @SITE_NAME@，也可以在 `node_modules` 目录中找到它：
 
 ```
 node_modules/@awesome.me/webawesome/dist/skills/webawesome/
@@ -55,7 +55,7 @@ webawesome/
 
 ### Claude Code
 
-如果您正在使用 [Claude Code](https://claude.ai/code)，您可以使用 [skills CLI](https://skills.sh/) 在本地安装 Web Awesome skill：
+如果您正在使用 [Claude Code](https://claude.ai/code)，您可以使用 [skills CLI](https://skills.sh/) 在本地安装 @SITE_NAME@ skill：
 
 ```bash
 # 安装 skill
@@ -65,7 +65,7 @@ npx skills add ./node_modules/@awesome.me/webawesome/dist/skills/webawesome
 npx skills remove webawesome
 ```
 
-安装后，Claude Code 将自动使用该 skill。该 skill 以符号链接方式安装，因此当您通过 npm 更新 Web Awesome 时，它会自动保持最新。
+安装后，Claude Code 将自动使用该 skill。该 skill 以符号链接方式安装，因此当您通过 npm 更新 @SITE_NAME@ 时，它会自动保持最新。
 
 您也可以手动引用 skill 目录：
 
@@ -93,7 +93,7 @@ Claude Code 还可以自动发现并使用您项目中的 skill。
 
 Agent Skills 包含：
 
-- **SKILL.md** — Web Awesome 概览、快速入门指南、组件列表、主题信息以及详细参考的链接
+- **SKILL.md** — @SITE_NAME@ 概览、快速入门指南、组件列表、主题信息以及详细参考的链接
 - **组件文档** — 每个组件的独立文件，包含完整的 API 详情、示例、插槽、属性、方法、事件和 CSS 自定义选项
 - **安装指南** — npm、CDN 和自托管选项
 - **使用模式** — 使用属性、特性、事件、方法和插槽
@@ -104,7 +104,7 @@ Agent Skills 包含：
 
 ## Agent Skills 与 llms.txt 的对比
 
-Web Awesome 同时提供 [llms.txt 文件](/docs/ai/llms) 和 [Agent Skills](https://agentskills.io/)。以下是如何选择使用：
+@SITE_NAME@ 同时提供 [llms.txt 文件](/docs/ai/llms) 和 [Agent Skills](https://agentskills.io/)。以下是如何选择使用：
 
 | 特性 | Agent Skills | llms.txt |
 |---------|-------------|----------|

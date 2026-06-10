@@ -1,6 +1,6 @@
 ---
 title: 自定义与主题
-description: 了解如何通过主题、部件、自定义属性和自定义状态来自定义 Web Awesome。
+description: 了解如何通过主题、部件、自定义属性和自定义状态来自定义 @SITE_NAME@。
 layout: page-outline
 synonyms:
   - styling
@@ -34,11 +34,11 @@ use-cases:
   - 影子 DOM
 ---
 
-您可以通过主题在高层级上自定义 Web Awesome 的外观和风格。有关主题系统如何工作的概述 — [主题](/docs/themes)、[调色板](/docs/color-palettes)、[变体](/docs/tokens/color#variant-colors)和深色模式 — 请参阅[主题](/docs/theming-overview)。对于更高级的自定义，您可以使用 CSS 部件和自定义属性来针对各个组件进行定制。
+您可以通过主题在高层级上自定义 @SITE_NAME@ 的外观和风格。有关主题系统如何工作的概述 — [主题](/docs/themes)、[调色板](/docs/color-palettes)、[变体](/docs/tokens/color#variant-colors)和深色模式 — 请参阅[主题](/docs/theming-overview)。对于更高级的自定义，您可以使用 CSS 部件和自定义属性来针对各个组件进行定制。
 
 ## 主题
 
-Web Awesome 使用[主题](/docs/themes)在整个库中应用统一的风格。主题是通过一组预定义的 CSS 自定义属性（我们称之为[设计令牌](/docs/tokens)）构建的，并且有许多预建主题可供选择。
+@SITE_NAME@ 使用[主题](/docs/themes)在整个库中应用统一的风格。主题是通过一组预定义的 CSS 自定义属性（我们称之为[设计令牌](/docs/tokens)）构建的，并且有许多预建主题可供选择。
 
 ### 使用预建主题
 
@@ -161,7 +161,7 @@ Web Awesome 使用[主题](/docs/themes)在整个库中应用统一的风格。�
 
 #### 检测配色方案偏好
 
-虽然浅色和深色模式样式已内置于所有主题中，但 Web Awesome 不会自动检测用户的配色方案偏好。我们建议在应用层面进行此操作。
+虽然浅色和深色模式样式已内置于所有主题中，但 @SITE_NAME@ 不会自动检测用户的配色方案偏好。我们建议在应用层面进行此操作。
 
 按照以下最佳实践来支持浅色和深色模式：
 
@@ -207,7 +207,7 @@ document.getElementById('color-scheme-button').addEventListener('click', () => {
 
 ### 使用 CSS 自定义
 
-对于更多的自定义，您可以脱离常规，仅用 CSS 覆盖任何主题 — 无需预处理器。所有令牌都使用 `--wa-` 前缀以防止与其他库冲突。编写一个覆盖 Web Awesome [设计令牌](/docs/tokens)的样式表，您就可以开始了。
+对于更多的自定义，您可以脱离常规，仅用 CSS 覆盖任何主题 — 无需预处理器。所有令牌都使用 `--wa-` 前缀以防止与其他库冲突。编写一个覆盖 @SITE_NAME@ [设计令牌](/docs/tokens)的样式表，您就可以开始了。
 
 以下是一个在两个配色方案中调整字体、间距和圆角半径的起始示例：
 
@@ -300,7 +300,7 @@ document.getElementById('color-scheme-button').addEventListener('click', () => {
 
 ## 自定义组件
 
-虽然主题提供了自定义库的高层级方式，但各个组件提供了不同的"钩子"作为低层级方式，逐个进行自定义。Web Awesome 组件使用[影子 DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM) 来封装其样式和行为。因此，您不能简单地使用常规的 CSS 选择器来定位其内部结构。相反，组件会暴露一组 CSS 部件、自定义属性和自定义状态，可用于定位以自定义其外观。
+虽然主题提供了自定义库的高层级方式，但各个组件提供了不同的"钩子"作为低层级方式，逐个进行自定义。@SITE_NAME@ 组件使用[影子 DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM) 来封装其样式和行为。因此，您不能简单地使用常规的 CSS 选择器来定位其内部结构。相反，组件会暴露一组 CSS 部件、自定义属性和自定义状态，可用于定位以自定义其外观。
 
 ### CSS 部件
 
@@ -395,7 +395,7 @@ wa-checkbox:state(checked) {
 例如，我们可以通过使用标准 CSS 属性和 CSS 部件，为 `<input type="checkbox">` 应用与 `<wa-checkbox>` 相同的自定义样式：
 
 ```html {.example}
-<wa-checkbox class="pinkify">Web Awesome 复选框</wa-checkbox>
+<wa-checkbox class="pinkify">@SITE_NAME@ 复选框</wa-checkbox>
 <br />
 <label>
   <input type="checkbox" class="pinkify" />

@@ -17,7 +17,7 @@ import styles from './switch.styles.js';
 /**
  * @summary Switches toggle a single setting on or off and apply the change immediately, without requiring a form
  *  submission.
- * @documentation https://webawesome.com/docs/components/switch
+ * @documentation @SITE_URL@/docs/components/switch
  * @status stable
  * @since 2.0
  *

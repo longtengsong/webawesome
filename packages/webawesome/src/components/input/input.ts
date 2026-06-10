@@ -19,7 +19,7 @@ import styles from './input.styles.js';
 /**
  * @summary Inputs collect single-line data from the user, such as text, numbers, email addresses, and passwords. They
  *  support labels, hints, validation, and prefix or suffix slots.
- * @documentation https://webawesome.com/docs/components/input
+ * @documentation @SITE_URL@/docs/components/input
  * @status stable
  * @since 2.0
  *

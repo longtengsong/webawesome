@@ -1,6 +1,6 @@
 ---
 title: 迁移清单
-description: 用于将项目从 Shoelace 2.x 迁移到 Web Awesome 的交互式清单。
+description: 用于将项目从 Shoelace 2.x 迁移到 @SITE_NAME@ 的交互式清单。
 layout: page
 ---
 
@@ -41,7 +41,7 @@ layout: page
 </wa-card>
 
 <section data-checklist-section="install">
-  <h2>1. 安装 Web Awesome</h2>
+  <h2>1. 安装 @SITE_NAME@</h2>
 
   <wa-checkbox data-checklist-item="install-removed-shoelace">从 <code>package.json</code> 中移除了 <code>@shoelace-style/shoelace</code></wa-checkbox>
   <wa-checkbox data-checklist-item="install-added-webawesome">向 <code>package.json</code> 中添加了 <code>@awesome.me/webawesome</code></wa-checkbox>
@@ -132,7 +132,7 @@ layout: page
   <wa-checkbox data-checklist-item="callout-replace-static">将 <code>&lt;sl-alert&gt;</code> 静态用法替换为 <code>&lt;wa-callout&gt;</code></wa-checkbox>
   <wa-checkbox data-checklist-item="callout-removed-attrs">移除了 <code>open</code>、<code>closable</code>、<code>duration</code>（标注始终渲染）</wa-checkbox>
   <wa-checkbox data-checklist-item="callout-removed-methods">移除了 <code>show()</code>/<code>hide()</code> 调用（使用条件渲染）</wa-checkbox>
-  <wa-checkbox data-checklist-item="callout-toast-migration">将 <code>.toast()</code> 调用迁移到 Web Awesome Pro 的 <code>&lt;wa-toast&gt;</code>（或自行构建）</wa-checkbox>
+  <wa-checkbox data-checklist-item="callout-toast-migration">将 <code>.toast()</code> 调用迁移到 @SITE_NAME@ Pro 的 <code>&lt;wa-toast&gt;</code>（或自行构建）</wa-checkbox>
 
   <h3>对话框和抽屉</h3>
 
@@ -198,7 +198,7 @@ layout: page
   <wa-checkbox data-checklist-item="token-surface-default">将 <code>--sl-color-neutral-0</code> 替换为 <code>--wa-color-surface-default</code></wa-checkbox>
   <wa-checkbox data-checklist-item="token-text-normal">将 <code>--sl-color-neutral-1000</code> 替换为 <code>--wa-color-text-normal</code></wa-checkbox>
   <wa-checkbox data-checklist-item="token-zindex-removed">移除了 <code>--sl-z-index-*</code> 引用（使用级联层和堆叠上下文）</wa-checkbox>
-  <wa-checkbox data-checklist-item="token-color-scale">已调整色阶引用：Shoelace 50/100/.../950 → Web Awesome 95/90/.../05（明度，已反转）</wa-checkbox>
+  <wa-checkbox data-checklist-item="token-color-scale">已调整色阶引用：Shoelace 50/100/.../950 → @SITE_NAME@ 95/90/.../05（明度，已反转）</wa-checkbox>
   <wa-checkbox data-checklist-item="token-fallback-cleanup">已审查所有 <code>var(--sl-*, fallback)</code> 调用，以确保备用值不会默默地掩盖遗漏的迁移</wa-checkbox>
 </section>
 
@@ -249,7 +249,7 @@ layout: page
   <wa-checkbox data-checklist-item="followup-page">尝试了 <code>&lt;wa-page&gt;</code> 用于应用外壳布局</wa-checkbox>
   <wa-checkbox data-checklist-item="followup-popover">在你之前使用带丰富内容的 tooltip 的地方尝试了 <code>&lt;wa-popover&gt;</code></wa-checkbox>
   <wa-checkbox data-checklist-item="followup-number-input">尝试了 <code>&lt;wa-number-input&gt;</code> 而不是 <code>&lt;wa-input type="number"&gt;</code></wa-checkbox>
-  <wa-checkbox data-checklist-item="followup-pro">评估了 Web Awesome Pro 的 <code>&lt;wa-toast&gt;</code>、<code>&lt;wa-combobox&gt;</code>、<code>&lt;wa-file-input&gt;</code>、图表、趋势图、额外主题</wa-checkbox>
+  <wa-checkbox data-checklist-item="followup-pro">评估了 @SITE_NAME@ Pro 的 <code>&lt;wa-toast&gt;</code>、<code>&lt;wa-combobox&gt;</code>、<code>&lt;wa-file-input&gt;</code>、图表、趋势图、额外主题</wa-checkbox>
 </section>
 
 <style>
@@ -409,7 +409,7 @@ layout: page
     updateProgress();
   };
 
-  // Web Awesome 复选框异步升级。在读取状态之前等待它们。
+  // @SITE_NAME@ 复选框异步升级。在读取状态之前等待它们。
   customElements.whenDefined('wa-checkbox').then(() => {
     restore();
     items.forEach(item => item.addEventListener('change', onChange));

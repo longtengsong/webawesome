@@ -159,7 +159,7 @@ function generateLlmsTxt({ components, packageData, frontMatterCache, baseUrl })
   const lines = [];
 
   // H1 Title (required by llmstxt.org spec)
-  lines.push('# Web Awesome');
+  lines.push('# @SITE_NAME@');
   lines.push('');
 
   // Blockquote summary
@@ -169,7 +169,7 @@ function generateLlmsTxt({ components, packageData, frontMatterCache, baseUrl })
   // Overview section
   lines.push(
     `
-Web Awesome 提供一套全面的、可自定义的、可访问的 Web 组件，用于构建现代化的 Web 应用程序。所有组件都使用 Shadow DOM，并且与框架无关，可以与原生 JavaScript 或任何框架（包括 React、Vue、Angular 和 Svelte）一起使用。
+@SITE_NAME@ 提供一套全面的、可自定义的、可访问的 Web 组件，用于构建现代化的 Web 应用程序。所有组件都使用 Shadow DOM，并且与框架无关，可以与原生 JavaScript 或任何框架（包括 React、Vue、Angular 和 Svelte）一起使用。
 
 表单控件是与表单关联的自定义元素，可与原生表单验证和约束验证 API 配合使用。
 

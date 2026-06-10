@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Web Awesome — free/open-source Lit-based web component library (`@awesome.me/webawesome`). Part of a monorepo; the pro package (`webawesome-pro`) extends this one.
+@SITE_NAME@ — free/open-source Lit-based web component library (`@awesome.me/webawesome`). Part of a monorepo; the pro package (`webawesome-pro`) extends this one.
 
 ## Commands
 
@@ -62,7 +62,7 @@ Every component class **must** have these JSDoc tags — they drive Custom Eleme
 
 ```
 @summary       — One-line description
-@documentation — URL to docs page (https://webawesome.com/docs/components/...)
+@documentation — URL to docs page (@SITE_URL@/docs/components/...)
 @status        — stable | experimental | deprecated
 @since         — Version number (e.g., 1.0)
 @dependency    — Each wa-* sub-component used (one tag per dependency)

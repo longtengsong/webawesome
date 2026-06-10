@@ -1,12 +1,12 @@
 ---
 title: 内置主题
-description: 使用 Web Awesome 的任何预制主题，随意样式化（并重新样式化）您的网站。
+description: 使用 @SITE_NAME@ 的任何预制主题，随意样式化（并重新样式化）您的网站。
 layout: page
 ---
 
 <h1>{{ title }}</h1>
 
-<p>主题为您的项目在整个 Web Awesome 库中提供了一致的视觉风格。</p>
+<p>主题为您的项目在整个 @SITE_NAME@ 库中提供了一致的视觉风格。</p>
 
 <p>主题设置了排版、间距、边框、阴影，以及<a href="/docs/tokens/color#variant-colors">变体</a>
   在组件上的呈现方式——全部以<a href="/docs/tokens">设计令牌</a>的形式存在。两个主题可以共享同一个<a
@@ -103,7 +103,7 @@ import '@awesome.me/webawesome/dist/styles/themes/{{ theme.filename }}';
 
       <wa-tab-panel name="self-hosted">
 {% markdown %}
-如果您正在自行托管 Web Awesome，请从您的服务器引入主题样式表：
+如果您正在自行托管 @SITE_NAME@，请从您的服务器引入主题样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/themes/{{ theme.filename }}">

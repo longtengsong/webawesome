@@ -35,7 +35,7 @@ export async function discover(root: Document | Element | ShadowRoot) {
     .map(el => el.tagName.toLowerCase())
     .filter(tag => isWebAwesomeTag(tag));
 
-  // If the root element is an undefined Web Awesome component, add it to the list
+  // If the root element is an undefined @SITE_NAME@ component, add it to the list
   if (rootIsWebAwesomeComponent && !customElements.get(rootTagName)) {
     tags.push(rootTagName);
   }

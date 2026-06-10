@@ -56,7 +56,7 @@ export function getBasePath(subpath = '') {
  * icons from this path instead of the Font Awesome CDN. The expected directory structure mirrors the Font Awesome SVG
  * download, e.g. `{path}/solid/house.svg` or `{path}/brands/github.svg`.
  *
- * This should be called before Web Awesome components are loaded.
+ * This should be called before @SITE_NAME@ components are loaded.
  */
 export function setIconPath(path: string) {
   iconPath = path;
@@ -70,17 +70,17 @@ export function getIconPath() {
   return iconPath.replace(/\/$/, '');
 }
 
-/** Sets the library's Web Awesome kit code. */
+/** Sets the library's @SITE_NAME@ kit code. */
 export function setKitCode(code: string) {
   kitCode = code;
 }
 
 /**
- * Gets the library's Web Awesome kit code.
+ * Gets the library's @SITE_NAME@ kit code.
  *
  * The kit code is used to fetch premium assets, so it needs to be set for certain components to work correctly. This
  * isn't something we can infer, so the user will need to provide it using the `data-fa-kit-code` attribute. This can
- * be on any element, but ideally it should exist on the script that imports Web Awesome.
+ * be on any element, but ideally it should exist on the script that imports @SITE_NAME@.
  *
  *   <script src="bundle.js" data-fa-kit-code="abc123"></script>
  *

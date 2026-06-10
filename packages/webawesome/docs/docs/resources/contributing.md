@@ -1,10 +1,10 @@
 ---
 title: 贡献指南
-description: Web Awesome 是一个开源项目，意味着每个人都可以使用它并为其开发做出贡献。
+description: "@SITE_NAME@ 是一个开源项目，意味着每个人都可以使用它并为其开发做出贡献。"
 layout: page-outline
 ---
 
-许多 Web Awesome 组件是开源的，意味着每个人都可以使用它们并为其开发做出贡献。当您加入我们的社区时，您会发现一个友好的、涵盖各个经验水平的爱好者群体，他们乐意讨论与 Web Awesome 相关的任何事情。
+许多 @SITE_NAME@ 组件是开源的，意味着每个人都可以使用它们并为其开发做出贡献。当您加入我们的社区时，您会发现一个友好的、涵盖各个经验水平的爱好者群体，他们乐意讨论与 @SITE_NAME@ 相关的任何事情。
 
 开始贡献的最简单方式是加入[社区聊天]({{ site.urls.discord }})。这是我们交流、讨论新想法、征求意见等的地方！
 
@@ -75,9 +75,9 @@ layout: page-outline
 
 ## 文档
 
-维护良好的文档可能是一项艰巨的任务，但糟糕的文档会导致用户沮丧并使项目对用户失去吸引力。幸运的是，为 Web Awesome 编写文档既快捷又简单！
+维护良好的文档可能是一项艰巨的任务，但糟糕的文档会导致用户沮丧并使项目对用户失去吸引力。幸运的是，为 @SITE_NAME@ 编写文档既快捷又简单！
 
-Web Awesome 的大部分技术文档是通过 JSDoc 注释和源代码中的 TypeScript 元数据生成的。每个属性、方法、事件等都是通过这种方式记录的。代码内注释鼓励贡献者在发生变更时保持文档的更新，从而使文档不太容易过时。请参考现有组件了解如何在 Web Awesome 中使用 JSDoc 注释。
+@SITE_NAME@ 的大部分技术文档是通过 JSDoc 注释和源代码中的 TypeScript 元数据生成的。每个属性、方法、事件等都是通过这种方式记录的。代码内注释鼓励贡献者在发生变更时保持文档的更新，从而使文档不太容易过时。请参考现有组件了解如何在 @SITE_NAME@ 中使用 JSDoc 注释。
 
 说明、代码示例和交互式演示是经过精心策划的，以提供最佳的用户体验。通常，最相关的信息会首先显示，不太常见的示例会显示在底部。边缘情况和陷阱应在上下文中通过提示或警告来指出。
 
@@ -85,9 +85,9 @@ Web Awesome 的大部分技术文档是通过 JSDoc 注释和源代码中的 Typ
 
 如果您在文档方面需要帮助，请随时在[社区聊天]({{ site.urls.discord }})中联系。
 
-### Web Awesome 风格的 Markdown
+### @SITE_NAME@ 风格的 Markdown
 
-Web Awesome 文档使用 [markdown-it](https://github.com/markdown-it/markdown-it) 的扩展版本。一般来说，它遵循 [Commonmark 规范](https://spec.commonmark.org/)，同时添加了一些额外的功能。
+@SITE_NAME@ 文档使用 [markdown-it](https://github.com/markdown-it/markdown-it) 的扩展版本。一般来说，它遵循 [Commonmark 规范](https://spec.commonmark.org/)，同时添加了一些额外的功能。
 
 #### 代码预览
 
@@ -131,7 +131,7 @@ Web Awesome 文档使用 [markdown-it](https://github.com/markdown-it/markdown-i
 
 ### Frontmatter
 
-Web Awesome 文档中有许多 frontmatter 属性用于执行不同的操作。
+@SITE_NAME@ 文档中有许多 frontmatter 属性用于执行不同的操作。
 
 例如，要仅在开发中显示页面，请使用 `unpublished: true` 键/值对。
 
@@ -166,7 +166,7 @@ eleventyExcludeFromCollections: true
 
 ### 无障碍性
 
-Web Awesome 在构建时考虑了无障碍性。创建适用于各种能力用户在多种场景下的通用组件是一个艰巨的挑战。通常，a11y 问题的解决方案并非黑白分明，因此我们可能无法一次性解决所有问题。但我们可以遵循一些指南，努力使 Web Awesome 成为构建应用程序和网站的可访问基础。
+@SITE_NAME@ 在构建时考虑了无障碍性。创建适用于各种能力用户在多种场景下的通用组件是一个艰巨的挑战。通常，a11y 问题的解决方案并非黑白分明，因此我们可能无法一次性解决所有问题。但我们可以遵循一些指南，努力使 @SITE_NAME@ 成为构建应用程序和网站的可访问基础。
 
 我们认真对待这一承诺，因此请确保您的贡献牢记这一目标。如果您在任何与 a11y 相关的事情上需要帮助，请在[社区聊天]({{ site.urls.discord }})中联系寻求帮助。如果您在库中发现无障碍性问题，请在[问题跟踪器]({{ site.github.issues }})上提交错误。
 
@@ -282,7 +282,7 @@ Web Awesome 在构建时考虑了无障碍性。创建适用于各种能力用�
 
 ### CSS 自定义属性
 
-自定义属性允许用户通过跨组件的 Shadow DOM 边界暴露特定样式来自定义 Web Awesome 组件。使用自定义属性暴露组件的关键特性，用于底层主题定制。避免使用可能干扰正常渲染的样式的自定义属性。
+自定义属性允许用户通过跨组件的 Shadow DOM 边界暴露特定样式来自定义 @SITE_NAME@ 组件。使用自定义属性暴露组件的关键特性，用于底层主题定制。避免使用可能干扰正常渲染的样式的自定义属性。
 
 要将自定义属性作为组件 API 的一部分暴露，请将它们限定在 `:host` 块中。
 
@@ -328,7 +328,7 @@ CSS 变量限定在宿主元素的作用域内，并可以在整个组件中重�
 
 ### CSS 部件命名
 
-虽然 CSS 部件可以命名为[几乎任何内容](https://www.abeautifulsite.net/posts/valid-names-for-css-parts/)，但在 Web Awesome 中，它们必须使用 kebab-case 约定和小写字母。此外，使用[受 BEM 启发的命名约定](https://www.abeautifulsite.net/posts/css-parts-inspired-by-bem/)来区分部件、子部件和状态。
+虽然 CSS 部件可以命名为[几乎任何内容](https://www.abeautifulsite.net/posts/valid-names-for-css-parts/)，但在 @SITE_NAME@ 中，它们必须使用 kebab-case 约定和小写字母。此外，使用[受 BEM 启发的命名约定](https://www.abeautifulsite.net/posts/css-parts-inspired-by-bem/)来区分部件、子部件和状态。
 
 组合元素时，使用 `part` 导出宿主元素，使用 `exportparts` 导出其部件。
 
@@ -348,7 +348,7 @@ render() {
 
 简而言之——当且仅当一个组件在另一个组件的 Shadow Root 内部渲染时，它才是一个依赖项。
 
-许多 Web Awesome 组件在内部使用其他 Web Awesome 组件。例如，`<wa-button>` 分别使用 `<wa-icon>` 和 `<wa-spinner>` 作为其插入符图标和加载状态。由于这些组件出现在按钮的 Shadow Root 中，它们被视为 Button 的依赖项。由于依赖项会自动加载，用户只需导入按钮，一切都会按预期工作。
+许多 @SITE_NAME@ 组件在内部使用其他 @SITE_NAME@ 组件。例如，`<wa-button>` 分别使用 `<wa-icon>` 和 `<wa-spinner>` 作为其插入符图标和加载状态。由于这些组件出现在按钮的 Shadow Root 中，它们被视为 Button 的依赖项。由于依赖项会自动加载，用户只需导入按钮，一切都会按预期工作。
 
 依赖项的经验法则是：如果一个组件在宿主元素的 Shadow Root *内部*渲染，或者如果该组件需要由用户插入（例如 `<wa-radio-group>` + `<wa-radio>`），那么它就是依赖项。
 
@@ -380,7 +380,7 @@ render() {
 
 ### 服务端渲染 (SSR)
 
-Web Awesome 通过 [Lit SSR](https://lit.dev/docs/ssr/overview/) 支持服务端渲染。在 SSR 期间，Lit 调用 `constructor()` 和 `connectedCallback()`，但**不**调用 `firstUpdated()`、`updated()` 或事件处理程序。这意味着仅在浏览器中可用的 API，如 `document.*`、`window.*`、`ResizeObserver`、`MutationObserver` 等，需要在构造函数、类字段初始化器、`connectedCallback()` 和模块级代码中加以保护。在 `firstUpdated()`、`updated()`、事件处理程序或 `@watch` 处理程序中**不需要**保护。
+@SITE_NAME@ 通过 [Lit SSR](https://lit.dev/docs/ssr/overview/) 支持服务端渲染。在 SSR 期间，Lit 调用 `constructor()` 和 `connectedCallback()`，但**不**调用 `firstUpdated()`、`updated()` 或事件处理程序。这意味着仅在浏览器中可用的 API，如 `document.*`、`window.*`、`ResizeObserver`、`MutationObserver` 等，需要在构造函数、类字段初始化器、`connectedCallback()` 和模块级代码中加以保护。在 `firstUpdated()`、`updated()`、事件处理程序或 `@watch` 处理程序中**不需要**保护。
 
 要保护仅浏览器可用的代码，从 `lit` 导入 `isServer` 并提前短路或包装相关代码。不要将浏览器 API 填充到 `globalThis` 上作为变通方法——直接使用 `isServer` 保护。
 

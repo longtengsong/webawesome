@@ -1,6 +1,6 @@
 ---
 title: 间距
-description: 间距工具像其他 Web Awesome 布局工具一样设置 flex 和 grid 容器的 gap 属性。
+description: 间距工具像其他 @SITE_NAME@ 布局工具一样设置 flex 和 grid 容器的 gap 属性。
 layout: docs
 tags: layoutUtilities
 synonyms:

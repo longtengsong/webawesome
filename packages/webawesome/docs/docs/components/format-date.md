@@ -21,7 +21,7 @@ use-cases:
 本地化由浏览器的 [`Intl.DateTimeFormat` API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) 处理。不需要语言包。
 
 ```html {.example}
-<!-- Web Awesome 2 发布日期 🎉 -->
+<!-- @SITE_NAME@ 2 发布日期 🎉 -->
 <wa-format-date date="2020-07-15T09:17:00-04:00"></wa-format-date>
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 文本工具
-description: 文本工具类使用 Web Awesome 主题中的自定义属性和其他标准 CSS 属性来即时样式化文本元素。
+description: 文本工具类使用 @SITE_NAME@ 主题中的自定义属性和其他标准 CSS 属性来即时样式化文本元素。
 layout: docs
 tags: styleUtilities
 synonyms:
@@ -126,7 +126,7 @@ use-cases:
 
 ## 列表
 
-有序 (`<ol>`) 和无序列表 (`<ul>`) 由 Web Awesome 的 [原生样式](/docs/utilities/native/) 或您的浏览器提供默认样式。使用 `wa-list-plain` 来清除任何内置的列表样式。
+有序 (`<ol>`) 和无序列表 (`<ul>`) 由 @SITE_NAME@ 的 [原生样式](/docs/utilities/native/) 或您的浏览器提供默认样式。使用 `wa-list-plain` 来清除任何内置的列表样式。
 
 | 类名             | 预览                                                         |
 | ---------------- | ------------------------------------------------------------ |

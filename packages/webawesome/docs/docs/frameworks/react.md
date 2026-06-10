@@ -1,6 +1,6 @@
 ---
 title: React
-description: 在 React 应用中使用 Web Awesome 的提示。
+description: 在 React 应用中使用 @SITE_NAME@ 的提示。
 layout: page-outline
 ---
 
@@ -12,13 +12,13 @@ layout: page-outline
 
 ## 安装
 
-要添加 Web Awesome 到您的 React 应用，请从 npm 安装该包。
+要添加 @SITE_NAME@ 到您的 React 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-接下来，在您的应用中引入 Web Awesome 主题，导入您需要的组件，然后开始使用它们！
+接下来，在您的应用中引入 @SITE_NAME@ 主题，导入您需要的组件，然后开始使用它们！
 
 ```jsx
 import '@awesome.me/webawesome/dist/styles/webawesome.css';
@@ -29,17 +29,17 @@ export default function App() {
 }
 ```
 
-React 19+ [原生支持自定义元素](https://react.dev/blog/2024/04/25/react-19#support-for-custom-elements)，因此您可以像使用其他 HTML 元素一样使用 Web Awesome 组件。无需包装器！
+React 19+ [原生支持自定义元素](https://react.dev/blog/2024/04/25/react-19#support-for-custom-elements)，因此您可以像使用其他 HTML 元素一样使用 @SITE_NAME@ 组件。无需包装器！
 
 如果您使用的是 React 18 或更低版本，请跳转到[旧版 React 包装器](#旧版-react-包装器react-18-及以下)部分。
 
-:::pro 在使用 Web Awesome Pro？
+:::pro 在使用 @SITE_NAME@ Pro？
 请前往<a href="/workspaces">您的工作区</a>获取个性化安装说明。
 :::
 
 ## TypeScript
 
-如果您正在使用 TypeScript，可以通过 Web Awesome 附带的类型文件添加类型安全。
+如果您正在使用 TypeScript，可以通过 @SITE_NAME@ 附带的类型文件添加类型安全。
 
 ```
 node_modules/@awesome.me/webawesome/dist/custom-elements-jsx.d.ts
@@ -70,7 +70,7 @@ declare module 'react' {
 
 ## 事件处理
 
-许多 Web Awesome 组件会触发[原生事件](https://developer.mozilla.org/en-US/docs/Web/API/Event)。例如，[输入框组件](/components/input)在收到输入时会触发 `input` 事件。在 React 中，您可以使用 `onInput` 来监听该事件。
+许多 @SITE_NAME@ 组件会触发[原生事件](https://developer.mozilla.org/en-US/docs/Web/API/Event)。例如，[输入框组件](/components/input)在收到输入时会触发 `input` 事件。在 React 中，您可以使用 `onInput` 来监听该事件。
 
 以下是如何将输入框的值绑定到状态变量。
 
@@ -111,7 +111,7 @@ export default MyComponent;
 
 如果您的测试环境运行在 Node 环境（即不是真实的浏览器）中，测试 Web 组件可能会很有挑战性。幸运的是，[Jest](https://jestjs.io/) 在支持 Web 组件和提供额外浏览器 API 方面取得了不少进展。然而，它仍然不是浏览器环境的完整复制。
 
-以下是一些提示，如果您的 Jest + Web Awesome 遇到问题，可以帮助您顺利解决。
+以下是一些提示，如果您的 Jest + @SITE_NAME@ 遇到问题，可以帮助您顺利解决。
 
 :::info
 如果您正在寻找一个快速、现代的测试替代方案，请考虑 [Web Test Runner](https://modern-web.dev/docs/test-runner/overview/)。
@@ -153,13 +153,13 @@ Object.defineProperty(window, 'matchMedia', {
 
 ### 转换 ES 模块
 
-ES 模块是一个[得到良好支持的浏览器标准](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)。这是 Web Awesome 的发布方式，但大多数 React 应用期望使用 CommonJS。因此，您可能会遇到以下错误。
+ES 模块是一个[得到良好支持的浏览器标准](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)。这是 @SITE_NAME@ 的发布方式，但大多数 React 应用期望使用 CommonJS。因此，您可能会遇到以下错误。
 
 ```
 Error: Unable to import outside of a module
 ```
 
-要修复此问题，请将以下内容添加到您的 `package.json` 中，告诉转译器处理 Web Awesome 模块。
+要修复此问题，请将以下内容添加到您的 `package.json` 中，告诉转译器处理 @SITE_NAME@ 模块。
 
 ```js
 {
@@ -175,11 +175,11 @@ Error: Unable to import outside of a module
 
 ## 旧版 React 包装器（React 18 及以下）
 
-React 18 及以下版本对自定义元素的[支持较差](https://custom-elements-everywhere.com/#react)。对于这些版本，Web Awesome 为每个组件提供了 React 包装器。
+React 18 及以下版本对自定义元素的[支持较差](https://custom-elements-everywhere.com/#react)。对于这些版本，@SITE_NAME@ 为每个组件提供了 React 包装器。
 
 ### 导入 React 包装器
 
-每个 Web Awesome 组件都可以作为 React 组件导入。请注意，在下面的示例中，您导入的是 `<WaButton>` _React 组件_，而不是 `<wa-button>` _自定义元素_。
+每个 @SITE_NAME@ 组件都可以作为 React 组件导入。请注意，在下面的示例中，您导入的是 `<WaButton>` _React 组件_，而不是 `<wa-button>` _自定义元素_。
 
 ```jsx
 import WaButton from '@awesome.me/webawesome/dist/react/button/index.js';
@@ -199,7 +199,7 @@ export default MyComponent;
 import { WaButton } from '@awesome.me/webawesome/dist/react';
 ```
 
-然而，对额外 Web Awesome 组件进行摇树优化被证明是一个挑战。因此，我们现在建议挑选您要使用的组件，而不是从单个入口点导入。
+然而，对额外 @SITE_NAME@ 组件进行摇树优化被证明是一个挑战。因此，我们现在建议挑选您要使用的组件，而不是从单个入口点导入。
 
 ```diff
 - import { WaButton } from '@awesome.me/webawesome/dist/react';
@@ -208,7 +208,7 @@ import { WaButton } from '@awesome.me/webawesome/dist/react';
 
 ### 使用 React 包装器处理事件
 
-许多 Web Awesome 组件会触发[原生事件](https://developer.mozilla.org/en-US/docs/Web/API/Event)。例如，[输入框组件](/components/input)在收到输入时会触发 `input` 事件。在 React 中，您可以使用 `onInput` 来监听该事件。
+许多 @SITE_NAME@ 组件会触发[原生事件](https://developer.mozilla.org/en-US/docs/Web/API/Event)。例如，[输入框组件](/components/input)在收到输入时会触发 `input` 事件。在 React 中，您可以使用 `onInput` 来监听该事件。
 
 以下是如何将输入框的值绑定到状态变量。
 
@@ -266,5 +266,5 @@ export default MyComponent;
 ```
 
 :::info
-您正在使用 Web Awesome 和 React？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/react.md)
+您正在使用 @SITE_NAME@ 和 React？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/react.md)
 :::

@@ -22,7 +22,7 @@ const ASSIGNED_ID_PROP = '__waCopyButtonAssignedId';
 /**
  * @summary Copy buttons copy text to the clipboard when the user activates them. They provide built-in success and
  *  error feedback so users know the copy worked.
- * @documentation https://webawesome.com/docs/components/copy
+ * @documentation @SITE_URL@/docs/components/copy
  * @status stable
  * @since 3.6
  *

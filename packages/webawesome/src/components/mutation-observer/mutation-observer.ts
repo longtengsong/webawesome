@@ -8,7 +8,7 @@ import styles from './mutation-observer.styles.js';
 /**
  * @summary Mutation observers watch for changes to an element's DOM tree and emit an event when they occur. Provides a
  *  thin, declarative interface to the browser's MutationObserver API.
- * @documentation https://webawesome.com/docs/components/mutation-observer
+ * @documentation @SITE_URL@/docs/components/mutation-observer
  * @status stable
  * @since 2.0
  *

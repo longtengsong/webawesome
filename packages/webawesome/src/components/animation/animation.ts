@@ -11,7 +11,7 @@ import { animations } from './animations.js';
 /**
  * @summary Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes.
  *  Powered by the Web Animations API.
- * @documentation https://webawesome.com/docs/components/animation
+ * @documentation @SITE_URL@/docs/components/animation
  * @status stable
  * @since 2.0
  *
@@ -53,7 +53,7 @@ export default class WaAnimation extends WebAwesomeElement {
   @property({ type: Number }) duration = 1000;
 
   /**
-   * The easing function to use for the animation. This can be a Web Awesome easing function or a custom easing function
+   * The easing function to use for the animation. This can be a @SITE_NAME@ easing function or a custom easing function
    * such as `cubic-bezier(0, 1, .76, 1.14)`.
    */
   @property() easing = 'linear';

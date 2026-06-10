@@ -12,7 +12,7 @@ import styles from './split-panel.styles.js';
 /**
  * @summary Split panels display two adjacent panels separated by a draggable divider, letting users resize each side to
  *  suit their workflow.
- * @documentation https://webawesome.com/docs/components/split-panel
+ * @documentation @SITE_URL@/docs/components/split-panel
  * @status stable
  * @since 2.0
  *

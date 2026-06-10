@@ -11,7 +11,7 @@ import styles from './option.styles.js';
 /**
  * @summary Options represent the individual choices inside a select or similar form control. Each option holds a value
  *  and the label shown to the user.
- * @documentation https://webawesome.com/docs/components/option
+ * @documentation @SITE_URL@/docs/components/option
  * @status stable
  * @since 2.0
  *

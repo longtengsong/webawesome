@@ -1,6 +1,6 @@
 ---
 title: 代理技能
-description: Web Awesome 发布了代理技能来帮助 AI 编码助手理解和使用我们的组件。
+description: "@SITE_NAME@ 发布了代理技能来帮助 AI 编码助手理解和使用我们的组件。"
 layout: page-outline
 ---
 

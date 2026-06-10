@@ -16,7 +16,7 @@ import styles from './tooltip.styles.js';
 
 /**
  * @summary Tooltips display brief contextual information when the user hovers, focuses, or taps a target element.
- * @documentation https://webawesome.com/docs/components/tooltip
+ * @documentation @SITE_URL@/docs/components/tooltip
  * @status stable
  * @since 2.0
  *

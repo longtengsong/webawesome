@@ -6,7 +6,7 @@ layout: page-outline
 
 {% from "macros/component-badges.njk" import statusBadge %}
 
-Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义化版本控制</a>，本页面的每个版本发布遵循 <a href="https://keepachangelog.com/" class="appearance-plain">维护更新日志</a> 约定。每个[组件](/docs/components) 都有一个状态徽章，告诉您可以对其 API 有什么预期。
+@SITE_NAME@ 遵循 <a href="https://semver.org/" class="appearance-plain">语义化版本控制</a>，本页面的每个版本发布遵循 <a href="https://keepachangelog.com/" class="appearance-plain">维护更新日志</a> 约定。每个[组件](/docs/components) 都有一个状态徽章，告诉您可以对其 API 有什么预期。
 
 <h2 class="wa-heading-m wa-cluster wa-gap-s" data-no-anchor data-no-outline>稳定组件 {{ statusBadge('stable') }}</h2>
 这些组件有稳定的 API。重大变更仅在主要版本中出现，弃用的功能会保留到下一个主要版本。
@@ -155,7 +155,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 
 :::added
 
-- 将 `<wa-page>` 从 {{ site.namePro }} 移到 Web Awesome 核心
+- 将 `<wa-page>` 从 {{ site.namePro }} 移到 @SITE_NAME@ 核心
 - 添加了新的免费实验性组件：`<wa-markdown>`（14 个扩展目标中的第 6 个）
 - 为使用自动加载器时预加载尚未在页面上的组件添加了 `data-wa-preload` 属性 [issue:1501]
 - 为 `<wa-color-picker>` 添加了 `placement` 属性 [issue:2099]
@@ -180,7 +180,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 - 修复了 `<wa-select>` 中的一个 bug：当所选选项有空字符串值时，`state(blank)` 自定义状态错误应用 [issue:1920]
 - 修复了 `<wa-dropdown-item>` 中的一个 bug：当项禁用时，`click` 事件仍然可能触发 [issue:1817]
 - 修复了 `<wa-select>`、`<wa-combobox>` 和 `<wa-option>` 中的一个 bug：`change` 和 `input` 事件可能以不正确的时机触发 [pr:2243]
-- 修复了 `<wa-drawer>` 中的一个 bug：在 `<head>` 中包含 Web Awesome 时会抛出错误 [discuss:2241]
+- 修复了 `<wa-drawer>` 中的一个 bug：在 `<head>` 中包含 @SITE_NAME@ 时会抛出错误 [discuss:2241]
 - 修复了多个组件中的 Lit 开发模式"更新中更改"警告 [issue:1269]
 - 修复了 Native Styles 中的一个 bug：文本会在 `<pre>` 元素中错误溢出
 - 修复了 `<wa-details>` 中的一个 bug：快速切换打开状态可能会导致内容可见性与打开属性不同步
@@ -334,7 +334,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 - 添加了 `<wa-sparkline>` 作为实验性 Pro 组件
 - 添加了 `<wa-number-input>` 作为实验性组件，用于带步进按钮的数值输入 [issue:1688]
 - 添加了 [代理技能](/docs/ai/agent-skills)，供遵循 [agentskills.io](https://agentskills.io/) 规范的 AI 编码助手使用
-- 添加了 llms.txt 以协助 AI 助手使用 Web Awesome [discuss:1100]
+- 添加了 llms.txt 以协助 AI 助手使用 @SITE_NAME@ [discuss:1100]
 - 添加了 CEM 生成的 Vue 和 Svelte 类型
 - 为可拖动元素添加了 `pointercancel` 和 `touchcancel` 事件处理，以防止拖动卡住
 - 添加了 `wa-justify-content-*` 工具类 [pr:1930]
@@ -391,7 +391,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 :::added
 
 - 添加了 `<wa-combobox>` 作为实验性 Pro 组件 [issue:1074]
-- 添加了 [官方 Web Awesome Figma 设计套件](/docs/resources/figma) 的 2.0.0 版
+- 添加了 [官方 @SITE_NAME@ Figma 设计套件](/docs/resources/figma) 的 2.0.0 版
 - 添加了对 {{ site.namePro }} 的 npm 支持
 - 添加了 `layers.css` 以定义级联层顺序，并更新了调色板、主题、原生样式和工具以导入新规则以获得更安全的模块化 [pr:1793]
 
@@ -410,7 +410,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 - 修复了 `<wa-dropdown-item>` 中的一个 bug：防止导入图标依赖 [issue:1825]
 - 修复了 `<wa-select>` 中的一个 bug：在多选模式下，阻止点击标签的删除按钮删除选项
 - 修复了 `<wa-select>` 中的一个 bug：在使用 `multiple` 时，标签按字母顺序出现而不是选择顺序
-- 修复了 Web Awesome 表单控件中的一个 bug：导致 `<wa-input form="foo">` 将表单属性设置为等于 `"foo"` 而不是返回打破平台预期的 `HTMLFormElement` [pr:1815]
+- 修复了 @SITE_NAME@ 表单控件中的一个 bug：导致 `<wa-input form="foo">` 将表单属性设置为等于 `"foo"` 而不是返回打破平台预期的 `HTMLFormElement` [pr:1815]
 - 修复了 `<wa-button>` 中的一个 bug：阻止其没有为表单提交复制属性 [pr:1815]
 - 修复了构建脚本未构建 `/dist/(utilities|events).js` 的 bug [pr:1816]
 
@@ -451,7 +451,7 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 - 为 `<wa-textarea>` 重新添加了缺失的 `form-control-label` 部件，以便与其他表单控件保持一致 [pr:1533]
 - 为 `<wa-button>` 添加了焦点委托，以确保使用 `tabindex` 时 tab 键正常工作 [issue:1622]
 - 添加了 [文本工具](/docs/utilities/text/)，用于长文本、表单控件文本、字体大小、字体粗细、文本颜色和截断 [pr:1602]
-- 添加了 [官方 Web Awesome Figma 设计套件](/docs/resources/figma) 的 1.0.0 版
+- 添加了 [官方 @SITE_NAME@ Figma 设计套件](/docs/resources/figma) 的 1.0.0 版
 
 :::
 
@@ -627,11 +627,11 @@ Web Awesome 遵循 <a href="https://semver.org/" class="appearance-plain">语义
 
 ## 3.0.0-beta.1
 
-我们很高兴分享 Web Awesome 的第一个 Beta 版本，其中包括一些重大更改，使库更加直观和一致！
+我们很高兴分享 @SITE_NAME@ 的第一个 Beta 版本，其中包括一些重大更改，使库更加直观和一致！
 
 列表看起来很广泛，但这是因为我们尝试全面记录了每个更改。我们预计大多数用户在升级期间只会遇到其中的几个。大多数是简单的属性重命名（如 clearable 变为 with-clear）和组件简化，实际上减少了您需要编写的代码量。
 
-**如果您是 Web Awesome alpha 用户，请仔细阅读这些发行说明！**
+**如果您是 @SITE_NAME@ alpha 用户，请仔细阅读这些发行说明！**
 
 这些更改和改进中有许多是像您这样的用户反馈的直接结果！这些更改代表了我们在从 alpha 转向更稳定的 beta 版本时正确处理基础的承诺。
 

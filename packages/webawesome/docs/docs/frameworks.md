@@ -1,6 +1,6 @@
 ---
 title: 框架集成
-description: 在各种框架中使用 Web Awesome。
+description: 在各种框架中使用 @SITE_NAME@。
 layout: page-outline
 synonyms:
   - integrations
@@ -19,7 +19,7 @@ use-cases:
   - 集成
 ---
 
-Web Awesome 设计用于与各种框架和谐配合。我们为一些最常见的框架提供了文档，包括设置指南和限制说明。
+@SITE_NAME@ 设计用于与各种框架和谐配合。我们为一些最常见的框架提供了文档，包括设置指南和限制说明。
 
 请选择您使用的框架开始使用。
 

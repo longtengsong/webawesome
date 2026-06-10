@@ -1,6 +1,6 @@
 ---
-title: Web Awesome
-description: 使用 Web Awesome 构建更好的应用，来自 Font Awesome 的开源 Web 组件库。
+title: "@SITE_NAME@"
+description: 使用 @SITE_NAME@ 构建更好的应用，来自 Font Awesome 的开源 Web 组件库。
 layout: page
 ---
 
@@ -259,13 +259,13 @@ layout: page
         </div>
         <wa-icon name="arrow-right"></wa-icon>
       </div>
-      <p>查看我们的安装指南，开始使用 Web Awesome 构建应用。</p>
+      <p>查看我们的安装指南，开始使用 @SITE_NAME@ 构建应用。</p>
     </div>
   </wa-button>
   <wa-divider></wa-divider>
   <div class="summary">
     <h2 class="font-brand"><span class="emphasis">Web</span> Awesome 是什么？</h2>
-    <p>Web Awesome 是最大的开源 UI 组件库，精心设计、高度可定制，且与框架无关。</p>
+    <p>@SITE_NAME@ 是最大的开源 UI 组件库，精心设计、高度可定制，且与框架无关。</p>
     <div class="grid">
       <div class="wa-stack">
         <div class="wa-cluster icon-heading">
@@ -300,8 +300,8 @@ layout: page
 
   <div class="split-block">
     <div>
-      <h2 class="font-brand"><span class="emphasis">您</span>让 Web Awesome 变得卓越</h2>
-      <p>Web Awesome 始于一个由开发者社区贡献推动的开源项目，我们希望能够保持下去。Web Awesome 的核心——现在和将来——始终是免费且开源的。</p>
+      <h2 class="font-brand"><span class="emphasis">您</span>让 @SITE_NAME@ 变得卓越</h2>
+      <p>@SITE_NAME@ 始于一个由开发者社区贡献推动的开源项目，我们希望能够保持下去。@SITE_NAME@ 的核心——现在和将来——始终是免费且开源的。</p>
       <p>无论您是开发者、设计师，还是初出茅庐的技术爱好者，我们都希望您能加入讨论。</p>
     </div>
     <div>
@@ -326,7 +326,7 @@ layout: page
             </div>
             <wa-icon name="arrow-up-right"></wa-icon>
           </div>
-          <p>分享作品、提问交流，与其他 Web Awesome 开发者共同探索创意。</p>
+          <p>分享作品、提问交流，与其他 @SITE_NAME@ 开发者共同探索创意。</p>
         </div>
       </wa-button>
       <wa-button href="mailto:{{ site.emails.hello }}" appearance="filled" class="tile">
@@ -398,7 +398,7 @@ layout: page
     <div class="split-block">
       <div>
         <strong class="font-brand tagline">一起创造卓越</strong>
-        <p>Web Awesome 是来自 <a href="{{ site.siblings.fontAwesome.url }}">{{ site.siblings.fontAwesome.name }}</a> 的开发极客们打造的设计系统平台和开源 Web 组件库。</p>
+        <p>@SITE_NAME@ 是来自 <a href="{{ site.siblings.fontAwesome.url }}">{{ site.siblings.fontAwesome.name }}</a> 的开发极客们打造的设计系统平台和开源 Web 组件库。</p>
       </div>
       <div class="attribution">
         <span>特别鸣谢</span>

@@ -1,6 +1,6 @@
 ---
 title: 焦点
-description: 使用 Web Awesome 的焦点令牌配置可识别的焦点状态。
+description: 使用 @SITE_NAME@ 的焦点令牌配置可识别的焦点状态。
 synonyms:
   - 焦点环
   - 焦点轮廓
@@ -12,7 +12,7 @@ use-cases:
 hasOutline: true
 ---
 
-焦点令牌创建一致、可识别的轮廓，让键盘用户能够追踪他们在页面上的位置。与 [`--wa-color-focus`](?active_tab=color) 一起，这些令牌组装了应用于所有交互式 Web Awesome 组件的焦点环。
+焦点令牌创建一致、可识别的轮廓，让键盘用户能够追踪他们在页面上的位置。与 [`--wa-color-focus`](?active_tab=color) 一起，这些令牌组装了应用于所有交互式 @SITE_NAME@ 组件的焦点环。
 
 <wa-scroller>
   <table class="token-table wa-hover-rows">

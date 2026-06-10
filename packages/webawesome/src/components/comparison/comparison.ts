@@ -12,7 +12,7 @@ import styles from './comparison.styles.js';
 /**
  * @summary Comparisons show the visual differences between two pieces of similar content using a draggable divider. Use
  *  them for before/after images, design revisions, or side-by-side previews.
- * @documentation https://webawesome.com/docs/components/comparison
+ * @documentation @SITE_URL@/docs/components/comparison
  * @status stable
  * @since 2.0
  *

@@ -9,7 +9,7 @@ let id = 0;
 
 /**
  * @summary Tabs label and activate an individual panel inside a tab group.
- * @documentation https://webawesome.com/docs/components/tab
+ * @documentation @SITE_URL@/docs/components/tab
  * @status stable
  * @since 2.0
  *

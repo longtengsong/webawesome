@@ -1,6 +1,6 @@
 ---
 title: 原生样式
-description: 原生样式将您的主题应用于原生 HTML 元素，使它们与 Web Awesome 组件的外观和感觉相匹配。
+description: 原生样式将您的主题应用于原生 HTML 元素，使它们与 @SITE_NAME@ 组件的外观和感觉相匹配。
 layout: page-outline
 tags: styleUtilities
 synonyms:
@@ -21,7 +21,7 @@ use-cases:
   - 默认样式
 ---
 
-原生样式使用设计标记来美化原生 HTML 元素，使它们与您主题的外观和感觉相匹配。虽然这些原生样式完全可选，但它们是统一设计的绝佳起点，并且在您的项目中结合使用原生元素和 Web Awesome 组件时非常有帮助。
+原生样式使用设计标记来美化原生 HTML 元素，使它们与您主题的外观和感觉相匹配。虽然这些原生样式完全可选，但它们是统一设计的绝佳起点，并且在您的项目中结合使用原生元素和 @SITE_NAME@ 组件时非常有帮助。
 
 ## 使用原生样式
 
@@ -40,7 +40,7 @@ use-cases:
 
   <wa-tab-panel name="npm">
 {% markdown %}
-要使用所有 Web Awesome 样式（包括 [工具](/docs/utilities/)），请在您的项目中导入以下样式表：
+要使用所有 @SITE_NAME@ 样式（包括 [工具](/docs/utilities/)），请在您的项目中导入以下样式表：
 
 ```js
 import '@awesome.me/webawesome/dist/styles/webawesome.css';
@@ -57,7 +57,7 @@ import '@awesome.me/webawesome/dist/styles/native.css';
 
   <wa-tab-panel name="self-hosted">
 {% markdown %}
-要使用所有 Web Awesome 样式（包括 [工具](/docs/utilities/)），请在您的项目中包含以下样式表：
+要使用所有 @SITE_NAME@ 样式（包括 [工具](/docs/utilities/)），请在您的项目中包含以下样式表：
 
 ```html
 <link rel="stylesheet" href="/dist/styles/webawesome.css" />
@@ -77,7 +77,7 @@ import '@awesome.me/webawesome/dist/styles/native.css';
 
 ## 选择不使用原生样式
 
-如果您想保留 Web Awesome 的组件、标记和工具，但让原生元素回退到浏览器默认值，请在您自己的样式表中重置该元素。
+如果您想保留 @SITE_NAME@ 的组件、标记和工具，但让原生元素回退到浏览器默认值，请在您自己的样式表中重置该元素。
 
 ```html {.example}
 <div class="wa-cluster wa-align-items-center">
@@ -418,7 +418,7 @@ export function thing() {
 
 ```html {.example}
 <dialog id="dialog-example">
-  <p>This is a native dialog element styled to match Web Awesome components.</p>
+  <p>This is a native dialog element styled to match @SITE_NAME@ components.</p>
   <button type="button">Close</button>
 </dialog>
 
@@ -516,7 +516,7 @@ export function thing() {
 
 ### 表单控件
 
-使用 `<input type="">`、`<select>` 和 `<textarea>` 创建各种表单控件。每个控件都与相应的 Web Awesome 组件的外观紧密匹配。
+使用 `<input type="">`、`<select>` 和 `<textarea>` 创建各种表单控件。每个控件都与相应的 @SITE_NAME@ 组件的外观紧密匹配。
 
 ```html {.example}
 <div class="wa-stack">

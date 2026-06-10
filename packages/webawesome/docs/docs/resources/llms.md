@@ -1,6 +1,6 @@
 ---
 title: LLMs
-description: Web Awesome 提供 llms.txt 文件来帮助 AI 助手理解并使用我们的组件。
+description: "@SITE_NAME@ 提供 llms.txt 文件来帮助 AI 助手理解并使用我们的组件。"
 layout: page-outline
 ---
 

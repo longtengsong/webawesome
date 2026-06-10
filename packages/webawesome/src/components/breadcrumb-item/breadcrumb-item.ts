@@ -8,7 +8,7 @@ import styles from './breadcrumb-item.styles.js';
 /**
  * @summary Breadcrumb items represent individual links inside a breadcrumb, typically one per level of the site
  *  hierarchy.
- * @documentation https://webawesome.com/docs/components/breadcrumb-item
+ * @documentation @SITE_URL@/docs/components/breadcrumb-item
  * @status stable
  * @since 2.0
  *

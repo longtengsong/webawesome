@@ -8,7 +8,7 @@ import styles from './card.styles.js';
 /**
  * @summary Cards group related content and actions inside a bordered container. Use them to present products, articles,
  *  user profiles, or any self-contained unit of information.
- * @documentation https://webawesome.com/docs/components/card
+ * @documentation @SITE_URL@/docs/components/card
  * @status stable
  * @since 2.0
  *

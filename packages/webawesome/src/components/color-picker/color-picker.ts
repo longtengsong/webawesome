@@ -47,7 +47,7 @@ declare const EyeDropper: EyeDropperConstructor;
 /**
  * @summary Color pickers let users choose a color from a visual palette or by entering a value. They support HEX, RGB,
  *  HSL, and HSV formats with optional alpha channel and swatch presets.
- * @documentation https://webawesome.com/docs/components/color-picker
+ * @documentation @SITE_URL@/docs/components/color-picker
  * @status stable
  * @since 2.0
  *

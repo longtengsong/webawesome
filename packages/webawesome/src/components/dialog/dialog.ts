@@ -19,7 +19,7 @@ import styles from './dialog.styles.js';
 /**
  * @summary Dialogs appear above the page and require the user's immediate attention. Use them for confirmations, forms,
  *  or focused tasks that interrupt the main flow.
- * @documentation https://webawesome.com/docs/components/dialog
+ * @documentation @SITE_URL@/docs/components/dialog
  * @status stable
  * @since 2.0
  *

@@ -42,7 +42,7 @@ Popover 在其锚定元素被点击时显示交互内容。与 [toolip](/docs/co
 ```html {.example}
 <wa-button appearance="filled" id="popover__anchor-button">显示 Popover</wa-button>
 
-<wa-popover for="popover__anchor-button"> 我锚定在 Web Awesome 按钮上。 </wa-popover>
+<wa-popover for="popover__anchor-button"> 我锚定在 @SITE_NAME@ 按钮上。 </wa-popover>
 
 <br /><br />
 

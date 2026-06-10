@@ -17,7 +17,7 @@ import styles from './rating.styles.js';
 /**
  * @summary Ratings display a numeric score as a row of selectable symbols, typically stars. Use them to capture quick
  *  feedback or show an average rating for a product or piece of content.
- * @documentation https://webawesome.com/docs/components/rating
+ * @documentation @SITE_URL@/docs/components/rating
  * @status stable
  * @since 2.0
  *

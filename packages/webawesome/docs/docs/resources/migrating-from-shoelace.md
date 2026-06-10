@@ -1,6 +1,6 @@
 ---
 title: 从 Shoelace 迁移
-description: 完整的、按组件逐个介绍的指南，帮助您从 Shoelace 2.x 迁移到 Web Awesome。
+description: 完整的、按组件逐个介绍的指南，帮助您从 Shoelace 2.x 迁移到 @SITE_NAME@。
 layout: page-outline
 ---
 
@@ -18,16 +18,16 @@ layout: page-outline
 
 </style>
 
-Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。它保留了 Shoelace 的精神（框架无关的自定义元素，默认可访问，开箱即用的美观），并在更强大的基础上进行了重构：原生表单关联、级联层、基于 OKLCH 的主题系统、真正的实用 CSS 层，以及更丰富的组件库。
+@SITE_NAME@ 是 [Shoelace](https://shoelace.style) 的下一个主要版本。它保留了 Shoelace 的精神（框架无关的自定义元素，默认可访问，开箱即用的美观），并在更强大的基础上进行了重构：原生表单关联、级联层、基于 OKLCH 的主题系统、真正的实用 CSS 层，以及更丰富的组件库。
 
 本指南适用于正在使用 Shoelace 2.x 项目并希望升级的开发者。我们假设您熟悉 HTML、CSS、JavaScript 和自定义元素。
 
-如果您是 Web Awesome 新手，[入门指南](/docs/)是更好的起点。
+如果您是 @SITE_NAME@ 新手，[入门指南](/docs/)是更好的起点。
 
 <wa-callout class="pro">
   <wa-icon slot="icon" name="hand-wave" animation="shake" style="--animation-delay: 2s; --animation-duration: 4s;"></wa-icon>
-  <strong>部分组件现在位于 Web Awesome Pro</strong>
-  Toast 通知、Combobox、文件输入和图表已移至 <a href="#whats-in-web-awesome-pro">Web Awesome Pro</a>。我们用 <wa-badge appearance="accent" pill class="pro" data-pro-badge>Pro</wa-badge> 徽章清晰标注，让您能提前知晓。
+  <strong>部分组件现在位于 @SITE_NAME@ Pro</strong>
+  Toast 通知、Combobox、文件输入和图表已移至 <a href="#whats-in-web-awesome-pro">@SITE_NAME@ Pro</a>。我们用 <wa-badge appearance="accent" pill class="pro" data-pro-badge>Pro</wa-badge> 徽章清晰标注，让您能提前知晓。
 </wa-callout>
 
 ## 快速了解
@@ -38,7 +38,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 2. 替换所有元素前缀：`sl-` → `wa-`
 3. 替换所有 CSS 变量前缀：`--sl-*` → `--wa-*`
 4. 替换所有事件前缀：`sl-` → `wa-`（例如 `sl-show` → `wa-show`）
-5. 替换 `variant="primary"` → `variant="brand"`。Web Awesome 不再使用 "primary"。
+5. 替换 `variant="primary"` → `variant="brand"`。@SITE_NAME@ 不再使用 "primary"。
 6. 移除 `outline`、`circle` 和某些地方的 `text` 按钮属性。改用 `appearance="outlined" | "filled" | "plain"`。
 7. 输入框及类似控件：`prefix`/`suffix` 插槽 → `start`/`end`，`help-text` → `hint`。
 8. `<sl-menu>`/`<sl-menu-item>` → `<wa-dropdown>`/`<wa-dropdown-item>`。不再有独立的菜单组件。
@@ -47,18 +47,18 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 
 本页面的其余部分将详细解释这些变化、逐组件的差异，以及您获得的新功能。
 
-## Web Awesome 与 Shoelace 的区别
+## @SITE_NAME@ 与 Shoelace 的区别
 
 在理念上有一些不同之处。提前了解这些可以节省您的时间。
 
 **级联层（Cascade Layers）**<br>
-组件样式位于 `@layer wa-component` 中，因此您的非分层应用 CSS 会自动在特异性冲突中获胜——您可以删除大部分针对组件内部的 `!important` 覆盖。Web Awesome 自身的层级按强度排序为：`wa-theme`、`wa-color-variant`、`wa-color-palette`、`wa-utilities`、`wa-component`。<br><br>
+组件样式位于 `@layer wa-component` 中，因此您的非分层应用 CSS 会自动在特异性冲突中获胜——您可以删除大部分针对组件内部的 `!important` 覆盖。@SITE_NAME@ 自身的层级按强度排序为：`wa-theme`、`wa-color-variant`、`wa-color-palette`、`wa-utilities`、`wa-component`。<br><br>
 **原生表单关联**<br>
 表单控件使用 `ElementInternals`，因此它们原生参与 `<form>`。`new FormData(form)` 会读取它们，`form.checkValidity()` 包含它们，`form.reset()` 会重置它们。Shoelace 所需的 `formdata` 事件垫片已被移除。<br><br>
 <strong>用于软着陆的 `shoelace` 主题</strong><br>
 在 `<html>` 上应用 `class="wa-theme-shoelace wa-palette-shoelace"`，可获得与 Shoelace 默认值接近的调色板和设计。浅色/深色是基于类的：`wa-light`、`wa-dark`，使用 `wa-invert` 可以翻转子树。（默认还包含 `default` 和 `awesome` 主题；Pro 版本提供更多）。<br><br>
 **原生 HTML 也可以主题化**<br>
-可选的 `dist/styles/native.css` 使用与 Web Awesome 主题相同的设计令牌为纯 HTML 元素（`<button>`、`<input>`、`<table>`、`<details>`、`<dialog>`、标题、列表和块引用）设置主题。Shoelace 没有此功能。<br><br>
+可选的 `dist/styles/native.css` 使用与 @SITE_NAME@ 主题相同的设计令牌为纯 HTML 元素（`<button>`、`<input>`、`<table>`、`<details>`、`<dialog>`、标题、列表和块引用）设置主题。Shoelace 没有此功能。<br><br>
 **真正的实用层**<br>
 布局原语（`wa-cluster`、`wa-stack`、`wa-grid`、`wa-frame`、`wa-flank`、`wa-split`）、间距（`wa-gap-*`）、排版（`wa-body`、`wa-heading`、`wa-caption`、`wa-longform`）和可访问性辅助（`wa-visually-hidden`）作为纯 CSS 类提供。无需 JavaScript，无需组件。<br><br>
 
@@ -85,9 +85,9 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
   </wa-button>
 </div>
 
-### 第 1 步：安装 Web Awesome
+### 第 1 步：安装 @SITE_NAME@
 
-移除 Shoelace 并添加 Web Awesome。
+移除 Shoelace 并添加 @SITE_NAME@。
 
 ```diff
 - npm uninstall @shoelace-style/shoelace
@@ -169,7 +169,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 
 #### 重命名的元素
 
-| Shoelace                   | Web Awesome                          | 备注                                                                                     |
+| Shoelace                   | @SITE_NAME@                          | 备注                                                                                     |
 | -------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------- |
 | `<sl-alert>`               | `<wa-callout>`                       | 静态内联提醒。Toast 交互已移至 `<wa-toast>` <wa-badge appearance="accent" pill class="pro">Pro</wa-badge>。 |
 | `<sl-image-comparer>`      | `<wa-comparison>`                    | 相同概念，更简洁的 API。                                                                 |
@@ -187,7 +187,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 
 #### 新的核心组件
 
-这些是 Web Awesome 中全新的（免费，MIT 许可）。我们在此提及它们，因为它们通常取代了之前需要在 Shoelace 之上编写自定义代码的模式。
+这些是 @SITE_NAME@ 中全新的（免费，MIT 许可）。我们在此提及它们，因为它们通常取代了之前需要在 Shoelace 之上编写自定义代码的模式。
 
 - **`<wa-callout>`：** 替换大多数用于内联消息的 `<sl-alert>`。
 - **`<wa-comparison>`：** 带有前后滑块的视觉内容（替换 `<sl-image-comparer>`）。
@@ -206,7 +206,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 - **`<wa-toast>` 和 `<wa-toast-item>`：** toast 通知栈。替换 `sl-alert.toast()` 模式。
 - **`<wa-combobox>`：** 带有多选、异步加载和标签渲染的组合框或自动完成。
 - **`<wa-file-input>`：** 带有预览和验证的拖放文件输入。
-- **`<wa-chart>` 和七个类型化的图表子类：** `<wa-bar-chart>`、`<wa-line-chart>`、`<wa-pie-chart>`、`<wa-doughnut-chart>`、`<wa-bubble-chart>`、`<wa-scatter-chart>`、`<wa-radar-chart>`、`<wa-polar-area-chart>`。基于 Chart.js 构建，使用 Web Awesome 设计令牌主题化。
+- **`<wa-chart>` 和七个类型化的图表子类：** `<wa-bar-chart>`、`<wa-line-chart>`、`<wa-pie-chart>`、`<wa-doughnut-chart>`、`<wa-bubble-chart>`、`<wa-scatter-chart>`、`<wa-radar-chart>`、`<wa-polar-area-chart>`。基于 Chart.js 构建，使用 @SITE_NAME@ 设计令牌主题化。
 - **`<wa-sparkline>`：** 小型内联趋势可视化。
 
 #### 逐组件变更
@@ -235,7 +235,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 + </wa-button>
 ```
 
-| Shoelace                 | Web Awesome             | 变更                                                                                         |
+| Shoelace                 | @SITE_NAME@             | 变更                                                                                         |
 | ------------------------ | ----------------------- | -------------------------------------------------------------------------------------------- |
 | `variant="default"`      | （默认）                | 默认现在是 `neutral`。无需设置即可获得等效效果。                                              |
 | `variant="primary"`      | `variant="brand"`       | 重命名                                                                                       |
@@ -273,7 +273,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 + </wa-input>
 ```
 
-| Shoelace                  | Web Awesome                          | 变更                                                                                                                       |
+| Shoelace                  | @SITE_NAME@                          | 变更                                                                                                                       |
 | ------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
 | 特性 `help-text`          | 特性 `hint`                          | 重命名                                                                                                                     |
 | 插槽 `help-text`          | 插槽 `hint`                          | 重命名                                                                                                                     |
@@ -310,7 +310,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 + </wa-select>
 ```
 
-| Shoelace         | Web Awesome                      | 变更                   |
+| Shoelace         | @SITE_NAME@                      | 变更                   |
 | ---------------- | -------------------------------- | ---------------------- |
 | 特性 `help-text` | 特性 `hint`                      | 重命名                 |
 | 插槽 `help-text` | 插槽 `hint`                      | 重命名                 |
@@ -346,7 +346,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 +   min-value="100" max-value="500"></wa-slider>
 ```
 
-| Shoelace             | Web Awesome                                                          | 变更                                     |
+| Shoelace             | @SITE_NAME@                                                          | 变更                                     |
 | -------------------- | -------------------------------------------------------------------- | ---------------------------------------- |
 | 元素 `<sl-range>`    | 元素 `<wa-slider>`                                                   | 重命名                                   |
 | 特性 `help-text`     | 特性 `hint`                                                          | 重命名                                   |
@@ -356,7 +356,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 
 ##### wa-callout <span class="de-emphasize">（取代 sl-alert 用于内联使用）</span>
 
-`<sl-alert>` 既是静态内联提醒又是 toast 通知系统。Web Awesome 将这些分开：
+`<sl-alert>` 既是静态内联提醒又是 toast 通知系统。@SITE_NAME@ 将这些分开：
 
 - **静态内联消息** → `<wa-callout>`
 - **Toasts** → `<wa-toast>` <wa-badge appearance="accent" pill class="pro">Pro</wa-badge>
@@ -372,7 +372,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 + </wa-callout>
 ```
 
-| Shoelace                   | Web Awesome          | 变更                                                                                           |
+| Shoelace                   | @SITE_NAME@          | 变更                                                                                           |
 | -------------------------- | -------------------- | ---------------------------------------------------------------------------------------------- |
 | `variant="primary"`        | `variant="brand"`    | 重命名                                                                                         |
 | 特性 `open`                | _（已移除）_         | 提醒始终渲染。使用您自己的条件渲染来隐藏它们。                                                 |
@@ -401,7 +401,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 + </wa-dialog>
 ```
 
-| Shoelace                 | Web Awesome                   | 变更                                                                                                                          |
+| Shoelace                 | @SITE_NAME@                   | 变更                                                                                                                          |
 | ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | 事件 `sl-show`           | 事件 `wa-show`                | 重命名                                                                                                                        |
 | 事件 `sl-after-show`     | 事件 `wa-after-show`          | 重命名                                                                                                                        |
@@ -426,7 +426,7 @@ Web Awesome 是 [Shoelace](https://shoelace.style) 的下一个主要版本。�
 - `<sl-menu>`：菜单（可以是独立的）
 - `<sl-menu-item>`：菜单项
 
-Web Awesome 将这些合并为两个：
+@SITE_NAME@ 将这些合并为两个：
 
 - `<wa-dropdown>`：浮动容器，直接包含项
 - `<wa-dropdown-item>`：菜单项
@@ -452,7 +452,7 @@ Web Awesome 将这些合并为两个：
 
 如果您独立使用 `<sl-menu>`（不在下拉框内，例如静态命令面板），您需要使用 `<wa-dropdown-item>` 在任意容器中自行组装，或使用完全不同的模式。没有独立的菜单元素。
 
-| Shoelace                | Web Awesome                        | 变更                                                      |
+| Shoelace                | @SITE_NAME@                        | 变更                                                      |
 | ----------------------- | ---------------------------------- | --------------------------------------------------------- |
 | `<sl-menu>`             | _（已移除；使用 `<wa-dropdown>`）_ | 没有独立菜单                                              |
 | `<sl-menu-item>`        | `<wa-dropdown-item>`               | 重命名                                                    |
@@ -482,7 +482,7 @@ Web Awesome 将这些合并为两个：
 + <wa-tag variant="brand" pill with-remove>Featured</wa-tag>
 ```
 
-| Shoelace            | Web Awesome          | 变更     |
+| Shoelace            | @SITE_NAME@          | 变更     |
 | ------------------- | -------------------- | -------- |
 | `variant="primary"` | `variant="brand"`    | 重命名   |
 | 特性 `removable`    | 特性 `with-remove`   | 重命名   |
@@ -490,7 +490,7 @@ Web Awesome 将这些合并为两个：
 
 ##### wa-tooltip <span class="de-emphasize">（原为 sl-tooltip）</span>
 
-| Shoelace                       | Web Awesome                               | 变更                      |
+| Shoelace                       | @SITE_NAME@                               | 变更                      |
 | ------------------------------ | ----------------------------------------- | ------------------------- |
 | 特性 `content`                 | 特性 `content`（或默认插槽用于 HTML）     | 相同                      |
 | 事件 `sl-show`/`sl-hide` 等    | 事件 `wa-show`/`wa-hide` 等               | 重命名                    |
@@ -500,7 +500,7 @@ Web Awesome 将这些合并为两个：
 
 标签页使用相同的结构，但激活事件已重命名，面板连接未更改。
 
-| Shoelace                     | Web Awesome                      | 变更     |
+| Shoelace                     | @SITE_NAME@                      | 变更     |
 | ---------------------------- | -------------------------------- | -------- |
 | `sl-tab-show`                | `wa-tab-show`                    | 重命名   |
 | `sl-tab-hide`                | `wa-tab-hide`                    | 重命名   |
@@ -510,7 +510,7 @@ Web Awesome 将这些合并为两个：
 
 格式和值 API 未更改。对大多数应用来说，只有事件前缀是唯一的变更。
 
-| Shoelace                     | Web Awesome            | 变更           |
+| Shoelace                     | @SITE_NAME@            | 变更           |
 | ---------------------------- | ---------------------- | -------------- |
 | 事件 `sl-change`/`sl-input`  | 事件 `change`/`input`  | 原生事件       |
 | 事件 `sl-invalid`            | 事件 `wa-invalid`      | 重命名         |
@@ -518,7 +518,7 @@ Web Awesome 将这些合并为两个：
 
 ##### wa-tree 和 wa-tree-item
 
-| Shoelace                                | Web Awesome                             | 变更     |
+| Shoelace                                | @SITE_NAME@                             | 变更     |
 | --------------------------------------- | --------------------------------------- | -------- |
 | 事件 `sl-selection-change`              | 事件 `wa-selection-change`              | 重命名   |
 | 事件 `sl-expand`/`sl-collapse`          | 事件 `wa-expand`/`wa-collapse`          | 重命名   |
@@ -531,7 +531,7 @@ Web Awesome 将这些合并为两个：
 
 `<wa-carousel>` 目前是 {{ statusBadge('experimental') }}。事件重命名与库的其他部分一致：
 
-| Shoelace          | Web Awesome       | 变更     |
+| Shoelace          | @SITE_NAME@       | 变更     |
 | ----------------- | ----------------- | -------- |
 | `sl-slide-change` | `wa-slide-change` | 重命名   |
 
@@ -539,7 +539,7 @@ Web Awesome 将这些合并为两个：
 
 Web Animations API 表面未更改。事件重命名：
 
-| Shoelace    | Web Awesome | 变更     |
+| Shoelace    | @SITE_NAME@ | 变更     |
 | ----------- | ----------- | -------- |
 | `sl-cancel` | `wa-cancel` | 重命名   |
 | `sl-finish` | `wa-finish` | 重命名   |
@@ -549,7 +549,7 @@ Web Animations API 表面未更改。事件重命名：
 
 `<wa-details>` 扩展了原生 `<details>` 模式。
 
-| Shoelace                       | Web Awesome                    | 变更       |
+| Shoelace                       | @SITE_NAME@                    | 变更       |
 | ------------------------------ | ------------------------------ | ---------- |
 | 事件 `sl-show`/`sl-hide` 等    | 事件 `wa-show`/`wa-hide` 等    | 重命名     |
 | 插槽 `summary`                 | 插槽 `summary`                 | 未更改     |
@@ -558,14 +558,14 @@ Web Animations API 表面未更改。事件重命名：
 
 目前是 {{ statusBadge('experimental') }}。在其他方面可直接替换。
 
-| Shoelace    | Web Awesome | 变更     |
+| Shoelace    | @SITE_NAME@ | 变更     |
 | ----------- | ----------- | -------- |
 | `sl-copy`   | `wa-copy`   | 重命名   |
 | `sl-error`  | `wa-error`  | 重命名   |
 
 ##### wa-rating <span class="de-emphasize">（原为 sl-rating）</span>
 
-| Shoelace                 | Web Awesome                    | 变更                                       |
+| Shoelace                 | @SITE_NAME@                    | 变更                                       |
 | ------------------------ | ------------------------------ | ------------------------------------------ |
 | `sl-change` / `sl-hover` | `change`（原生）/ `wa-hover`   | `change` 是原生的；`wa-hover` 已重命名     |
 
@@ -593,14 +593,14 @@ Web Animations API 表面未更改。事件重命名：
 
 每个 Shoelace `--sl-*` 令牌都有一个 `--wa-*` 对应物，但结构在几个重要方面有所不同。最大的差异：
 
-- **调色板比例已更改。** Shoelace 使用 50/100/200/…/950（12 个色调）。Web Awesome 使用 95/90/80/…/05（11 个色调）。数字色调是 "明度"：`95` 最亮，`05` 最暗。色调在 OKLCH 空间中推导，以实现感知一致性。
+- **调色板比例已更改。** Shoelace 使用 50/100/200/…/950（12 个色调）。@SITE_NAME@ 使用 95/90/80/…/05（11 个色调）。数字色调是 "明度"：`95` 最亮，`05` 最暗。色调在 OKLCH 空间中推导，以实现感知一致性。
 - **变体颜色现在基于令牌。** 您无需将 `--sl-color-primary-*` 重新映射到色调，而是在 `<html>` 上设置 `class="wa-brand-blue"`（或红色/绿色/紫色等）。`brand`、`success`、`warning`、`danger`、`neutral` 变体各自都有自己可交换的色调。
 - **注意力层级。** 每个变体都公开 `fill-quiet`/`-normal`/`-loud`、`border-quiet`/`-normal`/`-loud` 和 `on-quiet`/`-normal`/`-loud`，组件一致使用这三个层级。
 - **缩写的尺寸命名。** `medium` → `m`、`small` → `s`、`large` → `l`、`x-large` → `xl` 等。
 
 #### 常见令牌迁移
 
-| Shoelace                           | Web Awesome                                                | 备注                                                                       |
+| Shoelace                           | @SITE_NAME@                                                | 备注                                                                       |
 | ---------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `--sl-color-primary-*`             | `--wa-color-brand-*`                                       | 品牌令牌；primary → brand                                                 |
 | `--sl-color-success-*`             | `--wa-color-success-*`                                     | 相同变体，带有新的数字色调                                                |
@@ -664,7 +664,7 @@ Web Animations API 表面未更改。事件重命名：
 
 ### 第 5 步：表单和验证
 
-Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定义元素。这意味着：
+@SITE_NAME@ 表单控件是使用 `ElementInternals` 的真正表单关联自定义元素。这意味着：
 
 - `new FormData(form)` 自动工作。无需 `formdata` 事件垫片。
 - `form.checkValidity()` 和 `form.reportValidity()` 包含所有 `<wa-*>` 控件。
@@ -675,7 +675,7 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
 
 #### 验证事件
 
-| Shoelace     | Web Awesome               |
+| Shoelace     | @SITE_NAME@               |
 | ------------ | ------------------------- |
 | `sl-invalid` | `wa-invalid`（可取消）    |
 
@@ -724,15 +724,15 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
 
 <wa-details summary="显示迁移提示">
 
-<pre><code>您正在帮助将项目从 Shoelace 2.x 迁移到 Web Awesome。
+<pre><code>您正在帮助将项目从 Shoelace 2.x 迁移到 @SITE_NAME@。
 
 权威的迁移指南位于：
-  https://webawesome.com/docs/resources/migrating-from-shoelace
+  @SITE_URL@/docs/resources/migrating-from-shoelace
 
 配套清单（镜像相同结构）位于：
-  https://webawesome.com/docs/resources/migration-checklist
+  @SITE_URL@/docs/resources/migration-checklist
 
-在做任何其他事情之前，获取上方的迁移指南 URL 并从头到尾阅读它。不要依赖对 Shoelace 或 Web Awesome API 的先验知识——两个库都已更改，指南是事实来源。如果您无法获取 URL，请告诉我并停止。
+在做任何其他事情之前，获取上方的迁移指南 URL 并从头到尾阅读它。不要依赖对 Shoelace 或 @SITE_NAME@ API 的先验知识——两个库都已更改，指南是事实来源。如果您无法获取 URL，请告诉我并停止。
 
 操作说明：
 
@@ -747,7 +747,7 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
    a. 交换 npm 包并更新导入。
    b. 查找和替换：sl- → wa-、--sl- → --wa-、sl-theme- → wa-theme-、JavaScript 事件字符串中的 'sl- → 'wa-（和 "sl- → "wa-）、TS 事件类导入中的 Sl → Wa。
    c. 逐组件修复：variant="primary" → variant="brand"；slot="prefix"/"suffix" → "start"/"end"；help-text → hint；clearable → with-clear；outline 布尔值 → appearance="outlined"；移除 circle（自动检测）；移除 sl-alert .toast() 使用（toast 交互移至 Pro wa-toast）；将 sl-menu/sl-menu-item 迁移到 wa-dropdown/wa-dropdown-item；sl-image-comparer → wa-comparison；sl-range → wa-slider。
-   d. 主题令牌：替换 --sl-color-primary-* → --wa-color-brand-*、间距/字体大小比例重命名（small → s、x-small → xs 等）、阴影合并、--sl-input-* → --wa-form-control-*。注意颜色比例数字反转（Shoelace 50→950 从亮到暗，Web Awesome 95→05 从亮到暗）。
+   d. 主题令牌：替换 --sl-color-primary-* → --wa-color-brand-*、间距/字体大小比例重命名（small → s、x-small → xs 等）、阴影合并、--sl-input-* → --wa-form-control-*。注意颜色比例数字反转（Shoelace 50→950 从亮到暗，@SITE_NAME@ 95→05 从亮到暗）。
    e. 表单：移除基于 formdata-event 的序列化垫片；验证每个表单控件都有 name 特性；更新 sl-invalid → wa-invalid。
 5. 每次操作后，运行项目的构建/类型检查/ lint 和任何测试。在继续之前报告结果。
 6. 最终清理：grep 查找剩余的 sl-、--sl-、@shoelace-style/shoelace 和带引号的 'sl-/"sl- 模式。报告任何剩余匹配。
@@ -762,7 +762,7 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
 - 不要发明新行为。如果不确定 API 如何映射，请在迁移指南中查找或询问。
 - 不要引入风格重构。保持精确。
 - 不要跳过验证步骤。操作未完成，直到构建通过。
-- 如果项目大量使用 sl-alert.toast()，提及 wa-toast 是 Web Awesome Pro 的一部分，并在建议替代方案之前询问。
+- 如果项目大量使用 sl-alert.toast()，提及 wa-toast 是 @SITE_NAME@ Pro 的一部分，并在建议替代方案之前询问。
 
 从步骤 2 开始（审核）。在更改任何文件之前等待我的批准。
 </code></pre>
@@ -776,12 +776,12 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
 
 ## 您获得的新功能
 
-我们一直专注于更改的内容，但也有很多新内容。仅在免费的 Web Awesome 中，您就获得：
+我们一直专注于更改的内容，但也有很多新内容。仅在免费的 @SITE_NAME@ 中，您就获得：
 
 **新组件**<br>
 `<wa-callout>`、`<wa-comparison>`、`<wa-popover>`、`<wa-page>`、`<wa-scroller>`、`<wa-zoomable-frame>`、`<wa-number-input>`、`<wa-markdown>` 和 `<wa-intersection-observer>` 都是全新的。它们涵盖了您之前必须自己构建或求助于第三方库的模式。<br><br>
 **原生 HTML 样式**<br>
-单独的 `dist/styles/native.css` 使用与 Web Awesome 主题相同的设计令牌为纯 HTML 元素（`<button>`、`<input>`、`<table>`、`<details>`、标题、列表、块引用等）设置主题。可选加入。Shoelace 没有等效功能。<br><br>
+单独的 `dist/styles/native.css` 使用与 @SITE_NAME@ 主题相同的设计令牌为纯 HTML 元素（`<button>`、`<input>`、`<table>`、`<details>`、标题、列表、块引用等）设置主题。可选加入。Shoelace 没有等效功能。<br><br>
 **实用 CSS 层**<br>
 布局原语、间距、排版、对齐和大小调整实用程序作为纯 CSS 类提供，无需 JavaScript。您无需引入完整的实用框架即可获得 `wa-stack`、`wa-cluster`、`wa-grid` 等。<br><br>
 **三个主题**<br>
@@ -791,13 +791,13 @@ Web Awesome 表单控件是使用 `ElementInternals` 的真正表单关联自定
 **OKLCH 调色板**<br>
 色调在 OKLCH 空间而非 HSL 中推导，因此它们在色调间感知一致。无论您使用红色、蓝色还是黄色，相同的色调数字具有相同的明度。<br><br>
 **SSR 友好的水合**<br>
-组件随附 `did-ssr` 和 `with-*` 插槽标记，因此服务器渲染的 HTML 干净水合，无闪烁。适用于任何可以发出 Web Awesome 预期特性的 SSR 框架。<br><br>
+组件随附 `did-ssr` 和 `with-*` 插槽标记，因此服务器渲染的 HTML 干净水合，无闪烁。适用于任何可以发出 @SITE_NAME@ 预期特性的 SSR 框架。<br><br>
 **AI 就绪文档**<br>
-每次构建都发出[代理技能包](/docs/ai/agent-skills)和 `llms.txt` 文件。AI 助手可以阅读这些内容，以便熟练使用 Web Awesome——不再猜测 API 表面。
+每次构建都发出[代理技能包](/docs/ai/agent-skills)和 `llms.txt` 文件。AI 助手可以阅读这些内容，以便熟练使用 @SITE_NAME@——不再猜测 API 表面。
 
-## Web Awesome Pro 包含什么
+## @SITE_NAME@ Pro 包含什么
 
-Web Awesome Pro 是一个单独的付费包（`@awesome.me/webawesome-pro`），添加了用于更高风险模式的组件。它是免费版的严格超集，因此升级不会丢失任何内容。Pro 包含：
+@SITE_NAME@ Pro 是一个单独的付费包（`@awesome.me/webawesome-pro`），添加了用于更高风险模式的组件。它是免费版的严格超集，因此升级不会丢失任何内容。Pro 包含：
 
 - [`<wa-toast>`](/docs/components/toast) 和 [`<wa-toast-item>`](/docs/components/toast-item)：toast 通知栈
 - [`<wa-combobox>`](/docs/components/combobox)：带有多选的组合框或自动完成
@@ -814,7 +814,7 @@ Web Awesome Pro 是一个单独的付费包（`@awesome.me/webawesome-pro`），
 
 <wa-details name="migration-gotcha" summary="我的按钮看起来都是灰色的">
 
-您可能在某处有 `variant="primary"`。Web Awesome 使用 `variant="brand"`。
+您可能在某处有 `variant="primary"`。@SITE_NAME@ 使用 `variant="brand"`。
 
 </wa-details>
 
@@ -826,7 +826,7 @@ Web Awesome Pro 是一个单独的付费包（`@awesome.me/webawesome-pro`），
 
 <wa-details name="migration-gotcha" summary="我的主题覆盖不工作">
 
-Web Awesome 将组件样式包装在 `@layer wa-component` 中。您的非分层 CSS 现在自动获胜，因此您可能可以删除 `!important` 声明。相反，如果您的覆盖_在_层内，它们现在可能会输给非分层规则。
+@SITE_NAME@ 将组件样式包装在 `@layer wa-component` 中。您的非分层 CSS 现在自动获胜，因此您可能可以删除 `!important` 声明。相反，如果您的覆盖_在_层内，它们现在可能会输给非分层规则。
 
 </wa-details>
 
@@ -844,7 +844,7 @@ Web Awesome 将组件样式包装在 `@layer wa-component` 中。您的非分层
 
 <wa-details name="migration-gotcha" summary="表单提交缺少我的字段">
 
-确保您的 `<wa-input>` 和类似控件具有 `name` 特性。Web Awesome 控件使用原生表单关联，因此只有命名的控件才会被 `FormData` 读取。
+确保您的 `<wa-input>` 和类似控件具有 `name` 特性。@SITE_NAME@ 控件使用原生表单关联，因此只有命名的控件才会被 `FormData` 读取。
 
 </wa-details>
 
@@ -856,7 +856,7 @@ Web Awesome 将组件样式包装在 `@layer wa-component` 中。您的非分层
 
 ## 需要帮助？
 
-- [Web Awesome Discord](https://discord.gg/webawesome)
+- [@SITE_NAME@ Discord](https://discord.gg/webawesome)
 - [GitHub Discussions](https://github.com/shoelace-style/webawesome/discussions)
 - [提交问题](https://github.com/shoelace-style/webawesome/issues)
 

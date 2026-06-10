@@ -51,7 +51,7 @@ function syncCheckboxes(changedTreeItem: WaTreeItem, initialSync = false) {
 /**
  * @summary Trees allow you to display a hierarchical list of selectable tree items. Items with children can be expanded
  *  and collapsed as desired by the user.
- * @documentation https://webawesome.com/docs/components/tree
+ * @documentation @SITE_URL@/docs/components/tree
  * @status stable
  * @since 2.0
  *

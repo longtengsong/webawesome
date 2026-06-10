@@ -1,12 +1,12 @@
 ---
 title: 主题概述
-description: 使用 Web Awesome 的主题系统为您的项目设置样式 — 调色板、变体、主题和深色模式。
+description: 使用 @SITE_NAME@ 的主题系统为您的项目设置样式 — 调色板、变体、主题和深色模式。
 layout: page-outline
 ---
 
 {% from "pro-badge.njk" import proBadge %}
 
-Web Awesome 主题在整个库中应用统一的风格，由可叠加的层次构建而成 — 一个[主题](/docs/themes)、一个[颜色调色板](/docs/color-palettes)、[变体](/docs/tokens/color#variant-colors)以及浅色或深色配色方案 — 您可以通过 `<html>` 元素上的类进行自由组合。
+@SITE_NAME@ 主题在整个库中应用统一的风格，由可叠加的层次构建而成 — 一个[主题](/docs/themes)、一个[颜色调色板](/docs/color-palettes)、[变体](/docs/tokens/color#variant-colors)以及浅色或深色配色方案 — 您可以通过 `<html>` 元素上的类进行自由组合。
 
 :::info
 **实时体验！** 使用本站点头部中的 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="palette" variant="regular"></wa-icon></wa-tag> 主题和 <wa-tag class="tag-ui" appearance="outlined"><wa-icon name="sun-bright" variant="regular"></wa-icon></wa-tag> 配色方案选择器来预览主题或切换浅色/深色模式。

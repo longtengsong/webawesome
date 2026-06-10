@@ -1,6 +1,6 @@
 ---
 title: 组件组
-description: 使用这些 Web Awesome 令牌样式化共享相似特质的组件组。
+description: 使用这些 @SITE_NAME@ 令牌样式化共享相似特质的组件组。
 order: 9999
 layout: page-outline
 synonyms:

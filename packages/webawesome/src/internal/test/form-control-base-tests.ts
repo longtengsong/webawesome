@@ -8,7 +8,7 @@ import { clickOnElement } from './pointer-utilities.js';
 
 type CreateControlFn = () => Promise<WebAwesomeFormControl>;
 
-/** Runs a set of generic tests for Web Awesome form controls */
+/** Runs a set of generic tests for @SITE_NAME@ form controls */
 export function runFormControlBaseTests<T extends WebAwesomeFormControl = WebAwesomeFormControl>(
   tagNameOrConfig:
     | string
@@ -44,7 +44,7 @@ export function runFormControlBaseTests<T extends WebAwesomeFormControl = WebAwe
 }
 
 //
-// Applicable for all Web Awesome form controls. This function checks the behavior of:
+// Applicable for all @SITE_NAME@ form controls. This function checks the behavior of:
 //   - `.validity`
 //   - `.validationMessage`,
 //   - `.checkValidity()`
@@ -397,7 +397,7 @@ function runSpecialTests_standard(createControl: CreateControlFn) {
 
 type FixtureFunction<T extends HTMLElement = HTMLElement> = (template: TemplateResult) => Promise<T>;
 
-// Creates a testable Web Awesome form control instance. Takes in a fixture function for SSR vs Client rendering
+// Creates a testable @SITE_NAME@ form control instance. Takes in a fixture function for SSR vs Client rendering
 function createFormControl<T extends WebAwesomeFormControl = WebAwesomeFormControl>(fixtureFn: FixtureFunction<T>) {
   return async (tagName: string) => {
     // https://github.com/lit/lit/issues/2246#issuecomment-1400035813
@@ -434,7 +434,7 @@ function checkEventEmissions(control: WebAwesomeFormControl, eventType: string, 
 }
 
 // Component `wa-button` behaves quite different to the other components. To keep things simple we use simple conditions
-// here. `wa-button` might stay the only component in Web Awesome core behaves that way, so we just hard code it here.
+// here. `wa-button` might stay the only component in @SITE_NAME@ core behaves that way, so we just hard code it here.
 function getMode(control: WebAwesomeFormControl) {
   if (
     control.localName === 'wa-button' && //

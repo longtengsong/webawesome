@@ -1,6 +1,6 @@
 ---
 title: Vue（版本 2）
-description: 在 Vue 2 应用中使用 Web Awesome 的提示。
+description: 在 Vue 2 应用中使用 @SITE_NAME@ 的提示。
 layout: page-outline
 ---
 
@@ -10,7 +10,7 @@ layout: page-outline
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素，因此您可以轻松地在 Vue 应用中使用 Web Awesome。
+Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素，因此您可以轻松地在 Vue 应用中使用 @SITE_NAME@。
 
 :::info
 这些说明适用于 Vue 2。如果您使用的是 Vue 3 及以上版本，请参阅 [Vue 3 说明](/frameworks/vue)。
@@ -18,13 +18,13 @@ Vue [完美支持](https://custom-elements-everywhere.com/#vue)自定义元素�
 
 ## 安装
 
-要添加 Web Awesome 到您的 Vue 应用，请从 npm 安装该包。
+要添加 @SITE_NAME@ 到您的 Vue 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
 ```
 
-接下来，导入 Web Awesome 样式表，导入您需要的组件，然后开始使用 Web Awesome！
+接下来，导入 @SITE_NAME@ 样式表，导入您需要的组件，然后开始使用 @SITE_NAME@！
 
 ```jsx
 // main.js 或 main.ts
@@ -34,7 +34,7 @@ import '@awesome.me/webawesome/dist/components/button/button.js';
 
 ## 配置
 
-您需要告诉 Vue 忽略 Web Awesome 组件。这非常简单，因为它们都以 `wa-` 开头。
+您需要告诉 Vue 忽略 @SITE_NAME@ 组件。这非常简单，因为它们都以 `wa-` 开头。
 
 ```js
 import Vue from 'vue';
@@ -49,7 +49,7 @@ const app = new Vue({
 app.$mount('#app');
 ```
 
-现在您可以开始在应用中使用 Web Awesome 组件了！
+现在您可以开始在应用中使用 @SITE_NAME@ 组件了！
 
 ## 使用
 
@@ -73,5 +73,5 @@ app.$mount('#app');
 ```
 
 :::info
-您正在使用 Web Awesome 和 Vue 2？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue-2.md)
+您正在使用 @SITE_NAME@ 和 Vue 2？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/vue-2.md)
 :::

@@ -97,7 +97,7 @@ use-cases:
 <wa-details>
   <span slot="summary">
     Some text
-    <a href="https://webawesome.com" target="_blank">a link</a>
+    <a href="@SITE_URL@" target="_blank">a link</a>
     more text
   </span>
 

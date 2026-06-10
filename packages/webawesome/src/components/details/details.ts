@@ -18,7 +18,7 @@ import styles from './details.styles.js';
 /**
  * @summary Details display a brief summary and expand to reveal additional content. Use them to progressively disclose
  *  information, group related FAQs, or hide advanced options.
- * @documentation https://webawesome.com/docs/components/details
+ * @documentation @SITE_URL@/docs/components/details
  * @status stable
  * @since 2.0
  *
@@ -128,7 +128,7 @@ export default class WaDetails extends WebAwesomeElement {
         return true;
       }
 
-      // Check for Web Awesome form controls
+      // Check for @SITE_NAME@ form controls
       if (element instanceof WebAwesomeFormAssociatedElement) {
         return !('disabled' in element) || !element.disabled;
       }

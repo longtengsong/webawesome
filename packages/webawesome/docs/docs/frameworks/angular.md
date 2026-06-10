@@ -1,6 +1,6 @@
 ---
 title: Angular
-description: 在 Angular 应用中使用 Web Awesome 的提示。
+description: 在 Angular 应用中使用 @SITE_NAME@ 的提示。
 layout: page-outline
 ---
 
@@ -10,13 +10,13 @@ layout: page-outline
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Angular [完美支持](https://custom-elements-everywhere.com/#angular)自定义元素，因此您可以轻松地在 Angular 应用中使用 Web Awesome。
+Angular [完美支持](https://custom-elements-everywhere.com/#angular)自定义元素，因此您可以轻松地在 Angular 应用中使用 @SITE_NAME@。
 
 ## 安装
 
 ### 下载 npm 包
 
-要添加 Web Awesome 到您的 Angular 应用，请从 npm 安装该包。
+要添加 @SITE_NAME@ 到您的 Angular 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
@@ -64,7 +64,7 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-## 在 Angular 组件代码中引用 Web Awesome 组件
+## 在 Angular 组件代码中引用 @SITE_NAME@ 组件
 
 ```js
 // 需要同时导入两者，否则 Angular 会通过摇树优化移除组件。
@@ -92,14 +92,14 @@ export class DrawerExampleComponent implements OnInit {
   ...
 
   showDrawer() {
-    // 使用 nativeElement 访问 Web Awesome 组件
+    // 使用 nativeElement 访问 @SITE_NAME@ 组件
     this.drawer?.nativeElement.show();
   }
 }
 ```
 
-现在您可以开始在应用中使用 Web Awesome 组件了！
+现在您可以开始在应用中使用 @SITE_NAME@ 组件了！
 
 :::info
-您正在使用 Web Awesome 和 Angular？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/angular.md)
+您正在使用 @SITE_NAME@ 和 Angular？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/angular.md)
 :::

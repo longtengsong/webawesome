@@ -4,7 +4,7 @@ description: 项目的每个版本的变更都在此记录。
 layout: page-outline
 ---
 
-Web Awesome 官方支持最流行浏览器的最新两个主要版本，包括 Chrome、Safari、Edge、Firefox 和 Opera。
+@SITE_NAME@ 官方支持最流行浏览器的最新两个主要版本，包括 Chrome、Safari、Edge、Firefox 和 Opera。
 
 我们定期测试并确保我们的网站在这些浏览器版本上运行顺畅。如果您使用的是较旧版本，我们强烈建议升级以获得最佳体验。
 

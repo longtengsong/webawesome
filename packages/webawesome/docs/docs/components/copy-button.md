@@ -17,7 +17,7 @@ use-cases:
 ---
 
 ```html {.example}
-<wa-copy-button value="Web Awesome rocks!"></wa-copy-button>
+<wa-copy-button value="@SITE_NAME@ rocks!"></wa-copy-button>
 ```
 
 :::info
@@ -53,7 +53,7 @@ use-cases:
 
 ### 自定义触发器
 
-默认情况下，复制按钮渲染一个仅图标按钮。你可以将任何元素插槽作为自定义触发器。这适用于 Web Awesome 按钮、原生按钮或任何可点击的元素。
+默认情况下，复制按钮渲染一个仅图标按钮。你可以将任何元素插槽作为自定义触发器。这适用于 @SITE_NAME@ 按钮、原生按钮或任何可点击的元素。
 
 ```html {.example}
 <wa-copy-button value="You can copy anything with a custom trigger!">
@@ -100,7 +100,7 @@ use-cases:
 
 <!-- 复制链接的 "href" 属性 -->
 <div class="wa-cluster wa-align-items-center wa-gap-2xs">
-  <a id="my-link" href="https://shoelace.style/">Web Awesome Website</a>
+  <a id="my-link" href="https://shoelace.style/">@SITE_NAME@ Website</a>
   <wa-copy-button from="my-link[href]"></wa-copy-button>
 </div>
 ```
@@ -128,7 +128,7 @@ use-cases:
 复制后，工具提示会短暂显示成功或错误标签。使用 `feedback-duration` 属性来控制它保持可见的时间。
 
 ```html {.example}
-<wa-copy-button value="Web Awesome rocks!" feedback-duration="250"></wa-copy-button>
+<wa-copy-button value="@SITE_NAME@ rocks!" feedback-duration="250"></wa-copy-button>
 ```
 
 ### 工具提示模式

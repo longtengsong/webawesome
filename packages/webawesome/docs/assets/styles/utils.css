@@ -1,5 +1,5 @@
 /* Monorepo Styles
-* These styles include elements that are shared across this repo as well as others included in the Web Awesome monorepo
+* These styles include elements that are shared across this repo as well as others included in the @SITE_NAME@ monorepo
  */
 
 @layer wa-utils {
@@ -46,7 +46,7 @@
    * .content-container — CANONICAL DEFINITION
    *
    * Default sizing/centering primitive for main content areas across the
-   * Web Awesome ecosystem (app, marketing, docs). DO NOT redefine this
+   * @SITE_NAME@ ecosystem (app, marketing, docs). DO NOT redefine this
    * class anywhere else (no shadow rules in pro site.css base, no app.css
    * redefinition). Scoped overrides like `.page-footer .content-container { ... }`
    * are fine — only base-class redefinition is forbidden.

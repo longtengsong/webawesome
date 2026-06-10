@@ -10,7 +10,7 @@ import styles from './callout.styles.js';
 /**
  * @summary Callouts display important messages inline with surrounding content. Use them to highlight tips, warnings,
  *  errors, or other information users should not miss.
- * @documentation https://webawesome.com/docs/components/callout
+ * @documentation @SITE_URL@/docs/components/callout
  * @status stable
  * @since 3.0
  *

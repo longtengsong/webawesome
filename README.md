@@ -1,4 +1,4 @@
-# Web Awesome
+# @SITE_NAME@
 
 - Works with all frameworks 🧩
 - Works with CDNs 🚛
@@ -11,7 +11,7 @@ Built by the folks behind [Font Awesome](https://fontawesome.com/).
 
 ---
 
-Documentation: [webawesome.com](https://webawesome.com)
+Documentation: [webawesome.com](@SITE_URL@)
 
 Source: [github.com/shoelace-style/webawesome](https://github.com/shoelace-style/webawesome)
 
@@ -21,19 +21,19 @@ Twitter: [@webawesomer](https://twitter.com/webawesomer)
 
 ## Developers ✨
 
-Developers can use this documentation to learn how to build Web Awesome from source. You will need Node.js 14.17 or later to build and run the project locally.
+Developers can use this documentation to learn how to build @SITE_NAME@ from source. You will need Node.js 14.17 or later to build and run the project locally.
 
-**You don't need to do any of this to use Web Awesome!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of Web Awesome.
+**You don't need to do any of this to use @SITE_NAME@!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of @SITE_NAME@.
 
-If that's not what you're trying to do, the [documentation website](https://webawesome.com) is where you want to be.
+If that's not what you're trying to do, the [documentation website](@SITE_URL@) is where you want to be.
 
-### What are you using to build Web Awesome?
+### What are you using to build @SITE_NAME@?
 
 Components are built with [Lit](https://lit.dev/), a custom elements base class that provides an intuitive API and reactive data binding. The build is a custom script with bundling powered by [esbuild](https://esbuild.github.io/).
 
-### Understanding the Web Awesome monorepo
+### Understanding the @SITE_NAME@ monorepo
 
-Web Awesome uses [npm workspaces](https://docs.npmjs.com/cli/v11/using-npm/workspaces) for its monorepo structure and is fairly minimal in what it provides.
+@SITE_NAME@ uses [npm workspaces](https://docs.npmjs.com/cli/v11/using-npm/workspaces) for its monorepo structure and is fairly minimal in what it provides.
 
 By using npm workspaces and a monorepo structure, we can get consistent builds, shared configurations, and reduced duplication across repositories which reduces regressions and forces consistency across `webawesome`, `webawesome-pro`, and `webawesome-app`.
 
@@ -51,7 +51,7 @@ Any dependencies that will be used at runtime by a package should be part of the
 
 Individual packages are also free to install `devDependencies` as needed as long as they are specific to that package only.
 
-To install a package specific to a Web Awesome package, change your working directory to that package's root (i.e., `cd packages/webawesome && npm install <package-name>`).
+To install a package specific to a @SITE_NAME@ package, change your working directory to that package's root (i.e., `cd packages/webawesome && npm install <package-name>`).
 
 ### Forking the Repo
 
@@ -106,8 +106,8 @@ Make sure to run `npm install` at the root of the monorepo after adding your pac
 
 ### Contributing
 
-Web Awesome is an open source project and contributions are encouraged! If you're interesting in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
+@SITE_NAME@ is an open source project and contributions are encouraged! If you're interesting in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
 
 ## License
 
-Web Awesome is available under the terms of the [MIT License](LICENSE.md).
+@SITE_NAME@ is available under the terms of the [MIT License](LICENSE.md).

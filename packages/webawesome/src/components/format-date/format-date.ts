@@ -6,7 +6,7 @@ import { LocalizeController } from '../../utilities/localize.js';
 /**
  * @summary Formats a date or time for display using the specified locale and options. Powered by the
  *  Intl.DateTimeFormat API for consistent, localized output.
- * @documentation https://webawesome.com/docs/components/format-date
+ * @documentation @SITE_URL@/docs/components/format-date
  * @status stable
  * @since 2.0
  */

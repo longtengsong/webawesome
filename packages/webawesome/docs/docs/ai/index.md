@@ -1,29 +1,29 @@
 ---
-title: 将 Web Awesome 与 AI 结合使用
-description: Web Awesome 发布 llms.txt 和 Agent Skills，帮助 AI 编程助手理解并使用该库。
+title: 将 @SITE_NAME@ 与 AI 结合使用
+description: "@SITE_NAME@ 发布 llms.txt 和 Agent Skills，帮助 AI 编程助手理解并使用该库。"
 layout: page-outline
 ---
 
-Web Awesome 发布机器可读的文档，以便 AI 编程助手能理解其组件并帮助您编写更好的代码。无论您使用的是 Claude、ChatGPT、Copilot、Cursor 还是其他工具，您都可以为其提供关于 Web Awesome API、属性、事件、插槽等的上下文。
+@SITE_NAME@ 发布机器可读的文档，以便 AI 编程助手能理解其组件并帮助您编写更好的代码。无论您使用的是 Claude、ChatGPT、Copilot、Cursor 还是其他工具，您都可以为其提供关于 @SITE_NAME@ API、属性、事件、插槽等的上下文。
 
 ## AI 就绪的文档
 
-我们提供两种格式，用于为 AI 工具提供 Web Awesome 的上下文信息。
+我们提供两种格式，用于为 AI 工具提供 @SITE_NAME@ 的上下文信息。
 
 - **[Agent Skills](/docs/ai/agent-skills)** — 一个结构化的 markdown 文件目录，AI 工具可以渐进式加载，仅获取与当前任务相关的文档。这是推荐选项，适用于支持该功能的工具，如 Claude Code。
 - **[LLMs.txt](/docs/ai/llms)** — 一个包含所有组件完整 API 参考的单一文本文件。几乎适用于任何接受文件上传、URL 或粘贴上下文的 AI 工具。
 
-两种格式都会在每次 Web Awesome 构建时自动生成，并在通过 npm 安装后可在您的 `node_modules` 目录中找到。
+两种格式都会在每次 @SITE_NAME@ 构建时自动生成，并在通过 npm 安装后可在您的 `node_modules` 目录中找到。
 
 ## AI 政策
 
-我们是一个维护 Web Awesome 的小团队，和如今大多数做开发的人一样，我们经常使用 AI 工具。它们帮助我们更快地推进工作、探索想法、编写样板代码、捕捉边界情况，并在更短的时间内完成更多工作。
+我们是一个维护 @SITE_NAME@ 的小团队，和如今大多数做开发的人一样，我们经常使用 AI 工具。它们帮助我们更快地推进工作、探索想法、编写样板代码、捕捉边界情况，并在更短的时间内完成更多工作。
 
 话虽如此，我们想明确说明我们如何使用 AI，特别是因为这是一个许多人依赖的开源库。
 
 ### 人类主导，AI 辅助
 
-Web Awesome 中的所有内容都由人类构建和拥有。AI 是一个能力强大的助手，但它从未拥有最终决定权。我们始终带来：
+@SITE_NAME@ 中的所有内容都由人类构建和拥有。AI 是一个能力强大的助手，但它从未拥有最终决定权。我们始终带来：
 
 - 最初的想法和愿景
 - 整体架构和设计决策
@@ -36,4 +36,4 @@ Web Awesome 中的所有内容都由人类构建和拥有。AI 是一个能力�
 
 **人类的想法。人类的架构。人类的验证。** AI 只是帮助我们构建我们本来就要构建的东西……只是更快了。
 
-— Web Awesome 团队
+— @SITE_NAME@ 团队

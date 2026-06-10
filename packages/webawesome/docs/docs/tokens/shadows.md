@@ -1,6 +1,6 @@
 ---
 title: 阴影
-description: 使用 Web Awesome 的阴影令牌提升您的组件。
+description: 使用 @SITE_NAME@ 的阴影令牌提升您的组件。
 synonyms:
   - 盒阴影
   - 高度
@@ -12,7 +12,7 @@ use-cases:
 hasOutline: true
 ---
 
-阴影令牌表示高度和（通常）交互性。Web Awesome 提供了三种基于大小的阴影简写，由模块化的偏移、模糊和扩散令牌构建而成。与 [`--wa-color-shadow`](?active_tab=color) 一起，这些令牌创建逼真的投影。
+阴影令牌表示高度和（通常）交互性。@SITE_NAME@ 提供了三种基于大小的阴影简写，由模块化的偏移、模糊和扩散令牌构建而成。与 [`--wa-color-shadow`](?active_tab=color) 一起，这些令牌创建逼真的投影。
 
 较大的阴影具有更大的偏移和模糊值，以暗示与下方表面的更大距离。任何阴影也可以使用 `inset` 关键字作为内阴影使用，例如 `box-shadow: inset var(--wa-shadow-s)`。
 

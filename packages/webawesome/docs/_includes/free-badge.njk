@@ -1,5 +1,5 @@
 {% macro freeBadge(params) %}
-  {% set description = params.description or "此功能在 Web Awesome 免费版中可用" %}
+  {% set description = params.description or "此功能在 @SITE_NAME@ 免费版中可用" %}
   {% set badgeId = params.id or ("free-badge-" + ("" | uniqueId(8))) %}
   <wa-badge appearance="filled" variant="neutral" pill class="free" id="{{ badgeId }}" data-free-badge>免费</wa-badge>
   <wa-tooltip for="{{ badgeId }}">{{ description }}</wa-tooltip>

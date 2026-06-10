@@ -62,7 +62,7 @@ export default class WebAwesomeElement extends LitElement {
       // Helpful comment node inside the shadow root that links to the docs
       this.shadowRoot?.prepend(
         document.createComment(
-          ` Web Awesome: https://webawesome.com/docs/components/${this.localName.replace('wa-', '')} `,
+          ` @SITE_NAME@: @SITE_URL@/docs/components/${this.localName.replace('wa-', '')} `,
         ),
       );
     }

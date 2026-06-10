@@ -1,6 +1,6 @@
 ---
 title: 间距
-description: 使用 Web Awesome 的间距令牌锁定一致的间距。
+description: 使用 @SITE_NAME@ 的间距令牌锁定一致的间距。
 synonyms:
   - 间距
   - 间距比例

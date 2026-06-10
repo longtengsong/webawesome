@@ -1,6 +1,6 @@
 ---
 title: 社区与支持
-description: Web Awesome 拥有一个由设计师和开发者组成的不断壮大的社区，他们正在用 Web 组件构建令人惊叹的东西。
+description: "@SITE_NAME@ 拥有一个由设计师和开发者组成的不断壮大的社区，他们正在用 Web 组件构建令人惊叹的东西。"
 layout: page
 ---
 
@@ -48,7 +48,7 @@ layout: page
     <li>寻求帮助</li>
     <li>分享想法并获得反馈</li>
     <li>向社区展示您正在做什么</li>
-    <li>与其他设计师、开发者和 Web Awesome 支持者实时聊天。</li>
+    <li>与其他设计师、开发者和 @SITE_NAME@ 支持者实时聊天。</li>
   </ul>
   <wa-button appearance="filled" href="{{ site.urls.discord }}">
     <wa-icon slot="start" name="discord" family="brands"></wa-icon>
@@ -80,7 +80,7 @@ layout: page
     <p>我们无处不在——在您最喜欢的社交媒体平台上关注我们，获取最新新闻和更新。</p>
   </div>
 <div class="wa-cluster wa-caption-2xl">
-    <h2 class="wa-visually-hidden">Web Awesome 其他平台</h2>
+    <h2 class="wa-visually-hidden">@SITE_NAME@ 其他平台</h2>
     <a href="{{ site.github.repo }}" rel="noopener noreferrer" target="_blank" class="appearance-plain">
       <wa-icon family="brands" name="github" label="GitHub" role="img" aria-label="GitHub" library="default"></wa-icon>
     </a>

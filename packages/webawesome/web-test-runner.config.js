@@ -6,7 +6,7 @@ import * as os from 'os';
 import * as process from 'process';
 import { getAllComponents } from './scripts/shared.js';
 
-// Get a list of all Web Awesome component imports for the test runner
+// Get a list of all @SITE_NAME@ component imports for the test runner
 const metadata = JSON.parse(readFileSync('./dist/custom-elements.json'), 'utf8');
 const serverComponents = [];
 const componentImports = [];

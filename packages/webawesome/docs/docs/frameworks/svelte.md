@@ -1,6 +1,6 @@
 ---
 title: Svelte
-description: 在 Svelte 应用中使用 Web Awesome 的提示。
+description: 在 Svelte 应用中使用 @SITE_NAME@ 的提示。
 layout: page-outline
 ---
 
@@ -10,11 +10,11 @@ layout: page-outline
   <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
 </wa-breadcrumb>
 
-Svelte [完美支持](https://custom-elements-everywhere.com/#svelte)自定义元素，因此您可以轻松地在 Svelte 应用中使用 Web Awesome。
+Svelte [完美支持](https://custom-elements-everywhere.com/#svelte)自定义元素，因此您可以轻松地在 Svelte 应用中使用 @SITE_NAME@。
 
 ## 安装
 
-要添加 Web Awesome 到您的 Svelte 应用，请从 npm 安装该包。
+要添加 @SITE_NAME@ 到您的 Svelte 应用，请从 npm 安装该包。
 
 ```bash
 npm install @awesome.me/webawesome
@@ -22,7 +22,7 @@ npm install @awesome.me/webawesome
 
 ## 使用
 
-接下来，导入 Web Awesome 样式表，导入您需要的组件，然后开始使用 Web Awesome！
+接下来，导入 @SITE_NAME@ 样式表，导入您需要的组件，然后开始使用 @SITE_NAME@！
 
 ```jsx
 <!-- app.html -->
@@ -68,7 +68,7 @@ npm install @awesome.me/webawesome
 
 ### 插槽
 
-Web Awesome/Web 组件中的插槽在功能上与 Svelte 中的基本插槽相同。可以使用 `slot` 属性后跟插槽名称将插槽分配给元素。
+@SITE_NAME@/Web 组件中的插槽在功能上与 Svelte 中的基本插槽相同。可以使用 `slot` 属性后跟插槽名称将插槽分配给元素。
 
 以下是一个示例：
 
@@ -84,5 +84,5 @@ Web Awesome/Web 组件中的插槽在功能上与 Svelte 中的基本插槽相�
 ```
 
 :::info
-您正在使用 Web Awesome 和 Svelte？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/svelte.md)
+您正在使用 @SITE_NAME@ 和 Svelte？[帮助我们改进此页面！](https://github.com/shoelace-style/webawesome/blob/next/packages/webawesome/docs/docs/frameworks/svelte.md)
 :::

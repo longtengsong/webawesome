@@ -85,7 +85,7 @@ use-cases:
 ```html {.example}
 <div class="wa-stack">
   <div class="wa-split">
-    <wa-icon name="web-awesome" label="Web Awesome" class="wa-font-size-xl"></wa-icon>
+    <wa-icon name="web-awesome" label="@SITE_NAME@" class="wa-font-size-xl"></wa-icon>
     <div class="wa-cluster">
       <wa-button appearance="filled">Sign Up</wa-button>
       <wa-button appearance="outlined">Log In</wa-button>

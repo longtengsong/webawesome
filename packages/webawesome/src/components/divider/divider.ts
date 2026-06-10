@@ -6,7 +6,7 @@ import styles from './divider.styles.js';
 /**
  * @summary Dividers visually separate or group adjacent elements with a horizontal or vertical line. Use them to
  *  establish rhythm and hierarchy within menus, toolbars, and layouts.
- * @documentation https://webawesome.com/docs/components/divider
+ * @documentation @SITE_URL@/docs/components/divider
  * @status stable
  * @since 2.0
  *

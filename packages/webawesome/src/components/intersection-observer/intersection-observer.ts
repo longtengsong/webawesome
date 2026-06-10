@@ -10,7 +10,7 @@ import styles from './intersection-observer.styles.js';
 /**
  * @summary Tracks immediate child elements and fires events as they move in and out of view. Useful for lazy loading,
  *  scroll-triggered animations, and viewport-aware interactions.
- * @documentation https://webawesome.com/docs/components/intersection-observer
+ * @documentation @SITE_URL@/docs/components/intersection-observer
  * @status stable
  * @since 2.0
  *

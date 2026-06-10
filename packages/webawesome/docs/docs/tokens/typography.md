@@ -1,6 +1,6 @@
 ---
 title: 排版
-description: 使用 Web Awesome 的排版令牌获得一致的字体样式和垂直节奏。
+description: 使用 @SITE_NAME@ 的排版令牌获得一致的字体样式和垂直节奏。
 layout: page-outline
 synonyms:
   - 字体

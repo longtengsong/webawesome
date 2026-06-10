@@ -40,6 +40,12 @@ export default async function (eleventyConfig) {
   const customElementsManifest = path.join(distDir, 'custom-elements.json');
   const stylesheets = path.join(distDir, 'styles');
 
+  // Load site.json for domain and other site-level settings (single source of truth)
+  const siteJsonPath = path.join(docsDir, '_data', 'site.json');
+  const siteData = JSON.parse(fs.readFileSync(siteJsonPath, 'utf-8'));
+  const SITE_DOMAIN = process.env.SITE_DOMAIN || siteData.domain || 'webawesome.com';
+  const SITE_URL = `//${SITE_DOMAIN}`;
+
   eleventyConfig.addWatchTarget(customElementsManifest);
   eleventyConfig.setWatchThrottleWaitTime(10); // in milliseconds
 
@@ -67,7 +73,7 @@ export default async function (eleventyConfig) {
 
   /**
    * If you plan to add or remove any of these extensions, make sure to let either Konnor or Cory know as these
-   * passthrough extensions will also need to be updated in the Web Awesome App.
+   * passthrough extensions will also need to be updated in the @SITE_NAME@ App.
    */
   const passThrough = [
     path.join(docsDir, 'assets'),
@@ -94,10 +100,10 @@ export default async function (eleventyConfig) {
 
   // Site metadata for social sharing (Open Graph, canonical URLs, etc.)
   const siteMetadata = {
-    url: 'https://webawesome.com',
-    name: 'Web Awesome',
-    description: 'Build better with Web Awesome, the open source library of web components from Font Awesome.',
-    image: 'https://webawesome.com/assets/images/open-graph/default.png',
+    url: SITE_URL,
+    name: siteData.name,
+    description: `Build better with ${siteData.name}, the open source library of web components from Font Awesome.`,
+    image: `${SITE_URL}/assets/images/open-graph/default.png`,
   };
 
   // Title composition/stripping config - single source of truth
@@ -107,7 +113,7 @@ export default async function (eleventyConfig) {
   // Helper to escape user-provided strings for safe use inside RegExp sources
   const escapeRegExp = string => (string + '').replace(/[.*+?^${}()|[\\]\\]/g, '\\$&');
 
-  // Precompute a reusable regex to strip a trailing site name suffix from titles, e.g. " | Web Awesome"
+  // Precompute a reusable regex to strip a trailing site name suffix from titles, e.g. " | @SITE_NAME@"
   // Supports configured separators and flexible whitespace. This keeps search titles clean and improves Lunr scoring
   const siteNameEscapedForRegex = escapeRegExp(SITE_NAME);
   const separatorsEscaped = SITE_TITLE_SEPARATORS.map(s => escapeRegExp(s)).join('');
@@ -242,6 +248,12 @@ export default async function (eleventyConfig) {
     return content;
   });
 
+  // Replace @SITE_NAME@ before YAML frontmatter parsing, so the placeholder
+  // doesn't conflict with YAML's reserved characters (@ at value start)
+  eleventyConfig.addPreprocessor('site-name', '*.md', (data, content) => {
+    return content.replace(/@SITE_NAME@/g, siteData.name);
+  });
+
   // Add anchors to headings
   eleventyConfig.addTransform('doc-transforms', function (content) {
     let doc = HTMLParse(content, { blockTextElements: { code: true }, comment: true });
@@ -275,6 +287,16 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(
     replaceTextPlugin([
+      // Replace @SITE_URL@ with the site URL (so hardcoded domain can be changed in one place)
+      {
+        replace: /@SITE_URL@/gs,
+        replaceWith: siteMetadata.url,
+      },
+      // Replace @SITE_NAME@ with the site name (so hardcoded brand name can be changed in one place)
+      {
+        replace: /@SITE_NAME@/gs,
+        replaceWith: siteMetadata.name,
+      },
       {
         replace: /\[version\]/gs,
         replaceWith: packageData.version,
@@ -342,6 +364,39 @@ export default async function (eleventyConfig) {
 
     // Passthrough copy for manifest.json (PWA manifest file)
     fs.cpSync(path.join(baseDir, 'manifest.json'), path.join(eleventyConfig.directories.output, 'manifest.json'));
+
+    // Replace @SITE_URL@ / @SITE_NAME@ placeholders in passthrough-copied files
+    // (e.g., downloadable .md files). Template-processed files are already handled by the
+    // replaceTextPlugin transform.
+    const outputDir = eleventyConfig.directories.output;
+    const siteUrl = siteMetadata.url;
+    const siteName = siteMetadata.name;
+    function replacePlaceholdersInDir(dir) {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          if (entry.name !== 'node_modules') {
+            replacePlaceholdersInDir(fullPath);
+          }
+        } else if (/\.(md|html|json|css)$/.test(entry.name) && !entry.name.endsWith('.eleventy.js')) {
+          let content = fs.readFileSync(fullPath, 'utf-8');
+          let changed = false;
+          if (content.includes('@SITE_URL@')) {
+            content = content.replace(/@SITE_URL@/g, siteUrl);
+            changed = true;
+          }
+          if (content.includes('@SITE_NAME@')) {
+            content = content.replace(/@SITE_NAME@/g, siteName);
+            changed = true;
+          }
+          if (changed) {
+            fs.writeFileSync(fullPath, content, 'utf-8');
+          }
+        }
+      }
+    }
+    replacePlaceholdersInDir(outputDir);
   });
 
   for (let glob of passThrough) {

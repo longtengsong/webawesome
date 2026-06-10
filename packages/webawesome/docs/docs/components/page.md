@@ -191,7 +191,7 @@ body {
 <wa-page mobile-breakpoint="600"> ... </wa-page>
 ```
 
-默认情况下，"汉堡包"按钮会出现在 `header` 插槽中，用于在较小屏幕上切换导航菜单。你可以通过在 `toggle-navigation` 插槽中插入自己的按钮来自定义它的外观，或者将 `data-toggle-nav` 属性放在页面上的任何按钮上。这 _不需要_ 是 Web Awesome 元素。
+默认情况下，"汉堡包"按钮会出现在 `header` 插槽中，用于在较小屏幕上切换导航菜单。你可以通过在 `toggle-navigation` 插槽中插入自己的按钮来自定义它的外观，或者将 `data-toggle-nav` 属性放在页面上的任何按钮上。这 _不需要_ 是 @SITE_NAME@ 元素。
 
 当使用这些方法中的任何一种时，默认按钮将不会显示 - 如果你想在页面上使用多个导航切换，只需将 `data-toggle-nav` 属性添加到多个元素即可。
 

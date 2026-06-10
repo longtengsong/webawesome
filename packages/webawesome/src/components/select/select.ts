@@ -32,7 +32,7 @@ import styles from './select.styles.js';
 /**
  * @summary Selects let users choose one or more values from a dropdown list of predefined options. Use them in forms
  *  when a fixed set of choices needs to fit in limited space.
- * @documentation https://webawesome.com/docs/components/select
+ * @documentation @SITE_URL@/docs/components/select
  * @status stable
  * @since 2.0
  *

@@ -7,7 +7,7 @@ import styles from './badge.styles.js';
 /**
  * @summary Badges draw attention to adjacent content by displaying a status, count, or label. Use them to highlight
  *  notifications, categorize items, or flag new activity.
- * @documentation https://webawesome.com/docs/components/badge
+ * @documentation @SITE_URL@/docs/components/badge
  * @status stable
  * @since 2.0
  *

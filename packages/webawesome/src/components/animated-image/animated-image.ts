@@ -12,7 +12,7 @@ import styles from './animated-image.styles.js';
 /**
  * @summary Animated images display GIFs and WEBPs with controls to play and pause them on demand. Use them when you
  *  want motion but need to give users control over when it plays.
- * @documentation https://webawesome.com/docs/components/animated-image
+ * @documentation @SITE_URL@/docs/components/animated-image
  * @status stable
  * @since 2.0
  *

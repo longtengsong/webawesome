@@ -22,7 +22,7 @@ import styles from './tree-item.styles.js';
 /**
  * @summary Tree items represent a single hierarchical node inside a tree, and can contain nested items that expand and
  *  collapse.
- * @documentation https://webawesome.com/docs/components/tree-item
+ * @documentation @SITE_URL@/docs/components/tree-item
  * @status stable
  * @since 2.0
  *

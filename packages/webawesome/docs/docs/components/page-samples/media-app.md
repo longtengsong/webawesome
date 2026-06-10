@@ -1,6 +1,6 @@
 ---
 title: 示例媒体应用页面
-description: 使用 Web Awesome 页面组件的媒体应用示例页面。
+description: 使用 @SITE_NAME@ 页面组件的媒体应用示例页面。
 layout: blank
 eleventyExcludeFromCollections: true
 ---

@@ -17,7 +17,7 @@ import styles from './radio-group.styles.js';
 /**
  * @summary Radio groups wrap a set of radios so they function as a single form control with one shared value. They
  *  handle keyboard navigation, labeling, and validation for the group as a whole.
- * @documentation https://webawesome.com/docs/components/radio-group
+ * @documentation @SITE_URL@/docs/components/radio-group
  * @status stable
  * @since 2.0
  *

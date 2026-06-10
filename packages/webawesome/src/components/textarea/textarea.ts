@@ -17,7 +17,7 @@ import styles from './textarea.styles.js';
 
 /**
  * @summary Textareas collect multi-line text input from the user, with optional resizing and character counting.
- * @documentation https://webawesome.com/docs/components/textarea
+ * @documentation @SITE_URL@/docs/components/textarea
  * @status stable
  * @since 2.0
  *

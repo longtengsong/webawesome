@@ -1,6 +1,6 @@
 ---
 title: 颜色
-description: 使用 Web Awesome 的颜色属性确保颜色使用的一致性和可读性的对比度。
+description: 使用 @SITE_NAME@ 的颜色属性确保颜色使用的一致性和可读性的对比度。
 hasOutline: true
 synonyms:
   - palette
@@ -98,7 +98,7 @@ use-cases:
   }
 </style>
 
-Web Awesome 的颜色系统由三层组成：[调色板](/docs/color-palettes)提供完整的色相光谱，[变体颜色](#variant-colors)定义语义颜色变化（如成功和危险），以及[主题元素颜色](#color-for-themed-elements)将调色板和变体颜色的特定色调应用于构成主题的元素。
+@SITE_NAME@ 的颜色系统由三层组成：[调色板](/docs/color-palettes)提供完整的色相光谱，[变体颜色](#variant-colors)定义语义颜色变化（如成功和危险），以及[主题元素颜色](#color-for-themed-elements)将调色板和变体颜色的特定色调应用于构成主题的元素。
 
 有关主题如何在库中工作的概述，请参阅[主题 <wa-icon name="arrow-right" variant="regular"></wa-icon>](/docs/theming-overview)。
 

@@ -8,7 +8,7 @@ import styles from './resize-observer.styles.js';
 /**
  * @summary Resize observers watch their slotted elements for size changes and emit an event when they occur. Provides a
  *  thin, declarative interface to the browser's ResizeObserver API.
- * @documentation https://webawesome.com/docs/components/resize-observer
+ * @documentation @SITE_URL@/docs/components/resize-observer
  * @status stable
  * @since 2.0
  *

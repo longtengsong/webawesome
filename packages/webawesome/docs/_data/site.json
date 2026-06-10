@@ -1,10 +1,10 @@
 {
-  "name": "Web Awesome",
+  "name": "LTD Components",
   "nameCore": "Web Awesome Core",
   "namePro": "Web Awesome Pro",
   "tagline": "去制作一些很棒的东西！",
   "company": "Fonticons, Inc.",
-  "domain": "webawesome.com",
+  "domain": "localhost:4000",
 
   "siblings": {
     "fontAwesome": { "name": "Font Awesome", "url": "https://fontawesome.com" },

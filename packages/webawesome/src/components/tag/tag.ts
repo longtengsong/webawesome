@@ -13,7 +13,7 @@ import styles from './tag.styles.js';
 /**
  * @summary Tags label, categorize, or represent selections with a compact visual marker. Use them for status
  *  indicators, filters, or removable chips.
- * @documentation https://webawesome.com/docs/components/tag
+ * @documentation @SITE_URL@/docs/components/tag
  * @status stable
  * @since 2.0
  *

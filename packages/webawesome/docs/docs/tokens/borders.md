@@ -1,6 +1,6 @@
 ---
 title: 边框
-description: 边框令牌定义 Web Awesome 组件的边缘和角落。
+description: 边框令牌定义 @SITE_NAME@ 组件的边缘和角落。
 synonyms:
   - 边框
   - 轮廓
@@ -18,7 +18,7 @@ hasOutline: true
   }
 </style>
 
-边框令牌定义 Web Awesome 组件的边缘和角落。它们使用 `rem` 单位，以便随根字体大小缩放。您可以调整单个令牌或使用比例乘数一次性更改所有宽度或半径。
+边框令牌定义 @SITE_NAME@ 组件的边缘和角落。它们使用 `rem` 单位，以便随根字体大小缩放。您可以调整单个令牌或使用比例乘数一次性更改所有宽度或半径。
 
 ## 边框样式
 

@@ -10,7 +10,7 @@ import styles from './zoomable-frame.styles.js';
 
 /**
  * @summary Zoomable frames embed iframe content with built-in controls for zooming, panning, and managing interaction.
- * @documentation https://webawesome.com/docs/components/zoomable-frame
+ * @documentation @SITE_URL@/docs/components/zoomable-frame
  * @status stable
  * @since 3.0
  *

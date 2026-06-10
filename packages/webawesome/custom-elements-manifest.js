@@ -17,6 +17,11 @@ const packageData = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.jso
 const { name, description, version, author, homepage, license } = packageData;
 const outdir = 'dist-cdn';
 
+// Site domain - override via SITE_DOMAIN environment variable, falls back to site.json
+const siteData = JSON.parse(fs.readFileSync(path.join(__dirname, 'docs', '_data', 'site.json'), 'utf8'));
+const SITE_DOMAIN = process.env.SITE_DOMAIN || siteData.domain || 'webawesome.com';
+const SITE_URL = `//${SITE_DOMAIN}`;
+
 function replace(string, terms) {
   terms.forEach(({ from, to }) => {
     string = string?.replace(from, to);
@@ -176,7 +181,7 @@ export default {
       referencesTemplate: (_, tag) => [
         {
           name: 'Documentation',
-          url: `https://webawesome.com/docs/components/${tag.replace('wa-', '')}`,
+          url: `${SITE_URL}/docs/components/${tag.replace('wa-', '')}`,
         },
       ],
     }),
@@ -189,7 +194,7 @@ export default {
       referencesTemplate: (_, tag) => {
         return {
           name: 'Documentation',
-          url: `https://webawesome.com/docs/components/${tag.replace('wa-', '')}`,
+          url: `${SITE_URL}/docs/components/${tag.replace('wa-', '')}`,
         };
       },
     }),

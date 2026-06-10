@@ -432,7 +432,7 @@ ${renderComponentList(freeByCategory[category])}`,
     Object.keys(proByCategory).length > 0
       ? `### Pro Components
 
-These components require [Web Awesome Pro](${baseUrl}/purchase).
+These components require [@SITE_NAME@ Pro](${baseUrl}/purchase).
 
 ${Object.keys(proByCategory)
   .sort()
@@ -447,10 +447,10 @@ ${renderComponentList(proByCategory[category], true)}`,
 
   return `---
 name: webawesome
-description: Web Awesome is a UI component library built with web components. Use when building buttons, inputs, selects, checkboxes, dialogs, modals, drawers, tabs, dropdowns, tooltips, carousels, forms, or using CSS utilities like wa-stack, wa-cluster, wa-grid. Supports React, Vue, Angular, Svelte, and vanilla JS.
-license: MIT / Commercial (for Web Awesome Pro)
+description: @SITE_NAME@ is a UI component library built with web components. Use when building buttons, inputs, selects, checkboxes, dialogs, modals, drawers, tabs, dropdowns, tooltips, carousels, forms, or using CSS utilities like wa-stack, wa-cluster, wa-grid. Supports React, Vue, Angular, Svelte, and vanilla JS.
+license: MIT / Commercial (for @SITE_NAME@ Pro)
 metadata:
-  author: Web Awesome
+  author: @SITE_NAME@
   version: "${packageData.version || '0.0.0'}"
   homepage: ${baseUrl}
   repository: https://github.com/shoelace-style/webawesome
@@ -458,9 +458,9 @@ compatibility: Works in modern browsers. Requires no build tools when using CDN.
 allowed-tools: Read
 ---
 
-# Web Awesome
+# @SITE_NAME@
 
-Web Awesome is an open source UI component library with a Pro offering that helps sustain the project. It provides 50+ accessible, customizable web components that work with any framework.
+@SITE_NAME@ is an open source UI component library with a Pro offering that helps sustain the project. It provides 50+ accessible, customizable web components that work with any framework.
 
 **Pro components and features are available to paid users.** [Purchase Pro](${baseUrl}/purchase)
 
@@ -481,13 +481,13 @@ import '@awesome.me/webawesome/dist/components/button/button.js';
 
 ### CDN / Project Setup
 
-The easiest way to use Web Awesome is with a hosted project. [Create a project](${baseUrl}) to get a single line of code that loads everything automatically.
+The easiest way to use @SITE_NAME@ is with a hosted project. [Create a project](${baseUrl}) to get a single line of code that loads everything automatically.
 
 For detailed installation options, see [Installation Guide](references/installation.md).
 
 ## Core Concepts
 
-Web Awesome components are custom HTML elements. They work like native elements but with enhanced functionality.
+@SITE_NAME@ components are custom HTML elements. They work like native elements but with enhanced functionality.
 
 - **Attributes & Properties**: Configure components via HTML attributes or JavaScript properties
 - **Events**: Listen to custom events prefixed with \`wa-\` (e.g., \`wa-change\`, \`wa-input\`)
@@ -514,7 +514,7 @@ ${freeComponentsSection}
 ${proComponentsSection}
 ## Themes
 
-Web Awesome includes pre-built themes. Apply a theme by adding its class to the \`<html>\` element.
+@SITE_NAME@ includes pre-built themes. Apply a theme by adding its class to the \`<html>\` element.
 
 ### Free Themes
 - **Default** - The foundational theme
@@ -547,7 +547,7 @@ See [Themes Reference](references/themes.md) for palette usage.
 
 ## Utilities
 
-Web Awesome provides CSS utilities for common styling tasks:
+@SITE_NAME@ provides CSS utilities for common styling tasks:
 
 - **Layout**: \`wa-stack\`, \`wa-cluster\`, \`wa-grid\`, \`wa-split\`, \`wa-flank\`, \`wa-frame\`
 - **Spacing**: \`wa-gap-*\` utilities
@@ -562,7 +562,7 @@ See [Layout Utilities](references/utilities/layout.md), [Rounding](references/ut
 
 ## Design Tokens
 
-Web Awesome uses CSS custom properties (design tokens) for consistent theming:
+@SITE_NAME@ uses CSS custom properties (design tokens) for consistent theming:
 
 - **Borders**: \`--wa-border-*\` for width, radius, style
 - **Color**: \`--wa-color-*\` for surfaces, text, semantic colors
@@ -576,7 +576,7 @@ See [Design Tokens](references/tokens/) for full reference.
 
 ## Form Controls
 
-Web Awesome form controls are form-associated custom elements supporting native form validation and the Constraint Validation API.
+@SITE_NAME@ form controls are form-associated custom elements supporting native form validation and the Constraint Validation API.
 
 - Use \`required\`, \`pattern\`, \`minlength\`, \`maxlength\` attributes
 - Use \`setCustomValidity()\` for custom error messages
@@ -596,7 +596,7 @@ Font Awesome is the default icon library. Use \`<wa-icon>\` with Font Awesome ic
 
 ## Framework Integration
 
-Web Awesome works with any framework:
+@SITE_NAME@ works with any framework:
 
 - **React 19+**: Native custom element support with TypeScript types
 - **React 18 and below**: Use provided React wrappers
@@ -608,7 +608,7 @@ See framework-specific guides in [references/frameworks/](references/frameworks/
 
 ## Pro Features
 
-[Web Awesome Pro](${baseUrl}/purchase) includes:
+[@SITE_NAME@ Pro](${baseUrl}/purchase) includes:
 
 - Pro Components (Data Grid, Date Picker, Rich Text Editor, etc.)
 - Pro Themes and Color Palettes
@@ -674,7 +674,7 @@ import '@awesome.me/webawesome/dist/styles/themes/awesome.css';
 
 ## Pro Themes
 
-Requires [Web Awesome Pro](${baseUrl}/purchase).
+Requires [@SITE_NAME@ Pro](${baseUrl}/purchase).
 
 | Theme | Palette | Brand Color |
 |-------|---------|-------------|
@@ -756,7 +756,7 @@ For sensitive or account-specific issues:
 
 ## Pro Support
 
-[Web Awesome Pro](${baseUrl}/purchase) includes priority support.
+[@SITE_NAME@ Pro](${baseUrl}/purchase) includes priority support.
 `;
 }
 
@@ -835,7 +835,7 @@ function copyAllComponentDocs(siteDir, destDir, baseUrl, frontMatterCache) {
       '',
       `**Full documentation:** ${baseUrl}/docs/components/${componentName}`,
       '',
-      isProComponent ? `> This component requires [Web Awesome Pro](${baseUrl}/purchase).` : '',
+      isProComponent ? `> This component requires [@SITE_NAME@ Pro](${baseUrl}/purchase).` : '',
       '',
     ].join('\n');
 

@@ -9,7 +9,7 @@ import styles from './avatar.styles.js';
 /**
  * @summary Avatars represent a person or object with an image, initials, or icon. Use them in lists, comments, and
  *  profiles to give users visual context at a glance.
- * @documentation https://webawesome.com/docs/components/avatar
+ * @documentation @SITE_URL@/docs/components/avatar
  * @status stable
  * @since 2.0
  *

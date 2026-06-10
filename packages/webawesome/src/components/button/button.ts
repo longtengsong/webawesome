@@ -19,7 +19,7 @@ import styles from './button.styles.js';
 /**
  * @summary Buttons represent actions the user can take, such as submitting a form, opening a dialog, or navigating to
  *  another page.
- * @documentation https://webawesome.com/docs/components/button
+ * @documentation @SITE_URL@/docs/components/button
  * @status stable
  * @since 2.0
  *

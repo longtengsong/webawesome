@@ -9,7 +9,7 @@ let id = 0;
 
 /**
  * @summary Tab panels hold the content shown for a single tab inside a tab group.
- * @documentation https://webawesome.com/docs/components/tab-panel
+ * @documentation @SITE_URL@/docs/components/tab-panel
  * @status stable
  * @since 2.0
  *

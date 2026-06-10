@@ -1,6 +1,6 @@
 ---
 title: 服务端渲染
-description: 关于如何开始在 Web Awesome 中使用 SSR 的文档。
+description: 关于如何开始在 @SITE_NAME@ 中使用 SSR 的文档。
 layout: page-outline
 unlisted: true
 ---
@@ -8,7 +8,7 @@ unlisted: true
 服务端渲染（"SSR"）意味着您的网页在发送到用户浏览器之前在服务器上渲染完成。这提供了一开始就完整的 HTML 页面，这对 SEO 和初始加载时间非常有利。页面渲染完成后，JavaScript 启动以"水合"组件，使其具有交互性。Web 平台通过一项名为[声明式 Shadow DOM](https://web.dev/articles/declarative-shadow-dom) 的特性来支持这一点。
 
 :::warning
-Web Awesome 中的 SSR 是实验性的！存在一些已知的错误和时机问题。实验状态的部分原因来自 Lit 的 SSR 包也处于实验阶段。
+@SITE_NAME@ 中的 SSR 是实验性的！存在一些已知的错误和时机问题。实验状态的部分原因来自 Lit 的 SSR 包也处于实验阶段。
 :::
 
 ## 启用水合
@@ -58,7 +58,7 @@ eleventyConfig.addPlugin(litPlugin, {
 
 ### `did-ssr` 属性
 
-所有经过 SSR 渲染的 Web Awesome 组件都会获得 `did-ssr` 属性。
+所有经过 SSR 渲染的 @SITE_NAME@ 组件都会获得 `did-ssr` 属性。
 
 ```html
 <wa-button appearance="filled" did-ssr></wa-button>

@@ -36,7 +36,7 @@ export type IconAnimation =
 /**
  * @summary Icons are scalable vector symbols that represent actions, content, or status throughout your application.
  *  They support Font Awesome and custom icon libraries with animation presets.
- * @documentation https://webawesome.com/docs/components/icon
+ * @documentation @SITE_URL@/docs/components/icon
  * @status stable
  * @since 2.0
  *

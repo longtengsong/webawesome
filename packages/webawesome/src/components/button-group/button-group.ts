@@ -8,7 +8,7 @@ import styles from './button-group.styles.js';
 /**
  * @summary Button groups combine related buttons into a single visual unit. Use them for toolbars, segmented controls,
  *  or any set of actions that belong together.
- * @documentation https://webawesome.com/docs/components/button-group
+ * @documentation @SITE_URL@/docs/components/button-group
  * @status stable
  * @since 2.0
  *

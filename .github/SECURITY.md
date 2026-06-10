@@ -1,6 +1,6 @@
 # Reporting Security Issues
 
-We take security issues in Web Awesome very seriously and appreciate your efforts to disclose your findings responsibly.
+We take security issues in @SITE_NAME@ very seriously and appreciate your efforts to disclose your findings responsibly.
 
 To report a security issue, email [support@fontawesome.com](mailto:support@fontawesome.com) and include "WEB AWESOME SECURITY" in the subject line.
 

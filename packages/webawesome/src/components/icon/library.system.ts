@@ -67,7 +67,7 @@ export const icons: { [key: string]: { [key: string]: string } } = {
 
 //
 // System icons are a separate library to ensure they're always available, regardless of how the default icon library is
-// configured or if its icons resolve properly. All Web Awesome components must use the system library instead of the
+// configured or if its icons resolve properly. All @SITE_NAME@ components must use the system library instead of the
 // default library.
 //
 const systemLibrary: IconLibrary = {
